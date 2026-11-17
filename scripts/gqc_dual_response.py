@@ -224,7 +224,7 @@ class DualResponseModel(MoleculeResponse):
         out = {'field': field, 'observable': observable, 'raw_value': raw,
                'target_identity': json_hash([self.endpoint_identity['fields'][field],
                                              self.endpoint_identity['observables'][observable]]),
-               'qualified': None, 'value': None, 'status': 'residual_verified', 'reasons': []}
+               'qualified': None, 'value': None, 'status': 'awaiting_independent_reference', 'reasons': []}
         if raw is None:
             out.update(qualified=False, status='withheld', reasons=['nonfinite or missing candidate'])
             return out
@@ -365,6 +365,8 @@ class DualResponseModel(MoleculeResponse):
                 via = 'adjoint'
             row = self.assess(field, observable, value)
             row['via'] = via
+            if self.oracle is None and row['raw_value'] is not None:
+                row['status'] = 'residual_verified'
             if direct in vectors and adjoint in vectors:
                 row['cross_side_difference'] = abs(float(value - self.rhs_values['fields'][field] @ vectors[adjoint]))
                 check(row['cross_side_difference'] <= ANALYTIC_TOL, 'direct/adjoint reciprocity disagreement')
