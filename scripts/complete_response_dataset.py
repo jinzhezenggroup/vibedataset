@@ -618,6 +618,8 @@ def main():
     batch = {'schema': 'vibedataset.response_batch.v1', 'definition': DEFINITION, 'units': UNITS,
              **single_hashes, 'catalogs': catalogs, 'history': history_info, 'gqc_commit': GQC_PIN,
              'cli_sha256': file_hash(__file__), 'model_source_sha256': file_hash(ROOT/'scripts/gqc_dual_response.py'),
+             'planning_sources': {name:file_hash(ROOT/'scripts'/name) for name in
+                                  ('response_cover.py', 'response_field_plan.py', 'probe_scalar_response.py')},
              'input_sha256': request_digest, 'counts_by_status': counts, 'work': attempts,
              'seconds': time.perf_counter() - start, 'records': rows}
     publish(args.out, batch)
