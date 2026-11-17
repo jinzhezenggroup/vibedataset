@@ -73,3 +73,5 @@ source ~/vibedataset/tools/activate_n5_gqc.sh
 ## 两次官方 QM9 队列作业
 
 同一持久环境于 2026-11-18 顺序执行 2046 与 2047。首批 6 份 GQC 能量用 72 次 SCF 迭代、77 次 Fock 构建；留出的全部 11 份另用 139/141 次。各作业只有一批 GQC 系统调用，独立 CPU 参考态生产、收敛/稳定性拒绝与存储成本分别登记。两次均处理完所有分子后，因分别 2/3 个独立门槛失败返回 1；没有因这些状态重做上游精度。最终 12 对核验参考态可直接用于本地 GQC 编译的 CPU 响应。留出的 11 份中 8 对占 5,780,168 字节。[2046 与首批](../handoff/gqcdataset_codex_goal/research/experiments/qm9_response_assets/README.md) · [2047 与可下载资产](../handoff/gqcdataset_codex_goal/research/experiments/qm9_extension/README.md)
+
+作业 2048 使用 n5 的 1 个 CPU 核独立复算水分子的部分标量响应，Slurm 成功退出、耗时 5 秒。此作业复用 2046 的水分子状态和持久科学环境，从固定的 GQC 编译器树生成并运行 CPU 核；未占用 GPU。相同精度下，单块合并的 2 RHS 用 20 次 J/K，分开调用用 36 次。[作业、版本和逐次物理调用](../handoff/gqcdataset_codex_goal/research/experiments/partial_response_blocks/n5/README.md)

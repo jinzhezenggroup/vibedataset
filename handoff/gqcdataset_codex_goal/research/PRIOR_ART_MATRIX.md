@@ -24,3 +24,5 @@
 | PySCF 2.14.0 MP2 梯度、GQC 原生 blocked/recycled | 实际 MP2 水的九个核梯度分量共用一个 CPHF 右端，另计显式核导数；GQC 的多 RHS、未收敛回收、跨身份拒绝测试已执行 | 伴随复用已有化学先例，RHS 更少仍可能花更多算子作用。[源到运行](audits/response-dual-prior-adjoint.md) |
 | mlelec 论文相关归档与单独 qm7 Git 树 | 在作者归档代码和规定环境重跑两份几何，有场阶段各做四次对角化和零次诱导势更新；与自洽响应的差异在甲烷和水分别为 1.120365 和 1.504074 原子单位 | 固定零场有效 Hamiltonian、受监督性质模型和耦合响应各自登记。归档的代码与分支的训练入口也有实际差异。[版本、原始执行和差值](audits/mlelec-archive.md) |
 | dm-PhiSNet 第一作者历史树、PhiSNet 后续适配、DelFTa v1 | 完整取得三棵树；历史训练与密度/物性分析有源可查。另核查六个原始发布位置 | 五个原始实现位置仍待补齐，作者历史代码与确切论文 commit 分列。没有运行这些模型的训练。[逐原始来源及证据](audits/intake-originals.md) |
+
+GQC 固定版本的 block GMRES 在同一调用内合并初始残差子空间，同时逐列计算真实残差；分开调用会重复建立子空间。n5 独立对四种两列组合逐次追踪了基扩展和真残差检查。水分子中均为 10 次扩展及 10 次复核。[固定源码与运行跟踪](audits/partial-response-blocks.md) · [n5 对照](experiments/partial_response_blocks/n5/README.md)
