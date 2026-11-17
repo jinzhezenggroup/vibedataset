@@ -22,10 +22,14 @@ HISTORY = tuple(edge for edge in EDGES if edge not in DIAGONAL)
 POLICIES = ('legacy_recompute', 'legacy_decode', 'keep_vectors', 'eager_table', 'remove_history')
 
 
-def decoder(kernel_cache):
-    vars_ = [input_tensor(name, TensorSpec(role='input')) for name in ('combined', 'first', 'second')]
-    program = Program({'missing': add(*vars_, coefficients=(1, -1, -1))},
-                      provenance={'purpose': 'one uniform-field sum minus two archived derivatives, same observable'})
+def decoder(kernel_cache, operand_count=2):
+    if operand_count not in (1, 2):
+        raise ValueError('a two- or three-axis field requires one or two measured subtractions')
+    names = ('combined', 'first', 'second')[:1 + operand_count]
+    terms = [input_tensor(name, TensorSpec(role='input')) for name in names]
+    purpose = ('one uniform-field sum minus two archived derivatives, same observable' if operand_count == 2
+               else 'two-axis field sum minus one archived derivative of the same observable')
+    program = Program({'missing': add(*terms, coefficients=(1,) + (-1,) * operand_count)}, provenance={'purpose': purpose})
     return NativeTensorProgram(program, compiler=CppCompilerAdapter(Path('c++')), cache=kernel_cache,
                                max_bytes=1 << 20, max_work=1000)
 
