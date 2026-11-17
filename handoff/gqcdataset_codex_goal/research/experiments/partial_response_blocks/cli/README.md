@@ -6,6 +6,15 @@
 
 独立的 14 次历史工作流、9 次事务/并发控件和 11 次跨目录/旧版本控件也已重放。原有目录、科学身份和历史摘要仍可使用。初版专用控件与最终批次的额外开销单列，每次实际发生的建模与求解均计入测试，不与生产对照相加。[回归记录](regressions.json.gz) · [各次执行开销](test-costs.json)
 
+从仓库根目录可运行这一对清单。两个独立数据库模拟原生产者只转交标量的情形。若同一数据库已有完整方向向量，程序会考虑这些向量。
+
+```bash
+e=handoff/gqcdataset_codex_goal/research/experiments
+python scripts/complete_response_dataset.py --requests "$e/partial_response_blocks/cli/cross-two.jsonl" --cache-db .work/cross-producer.sqlite --out .work/cross-history.json
+history_sha=$(sha256sum .work/cross-history.json | cut -d' ' -f1)
+python scripts/complete_response_dataset.py --requests "$e/response_dataset_cli/diagonal.jsonl" --history "$history_sha" .work/cross-history.json --cache-db .work/cross-consumer.sqlite --out .work/cross-completed.json
+```
+
 在仓库根目录使用[科学环境](../../response_planning/README.md)，执行以下命令生成新回执。
 
 ```bash
