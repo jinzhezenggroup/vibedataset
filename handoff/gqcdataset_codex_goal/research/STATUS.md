@@ -4,6 +4,9 @@
 `de60ee48eb7e567b494c558daeba85a8e1aff400` 开始，工作分支
 `codex/source-intake-20261118`。完整记录：[INTAKE.md](INTAKE.md)。
 
+可审查提交：[baea1aa](https://github.com/jinzhezenggroup/vibedataset/commit/baea1aa547d74a367224bfb44e179eaaf072eab6)；
+[草稿 PR #10](https://github.com/jinzhezenggroup/vibedataset/pull/10)。尚未合入 main。
+
 ## 已完成的可审查增量
 
 - [x] 读取根约定、交接 Goal、来源、科学约束与远程 #1/#2；核对本地真实状态。
