@@ -56,7 +56,9 @@ experiments=handoff/gqcdataset_codex_goal/research/experiments
 python3 scripts/summarize_response_planning.py --out .work/response-report-recheck
 cmp "$experiments/response_planning/response-labels.jsonl" .work/response-report-recheck/response-labels.jsonl
 export OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 PYTHONDONTWRITEBYTECODE=1
-source .work/gqc_residual_toolchain/bin/activate
+uv venv --python 3.13 .work/response-reproduction-env
+uv pip install --python .work/response-reproduction-env/bin/python numpy==2.5.5 pyscf==2.14.0 scipy==1.18.1 h5py==3.16.0 sccache==0.16.0
+source .work/response-reproduction-env/bin/activate
 python scripts/probe_response_planning.py --assets "$experiments/qm9_response_assets" --oracles "$experiments/gqc_dual_response/oracles" --out .work/response-retry-new
 python scripts/probe_response_planning.py --assets "$experiments/qm9_response_assets" --oracles "$experiments/gqc_dual_response/oracles" --remember-reference-rejections --out .work/response-remember-new
 python scripts/probe_scalar_response.py --assets "$experiments/qm9_response_assets" --oracles "$experiments/gqc_dual_response/oracles" --out .work/scalar-recovery-new
