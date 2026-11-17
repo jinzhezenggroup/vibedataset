@@ -241,7 +241,7 @@ def artifact(data,path,rec):
     return json.loads(raw)
 
 
-def verify(dest):
+def verify(dest, scripts=None):
     manifest=json.loads((dest/'manifest.json').read_bytes())
     for name,r in manifest.items():
         require(len((dest/name).read_bytes())==r['bytes'] and sha((dest/name).read_bytes())==r['sha256'],'manifest '+name)
@@ -266,7 +266,7 @@ def verify(dest):
     values={}
     # Load the planner in the checkout being verified. Numerical evidence stays
     # bound to the older source digest in the original run protocol.
-    scripts=HERE.parents[5]/'scripts'
+    scripts=scripts or HERE.parents[5]/'scripts'
     sys.path.insert(0,str(scripts))
     from response_field_plan import SUPPORTS, plan_field_block
     replans={'blocked_xyz':0,'blocked_support':0}
@@ -378,9 +378,10 @@ if __name__=='__main__':
     parser.add_argument('--package',nargs=2,type=Path,metavar=('WORK','PILOT'))
     parser.add_argument('--directory',type=Path,default=HERE)
     parser.add_argument('--receipt',type=Path,help='write an optional fresh verification receipt')
+    parser.add_argument('--planner-directory',type=Path,help='directory containing the chosen plan and unit-cover modules')
     args=parser.parse_args()
     if args.package:
         pack(*args.package,args.directory)
-    verified=verify(args.directory)
+    verified=verify(args.directory,args.planner_directory)
     if args.receipt:
         args.receipt.write_bytes(pretty(verified))
