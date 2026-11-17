@@ -42,24 +42,33 @@ def scalar_identity(model):
     })
 
 
-def read_scalars(path, identity):
+def _read_asset(path, identity, key):
     if not path.is_file():
-        return {}, 0
+        return [], 0
     raw = path.read_bytes()
     envelope = json.loads(raw)
     body = envelope['payload']
     if json_hash(body) != envelope['sha256'] or body['scientific_identity'] != identity:
         raise ValueError('scalar payload or scientific identity mismatch')
-    return {(r['field'], r['observable']): r['value'] for r in body['labels']}, len(raw)
+    return body[key], len(raw)
 
 
-def write_scalars(path, identity, labels):
-    rows = [{'field': f, 'observable': o, 'value': v} for (f, o), v in sorted(labels.items())]
-    body = {'scientific_identity': identity, 'labels': rows}
+def _write_asset(path, identity, key, rows):
+    body = {'scientific_identity': identity, key: rows}
     temp = path.with_suffix('.tmp')
     write_json(temp, {'payload': body, 'sha256': json_hash(body)})
     temp.replace(path)
     return path.stat().st_size
+
+
+def read_scalars(path, identity):
+    rows, size = _read_asset(path, identity, 'labels')
+    return {(r['field'], r['observable']): r['value'] for r in rows}, size
+
+
+def write_scalars(path, identity, labels):
+    rows = [{'field': f, 'observable': o, 'value': v} for (f, o), v in sorted(labels.items())]
+    return _write_asset(path, identity, 'labels', rows)
 
 
 def choose(policy, pending, cache, first):
@@ -97,11 +106,12 @@ def journal(path, entry):
         os.fsync(handle.fileno())
 
 
-def run_trajectory(model, name, policy, replicate, out, identity, events):
+def run_trajectory(model, name, policy, replicate, out, identity, events, remember_rejections):
     directory = out / model.name / name / f'{policy}-{replicate}'
     directory.mkdir(parents=True, exist_ok=False)
     vector_path = directory / 'vectors.json'
     scalar_path = directory / 'scalars.json'
+    refusal_path = directory / 'rejections.json'
     measurements = []
     for index, requests in enumerate(TRACES[name]):
         event = {'molecule': model.name, 'trace': name, 'policy': policy, 'replicate': replicate,
@@ -111,7 +121,15 @@ def run_trajectory(model, name, policy, replicate, out, identity, events):
         start = time.perf_counter()
         try:
             labels, scalar_read = read_scalars(scalar_path, identity)
-            needed = set(requests).difference(labels)
+            refusals, refusal_read = {}, 0
+            if remember_rejections:
+                rows, refusal_read = _read_asset(refusal_path, identity, 'rejections')
+                for row in rows:
+                    f, o = row['field'], row['observable']
+                    # Only previously observed failures of the shared target reference may be reused.
+                    if row['gate_sha256'] == json_hash(model.oracle['targets'][f][o]):
+                        refusals[(f, o)] = row
+            needed = set(requests).difference(labels, refusals)
             hits = set(requests).intersection(labels)
             vector_read = vector_path.stat().st_size if needed and vector_path.is_file() else 0
             cache = model.load_cache(vector_path) if vector_read else model.new_cache()
@@ -119,6 +137,7 @@ def run_trajectory(model, name, policy, replicate, out, identity, events):
             t = time.perf_counter()
             fields, obs, targets = choose(policy, needed, cache, index == 0)
             targets.difference_update(labels)
+            targets.difference_update(refusals)
             plan_seconds = time.perf_counter() - t
             counts = dict.fromkeys(COUNT_NAMES, 0)
             values = {}
@@ -132,6 +151,18 @@ def run_trajectory(model, name, policy, replicate, out, identity, events):
             new_labels = {key: info['value'] for key, info in values.items() if info['qualified']}
             labels.update(new_labels)
             scalar_written = write_scalars(scalar_path, identity, labels) if new_labels else 0
+            refusal_written = 0
+            if remember_rejections:
+                new_refusals = {}
+                for (f, o), result in values.items():
+                    reference = model.oracle['targets'][f][o]
+                    if result['qualified'] is False and reference['reasons']:
+                        new_refusals[(f, o)] = {'field': f, 'observable': o, 'reasons': reference['reasons'],
+                                                'gate_sha256': json_hash(reference)}
+                if new_refusals:
+                    refusals.update(new_refusals)
+                    refusal_written = _write_asset(refusal_path, identity, 'rejections',
+                                                   [refusals[k] for k in sorted(refusals)])
             vector_written = 0
             if r and policy in VECTOR_POLICIES and (r['new_fields'] or r['new_observables']):
                 model.save_cache(cache, vector_path)
@@ -139,17 +170,22 @@ def run_trajectory(model, name, policy, replicate, out, identity, events):
             write_seconds = time.perf_counter() - t
             elapsed = time.perf_counter() - start
             delivered = [{'field': f, 'observable': o, 'value': labels.get((f, o)),
-                          'cached_scalar': (f, o) in hits} for f, o in requests]
+                          'cached_scalar': (f, o) in hits,
+                          'cached_gate_rejection': (f, o) in refusals and (f, o) not in values}
+                         for f, o in requests]
             entry = dict(event, event='completed', selected_fields=fields, selected_observables=obs,
                          filled=delivered, computed=list(values.values()), counts=counts,
                          block=r['block'] if r else None, cache_checks=r['cache_checks'] if r else [],
                          scalar_read=scalar_read, vector_read=vector_read,
                          scalar_written=scalar_written, vector_written=vector_written,
+                         refusal_read=refusal_read, refusal_written=refusal_written,
                          retained_bytes=scalar_path.stat().st_size if scalar_path.exists() else 0,
                          read_seconds=read_seconds, plan_seconds=plan_seconds, compute_seconds=elapsed_kernel,
                          write_seconds=write_seconds, elapsed_seconds=elapsed)
             if vector_path.is_file():
                 entry['retained_bytes'] += vector_path.stat().st_size
+            if refusal_path.is_file():
+                entry['retained_bytes'] += refusal_path.stat().st_size
         except Exception as exc:
             journal(events, dict(event, event='failed', error=f'{type(exc).__name__}: {exc}',
                                  actual_counter_change=dict(model.counts - before), elapsed_seconds=time.perf_counter() - start))
@@ -163,9 +199,10 @@ def run_trajectory(model, name, policy, replicate, out, identity, events):
             'counts': dict(counts), 'request_count': sum(len(r['requests']) for r in measurements),
             'published_requests': sum(row['value'] is not None for r in measurements for row in r['filled']),
             'cached_requests': sum(row['cached_scalar'] for r in measurements for row in r['filled']),
+            'cached_rejections': sum(row['cached_gate_rejection'] for r in measurements for row in r['filled']),
             'seconds': sum(m['elapsed_seconds'] for m in measurements),
-            'io_read': sum(m['scalar_read'] + m['vector_read'] for m in measurements),
-            'io_written': sum(m['scalar_written'] + m['vector_written'] for m in measurements),
+            'io_read': sum(m['scalar_read'] + m['vector_read'] + m['refusal_read'] for m in measurements),
+            'io_written': sum(m['scalar_written'] + m['vector_written'] + m['refusal_written'] for m in measurements),
             'retained_bytes': measurements[-1]['retained_bytes'],
             'jk_by_round': [m['counts']['jk_calls'] for m in measurements]}
 
@@ -175,6 +212,7 @@ def main():
     parser.add_argument('--assets', type=Path, required=True)
     parser.add_argument('--oracles', type=Path, required=True)
     parser.add_argument('--out', type=Path, required=True)
+    parser.add_argument('--remember-reference-rejections', action='store_true')
     args = parser.parse_args()
     args.out.mkdir(parents=True, exist_ok=False)
     start = time.perf_counter()
@@ -185,7 +223,8 @@ def main():
         'molecular_api_sha256': file_hash(ROOT / 'scripts/gqc_dual_response.py'),
         'source_index_sha256': file_hash(args.assets / 'index.json'), 'source_job': source['job'],
         'python': platform.python_version(), 'threads': {k: os.environ.get(k) for k in ('OMP_NUM_THREADS', 'OPENBLAS_NUM_THREADS', 'MKL_NUM_THREADS')},
-        'traces': TRACES, 'policies': POLICIES, 'replicates': 2, 'order_seed': 60129, 'strata': [], 'trajectories': [],
+        'traces': TRACES, 'policies': POLICIES, 'replicates': 2, 'order_seed': 60129,
+        'remember_reference_rejections': args.remember_reference_rejections, 'strata': [], 'trajectories': [],
     }
     for case in source['rows']:
         receipt = {k: case.get(k) for k in ('name', 'stratum', 'status', 'error', 'member_sha256')}
@@ -205,7 +244,8 @@ def main():
         for rep, tasks in enumerate((order, reversed(order)), 1):
             for trace, policy in tasks:
                 summary['trajectories'].append(run_trajectory(
-                    model, trace, policy, rep, args.out, identity, args.out / 'operations.jsonl'))
+                    model, trace, policy, rep, args.out, identity, args.out / 'operations.jsonl',
+                    args.remember_reference_rejections))
         write_json(args.out / 'summary.json', summary)
         print(case['name'], len(summary['trajectories']), flush=True)
     summary['wall_seconds_including_journal_and_output'] = time.perf_counter() - start
