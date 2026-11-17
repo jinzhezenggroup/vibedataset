@@ -5,6 +5,7 @@ Run from the project root. Raw JSON inventories remain local. Compressed JSON
 preserves the complete index; path redaction is documented in its notice.
 """
 import csv
+from collections import defaultdict
 from datetime import datetime, timezone
 import gzip
 import hashlib
@@ -44,17 +45,57 @@ def crlf_review_matches(file, record):
                 and record.get('verified_lf_to_crlf') is True)
 
 
+def combine_reviews(records, blob):
+    """One coverage row per tracked file. Each dated observation stays in intake_review.json."""
+    if not records:
+        return {}
+    if any(r['blob'] != blob for r in records):
+        raise ValueError(f'stale file review for {records[0]["repository_id"]}/{records[0]["path"]}')
+    result = {key: any(r.get(key, False) for r in records) for key in ('read', 'behavior_traced', 'executed')}
+    # Preserve a single path verbatim for old CSV readers. Multiple paths use an unambiguous JSON array.
+    paths = list(dict.fromkeys(r['evidence_paths'] for r in records))
+    result['evidence_paths'] = paths[0] if len(paths) == 1 else json.dumps(paths, ensure_ascii=False)
+    result['read_at'] = max(r['read_at'] for r in records)
+    for key in ('module_role', 'reader', 'open_questions'):
+        result[key] = ' | '.join(dict.fromkeys(r[key] for r in records))
+    return result
+
+
+def archive_lock(source, review):
+    receipt_path = BASE / source['inspection_path']
+    raw = receipt_path.read_bytes()
+    receipt = json.loads(raw)
+    for lock_name, receipt_name in [('doi', 'doi'), ('version', 'version'), ('archive_sha256', 'sha256'),
+                                     ('publisher_md5', 'md5'), ('archive_bytes', 'archive_bytes')]:
+        if source[lock_name] != receipt[receipt_name]:
+            raise ValueError(f'{source["id"]}: published archive identity differs at {lock_name}')
+    observations = review.get('archive_file_reading', [])
+    statuses = {key: sum(r[key] for r in observations) for key in ('read', 'behavior_traced', 'executed')}
+    return dict(source, archive_url=receipt['archive_url'], rights=receipt['rights'],
+                publication_date=receipt['publication_date'], related_identifiers=receipt['related_identifiers'],
+                selected_branch_commit=receipt['paper_branch_commit'], selected_branch_tree=receipt['paper_branch_tree'],
+                inspection_sha256=hashlib.sha256(raw).hexdigest(),
+                index_sha256=receipt['member_index_gzip_sha256'],
+                index_uncompressed_sha256=receipt['member_index_uncompressed_sha256'],
+                regular_files=receipt['regular_files'], directories=receipt['directories'],
+                total_file_bytes=receipt['total_file_bytes'], source_like_members=len(receipt['source_members']),
+                reviewer_record='research/intake_review.json', evidence_status=statuses)
+
+
 def main():
     plan = json.loads((RESEARCH / 'acquisition_plan.json').read_text())
     review = json.loads((RESEARCH / 'intake_review.json').read_text())
     records = review['repositories']
     old_lock = RESEARCH / 'sources.lock.json'
     previous = {r['id']: r for r in json.loads(old_lock.read_text())['repositories']} if old_lock.exists() else {}
-    read_records = {(r['repository_id'], r['path']): r for r in review['file_reading']}
+    read_records = defaultdict(list)
+    for record in review['file_reading']:
+        read_records[(record['repository_id'], record['path'])].append(record)
     template = json.loads((BASE / 'templates/sources.lock.json').read_text())
-    template.update(notice='Pinned root trees and submodules only. External dependency closure, '
-                    'paper-version attribution and numerical validation remain separate.',
-                    generated_at_utc=datetime.now(timezone.utc).isoformat())
+    template.update(notice='Git snapshot counts include initialized submodules. Formal release archives '
+                    'have separate file/member hashes. Reading, execution, paper-version attribution, '
+                    'and external runtime closure are independent.',
+                    generated_at_utc=review.get('reconciled_at_utc') or datetime.now(timezone.utc).isoformat())
     coverage_fields = (BASE / 'templates/source_coverage.csv').read_text().strip().split(',')
     totals = dict(repositories_indexed=0, files_indexed=0, files_read=0,
                   behavior_traced=0, executed=0)
@@ -139,9 +180,7 @@ def main():
             totals['files_indexed'] += len(files)
             count_read = count_traced = count_executed = 0
             for commit, path, file in files:
-                reading = read_records.get((name,path), {})
-                if reading and reading['blob'] != file['commit_object_id']:
-                    raise ValueError(f'{name}/{path}: stale reading record')
+                reading = combine_reviews(read_records.pop((name, path), []), file['commit_object_id'])
                 fully_read = reading.get('read', False)
                 count_read += fully_read
                 traced = reading.get('behavior_traced', False)
@@ -165,9 +204,29 @@ def main():
             totals['executed'] += count_executed
             template['repositories'].append(item)
     catalog = json.loads((BASE / 'sources/catalog.json').read_text())
-    template['unresolved_catalog_entries'] = [dict(id=e['id'], primary_urls=e['primary_urls'],
-        acquisition_status='blocked_source_location', commit=None, evidence='research/SOURCE_GAPS.md')
-        for e in catalog['entries'] if not e['repository_url']]
+    if read_records:
+        raise ValueError(f'file review outside indexed trees: {next(iter(read_records))}')
+    origins = review.get('catalog_origin_reviews', {})
+    outcomes = []
+    sources = {s['id']: s for s in template['repositories']}
+    for entry in catalog['entries']:
+        if entry['repository_url']:
+            continue
+        origin = dict(origins.get(entry['id'], {}))
+        repo_id = origin.get('historical_author_repository')
+        if repo_id:
+            locked = sources[repo_id]
+            if locked['acquisition_status'] != 'acquired' or entry['id'] not in locked['catalog_ids']:
+                raise ValueError(f'{repo_id}: historical author source lacks a verified snapshot')
+        outcomes.append(dict(id=entry['id'], primary_urls=entry['primary_urls'],
+                             acquisition_status='author_history_acquired_paper_revision_unverified' if repo_id else 'blocked_source_location',
+                             commit=sources[repo_id]['commit'] if repo_id else None,
+                             evidence=origin.pop('evidence', 'research/SOURCE_GAPS.md'), **origin))
+    template['catalog_origin_results'] = outcomes
+    template['unresolved_catalog_entries'] = [v for v in outcomes if not v['commit']]
+    archive_reviews = review.get('release_archive_reviews', {})
+    template['release_archives'] = [archive_lock(a, archive_reviews.get(a['id'], {}))
+                                    for a in plan.get('release_archives', [])]
     template['summary'] = totals
     dump(RESEARCH / 'sources.lock.json', template)
     print(json.dumps(totals))
