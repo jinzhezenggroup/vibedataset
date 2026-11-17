@@ -1,0 +1,92 @@
+{
+  "label_status": {
+    "qualified": 28,
+    "reference_unavailable": 18,
+    "response_rejected": 8
+  },
+  "measured_runs": {
+    "plan001-bound": {
+      "asset_files": 264,
+      "contained_asset_bytes": 594740,
+      "executing_head": "e92993b98c1baaaa103c804263bb017f7b582347",
+      "native_kernels": 20,
+      "raw_events": 896,
+      "shared_setup_jk": 20,
+      "shared_setup_seconds": 8.547866543012788,
+      "strategy_jk": 16270,
+      "strategy_rhs": 614,
+      "total_seconds": 18.13907518600172,
+      "trajectories": 168
+    },
+    "plan001-first": {
+      "asset_files": 264,
+      "contained_asset_bytes": 594740,
+      "executing_head": "0f6200dd3498afe42ba1eb2a8b563b322f41d632",
+      "native_kernels": 20,
+      "raw_events": 896,
+      "shared_setup_jk": 20,
+      "shared_setup_seconds": 8.95949400900281,
+      "strategy_jk": 16270,
+      "strategy_rhs": 614,
+      "total_seconds": 18.58609287100262,
+      "trajectories": 168
+    },
+    "plan001-paired-remember": {
+      "asset_files": 306,
+      "contained_asset_bytes": 665082,
+      "executing_head": "bc71c8bb1201dba1d51a2500d49fdbf0e664882d",
+      "native_kernels": 20,
+      "raw_events": 896,
+      "shared_setup_jk": 20,
+      "shared_setup_seconds": 9.302054657993722,
+      "strategy_jk": 14006,
+      "strategy_rhs": 576,
+      "total_seconds": 17.568593410993344,
+      "trajectories": 168
+    },
+    "plan001-paired-retry": {
+      "asset_files": 264,
+      "contained_asset_bytes": 594740,
+      "executing_head": "bc71c8bb1201dba1d51a2500d49fdbf0e664882d",
+      "native_kernels": 20,
+      "raw_events": 896,
+      "shared_setup_jk": 20,
+      "shared_setup_seconds": 9.280758259017603,
+      "strategy_jk": 16270,
+      "strategy_rhs": 614,
+      "total_seconds": 18.936098582998966,
+      "trajectories": 168
+    },
+    "plan002-first": {
+      "asset_files": 44,
+      "contained_asset_bytes": 41957,
+      "decoder_setup_seconds": 0.3795539540005848,
+      "executing_head": "e92993b98c1baaaa103c804263bb017f7b582347",
+      "native_kernels": 20,
+      "raw_events": 80,
+      "shared_setup_jk": 20,
+      "shared_setup_seconds": 8.476536232003127,
+      "strategy_jk": 2031,
+      "strategy_rhs": 93,
+      "total_seconds": 10.165416872012429,
+      "trajectories": 20
+    }
+  },
+  "recovered_scalar_max_absolute_differences_by_observable": {
+    "q0": {
+      "cphf": 5.4674373237357035e-11,
+      "hand": 0.0,
+      "without_known_terms": 1.8940520801402845
+    },
+    "r2": {
+      "cphf": 3.4287239714103634e-11,
+      "hand": 0.0,
+      "without_known_terms": 11.02040367055657
+    },
+    "zz": {
+      "cphf": 2.0733947891926618e-10,
+      "hand": 0.0,
+      "without_known_terms": 1.7159725357408773
+    }
+  }
+}
