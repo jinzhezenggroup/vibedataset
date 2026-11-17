@@ -11,7 +11,9 @@ python scripts/complete_response_dataset.py --requests "$examples/hit.jsonl" --c
 python scripts/complete_response_dataset.py --requests "$examples/append.jsonl" --cache-db .work/my_response.sqlite --out .work/response_append.json
 ```
 
-默认源入口是 experiments/qm9_response_assets/index.json 与 experiments/gqc_dual_response/summary.json，二者支持显式传入。请求文件也可由标准输入提供。输出文件以一次原子替换发布，out 取短横线可写到标准输出。全部请求通过时退出 0；部分参考态未取得、请求错误或科学拒绝时输出完整批报告并退出 1；全局参数／目录不可用时退出 2。数值资格由每个标量独立判断，暂缓发布项的 value 为 null，实测值及原因在 diagnostic。当前源索引包含 6 个预选 QM9 ID，其中 4 份有已通过门槛的零场态；其他 QM9 ID 需先生产并登记参考态。
+默认加载同一 QM9 固定发布的两套源／独立验收索引，覆盖全部 17 个已选 ID。首批 6 个和后续 11 个中，共有 12 个获得可用零场态。一次请求可混合两批，每条记录带有实际来源的索引摘要。显式传入 `--source-index` 和 `--oracle-index` 会只使用指定的一套，与早期版本相同。[首批来源](../qm9_response_assets/index.json) · [首批验收](../gqc_dual_response/summary.json) · [后续来源](../qm9_extension/assets/index.json) · [后续验收](../qm9_extension/oracle-index.json)
+
+请求文件也可由标准输入提供。输出文件以一次原子替换发布，out 取短横线可写到标准输出。全部请求通过时退出 0；部分参考态未取得、请求错误或科学拒绝时输出完整批报告并退出 1；全局参数或目录不可用时退出 2。数值资格由每个标量独立判断，暂缓发布项的 value 为 null，实测值及原因在 diagnostic。其他 QM9 ID 需先建立可核验的参考态和独立参照再加入来源索引。
 
 ## 缓存与恢复
 
@@ -63,3 +65,20 @@ python "$examples/verify_history.py" --work .work/response_cli_history_replay
 ```
 
 三个编译恢复值与直接求解的最大差为 1.25×10⁻¹⁴ 以内；对同一组合种子的手写减法与生成程序三个结果逐项相等。包含首次解码程序 JIT 的本次单次进程墙时为 1.57 秒，普通 block 为 1.22 秒，不能据此主张端到端提速。扩展后的默认模式重跑了全部九进程检查，并从旧版 SQLite 的副本在新进程读回同一生产 ID 与数值，实际准备／求解 J/K 仍均为零。[跨版本复核](cross-version.json)
+
+## 两批记录共用一个入口
+
+以下请求同时读取两批中的合格、缺态和重复项。旧批次的 SQLite 科学身份键沿用其原始定义。单一来源时保留 v1 的顶层 source/oracle 摘要，跨批时在 catalogs 中列出各批明确包含的 ID 和各自的两个摘要；逐条输入／输出始终按记录路由。导入早期单批历史时读取原有两个摘要，导入混合批结果时核对逐条摘要及所在目录，再进行原科学身份与资格校验。[混合请求](both-catalogs.jsonl) · [11 个独立客户端结果](catalog-verification.json)
+
+```bash
+python scripts/complete_response_dataset.py --requests "$examples/both-catalogs.jsonl" \
+  --cache-db .work/mixed_qm9.sqlite --out .work/mixed_qm9.json
+```
+
+初次执行在同一进程得到 000003 的 x 场首原子电荷导数 −1.457841087281 e/原子单位电场，以及 000005 的 z 场电子二阶矩导数 −0.253391138431 Bohr²/原子单位电场。两分子各解 1 个 RHS，准备各用 5 次 J/K，求解分别用 18、40 次 J/K。本次进程墙时 5.55 秒。另一条相同的 000003 请求直接关联原生产回执；000004 与 000009 缺少已验收基态，均保留在分母中。重开同一数据库及在新数据库导入该批合格历史，两次独立运行各为零模型启动、零 J/K。这些单次墙时仅反映该工作站上的实测。
+
+将旧版 `dbfde3e` 执行文件真实写出的 SQLite 缓存用新版重开，标量及原生产回执不变。使用 `eaa6def` 生成、摘要与已提交归档一致的历史文件时，首批请求直接命中，后续批仅为新分子求解。故意把混合历史中的首批行绑定到另一个来源摘要时，程序只拒绝该行，另一个批次仍可使用。对全部 17 个 ID 另外执行了不触发求解的身份核查，明确返回 12 个预期身份不符和 5 个基态不可用。显式指定来源批次及故意交叉两套 source/oracle 索引的行为均已检查。
+
+```bash
+python "$examples/verify_catalogs.py" --work .work/response_cli_catalog_replay
+```
