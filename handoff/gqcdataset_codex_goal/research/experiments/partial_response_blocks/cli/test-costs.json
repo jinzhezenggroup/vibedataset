@@ -5,6 +5,18 @@
     "round_jk": 134,
     "setup_jk": 25
   },
+  "final_client_controls": {
+    "client_runs": 12,
+    "molecular_work_receipts": 12,
+    "round_jk": 245,
+    "setup_jk": 55
+  },
+  "full_index_cache_reopen": {
+    "client_runs": 1,
+    "molecular_work_receipts": 12,
+    "round_jk": 25,
+    "setup_jk": 45
+  },
   "historical_scalar_regression": {
     "client_runs": 14,
     "molecular_work_receipts": 14,

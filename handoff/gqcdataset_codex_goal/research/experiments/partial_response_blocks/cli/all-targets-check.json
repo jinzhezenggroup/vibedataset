@@ -1,0 +1,47 @@
+{
+  "all_status_and_values_equal": true,
+  "before": {
+    "backup_sha256": "0575debd24a922b398ba56cf57b17b0d5c6e604a0634ce3dd1e7b96a6ec31106",
+    "prior_db_sha256": "21684c71cb4b77ce56caa78c7df4ed65c8aee6d1d731ee081c202d46501c53cf",
+    "rows": {
+      "attempts": 12,
+      "labels": 37,
+      "vectors": 12
+    }
+  },
+  "cache_vector_validation_actions": 25,
+  "cost": {
+    "rhs": 0,
+    "round_jk": 25,
+    "scalar_hits": 37,
+    "setup_jk": 45
+  },
+  "current_cli_sha256": "65c2893e82708614fba2c03ab775f99618d195f5264e8598a489f9d762888ae1",
+  "current_status": {
+    "qualified": 37,
+    "reference_unavailable": 45,
+    "withheld": 71
+  },
+  "final": {
+    "attempts": 24,
+    "labels": 37,
+    "vectors": 12
+  },
+  "input_sha256": "8cc9dc1a6274ea468368c8f8bc14ede3bbaca772407fbe18c3f77cd954f8ecb7",
+  "model_sha256": "a84b2b9d3e0e971b8a487da48235657d04077986c79308c97dcf364409ef825f",
+  "original_cold_cache_cost": {
+    "rhs": 36,
+    "round_jk": 1237,
+    "setup_jk": 60
+  },
+  "original_full_client_sha256": "4c9bfd8ff637ee45bed8ff481cfb0ec694819ce7be3f70b36e49eb707f8a0123",
+  "planning_sources": {
+    "probe_scalar_response.py": "8f1342a66e4892f85676291710fd4b1c90bed9daa8fff4271d77decce1995540",
+    "response_cover.py": "dff2100e1e901708e03c27ab13fcfed448c45a63f143e1bf8b2fcef9d300b117",
+    "response_field_plan.py": "8b647a40e199f18e8c9b752760155f6a7d496bb5a8e3b4cecc67b14f5fbe1790"
+  },
+  "previously_qualified_source_and_delivery_verified": 37,
+  "requested": 153,
+  "schema": "vibedataset.reopened-cohort.v1",
+  "seconds": 1.4999173439864535
+}
