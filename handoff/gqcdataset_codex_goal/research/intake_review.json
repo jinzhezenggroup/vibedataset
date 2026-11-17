@@ -2090,6 +2090,19 @@
       "executed": false,
       "evidence_paths": "research/audits/mlelec-archive.md",
       "open_questions": "Input data only. File-wide example labels not evaluated, source not an executable program."
+    },
+    {
+      "repository_id": "gqc",
+      "path": "python/generativeqc/response_solver.py",
+      "blob": "439f94dec3b09da511c856ccb0502f6847d6fb7d",
+      "reader": "Codex",
+      "read_at": "2026-11-17T22:02:47.642888+00:00",
+      "read": false,
+      "behavior_traced": true,
+      "executed": true,
+      "module_role": "Shared block-Arnoldi basis, expansion and per-column true residual cost on joined partial scalar response panels",
+      "evidence_paths": "research/audits/partial-response-blocks.md",
+      "open_questions": "n5 job 2048 on one QM9 water reference. Applied native CPU FP64 kernels and attributed actions to fixed lines 1602 and 1642. This observation covers the blocked host branch and the reported cases."
     }
   ],
   "catalog_origin_reviews": {
@@ -2147,7 +2160,7 @@
       ]
     }
   },
-  "reconciled_at_utc": "2026-11-17T20:40:32.597587+00:00",
+  "reconciled_at_utc": "2026-11-17T22:02:47.642888+00:00",
   "release_archive_reviews": {
     "mlelec_materialscloud_v1": {
       "repository_id": "mlelec_materialscloud_v1",
