@@ -28,3 +28,36 @@ SQLite 的每个科学身份绑定版本化来源、原结构 member/SHA、S/h/F
 ```bash
 python "$examples/verify.py" --work .work/response_cli_replay
 ```
+
+## 用已取得的响应标量恢复一个组合场的分量
+
+在新数据库中完全没有占虚向量时，可以显式提供先前通过同一 CLI 真实计算的历史批结果和可信 SHA-256。本文示例的历史请求包含六个已知标量，第二份清单索取三个尚缺标量。每列是同一读出对三个场的线性响应。若 x、y、z 中的两个响应已经独立合格，可以求一次 (1,1,1) 组合电场，从该读出的合计中减去两项，取得第三项。GQC 为这个减法生成 FP64 CPU 程序。这个规则只用于 (x,q0)、(y,r2)、(z,zz) 中当前请求且确实缺失的目标。相同算符、原点、输入与容差下，手写相同减法可得到相同结果。程序对每个恢复值重新验收，若未通过，正常端点求解也会执行并计费。[历史输入](history.jsonl) · [新请求](diagonal.jsonl) · [14 个独立 CLI 进程的结果](history-verification.json)
+
+```bash
+python scripts/complete_response_dataset.py --requests "$examples/history.jsonl" \
+  --cache-db .work/old_production.sqlite --out .work/old_response_batch.json
+old_sha=$(sha256sum .work/old_response_batch.json | cut -d' ' -f1)
+python scripts/complete_response_dataset.py --requests "$examples/diagonal.jsonl" \
+  --cache-db .work/new_completion.sqlite --out .work/completed_diagonal.json \
+  --history "$old_sha" .work/old_response_batch.json
+```
+
+在这个例子中可直接从自己生成的原件保存摘要；从他人接收历史批次时使用生产者另行提供的可信摘要。外部输入必须携带同批完成、实际构造 GQC 模型的生产回执；只包括缓存命中的查询结果应回到原始生产批。每个标量须匹配来源、参考态、物理问题、对应端点、单位、历史实测值、原资格诊断与当前独立验收。独立 oracle 文件不能用作历史操作数。输入、生产成本、参与减法的原测值、对应身份／生产回执、组合物理右端及恢复后的误差记录在批输出中。若输入摘要或身份错误，原路计算其余请求并留下拒绝原因。
+
+只有在一个组合 RHS 加上剩余请求冷启动端点覆盖数，严格小于普通覆盖假设已有向量有效时所需的新 RHS 数，程序才进入组合路径。已经合格的精确标量立即命中。若希望只使用当前数据库的已验收标量，可加 `--decode-known-scalars`；不传这两个选项时，执行原单位端点计划。若错误恢复需要重算，报告包含组合场和普通回退的实际工作量。
+
+| 水分子的三个新目标 | 新 RHS | 求解及复核 J/K |
+|---|---:|---:|
+| 没有可用的历史项，普通 GQC block | 3 | 22 |
+| 六个合格非对角标量 | 1 | 18 |
+| 四个合格非对角标量 | 2 | 36 |
+| 两个标量只足以恢复一个目标，RHS 数打平 | 3 | 22 |
+| 另有三份有效方向向量 | 0 | 3 |
+
+六标量方案比普通 block 少 4 次实际 J/K，二者均另有 5 次参考态及算子准备。历史六项本身还实际花费 3 RHS、22 次求解 J/K 与 5 次准备；表中只列本轮新增工作。在只有四个合格历史项时，两个较小的求解与复核合计比一个原生三列 block 多 14 次 J/K。减少 RHS 不能普遍推导减少实际计算或端到端时间。三项全部命中、外部精确历史命中均无需构造模型；错误历史身份、摘要、独立 oracle 伪作历史均未被采纳。所有物理对照都在当前 CPU/FP64 单分子情形执行。
+
+复现这组带原生产成本和实际回退的实验使用以下命令。原始普通 CLI 数据生成于 `eaa6def`，组合 CLI 数值验证使用 `dbfde3e`。两种版本的原科学源、方法和门槛相同。
+
+```bash
+python "$examples/verify_history.py" --work .work/response_cli_history_replay
+```
