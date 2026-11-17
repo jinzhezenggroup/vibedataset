@@ -1,0 +1,44 @@
+{
+  "run_id": "03e7ffaefdb8-checkpoint-20261117T181538Z",
+  "project_commit": "03e7ffaefdb8a2e5189cf9c86c68c6081b61ac22",
+  "remote_directory": "~/vibedataset/runs/03e7ffaefdb8-checkpoint-20261117T181538Z",
+  "commands": [
+    {
+      "argv": [
+        "ssh",
+        "-o",
+        "BatchMode=yes",
+        "n2",
+        "sinfo -p main -o \"%P %a %D %G %t\" && squeue --me -o \"%i %P %j %T %M\""
+      ],
+      "returncode": 0,
+      "stdout": "PARTITION AVAIL NODES GRES STATE\nmain* up 1 gpu:pro6000:4 idle\nJOBID PARTITION NAME STATE TIME\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "ssh",
+        "n2",
+        "mkdir -p \"$HOME/vibedataset/runs\" && mkdir \"$HOME/vibedataset/runs/03e7ffaefdb8-checkpoint-20261117T181538Z\""
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "scp",
+        "-r",
+        ".work/03e7ffaefdb8-checkpoint-20261117T181538Z/.",
+        "n2:vibedataset/runs/03e7ffaefdb8-checkpoint-20261117T181538Z/"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "scp: error: unexpected filename: .\n"
+    }
+  ],
+  "status": "transfer_failed",
+  "slurm_job_id": null,
+  "qc_calls": 0,
+  "error": "scp rejected the directory basename dot; no sbatch was invoked"
+}

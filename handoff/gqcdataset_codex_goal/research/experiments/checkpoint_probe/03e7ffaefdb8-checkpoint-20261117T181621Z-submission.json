@@ -1,0 +1,62 @@
+{
+  "run_id": "03e7ffaefdb8-checkpoint-20261117T181621Z",
+  "project_commit": "03e7ffaefdb8a2e5189cf9c86c68c6081b61ac22",
+  "remote_directory": "~/vibedataset/runs/03e7ffaefdb8-checkpoint-20261117T181621Z",
+  "commands": [
+    {
+      "argv": [
+        "ssh",
+        "n2",
+        "sinfo -p main -o \"%P %a %D %G %t\" && squeue --me -o \"%i %P %j %T %M\""
+      ],
+      "started_at_utc": "2026-11-17T18:16:21.941137+00:00",
+      "returncode": 0,
+      "stdout": "PARTITION AVAIL NODES GRES STATE\nmain* up 1 gpu:pro6000:4 idle\nJOBID PARTITION NAME STATE TIME\n",
+      "stderr": "",
+      "elapsed_seconds": 1.215693320002174
+    },
+    {
+      "argv": [
+        "ssh",
+        "n2",
+        "mkdir \"$HOME/vibedataset/runs/03e7ffaefdb8-checkpoint-20261117T181621Z\""
+      ],
+      "started_at_utc": "2026-11-17T18:16:23.157711+00:00",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "elapsed_seconds": 1.1510876510001253
+    },
+    {
+      "argv": [
+        "scp",
+        "-r",
+        ".work/03e7ffaefdb8-checkpoint-20261117T181621Z/scripts",
+        ".work/03e7ffaefdb8-checkpoint-20261117T181621Z/configs",
+        ".work/03e7ffaefdb8-checkpoint-20261117T181621Z/PROJECT_COMMIT",
+        ".work/03e7ffaefdb8-checkpoint-20261117T181621Z/SHA256SUMS",
+        "n2:vibedataset/runs/03e7ffaefdb8-checkpoint-20261117T181621Z/"
+      ],
+      "started_at_utc": "2026-11-17T18:16:24.312193+00:00",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "elapsed_seconds": 2.357146377005847
+    },
+    {
+      "argv": [
+        "ssh",
+        "n2",
+        "cd \"$HOME/vibedataset/runs/03e7ffaefdb8-checkpoint-20261117T181621Z\" && sbatch --parsable --job-name=vibedataset-cp001 --output=slurm-%j.out --error=slurm-%j.err scripts/run_checkpoint_probe.slurm"
+      ],
+      "started_at_utc": "2026-11-17T18:16:26.672464+00:00",
+      "returncode": 0,
+      "stdout": "5381\n",
+      "stderr": "",
+      "elapsed_seconds": 1.1112434849928832
+    }
+  ],
+  "status": "submitted",
+  "previous_attempt": "03e7ffaefdb8-checkpoint-20261117T181538Z-submission.json",
+  "slurm_job_id": "5381"
+}

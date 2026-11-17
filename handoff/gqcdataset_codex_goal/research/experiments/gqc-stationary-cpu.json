@@ -1,0 +1,40 @@
+{
+  "source_commit": "2791504cc238fe83d328fc1718080642b288222a",
+  "test_file": "tests/python/test_stationary_problem.py",
+  "python": "Python 3.13.16",
+  "numpy": "2.5.5",
+  "pytest": "9.2.0",
+  "junit_suite_seconds": 0.418,
+  "cases": [
+    {
+      "classname": "tests.python.test_stationary_problem",
+      "name": "test_nonvariational_scalar_sign_and_resolved_finite_differences",
+      "time": "0.023"
+    },
+    {
+      "classname": "tests.python.test_stationary_problem",
+      "name": "test_declared_stationary_state_dispatches_generic_implicit_plan",
+      "time": "0.023"
+    },
+    {
+      "classname": "tests.python.test_stationary_problem",
+      "name": "test_automatic_implicit_dispatch_rejects_unpacked_coupled_states",
+      "time": "0.005"
+    },
+    {
+      "classname": "tests.python.test_stationary_problem",
+      "name": "test_nonsymmetric_coupled_state_and_parameter_weights[False]",
+      "time": "0.005"
+    },
+    {
+      "classname": "tests.python.test_stationary_problem",
+      "name": "test_nonsymmetric_coupled_state_and_parameter_weights[True]",
+      "time": "0.005"
+    }
+  ],
+  "pytest_stdout": ".....                                                                    [100%]\n5 passed, 57 deselected in 0.41s\n",
+  "exit_status": 0,
+  "native_gqc_calls": 0,
+  "qm_calculations": 0,
+  "scope": "CPU TensorIR compiler on scalar and small vector declared equations; the upstream tests supply the adjoint linear solves."
+}
