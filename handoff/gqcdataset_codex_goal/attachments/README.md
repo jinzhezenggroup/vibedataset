@@ -22,6 +22,8 @@
 
 原 `gqcdataset_codex_goal_20261118.zip` 仍缺原始字节与原始散列。已查本机项目、用户目录的相应文件名与下载目录中的相关包，以及仓库发布入口。2026-10-29 的 `gqc_handover.zip` 含 8,810 个归档条目，顶层是早期 GQC 文档与 A100 包。另一个十月论文对话 ZIP 只有三个条目。两者都没有该原包或这两份 PDF 的同名成员。讨论第 37 页列出的另一个压缩包用于矢量图源。
 
+2026-11-18 独立复查了远程 `main`（`de60ee4`）与研究分支（`db97afd`）可达的全部 72 个提交，以及当时 PR #10 的合并树，历史中唯一的 ZIP 对象是重建包 `466160579c927d79d0dfc12f3b263cf0809b60c4`。原 README 的下载路径在初始提交和当日 `main` 均返回 HTTP 404，GitHub 发布记录与 Actions 产物均为零，本机另查的 A100 备份 9,042 个条目也无原包文件名，仍需能取得原始字节的文件或链接。[当时的研究树](https://github.com/jinzhezenggroup/vibedataset/tree/db97afd179bab1ab6ca06fefc69884dc86e8d014/downloads) · [初始 README](https://github.com/jinzhezenggroup/vibedataset/blob/8e329d573ce3cdc9210cdc9d2d1766940cfa7d1c/README.md#L20) · [官方发布](https://github.com/jinzhezenggroup/vibedataset/releases)
+
 [重建版与校验文件](../../../downloads/)保留最初发布的字节。找到原 ZIP 后才能核对其文件清单和差异。独立附件任务继续跟踪该项。[资料 issue #9](https://github.com/jinzhezenggroup/vibedataset/issues/9)
 
 在仓库根目录可运行以下检查。
