@@ -249,31 +249,29 @@ class DualResponseModel(MoleculeResponse):
 
     def combined_field(self, coefficients, observables=OBSERVABLE_IDS):
         """Solve one physical superposition. Recovery of individual scalars is caller-owned."""
-        begin = time.perf_counter()
+        check(coefficients is not None, 'invalid field coefficients')
+        batch = self.run_round((), (), (), self.new_cache(), combined_coefficients=coefficients,
+                               combined_observables=observables)
+        counts = {key: batch['counts'][key] for key in
+                  ('rhs_columns', 'jk_calls', 'operator_actions', 'solver_actions', 'cache_validation_actions')}
+        return {**batch['combined'], 'counts': counts, 'elapsed_seconds': batch['elapsed_seconds']}
+
+    def _combined_column(self, coefficients, observables):
         u = np.asarray(coefficients)
         check(u.shape == (3,) and u.dtype.kind in 'iuf' and np.isfinite(u).all(), 'invalid field coefficients')
         names = sorted(set(observables))
         check(set(names) <= set(OBSERVABLE_IDS), 'unknown combined-field observable')
-        before = self.counts.copy()
-        rhs = np.column_stack([self.rhs_values['fields'][key] for key in FIELD_IDS]) @ u.astype(float)
-        solve = solve_many(self, rhs[:, None], strategy='blocked', options=self.options,
-                           raise_on_failure=True, collect_basis=False)
-        result = solve.results[0]
-        check(result.residual_norm <= GATE, 'combined field failed physical residual')
-        counts = {'rhs_columns': 1, 'jk_calls': self.counts['jk_calls'] - before['jk_calls'],
-                  'operator_actions': self.counts['response_operator_actions'] - before['response_operator_actions'],
-                  'solver_actions': solve.operator_actions, 'cache_validation_actions': 0}
-        check(counts['operator_actions'] == solve.operator_actions, 'combined-field action count')
-        values = {j: float(self.rhs_values['observables'][j] @ result.solution) for j in names}
-        check(all(math.isfinite(value) for value in values.values()), 'nonfinite combined-field readout')
-        return {'problem_identity': self.problem.identity, 'coefficients': u.tolist(),
-                'origin_bohr': [0, 0, 0], 'combined_rhs_sha256': array_hash(rhs),
-                'field_identity': json_hash({'axes': self.endpoint_identity['fields'], 'coefficients': u.tolist(),
-                                             'rhs': array_hash(rhs)}),
-                'observable_identities': {j: self.endpoint_identity['observables'][j] for j in names},
-                'values': values,
-                'solution_sha256': array_hash(result.solution), 'true_residual': float(result.residual_norm),
-                'counts': counts, 'elapsed_seconds': time.perf_counter() - begin}
+        field = u.astype(np.float64)
+        check(np.isfinite(field).all(), 'field coefficients exceed FP64')
+        recorded = u.tolist() if u.dtype.kind in 'iu' else field.tolist()
+        rhs = np.column_stack([self.rhs_values['fields'][key] for key in FIELD_IDS]) @ field
+        check(np.isfinite(rhs).all(), 'nonfinite combined-field RHS')
+        digest = array_hash(rhs)
+        return rhs, {'problem_identity': self.problem.identity, 'coefficients': recorded,
+                     'origin_bohr': [0, 0, 0], 'combined_rhs_sha256': digest,
+                     'field_identity': json_hash({'axes': self.endpoint_identity['fields'], 'coefficients': recorded,
+                                                  'rhs': digest}),
+                     'observable_identities': {j: self.endpoint_identity['observables'][j] for j in names}}
 
     def _cached(self, group, key, cache):
         entry = cache[group][key]
@@ -298,17 +296,27 @@ class DualResponseModel(MoleculeResponse):
                 elif entry.get('solution_sha256') != array_hash(vector) or entry.get('rhs_sha256') != array_hash(b):
                     reason = 'content or physical RHS digest'
                 else:
+                    self.counts['cache_validation_actions'] += 1
                     residual = float(np.linalg.norm(self.apply(vector) - b))
-                    if residual > GATE:
+                    if not math.isfinite(residual):
+                        reason, residual = 'nonfinite physical response residual', None
+                    elif residual > GATE:
                         reason = 'physical response residual'
         return vector, {'group': group, 'id': key, 'decision': reason, 'true_residual': residual}
 
-    def run_round(self, requests, fields, observables, cache):
+    def run_round(self, requests, fields, observables, cache, *,
+                  combined_coefficients=None, combined_observables=OBSERVABLE_IDS):
         """Execute a selection with one block, then contract every requested scalar.
 
         Unselected cached endpoints are read only as needed to cover remaining
         edges. Among interchangeable cache hits use the fewest validations.
         A damaged chosen solution is replaced only after a successful solve.
+        If supplied, the physical combined field is the first column of that
+        same block. Each new column reports its residual and raw projections.
+        An explicitly selected ordinary column with no associated request
+        reports its three physical projections. Only ordinary vectors persist.
+        Cumulative submitted_rhs, submitted_blocks and cache_validation_actions
+        also include work incurred by calls that raise before returning.
         """
         start = time.perf_counter()
         before = self.counts.copy()
@@ -316,6 +324,10 @@ class DualResponseModel(MoleculeResponse):
         selected = {('fields', k) for k in fields} | {('observables', k) for k in observables}
         check(all(i in FIELD_IDS and j in OBSERVABLE_IDS for i, j in edges), 'unknown request')
         check(all(k in self.rhs_values[g] for g, k in selected), 'unknown endpoint')
+        columns, combined = [], None
+        if combined_coefficients is not None:
+            rhs, combined = self._combined_column(combined_coefficients, combined_observables)
+            columns.append(rhs)
         active = [{('fields', i), ('observables', j)} for i, j in edges]
         unknown = [ends for ends in active if not ends & selected]
         available = sorted({point for ends in unknown for point in ends if point[1] in cache[point[0]]})
@@ -336,12 +348,26 @@ class DualResponseModel(MoleculeResponse):
         before_solve = self.counts['response_operator_actions']
         cache_actions = before_solve - before['response_operator_actions']
         stats = {'rhs_rank': 0, 'residuals': {}, 'solver_actions': 0}
-        if missing:
-            b = np.column_stack([self.rhs_values[g][key] for g, key in missing])
-            result = solve_many(self, b, strategy='blocked', options=self.options,
+        columns.extend(self.rhs_values[g][key] for g, key in missing)
+        held = {}
+        if columns:
+            block_rhs = np.column_stack(columns)
+            self.counts['submitted_rhs'] += len(columns)
+            self.counts['submitted_blocks'] += 1
+            result = solve_many(self, block_rhs, strategy='blocked', options=self.options,
                                 raise_on_failure=True, collect_basis=False)
-            held = {}
-            for (g, key), part in zip(missing, result.results, strict=True):
+            parts = iter(result.results)
+            if combined is not None:
+                physical = next(parts)
+                check(physical.residual_norm <= GATE, 'combined field failed physical residual')
+                values = {j: float(self.rhs_values['observables'][j] @ physical.solution)
+                          for j in combined['observable_identities']}
+                check(all(math.isfinite(value) for value in values.values()), 'nonfinite combined-field readout')
+                combined.update(values=values, solution_sha256=array_hash(physical.solution),
+                                true_residual=float(physical.residual_norm))
+                stats['residuals']['combined_field'] = combined['true_residual']
+                stats['column_order'] = ['combined_field', *(f'{g}/{k}' for g, k in missing)]
+            for (g, key), part in zip(missing, parts, strict=True):
                 check(part.residual_norm <= GATE, 'new response failed physical residual')
                 vec = np.asarray(part.solution, dtype=np.float64)
                 held[(g, key)] = {'problem_identity': self.problem.identity, 'group': g, 'id': key,
@@ -351,37 +377,57 @@ class DualResponseModel(MoleculeResponse):
                                   'solver_true_residual': float(part.residual_norm)}
                 vectors[(g, key)] = vec
                 stats['residuals'][f'{g}/{key}'] = float(part.residual_norm)
-            # A foreign cache is never relabelled while stale unselected assets survive.
-            if cache['problem_identity'] != self.problem.identity:
-                cache.clear()
-                cache.update(self.new_cache())
-            for (g, key), row in held.items():
-                cache[g][key] = row
             stats.update(rhs_rank=result.rhs_rank, solver_actions=result.operator_actions)
         check(self.counts['response_operator_actions'] - before_solve == stats['solver_actions'], 'solver action count')
+        projections = {}
+        for point, vector in vectors.items():
+            side, key = point
+            if side == 'fields':
+                operators = self.rhs_values['observables']
+                targets = {obs for field, obs in edges if field == key}
+            else:
+                operators = self.rhs_values['fields']
+                targets = {field for field, obs in edges if obs == key}
+            if combined is not None and point in held and not targets:
+                targets = set(operators)
+            projections[point] = {target: float(operators[target] @ vector) for target in sorted(targets)}
+        if combined is not None:
+            stats['readouts'] = {'combined_field': combined['values']}
+            for point in missing:
+                stats['readouts']['/'.join(point)] = {k: v if math.isfinite(v) else None
+                                                      for k, v in projections[point].items()}
+            stats['raw_projection_count'] = len(combined['values']) + sum(map(len, projections.values()))
         rows = []
         for field, observable in edges:
             direct, adjoint = ('fields', field), ('observables', observable)
             if direct in vectors:
-                value = self.rhs_values['observables'][observable] @ vectors[direct]
+                value = projections[direct][observable]
                 via = 'direct'
             else:
-                value = self.rhs_values['fields'][field] @ vectors[adjoint]
+                value = projections[adjoint][field]
                 via = 'adjoint'
             row = self.assess(field, observable, value)
             row['via'] = via
             if self.oracle is None and row['raw_value'] is not None:
                 row['status'] = 'residual_verified'
             if direct in vectors and adjoint in vectors:
-                row['cross_side_difference'] = abs(float(value - self.rhs_values['fields'][field] @ vectors[adjoint]))
+                row['cross_side_difference'] = abs(value - projections[adjoint][field])
                 check(row['cross_side_difference'] <= ANALYTIC_TOL, 'direct/adjoint reciprocity disagreement')
             rows.append(row)
+        if held:
+            # Publish only after every residual, readout and action-count check.
+            if cache['problem_identity'] != self.problem.identity:
+                cache.clear()
+                cache.update(self.new_cache())
+            for (g, key), record in held.items():
+                cache[g][key] = record
         actions = self.counts['response_operator_actions'] - before['response_operator_actions']
         counts = {'jk_calls': self.counts['jk_calls'] - before['jk_calls'], 'operator_actions': actions,
-                  'rhs_columns': len(missing), 'cache_validation_actions': cache_actions,
+                  'rhs_columns': len(columns), 'cache_validation_actions': cache_actions,
                   'solver_actions': stats['solver_actions'], 'cache_rejections': sum(
                       x['decision'] != 'accepted' for x in checks), 'requests': len(rows)}
         return {'problem_identity': self.problem.identity, 'results': rows, 'counts': counts, 'block': stats,
                 'new_fields': [k for g, k in missing if g == 'fields'],
                 'new_observables': [k for g, k in missing if g == 'observables'],
-                'cache_checks': checks, 'elapsed_seconds': time.perf_counter() - start}
+                'cache_checks': checks, **({'combined': combined} if combined is not None else {}),
+                'elapsed_seconds': time.perf_counter() - start}
