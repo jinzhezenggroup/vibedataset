@@ -31,8 +31,8 @@
 
 ## 当前阶段
 
-本次交接材料于 2026-11-18（Asia/Shanghai）根据当前可见对话重建，修复了初始化 README 指向不存在文件的问题。**原 ZIP 与两份历史 PDF 未取得**，没有将它们冒充为已经恢复的附件。缺件在单独任务中跟踪，不阻塞公开源码工作。
+本次交接材料于 2026-11-18（Asia/Shanghai）根据当前可见对话重建，修复了初始化 README 指向不存在文件的问题。后来取得两份历史 PDF，已核对原始字节、页码及内容差异。原 ZIP 继续单独跟踪。[附件原件与核对记录](handoff/gqcdataset_codex_goal/attachments/README.md)
 
-完整第三方源码尚未获取、未完成源码审计，未预填科学实验或加速结果。源码目录是经核实的起始入口，不是“已阅读全部源码”的证明。
+固定版本、逐文件清单、实际审读与运行证据见[来源索引](handoff/gqcdataset_codex_goal/research/SOURCE_INDEX.md)和[研究结果](handoff/gqcdataset_codex_goal/research/RESULTS.md)。
 
 信息充分性、剩余科学程序生成、联合信息获取、目标质量控制、可持续扩展资产五条主线保持开放。历史 QMugs 四极矩、固定样本数和接口草案均为候选，后续路线依据源码与实验决定。
