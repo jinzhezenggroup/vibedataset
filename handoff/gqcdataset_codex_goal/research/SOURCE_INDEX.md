@@ -68,6 +68,15 @@ AIRS 的 QHNet 和 QH9 共用同一树。GQC、PySCF、Psi4 的独立发行版�
 - `trexio/python/examples` 固定为 `ad5c60aa6a7bca802c5918cef2aeb4debfa9f134`，递归内容见父库存。
 - `xtb/assets/aur/xtb-git` 固定为 `4c3d1a9078ff0e37a3c5ca1388e23394ce26bd8c`，递归内容见父库存。
 
+## 接管验收依据
+
+| #2 验收范围 | 可核查的结果 |
+|---|---|
+| 版本、用途、访问阻塞及继续处理方式 | 45 棵 Git 树逐项固定 SHA 与角色，正式归档锁定 DOI、版本、文件哈希；六项旧目录分别标明作者历史版本、衍生项目和原始缺件。[来源缺口](SOURCE_GAPS.md) |
+| 取得范围与可重做的完整性检查 | 各 Git 树列文件、模式、对象、子模块及 LFS 状态；外部权重、训练输入、数据服务与程序依赖另有具体缺件。正式归档对 915 份普通文件逐一记录哈希。[版本锁](sources.lock.json) |
+| 获取、索引、阅读、追踪与运行独立记账 | Git 文件与归档成员使用各自的字节身份。重复审读观察保留各自时间与证据，未读文件也在完整库存内。[人工记录](intake_review.json) · [逐文件表](source_coverage.csv) |
+| 后续审计可定位确定版本，缺口持续跟踪 | 28 条主张的固定 Git 源文件或正式归档成员路径均已解析。作者历史源码的论文对应、五项原始代码位置和外部资产可继续核实。[主张](claims.csv) · [遗留缺件](SOURCE_GAPS.md) |
+
 ## 重放中央台账
 
 在仓库根目录运行，已有 `_references/` 的固定快照与子模块应与版本锁相符。新的 checkout 可按获取协议重建。每次真实获取都会产生新时间戳；复核已发布库存时使用随仓库提交的压缩文件。覆盖表每个文件一行，同一 blob 的不同日期和证据保留在人工观察文件内，CSV 多个证据路径以 JSON 数组表示。[接管与重新获取命令](INTAKE.md) · [生成器](../tools/build_source_ledger.py) · [验证器](../tools/verify_source_ledger.py)
@@ -82,4 +91,21 @@ python3 handoff/gqcdataset_codex_goal/tools/verify_source_ledger.py
 ```bash
 python3 handoff/gqcdataset_codex_goal/tools/verify_source_ledger.py \
   --archive mlelec_materialscloud_v1 "$MATERIALSCLOUD_ARCHIVE"
+```
+
+独立重放新建一个 Git checkout，仅复用已核验的第三方源码树。工作机的未压缩库存没有进入该 checkout。以下命令重新生成发布锁和覆盖表，逐字节比较审读记录、主张、锁、覆盖表及每份压缩库存，并把比较结果写入当前工作区的核验回执。选项 `--preserve-from` 检查上一轮固定项目提交中的 38 个根审查、86 条文件观察和 14 条主张是否均被完整保留。
+
+```bash
+ledger_replay=$(mktemp -d)
+git clone --quiet --local --no-checkout . "$ledger_replay"
+git -C "$ledger_replay" checkout --quiet --detach "$(git rev-parse HEAD)"
+ln -s "$PWD/_references" "$ledger_replay/_references"
+(
+  cd "$ledger_replay"
+  python3 handoff/gqcdataset_codex_goal/tools/build_source_ledger.py
+  python3 handoff/gqcdataset_codex_goal/tools/verify_source_ledger.py
+)
+python3 handoff/gqcdataset_codex_goal/tools/verify_source_ledger.py \
+  --archive mlelec_materialscloud_v1 "$MATERIALSCLOUD_ARCHIVE" --compare-replay "$ledger_replay" \
+  --preserve-from ab1b4592e3996fc7765b22ad8dc0514b8683451d
 ```

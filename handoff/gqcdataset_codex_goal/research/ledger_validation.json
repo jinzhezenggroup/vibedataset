@@ -1,21 +1,51 @@
 {
-  "checked_at_utc": "2026-11-17T19:08:31.268088+00:00",
+  "checked_at_utc": "2026-11-17T20:54:45.698265+00:00",
   "result": "passed",
   "coverage_counts": {
-    "indexed": 264598,
-    "read": 20,
-    "behavior_traced": 60,
-    "executed": 30
+    "indexed": 268259,
+    "read": 23,
+    "behavior_traced": 88,
+    "executed": 46
   },
-  "source_lock_sha256": "e98f3e9920e735b5511d4ffec0bb243a09ecc4909f33a5a026993e20d7b5c0fa",
-  "source_coverage_sha256": "49ebee9961c0df2d79733ccd60a823585fa8825f3a0e24b51d9b4d33da1c2722",
+  "reviewer_observations": 124,
+  "reviewed_paths": 119,
+  "unique_claims": 28,
+  "catalog_original_source_locations_blocked": 5,
+  "release_archives": {
+    "mlelec_materialscloud_v1": {
+      "indexed_members": 1182,
+      "bytes_and_members_rechecked": true
+    }
+  },
+  "source_review_sha256": "bad6e64e5796da54f23a21a1acaff1d632abc50c57ef84134c93e64d2167b53b",
+  "claims_sha256": "5efe4d796d73e99d3f7bc39b44fb77bea19d140e74be640ae69763e082bab592",
+  "source_lock_sha256": "6b4d111f9a510451e7819fba8c67002794bb7add0e20f057d68c6937da04bb05",
+  "source_coverage_sha256": "f72c155a52e88a12f668e14252b1c76f4b024d5b546a72683c74ea1e55463fda",
   "checks": [
     "inventory gzip and SHA256 round-trip",
     "lock vs checkout commit/tree and clean state",
-    "exact full-tree coverage including submodule commits",
+    "git ls-tree path/mode/object equality for roots and initialized submodule commits",
     "no duplicate or missing paths",
     "reviewed CRLF conversions verified against pinned blobs and Git attributes",
-    "read/traced/executed flags backed by explicit blob-bound reviewer records"
+    "each dated evidence path and aggregated file flag matches its blob-bound observations",
+    "all claim source paths and snapshot IDs resolve",
+    "catalog origin evidence and formal release archive inventories verified"
   ],
-  "scope": "Ledger consistency only; no third-party behavior or numerical validation."
+  "scope": "Ledger consistency only; no third-party behavior or numerical validation.",
+  "compressed_only_replay": {
+    "result": "identical",
+    "repository_commit": "a519b46fdc665d10839716a2f1a6f528b623771d",
+    "git_inventories": 45,
+    "release_member_inventories": 1,
+    "local_uncompressed_inventories": 0,
+    "replay_validated_at_utc": "2026-11-17T20:52:17.245678+00:00",
+    "scope": "Separate checkout and compressed-only ledger rebuild, sharing verified third-party checkouts."
+  },
+  "prior_evidence": {
+    "commit": "ab1b4592e3996fc7765b22ad8dc0514b8683451d",
+    "root_reviews": 38,
+    "file_observations": 86,
+    "claims": 14,
+    "result": "preserved"
+  }
 }
