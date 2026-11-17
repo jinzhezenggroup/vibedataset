@@ -1,0 +1,107 @@
+{
+  "id": "phisnet_casnet_fork",
+  "source": {
+    "id": "phisnet_casnet_fork",
+    "catalog_ids": [
+      "phisnet"
+    ],
+    "priority": "P0",
+    "repository_url": "https://github.com/marquetand/phisnet_fork",
+    "role": "later_adaptation",
+    "commit": "398f215554146069a386809a4bd3bed83eddf87a",
+    "checkout_path": "_references/phisnet_casnet_fork",
+    "paper_version_status": "Later CasNet derivative, not a verified copy of original paper release.",
+    "selection_reason": "Establish a second documented descendant of the original OpenReview method, apart from nablaDFT."
+  },
+  "started_at_utc": "2026-11-17T19:51:43.638681+00:00",
+  "status": "indexed_pending_review",
+  "commands": [
+    {
+      "argv": [
+        "git",
+        "init",
+        "--quiet"
+      ],
+      "cwd": "_references/phisnet_casnet_fork",
+      "started_at_utc": "2026-11-17T19:51:43.638860+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.003164415989886038,
+      "ended_at_utc": "2026-11-17T19:51:43.642264+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "remote",
+        "add",
+        "origin",
+        "https://github.com/marquetand/phisnet_fork"
+      ],
+      "cwd": "_references/phisnet_casnet_fork",
+      "started_at_utc": "2026-11-17T19:51:43.642465+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.0021888049959670752,
+      "ended_at_utc": "2026-11-17T19:51:43.644806+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "protocol.file.allow=never",
+        "fetch",
+        "--depth=1",
+        "--no-tags",
+        "origin",
+        "398f215554146069a386809a4bd3bed83eddf87a"
+      ],
+      "cwd": "_references/phisnet_casnet_fork",
+      "started_at_utc": "2026-11-17T19:51:43.644959+00:00",
+      "stdout": "",
+      "stderr": "\u6765\u81ea https://github.com/marquetand/phisnet_fork\n * branch            398f215554146069a386809a4bd3bed83eddf87a -> FETCH_HEAD\n",
+      "returncode": 0,
+      "elapsed_seconds": 2.6512213009991683,
+      "ended_at_utc": "2026-11-17T19:51:46.296459+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "core.autocrlf=false",
+        "checkout",
+        "--detach",
+        "398f215554146069a386809a4bd3bed83eddf87a"
+      ],
+      "cwd": "_references/phisnet_casnet_fork",
+      "started_at_utc": "2026-11-17T19:51:46.296986+00:00",
+      "stdout": "",
+      "stderr": "HEAD \u76ee\u524d\u4f4d\u4e8e 398f215 vectorizing loss to avoid memory overflow\n",
+      "returncode": 0,
+      "elapsed_seconds": 0.013416533009149134,
+      "ended_at_utc": "2026-11-17T19:51:46.313233+00:00"
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "/home/lhshen/vibedataset/handoff/gqcdataset_codex_goal/tools/inventory_sources.py",
+        "_references/phisnet_casnet_fork",
+        "--recurse-submodules",
+        "--json",
+        "handoff/gqcdataset_codex_goal/research/inventories/phisnet_casnet_fork.json"
+      ],
+      "cwd": ".",
+      "started_at_utc": "2026-11-17T19:51:46.313691+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.07676785100193229,
+      "ended_at_utc": "2026-11-17T19:51:46.390751+00:00"
+    }
+  ],
+  "receipt_path": "handoff/gqcdataset_codex_goal/research/acquisition/phisnet_casnet_fork-20261117T195143638661Z.json",
+  "resolved_commit": "398f215554146069a386809a4bd3bed83eddf87a",
+  "inventory_path": "handoff/gqcdataset_codex_goal/research/inventories/phisnet_casnet_fork.json",
+  "ended_at_utc": "2026-11-17T19:51:46.391090+00:00"
+}
