@@ -1,4 +1,12 @@
 {
+  "all_client_seconds": 11.682970614987426,
+  "all_client_setup_jk": 60,
+  "all_client_solve_jk": 1237,
+  "all_client_status": {
+    "qualified": 37,
+    "reference_unavailable": 45,
+    "withheld": 71
+  },
   "all_status": {
     "qualified": 37,
     "reference_unavailable": 45,

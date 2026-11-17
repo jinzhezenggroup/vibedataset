@@ -31,7 +31,9 @@ n5 的 RTX 5090 作业 2047 批量产生 11 个能量，GQC 实际用了 139 个
 
 ## 读取与复现
 
-将同一批 99 条真实请求经过持久缓存 CLI，逐项与独立结果表核对，9/63/27 个状态和全部发布值完全一致。该次新数据库用 40 次建模与 1,000 次响应 J/K，墙时 17.81 s。返回码 1 表示清单中有暂缓或缺态记录，完整输出已经写出。重复请求、并发、原子提交和历史标量文件的使用见 CLI 文档。[实测请求](requests.jsonl) · [实测客户端输出](cli-result.json.gz) · [输入、缓存和复用历史](../response_dataset_cli/README.md)
+普通 CLI 默认接受两个来源索引中的所有 17 个 ID。把 153 项放入一张清单、使用全新科学缓存实际执行，37/71/45 个状态及所有发布值与数据集逐行相同，12 份有态记录共 60 次建模和 1,237 次求解 J/K。使用有先前编译产物的核目录，此次进程耗时 11.68 s。[完整输入](all-requests.jsonl) · [默认入口原始回执](all-cli-result.json.gz)
+
+将另 11 个留出分子的 99 条真实请求经过显式索引的持久缓存 CLI，逐项与独立结果表核对，9/63/27 个状态和全部发布值完全一致。该次新数据库用 40 次建模与 1,000 次响应 J/K，墙时 17.81 s。返回码 1 表示清单中有暂缓或缺态记录，完整输出已经写出。重复请求、并发、原子提交和历史标量文件的使用见 CLI 文档。[实测请求](requests.jsonl) · [实测客户端输出](cli-result.json.gz) · [输入、缓存和复用历史](../response_dataset_cli/README.md)
 
 在仓库根目录执行，使用首批实验记录中的独立 Python 环境。n5 几何选择增加 `--remaining-from`，完整复扫同一发布文件，逐层核对首批记录原文和 SHA，再选择余下成员。重新调度可沿用作业 2046 的分发命令，将 cohort 路径改为本目录的 cohort.json，并作为 sbatch 脚本的第一个参数；作业 2047 的输入摘要在本目录中。
 
@@ -45,6 +47,7 @@ export PYTHONDONTWRITEBYTECODE=1 OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NU
 python scripts/probe_gqc_dual_response.py --index "$e/qm9_extension/assets/index.json" --out .work/qm9-unseen-oracle-new
 python scripts/probe_scalar_response.py --assets "$e/qm9_extension/assets" --oracles "$e/qm9_extension/oracles" --out .work/qm9-unseen-scalar-new
 python scripts/probe_response_equivalence.py --assets "$e/qm9_extension/assets" --oracles "$e/qm9_extension/oracles" --out .work/qm9-unseen-same-operator-new
+python scripts/complete_response_dataset.py --requests "$e/qm9_extension/all-requests.jsonl" --cache-db .work/qm9-all-new.sqlite --out .work/qm9-all-new.json
 python scripts/complete_response_dataset.py --requests "$e/qm9_extension/requests.jsonl" --source-index "$e/qm9_extension/assets/index.json" --oracle-index "$e/qm9_extension/oracle-index.json" --cache-db .work/qm9-unseen-new.sqlite --out .work/qm9-unseen-client-new.json
 ```
 

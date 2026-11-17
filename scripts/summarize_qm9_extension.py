@@ -19,6 +19,20 @@ def read(name):
     return json.loads(b)
 
 
+def validate_client(result, targets, inputs):
+    by_key = {(r['qm9_id'],r['field'],r['observable']):r for r in targets}
+    check(result['input_sha256'] == sha256((DATA/inputs).read_bytes()).hexdigest(), 'client input digest')
+    seen = set()
+    for r in result['records']:
+        req = r['request']
+        k = req['record_id'], req['field'], req['observable']
+        target = by_key[k]
+        status = {'qualified':'qualified', 'response_rejected':'withheld', 'reference_unavailable':'reference_unavailable'}[target['status']]
+        check(r['status'] == status and r['value'] == target['value'] and k not in seen, str(k) + ': CLI mismatch')
+        seen.add(k)
+    check(seen == by_key.keys(), 'client denominator')
+
+
 def main():
     parser = ArgumentParser(description=__doc__)
     parser.add_argument('--out', type=Path, required=True)
@@ -42,17 +56,10 @@ def main():
         if r['status'] == 'completed':
             check(sha256((DATA/r['oracle']).read_bytes()).hexdigest() == r['sha256'], r['oracle'])
     result = read('cli-result.json.gz')
+    validate_client(result,records,'requests.jsonl')
+    all_client = read('all-cli-result.json.gz')
+    validate_client(all_client,labels,'all-requests.jsonl')
     by_key = {(r['qm9_id'],r['field'],r['observable']):r for r in records}
-    check(result['input_sha256'] == sha256((DATA/'requests.jsonl').read_bytes()).hexdigest(), 'client input digest')
-    seen = set()
-    for r in result['records']:
-        req = r['request']
-        k = req['record_id'], req['field'], req['observable']
-        target = by_key[k]
-        status = {'qualified':'qualified', 'response_rejected':'withheld', 'reference_unavailable':'reference_unavailable'}[target['status']]
-        check(r['status'] == status and r['value'] == target['value'] and k not in seen, str(k) + ': CLI mismatch')
-        seen.add(k)
-    check(seen == by_key.keys(), 'client denominator')
     scalar = read('scalar-summary.json.gz')
     events = [json.loads(line) for line in gzip.decompress((DATA/'scalar-events.jsonl.gz').read_bytes()).splitlines()]
     table, _ = scalar_tables(scalar,events,oracles,{'all_sources':set(oracles)})
@@ -100,7 +107,10 @@ def main():
                'diagnostic_independently_qualified':sum(v['independent_reference_qualified'] for v in checked),
                'diagnostic_seconds':study['total_seconds'],'client_status':result['counts_by_status'],
                'client_jk':sum(w['round_jk'] for w in result['work']),'client_setup_jk':sum(w['setup_jk'] for w in result['work']),
-               'client_seconds':result['seconds']}
+               'client_seconds':result['seconds'], 'all_client_status':all_client['counts_by_status'],
+               'all_client_solve_jk':sum(w['round_jk'] for w in all_client['work']),
+               'all_client_setup_jk':sum(w['setup_jk'] for w in all_client['work']),
+               'all_client_seconds':all_client['seconds']}
     (out/'verification.json').write_text(json.dumps(account,indent=2,sort_keys=True)+'\n')
 
 
