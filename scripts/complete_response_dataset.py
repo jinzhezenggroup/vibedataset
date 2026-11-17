@@ -19,6 +19,8 @@ from gqc_dual_response import ANALYTIC_TOL, FIELD_IDS, FIELD_TOL, GATE, GQC_PIN,
 from probe_gqc_residual import ROOT, file_hash, json_hash
 from probe_scalar_response import DIAGONAL, decoder, recoverable
 from response_cover import plan_cover
+from response_field_plan import SUPPORTS, plan_field_block
+from generativeqc.response_solver import ResponseSolveError
 
 EXPERIMENTS = ROOT / 'handoff/gqcdataset_codex_goal/research/experiments'
 DEFAULT_CATALOGS = (
@@ -360,7 +362,9 @@ def complete_missing(model, missing, cache, kernel_dir, known):
             relation['reconstructions'].append({'field': field, 'observable': observable, 'operands': [
                 {'pair': p, 'value': known[p][0]['value'], 'target_identity': known[p][0]['target_identity'],
                  'source_attempt': known[p][1]} for p in deps], 'candidate': grade})
-            if grade['qualified']:
+            if grade['qualified'] is None and model.oracle is None and grade['raw_value'] is not None:
+                grade['status'] = 'residual_verified'
+            if grade['qualified'] or grade['status'] == 'residual_verified':
                 computed.append(grade)
             else:
                 retry.append((field, observable))
@@ -378,7 +382,78 @@ def complete_missing(model, missing, cache, kernel_dir, known):
     return ordinary
 
 
-def run_group(db, name, ctx, requests, kernel_dir, history, relations):
+# The original split route remains a measurable same-protocol comparator.
+complete_missing_split = complete_missing
+
+
+def complete_field_block(model, missing, cache, kernel_dir, known, *, supports=SUPPORTS):
+    """Execute the selected field sum together with all remaining ordinary endpoints."""
+    cached = cache['fields'], cache['observables']
+    plan = plan_field_block(missing, known, *cached, supports=supports)
+    baseline_fields, baseline_obs = plan_cover(missing, *cached)
+    relation = {'used': bool(plan.support), 'support': list(plan.support),
+                'ordinary_cover_rhs_lower_bound': len(baseline_fields) + len(baseline_obs),
+                'planned_new_rhs': plan.new_rhs, 'reconstructions': [], 'ordinary_retries': []}
+    if not plan.support:
+        measured = model.run_round(plan.ordinary_requests, plan.fields, plan.observables, cache)
+        measured.update(relation=relation, chosen_fields=list(plan.fields), chosen_observables=list(plan.observables))
+        return measured
+
+    start = time.perf_counter()
+    kernel = decoder(kernel_dir, len(plan.support) - 1)
+    relation.update(decoder_setup_seconds=time.perf_counter() - start,
+                    decoder_binary_sha256=file_hash(kernel.library._name))
+    before = model.counts.copy()
+    try:
+        measured = model.run_round(plan.ordinary_requests, plan.fields, plan.observables, cache,
+                                   combined_coefficients=tuple(int(f in plan.support) for f in FIELD_IDS),
+                                   combined_observables={obs for _, obs in plan.operands})
+    except ResponseSolveError as error:
+        # Count the unsuccessful joint solve before reverting to the unmodified physical problem.
+        spent = model.counts - before
+        lost = {'jk_calls': spent['jk_calls'], 'operator_actions': spent['response_operator_actions'],
+                'rhs_columns': spent['submitted_rhs'], 'cache_validation_actions': spent['cache_validation_actions'],
+                'solver_actions': spent['response_operator_actions'] - spent['cache_validation_actions']}
+        relation.update(failed_block={'reason': str(error), 'counts': lost, 'submitted_blocks': spent['submitted_blocks']},
+                        ordinary_retries=sorted(missing))
+        measured = model.run_round(missing, baseline_fields, baseline_obs, cache)
+        measured['counts'] = dict(Counter(measured['counts']) + Counter(lost))
+        measured.update(relation=relation, chosen_fields=list(baseline_fields), chosen_observables=list(baseline_obs))
+        return measured
+    combined = measured['combined']
+    relation['combined'] = combined
+    for (field, obs), deps in plan.operands.items():
+        prior = [known[edge][0]['value'] for edge in deps]
+        values = [combined['values'][obs], *prior]
+        feeds = {k: np.asarray(v, dtype=np.float64) for k, v in zip(('combined', 'first', 'second')[:len(values)], values, strict=True)}
+        decoded = float(kernel.execute(feeds)['missing'])
+        grade = model.assess(field, obs, decoded)
+        grade['via'] = 'compiled_scalar_relation'
+        if grade['qualified'] is None and model.oracle is None and grade['raw_value'] is not None:
+            grade['status'] = 'residual_verified'
+        relation['reconstructions'].append({'field': field, 'observable': obs, 'operands': [
+            {'pair': edge, 'value': known[edge][0]['value'], 'target_identity': known[edge][0]['target_identity'],
+             'source_attempt': known[edge][1]} for edge in deps], 'candidate': grade})
+        if grade['qualified'] is False:
+            relation['ordinary_retries'].append((field, obs))
+        else:
+            measured['results'].append(grade)
+    if relation['ordinary_retries']:
+        retries = relation['ordinary_retries']
+        retry_fields, retry_obs = plan_cover(retries, cache['fields'], cache['observables'])
+        retry = model.run_round(retries, retry_fields, retry_obs, cache)
+        relation['retry_block'] = retry['block']
+        measured['results'].extend(retry['results'])
+        measured['cache_checks'].extend(retry['cache_checks'])
+        measured['counts'] = dict(Counter(measured['counts']) + Counter(retry['counts']))
+        measured['new_fields'].extend(retry['new_fields'])
+        measured['new_observables'].extend(retry['new_observables'])
+    measured['counts']['requests'] = len(measured['results'])
+    measured.update(relation=relation, chosen_fields=list(plan.fields), chosen_observables=list(plan.observables))
+    return measured
+
+
+def run_group(db, name, ctx, requests, kernel_dir, history, relations, scalar_plan='blocked'):
     meta, array, oracle, endpoint, provenance, identity = ctx
     grouped = defaultdict(list)
     for row in requests:
@@ -405,7 +480,7 @@ def run_group(db, name, ctx, requests, kernel_dir, history, relations):
         work['lock_wait_seconds'] = time.perf_counter() - start
         imported, work['rejected_history'] = historical_scalars(history, ctx)
         work['validated_history_scalars'] = len(imported)
-        operands = {(other, observable) for field, observable in grouped if (field, observable) in DIAGONAL
+        operands = {(other, observable) for field, observable in grouped
                     for other in FIELD_IDS if other != field} if relations else set()
         known = {}
         for edge in sorted(grouped.keys() | operands):
@@ -434,7 +509,8 @@ def run_group(db, name, ctx, requests, kernel_dir, history, relations):
             work['setup_seconds'] = model.setup['seconds']
             solve_start = time.perf_counter()
             if relations:
-                measured = complete_missing(model, missing, cache, kernel_dir, known)
+                complete = complete_field_block if scalar_plan == 'blocked' else complete_missing_split
+                measured = complete(model, missing, cache, kernel_dir, known)
                 work.update(relation=measured['relation'], chosen_fields=measured['chosen_fields'],
                             chosen_observables=measured['chosen_observables'])
             else:
@@ -442,7 +518,7 @@ def run_group(db, name, ctx, requests, kernel_dir, history, relations):
                 work.update(chosen_fields=list(fields), chosen_observables=list(obs))
                 measured = model.run_round(missing, fields, obs, cache)
             work.update(round_jk=measured['counts']['jk_calls'], rhs=measured['counts']['rhs_columns'],
-                        counts=measured['counts'], cache_checks=measured['cache_checks'],
+                        counts=measured['counts'], block=measured['block'], cache_checks=measured['cache_checks'],
                         solve_and_assess_seconds=time.perf_counter() - solve_start,
                         native_kernel_sha256=[k['binary_sha256'] for k in model.setup['native_kernels']])
             for grade in measured['results']:
@@ -490,6 +566,8 @@ def main():
     parser.add_argument('--oracle-index', type=Path, help='select the independent oracle catalog for an explicit source')
     parser.add_argument('--kernel-cache', type=Path, help='GQC generated binary cache')
     parser.add_argument('--decode-known-scalars', action='store_true', help='enable exact 3x3 scalar relations using qualified cached operands')
+    parser.add_argument('--scalar-plan', choices=('blocked', 'split-xyz'), default='blocked',
+                        help='execution for scalar relations enabled by --history or --decode-known-scalars')
     parser.add_argument('--history', nargs=2, metavar=('SHA256', 'JSON'), help='accept producer-computed labels from this checksum-pinned earlier batch; enables scalar relations')
     args = parser.parse_args()
     start = time.perf_counter()
@@ -520,7 +598,7 @@ def main():
             try:
                 ctx = bound_context(name, cohort, oracle, member, release, source_index, oracle_index)
                 receipt = run_group(db, name, ctx, requests, kernel_dir, history.get(name, []),
-                                    args.decode_known_scalars or args.history is not None)
+                                    args.decode_known_scalars or args.history is not None, args.scalar_plan)
                 if receipt:
                     attempts.append(receipt)
             except (OSError, ValueError, KeyError, TypeError, sqlite3.Error) as e:
