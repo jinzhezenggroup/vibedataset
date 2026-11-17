@@ -1,0 +1,94 @@
+{
+  "experiment_id": "N5-DS-001",
+  "source": "https://github.com/MolSSI/QCFractal",
+  "source_commit": "4ec1ed623f82536076c069dd65a4eb132969d9ed",
+  "input_manifest": [
+    {
+      "path": "qcarchivetesting/qcarchivetesting/qcschema_v1_data/error_psi4_water_energy_1.json.xz",
+      "git_blob": "d2fd9652642768ed88e35bedc0023b74c5abacff",
+      "sha256": "d852cc5e4839535a9fc52bc30ff141e2efab1918709ffdf3450d75d0f6422ce3",
+      "bytes": 3212
+    },
+    {
+      "path": "qcarchivetesting/qcarchivetesting/qcschema_v1_data/error_psi4_water_energy_2.json.xz",
+      "git_blob": "bd75afb658d6bf354643dc12f7ce2c932c9f6a26",
+      "sha256": "b97d2c0dbfd79164a377e69eb0b13f5e11c084c84b2e37851189961eb0a45e98",
+      "bytes": 4800
+    },
+    {
+      "path": "qcarchivetesting/qcarchivetesting/qcschema_v1_data/sp_psi4_benzene_energy_1.json.xz",
+      "git_blob": "8e94aadf25bae3c5560c4a8c658d3e90645abdaa",
+      "sha256": "f1d23c766fc2d7ff9cd6c7f9b0fac0ca7f009f36aa082edac560e2ad48e00ad8",
+      "bytes": 6292
+    },
+    {
+      "path": "qcarchivetesting/qcarchivetesting/qcschema_v1_data/sp_psi4_benzene_energy_2.json.xz",
+      "git_blob": "3b8bb55fef680d12e221930ba9cf76e03d1b764c",
+      "sha256": "a89c5155bc8d31b0cde2a9fd7bcf7abeec3501d7bf364bc4c193eb06315300a1",
+      "bytes": 6300
+    },
+    {
+      "path": "qcarchivetesting/qcarchivetesting/qcschema_v1_data/sp_psi4_benzene_energy_3.json.xz",
+      "git_blob": "38f5e9a9451266fcc33f8351031507d268e00468",
+      "sha256": "2377bf8f8fc780a846a96187d47d649983de12a3b0cd1c3373e043b5d16a43c1",
+      "bytes": 6300
+    },
+    {
+      "path": "qcarchivetesting/qcarchivetesting/qcschema_v1_data/sp_psi4_fluoroethane_wfn.json.xz",
+      "git_blob": "c26ec2227ca81cd0b1a0162513a86d6da8432473",
+      "sha256": "6deb072f36ba1fb106ef888029d5d9e7409e6e0a5c23fdcc0c604dc2832fa143",
+      "bytes": 9228
+    },
+    {
+      "path": "qcarchivetesting/qcarchivetesting/qcschema_v1_data/sp_psi4_h2_b3lyp_nativefiles.json.xz",
+      "git_blob": "13023040437432f4f49819e38007b7fd4bf9f855",
+      "sha256": "e8dd80de3375028bacbfae1e3839439e895ce5524c5ecb937d0cae1167a580fe",
+      "bytes": 6248
+    },
+    {
+      "path": "qcarchivetesting/qcarchivetesting/qcschema_v1_data/sp_psi4_peroxide_energy_wfn.json.xz",
+      "git_blob": "3e61e4b2dafd21f4569acf6dff9863db0ed28bb0",
+      "sha256": "370d0dc1eb7c77037634c6f04f7502abdce0f1fc23efad2a1a5dc5448c48b339",
+      "bytes": 8204
+    },
+    {
+      "path": "qcarchivetesting/qcarchivetesting/qcschema_v1_data/sp_psi4_water_energy.json.xz",
+      "git_blob": "ca16df603a800f79f66b3f923913b808f4444176",
+      "sha256": "edf0fb632e686c79f8ef3b3d1310abefc0f898bb5234cb1d30b309762d1af9ab",
+      "bytes": 5524
+    },
+    {
+      "path": "qcarchivetesting/qcarchivetesting/qcschema_v1_data/sp_psi4_water_gradient.json.xz",
+      "git_blob": "187493d669599fb83eb983db1d399cc69a9852c1",
+      "sha256": "83da9c3c51db17cca02685069099bf484b3b756e15229511f5922d64e8f27d54",
+      "bytes": 5928
+    },
+    {
+      "path": "qcarchivetesting/qcarchivetesting/qcschema_v1_data/sp_psi4_water_hessian.json.xz",
+      "git_blob": "1176f161d036ef780aeb43a04f7cc0bffa3dfbe5",
+      "sha256": "d752f8456cb7f49ed38896d81f289c54861605beda38fc301f0dbe87701dc519",
+      "bytes": 10340
+    },
+    {
+      "path": "qcarchivetesting/qcarchivetesting/qcschema_v1_data/sp_rdkit_benzene_energy.json.xz",
+      "git_blob": "2059c5b71fed0daa1cd736f78ce3695262a95fd2",
+      "sha256": "1e03c193fbabb76a1c7130051a1a29ddecd0fa052c5af29cc2e15d628750f00c",
+      "bytes": 864
+    },
+    {
+      "path": "qcarchivetesting/qcarchivetesting/qcschema_v1_data/sp_rdkit_water_energy.json.xz",
+      "git_blob": "362ee3aa21352e46d0d090c4318fdfbc392e26f7",
+      "sha256": "df4701bb7605b1c0d0a360e75a29506dbd50b7e4653d770e5bd452c6cca4d414",
+      "bytes": 752
+    }
+  ],
+  "calculator_config_path": "configs/checkpoint_probe.json",
+  "calculator_config_sha256": "2ec7b69c3ae8bbff8b80905d7feb9887fcf2b5fe91b040b80959296da5468a42",
+  "comparison": {
+    "same_protocol_hartree": 2e-09,
+    "independent_reference_hartree": 2e-08,
+    "pyscf_conv_tol": 1e-12,
+    "pyscf_conv_tol_grad": 1e-08,
+    "max_cycle": 150
+  }
+}
