@@ -1,0 +1,658 @@
+{
+  "job": "2046",
+  "project_commit": "e04a1e94dc8483c00ecc1c8b06c96cef65c5b654",
+  "finished_at_utc": "2026-11-17T19:37:59.603657+00:00",
+  "driver_sha256": "a80619ec7c26d53eef61d2be0fd715e201f6096a30076c1fd4877199abb260af",
+  "cohort_sha256": "58f676464786d78f1d5f2c8802532d222fd4f0e38987e897a706e8d3bd6558d2",
+  "config_sha256": "2ec7b69c3ae8bbff8b80905d7feb9887fcf2b5fe91b040b80959296da5468a42",
+  "n5_native_library_sha256": "67bc98a4549fe8854ed6ae65791c824024bd77a9e8e498c6891dea3b8de670c4",
+  "gqc_runtime_source_declaration": "2bf3fd98da9c6cfba46ca83345e63e1d934e4780",
+  "native_source_identity": "bda7f76be67202a57eb1001cfbe29bd4d4d844a85c144b1854a264a96ffdb208",
+  "basis_pack_sha256": "1bbb5611e5580d033e56eea7e24cf17ef85e58d0d6d67aa25e3732690822d6fe",
+  "gqc_protocol": {
+    "method": "rhf",
+    "basis": "sto-3g",
+    "device": "cuda",
+    "precision": "fp64",
+    "basis_representation": "spherical",
+    "density_fitting": "none",
+    "max_iterations": 150,
+    "energy_tolerance": 1e-10,
+    "density_tolerance": 1e-08,
+    "screening_tolerance": 1e-12,
+    "initial_guess": null
+  },
+  "helper_commit": "2791504cc238fe83d328fc1718080642b288222a",
+  "helper_hashes": {
+    "tools/generate_validation_references.py": "798e5e696b23a0721fc5840505748c094a8d4a68011dd8dfa9db044e3c5f450b",
+    "tools/generativeqc_validation/fixtures.py": "c14325583b310da2623e822f6ca3cefeb9e5a24bed4c3d87efb6fab19f780b4f",
+    "tools/generativeqc_posthf/reference.py": "6c239dbb0b96351ced0dc753cd18897e63eda79c79c72236674d9ae3722d35bf",
+    "tools/generativeqc_posthf/fixtures.py": "d7932c3ada4cc9f2edc34339520387797dced95f375686d838143bff524c2117"
+  },
+  "python": "3.13.12",
+  "packages": {
+    "generativeqc": "0.1.0",
+    "pyscf": "2.14.0",
+    "numpy": "2.4.6",
+    "scipy": "1.18.1"
+  },
+  "pyscf_libcgto_sha256": "337d956486a156f1aa7ca636ac5a91c6277058ffedb6db2efe714fee65f726e0",
+  "pyscf_libcint_sha256": "950bb0a297507369dce95b9013ef2c5b64b0fa36a0018c303c98e95efce7db7e",
+  "threads": {
+    "OMP_NUM_THREADS": "4",
+    "OPENBLAS_NUM_THREADS": "4",
+    "MKL_NUM_THREADS": "4"
+  },
+  "n_selected": 6,
+  "outcomes": {
+    "empty_stratum": 2,
+    "verified": 4,
+    "failed": 2
+  },
+  "rows": [
+    {
+      "stratum": "1-2/F",
+      "eligible_count": 0,
+      "name": null,
+      "status": "empty_stratum"
+    },
+    {
+      "stratum": "1-2/O",
+      "eligible_count": 3,
+      "name": "qm9-000003",
+      "qm9_id": 3,
+      "member_sha256": "904d7aafbbe7f8ca0cc23e92569aba27083d9ce0d53505a28f9f7f46e8562d7c",
+      "gqc": {
+        "valid": true,
+        "energy_hartree": -74.9638086692837,
+        "status": 0,
+        "message": "success",
+        "iterations": 8,
+        "fock_builds": 9,
+        "backend": "cuda",
+        "basis_metadata": {
+          "orbital": {
+            "name": "sto-3g",
+            "role": "orbital",
+            "mathematical_identity": "218ca59e55bea191c1ab300eba88d0c52c2f8f9230cdce4ce180a72f6d246b97",
+            "basis_identity": "cb4d7486a207478c98cb858e1d8b905335b17cef25cb44ae82333b9b6604505e",
+            "representation": "spherical",
+            "provenance": {
+              "source": "generativeqc/data/basis_pack.json; Basis Set Exchange",
+              "version": "Basis Set Exchange 0.11",
+              "license": "BSD-3-Clause",
+              "checksum": "6002092fea25331281cc095dc6dc41a6a3d7a2f0c88f82a1fbceac01225a897c"
+            },
+            "electrons": {
+              "atomic_numbers": [
+                8,
+                1,
+                1
+              ],
+              "nuclear_charges": [
+                8,
+                1,
+                1
+              ],
+              "ecp_core_electrons": [
+                0,
+                0,
+                0
+              ],
+              "ionic_charge": 0,
+              "electron_count": 10,
+              "multiplicity": 1,
+              "nalpha": 5,
+              "nbeta": 5
+            },
+            "shell_count": 5,
+            "primitive_count": 15
+          },
+          "model_identity": "8120e2594dce15d6267cb971aeef9af0d1b04bb5f2a02d89ce2793b2090a06aa"
+        },
+        "restart_origin": "cold"
+      },
+      "pyscf": {
+        "scf_cycles": 17,
+        "pyscf_energy_hartree": -74.96380866928351,
+        "n_ao": 7,
+        "scf_converged": true,
+        "electron_count": 10,
+        "pyscf_local_stability": {
+          "internal": true,
+          "external": true
+        },
+        "ortho": 8.881784197001252e-16,
+        "trace_error": 3.552713678800501e-15,
+        "scf_residual": 5.826450433232822e-13,
+        "physical_fock_error": 5.384581669432009e-15,
+        "gap_hartree": 0.9937597739724868,
+        "min_overlap_eigenvalue": 0.34536515814382335,
+        "independent_energy_error": 1.8474111129762605e-13,
+        "gates": {
+          "internal_stability": true,
+          "external_stability": true,
+          "metric": true,
+          "trace": true,
+          "residual": true,
+          "physical_fock": true,
+          "gap": true,
+          "independent_energy": true
+        }
+      },
+      "status": "verified",
+      "metadata_file": "qm9-000003.json",
+      "array_file": "qm9-000003.npz",
+      "reference_identity": "06223ff4dd5e4188137226482258f37c4961bbc447709d03f72f987ef0bfe941",
+      "metadata_sha256": "c0e5212e5f0def071ff6ec5dac88c0f9b893aa9c10107e73c514edba6e416e8f",
+      "array_file_sha256": "08d0cec5d6ac38620732cb37e07955668a07576e5ca3fc424212db1e8094f4ce",
+      "metadata_bytes": 5646,
+      "array_file_bytes": 8115,
+      "uncompressed_array_bytes": 20888,
+      "reference_and_storage_seconds": 1.0777609548531473
+    },
+    {
+      "stratum": "1-2/N",
+      "eligible_count": 2,
+      "name": "qm9-000002",
+      "qm9_id": 2,
+      "member_sha256": "8de6f908e39ec1e45dd552f8a68433ad04381821d68fdc8203871ad6cea2268a",
+      "gqc": {
+        "valid": true,
+        "energy_hartree": -55.454741646952826,
+        "status": 0,
+        "message": "success",
+        "iterations": 8,
+        "fock_builds": 9,
+        "backend": "cuda",
+        "basis_metadata": {
+          "orbital": {
+            "name": "sto-3g",
+            "role": "orbital",
+            "mathematical_identity": "463f468313da9e679be85a8367181268992ecdd59f671f9ab1a4e1f46bbabe27",
+            "basis_identity": "cb4d7486a207478c98cb858e1d8b905335b17cef25cb44ae82333b9b6604505e",
+            "representation": "spherical",
+            "provenance": {
+              "source": "generativeqc/data/basis_pack.json; Basis Set Exchange",
+              "version": "Basis Set Exchange 0.11",
+              "license": "BSD-3-Clause",
+              "checksum": "6002092fea25331281cc095dc6dc41a6a3d7a2f0c88f82a1fbceac01225a897c"
+            },
+            "electrons": {
+              "atomic_numbers": [
+                7,
+                1,
+                1,
+                1
+              ],
+              "nuclear_charges": [
+                7,
+                1,
+                1,
+                1
+              ],
+              "ecp_core_electrons": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "ionic_charge": 0,
+              "electron_count": 10,
+              "multiplicity": 1,
+              "nalpha": 5,
+              "nbeta": 5
+            },
+            "shell_count": 6,
+            "primitive_count": 18
+          },
+          "model_identity": "bfaa0c3d54e2415a77ba03458651385fd4580a3d8981bf73955302ce208c1376"
+        },
+        "restart_origin": "cold"
+      },
+      "pyscf": {
+        "scf_cycles": 40,
+        "pyscf_energy_hartree": -55.454741646952996,
+        "n_ao": 8,
+        "scf_converged": true,
+        "electron_count": 10,
+        "pyscf_local_stability": {
+          "internal": true,
+          "external": true
+        },
+        "ortho": 3.552713678800501e-15,
+        "trace_error": 0.0,
+        "scf_residual": 1.2299536389370758e-12,
+        "physical_fock_error": 3.552713678800501e-15,
+        "gap_hartree": 0.9946041304263308,
+        "min_overlap_eigenvalue": 0.26977611197921925,
+        "independent_energy_error": 1.7053025658242404e-13,
+        "gates": {
+          "internal_stability": true,
+          "external_stability": true,
+          "metric": true,
+          "trace": true,
+          "residual": true,
+          "physical_fock": true,
+          "gap": true,
+          "independent_energy": true
+        }
+      },
+      "status": "verified",
+      "metadata_file": "qm9-000002.json",
+      "array_file": "qm9-000002.npz",
+      "reference_identity": "a5551d65b98a544cd0ec8d2deb3f07636b334147462f1040b1554df22ea31f4b",
+      "metadata_sha256": "ba3df879fec63c9fa2b066018e85fcdc181061e653edebd362c55338088d70b4",
+      "array_file_sha256": "30b76d00731401ad9a0947c90f9e4a4e9ad51b43e5d40ab01ac0ff76b1f6946c",
+      "metadata_bytes": 6298,
+      "array_file_bytes": 13482,
+      "uncompressed_array_bytes": 34944,
+      "reference_and_storage_seconds": 0.09757127379998565
+    },
+    {
+      "stratum": "1-2/CH",
+      "eligible_count": 3,
+      "name": "qm9-000001",
+      "qm9_id": 1,
+      "member_sha256": "de172c51ea7b5a391b03b8e5bb9d518e6258e374778f0b14f8dbb2a794fbdab3",
+      "gqc": {
+        "valid": true,
+        "energy_hartree": -39.72659685883878,
+        "status": 0,
+        "message": "success",
+        "iterations": 10,
+        "fock_builds": 11,
+        "backend": "cuda",
+        "basis_metadata": {
+          "orbital": {
+            "name": "sto-3g",
+            "role": "orbital",
+            "mathematical_identity": "04f9be2c4aee23f1295253ccbba3967a5db9e39980e206e4c38bb20f266082b6",
+            "basis_identity": "cb4d7486a207478c98cb858e1d8b905335b17cef25cb44ae82333b9b6604505e",
+            "representation": "spherical",
+            "provenance": {
+              "source": "generativeqc/data/basis_pack.json; Basis Set Exchange",
+              "version": "Basis Set Exchange 0.11",
+              "license": "BSD-3-Clause",
+              "checksum": "6002092fea25331281cc095dc6dc41a6a3d7a2f0c88f82a1fbceac01225a897c"
+            },
+            "electrons": {
+              "atomic_numbers": [
+                6,
+                1,
+                1,
+                1,
+                1
+              ],
+              "nuclear_charges": [
+                6,
+                1,
+                1,
+                1,
+                1
+              ],
+              "ecp_core_electrons": [
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "ionic_charge": 0,
+              "electron_count": 10,
+              "multiplicity": 1,
+              "nalpha": 5,
+              "nbeta": 5
+            },
+            "shell_count": 7,
+            "primitive_count": 21
+          },
+          "model_identity": "34fa7326983a27f6bfed38469362fe9d1e3358d092b028653f6b30e2b19d3804"
+        },
+        "restart_origin": "cold"
+      },
+      "pyscf": {
+        "scf_cycles": 26,
+        "pyscf_energy_hartree": -39.72659685883864,
+        "n_ao": 9,
+        "scf_converged": true,
+        "electron_count": 10,
+        "pyscf_local_stability": {
+          "internal": true,
+          "external": true
+        },
+        "ortho": 1.9984014443252818e-15,
+        "trace_error": 7.105427357601002e-15,
+        "scf_residual": 5.984102102729594e-13,
+        "physical_fock_error": 5.329070518200751e-15,
+        "gap_hartree": 1.2282528335516651,
+        "min_overlap_eigenvalue": 0.22192727517989647,
+        "independent_energy_error": 1.4210854715202004e-13,
+        "gates": {
+          "internal_stability": true,
+          "external_stability": true,
+          "metric": true,
+          "trace": true,
+          "residual": true,
+          "physical_fock": true,
+          "gap": true,
+          "independent_energy": true
+        }
+      },
+      "status": "verified",
+      "metadata_file": "qm9-000001.json",
+      "array_file": "qm9-000001.npz",
+      "reference_identity": "325348cbb939cb15a39fa78c5e93b83e9d582a68c64492be96d06193a60c35e6",
+      "metadata_sha256": "30d9998b9102c93acb7a4e92b3690920b080b2e7d55043a67ca8350a20202f4e",
+      "array_file_sha256": "0eb696523f5067f441022488d6380f0e145e6346c00c88bc72d3e4b2b22cb15f",
+      "metadata_bytes": 7025,
+      "array_file_bytes": 21584,
+      "uncompressed_array_bytes": 55224,
+      "reference_and_storage_seconds": 0.1064668227918446
+    },
+    {
+      "stratum": "3/F",
+      "eligible_count": 0,
+      "name": null,
+      "status": "empty_stratum"
+    },
+    {
+      "stratum": "3/O",
+      "eligible_count": 5,
+      "name": "qm9-000011",
+      "qm9_id": 11,
+      "member_sha256": "26f69ba245af4fd3ac3ccbb6dce267202dd95c5cd9bb1c925bb9a292c4da85e9",
+      "gqc": {
+        "valid": true,
+        "energy_hartree": -150.94457788683258,
+        "status": 0,
+        "message": "success",
+        "iterations": 19,
+        "fock_builds": 20,
+        "backend": "cuda",
+        "basis_metadata": {
+          "orbital": {
+            "name": "sto-3g",
+            "role": "orbital",
+            "mathematical_identity": "5c58c7dca267d54cad48846a8ddcfe6291b8030a5f68655d26596dc187242dd9",
+            "basis_identity": "cb4d7486a207478c98cb858e1d8b905335b17cef25cb44ae82333b9b6604505e",
+            "representation": "spherical",
+            "provenance": {
+              "source": "generativeqc/data/basis_pack.json; Basis Set Exchange",
+              "version": "Basis Set Exchange 0.11",
+              "license": "BSD-3-Clause",
+              "checksum": "6002092fea25331281cc095dc6dc41a6a3d7a2f0c88f82a1fbceac01225a897c"
+            },
+            "electrons": {
+              "atomic_numbers": [
+                6,
+                6,
+                8,
+                1,
+                1,
+                1,
+                1
+              ],
+              "nuclear_charges": [
+                6,
+                6,
+                8,
+                1,
+                1,
+                1,
+                1
+              ],
+              "ecp_core_electrons": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "ionic_charge": 0,
+              "electron_count": 24,
+              "multiplicity": 1,
+              "nalpha": 12,
+              "nbeta": 12
+            },
+            "shell_count": 13,
+            "primitive_count": 39
+          },
+          "model_identity": "9f7f3a1dd21a68047d53e4d674359a2c277c8f71f390899e8d0edda3084041d4"
+        },
+        "restart_origin": "cold"
+      },
+      "pyscf": {
+        "scf_cycles": 100,
+        "pyscf_energy_hartree": -150.94457788683195,
+        "n_ao": 19,
+        "scf_converged": false,
+        "electron_count": 24
+      },
+      "status": "failed",
+      "error_type": "ValueError",
+      "error": "PySCF reference SCF failed",
+      "reference_and_storage_seconds": 0.15532039012759924
+    },
+    {
+      "stratum": "3/N",
+      "eligible_count": 1,
+      "name": "qm9-000010",
+      "qm9_id": 10,
+      "member_sha256": "0dbc9d6816a38ef69f6fba7756d8629246275558a73f872580e1258b497aff84",
+      "gqc": {
+        "valid": true,
+        "energy_hartree": -130.27080837597322,
+        "status": 0,
+        "message": "success",
+        "iterations": 14,
+        "fock_builds": 15,
+        "backend": "cuda",
+        "basis_metadata": {
+          "orbital": {
+            "name": "sto-3g",
+            "role": "orbital",
+            "mathematical_identity": "1a59c3a438296a163d09be91146d8711310c4a1fd865c17e29f2b4f19b350fa8",
+            "basis_identity": "cb4d7486a207478c98cb858e1d8b905335b17cef25cb44ae82333b9b6604505e",
+            "representation": "spherical",
+            "provenance": {
+              "source": "generativeqc/data/basis_pack.json; Basis Set Exchange",
+              "version": "Basis Set Exchange 0.11",
+              "license": "BSD-3-Clause",
+              "checksum": "6002092fea25331281cc095dc6dc41a6a3d7a2f0c88f82a1fbceac01225a897c"
+            },
+            "electrons": {
+              "atomic_numbers": [
+                6,
+                6,
+                7,
+                1,
+                1,
+                1
+              ],
+              "nuclear_charges": [
+                6,
+                6,
+                7,
+                1,
+                1,
+                1
+              ],
+              "ecp_core_electrons": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "ionic_charge": 0,
+              "electron_count": 22,
+              "multiplicity": 1,
+              "nalpha": 11,
+              "nbeta": 11
+            },
+            "shell_count": 12,
+            "primitive_count": 36
+          },
+          "model_identity": "ecc824a36cf77547855bc5c749f42ccc1c995cad69336fdfba3d855aa11c38b6"
+        },
+        "restart_origin": "cold"
+      },
+      "pyscf": {
+        "scf_cycles": 92,
+        "pyscf_energy_hartree": -130.27080837597367,
+        "n_ao": 18,
+        "scf_converged": true,
+        "electron_count": 22,
+        "pyscf_local_stability": {
+          "internal": true,
+          "external": true
+        },
+        "ortho": 1.2420221124255285e-13,
+        "trace_error": 7.105427357601002e-15,
+        "scf_residual": 4.395706021398382e-12,
+        "physical_fock_error": 8.881784197001252e-15,
+        "gap_hartree": 0.7641134545258401,
+        "min_overlap_eigenvalue": 0.15217474993688948,
+        "independent_energy_error": 4.547473508864641e-13,
+        "gates": {
+          "internal_stability": true,
+          "external_stability": true,
+          "metric": true,
+          "trace": true,
+          "residual": true,
+          "physical_fock": true,
+          "gap": true,
+          "independent_energy": true
+        }
+      },
+      "status": "verified",
+      "metadata_file": "qm9-000010.json",
+      "array_file": "qm9-000010.npz",
+      "reference_identity": "60dbe42b73d6706229d41f7d9e6eab39b6327b450e5cf2a004fd8953e66af355",
+      "metadata_sha256": "cadd1ce1ecda3b56a675e5b699a80a2e345238611ec363e212c5500bdf9a120a",
+      "array_file_sha256": "29383a898c848ee5dc3875c10b330082e3f2128a0a4d4ec0487bcdb35493c9f7",
+      "metadata_bytes": 9352,
+      "array_file_bytes": 531309,
+      "uncompressed_array_bytes": 850464,
+      "reference_and_storage_seconds": 0.2376908608712256
+    },
+    {
+      "stratum": "3/CH",
+      "eligible_count": 3,
+      "name": "qm9-000009",
+      "qm9_id": 9,
+      "member_sha256": "1844fc7b12188828c74dca76924992856e266d4fb715505b182809ec61bec8f0",
+      "gqc": {
+        "valid": true,
+        "energy_hartree": -114.44537968338784,
+        "status": 0,
+        "message": "success",
+        "iterations": 13,
+        "fock_builds": 13,
+        "backend": "cuda",
+        "basis_metadata": {
+          "orbital": {
+            "name": "sto-3g",
+            "role": "orbital",
+            "mathematical_identity": "44b15bc4dc56a80ec25e7b8754e2699395477b0584a9d71052c1d699f81b77a9",
+            "basis_identity": "cb4d7486a207478c98cb858e1d8b905335b17cef25cb44ae82333b9b6604505e",
+            "representation": "spherical",
+            "provenance": {
+              "source": "generativeqc/data/basis_pack.json; Basis Set Exchange",
+              "version": "Basis Set Exchange 0.11",
+              "license": "BSD-3-Clause",
+              "checksum": "6002092fea25331281cc095dc6dc41a6a3d7a2f0c88f82a1fbceac01225a897c"
+            },
+            "electrons": {
+              "atomic_numbers": [
+                6,
+                6,
+                6,
+                1,
+                1,
+                1,
+                1
+              ],
+              "nuclear_charges": [
+                6,
+                6,
+                6,
+                1,
+                1,
+                1,
+                1
+              ],
+              "ecp_core_electrons": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "ionic_charge": 0,
+              "electron_count": 22,
+              "multiplicity": 1,
+              "nalpha": 11,
+              "nbeta": 11
+            },
+            "shell_count": 13,
+            "primitive_count": 39
+          },
+          "model_identity": "6fa522d389fc3ff452100cbd830a9c343b298f7b03c375aaeffc6bd281b6f4af"
+        },
+        "restart_origin": "cold"
+      },
+      "pyscf": {
+        "scf_cycles": 87,
+        "pyscf_energy_hartree": -114.44537968338835,
+        "n_ao": 19,
+        "scf_converged": true,
+        "electron_count": 22,
+        "pyscf_local_stability": {
+          "internal": true,
+          "external": false
+        },
+        "ortho": 1.2585084195324996e-13,
+        "trace_error": 0.0,
+        "scf_residual": 3.715405790644631e-12,
+        "physical_fock_error": 1.9539925233402755e-14,
+        "gap_hartree": 0.7206560929061229,
+        "min_overlap_eigenvalue": 0.134387201463496,
+        "independent_energy_error": 5.115907697472721e-13,
+        "gates": {
+          "internal_stability": true,
+          "external_stability": false,
+          "metric": true,
+          "trace": true,
+          "residual": true,
+          "physical_fock": true,
+          "gap": true,
+          "independent_energy": true
+        }
+      },
+      "status": "failed",
+      "error_type": "ValueError",
+      "error": "failed gates: external_stability",
+      "reference_and_storage_seconds": 0.2233439963310957
+    }
+  ],
+  "operation_attempts": {
+    "load_library": 1,
+    "gqc_prepare": 1,
+    "gqc_execute": 1,
+    "reference_molecule": 6,
+    "reference_scf": 6,
+    "orbital_stability": 5,
+    "integrals_and_state": 5,
+    "snapshot_validation": 4,
+    "persist_reference": 4
+  },
+  "gqc_batch_seconds": 1.4138600253500044,
+  "total_production_seconds_through_assets": 4.4492880357429385
+}
