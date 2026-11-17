@@ -7,11 +7,13 @@ scalar reference data is used only after the requested contractions are made.
 from collections import Counter
 from itertools import combinations
 import json
+import math
+import os
 from pathlib import Path
+import tempfile
 import time
 
 import numpy as np
-from pyscf import scf
 
 from probe_gqc_residual import (GQC, MoleculeResponse, array_hash, check, file_hash,
                                 git, jk_and_observables, json_hash, max_error, write_json)
@@ -134,6 +136,19 @@ class DualResponseModel(MoleculeResponse):
             self.rhs_values['observables'][key] = vector.ravel()
             vjp_errors[key] = max_error(vector, -4 * self.co.T @ operator @ self.cv)
         check(max(vjp_errors.values()) <= GATE, 'generated readout VJP differs from RHF convention')
+        self.endpoint_identity = {'fields': {}, 'observables': {}}
+        elements = ({'x': self.raw_fields[0] * metric_scale, 'y': self.raw_fields[1] * metric_scale,
+                     'z': self.raw_fields[2] * metric_scale}, self.readouts)
+        contracts = {'x': 'h(F)=h0+F*r_x, atomic field', 'y': 'h(F)=h0+F*r_y, atomic field',
+                     'z': 'h(F)=h0+F*r_z, atomic field', 'q0': 'Mulliken net charge of atom 0, e',
+                     'zz': 'sum of electronic z^2, bohr^2', 'r2': 'sum of electronic |r|^2, bohr^2'}
+        for g, definitions in zip(('fields', 'observables'), elements, strict=True):
+            for key, matrix in definitions.items():
+                self.endpoint_identity[g][key] = json_hash({
+                    'problem': self.problem.identity, 'group': g, 'id': key, 'convention': contracts[key],
+                    'origin_bohr': [0, 0, 0], 'normalized_ao_operator': array_hash(matrix),
+                    'rhs_sha256': array_hash(self.rhs_values[g][key])})
+        self.contract_identity = json_hash(self.endpoint_identity)
         density = 2 * self.co @ self.co.T
         f_error = max_error(ref.hcore + self.potential(density), ref.fock)
         check(f_error <= 1e-9, 'stored Fock fails physical AO contraction')
@@ -155,6 +170,7 @@ class DualResponseModel(MoleculeResponse):
         check(max(dots) <= GATE and readout_error <= GATE, 'bilinear or dD/readout duality check failed')
         self.setup = {'name': self.name, 'source': self.source, 'problem_identity': self.problem.identity,
                       'reference_identity': ref.identity, 'geometry_hash': ref.geometry_hash,
+                      'contract_identity': self.contract_identity, 'endpoint_identities': self.endpoint_identity,
                       'basis_hash': ref.basis_hash, 'dimension': self.dimension, 'nbasis': n,
                       'nocc': ref.nocc, 'fock_error': f_error, 'vjp_errors': vjp_errors,
                       'scaled_dot_errors': dots, 'readout_dot_error': float(readout_error),
@@ -168,32 +184,59 @@ class DualResponseModel(MoleculeResponse):
 
     def save_cache(self, cache, path):
         check(cache['problem_identity'] == self.problem.identity, 'cache identity mismatch')
-        write_json(Path(path), cache)
+        path = Path(path)
+        with tempfile.NamedTemporaryFile(dir=path.parent, delete=False) as handle:
+            temporary = Path(handle.name)
+        try:
+            write_json(temporary, cache)
+            os.replace(temporary, path)
+        finally:
+            temporary.unlink(missing_ok=True)
 
     @staticmethod
     def load_cache(path):
-        return json.loads(Path(path).read_text())
+        cache = json.loads(Path(path).read_text())
+        check(isinstance(cache, dict) and isinstance(cache.get('problem_identity'), str)
+              and isinstance(cache.get('fields'), dict) and isinstance(cache.get('observables'), dict),
+              'invalid response cache envelope')
+        return cache
 
     def attach_oracle(self, oracle):
         if isinstance(oracle, (str, Path)):
             oracle = json.loads(Path(oracle).read_text())
         check(oracle['problem_identity'] == self.problem.identity, 'independent oracle identity mismatch')
         check(oracle['source'] == self.source, 'independent oracle source mismatch')
+        attestation = oracle.get('operator_attestation', oracle['setup'])
+        check(attestation.get('contract_identity') == self.contract_identity,
+              'independent oracle operator definitions or origin differ')
+        for field in FIELD_IDS:
+            for observable in OBSERVABLE_IDS:
+                cell = oracle.get('targets', {}).get(field, {}).get(observable)
+                check(isinstance(cell, dict) and isinstance(cell.get('finite_fields'), dict) and
+                      isinstance(cell.get('reasons'), list), 'invalid scalar reference structure')
         self.oracle = oracle
 
     def assess(self, field, observable, value):
-        raw = float(value)
+        check(field in FIELD_IDS and observable in OBSERVABLE_IDS, 'unknown scalar response endpoint')
+        def finite(v):
+            return isinstance(v, (float, int, np.floating, np.integer)) and not isinstance(v, (bool, np.bool_)) and math.isfinite(v)
+        raw = float(value) if finite(value) else None
         out = {'field': field, 'observable': observable, 'raw_value': raw,
+               'target_identity': json_hash([self.endpoint_identity['fields'][field],
+                                             self.endpoint_identity['observables'][observable]]),
                'qualified': None, 'value': None, 'status': 'residual_verified', 'reasons': []}
+        if raw is None:
+            out.update(qualified=False, status='withheld', reasons=['nonfinite or missing candidate'])
+            return out
         if self.oracle is None:
             return out
         ref = self.oracle['targets'][field][observable]
         reference_failures = list(ref['reasons'])
         comparable = {method: ref.get(method) for method in ('direct', 'adjoint', 'cphf')}
-        comparable.update(ref['finite_fields'])
-        errors = {method: abs(raw - expected) for method, expected in comparable.items() if expected is not None}
+        comparable.update({str(h): ref['finite_fields'].get(str(h)) for h in STEPS})
+        errors = {method: abs(raw - float(expected)) for method, expected in comparable.items() if finite(expected)}
         failed = [tag for tag, err in errors.items() if err > (FIELD_TOL if tag in ref['finite_fields'] else ANALYTIC_TOL)]
-        failed.extend(f'missing {tag}' for tag, expected in comparable.items() if expected is None)
+        failed.extend(f'missing or nonfinite {tag}' for tag, expected in comparable.items() if not finite(expected))
         reasons = sorted(set(reference_failures + failed))
         out.update(qualified=not reasons, value=None if reasons else raw, status='withheld' if reasons else 'qualified',
                    errors=errors, reasons=reasons)
@@ -216,28 +259,43 @@ class DualResponseModel(MoleculeResponse):
                   'operator_actions': self.counts['response_operator_actions'] - before['response_operator_actions'],
                   'solver_actions': solve.operator_actions, 'cache_validation_actions': 0}
         check(counts['operator_actions'] == solve.operator_actions, 'combined-field action count')
+        values = {j: float(self.rhs_values['observables'][j] @ result.solution) for j in names}
+        check(all(math.isfinite(value) for value in values.values()), 'nonfinite combined-field readout')
         return {'problem_identity': self.problem.identity, 'coefficients': u.tolist(),
-                'values': {j: float(self.rhs_values['observables'][j] @ result.solution) for j in names},
+                'origin_bohr': [0, 0, 0], 'combined_rhs_sha256': array_hash(rhs),
+                'field_identity': json_hash({'axes': self.endpoint_identity['fields'], 'coefficients': u.tolist(),
+                                             'rhs': array_hash(rhs)}),
+                'observable_identities': {j: self.endpoint_identity['observables'][j] for j in names},
+                'values': values,
                 'solution_sha256': array_hash(result.solution), 'true_residual': float(result.residual_norm),
                 'counts': counts, 'elapsed_seconds': time.perf_counter() - begin}
 
     def _cached(self, group, key, cache):
         entry = cache[group][key]
-        vector = np.asarray(entry['solution'], dtype=np.float64)
+        vector = np.array([], dtype=np.float64)
         b = self.rhs_values[group][key]
         residual = None
         reason = 'accepted'
-        if (cache['problem_identity'] != self.problem.identity or entry.get('problem_identity') != self.problem.identity
-                or entry.get('group') != group or entry.get('id') != key):
+        if not isinstance(entry, dict):
+            reason = 'invalid endpoint record'
+        elif (cache['problem_identity'] != self.problem.identity or entry.get('problem_identity') != self.problem.identity
+                or entry.get('group') != group or entry.get('id') != key
+                or entry.get('endpoint_identity') != self.endpoint_identity[group][key]):
             reason = 'problem or endpoint identity'
-        elif vector.shape != b.shape or not np.isfinite(vector).all():
-            reason = 'shape or finiteness'
-        elif entry.get('solution_sha256') != array_hash(vector) or entry.get('rhs_sha256') != array_hash(b):
-            reason = 'content or physical RHS digest'
         else:
-            residual = float(np.linalg.norm(self.apply(vector) - b))
-            if residual > GATE:
-                reason = 'physical response residual'
+            try:
+                vector = np.asarray(entry.get('solution'), dtype=np.float64)
+            except (TypeError, ValueError, OverflowError):
+                reason = 'invalid solution values'
+            if reason == 'accepted':
+                if vector.shape != b.shape or not np.isfinite(vector).all():
+                    reason = 'shape or finiteness'
+                elif entry.get('solution_sha256') != array_hash(vector) or entry.get('rhs_sha256') != array_hash(b):
+                    reason = 'content or physical RHS digest'
+                else:
+                    residual = float(np.linalg.norm(self.apply(vector) - b))
+                    if residual > GATE:
+                        reason = 'physical response residual'
         return vector, {'group': group, 'id': key, 'decision': reason, 'true_residual': residual}
 
     def run_round(self, requests, fields, observables, cache):
@@ -282,6 +340,7 @@ class DualResponseModel(MoleculeResponse):
                 check(part.residual_norm <= GATE, 'new response failed physical residual')
                 vec = np.asarray(part.solution, dtype=np.float64)
                 held[(g, key)] = {'problem_identity': self.problem.identity, 'group': g, 'id': key,
+                                  'endpoint_identity': self.endpoint_identity[g][key],
                                   'solution': vec.tolist(), 'solution_sha256': array_hash(vec),
                                   'rhs_sha256': array_hash(self.rhs_values[g][key]),
                                   'solver_true_residual': float(part.residual_norm)}
