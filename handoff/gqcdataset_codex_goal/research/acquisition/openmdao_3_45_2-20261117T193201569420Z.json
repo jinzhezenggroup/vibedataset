@@ -1,0 +1,105 @@
+{
+  "id": "openmdao_3_45_2",
+  "source": {
+    "id": "openmdao_3_45_2",
+    "catalog_ids": [],
+    "priority": "P0",
+    "repository_url": "https://github.com/OpenMDAO/OpenMDAO",
+    "role": "release_source",
+    "commit": "64175aa55fb541355b2fb279a6bcfde01e17a878",
+    "checkout_path": "_references/openmdao_3_45_2",
+    "paper_version_status": "OpenMDAO 3.45.2 release, implementation of MNCO after Coleman & Verma 1998; original paper code not claimed",
+    "selection_reason": "Direct and substitution bidirectional coloring, compressed forward/adjoint products and structural-sparsity inference for total Jacobians. Strong comparator for GQC target-graph planning."
+  },
+  "started_at_utc": "2026-11-17T19:32:01.569441+00:00",
+  "status": "indexed_pending_review",
+  "commands": [
+    {
+      "argv": [
+        "git",
+        "init",
+        "--quiet"
+      ],
+      "cwd": "_references/openmdao_3_45_2",
+      "started_at_utc": "2026-11-17T19:32:01.569601+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.0028067749954061583,
+      "ended_at_utc": "2026-11-17T19:32:01.572564+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "remote",
+        "add",
+        "origin",
+        "https://github.com/OpenMDAO/OpenMDAO"
+      ],
+      "cwd": "_references/openmdao_3_45_2",
+      "started_at_utc": "2026-11-17T19:32:01.572747+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.0021801160037284717,
+      "ended_at_utc": "2026-11-17T19:32:01.575094+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "protocol.file.allow=never",
+        "fetch",
+        "--depth=1",
+        "--no-tags",
+        "origin",
+        "64175aa55fb541355b2fb279a6bcfde01e17a878"
+      ],
+      "cwd": "_references/openmdao_3_45_2",
+      "started_at_utc": "2026-11-17T19:32:01.575238+00:00",
+      "stdout": "",
+      "stderr": "\u6765\u81ea https://github.com/OpenMDAO/OpenMDAO\n * branch            64175aa55fb541355b2fb279a6bcfde01e17a878 -> FETCH_HEAD\n",
+      "returncode": 0,
+      "elapsed_seconds": 6.023880748994998,
+      "ended_at_utc": "2026-11-17T19:32:07.599285+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "core.autocrlf=false",
+        "checkout",
+        "--detach",
+        "64175aa55fb541355b2fb279a6bcfde01e17a878"
+      ],
+      "cwd": "_references/openmdao_3_45_2",
+      "started_at_utc": "2026-11-17T19:32:07.599859+00:00",
+      "stdout": "",
+      "stderr": "HEAD \u76ee\u524d\u4f4d\u4e8e 64175aa Merge pull request #3844 from robfalck/rel_notes_3_45_2\n",
+      "returncode": 0,
+      "elapsed_seconds": 0.13671569900179747,
+      "ended_at_utc": "2026-11-17T19:32:07.737074+00:00"
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "/home/lhshen/vibedataset/handoff/gqcdataset_codex_goal/tools/inventory_sources.py",
+        "_references/openmdao_3_45_2",
+        "--recurse-submodules",
+        "--json",
+        "handoff/gqcdataset_codex_goal/research/inventories/openmdao_3_45_2.json"
+      ],
+      "cwd": ".",
+      "started_at_utc": "2026-11-17T19:32:07.737642+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.22909055300988257,
+      "ended_at_utc": "2026-11-17T19:32:07.967759+00:00"
+    }
+  ],
+  "receipt_path": "handoff/gqcdataset_codex_goal/research/acquisition/openmdao_3_45_2-20261117T193201569420Z.json",
+  "resolved_commit": "64175aa55fb541355b2fb279a6bcfde01e17a878",
+  "inventory_path": "handoff/gqcdataset_codex_goal/research/inventories/openmdao_3_45_2.json",
+  "ended_at_utc": "2026-11-17T19:32:07.968112+00:00"
+}

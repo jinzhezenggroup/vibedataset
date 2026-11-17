@@ -1,0 +1,100 @@
+{
+  "checked_at_utc": "2026-11-17T19:49:55.731180+00:00",
+  "sources": {
+    "cppad_2026": {
+      "commit": "5d51b2aa6d6874c8d561da298a90b3721550d45d",
+      "tree": "7ea43540586ac79fc720d1a89599fb1c33e93607",
+      "file_count": 1473,
+      "submodules": 0,
+      "lfs_pointers": 0,
+      "root_dirty": false,
+      "blocking_issues": []
+    },
+    "openmdao_3_45_2": {
+      "commit": "64175aa55fb541355b2fb279a6bcfde01e17a878",
+      "tree": "f960aa4407816969c2c2f1baea949c0975f0fd1b",
+      "file_count": 1239,
+      "submodules": 0,
+      "lfs_pointers": 0,
+      "root_dirty": false,
+      "blocking_issues": []
+    },
+    "pymor_2026_1": {
+      "commit": "36a0035e180694c7ad4eb8f083d9f1d65ceb6f42",
+      "tree": "120ef6675e0599010ea6e32366e31542f30b3b7b",
+      "file_count": 518,
+      "submodules": 0,
+      "lfs_pointers": 0,
+      "root_dirty": false,
+      "blocking_issues": []
+    }
+  },
+  "toolchain": {
+    "cxx": "c++ (Ubuntu 11.4.0-1ubuntu1~22.04.3) 11.4.0",
+    "cmake": "4.4.5",
+    "ninja": "1.13.2",
+    "cxx_args": "-std=c++17 -O2; libcppad_lib Release",
+    "pkg_config": "0.29.2 Ubuntu jammy 0.29.2-1ubuntu3 .deb extracted into .work; system unchanged",
+    "pkg_config_deb_sha256": "69da4190d948d0bf7444ead040791b7924bd1a08a10ec13cd7f0bb9baab09c53",
+    "cppad_lib_sha256": "7d22ec3647c20d87741786c9aab1fab5f07a8c4c59446e0640772c7128beebf7",
+    "cppad_probe_binary_sha256": "8ada542ecf9e30b48ac7f11d316799d80ffed78fc71595e46ed103acfd8e6246",
+    "cppad_probe_source_sha256": "1d032d95a4a159dc16e6013293832047e095d9edfa66af4d8045ba48ab55c386",
+    "configure_seconds": {
+      "real": 1.14,
+      "user": 0.75,
+      "sys": 0.39
+    },
+    "lib_build_seconds": {
+      "real": 1.86,
+      "user": 4.14,
+      "sys": 0.4
+    },
+    "probe_compile_seconds": {
+      "real": 15.18,
+      "user": 14.72,
+      "sys": 0.44
+    },
+    "test_binary_seconds": {
+      "real": 0.0,
+      "user": 0.0,
+      "sys": 0.0
+    }
+  },
+  "upstream_tests": {
+    "openmdao": ".                                                                        [100%]\n=============================== warnings summary ===============================\nopenmdao/core/tests/test_coloring.py::BidirectionalTestCase::test_bidir_3colorblock\n  _references/openmdao_3_45_2/openmdao/core/system.py:3608: OpenMDAOWarning: <class Group>: Constraint 'comp.y' requires one of arguments 'lower', 'upper', or 'equals' to be specified.\n    issue_warning(f\"{self.msginfo}: Constraint '{name}' requires one of arguments\"\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n1 passed, 1 warning in 1.63s\n",
+    "gqc": "...                                                                      [100%]\n3 passed, 47 deselected in 1.07s\n",
+    "cppad": true
+  },
+  "startup_observations": [
+    {
+      "operation": "CppAD configure",
+      "reason": "missing pkg-config executable",
+      "time_seconds": 0.56,
+      "retry": "separate local extraction of distribution tool; reran configure and build"
+    },
+    {
+      "operation": "GQC upstream test collection",
+      "reason": "PYTHONPATH initially omitted the root containing tools.generativeqc_posthf.fixtures",
+      "retry": "include both source root and python/; no numerical operation in failed import"
+    },
+    {
+      "operation": "pyMOR default dual FOM creation on 2-output NumpyMatrixOperator",
+      "reason": "numpy.py::_array_factory expects dim_output as first axis; dwr.py:create_dual_model gives shape (1,dim_output)",
+      "observed": "AssertionError",
+      "working_path": "explicit per-output StationaryModel(A.H,-c) passed to the unmodified reductor"
+    }
+  ],
+  "mp2_attempts": [
+    {
+      "file": "mp2-default.json",
+      "lib_linalg_helper_dsolve_lindep": 1e-13,
+      "checks_passed": false
+    },
+    {
+      "file": "mp2-tightened.json",
+      "lib_linalg_helper_dsolve_lindep": 1e-24,
+      "checks_passed": true
+    }
+  ],
+  "notes": "Two complete independent molecular runs: total 10 geometry RHF/MP2 energies, two relaxed analytic gradients and two relaxation-ablated gradients. The algebraic coloring and pyMOR probes use no QC. GQC upstream tests use existing fixtures and small matrix operators."
+}
