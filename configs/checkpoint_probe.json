@@ -1,0 +1,89 @@
+{
+  "experiment_id": "gqc-checkpoint-admission-20261118",
+  "gqc_source_commit": "2bf3fd98da9c6cfba46ca83345e63e1d934e4780",
+  "native_library_sha256": "67bc98a4549fe8854ed6ae65791c824024bd77a9e8e498c6891dea3b8de670c4",
+  "python_source_sha256": {
+    "checkpoint": "7cff6ce69b6f54ba79127d7b8bdf767022cd0014e9281df01fc514d9982d954b",
+    "calculator": "bcc9aa3a5763adf8607b32063cfb5a259c5497275b8717ef13a4e14c24055b36",
+    "batch": "f1f5735e8200f89a83ad0903cacdff2b521f11f2e74fed0918c0405f23d1164e",
+    "_native": "17b2761a92cf0956c87fb8c9879923151bb56a4828cb6f5f362c1ac4fcdb8904",
+    "_warm_state": "be9cd71e84ed2ede00aabbf1a69c3e4780693540dc2b37f4b8804e422fefd1d9",
+    "accuracy": "a904e6a02439e9f0579cdca3cd8fd8e9a6ae865f592ce1543a873ccaf503179d",
+    "profiles": "6bbe416066b630fab6cb366157fe51668b851de8fb3e84b29a660db6eadf9277"
+  },
+  "calculator": {
+    "method": "rhf",
+    "basis": "sto-3g",
+    "device": "cuda",
+    "precision": "fp64",
+    "basis_representation": "spherical",
+    "density_fitting": "none",
+    "max_iterations": 150,
+    "energy_tolerance": 1e-10,
+    "density_tolerance": 1e-08,
+    "screening_tolerance": 1e-12,
+    "initial_guess": null
+  },
+  "symbols": [
+    "H",
+    "H"
+  ],
+  "charge": 0,
+  "multiplicity": 1,
+  "coordinate_unit": "Bohr",
+  "coordinates": {
+    "source": [
+      [
+        0,
+        0,
+        -0.7
+      ],
+      [
+        0,
+        0,
+        0.7
+      ]
+    ],
+    "target": [
+      [
+        0,
+        0,
+        -0.8
+      ],
+      [
+        0,
+        0,
+        0.8
+      ]
+    ]
+  },
+  "direction": [
+    [
+      0,
+      0,
+      -1
+    ],
+    [
+      0,
+      0,
+      1
+    ]
+  ],
+  "fd_steps_bohr": [
+    0.001,
+    0.0003
+  ],
+  "pyscf_conv_tol": 1e-12,
+  "tolerances": {
+    "independent_energy": 2e-08,
+    "independent_force": 1e-05,
+    "directional_force": 2e-05,
+    "restart_energy": 2e-09,
+    "restart_force": 1e-07
+  },
+  "limits": {
+    "gqc_solve": 20,
+    "pyscf_scf": 2,
+    "pyscf_gradient": 2
+  }
+}
