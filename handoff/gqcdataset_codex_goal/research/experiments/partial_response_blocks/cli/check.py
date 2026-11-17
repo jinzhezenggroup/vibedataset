@@ -80,6 +80,9 @@ def main():
     run('non-diagonal-history',[('y','r2'),('x','zz')])
     nonsym=run('non-diagonal',shifted,history='non-diagonal-history')
     assert nonsym['rhs']==2 and nonsym['relation']['support']==['x','y']
+    same_input=run('ordinary-with-history',[two[0],*DIAGONAL],history='cross-two',mode='ordinary')
+    assert same_input['historical_hits']==1 and same_input['rhs']==3 and same_input['round_jk']==plain['round_jk']
+    assert batches['ordinary-with-history']['records'][0]['delivery']=='historical_scalar'
     fallback=run('solver-fallback',DIAGONAL,history='cross-two',short_first_solve=True)
     failed=fallback['relation']['failed_block']
     assert failed['submitted_blocks']==1 and failed['counts']['jk_calls']>0

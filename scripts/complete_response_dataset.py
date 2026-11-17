@@ -482,8 +482,9 @@ def run_group(db, name, ctx, requests, kernel_dir, history, relations, scalar_pl
         work['lock_wait_seconds'] = time.perf_counter() - start
         imported, work['rejected_history'] = historical_scalars(history, ctx)
         work['validated_history_scalars'] = len(imported)
+        use_relations = relations and scalar_plan != 'ordinary'
         operands = {(other, observable) for field, observable in grouped
-                    for other in FIELD_IDS if other != field} if relations else set()
+                    for other in FIELD_IDS if other != field} if use_relations else set()
         known = {}
         for edge in sorted(grouped.keys() | operands):
             saved, rejected = load_label(db, identity, edge, oracle, endpoint)
@@ -510,7 +511,8 @@ def run_group(db, name, ctx, requests, kernel_dir, history, relations, scalar_pl
             work['setup_jk'] = model.setup['counts']['jk_calls']
             work['setup_seconds'] = model.setup['seconds']
             solve_start = time.perf_counter()
-            if relations:
+            work['scalar_plan'] = scalar_plan if relations else 'ordinary'
+            if use_relations:
                 complete = complete_field_block if scalar_plan == 'blocked' else complete_missing_split
                 measured = complete(model, missing, cache, kernel_dir, known)
                 work.update(relation=measured['relation'], chosen_fields=measured['chosen_fields'],
@@ -568,7 +570,7 @@ def main():
     parser.add_argument('--oracle-index', type=Path, help='select the independent oracle catalog for an explicit source')
     parser.add_argument('--kernel-cache', type=Path, help='GQC generated binary cache')
     parser.add_argument('--decode-known-scalars', action='store_true', help='enable exact 3x3 scalar relations using qualified cached operands')
-    parser.add_argument('--scalar-plan', choices=('blocked', 'split-xyz'), default='blocked',
+    parser.add_argument('--scalar-plan', choices=('blocked', 'ordinary', 'split-xyz'), default='blocked',
                         help='execution for scalar relations enabled by --history or --decode-known-scalars')
     parser.add_argument('--history', nargs=2, metavar=('SHA256', 'JSON'), help='accept producer-computed labels from this checksum-pinned earlier batch; enables scalar relations')
     args = parser.parse_args()

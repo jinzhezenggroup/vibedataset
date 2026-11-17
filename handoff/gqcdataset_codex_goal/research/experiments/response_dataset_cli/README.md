@@ -33,7 +33,7 @@ python "$examples/verify.py" --work .work/response_cli_replay
 
 ## 用已有标量补算响应
 
-指定历史文件或使用 `--decode-known-scalars` 时，默认 `--scalar-plan blocked`。程序根据每个读出真正可用的历史标量选择场组合，保留真残差和独立验收。要回放早期的全三轴分开对照，可指定 `--scalar-plan split-xyz`。[当前实验和适用范围](../partial_response_blocks/README.md)
+指定历史文件或使用 `--decode-known-scalars` 时，默认 `--scalar-plan blocked`。程序根据每个读出真正可用的历史标量选择场组合，保留真残差和独立验收。若在类似负载上优先使用普通端点块，`--scalar-plan ordinary` 仍可读取历史精确命中，同时直接求缺项。要回放早期的全三轴分开对照，可指定 `--scalar-plan split-xyz`。[当前实验和适用范围](../partial_response_blocks/README.md)
 
 在新数据库中可显式提供先前通过同一 CLI 真实计算的历史批结果和可信 SHA-256。本文示例的历史请求包含六个已知标量，第二份清单索取三个尚缺标量。每列是同一读出对三个场的线性响应。若 x、y、z 中的两个响应已经独立合格，可以求一次 (1,1,1) 组合电场，从该读出的合计中减去两项，取得第三项。GQC 为这个减法生成 FP64 CPU 程序。最初的固定三轴方案只接受三个配对目标。当前的单块方案适用于这套场和读出中的任意缺项；例如只存 y→q0 和 x→r2 时，x+y 一个方向就能服务 x→q0 和 y→r2。其余普通列可以与组合列同块。相同算符、原点、输入与容差下，手写相同减法可得到相同结果。程序对每个恢复值重新验收，若未通过，正常端点求解也会执行并计费。[历史输入](history.jsonl) · [新请求](diagonal.jsonl) · [14 个独立 CLI 进程的结果](history-verification.json)
 
