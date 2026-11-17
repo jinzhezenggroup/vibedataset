@@ -78,11 +78,20 @@ def verify_archive(archive, source, raw_path):
     assert sum(m['type'] == '5' for m in entries) == archive['directories'] == receipt['directories']
     assert sum(m['bytes'] for m in entries) == archive['total_file_bytes'] == receipt['total_file_bytes']
     assert len(receipt['source_members']) == archive['source_like_members']
+    branch = subprocess.check_output(['git','-C',source['checkout_path'],'ls-tree','-rz','--full-tree',source['commit']])
+    paths_by_oid = defaultdict(list)
+    for line in branch.split(b'\0'):
+        if line:
+            metadata, path = line.split(b'\t', 1)
+            _, kind, oid = metadata.split()
+            if kind == b'blob':
+                paths_by_oid[oid.decode()].append(os.fsdecode(path))
+    candidate_blobs = {}
     for item in receipt['source_members']:
         assert members[item['name']]['sha256'] == item['sha256']
-        for path in item['identical_in_qm7']:
-            oid = subprocess.check_output(['git','-C',source['checkout_path'],'rev-parse',source['commit']+':'+path],text=True).strip()
-            assert item['git_blob'] == oid, path
+        assert sorted(item['identical_in_qm7']) == sorted(paths_by_oid[item['git_blob']]), item['name']
+        candidate_blobs[item['name']] = item['git_blob']
+    assert len(candidate_blobs) == len(receipt['source_members'])
     if raw_path:
         assert raw_path.stat().st_size == archive['archive_bytes']
         sha, md5 = hashlib.sha256(), hashlib.md5()
@@ -100,10 +109,15 @@ def verify_archive(archive, source, raw_path):
                 seen.add(name)
                 if item.isfile():
                     digest = hashlib.sha256()
+                    git_blob = hashlib.sha1(f'blob {item.size}\0'.encode()) if name in candidate_blobs else None
                     with f.extractfile(item) as stream:
                         for chunk in iter(lambda: stream.read(4*1024**2), b''):
                             digest.update(chunk)
+                            if git_blob is not None:
+                                git_blob.update(chunk)
                     assert digest.hexdigest() == m['sha256'], name
+                    if git_blob is not None:
+                        assert git_blob.hexdigest() == candidate_blobs[name], name
         assert seen == set(members)
     return members
 
