@@ -27,3 +27,7 @@
 每项 issue 已包含任务、输入、产物和可勾选验收条件。完成时附提交、固定版本代码证据、命令/原始结果、限制、失败和下一步。不能执行的部分说明真实阻塞；仍待取得的附件保持 #9 打开。
 
 请以 [STATUS.md](STATUS.md) 和后续 issue 更新为准。创建这些 issues 不表示 Codex 已启动，也不表示源码获取、实验或科研结论已经完成。
+
+## 首轮研究证据
+
+基础审计、真实资产评价、路线选择及首个分子实现分别见 [工作基础](FOUNDATION_CAPABILITIES.md)、[资产与评价](DATASET_ASSETS.md)、[比较与决定](ROUTE_COMPARISON.md) 和 [三轮实验](experiments/gqc_residual_multiround/README.md)。#2 的原始实现定位、#4 的近邻扩展、#8 的生产分布与全成本，以及独立资料缺件继续在 [当前状态](STATUS.md) 跟踪。

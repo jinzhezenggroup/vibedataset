@@ -11,6 +11,10 @@
 
 **总任务：[Goal #1](https://github.com/jinzhezenggroup/vibedataset/issues/1)。第一项执行任务：[#2 完整源码接管](https://github.com/jinzhezenggroup/vibedataset/issues/2)。** 后续依赖和验收已写入各 issue，当前共 9 个 issues。
 
+## 已执行的补全工作
+
+当前主线用 GQC 科学编译器绑定已有响应解，在同一物理协议与精度下生成剩余求解。已有两份可逐条复核的输出，以及与手写、预取、缓存和原生批处理的比较。[三轮结果与成本](handoff/gqcdataset_codex_goal/research/RESULTS.md) · [响应数据 JSONL](handoff/gqcdataset_codex_goal/research/experiments/gqc_residual_multiround/response-labels.jsonl) · [n5 能量新列 CSV](handoff/gqcdataset_codex_goal/research/experiments/n5_dataset_energy/labels.csv) · [n5 持久环境](docs/N5_GQC.md)
+
 ## 材料入口
 
 | 材料 | 作用 |

@@ -1,48 +1,28 @@
 # gqcdataset 当前状态
 
-更新时间：2026-11-18（Asia/Shanghai）。本轮从交接提交
-`de60ee48eb7e567b494c558daeba85a8e1aff400` 开始，工作分支
-`codex/source-intake-20261118`。完整记录：[INTAKE.md](INTAKE.md)。
+更新于 2026-11-18，工作分支 `codex/source-intake-20261118`。当前首要目标是用 GQC 科学编译器在同一精度和物理定义下减少补全数据所需的量化工作。数值异常单列输入、差值和命令，保留给用户向 GQC 项目反馈。[草稿 PR #10](https://github.com/jinzhezenggroup/vibedataset/pull/10) · [结果与全成本](RESULTS.md)
 
-可审查提交：[baea1aa](https://github.com/jinzhezenggroup/vibedataset/commit/baea1aa547d74a367224bfb44e179eaaf072eab6)；
-[草稿 PR #10](https://github.com/jinzhezenggroup/vibedataset/pull/10)。尚未合入 main。
+| 本轮产物 | 已核验的结果 |
+|---|---|
+| GQC 三轮响应补全 | 42 个标量请求，水 21 项及 LiH 10 项发布，11 项保留诊断。水三轮 J/K 为仅存标签 76 次、按需程序 54 次、手写按需 54 次、预取三轴 38 次；首次全流程未见加速。[数据](experiments/gqc_residual_multiround/response-labels.jsonl) · [报告](experiments/gqc_residual_multiround/README.md) |
+| n5 能量新列 | 13 行、5 个不同量化目标，全部通过独立 PySCF 对照。按目标身份去重使 Fock 构建从 131 降至 50，普通字典也取得此收益；原生批使调用从 5 降到 1。[CSV](experiments/n5_dataset_energy/labels.csv) · [运行记录](experiments/n5_dataset_energy/README.md) |
+| n2 / n5 执行环境 | n2 作业 5381、5382 通过固定 H₂ 的 CP-001。n5 项目 venv 在新会话可用，RTX 5090 作业 2044 完成跨节点 checkpoint 验证，2045 完成实际新列；调度终态、实际 CDLL、参考和计数均有回执。[n2](experiments/checkpoint_probe/README.md) · [n5](../../../docs/N5_GQC.md) |
+| 已有实现 | 新取得作者发布版 mol_prop_imputation 和 QCManyBody 全树。实跑发表权重信息不足反例及三轮 4/3/0 次 SCF 的多体基线。xTBloom 本地原生 CPU CTest、GQC 驻点与经验门槛测试、PySCF 跨基组投影已执行。[前人能力](PRIOR_ART_MATRIX.md) · [工作基础](FOUNDATION_CAPABILITIES.md) |
+| 真实资产与负结果 | 13 份 QCFractal fixture、ANI 原始发布 357 行有字段级记录。三份存档态复现已有偶极；ANI 323 个真实空位全部缺少七个分量，另 34 个对照的公式值未通过发布标签门槛。[数据资产](DATASET_ASSETS.md) · [评价协议](EVALUATION_PROTOCOL.md) |
+| 源码接管 | 38 份固定快照、264,598 条逐文件索引。20 个完整阅读标记、60 个文件含已追踪行为、30 个文件含已执行路径。这三种标记独立，仅表示记录中的具体文件或路径。新增匹配存档/运行的 Psi4、PySCF、默认 libcint 全树，xTBloom 补齐版本历史。[来源索引](SOURCE_INDEX.md) · [覆盖核验](ledger_validation.json) · [主张](claims.csv) |
 
-## 已完成的可审查增量
+## 任务验收与剩余问题
 
-- [x] 读取根约定、交接 Goal、来源、科学约束与远程 #1/#2；核对本地真实状态。
-- [x] 保留接管前未跟踪的 n2 运行约定与环境记录，字节散列核对一致。
-- [x] 获取起始目录 31 个不同仓库的完整所选 Git 树；AIRS、LLVM 均为全仓库，未稀疏获取。
-- [x] 额外固定历史 GQC 运行源码和新增 `equiv_dens_ml` 参照，共 33 份根树快照。
-- [x] 固定 commit/tree、许可文件、子模块、LFS、浅历史与范围；xTB/TREXIO 子模块已补齐。
-- [x] 建立 252,312 条文件覆盖记录、压缩完整库存、来源锁和显式复核记录。
-- [x] 验证库存散列、逐文件覆盖、Git pin/干净状态及阅读标记来源；解释并重查 LLVM 的 6 条 CRLF 差异。
-- [x] n2 只读导入及实际库哈希复核；未提交计算、未改动共享环境。
-- [x] 开始 GQC checkpoint 局部审读，形成 [源码记录](audits/gqc-intake.md) 和 [claims.csv](claims.csv)。
+| Issue | 当前证据与剩余范围 |
+|---|---|
+| #1 | 首轮数据、代码和全成本归因已可复查。长期科研目标继续推进。 |
+| #2 | 固定树、完整性、版本角色、子模块与 LFS 均可复核。6 个原始实现/资产入口及部分论文提交、许可证与外部构建依赖闭包继续跟踪。[缺口](SOURCE_GAPS.md) |
+| #3 | 首轮基础能力地图、编辑式依赖图、源码和原生/编译器判别实验已有证据；各自后端、测试与尚未验证的域在记录中独立标识。[基础能力](FOUNDATION_CAPABILITIES.md) |
+| #4 | 精确分量复用、插补、投影/后处理、批处理、缓存、响应和程序化简已建立对照。更广扰动下的子空间回收、降阶/伴随和原始实现映射仍需证据。[基线](BASELINES.md) |
+| #5 | 有实际字段、缺失来源、标签语义、盲验与分组/成本协议，并已实跑代表性场景。[资产](DATASET_ASSETS.md) |
+| #6 | 五条路线、竞争解释、首轮可证伪假设、停止条件及阶段决定已入库。[路线](ROUTE_COMPARISON.md) · [决定](decisions/0001-gqc-response.md) |
+| #7 | 完成 GQC 最小分子闭环、同目标强基线、错误复用拒绝与独立验证，保留未通过项。[响应结果](experiments/gqc_residual_multiround/README.md) |
+| #8 | 两份分子分三轮及 n5 五个唯一能量目标已核算。更广来源、不同扰动秩/到达顺序和独立分子队列的端到端收益尚未建立。[资产策略](ASSET_POLICY.md) |
+| #9 | 原 ZIP 与两份历史 PDF 原件未取得，保持独立跟踪。公开论文的补充材料属于另一个来源。 |
 
-**阅读/追踪/运行的真实计数：** 全文件已读 3，完整行为追踪 0，第三方测试／科学计算执行 0。
-清点脚本和台账检查的运行不计入科学执行。没有速度、力误差或创新成立结论。
-
-## Issue 状态
-
-| Issue | 当前状态 | 下一步／未完成原因 |
-|---|---|---|
-| #1 总 Goal | 进行中 | 完成的是接管增量，研究目标未完成 |
-| #2 完整源码接管 | 进行中 | 固定树与覆盖已建立；论文版本、原始实现缺件和关键外部依赖闭包仍需追踪 |
-| #3 GQC/xTBloom | 部分开始 | 3 个 GQC 文件已全读，部分测试和 C ABI 已查看；追完原生状态验收、SCF、响应及 xTBloom 批处理，开展有界判别验证 |
-| #4 相近实现 | 输入已部分就绪 | 完整树可用，尚未形成机制审计和强基线结论 |
-| #5 数据资产 | 来源定位开始 | 尚未获取并核验代表性波函数／数据记录，不能声称字段已验证 |
-| #6 五主线比较 | 待关键证据 | 不预选 QMugs、四极矩、固定样本量或唯一课题 |
-| #7/#8 实现与评价 | 待路线与科学门槛 | 未进行科研实验、训练或性能比较 |
-| #9 原附件 | 未解决 | 原 ZIP 和两份 PDF 仍无原件，不阻塞公开源码审读 |
-
-## 主要证据与边界
-
-- [源码锁](sources.lock.json)、[快照索引](SOURCE_INDEX.md)、[完整覆盖表](source_coverage.csv)、[台账验证](ledger_validation.json)。
-- [缺口与访问证据](SOURCE_GAPS.md)：6 个原始代码/资产入口未解决；mlelec 许可与论文版本未确定。
-- GQC 当前树 `2791504cc238fe83d328fc1718080642b288222a` 与 n2 声明源码
-  `2bf3fd98da9c6cfba46ca83345e63e1d934e4780` 分开记录。
-- n2 实测库 SHA256 为 `67bc98a4549fe8854ed6ae65791c824024bd77a9e8e498c6891dea3b8de670c4`；
-  该一致性不构成新数值验证或当前源码的可复现构建证明。
-- 所有 checkout 的 Git 历史为 shallow。特别是 xTBloom 打包显式要求完整历史，取得文件树不能直接推导可构建。
-
-继续推进已满足依赖的源码审读与资产核查；以实际证据更新 issue，不因“已下载”关闭要求阅读或运行的任务。
+下一项可判别问题是，未来目标未知时，按需生成剩余响应程序在什么条件下比预先求完整扰动基少做量化工作。现有三维均匀电场试验已给出有利于完整预取的实例；扩大前应锁定扰动定义、请求顺序、基线可获得的先验信息及每个真实算子调用的计数。源码审计和已取得的负结果继续作为约束。
