@@ -1,0 +1,49 @@
+{
+  "disjoint_known_requested_masks": 19683,
+  "ordinary_ties_or_wins": 17976,
+  "strict_rhs_reductions": 1707,
+  "cached_control_combinations": 768,
+  "counterexample_outside_one_superposition_class": {
+    "known": [
+      [
+        "x",
+        "zz"
+      ],
+      [
+        "y",
+        "q0"
+      ],
+      [
+        "z",
+        "r2"
+      ]
+    ],
+    "requested": [
+      [
+        "x",
+        "q0"
+      ],
+      [
+        "y",
+        "r2"
+      ],
+      [
+        "z",
+        "zz"
+      ]
+    ],
+    "one_sum_class_rhs": 3,
+    "two_sum_full_rank_with_each_single_known_field": [
+      [
+        1,
+        1,
+        0
+      ],
+      [
+        0,
+        1,
+        1
+      ]
+    ]
+  }
+}
