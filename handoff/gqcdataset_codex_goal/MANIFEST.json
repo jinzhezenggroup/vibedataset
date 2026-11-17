@@ -1,0 +1,143 @@
+{
+  "schema_version": 1,
+  "prepared_on": "2026-11-18",
+  "provenance": "conversation-reconstruction-20261118",
+  "path_base": "repository root / vibedataset-handoff archive root",
+  "exclusions": [
+    "this manifest",
+    "downloads/"
+  ],
+  "file_count": 26,
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 144,
+      "sha256": "a4ff8dcd50e282ef7f8a200e085121e79d5079a6f0917c863577b272bb1c7046"
+    },
+    {
+      "path": "AGENTS.md",
+      "bytes": 5018,
+      "sha256": "3542cfaaa824e384195c05de320fbd115765917c1660879f01d4dc559ec7cd26"
+    },
+    {
+      "path": "README.md",
+      "bytes": 3129,
+      "sha256": "5d6b2143c4282593d15fe9b42e88fa19abf6e37e310058c568c2ea6e8ae147e4"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/CODEX_GOAL.md",
+      "bytes": 6918,
+      "sha256": "9d142f8c8d71bc046d2a0bc53db85dddc821e481b0a07d1b06b4202a0d01bc66"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/PROVENANCE.md",
+      "bytes": 2300,
+      "sha256": "dfd5282affea8acf8f68d3c54359c5f16df49d76caae3f796164d0976ac9a793"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/README.md",
+      "bytes": 3213,
+      "sha256": "d4cb185ac1ad7e18e5de180f2062f9a5c20f2662c582e50afcc72827205652d6"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/attachments/README.md",
+      "bytes": 895,
+      "sha256": "0f7b2e1209fe4fb08a996781a0d496c4ead25945eb99cc17f7a846e13db91d47"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/docs/PROJECT_CONTEXT.md",
+      "bytes": 7201,
+      "sha256": "84bc8cdc1794f94f4d180fe500b372188aa7167aa31c2d56e62d311ab9d8799d"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/docs/RESEARCH_CHARTER.md",
+      "bytes": 8458,
+      "sha256": "d2f8cfeabf4529767a700b1f6f75e9186cc6d4fcc9911d94cce31772b1de4cd7"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/docs/ROADMAP_AND_ACCEPTANCE.md",
+      "bytes": 6561,
+      "sha256": "f7dbedf9e2b0a8707cd74e13185d7f0d606fe57e7e34616cc082e64e07acdcae"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/docs/SOURCE_AUDIT_PROTOCOL.md",
+      "bytes": 10367,
+      "sha256": "28be0a00d44c2350b28fbd9efe4d088ee5b6bc1626aff6b26dbe811c233d29a9"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/docs/VALIDATION_FRAMEWORK.md",
+      "bytes": 10032,
+      "sha256": "41d21acd1f9ce733454999eefb1c4b916764662cdb855bb64b3e3434f38bf22f"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/research/ISSUES.json",
+      "bytes": 2830,
+      "sha256": "0ba086e23428e7f542e412e6355d06a70538328722aaf0e008d13c90c9537d35"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/research/ISSUES.md",
+      "bytes": 3087,
+      "sha256": "426e9d5368b93d3d51cecfb6060f32c6d0ac157d7e3499738e7ad8039ea98311"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/research/STATUS.md",
+      "bytes": 2162,
+      "sha256": "acc1064f1f3beefb35b8d57022a8c07de30f8811a268c9896ac06c61fa3281c8"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/sources/CATALOG.md",
+      "bytes": 21495,
+      "sha256": "10f281cd7f1a599ced24845842663971855d92d72d3f402d724312fd0468ff9d"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/sources/CODE_GAPS.md",
+      "bytes": 5079,
+      "sha256": "8f18dc45feb54a03e5dc52e151c43a08309e2341a76f691ee0c7700e444c3b04"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/sources/catalog.json",
+      "bytes": 35986,
+      "sha256": "3225b59464e6a3692245e0f9fc1ff74a7c7cf237e3f3becbe87c6ce1e2603c2a"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/templates/claim_evidence.csv",
+      "bytes": 153,
+      "sha256": "eaeecf642620104196ee36ab451774ea54abe1e5151f4d04425177c8b70abefb"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/templates/decision.md",
+      "bytes": 1886,
+      "sha256": "287d83c3834dbabe3e8ba9ef512933b9d61701b04afd8bfcc3967140b32b1525"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/templates/experiment.md",
+      "bytes": 2882,
+      "sha256": "0f42e75f9dd21fdf82951115d3f7ccc05b590292476d96ed66a5df16b84e4f76"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/templates/hypothesis.md",
+      "bytes": 1976,
+      "sha256": "e3566c554266b4e349634cceb28a597838ee58364ccc8c6e31d4130be2930e4d"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/templates/repository_audit.md",
+      "bytes": 2019,
+      "sha256": "7488e3d9878e5633c03c5f218972eb729045dfa1ea8f1d3195ddd9ef4e7a61a9"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/templates/source_coverage.csv",
+      "bytes": 157,
+      "sha256": "b2e9a0abacddc67fb94f8b87cb88b15afc78a4c8e744a5ea08c8b2e5fc4ad50b"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/templates/sources.lock.json",
+      "bytes": 152,
+      "sha256": "11beaf95ce77efee4b830f91cd80f55229fcb2ac51dbbef66733537d3f41fefa"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/tools/inventory_sources.py",
+      "bytes": 12911,
+      "sha256": "1fb172af516b89416dc20636f5285a39a9c7a4940715a9e86e506809c0665d83"
+    }
+  ]
+}

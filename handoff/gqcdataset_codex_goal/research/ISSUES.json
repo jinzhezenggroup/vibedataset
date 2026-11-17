@@ -1,0 +1,99 @@
+{
+  "schema_version": 1,
+  "prepared_on": "2026-11-18",
+  "repository": "jinzhezenggroup/vibedataset",
+  "goal_issue": 1,
+  "notice": "Issues created as an execution plan; no Codex run or scientific work is inferred.",
+  "issues": [
+    {
+      "key": "goal",
+      "number": 1,
+      "url": "https://github.com/jinzhezenggroup/vibedataset/issues/1",
+      "title": "[Codex Goal] gqcdataset：已有量子化学信息的复用、补全与持续扩展",
+      "depends_on": [],
+      "nonblocking": false
+    },
+    {
+      "key": "sources",
+      "number": 2,
+      "url": "https://github.com/jinzhezenggroup/vibedataset/issues/2",
+      "title": "[P0] 接管环境并获取完整源码：固定版本、完整性与覆盖台账",
+      "depends_on": [
+        1
+      ],
+      "nonblocking": false
+    },
+    {
+      "key": "foundation",
+      "number": 3,
+      "url": "https://github.com/jinzhezenggroup/vibedataset/issues/3",
+      "title": "[P1] 审计 GQC 与 xTBloom：科学依赖、状态复用与执行解耦",
+      "depends_on": [
+        2
+      ],
+      "nonblocking": false
+    },
+    {
+      "key": "prior_art",
+      "number": 4,
+      "url": "https://github.com/jinzhezenggroup/vibedataset/issues/4",
+      "title": "[P1] 审读相近工作的完整源码并建立强基线与创新边界",
+      "depends_on": [
+        2
+      ],
+      "nonblocking": false
+    },
+    {
+      "key": "data",
+      "number": 5,
+      "url": "https://github.com/jinzhezenggroup/vibedataset/issues/5",
+      "title": "[P1] 核查候选数据资产、真实缺失机制与一致科学目标",
+      "depends_on": [
+        2
+      ],
+      "nonblocking": false
+    },
+    {
+      "key": "routes",
+      "number": 6,
+      "url": "https://github.com/jinzhezenggroup/vibedataset/issues/6",
+      "title": "[P2] 比较五条开放主线并提出可证伪的首轮研究假设",
+      "depends_on": [
+        3,
+        4,
+        5
+      ],
+      "nonblocking": false
+    },
+    {
+      "key": "implementation",
+      "number": 7,
+      "url": "https://github.com/jinzhezenggroup/vibedataset/issues/7",
+      "title": "[P2] 实现首轮判别机制并验证科学正确性与失效边界",
+      "depends_on": [
+        6
+      ],
+      "nonblocking": false
+    },
+    {
+      "key": "scaling",
+      "number": 8,
+      "url": "https://github.com/jinzhezenggroup/vibedataset/issues/8",
+      "title": "[P3] 评价全成本、多目标共享与多轮扩展价值",
+      "depends_on": [
+        7
+      ],
+      "nonblocking": false
+    },
+    {
+      "key": "attachments",
+      "number": 9,
+      "url": "https://github.com/jinzhezenggroup/vibedataset/issues/9",
+      "title": "[资料缺件] 原始 ZIP 与两份 PDF：待补齐并核对来源差异",
+      "depends_on": [
+        1
+      ],
+      "nonblocking": true
+    }
+  ]
+}

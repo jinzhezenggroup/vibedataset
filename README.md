@@ -9,6 +9,8 @@
 3. 打开 [任务与依赖导航](handoff/gqcdataset_codex_goal/research/ISSUES.md) 及 [当前研究状态](handoff/gqcdataset_codex_goal/research/STATUS.md)。
 4. 获取完整可用源码并固定版本，再依据实现和测试证据推进路线比较、实现与科学验证。
 
+**总任务：[Goal #1](https://github.com/jinzhezenggroup/vibedataset/issues/1)。第一项执行任务：[#2 完整源码接管](https://github.com/jinzhezenggroup/vibedataset/issues/2)。** 后续依赖和验收已写入各 issue，当前共 9 个 issues。
+
 ## 材料入口
 
 | 材料 | 作用 |
@@ -20,6 +22,8 @@
 | [研究路线与验收](handoff/gqcdataset_codex_goal/docs/ROADMAP_AND_ACCEPTANCE.md) | 可并行任务、阶段依赖和证据门槛 |
 | [科学验证框架](handoff/gqcdataset_codex_goal/docs/VALIDATION_FRAMEWORK.md) | 状态/标签语义、响应、质量证据、强基线与全成本 |
 | [材料来源与恢复边界](handoff/gqcdataset_codex_goal/PROVENANCE.md) | 本次重建来源、缺件和后续核对方法 |
+| [下载重建版 ZIP](https://github.com/jinzhezenggroup/vibedataset/raw/refs/heads/main/downloads/gqcdataset_codex_goal_20261118_rebuilt.zip) | 完整文字材料与工具快照；不含未取得的原 PDF 或第三方源码 |
+| [ZIP SHA-256](https://github.com/jinzhezenggroup/vibedataset/blob/main/downloads/gqcdataset_codex_goal_20261118_rebuilt.zip.sha256) | 下载完整性校验 |
 
 ## 当前阶段
 
