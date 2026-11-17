@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "scope": "31 unique repositories from handoff catalog; one historical GQC runtime-source pin; one new density-learning reference. Original implementation gaps and transitive dependencies remain separate.",
+  "scope": "Pinned source trees and distinct runtime/producer releases for the handoff, the GQC experiments, and implemented completion baselines. See SOURCE_INDEX.md for coverage and gaps.",
   "inventory_directory": "handoff/gqcdataset_codex_goal/research/inventories",
   "receipt_directory": "handoff/gqcdataset_codex_goal/research/acquisition",
   "repositories": [
@@ -32,6 +32,7 @@
     },
     {
       "id": "xtbloom",
+      "include_tag_history": true,
       "catalog_ids": [
         "xtbloom"
       ],
@@ -55,6 +56,30 @@
       "checkout_path": "_references/pyscf",
       "paper_version_status": "not_established",
       "selection_reason": "量化后端与强基线"
+    },
+    {
+      "id": "pyscf_2_14",
+      "catalog_ids": [
+        "pyscf"
+      ],
+      "priority": "P0",
+      "repository_url": "https://github.com/pyscf/pyscf",
+      "role": "release_source",
+      "commit": "c63a953ba603a5ad8c1d65d88da72aaf05ede4d8",
+      "checkout_path": "_references/pyscf_2_14",
+      "paper_version_status": "not_claimed",
+      "selection_reason": "v2.14.0 release corresponding to the independent CP-001 reference. Kept separate from the 2.15 development snapshot."
+    },
+    {
+      "id": "libcint_6_1_3",
+      "catalog_ids": [],
+      "priority": "P0",
+      "repository_url": "https://github.com/sunqm/libcint",
+      "role": "default_build_dependency",
+      "commit": "c72d30662ba08048940c9000cc352a220c867712",
+      "checkout_path": "_references/libcint_6_1_3",
+      "paper_version_status": "not_claimed",
+      "selection_reason": "Default Gaussian integral provider specified in PySCF v2.14.0 CMake for the archive audit. The wheel binary is hashed separately."
     },
     {
       "id": "pyscfad",
@@ -81,6 +106,19 @@
       "checkout_path": "_references/psi4",
       "paper_version_status": "not_established",
       "selection_reason": "量化后端与强基线"
+    },
+    {
+      "id": "psi4_1_10",
+      "catalog_ids": [
+        "psi4"
+      ],
+      "priority": "P0",
+      "repository_url": "https://github.com/psi4/psi4",
+      "role": "release_source",
+      "commit": "f2492db10de56b30b188239bdc6b4cfbc4a23bd5",
+      "checkout_path": "_references/psi4_1_10",
+      "paper_version_status": "not_claimed",
+      "selection_reason": "Psi4 v1.10 release tag, the producer version in the QCFractal single-point wavefunction fixtures. Source-level export conventions can change between releases."
     },
     {
       "id": "qcfractal",
@@ -432,6 +470,28 @@
       "paper_version_status": "not_established",
       "selection_reason": "Followed PhiSNet author citation: density-learning, MD and property reuse; distinct from original PhiSNet and dm-PhiSNet",
       "primary_url": "https://dft.uci.edu/pubs/BHVMBT26.pdf"
+    },
+    {
+      "id": "qcmanybody",
+      "catalog_ids": [],
+      "priority": "P0",
+      "repository_url": "https://github.com/MolSSI/QCManyBody",
+      "role": "release_source",
+      "commit": "90273ab21e4f824b286d55411666394c80cf2472",
+      "checkout_path": "_references/qcmanybody",
+      "paper_version_status": "current_release_v0.8.0_not_identified_as_2024_paper_pin",
+      "selection_reason": "Primary implementation of counterpoise-aware and multi-model many-body component planning and exact assembly at a fixed MBE target. Traced from the pinned QCFractal many-body service."
+    },
+    {
+      "id": "mol_prop_imputation",
+      "catalog_ids": [],
+      "priority": "P1",
+      "repository_url": "https://github.com/Savoie-Research-Group/mol_prop_imputation",
+      "role": "author_release",
+      "commit": "386217f233f5607a6c69e09c8bd9375fbde06444",
+      "checkout_path": "_references/mol_prop_imputation",
+      "paper_version_status": "v1.0.0-publication, explicitly identified as the frozen manuscript release by the authors",
+      "selection_reason": "Direct prior work on generalized molecular property imputation with observed labels as inputs. Statistical comparator to component reuse under fixed quantum targets."
     }
   ]
 }

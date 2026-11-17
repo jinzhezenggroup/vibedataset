@@ -1,0 +1,107 @@
+{
+  "id": "psi4_1_10",
+  "source": {
+    "id": "psi4_1_10",
+    "catalog_ids": [
+      "psi4"
+    ],
+    "priority": "P0",
+    "repository_url": "https://github.com/psi4/psi4",
+    "role": "release_source",
+    "commit": "f2492db10de56b30b188239bdc6b4cfbc4a23bd5",
+    "checkout_path": "_references/psi4_1_10",
+    "paper_version_status": "not_claimed",
+    "selection_reason": "Psi4 v1.10 release tag, the producer version in the QCFractal single-point wavefunction fixtures. Source-level export conventions can change between releases."
+  },
+  "started_at_utc": "2026-11-17T18:30:39.074279+00:00",
+  "status": "indexed_pending_review",
+  "commands": [
+    {
+      "argv": [
+        "git",
+        "init",
+        "--quiet"
+      ],
+      "cwd": "_references/psi4_1_10",
+      "started_at_utc": "2026-11-17T18:30:39.074461+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.003617370006395504,
+      "ended_at_utc": "2026-11-17T18:30:39.078257+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "remote",
+        "add",
+        "origin",
+        "https://github.com/psi4/psi4"
+      ],
+      "cwd": "_references/psi4_1_10",
+      "started_at_utc": "2026-11-17T18:30:39.078454+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.0022508319962071255,
+      "ended_at_utc": "2026-11-17T18:30:39.080873+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "protocol.file.allow=never",
+        "fetch",
+        "--depth=1",
+        "--no-tags",
+        "origin",
+        "f2492db10de56b30b188239bdc6b4cfbc4a23bd5"
+      ],
+      "cwd": "_references/psi4_1_10",
+      "started_at_utc": "2026-11-17T18:30:39.081064+00:00",
+      "stdout": "",
+      "stderr": "\u6765\u81ea https://github.com/psi4/psi4\n * branch            f2492db10de56b30b188239bdc6b4cfbc4a23bd5 -> FETCH_HEAD\n",
+      "returncode": 0,
+      "elapsed_seconds": 19.54393305600388,
+      "ended_at_utc": "2026-11-17T18:30:58.625200+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "core.autocrlf=false",
+        "checkout",
+        "--detach",
+        "f2492db10de56b30b188239bdc6b4cfbc4a23bd5"
+      ],
+      "cwd": "_references/psi4_1_10",
+      "started_at_utc": "2026-11-17T18:30:58.625465+00:00",
+      "stdout": "",
+      "stderr": "HEAD \u76ee\u524d\u4f4d\u4e8e f2492db v1.10\n",
+      "returncode": 0,
+      "elapsed_seconds": 0.7855605130025651,
+      "ended_at_utc": "2026-11-17T18:30:59.411209+00:00"
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "/home/lhshen/vibedataset/handoff/gqcdataset_codex_goal/tools/inventory_sources.py",
+        "_references/psi4_1_10",
+        "--recurse-submodules",
+        "--json",
+        "handoff/gqcdataset_codex_goal/research/inventories/psi4_1_10.json"
+      ],
+      "cwd": ".",
+      "started_at_utc": "2026-11-17T18:30:59.411560+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 1.1774897720024455,
+      "ended_at_utc": "2026-11-17T18:31:00.589274+00:00"
+    }
+  ],
+  "receipt_path": "handoff/gqcdataset_codex_goal/research/acquisition/psi4_1_10-20261117T183039074255Z.json",
+  "resolved_commit": "f2492db10de56b30b188239bdc6b4cfbc4a23bd5",
+  "inventory_path": "handoff/gqcdataset_codex_goal/research/inventories/psi4_1_10.json",
+  "ended_at_utc": "2026-11-17T18:31:00.589689+00:00"
+}

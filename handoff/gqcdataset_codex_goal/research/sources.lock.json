@@ -97,9 +97,9 @@
       "external_dependency_closure": "pending; see SOURCE_GAPS.md",
       "evidence_status": {
         "indexed": true,
-        "files_read": 3,
-        "behavior_traced": 0,
-        "executed": 0
+        "files_read": 7,
+        "behavior_traced": 14,
+        "executed": 14
       }
     },
     {
@@ -197,13 +197,14 @@
       "external_dependency_closure": "pending; see SOURCE_GAPS.md",
       "evidence_status": {
         "indexed": true,
-        "files_read": 0,
-        "behavior_traced": 0,
-        "executed": 0
+        "files_read": 2,
+        "behavior_traced": 9,
+        "executed": 2
       }
     },
     {
       "id": "xtbloom",
+      "include_tag_history": true,
       "catalog_ids": [
         "xtbloom"
       ],
@@ -220,7 +221,7 @@
       "tree": "da278b5ad02c91d6a2bdbdc99232a405d34a9855",
       "retrieved_at_utc": "2026-11-17T17:51:54.152893+00:00",
       "checkout_kind": "full-tree",
-      "history_scope": "shallow",
+      "history_scope": "full",
       "license": {
         "paths": [
           "CUDA_MKL_LINKING_EXCEPTION",
@@ -251,9 +252,10 @@
         "reviewed_at_utc": "2026-11-17T17:58:14.475299+00:00",
         "review_scope": "Reviewed inventory integrity, full root path scope, license locations and submodule/LFS status; not source comprehension or dependency closure.",
         "known_gaps": [
-          "pyproject.toml setuptools_scm pre_parse=fail_on_shallow; fetch history and tags before building. Native runtime not installed or tested here."
+          "Native CPU route built and tested after fetching history/tags. CUDA path at this pin not run by the local CPU audit; see research/audits/xtbloom.md."
         ],
-        "commit": "16ec6bb04629b568b20e012e9b6409fb0ccff0f8"
+        "commit": "16ec6bb04629b568b20e012e9b6409fb0ccff0f8",
+        "additional_evidence": "research/acquisition/xtbloom-history-20261118.json"
       },
       "file_count": 1480,
       "top_level_directories": [
@@ -279,14 +281,14 @@
       ],
       "reviewed_integrity_notices": [],
       "known_gaps": [
-        "pyproject.toml setuptools_scm pre_parse=fail_on_shallow; fetch history and tags before building. Native runtime not installed or tested here."
+        "Native CPU route built and tested after fetching history/tags. CUDA path at this pin not run by the local CPU audit; see research/audits/xtbloom.md."
       ],
       "external_dependency_closure": "pending; see SOURCE_GAPS.md",
       "evidence_status": {
         "indexed": true,
         "files_read": 0,
-        "behavior_traced": 0,
-        "executed": 0
+        "behavior_traced": 4,
+        "executed": 3
       }
     },
     {
@@ -359,6 +361,149 @@
       }
     },
     {
+      "id": "pyscf_2_14",
+      "catalog_ids": [
+        "pyscf"
+      ],
+      "priority": "P0",
+      "repository_url": "https://github.com/pyscf/pyscf",
+      "role": "release_source",
+      "commit": "c63a953ba603a5ad8c1d65d88da72aaf05ede4d8",
+      "checkout_path": "_references/pyscf_2_14",
+      "paper_version_status": "not_claimed",
+      "selection_reason": "v2.14.0 release corresponding to the independent CP-001 reference. Kept separate from the 2.15 development snapshot.",
+      "acquisition_receipts": [
+        "research/acquisition/pyscf_2_14-20261117T182414577278Z.json"
+      ],
+      "tree": "7b08a26aeaf78d02d24822cd32e070597b3f571c",
+      "retrieved_at_utc": "2026-11-17T18:24:21.744515+00:00",
+      "checkout_kind": "full-tree",
+      "history_scope": "shallow",
+      "license": {
+        "paths": [
+          "LICENSE",
+          "NOTICE"
+        ],
+        "interpretation": "Apache-2.0, LICENSE and NOTICE."
+      },
+      "inventory_path": "research/inventories/pyscf_2_14.json.gz",
+      "inventory_sha256": "68e7708990043476bf0a1ee799237b443b0da5cd90f7f0b63337b4ff6fc24aa6",
+      "inventory_uncompressed_sha256": "a21043ecb0dc2996862a9b3516704fcf952d58fa01f1ed0b115d76facffd4aa4",
+      "submodules": [],
+      "lfs": {
+        "pointer_count": 0,
+        "unhydrated_count": 0
+      },
+      "acquisition_status": "acquired",
+      "acquisition_scope": "Complete pinned tracked trees including initialized submodules; not all build dependencies, paper supplements, datasets or weights.",
+      "reviewer_record": {
+        "root_tree_reviewed": true,
+        "reviewer": "Codex",
+        "reviewed_at_utc": "2026-11-17T19:04:18.677023+00:00",
+        "review_scope": "Checked pinned full tree, inventory, clean checkout, license location, no submodules or recognized LFS pointers.",
+        "commit": "c63a953ba603a5ad8c1d65d88da72aaf05ede4d8",
+        "license_note": "Apache-2.0, LICENSE and NOTICE.",
+        "known_gaps": [
+          "Official reference v2.14.0; the originally installed n2 binary was not built from this checkout."
+        ]
+      },
+      "file_count": 2295,
+      "top_level_directories": [
+        ".github",
+        "conda",
+        "doc_legacy",
+        "docker",
+        "examples",
+        "pyscf",
+        "tools"
+      ],
+      "build_and_dependency_metadata": [
+        "pyproject.toml",
+        "setup.py"
+      ],
+      "reviewed_integrity_notices": [],
+      "known_gaps": [
+        "Official reference v2.14.0; the originally installed n2 binary was not built from this checkout."
+      ],
+      "external_dependency_closure": "pending; see SOURCE_GAPS.md",
+      "evidence_status": {
+        "indexed": true,
+        "files_read": 1,
+        "behavior_traced": 5,
+        "executed": 5
+      }
+    },
+    {
+      "id": "libcint_6_1_3",
+      "catalog_ids": [],
+      "priority": "P0",
+      "repository_url": "https://github.com/sunqm/libcint",
+      "role": "default_build_dependency",
+      "commit": "c72d30662ba08048940c9000cc352a220c867712",
+      "checkout_path": "_references/libcint_6_1_3",
+      "paper_version_status": "not_claimed",
+      "selection_reason": "Default Gaussian integral provider specified in PySCF v2.14.0 CMake for the archive audit. The wheel binary is hashed separately.",
+      "acquisition_receipts": [
+        "research/acquisition/libcint_6_1_3-20261117T184828627065Z.json"
+      ],
+      "tree": "ebae3ee7934629961d64e344f7fce9ec7e6d04a7",
+      "retrieved_at_utc": "2026-11-17T18:48:59.973773+00:00",
+      "checkout_kind": "full-tree",
+      "history_scope": "shallow",
+      "license": {
+        "paths": [
+          "LICENSE"
+        ],
+        "interpretation": "Apache-2.0, LICENSE."
+      },
+      "inventory_path": "research/inventories/libcint_6_1_3.json.gz",
+      "inventory_sha256": "e54a943b235075b5af1ec59c813625d2fbeb588ac3e55905c83fe3f561571532",
+      "inventory_uncompressed_sha256": "61bc82fedb8b725523f51b36e8584300d3c0c1ac10dfa08ba4662172bed4be37",
+      "submodules": [],
+      "lfs": {
+        "pointer_count": 0,
+        "unhydrated_count": 0
+      },
+      "acquisition_status": "acquired",
+      "acquisition_scope": "Complete pinned tracked trees including initialized submodules; not all build dependencies, paper supplements, datasets or weights.",
+      "reviewer_record": {
+        "root_tree_reviewed": true,
+        "reviewer": "Codex",
+        "reviewed_at_utc": "2026-11-17T19:04:18.677023+00:00",
+        "review_scope": "Checked pinned full tree, inventory, clean checkout, license location, no submodules or recognized LFS pointers.",
+        "commit": "c72d30662ba08048940c9000cc352a220c867712",
+        "license_note": "Apache-2.0, LICENSE.",
+        "known_gaps": [
+          "Default dependency specified by PySCF 2.14.0. No source-to-wheel attestation."
+        ]
+      },
+      "file_count": 133,
+      "top_level_directories": [
+        ".github",
+        "cmake",
+        "doc",
+        "examples",
+        "include",
+        "scripts",
+        "src",
+        "testsuite"
+      ],
+      "build_and_dependency_metadata": [
+        "CMakeLists.txt"
+      ],
+      "reviewed_integrity_notices": [],
+      "known_gaps": [
+        "Default dependency specified by PySCF 2.14.0. No source-to-wheel attestation."
+      ],
+      "external_dependency_closure": "pending; see SOURCE_GAPS.md",
+      "evidence_status": {
+        "indexed": true,
+        "files_read": 0,
+        "behavior_traced": 0,
+        "executed": 0
+      }
+    },
+    {
       "id": "pyscfad",
       "catalog_ids": [
         "pyscfad"
@@ -422,7 +567,7 @@
       "evidence_status": {
         "indexed": true,
         "files_read": 0,
-        "behavior_traced": 0,
+        "behavior_traced": 2,
         "executed": 0
       }
     },
@@ -502,6 +647,87 @@
       }
     },
     {
+      "id": "psi4_1_10",
+      "catalog_ids": [
+        "psi4"
+      ],
+      "priority": "P0",
+      "repository_url": "https://github.com/psi4/psi4",
+      "role": "release_source",
+      "commit": "f2492db10de56b30b188239bdc6b4cfbc4a23bd5",
+      "checkout_path": "_references/psi4_1_10",
+      "paper_version_status": "not_claimed",
+      "selection_reason": "Psi4 v1.10 release tag, the producer version in the QCFractal single-point wavefunction fixtures. Source-level export conventions can change between releases.",
+      "acquisition_receipts": [
+        "research/acquisition/psi4_1_10-20261117T183039074255Z.json"
+      ],
+      "tree": "66c131f4323499bb19db8cc8cecbfb5597c74adb",
+      "retrieved_at_utc": "2026-11-17T18:31:00.500056+00:00",
+      "checkout_kind": "full-tree",
+      "history_scope": "shallow",
+      "license": {
+        "paths": [
+          "COPYING",
+          "COPYING.LESSER",
+          "cmake/math/LICENSE"
+        ],
+        "interpretation": "LGPL-3.0 / GPL text in COPYING.LESSER and COPYING; see individual sources."
+      },
+      "inventory_path": "research/inventories/psi4_1_10.json.gz",
+      "inventory_sha256": "50d529dd97633e50fa8d518633a45d0798d84b214e968944290d2cb9eaff1efd",
+      "inventory_uncompressed_sha256": "2a75496e2cba0ec50aafd8e7aa2b9a5ea0aecabfbbd69b7252dcd3def7c32f66",
+      "submodules": [],
+      "lfs": {
+        "pointer_count": 0,
+        "unhydrated_count": 0
+      },
+      "acquisition_status": "acquired",
+      "acquisition_scope": "Complete pinned tracked trees including initialized submodules; not all build dependencies, paper supplements, datasets or weights.",
+      "reviewer_record": {
+        "root_tree_reviewed": true,
+        "reviewer": "Codex",
+        "reviewed_at_utc": "2026-11-17T19:04:18.677023+00:00",
+        "review_scope": "Checked pinned full tree, inventory, clean checkout, license location, no submodules or recognized LFS pointers.",
+        "commit": "f2492db10de56b30b188239bdc6b4cfbc4a23bd5",
+        "license_note": "LGPL-3.0 / GPL text in COPYING.LESSER and COPYING; see individual sources.",
+        "known_gaps": [
+          "Matches the producer release declared in fixtures. Original build packages and linked libraries not reconstructed."
+        ]
+      },
+      "file_count": 9707,
+      "top_level_directories": [
+        ".azure-pipelines",
+        ".github",
+        "cdash",
+        "cmake",
+        "conda",
+        "devtools",
+        "doc",
+        "external",
+        "fsapt",
+        "media",
+        "psi4",
+        "samples",
+        "tests"
+      ],
+      "build_and_dependency_metadata": [
+        "CMakeLists.txt",
+        "CTestConfig.cmake",
+        "environment.yml"
+      ],
+      "reviewed_integrity_notices": [],
+      "known_gaps": [
+        "Matches the producer release declared in fixtures. Original build packages and linked libraries not reconstructed."
+      ],
+      "external_dependency_closure": "pending; see SOURCE_GAPS.md",
+      "evidence_status": {
+        "indexed": true,
+        "files_read": 3,
+        "behavior_traced": 12,
+        "executed": 0
+      }
+    },
+    {
       "id": "qcfractal",
       "catalog_ids": [
         "qcfractal"
@@ -569,8 +795,8 @@
       "external_dependency_closure": "pending; see SOURCE_GAPS.md",
       "evidence_status": {
         "indexed": true,
-        "files_read": 0,
-        "behavior_traced": 0,
+        "files_read": 1,
+        "behavior_traced": 3,
         "executed": 0
       }
     },
@@ -636,7 +862,7 @@
       "evidence_status": {
         "indexed": true,
         "files_read": 0,
-        "behavior_traced": 0,
+        "behavior_traced": 1,
         "executed": 0
       }
     },
@@ -797,7 +1023,7 @@
       "external_dependency_closure": "pending; see SOURCE_GAPS.md",
       "evidence_status": {
         "indexed": true,
-        "files_read": 0,
+        "files_read": 1,
         "behavior_traced": 0,
         "executed": 0
       }
@@ -1005,7 +1231,7 @@
       "evidence_status": {
         "indexed": true,
         "files_read": 0,
-        "behavior_traced": 0,
+        "behavior_traced": 1,
         "executed": 0
       }
     },
@@ -1768,8 +1994,8 @@
       "external_dependency_closure": "pending; see SOURCE_GAPS.md",
       "evidence_status": {
         "indexed": true,
-        "files_read": 0,
-        "behavior_traced": 0,
+        "files_read": 1,
+        "behavior_traced": 1,
         "executed": 0
       }
     },
@@ -2500,9 +2726,140 @@
         "behavior_traced": 0,
         "executed": 0
       }
+    },
+    {
+      "id": "qcmanybody",
+      "catalog_ids": [],
+      "priority": "P0",
+      "repository_url": "https://github.com/MolSSI/QCManyBody",
+      "role": "release_source",
+      "commit": "90273ab21e4f824b286d55411666394c80cf2472",
+      "checkout_path": "_references/qcmanybody",
+      "paper_version_status": "current_release_v0.8.0_not_identified_as_2024_paper_pin",
+      "selection_reason": "Primary implementation of counterpoise-aware and multi-model many-body component planning and exact assembly at a fixed MBE target. Traced from the pinned QCFractal many-body service.",
+      "acquisition_receipts": [
+        "research/acquisition/qcmanybody-20261117T184438066906Z.json"
+      ],
+      "tree": "d37c3ea2e9050f0efaf55d327ec4fc4d08eeca09",
+      "retrieved_at_utc": "2026-11-17T18:44:41.404439+00:00",
+      "checkout_kind": "full-tree",
+      "history_scope": "shallow",
+      "license": {
+        "paths": [
+          "LICENSE"
+        ],
+        "interpretation": "BSD-3-Clause, LICENSE and CITATION.cff"
+      },
+      "inventory_path": "research/inventories/qcmanybody.json.gz",
+      "inventory_sha256": "a0dcbc094468841c66edf1ed09d166973700c4ecb8700b7460f73ad05d6ae19f",
+      "inventory_uncompressed_sha256": "2c2bf6fe120f7a26fc9c2839b5c782a6e9007c41cb2f947e96e731175de7a5fb",
+      "submodules": [],
+      "lfs": {
+        "pointer_count": 0,
+        "unhydrated_count": 0
+      },
+      "acquisition_status": "acquired",
+      "acquisition_scope": "Complete pinned tracked trees including initialized submodules; not all build dependencies, paper supplements, datasets or weights.",
+      "reviewer_record": {
+        "root_tree_reviewed": true,
+        "reviewer": "Codex",
+        "reviewed_at_utc": "2026-11-17T18:58:33.226689+00:00",
+        "commit": "90273ab21e4f824b286d55411666394c80cf2472",
+        "review_scope": "Checked all indexed tracked blobs, submodules, LFS, clean checkout and official version, with LICENSE at the root.",
+        "license_note": "BSD-3-Clause, LICENSE and CITATION.cff",
+        "known_gaps": [
+          "The modern release identifies the JCP 2024 paper; the exact paper-experiment commit is unconfirmed."
+        ]
+      },
+      "file_count": 108,
+      "top_level_directories": [
+        ".github",
+        ".vscode",
+        "docs",
+        "qcmanybody"
+      ],
+      "build_and_dependency_metadata": [
+        "pyproject.toml"
+      ],
+      "reviewed_integrity_notices": [],
+      "known_gaps": [
+        "The modern release identifies the JCP 2024 paper; the exact paper-experiment commit is unconfirmed."
+      ],
+      "external_dependency_closure": "pending; see SOURCE_GAPS.md",
+      "evidence_status": {
+        "indexed": true,
+        "files_read": 2,
+        "behavior_traced": 5,
+        "executed": 5
+      }
+    },
+    {
+      "id": "mol_prop_imputation",
+      "catalog_ids": [],
+      "priority": "P1",
+      "repository_url": "https://github.com/Savoie-Research-Group/mol_prop_imputation",
+      "role": "author_release",
+      "commit": "386217f233f5607a6c69e09c8bd9375fbde06444",
+      "checkout_path": "_references/mol_prop_imputation",
+      "paper_version_status": "v1.0.0-publication, explicitly identified as the frozen manuscript release by the authors",
+      "selection_reason": "Direct prior work on generalized molecular property imputation with observed labels as inputs. Statistical comparator to component reuse under fixed quantum targets.",
+      "acquisition_receipts": [
+        "research/acquisition/mol_prop_imputation-20261117T184551036095Z.json"
+      ],
+      "tree": "e92b75bcab32e42100a1ca20558f3673def3ccc3",
+      "retrieved_at_utc": "2026-11-17T18:45:52.945553+00:00",
+      "checkout_kind": "full-tree",
+      "history_scope": "shallow",
+      "license": {
+        "paths": [
+          "LICENSE"
+        ],
+        "interpretation": "MIT, LICENSE. External Zenodo data/weights under CC-BY-4.0."
+      },
+      "inventory_path": "research/inventories/mol_prop_imputation.json.gz",
+      "inventory_sha256": "6f1ac1e9c4969f9be6edfa75930c09abf759c6233a4eb7e9f86fbc616f4189af",
+      "inventory_uncompressed_sha256": "d1311933424562f96065e92864876b7c93c92ef050f97c31b2a70cef0a4864cd",
+      "submodules": [],
+      "lfs": {
+        "pointer_count": 0,
+        "unhydrated_count": 0
+      },
+      "acquisition_status": "acquired",
+      "acquisition_scope": "Complete pinned tracked trees including initialized submodules; not all build dependencies, paper supplements, datasets or weights.",
+      "reviewer_record": {
+        "root_tree_reviewed": true,
+        "reviewer": "Codex",
+        "reviewed_at_utc": "2026-11-17T18:58:33.226689+00:00",
+        "commit": "386217f233f5607a6c69e09c8bd9375fbde06444",
+        "review_scope": "Checked all indexed tracked blobs, submodules, LFS, clean checkout and official version, with LICENSE at the root.",
+        "license_note": "MIT, LICENSE. External Zenodo data/weights under CC-BY-4.0.",
+        "known_gaps": [
+          "Original training not rerun; one author checkpoint and a 32-row data slice inspected, other external releases/recipes are outside this audit."
+        ]
+      },
+      "file_count": 43,
+      "top_level_directories": [
+        "case_studies",
+        "random_drop_all2prop",
+        "random_drop_prop2prop",
+        "remove_x",
+        "struct_prop_comp"
+      ],
+      "build_and_dependency_metadata": [],
+      "reviewed_integrity_notices": [],
+      "known_gaps": [
+        "Original training not rerun; one author checkpoint and a 32-row data slice inspected, other external releases/recipes are outside this audit."
+      ],
+      "external_dependency_closure": "pending; see SOURCE_GAPS.md",
+      "evidence_status": {
+        "indexed": true,
+        "files_read": 2,
+        "behavior_traced": 3,
+        "executed": 1
+      }
     }
   ],
-  "generated_at_utc": "2026-11-17T18:05:08.575759+00:00",
+  "generated_at_utc": "2026-11-17T19:08:20.411075+00:00",
   "unresolved_catalog_entries": [
     {
       "id": "phisnet",
@@ -2567,10 +2924,10 @@
     }
   ],
   "summary": {
-    "repositories_indexed": 33,
-    "files_indexed": 252312,
-    "files_read": 3,
-    "behavior_traced": 0,
-    "executed": 0
+    "repositories_indexed": 38,
+    "files_indexed": 264598,
+    "files_read": 20,
+    "behavior_traced": 60,
+    "executed": 30
   }
 }

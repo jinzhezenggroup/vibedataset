@@ -22,9 +22,17 @@ def files(inv, prefix=''):
 def main():
     lock_path = BASE / 'research/sources.lock.json'
     lock = json.loads(lock_path.read_text())
+    plan = json.loads((BASE / 'research/acquisition_plan.json').read_text())
+    locked = {s['id']: s for s in lock['repositories']}
+    assert set(locked) == {s['id'] for s in plan['repositories']}
+    for source in plan['repositories']:
+        if source.get('commit') and locked[source['id']].get('inventory_path'):
+            assert source['commit'] == locked[source['id']]['commit'], source['id']
     review = json.loads((BASE / 'research/intake_review.json').read_text())
     manual = {(r['repository_id'],r['path']):r for r in review['file_reading']}
+    assert len(manual) == len(review['file_reading']), 'duplicate review'
     expected = {}
+    by_source = {}
     for source in lock['repositories']:
         if not source.get('inventory_path'):
             continue
@@ -54,8 +62,15 @@ def main():
         actual = subprocess.check_output(['git','-C',source['checkout_path'],
                                           'rev-parse','HEAD','HEAD^{tree}'],text=True).splitlines()
         assert actual == [source['commit'],source['tree']], source['id']
+        if source.get('include_tag_history'):
+            assert source['history_scope'] == 'full'
+            assert subprocess.check_output(['git', '-C', source['checkout_path'], 'rev-parse',
+                                             '--is-shallow-repository'], text=True).strip() == 'false'
+            subprocess.check_output(['git', '-C', source['checkout_path'], 'describe',
+                                     '--tags', '--match', 'v*', '--abbrev=0'])
         assert not subprocess.check_output(['git','-C',source['checkout_path'],
                                              'status','--porcelain'],text=True), source['id']
+        by_source[source['id']] = dict(read=0, behavior_traced=0, executed=0)
         for commit, name, file in files(inv):
             key = (source['id'],name)
             assert key not in expected, key
@@ -77,15 +92,24 @@ def main():
             assert row['acquired'] == str(valid), key
             assert row['indexed'] == 'True', key
             counters['indexed'] += 1
+            if key in manual:
+                assert manual[key]['blob'] == file['commit_object_id'], key
+                assert (BASE / row['evidence_paths']).is_file(), key
             for status in ('read','behavior_traced','executed'):
                 assert row[status] == str(manual.get(key,{}).get(status,False)), (key,status)
                 if row[status] == 'True':
                     assert manual[key]['blob'] == file['commit_object_id']
                     assert row['reader'] and row['read_at'] and row['evidence_paths']
                     counters[status] += 1
+                    by_source[row['repository_id']][status] += 1
     assert seen == set(expected)
+    assert set(manual) <= seen, 'orphan review'
     assert counters['indexed'] == lock['summary']['files_indexed']
-    assert counters['read'] == lock['summary']['files_read']
+    for status, field in [('read', 'files_read'), ('behavior_traced', 'behavior_traced'), ('executed', 'executed')]:
+        assert counters[status] == lock['summary'][field], field
+        for source in lock['repositories']:
+            if source['id'] in by_source:
+                assert by_source[source['id']][status] == source['evidence_status'][field], (source['id'], field)
     report = dict(checked_at_utc=datetime.now(timezone.utc).isoformat(),
                   result='passed', coverage_counts=counters,
                   source_lock_sha256=hashlib.sha256(lock_path.read_bytes()).hexdigest(),

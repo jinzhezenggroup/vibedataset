@@ -1,14 +1,14 @@
 {
-  "checked_at_utc": "2026-11-17T18:05:22.060339+00:00",
+  "checked_at_utc": "2026-11-17T19:08:31.268088+00:00",
   "result": "passed",
   "coverage_counts": {
-    "indexed": 252312,
-    "read": 3,
-    "behavior_traced": 0,
-    "executed": 0
+    "indexed": 264598,
+    "read": 20,
+    "behavior_traced": 60,
+    "executed": 30
   },
-  "source_lock_sha256": "781517b933f237c612e56b407bd0991e0ad753e4c53a47c8cc0f1498f96b3478",
-  "source_coverage_sha256": "42f033ea33b377dda78ae5ce1611aa2e10ce1df7312e3670a6ce3616a2d284bb",
+  "source_lock_sha256": "e98f3e9920e735b5511d4ffec0bb243a09ecc4909f33a5a026993e20d7b5c0fa",
+  "source_coverage_sha256": "49ebee9961c0df2d79733ccd60a823585fa8825f3a0e24b51d9b4d33da1c2722",
   "checks": [
     "inventory gzip and SHA256 round-trip",
     "lock vs checkout commit/tree and clean state",

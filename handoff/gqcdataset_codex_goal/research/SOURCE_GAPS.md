@@ -13,7 +13,7 @@
 | dm-PhiSNet | [arXiv HTML v1](https://arxiv.org/html/2604.27256v1) 可读；本轮检索 github 链接只见 arXiv 页脚基础设施；[期刊 DOI](https://doi.org/10.1002/chem.71739) 在浏览工具访问失败。 | 期刊 SI、原始实现和公式—代码对应仍未取得。不可从缺代码推出无既有方法。 |
 | IM-GNN | [MIR 官方论文页](https://www.mi-research.net/en/article/doi/10.1007/s11633-023-1443-7) 可读，但返回内容未给出作者代码链接；模型名＋作者＋github 搜索未得到可确认的原始实现。 | 检查可获取的全文／补充材料与作者项目；不用不同的 IMM-GNN、ImbGNN 或搜索聚合站替代。 |
 | QPMA | 本轮 GitHub connector GET `https://api.github.com/repos/JeongminChae/QPMA` 仍返回 HTTP 404 / NOT_FOUND。 | 迁移、权限、删除原因未知；保留访问阻塞，沿论文和作者公开归档追踪。 |
-| QMugs | [ETH 官方数据记录](https://www.research-collection.ethz.ch/entities/researchdata/d0e7d2fc-6fd2-43bc-bd68-8903470ad0ec) 搜索索引可定位；直接打开返回 403。[PMC](https://pmc.ncbi.nlm.nih.gov/articles/PMC9174255/) 返回验证页，Nature 正文重定向受限。 | 尚未获取实际波函数记录，未定位独立生成源码。后续沿官方 README／数据访问入口验证文件结构与许可；归档存在不算数据字段已核验。 |
+| QMugs | [ETH 官方数据记录](https://www.research-collection.ethz.ch/entities/researchdata/d0e7d2fc-6fd2-43bc-bd68-8903470ad0ec) 搜索索引可定位；直接打开返回 403。[PMC](https://pmc.ncbi.nlm.nih.gov/articles/PMC9174255/) 返回验证页，Nature 正文重定向受限。 | 对 ETH 官方 item 及 bundles API 另行只读请求，实测 HTTP 429。尚未获取实际波函数记录，未定位独立生成源码。后续沿官方 README／数据访问入口验证文件结构与许可；归档存在不算数据字段已核验。 |
 | Δ-ML 原始工作 | [arXiv 1503.04987](https://arxiv.org/abs/1503.04987) 可读；本轮定向搜索未定位能确认对应原实验的代码。 | 查原作者归档和 SI；现代 Δ-learning 实现单列，不能替代原始版本。 |
 | mlelec 论文版本 | [Materials Cloud v1](https://archive.materialscloud.org/records/4vezc-jtt98) 将 mlelec 列为软件，另列 1.1 GiB dataset.tar.xz 和 README；README 下载经签名重定向后在浏览工具失败。 | 当前默认分支已锁定，但论文分支／提交未确定；不能用 main 证明论文复现。固定树的 pyproject.toml 仍为 `license = TODO` 注释，未找到 LICENSE/COPYING。先解决授权和论文版本，再复用实现。 |
 | ANI-1ccx | 获取的是目录中的数据支持仓库。 | 训练实现、NEUROCHEM、权重与现代 TorchANI 的版本关系仍待 #4/#5 审读；数据下载脚本不算训练链闭合。 |
@@ -40,14 +40,14 @@ PhiSNet 作者方向的检索定位到
 | LFS | 每份清点递归检查固定树中 ≤1 KiB 的标准指针及内容哈希 | 汇总在锁文件。非典型指针、远端数据服务和下载脚本内容不在这个检查的保证内。 |
 | LLVM 工作区换行 | 6 条初始 blob 差异，均有 `eol=crlf` 属性且实际字节恰为固定 blob 的 LF→CRLF 展开 | 保留原始差异，在 intake_review.json 逐文件解释，验证器重查；没有修改源码或隐藏缺件。 |
 | GQC | 当前源码与 n2 声明源码分开；树内 generator、manifest、upstream、tests 和原生源码均已索引 | 不重编译。n2 导入和库哈希不是当前源码的执行证据，也不是可复现构建证明。可选 CUDA/CUTLASS/cuTENSOR 等 provider 需在选定执行路径后固定。 |
-| xTBloom | pyproject.toml 的 `pre_parse = "fail_on_shallow"`；Eigen manifest 规定仅 WebAssembly FetchContent，含版本与 SHA256 | 当前完整树的历史仍为浅历史；构建前补足历史/tags。WebAssembly Eigen 与原生运行路径分开；没有因清点成功就安装或宣称可运行。 |
-| PySCF | `pyscf/lib/CMakeLists.txt` 的 libcint/qcint、libxc 7.1.2、xcfun、可选 libxsmm/FFTW 等构建边 | 这些外部发布物未全部获取；必须在选定后端时按配置固定，不能把 PySCF 根树称为整个数值依赖闭包。 |
+| xTBloom | pyproject.toml 的 `pre_parse = "fail_on_shallow"`；Eigen manifest 规定仅 WebAssembly FetchContent，含版本与 SHA256 | 已补全历史/tags，保持原 pin，按本地 LP64 provider 从源码构建并运行 CPU CTest。CUDA 数值路径与 WebAssembly Eigen 仍需独立验证。[CPU 实跑](audits/xtbloom.md) |
+| PySCF | `pyscf/lib/CMakeLists.txt` 的 libcint/qcint、libxc 7.1.2、xcfun、可选 libxsmm/FFTW 等构建边 | 另已固定 v2.14.0 及其默认构建选择的 libcint v6.1.3 全树；AD-001 校验实际 Python 源码与 libcgto 身份，未从源码重建 wheel。其他外部发布物仍待核验。 |
 | xTB / tblite | `subprojects/*.wrap` 中的 mctc-lib、dftd4、multicharge、ddX 等 | wrap 文件已包含在树和哈希索引中，非 submodule 的外部下载不自动被递归 Git 获取；逐路径审计时继续固定。 |
-| 学习／数据项目 | 全仓库保留已有文件，不加载 pickle、不执行下载器或训练代码 | 大数据、模型权重、原论文切分及外部补充代码另作资产；存在 URL 不代表已取得。 |
+| 学习／数据项目 | 原接管阶段仅获取源码。此后按发布身份定向取得少量 ANI、Schofield 等人的权重和数据，记录切片/哈希；后者以 weights_only 加载一次作者模型 | 大数据、模型权重、原论文切分及外部补充代码另作资产；存在 URL 不代表已取得。 |
 | 生成代码 | 生成规则和已跟踪生成结果均在全树索引 | 尚未运行生成器；不保证 release tarball、sdist 与 Git 树产物相同。 |
 
 缺口的当前状态与重试成本以 `acquisition/` 回执为准；超时／失败不删除。
-外部依赖闭包和论文版本尚未核完，#2 保持打开。已锁定的树可立即支撑 #3/#4/#5 的局部审读。
+新增受检的原作者论文发布版 mol_prop_imputation v1.0.0、QCManyBody v0.8.0（2024 论文原始 commit 未确定）、Psi4 v1.10、PySCF v2.14.0 与 libcint v6.1.3。ANI 作者仓库未提供已确认的 CC 标签逐行组装源码，论文公式复算偏差登记于 [CBS-001](experiments/ani_composite/README.md)。外部依赖闭包和其他论文版本尚未核完，#2 保持打开。已锁定的树可立即支撑 #3/#4/#5 的局部审读。
 
 ## 原交接附件
 

@@ -88,10 +88,15 @@ def main():
             repo.mkdir(parents=True)
             run(['git', 'init', '--quiet'], repo, receipt, args.timeout)
             run(['git', 'remote', 'add', 'origin', url], repo, receipt, args.timeout)
-            run(['git', '-c', 'protocol.file.allow=never', 'fetch', '--depth=1',
-                 '--no-tags', 'origin', commit], repo, receipt, args.timeout)
+            history = ['--tags'] if source.get('include_tag_history') else ['--depth=1', '--no-tags']
+            run(['git', '-c', 'protocol.file.allow=never', 'fetch', *history,
+                 'origin', commit], repo, receipt, args.timeout)
             run(['git', '-c', 'core.autocrlf=false', 'checkout', '--detach', commit],
                 repo, receipt, args.timeout)
+            if source.get('include_tag_history'):
+                if run(['git', 'rev-parse', '--is-shallow-repository'], repo, receipt, args.timeout) != 'false':
+                    raise ValueError('version resolution requires complete history')
+                run(['git', 'describe', '--tags', '--match', 'v*', '--abbrev=0'], repo, receipt, args.timeout)
             inventory = Path(plan['inventory_directory']) / (source['id'] + '.json')
             run([sys.executable, str(Path(__file__).with_name('inventory_sources.py')),
                  str(repo), '--recurse-submodules', '--json', str(inventory)],

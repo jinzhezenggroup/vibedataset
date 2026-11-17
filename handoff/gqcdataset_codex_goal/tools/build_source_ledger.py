@@ -29,7 +29,9 @@ def flatten(inv, prefix=''):
 
 
 def redact_paths(inv):
-    inv['repository_path'] = str(Path(inv['repository_path']).relative_to(Path.cwd()))
+    path = Path(inv['repository_path'])
+    if path.is_absolute():
+        inv['repository_path'] = str(path.relative_to(Path.cwd()))
     for child in inv['submodules']:
         if 'inventory' in child:
             redact_paths(child['inventory'])
@@ -46,6 +48,8 @@ def main():
     plan = json.loads((RESEARCH / 'acquisition_plan.json').read_text())
     review = json.loads((RESEARCH / 'intake_review.json').read_text())
     records = review['repositories']
+    old_lock = RESEARCH / 'sources.lock.json'
+    previous = {r['id']: r for r in json.loads(old_lock.read_text())['repositories']} if old_lock.exists() else {}
     read_records = {(r['repository_id'], r['path']): r for r in review['file_reading']}
     template = json.loads((BASE / 'templates/sources.lock.json').read_text())
     template.update(notice='Pinned root trees and submodules only. External dependency closure, '
@@ -60,10 +64,11 @@ def main():
         for source in plan['repositories']:
             name = source['id']
             raw_path = RESEARCH / 'inventories' / f'{name}.json'
+            archived = raw_path.with_suffix('.json.gz')
             item = dict(source)
             receipts = sorted((RESEARCH / 'acquisition').glob(f'{name}-[0-9]*.json'))
             item['acquisition_receipts'] = [str(p.relative_to(BASE)) for p in receipts]
-            if not raw_path.exists():
+            if not raw_path.exists() and not archived.exists():
                 item.update(acquisition_status='not_acquired', inventory_path=None)
                 if receipts:
                     receipt = json.loads(receipts[-1].read_text())
@@ -72,8 +77,16 @@ def main():
                                 known_gaps=[receipt.get('error', 'acquisition not finished')])
                 template['repositories'].append(item)
                 continue
-            doc = json.loads(raw_path.read_text())
+            if raw_path.exists():
+                doc = json.loads(raw_path.read_text())
+            else:
+                packed = archived.read_bytes()
+                if hashlib.sha256(packed).hexdigest() != previous.get(name, {}).get('inventory_sha256'):
+                    raise ValueError(f'{name}: archived inventory does not match the published lock')
+                doc = json.loads(gzip.decompress(packed))
             inv = doc['inventory']
+            if source.get('commit') and source['commit'] != inv['commit']:
+                raise ValueError(f'{name}: inventory does not match the selected source version')
             inspected = records.get(name, {})
             approved = inspected.get('root_tree_reviewed', False)
             if approved and inspected.get('commit') != inv['commit']:
@@ -88,10 +101,11 @@ def main():
             redact_paths(inv)
             doc['path_normalization'] = 'repository_path made relative to vibedataset root; no file facts changed'
             encoded = (json.dumps(doc, ensure_ascii=True, indent=2) + '\n').encode()
-            archived = raw_path.with_suffix('.json.gz')
-            compressed = gzip.compress(encoded, mtime=0)
-            assert gzip.decompress(compressed) == encoded
-            archived.write_bytes(compressed)
+            compressed = archived.read_bytes() if archived.exists() else b''
+            if not compressed or gzip.decompress(compressed) != encoded:
+                compressed = gzip.compress(encoded, mtime=0)
+                assert gzip.decompress(compressed) == encoded
+                archived.write_bytes(compressed)
             files = list(flatten(inv))
             root_paths = [f['path'] for f in inv['files']]
             license_paths = [p for p in root_paths if

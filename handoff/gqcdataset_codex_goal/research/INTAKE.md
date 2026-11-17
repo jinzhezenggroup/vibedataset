@@ -3,6 +3,8 @@
 2026-11-18，基于交接提交 `de60ee48eb7e567b494c558daeba85a8e1aff400`，
 分支 `codex/source-intake-20261118`。本轮推进 #2，并开始 #3 的一条局部审读。
 
+本页记录首次接管时点。当前源码数、执行范围和状态见 [STATUS](STATUS.md) 与 [来源索引](SOURCE_INDEX.md)。
+
 ## 实际完成的增量
 
 - 起始目录 31 个不同仓库的**完整所选 Git 树**已获取，包括整个 AIRS 和整个 LLVM 项目，未做 sparse checkout。

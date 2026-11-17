@@ -1,0 +1,105 @@
+{
+  "id": "libcint_6_1_3",
+  "source": {
+    "id": "libcint_6_1_3",
+    "catalog_ids": [],
+    "priority": "P0",
+    "repository_url": "https://github.com/sunqm/libcint",
+    "role": "default_build_dependency",
+    "commit": "c72d30662ba08048940c9000cc352a220c867712",
+    "checkout_path": "_references/libcint_6_1_3",
+    "paper_version_status": "not_claimed",
+    "selection_reason": "Default Gaussian integral provider specified in PySCF v2.14.0 CMake for the archive audit. The wheel binary is hashed separately."
+  },
+  "started_at_utc": "2026-11-17T18:48:28.627084+00:00",
+  "status": "indexed_pending_review",
+  "commands": [
+    {
+      "argv": [
+        "git",
+        "init",
+        "--quiet"
+      ],
+      "cwd": "_references/libcint_6_1_3",
+      "started_at_utc": "2026-11-17T18:48:28.627270+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.00230685000133235,
+      "ended_at_utc": "2026-11-17T18:48:28.629739+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "remote",
+        "add",
+        "origin",
+        "https://github.com/sunqm/libcint"
+      ],
+      "cwd": "_references/libcint_6_1_3",
+      "started_at_utc": "2026-11-17T18:48:28.629898+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.0023885369882918894,
+      "ended_at_utc": "2026-11-17T18:48:28.632443+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "protocol.file.allow=never",
+        "fetch",
+        "--depth=1",
+        "--no-tags",
+        "origin",
+        "c72d30662ba08048940c9000cc352a220c867712"
+      ],
+      "cwd": "_references/libcint_6_1_3",
+      "started_at_utc": "2026-11-17T18:48:28.632607+00:00",
+      "stdout": "",
+      "stderr": "\u6765\u81ea https://github.com/sunqm/libcint\n * branch            c72d30662ba08048940c9000cc352a220c867712 -> FETCH_HEAD\n",
+      "returncode": 0,
+      "elapsed_seconds": 30.29598641100165,
+      "ended_at_utc": "2026-11-17T18:48:58.928759+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "core.autocrlf=false",
+        "checkout",
+        "--detach",
+        "c72d30662ba08048940c9000cc352a220c867712"
+      ],
+      "cwd": "_references/libcint_6_1_3",
+      "started_at_utc": "2026-11-17T18:48:58.929223+00:00",
+      "stdout": "",
+      "stderr": "HEAD \u76ee\u524d\u4f4d\u4e8e c72d306 Release v6.1.3\n",
+      "returncode": 0,
+      "elapsed_seconds": 0.5453671739960555,
+      "ended_at_utc": "2026-11-17T18:48:59.474982+00:00"
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "/home/lhshen/vibedataset/handoff/gqcdataset_codex_goal/tools/inventory_sources.py",
+        "_references/libcint_6_1_3",
+        "--recurse-submodules",
+        "--json",
+        "handoff/gqcdataset_codex_goal/research/inventories/libcint_6_1_3.json"
+      ],
+      "cwd": ".",
+      "started_at_utc": "2026-11-17T18:48:59.475324+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.5038714429974789,
+      "ended_at_utc": "2026-11-17T18:48:59.979403+00:00"
+    }
+  ],
+  "receipt_path": "handoff/gqcdataset_codex_goal/research/acquisition/libcint_6_1_3-20261117T184828627065Z.json",
+  "resolved_commit": "c72d30662ba08048940c9000cc352a220c867712",
+  "inventory_path": "handoff/gqcdataset_codex_goal/research/inventories/libcint_6_1_3.json",
+  "ended_at_utc": "2026-11-17T18:48:59.979775+00:00"
+}
