@@ -111,6 +111,8 @@ def main():
             for target,known in cases:
                 compare(known,target,fields,obs,covered,plain,convertible,pts)
                 cache_checks += 1
+    cross = {('y','q0'),('x','r2')}
+    assert plan_field_block(list(diag),iter(sorted(cross))) == plan_field_block(diag,cross)
     known = {('y','q0'),('z','r2'),('x','zz')}
     witness = plan_field_block(diag,known)
     assert witness.new_rhs == 3

@@ -44,7 +44,10 @@ def plan_field_block(requests, known, cached_fields=(), cached_observables=(), *
     A subtraction may consume only previously measured entries of its own readout.
     Physical acceptance, cache validation and block iteration costs belong to execution.
     """
-    missing = set(map(tuple, requests)) - set(known)
+    known = set(map(tuple, known))
+    missing = set(map(tuple, requests)) - known
+    if isinstance(cached_fields, str) or isinstance(cached_observables, str):
+        raise ValueError('supply a collection of cached endpoint IDs')
     cached_fields = set(cached_fields)
     cached_observables = set(cached_observables)
     if any(f not in AXES for f, _ in missing):
