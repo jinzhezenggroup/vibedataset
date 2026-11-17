@@ -417,7 +417,8 @@ def complete_field_block(model, missing, cache, kernel_dir, known, *, supports=S
         relation.update(failed_block={'reason': str(error), 'counts': lost, 'submitted_blocks': spent['submitted_blocks']},
                         ordinary_retries=sorted(missing))
         measured = model.run_round(missing, baseline_fields, baseline_obs, cache)
-        measured['counts'] = dict(Counter(measured['counts']) + Counter(lost))
+        for key, n in lost.items():
+            measured['counts'][key] += n
         measured.update(relation=relation, chosen_fields=list(baseline_fields), chosen_observables=list(baseline_obs))
         return measured
     combined = measured['combined']
@@ -445,7 +446,8 @@ def complete_field_block(model, missing, cache, kernel_dir, known, *, supports=S
         relation['retry_block'] = retry['block']
         measured['results'].extend(retry['results'])
         measured['cache_checks'].extend(retry['cache_checks'])
-        measured['counts'] = dict(Counter(measured['counts']) + Counter(retry['counts']))
+        for key, n in retry['counts'].items():
+            measured['counts'][key] += n
         measured['new_fields'].extend(retry['new_fields'])
         measured['new_observables'].extend(retry['new_observables'])
     measured['counts']['requests'] = len(measured['results'])
