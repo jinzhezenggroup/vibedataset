@@ -21,6 +21,10 @@ from probe_scalar_response import DIAGONAL, decoder, recoverable
 from response_cover import plan_cover
 
 EXPERIMENTS = ROOT / 'handoff/gqcdataset_codex_goal/research/experiments'
+DEFAULT_CATALOGS = (
+    (EXPERIMENTS/'qm9_response_assets/index.json', EXPERIMENTS/'gqc_dual_response/summary.json'),
+    (EXPERIMENTS/'qm9_extension/assets/index.json', EXPERIMENTS/'qm9_extension/oracle-index.json'),
+)
 UNITS = {'q0': 'e / au_field', 'r2': 'bohr^2 / au_field', 'zz': 'bohr^2 / au_field'}
 DEFINITION = {'method': 'conventional closed-shell all-electron RHF/STO-3G', 'precision': 'float64',
               'clamped_nuclei': True, 'reference_field_au': [0, 0, 0], 'origin_bohr': [0, 0, 0],
@@ -73,6 +77,26 @@ def load_catalog(source_index, oracle_index):
     if len(records) != sum(bool(x.get('name')) for x in source['rows']) or len(outputs) != sum(bool(x.get('name')) for x in oracles['strata']):
         raise ValueError('duplicate record ID in the source or oracle index')
     return release, records, selected, outputs, hashes
+
+
+def route_catalogs(index_pairs):
+    """Keep each record bound to its original pair of source/qualification catalogs."""
+    release = None
+    routes, protected, catalogs = {}, set(), []
+    for source_index, oracle_index in index_pairs:
+        origin, rows, selected, oracles, hashes = load_catalog(source_index, oracle_index)
+        if release and (origin['metadata_url'], origin['sha256']) != (release['metadata_url'], release['sha256']):
+            raise ValueError('catalogs identify different versions of the QM9 coordinates')
+        release = origin
+        protected.update(p.resolve() for p in (source_index, oracle_index, source_index.with_name('cohort.json')))
+        catalogs.append({**hashes, 'record_ids': sorted(rows)})
+        for name, row in rows.items():
+            if name in routes:
+                raise ValueError(f'ambiguous QM9 record in multiple catalogs: {name}')
+            routes[name] = (row, oracles.get(name), selected[name], source_index, oracle_index, hashes)
+            protected.update((source_index.parent / row[k]).resolve() for k in ('metadata_file', 'array_file') if row.get(k))
+        protected.update((oracle_index.parent / o['oracle']).resolve() for o in oracles.values() if o.get('oracle'))
+    return release, routes, protected, catalogs
 
 
 def bound_context(name, source, result, member, release, source_index, oracle_index):
@@ -224,7 +248,7 @@ def save_label(db, identity, edge, grade, attempt, via):
     db.execute('INSERT OR REPLACE INTO labels VALUES(?,?,?,?,?)', (identity, *edge, compact(origin), json_hash(origin)))
 
 
-def load_history(spec, catalog_hashes):
+def load_history(spec, catalog_by_record):
     """Only caller-pinned completed batches are accepted as external scalar evidence."""
     if spec is None:
         return None, {}
@@ -237,18 +261,37 @@ def load_history(spec, catalog_hashes):
         if info['sha256'] != expected:
             raise ValueError('historical batch digest mismatch')
         batch = strict_json(raw)
-        if (batch['schema'] != 'vibedataset.response_batch.v1' or batch['definition'] != DEFINITION or
-                batch['units'] != UNITS or any(batch[k] != v for k, v in catalog_hashes.items())):
-            raise ValueError('historical publication, units or source catalogs differ')
+        if batch['schema'] != 'vibedataset.response_batch.v1' or batch['definition'] != DEFINITION or batch['units'] != UNITS:
+            raise ValueError('historical publication or units differ')
+        keys = ('source_index_sha256', 'oracle_index_sha256')
+        single = {k: batch.get(k) for k in keys} if any(k in batch for k in keys) else None
+        if single is not None and single not in catalog_by_record.values():
+            raise ValueError('historical source catalog pair differs')
+        # The initial CLI wrote one hash pair in its batch header. A composite
+        # result provides the exact source pair both on the record and in the manifest.
+        declared = {}
+        for catalog in batch.get('catalogs', []):
+            for name in catalog['record_ids']:
+                if name in declared:
+                    raise ValueError('duplicate historical record-to-catalog binding')
+                declared[name] = {k: catalog[k] for k in keys}
         by_attempt = {r['id']: r for r in batch['work'] if r['status'] == 'completed' and r['model_started']}
         grouped = defaultdict(list)
+        excluded = []
         for row in batch['records']:
             if (row.get('status') == 'qualified' and row.get('delivery') == 'computed'
                     and row.get('via') in ('direct', 'adjoint', 'compiled_scalar_relation')
                     and row.get('source_attempt') in by_attempt):
                 producer = by_attempt[row['source_attempt']]
-                grouped[producer['record_id']].append((row, producer['identity'], expected))
+                name = producer['record_id']
+                pair = row.get('catalog', single)
+                if (pair is None or pair != catalog_by_record.get(name) or
+                        (declared and declared.get(name) != pair) or (single is not None and single != pair)):
+                    excluded.append({'line': row.get('line'), 'record_id': name, 'reason': 'source catalog binding mismatch'})
+                    continue
+                grouped[name].append((row, producer['identity'], expected))
         info.update(status='read', input_rows=len(batch['records']), eligible_rows=sum(map(len, grouped.values())),
+                    excluded_catalog_records=excluded,
                     producer_setup_jk=sum(r['setup_jk'] for r in by_attempt.values()),
                     producer_round_jk=sum(r['round_jk'] for r in by_attempt.values()))
     except (OSError, ValueError, KeyError, TypeError) as e:
@@ -443,28 +486,25 @@ def main():
     parser.add_argument('--requests', default='-', help='one JSON object per line, or stdin')
     parser.add_argument('--cache-db', '--cache', type=Path, required=True)
     parser.add_argument('--out', '--output', required=True, help='atomic JSON batch result, or stdout (-)')
-    parser.add_argument('--source-index', type=Path, default=EXPERIMENTS/'qm9_response_assets/index.json')
-    parser.add_argument('--oracle-index', type=Path, default=EXPERIMENTS/'gqc_dual_response/summary.json')
+    parser.add_argument('--source-index', type=Path, help='select one source catalog; defaults to both released QM9 batches')
+    parser.add_argument('--oracle-index', type=Path, help='select the independent oracle catalog for an explicit source')
     parser.add_argument('--kernel-cache', type=Path, help='GQC generated binary cache')
     parser.add_argument('--decode-known-scalars', action='store_true', help='enable exact 3x3 scalar relations using qualified cached operands')
     parser.add_argument('--history', nargs=2, metavar=('SHA256', 'JSON'), help='accept producer-computed labels from this checksum-pinned earlier batch; enables scalar relations')
     args = parser.parse_args()
     start = time.perf_counter()
-    release, records, members, oracles, hashes = load_catalog(args.source_index, args.oracle_index)
-    protected = {args.source_index.resolve(), args.oracle_index.resolve(), args.source_index.with_name('cohort.json').resolve()}
-    for source in records.values():
-        for key in ('metadata_file', 'array_file'):
-            if source.get(key):
-                protected.add((args.source_index.parent / source[key]).resolve())
-    protected.update((args.oracle_index.parent / item['oracle']).resolve() for item in oracles.values() if item.get('oracle'))
+    pairs = DEFAULT_CATALOGS
+    if args.source_index is not None or args.oracle_index is not None:
+        pairs = [(args.source_index or DEFAULT_CATALOGS[0][0], args.oracle_index or DEFAULT_CATALOGS[0][1])]
+    release, routes, protected, catalogs = route_catalogs(pairs)
     if args.requests != '-':
         protected.add(Path(args.requests).resolve())
     if args.history:
         protected.add(Path(args.history[1]).resolve())
     if args.cache_db.resolve() in protected or (args.out != '-' and Path(args.out).resolve() in protected | {args.cache_db.resolve()}):
         parser.error('cache and output require distinct destinations outside the input files')
-    request_digest, rows, groups = read_inputs(args.requests, release, records)
-    history_info, history = load_history(args.history, hashes)
+    request_digest, rows, groups = read_inputs(args.requests, release, routes)
+    history_info, history = load_history(args.history, {name: route[-1] for name, route in routes.items()})
     args.cache_db.parent.mkdir(parents=True, exist_ok=True)
     kernel_dir = args.kernel_cache or args.cache_db.with_name(args.cache_db.name + '-gqc')
     attempts = []
@@ -472,12 +512,13 @@ def main():
     try:
         db.executescript(SCHEMA)
         for name, requests in groups.items():
-            cohort = records[name]
+            cohort, oracle, member, source_index, oracle_index, hashes = routes[name]
             for row in requests:
+                row['catalog'] = hashes
                 row['source'] = {'release': release['metadata_url'], 'release_sha256': release['sha256'],
-                                 'record_id': name, 'member': members[name]['member'], 'member_sha256': cohort['member_sha256']}
+                                 'record_id': name, 'member': member['member'], 'member_sha256': cohort['member_sha256']}
             try:
-                ctx = bound_context(name, cohort, oracles.get(name), members[name], release, args.source_index, args.oracle_index)
+                ctx = bound_context(name, cohort, oracle, member, release, source_index, oracle_index)
                 receipt = run_group(db, name, ctx, requests, kernel_dir, history.get(name, []),
                                     args.decode_known_scalars or args.history is not None)
                 if receipt:
@@ -489,8 +530,13 @@ def main():
     finally:
         db.close()
     counts = Counter(r['status'] for r in rows)
+    # Preserve the v1 single-pair header when a batch uses just one catalog.
+    used = {tuple(sorted(routes[name][-1].items())) for name in groups}
+    single_hashes = dict(next(iter(used))) if len(used) == 1 else {}
+    if not used and len(catalogs) == 1:
+        single_hashes = {k: v for k, v in catalogs[0].items() if k != 'record_ids'}
     batch = {'schema': 'vibedataset.response_batch.v1', 'definition': DEFINITION, 'units': UNITS,
-             **hashes, 'history': history_info, 'gqc_commit': GQC_PIN,
+             **single_hashes, 'catalogs': catalogs, 'history': history_info, 'gqc_commit': GQC_PIN,
              'cli_sha256': file_hash(__file__), 'model_source_sha256': file_hash(ROOT/'scripts/gqc_dual_response.py'),
              'input_sha256': request_digest, 'counts_by_status': counts, 'work': attempts,
              'seconds': time.perf_counter() - start, 'records': rows}
