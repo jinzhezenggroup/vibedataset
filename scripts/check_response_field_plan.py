@@ -41,12 +41,18 @@ def endpoint_mask(fields, observables):
     return mask(e for e in PAIRS if e[0] in fields or e[1] in observables)
 
 
-def compare(known, desired, cached_fields, cached_obs, spare, plain, convertible):
+def compare(known, desired, cached_fields, cached_obs, spare, plain, convertible, endpoint_options):
     k,d = mask(known),mask(desired)
     remaining = d & ~spare
     bounds = [plain[remaining]] + [1+plain[remaining & ~cover] for cover in convertible[k]]
     selected = plan_field_block(desired, known, cached_fields, cached_obs)
     assert selected.new_rhs == min(bounds), (known,desired,cached_fields,cached_obs,selected,bounds)
+    if selected.support:
+        # Independently score every endpoint subset with this total budget.
+        alternatives = [(n+1, (remaining & ~unit).bit_count()*(len(s)-1), len(s), s)
+                        for n,unit in endpoint_options if n+1==selected.new_rhs
+                        for s,covered in zip(SUPPORTS,convertible[k]) if not remaining & ~(unit | covered)]
+        assert (selected.new_rhs,sum(map(len,selected.operands.values())),len(selected.support),selected.support) == min(alternatives)
     assert set(selected.ordinary_requests).isdisjoint(selected.operands)
     assert set(selected.ordinary_requests).union(selected.operands) == desired
     available = spare | endpoint_mask(selected.fields, selected.observables)
@@ -82,7 +88,7 @@ def main():
         convertible[old] = list(map(mask,covers))
         subset = ALL ^ old
         while True:
-            p = compare(known,unmask(subset),(),(),0,plain,convertible)
+            p = compare(known,unmask(subset),(),(),0,plain,convertible,pts)
             examined += 1
             if p.support:
                 savings += 1
@@ -103,7 +109,7 @@ def main():
             obs = set(subset) & set(OBS)
             covered = endpoint_mask(fields,obs)
             for target,known in cases:
-                compare(known,target,fields,obs,covered,plain,convertible)
+                compare(known,target,fields,obs,covered,plain,convertible,pts)
                 cache_checks += 1
     known = {('y','q0'),('z','r2'),('x','zz')}
     witness = plan_field_block(diag,known)
@@ -111,7 +117,7 @@ def main():
     rows = [(1,1,0),(0,1,1)]
     assert all(rank(rows + [UNITS[AXES.index(f)]]) == 3 for f,_ in known)
     print(json.dumps({'disjoint_known_requested_masks':examined,'ordinary_ties_or_wins':fallback,
-                      'strict_rhs_reductions':savings,'cached_control_combinations':cache_checks,
+                      'strict_rhs_reductions':savings,'all_minimum_subtraction_ties_verified':True,'cached_control_combinations':cache_checks,
                       'counterexample_outside_one_superposition_class':{
                           'known':sorted(known),'requested':sorted(diag),'one_sum_class_rhs':witness.new_rhs,
                           'two_sum_full_rank_with_each_single_known_field':rows}},indent=2))

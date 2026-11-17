@@ -2,6 +2,7 @@
   "disjoint_known_requested_masks": 19683,
   "ordinary_ties_or_wins": 17976,
   "strict_rhs_reductions": 1707,
+  "all_minimum_subtraction_ties_verified": true,
   "cached_control_combinations": 768,
   "counterexample_outside_one_superposition_class": {
     "known": [
