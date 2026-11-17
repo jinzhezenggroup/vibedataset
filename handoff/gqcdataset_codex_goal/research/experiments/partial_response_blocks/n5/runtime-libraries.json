@@ -1,0 +1,86 @@
+{
+  "measurement": "Post-job byte audit of the seven files named by actual native-program receipts. PySCF dependencies inspected separately in the same persistent interpreter.",
+  "job": 2048,
+  "native": [
+    {
+      "path": "compiled/064fb474c502e327136069c42a922bda3b9cd2bced0692a9f6511c6bae58f90b/runtime.so",
+      "bytes": 16032,
+      "sha256": "08f8ef0713e6c08a0bfa979cf81b506b67bac159ae9d9d93262fcaa7ccec2c34"
+    },
+    {
+      "path": "compiled/29f0a9150a17d7936c9e204c8376e6c4a3b3d94d59ab84525e6d69fe174be005/runtime.so",
+      "bytes": 16032,
+      "sha256": "5ad2cdfb2cef339cb06e0b0e9a4a15cc33aad617e83a228def3e300253d3ce23"
+    },
+    {
+      "path": "compiled/527c12deb5a63f0824d42d31e36e06e0c22f6481de8c17085d2129f4fc093d0d/runtime.so",
+      "bytes": 16032,
+      "sha256": "bfcd29c570f79272831966662fbf317d15ebdade9015c33419510fc5398dad6f"
+    },
+    {
+      "path": "compiled/5628e0f0f11f7d50a67f0270646c5c6e4b1f6bd7c3b87d430ba609b6fb563211/runtime.so",
+      "bytes": 16096,
+      "sha256": "0f5bd32236819ffeeea68633f8cf007ceed69374cebd0a40bb0419e4c40110a4"
+    },
+    {
+      "path": "compiled/6bbfb1c09725a53f6993cd21557c57ee9ba42e2e5024610e7f43dfdffa4c6593/runtime.so",
+      "bytes": 16032,
+      "sha256": "2c1d48ea23fb0e7349e0f49df567b3cce2df9d3e75f0dd17ecf85221796fd793"
+    },
+    {
+      "path": "decoder/74d8d70f4cdcc230ae29759521759a9e6fe534869cbc3533779c099b13c7ddde/runtime.so",
+      "bytes": 16032,
+      "sha256": "f1ff3c50fb90a22f9fea8f875665901fd53e6dd2bbacd4c97d515c0b19fb34c6"
+    },
+    {
+      "path": "decoder/cebc785f6c0bc33b2574feb4d38f51cc8c2b691d02333c4445520971f544830d/runtime.so",
+      "bytes": 16032,
+      "sha256": "b8d302f6ff6a31321f499f2a6069f73bdf7d5971045fee2f6140c883d1413282"
+    }
+  ],
+  "source_packs": [
+    {
+      "name": "pack-def4da805c81f35d92c68caec308e1fb395e0dc1.pack",
+      "bytes": 109596973,
+      "sha256": "120fb63fbf2586fb5e1c516d224ac793fe605dbae65ffbe29ac3dd07d96dd7c6"
+    }
+  ],
+  "libcgto": {
+    "path": "/home/lhshen/vibedataset/envs/gqc-2bf3fd98-cp313/lib/python3.13/site-packages/pyscf/lib/libcgto.so",
+    "sha256": "337d956486a156f1aa7ca636ac5a91c6277058ffedb6db2efe714fee65f726e0"
+  },
+  "libcgto_dependencies_in_environment": {
+    "libcint.so": {
+      "path": "/home/lhshen/vibedataset/envs/gqc-2bf3fd98-cp313/lib/python3.13/site-packages/pyscf/lib/deps/lib/libcint.so",
+      "sha256": "950bb0a297507369dce95b9013ef2c5b64b0fa36a0018c303c98e95efce7db7e"
+    },
+    "libnp_helper.so": {
+      "path": "/home/lhshen/vibedataset/envs/gqc-2bf3fd98-cp313/lib/python3.13/site-packages/pyscf/lib/libnp_helper.so",
+      "sha256": "22367859ca19057d29013075accc0c1d47e78e7d213295e686bf9a40fee735eb"
+    },
+    "libopenblas-r0-f650aae0.3.3.so": {
+      "path": "/home/lhshen/vibedataset/envs/gqc-2bf3fd98-cp313/lib/python3.13/site-packages/pyscf/lib/libopenblas-r0-f650aae0.3.3.so",
+      "sha256": "79ec02b53f573cd7116a89f04c397473018e7fda05720b354d43505c19d47958"
+    },
+    "libgomp-a34b3233.so.1.0.0": {
+      "path": "/home/lhshen/vibedataset/envs/gqc-2bf3fd98-cp313/lib/python3.13/site-packages/pyscf/lib/libgomp-a34b3233.so.1.0.0",
+      "sha256": "3a7eaece7231911be2fbb1b3e7cb4cb5c2e0f84e0c2bb73739472b5a1feec8c1"
+    },
+    "libquadmath-96973f99.so.0.0.0": {
+      "path": "/home/lhshen/vibedataset/envs/gqc-2bf3fd98-cp313/lib/python3.13/site-packages/pyscf/lib/deps/lib/../../libquadmath-96973f99.so.0.0.0",
+      "sha256": "934c22ded0e7d169c4d4678876c96051adf3d94545da962f60b41659b075da3b"
+    },
+    "libgfortran-91cc3cb1.so.3.0.0": {
+      "path": "/home/lhshen/vibedataset/envs/gqc-2bf3fd98-cp313/lib/python3.13/site-packages/pyscf/lib/libgfortran-91cc3cb1.so.3.0.0",
+      "sha256": "55e3eb67306c2ff17e6f8a0810eaa0dcb26e94cd83924c5065d5040e87814608"
+    }
+  },
+  "source_files": 15690,
+  "clean_source": true,
+  "checksums": {
+    "result.json": "9e1b9a2c4c210defffcf19f26db8f840bf9c15c8e81843466e8cfc22813cad4c",
+    "history.json": "4242061792848697d85f81a0e63610cc7eef1fe58d0df729d6a46f2d616c890d",
+    "events.jsonl": "71e5c75adf3657f12f8cb97be836e495603cd6e34c5b4fee265c8efeab7c70b0",
+    "producer-vectors.json": "1971b68d95721b1214afb803c7cd71819564d31670446d0417f71d8c2e6c1b2b"
+  }
+}
