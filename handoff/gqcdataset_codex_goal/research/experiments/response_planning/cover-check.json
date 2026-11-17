@@ -1,0 +1,14 @@
+{
+  "graphs": 512,
+  "cached_endpoint_sets": 64,
+  "combinations_checked": 32768,
+  "cross_stars": {
+    "fields": [
+      "x"
+    ],
+    "observables": [
+      "q0"
+    ]
+  },
+  "scope": "Exact minimum number of additional unit endpoints, with independent scalar/molecular checks elsewhere."
+}

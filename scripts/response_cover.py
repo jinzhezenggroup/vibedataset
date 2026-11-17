@@ -29,8 +29,11 @@ def plan_cover(requests, cached_fields=(), cached_observables=()):
     Callers admit vectors under a physical problem identity and handle labels,
     block solver costs, convergence and persistence outside this combinatorial step.
     """
-    field_cache = set(cached_fields)
-    observable_cache = set(cached_observables)
+    if isinstance(cached_fields, str) or isinstance(cached_observables, str):
+        raise ValueError('supply a collection of cached endpoint IDs')
+    field_cache, observable_cache = set(cached_fields), set(cached_observables)
+    if not all(isinstance(key, str) and key for key in field_cache | observable_cache):
+        raise ValueError('cached response IDs must be nonempty strings')
     neighbors = {}
     for pair in requests:
         if not isinstance(pair, (list, tuple)) or len(pair) != 2:
