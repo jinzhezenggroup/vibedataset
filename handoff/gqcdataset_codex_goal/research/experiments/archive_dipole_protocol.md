@@ -9,3 +9,5 @@
 3. 使用归档的单自旋密度或占据重建自旋求和密度。只有轨道和本征值时，要求 Psi4 最终输出逐轨道标识双占/空轨道，与归档本征值在其六位打印精度内单义对齐。仅凭电子数顺次填充不可作为这里的依据。检查 Tr(DS)、对称性和投影幂等性；有双路径的记录还应得到相同密度。任何一项最大误差超过 1e−6 都拒绝。
 4. 对接受项，用公开后处理取总偶极并与归档检查，要求最大笛卡尔分量差 ≤ 1e−6 e·Bohr。记录所有错误排列的度量与保留对照的偶极误差。缺失占据证据、篡改轨道归一化、两种截然不同的 p 排列都满足度量的合成反例必须拒绝。后者检验识别条件，单中心的对称轴排列可能不可辨认。
 5. 三份均为库内生成测试记录。公布检查值与失败，无论结果是否支持假设。计入解压、表示检查、生成积分与后处理，记录环境、命令和字节数。本轮验证不涉及目标态重收敛、状态响应、数据集提速或外部数据集发生率。
+
+源代码手写基线已在运行前完全指定。三份记录的 stdout 均打印 Gaussian solid harmonics。Psi4 1.10 的原生 p 次序为 z,x,y；该版 QCSchema writer 对每个球谐 p 壳取第 1,0,2 行（零起点），因此文件内次序为 x,z,y。转换到 PySCF 的 x,y,z 时固定取 0,2,1。此推导使用实际生产者版本与构建信息。[原生轴](https://github.com/psi4/psi4/blob/f2492db10de56b30b188239bdc6b4cfbc4a23bd5/psi4/src/psi4/libmints/writer.cc#L217) · [导出变换](https://github.com/psi4/psi4/blob/f2492db10de56b30b188239bdc6b4cfbc4a23bd5/psi4/driver/schema_wrapper.py#L290) · [PySCF 轴](https://github.com/pyscf/pyscf/blob/c63a953ba603a5ad8c1d65d88da72aaf05ede4d8/pyscf/lib/parameters.py#L69)
