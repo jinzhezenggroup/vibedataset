@@ -35,7 +35,7 @@ def scalar_identity(model):
     """Bind the scalar cache to both physical derivative operands and the publication regime."""
     return json_hash({
         'definition': 'clamped-nuclei RHF at zero uniform field, atomic units, origin (0,0,0)',
-        'problem': model.problem.identity, 'source': model.source,
+        'problem': model.problem.identity, 'derivative_contract': model.contract_identity, 'source': model.source,
         'rhs': {g: {k: array_hash(v) for k, v in group.items()} for g, group in model.rhs_values.items()},
         'qualification': {'residual': GATE, 'analytic_absolute': ANALYTIC_TOL,
                           'finite_field_absolute': FIELD_TOL, 'field_steps': STEPS},
