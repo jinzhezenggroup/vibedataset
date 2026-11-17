@@ -243,10 +243,12 @@ def load_history(spec, catalog_hashes):
         by_attempt = {r['id']: r for r in batch['work'] if r['status'] == 'completed' and r['model_started']}
         grouped = defaultdict(list)
         for row in batch['records']:
-            if row.get('status') == 'qualified' and row.get('source_attempt') in by_attempt:
+            if (row.get('status') == 'qualified' and row.get('delivery') == 'computed'
+                    and row.get('via') in ('direct', 'adjoint', 'compiled_scalar_relation')
+                    and row.get('source_attempt') in by_attempt):
                 producer = by_attempt[row['source_attempt']]
                 grouped[producer['record_id']].append((row, producer['identity'], expected))
-        info.update(status='read', eligible_rows=sum(map(len, grouped.values())),
+        info.update(status='read', input_rows=len(batch['records']), eligible_rows=sum(map(len, grouped.values())),
                     producer_setup_jk=sum(r['setup_jk'] for r in by_attempt.values()),
                     producer_round_jk=sum(r['round_jk'] for r in by_attempt.values()))
     except (OSError, ValueError, KeyError, TypeError) as e:
@@ -268,6 +270,9 @@ def historical_scalars(history, ctx):
             grade = assess_scalar(oracle, endpoint, *edge, record['value'])
             if grade['target_identity'] != record['target_identity'] or not grade['qualified']:
                 raise ValueError('historical scalar failed target identity or independent quality gate')
+            if (record['diagnostic']['raw_value'] != grade['raw_value'] or record['diagnostic']['reasons']
+                    or record['diagnostic']['errors'] != grade['errors']):
+                raise ValueError('historical measured value or qualification diagnostics disagree')
             if edge in good and good[edge][0]['value'] != grade['value']:
                 conflicts.add(edge)
                 raise ValueError('conflicting published values for one target')
@@ -356,6 +361,7 @@ def run_group(db, name, ctx, requests, kernel_dir, history, relations):
         db.execute('BEGIN IMMEDIATE')
         work['lock_wait_seconds'] = time.perf_counter() - start
         imported, work['rejected_history'] = historical_scalars(history, ctx)
+        work['validated_history_scalars'] = len(imported)
         operands = {(other, observable) for field, observable in grouped if (field, observable) in DIAGONAL
                     for other in FIELD_IDS if other != field} if relations else set()
         known = {}
