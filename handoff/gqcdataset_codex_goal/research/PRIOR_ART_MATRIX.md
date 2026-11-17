@@ -1,0 +1,17 @@
+# 数据补全相关实现按机制比较
+
+工程目标是让 GQC 在同一物理定义、精度与收敛要求下执行剩余科学程序。下表以已取得的源码与实跑边界区分哪些操作能直接省略；它也是后续声称方法增量时要越过的基线。
+
+| 已有实现 | 输入、确实省略的工作 | 质量、失效与比较方式 |
+|---|---|---|
+| MolSSI QCManyBody v0.8.0 | 给定片段、实核/ghost 基组与 BSSE 目标，生成分量并集；全阶最终相互作用能可裁剪只为明细所需的任务。三轮 NoCP、追加 CP、重复取两者实际新增 4、3、0 次 RHF | 同目标最小手写联合公式也只用 7 个分量，错误 ghost 身份仍能组装出错误标量。普通含二体明细方案的 13 次工作包含额外目标。[源码与实验](audits/prior-completion-manybody.md) |
+| Schofield 等原作者 v1.0.0 属性插补 | 从部分已给的性质/缺失掩码或结构预测缺列；训练权重可复用，不需执行电子结构求解。原作者 property-only 分支显式为缺失项赋 embedding | 预测属于统计标签。所有性质遮蔽且不输入结构时，多个不同分子具有同一输入；即使学习器运行成功也不能在任意精度下恢复各自的物理值。[模型](https://github.com/Savoie-Research-Group/mol_prop_imputation/blob/386217f233f5607a6c69e09c8bd9375fbde06444/random_drop_prop2prop/model_random_drop.py) |
+| GQC checkpoint 与 xTBloom | 接纳兼容密度初猜，或维持整批计算上下文、工作区与上次态。目标态仍执行 SCF/SCC，可以只省部分迭代和准备操作 | 源诊断不能替代新目标验收，批次失败区分逐项结果与整批后续资格。[原生路径、拒绝与执行](FOUNDATION_CAPABILITIES.md) |
+| PySCF、Psi4、TREXIO-tools | 固定态算符收缩、逐壳表示转换、投影初猜均有现有实现。档案的元数据容许确定轴次序时，手写转换足以复现偶极 | AO 归一化/自旋/占据与原点都可能改变目标。转换正确仍不能省略响应。实跑 3 份存档与跨基组初猜。[逐项目路径](audits/pyscf-and-archives.md) |
+| GQC 驻点编译与 PySCFAD | 编译器按 R(x,q)=0 生成偏导与伴随右端，或以 SCF 固定点 VJP 求隐式导数。可以使用已知前向态，导数仍需物理转置作用与源参数依赖 | GQC 五个代数用例已运行。PySCFAD 源码已有专用线性求解；冻结密度的场导数对照可排除错误依赖删除。[GQC 编译](audits/gqc.md) · [PySCFAD 实现](audits/pyscf-and-archives.md) |
+| QCFractal、AiiDA | QCFractal 单点 `find_existing` 按 spec/molecule 查已有记录，AiiDA 在同类节点散列候选上检查 `is_valid_cache`。两者可复用完全相同的工作 | 多个名字相似或使用相同计算程序不构成同一科学目标。这两条数据库路径读到核心选择分支；本轮无数据库吞吐测试。[QCFractal](https://github.com/MolSSI/QCFractal/blob/4ec1ed623f82536076c069dd65a4eb132969d9ed/qcfractal/qcfractal/components/singlepoint/record_socket.py#L444) · [AiiDA](https://github.com/aiidateam/aiida-core/blob/31c1dcf5936359c7eaaebaeb335dabe141dfb40e/src/aiida/orm/nodes/caching.py#L142) |
+| QCDB 组合计算与 ANI 作者读取器 | `cbs` 先去重，再仅在 energy 分支按同基组、VARH 返回量覆盖关系删除可被上级方法提供的工作。ANI 读取器实际对请求字段做联合掩码 | 组合方法的身份和外推协议必须吻合；CBS-001 得到了可执行公式和错误接受的实证边界。尚未运行 QCDB 的外部求解器。[QCDB](https://github.com/qcdb/qcdb/blob/d9e156ef8b313ac0633211fc6b841f84a3ddde24/qcdb/driver/cbs_driver.py#L978) · [ANI 的实验结果](experiments/ani_composite/README.md) |
+| SchNOrb、多保真 GNN、PVMC | SchNOrb 的 Hamiltonian head 对原子间及在位块拼接并对称化 H/S。多保真 GNN 从低保真 checkpoint 初始化并对高保真标签微调。PVMC 用核矩阵特征分解与插值项更新缺失矩阵条目并重置观测条目 | 均为局部实现审读，未训练或复现论文性能。对相同研究目标，可比较预测后再求解、学习近似与仅作 seed 三种语义；预测不能算作精确量化调用的成功。PVMC 的 `row_interpolation` 使用选中列，实验必须计入这些观测。[SchNOrb](https://github.com/atomistic-machine-learning/SchNOrb/blob/38cb268ea431b46e3b2088dda48bcd1983462ff5/src/schnorb/model.py#L335) · [多保真 GNN](https://github.com/davidbuterez/multi-fidelity-gnns-for-drug-discovery-and-quantum-mechanics/blob/84ee8a280557d7fbc2ebd1042468e21ce8ea16c6/multifidelity_gnn/train/train_fine_tune_high_fidelity.py#L148) · [PVMC](https://github.com/RateTheory/PVMC/blob/0d3340644047abc727896753f48650f8c5205a89/pvmc_step.m) |
+| GQC TensorIR 自身的通用优化 | 节点内容散列包含类型/对称性，Program 只执行可达输出。`optimize.py` 已有 exact CSE、死节点消除、受限常量折叠 | 这些已有机制构成编译后端基线。CBS-001 的联合节点减少由原生图共享实现，即使执行更少节点，也未使一个缺失发布标签通过验收。[Program](https://github.com/jinzhezenggroup/generativeqc/blob/2791504cc238fe83d328fc1718080642b288222a/python/generativeqc_compiler/tensor/program.py#L158) · [优化器](https://github.com/jinzhezenggroup/generativeqc/blob/2791504cc238fe83d328fc1718080642b288222a/python/generativeqc_compiler/tensor/optimize.py#L479) |
+
+目录之外纳入了直接插补及多体分量复用两个项目，并固定实际使用的 PySCF、Psi4 和默认 libcint 发布源码。论文映射未确定的当前树只作为该版本行为的证据。仍需按选择的分子响应任务对照原生回收、多 RHS、适用的伴随/降阶既有方法；其余未阅读范围可逐文件查询。[覆盖表](source_coverage.csv) · [来源缺口](SOURCE_GAPS.md)

@@ -1,0 +1,45 @@
+{
+  "compiler_commit": "2791504cc238fe83d328fc1718080642b288222a",
+  "driver_sha256": "63ef76196ca2d6667832589be310a8fe508cbfa95b068af129eff05a8abc781a",
+  "doi": "10.6084/m9.figshare.10047041.v1",
+  "precision": "float64",
+  "program_sha256": {
+    "hf_cbs+mp2_cbs+cc_star_cbs": "1336b2eed92ec914706cd5ad41159b3a2a829f29f18945a1f9ae8f8abfda04f4",
+    "hf_cbs": "7b6082e4aaa13ec48fc59778e8b1bab7a8fc7e345086caa4fd0f2edfbde805ec",
+    "mp2_cbs": "3400874d5218fe8eb458c4b2da11c563c5bb64aee81359f2cf7fb022864fdff8",
+    "cc_star_cbs": "4610d625a70a742cab6f8d3a538f84edceb3930d922729e5095b5a629ec32e3f"
+  },
+  "backend": "GQC numpy-cpu-interpreter, debug snapshots enabled in joint and independent runs",
+  "thresholds_hartree": {
+    "manual": 1e-10,
+    "published": 1e-08
+  },
+  "qualification_passed": false,
+  "row_count": 357,
+  "available_targets": {
+    "hf_cbs": 34,
+    "mp2_cbs": 34,
+    "cc_star_cbs": 34
+  },
+  "coverage": {
+    "published": 34,
+    "complete_with_published": 34,
+    "originally_missing": 323,
+    "incomplete_originally_missing": 323
+  },
+  "observed_new_cc_labels_qualified": 0,
+  "manual_max_abs_hartree": 0.0,
+  "published_max_abs_hartree": 0.035665899146010815,
+  "node_evaluations": {
+    "joint": 510,
+    "independent": 1054
+  },
+  "execution_seconds_including_debug": {
+    "joint": 0.00659117205941584,
+    "independent": 0.01211432390846312,
+    "manual": 0.00017147713515441865
+  },
+  "packet_load_and_verify_seconds": 0.00803231199097354,
+  "total_probe_seconds_after_source_check": 0.03222644999914337,
+  "new_quantum_jobs": 0
+}

@@ -1,0 +1,330 @@
+{
+  "protocol_commit": "fd7e46e",
+  "qcfractal_commit": "4ec1ed623f82536076c069dd65a4eb132969d9ed",
+  "reference_source_commit": "c63a953ba603a5ad8c1d65d88da72aaf05ede4d8",
+  "driver_sha256": "d159e53bc30909a802fb746e79f125ed37c8ac877621b3f01188df389b5ff6eb",
+  "pyscf_version": "2.14.0",
+  "numpy_version": "2.5.5",
+  "python": "3.13.16",
+  "platform": "Linux-6.8.0-138-generic-x86_64-with-glibc2.35",
+  "python_module_hashes": {
+    "pyscf.gto.mole": "005bd63c5fa100a20cc264a995c38f44f2e05c7c82d37bd36eba2355dc651392",
+    "pyscf.gto.moleintor": "6c373fc05da490438f22980bfd49652998ce8e127e24b5f32d333d252bd219ac",
+    "pyscf.scf.hf": "34ea1a9057da3a2d5aa37fe51d4e7305580bcb8e0118a5f17ba95ba5bb36c22f"
+  },
+  "libcgto_sha256": "337d956486a156f1aa7ca636ac5a91c6277058ffedb6db2efe714fee65f726e0",
+  "threads": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1"
+  },
+  "total_record_and_controls_seconds": 0.020535521005513147,
+  "scf_calls": 0,
+  "tolerance": 1e-06,
+  "records": [
+    {
+      "file": "error_psi4_water_energy_1.json.xz",
+      "bytes_read": 3212,
+      "sha256": "d852cc5e4839535a9fc52bc30ff141e2efab1918709ffdf3450d75d0f6422ce3",
+      "read_decode_seconds": 0.0005281709891278297,
+      "status": "upstream_failure",
+      "record_seconds": 0.0005355640023481101
+    },
+    {
+      "file": "error_psi4_water_energy_2.json.xz",
+      "bytes_read": 4800,
+      "sha256": "b97d2c0dbfd79164a377e69eb0b13f5e11c084c84b2e37851189961eb0a45e98",
+      "read_decode_seconds": 0.0006347900052787736,
+      "status": "upstream_failure",
+      "record_seconds": 0.0006394869997166097
+    },
+    {
+      "file": "sp_psi4_benzene_energy_1.json.xz",
+      "bytes_read": 6292,
+      "sha256": "f1d23c766fc2d7ff9cd6c7f9b0fac0ca7f009f36aa082edac560e2ad48e00ad8",
+      "read_decode_seconds": 0.000916874996619299,
+      "status": "no_archived_state",
+      "record_seconds": 0.0009210559946950525
+    },
+    {
+      "file": "sp_psi4_benzene_energy_2.json.xz",
+      "bytes_read": 6300,
+      "sha256": "a89c5155bc8d31b0cde2a9fd7bcf7abeec3501d7bf364bc4c193eb06315300a1",
+      "read_decode_seconds": 0.000876178004546091,
+      "status": "no_archived_state",
+      "record_seconds": 0.0008792349981376901
+    },
+    {
+      "file": "sp_psi4_benzene_energy_3.json.xz",
+      "bytes_read": 6300,
+      "sha256": "2377bf8f8fc780a846a96187d47d649983de12a3b0cd1c3373e043b5d16a43c1",
+      "read_decode_seconds": 0.0008087269961833954,
+      "status": "no_archived_state",
+      "record_seconds": 0.0008110950002446771
+    },
+    {
+      "file": "sp_psi4_fluoroethane_wfn.json.xz",
+      "bytes_read": 9228,
+      "sha256": "6deb072f36ba1fb106ef888029d5d9e7409e6e0a5c23fdcc0c604dc2832fa143",
+      "read_decode_seconds": 0.0013463619980029762,
+      "metric_candidates": [
+        {
+          "p_slots": [
+            0,
+            1,
+            2
+          ],
+          "error": 1.6665085780715199
+        },
+        {
+          "p_slots": [
+            0,
+            2,
+            1
+          ],
+          "error": 1.9984014443252818e-15
+        },
+        {
+          "p_slots": [
+            1,
+            0,
+            2
+          ],
+          "error": 2.199448115568139
+        },
+        {
+          "p_slots": [
+            1,
+            2,
+            0
+          ],
+          "error": 1.7899749438239372
+        },
+        {
+          "p_slots": [
+            2,
+            0,
+            1
+          ],
+          "error": 2.046667098764441
+        },
+        {
+          "p_slots": [
+            2,
+            1,
+            0
+          ],
+          "error": 2.1729550423046264
+        }
+      ],
+      "occupancy_evidence": "final printed occupied and virtual energies",
+      "accepted_p_slots": [
+        0,
+        2,
+        1
+      ],
+      "density_checks": {
+        "symmetry": 0.0,
+        "trace": 7.105427357601002e-15,
+        "idempotency": 6.217248937900877e-15
+      },
+      "state_validation_seconds": 0.004561234993161634,
+      "one_dipole_seconds": 0.0004321099986555055,
+      "dipole_e_bohr": [
+        0.37024339111249116,
+        0.14294206894976536,
+        -2.0816681711721685e-17
+      ],
+      "reference_e_bohr": [
+        0.37024339111250004,
+        0.14294206894976846,
+        0.0
+      ],
+      "max_error": 8.881784197001252e-15,
+      "baseline_max_errors": {
+        "identity": 3.5074442614872066,
+        "nominal_cca": 1.5105009606091722,
+        "psi4_1_10_gaussian": 8.881784197001252e-15
+      },
+      "status": "verified",
+      "record_seconds": 0.007306473999051377
+    },
+    {
+      "file": "sp_psi4_h2_b3lyp_nativefiles.json.xz",
+      "bytes_read": 6248,
+      "sha256": "e8dd80de3375028bacbfae1e3839439e895ce5524c5ecb937d0cae1167a580fe",
+      "read_decode_seconds": 0.0008137270051520318,
+      "metric_candidates": [
+        {
+          "p_slots": [
+            0,
+            1,
+            2
+          ],
+          "error": 4.440892098500626e-16
+        }
+      ],
+      "occupancy_evidence": "exported occupations_a",
+      "density_vs_occupied_mo": 0.0,
+      "accepted_p_slots": null,
+      "density_checks": {
+        "symmetry": 0.0,
+        "trace": 8.881784197001252e-16,
+        "idempotency": 6.661338147750939e-16
+      },
+      "state_validation_seconds": 0.001091743994038552,
+      "one_dipole_seconds": 0.00018556899158284068,
+      "dipole_e_bohr": [
+        0.0,
+        0.0,
+        5.551115123125783e-15
+      ],
+      "reference_e_bohr": [
+        0.0,
+        0.0,
+        5.773159728050814e-15
+      ],
+      "max_error": 2.220446049250313e-16,
+      "baseline_max_errors": {
+        "identity": 2.220446049250313e-16,
+        "nominal_cca": 2.220446049250313e-16,
+        "psi4_1_10_gaussian": 2.220446049250313e-16
+      },
+      "status": "verified",
+      "record_seconds": 0.0025147150008706376
+    },
+    {
+      "file": "sp_psi4_peroxide_energy_wfn.json.xz",
+      "bytes_read": 8204,
+      "sha256": "370d0dc1eb7c77037634c6f04f7502abdce0f1fc23efad2a1a5dc5448c48b339",
+      "read_decode_seconds": 0.0008400869992328808,
+      "metric_candidates": [
+        {
+          "p_slots": [
+            0,
+            1,
+            2
+          ],
+          "error": 0.5922777904452818
+        },
+        {
+          "p_slots": [
+            0,
+            2,
+            1
+          ],
+          "error": 2.220446049250313e-15
+        },
+        {
+          "p_slots": [
+            1,
+            0,
+            2
+          ],
+          "error": 0.8105478833894733
+        },
+        {
+          "p_slots": [
+            1,
+            2,
+            0
+          ],
+          "error": 0.8839440380526187
+        },
+        {
+          "p_slots": [
+            2,
+            0,
+            1
+          ],
+          "error": 0.7100837966737532
+        },
+        {
+          "p_slots": [
+            2,
+            1,
+            0
+          ],
+          "error": 0.8087531212535268
+        }
+      ],
+      "occupancy_evidence": "exported occupations_a",
+      "density_vs_occupied_mo": 4.440892098500626e-16,
+      "accepted_p_slots": [
+        0,
+        2,
+        1
+      ],
+      "density_checks": {
+        "symmetry": 0.0,
+        "trace": 0.0,
+        "idempotency": 4.385380947269368e-15
+      },
+      "state_validation_seconds": 0.0010656889935489744,
+      "one_dipole_seconds": 0.00014874100452288985,
+      "dipole_e_bohr": [
+        -2.220446049250313e-16,
+        8.881784197001252e-16,
+        0.5359800357029688
+      ],
+      "reference_e_bohr": [
+        0.0,
+        0.0,
+        0.5359800357029699
+      ],
+      "max_error": 1.1102230246251565e-15,
+      "baseline_max_errors": {
+        "identity": 0.06631684450103004,
+        "nominal_cca": 0.22476779482975717,
+        "psi4_1_10_gaussian": 1.1102230246251565e-15
+      },
+      "status": "verified",
+      "record_seconds": 0.002447713995934464
+    },
+    {
+      "file": "sp_psi4_water_energy.json.xz",
+      "bytes_read": 5524,
+      "sha256": "edf0fb632e686c79f8ef3b3d1310abefc0f898bb5234cb1d30b309762d1af9ab",
+      "read_decode_seconds": 0.0004012580029666424,
+      "status": "no_archived_state",
+      "record_seconds": 0.00040336600795853883
+    },
+    {
+      "file": "sp_psi4_water_gradient.json.xz",
+      "bytes_read": 5928,
+      "sha256": "83da9c3c51db17cca02685069099bf484b3b756e15229511f5922d64e8f27d54",
+      "read_decode_seconds": 0.0003841519937850535,
+      "status": "no_archived_state",
+      "record_seconds": 0.0003856489929603413
+    },
+    {
+      "file": "sp_psi4_water_hessian.json.xz",
+      "bytes_read": 10340,
+      "sha256": "d752f8456cb7f49ed38896d81f289c54861605beda38fc301f0dbe87701dc519",
+      "read_decode_seconds": 0.0011242430045967922,
+      "status": "no_archived_state",
+      "record_seconds": 0.0011261530016781762
+    },
+    {
+      "file": "sp_rdkit_benzene_energy.json.xz",
+      "bytes_read": 864,
+      "sha256": "1e03c193fbabb76a1c7130051a1a29ddecd0fa052c5af29cc2e15d628750f00c",
+      "read_decode_seconds": 9.348100866191089e-05,
+      "status": "no_archived_state",
+      "record_seconds": 9.44479979807511e-05
+    },
+    {
+      "file": "sp_rdkit_water_energy.json.xz",
+      "bytes_read": 752,
+      "sha256": "df4701bb7605b1c0d0a360e75a29506dbd50b7e4653d770e5bd452c6cca4d414",
+      "read_decode_seconds": 6.0093996580690145e-05,
+      "status": "no_archived_state",
+      "record_seconds": 6.080498860683292e-05
+    }
+  ],
+  "negative_controls": {
+    "ambiguous_p_frame": "6 admissible AO permutations",
+    "scaled_s_orbital": "0 admissible AO permutations",
+    "no_occupation_record": "missing occupation evidence"
+  }
+}

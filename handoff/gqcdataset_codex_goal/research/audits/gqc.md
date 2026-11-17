@@ -21,7 +21,7 @@ CP-001 在 H₂ 上比较了冷启动、同身份收敛密度、同身份非驻�
 
 闭壳层 RHF/CPKS 的 `ResponseProblem` 绑定参考态、占虚布局、规范、算子和模型。`_BaseResponseOperator._base_action` 将旋转量映为 AO 密度变化，经 Coulomb/exchange 及适用的 XC 核产生诱导 Fock，再加上轨道能隙项。求解器提供真残差检查。这里追踪到算子接口；本次尚未在分子上贯通该响应路径。RHF 能量/力一致性只支持 CP-001 中已经比较的输出。[身份](https://github.com/jinzhezenggroup/generativeqc/blob/2791504cc238fe83d328fc1718080642b288222a/python/generativeqc/response_problem.py#L170) · [算子](https://github.com/jinzhezenggroup/generativeqc/blob/2791504cc238fe83d328fc1718080642b288222a/python/generativeqc/response_operator.py#L167) · [求解器](https://github.com/jinzhezenggroup/generativeqc/blob/2791504cc238fe83d328fc1718080642b288222a/python/generativeqc/response_solver.py#L1237)
 
-精度模块 `EmpiricalHFEstimator.predict` 有训练域门槛，显式检查基组族、后端、AO 度量条件数、能隙、电子数等，对能量和力返回 `EvidenceKind.EMPIRICAL`。其源码域要求 conventional Cartesian RHF，CP-001 的 spherical 设置不能直接套用该校准。本轮没有重做拟合或验证校准集覆盖率。[域门槛与预测](https://github.com/jinzhezenggroup/generativeqc/blob/2791504cc238fe83d328fc1718080642b288222a/python/generativeqc/accuracy_estimator.py#L119)
+精度模块 `EmpiricalHFEstimator.predict` 有训练域门槛，显式检查基组族、后端、AO 度量条件数、能隙、电子数等，对能量和力返回 `EvidenceKind.EMPIRICAL`。其源码域要求 conventional Cartesian RHF，CP-001 的 spherical 设置不能直接套用该校准。本轮实跑 18 个上游合成用例，检查超域拒绝、holdout 失配与证据分类。真实分子校准仍待独立验证。[测试输出](../experiments/gqc-estimator-cpu.json) [域门槛与预测](https://github.com/jinzhezenggroup/generativeqc/blob/2791504cc238fe83d328fc1718080642b288222a/python/generativeqc/accuracy_estimator.py#L119)
 
 编译器用例可在装有 NumPy 和 pytest 的本地 Python 中复现。固定源码树位置与顶层协议相同。
 
