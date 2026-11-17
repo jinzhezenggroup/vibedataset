@@ -1,0 +1,772 @@
+{
+  "run_directory": "n5:~/vibedataset/runs/f2db039c24be-cross-20261117T185254Z",
+  "submitted_project_commit": "f2db039c24be711cdc022421b84bc7015aaccdcd",
+  "scheduler": {
+    "JobId": "2044",
+    "JobState": "COMPLETED",
+    "ExitCode": "0:0",
+    "Partition": "main",
+    "RunTime": "00:00:09",
+    "TimeLimit": "00:10:00",
+    "SubmitTime": "2026-11-18T02:56:35",
+    "StartTime": "2026-11-18T02:56:36",
+    "EndTime": "2026-11-18T02:56:45",
+    "NumCPUs": "4",
+    "MinMemoryNode": "16G",
+    "TresPerNode": "gres:gpu:5090:1",
+    "Restarts": "0"
+  },
+  "sacct": {
+    "exit": 1,
+    "stderr": "Slurm accounting storage is disabled"
+  },
+  "gpu_observation": "NVIDIA GeForce RTX 5090, 12.0, 570.86.16, 32607 MiB",
+  "environment": {
+    "python": "3.13.12",
+    "host": "node5",
+    "versions": {
+      "generativeqc": "0.1.0",
+      "numpy": "2.4.6",
+      "pyscf": "2.14.0"
+    },
+    "gqc_source_declaration": "2bf3fd98da9c6cfba46ca83345e63e1d934e4780",
+    "native_library_sha256": "67bc98a4549fe8854ed6ae65791c824024bd77a9e8e498c6891dea3b8de670c4",
+    "python_source_sha256": {
+      "checkpoint": "7cff6ce69b6f54ba79127d7b8bdf767022cd0014e9281df01fc514d9982d954b",
+      "calculator": "bcc9aa3a5763adf8607b32063cfb5a259c5497275b8717ef13a4e14c24055b36",
+      "batch": "f1f5735e8200f89a83ad0903cacdff2b521f11f2e74fed0918c0405f23d1164e",
+      "_native": "17b2761a92cf0956c87fb8c9879923151bb56a4828cb6f5f362c1ac4fcdb8904",
+      "_warm_state": "be9cd71e84ed2ede00aabbf1a69c3e4780693540dc2b37f4b8804e422fefd1d9",
+      "accuracy": "a904e6a02439e9f0579cdca3cd8fd8e9a6ae865f592ce1543a873ccaf503179d",
+      "profiles": "6bbe416066b630fab6cb366157fe51668b851de8fb3e84b29a660db6eadf9277"
+    },
+    "loaded_native_library_sha256": "67bc98a4549fe8854ed6ae65791c824024bd77a9e8e498c6891dea3b8de670c4",
+    "loaded_library_matches_designated_path": true,
+    "allocation": {
+      "SLURM_JOB_ID": "2044",
+      "SLURM_CPUS_PER_TASK": "4",
+      "SLURM_MEM_PER_NODE": "16384",
+      "CUDA_VISIBLE_DEVICES": "0"
+    },
+    "protocol_sha256": "2ec7b69c3ae8bbff8b80905d7feb9887fcf2b5fe91b040b80959296da5468a42",
+    "driver_sha256": "b760e978a68ebae718ea304a7e428f78f40303a3993657d1eca5606ad403308a",
+    "project_commit": "f2db039c24be711cdc022421b84bc7015aaccdcd",
+    "scope": "Binary hash and Python file hashes checked; source-to-binary reproducible build not proven."
+  },
+  "cp_run": {
+    "started_at_utc": "2026-11-17T18:56:36.334528+00:00",
+    "config_sha256": "2ec7b69c3ae8bbff8b80905d7feb9887fcf2b5fe91b040b80959296da5468a42",
+    "driver_sha256": "b760e978a68ebae718ea304a7e428f78f40303a3993657d1eca5606ad403308a",
+    "input_sha256": "6ce22c369d08b36a50579a9d209c8d2bf95aa31a9fb01fb2ca22160571084735",
+    "slurm_job_id": "2044",
+    "status": "passed",
+    "ended_at_utc": "2026-11-17T18:56:42.140711+00:00",
+    "elapsed_seconds": 5.806196860969067,
+    "operation_attempts": {
+      "native_library_load": 1,
+      "gqc_solve": 15,
+      "pyscf_scf": 2,
+      "pyscf_gradient": 2,
+      "prepare": 6,
+      "checkpoint_save": 3,
+      "asset_transform": 2,
+      "checkpoint_load": 7
+    }
+  },
+  "cp_results": {
+    "cold": {
+      "source": {
+        "energy": -1.1167143251757699,
+        "forces": [
+          [
+            -0.0,
+            -0.0,
+            0.028454057162517365
+          ],
+          [
+            -0.0,
+            -0.0,
+            -0.028454057162517254
+          ]
+        ],
+        "converged": true,
+        "iterations": 2,
+        "executed_backend": "cuda",
+        "physical_residual_rms": null,
+        "density_rms": 2.0014830212433605e-16,
+        "energy_change": 0.0,
+        "basis_metadata": {
+          "orbital": {
+            "name": "sto-3g",
+            "role": "orbital",
+            "mathematical_identity": "fd91f42ede96c442e14679e39abb1cbdb9af7992560d3ff2d18c7620f20839aa",
+            "basis_identity": "cb4d7486a207478c98cb858e1d8b905335b17cef25cb44ae82333b9b6604505e",
+            "representation": "spherical",
+            "provenance": {
+              "source": "generativeqc/data/basis_pack.json; Basis Set Exchange",
+              "version": "Basis Set Exchange 0.11",
+              "license": "BSD-3-Clause",
+              "checksum": "6002092fea25331281cc095dc6dc41a6a3d7a2f0c88f82a1fbceac01225a897c"
+            },
+            "electrons": {
+              "atomic_numbers": [
+                1,
+                1
+              ],
+              "nuclear_charges": [
+                1,
+                1
+              ],
+              "ecp_core_electrons": [
+                0,
+                0
+              ],
+              "ionic_charge": 0,
+              "electron_count": 2,
+              "multiplicity": 1,
+              "nalpha": 1,
+              "nbeta": 1
+            },
+            "shell_count": 2,
+            "primitive_count": 6
+          },
+          "model_identity": "58be8ac8db9f695d56efc32db8f80c929acd9e8348c73903c24d9e764e72bc30"
+        }
+      },
+      "target": {
+        "energy": -1.1031409708106337,
+        "forces": [
+          [
+            -0.0,
+            -0.0,
+            0.09979324557624152
+          ],
+          [
+            -0.0,
+            -0.0,
+            -0.09979324557624152
+          ]
+        ],
+        "converged": true,
+        "iterations": 2,
+        "executed_backend": "cuda",
+        "physical_residual_rms": null,
+        "density_rms": 0.0,
+        "energy_change": 2.220446049250313e-16,
+        "basis_metadata": {
+          "orbital": {
+            "name": "sto-3g",
+            "role": "orbital",
+            "mathematical_identity": "fd91f42ede96c442e14679e39abb1cbdb9af7992560d3ff2d18c7620f20839aa",
+            "basis_identity": "cb4d7486a207478c98cb858e1d8b905335b17cef25cb44ae82333b9b6604505e",
+            "representation": "spherical",
+            "provenance": {
+              "source": "generativeqc/data/basis_pack.json; Basis Set Exchange",
+              "version": "Basis Set Exchange 0.11",
+              "license": "BSD-3-Clause",
+              "checksum": "6002092fea25331281cc095dc6dc41a6a3d7a2f0c88f82a1fbceac01225a897c"
+            },
+            "electrons": {
+              "atomic_numbers": [
+                1,
+                1
+              ],
+              "nuclear_charges": [
+                1,
+                1
+              ],
+              "ecp_core_electrons": [
+                0,
+                0
+              ],
+              "ionic_charge": 0,
+              "electron_count": 2,
+              "multiplicity": 1,
+              "nalpha": 1,
+              "nbeta": 1
+            },
+            "shell_count": 2,
+            "primitive_count": 6
+          },
+          "model_identity": "58be8ac8db9f695d56efc32db8f80c929acd9e8348c73903c24d9e764e72bc30"
+        }
+      }
+    },
+    "reuse": {
+      "exact_restart": {
+        "energy": -1.1167143251757699,
+        "forces": [
+          [
+            -0.0,
+            -0.0,
+            0.02845405716251727
+          ],
+          [
+            -0.0,
+            -0.0,
+            -0.028454057162517157
+          ]
+        ],
+        "converged": true,
+        "iterations": 2,
+        "executed_backend": "cuda",
+        "status": 0,
+        "restart_origin": "persistent_restart",
+        "warm_start_used": true,
+        "warm_start_fallback": false,
+        "fock_builds": 3,
+        "physical_residual_rms": null,
+        "density_rms": 0.0,
+        "energy_change": 4.440892098500626e-16,
+        "basis_metadata": {
+          "orbital": {
+            "name": "sto-3g",
+            "role": "orbital",
+            "mathematical_identity": "fd91f42ede96c442e14679e39abb1cbdb9af7992560d3ff2d18c7620f20839aa",
+            "basis_identity": "cb4d7486a207478c98cb858e1d8b905335b17cef25cb44ae82333b9b6604505e",
+            "representation": "spherical",
+            "provenance": {
+              "source": "generativeqc/data/basis_pack.json; Basis Set Exchange",
+              "version": "Basis Set Exchange 0.11",
+              "license": "BSD-3-Clause",
+              "checksum": "6002092fea25331281cc095dc6dc41a6a3d7a2f0c88f82a1fbceac01225a897c"
+            },
+            "electrons": {
+              "atomic_numbers": [
+                1,
+                1
+              ],
+              "nuclear_charges": [
+                1,
+                1
+              ],
+              "ecp_core_electrons": [
+                0,
+                0
+              ],
+              "ionic_charge": 0,
+              "electron_count": 2,
+              "multiplicity": 1,
+              "nalpha": 1,
+              "nbeta": 1
+            },
+            "shell_count": 2,
+            "primitive_count": 6
+          },
+          "model_identity": "58be8ac8db9f695d56efc32db8f80c929acd9e8348c73903c24d9e764e72bc30"
+        }
+      },
+      "forged_diagnostics": {
+        "energy": -1.1167143251757699,
+        "forces": [
+          [
+            -0.0,
+            -0.0,
+            0.02845405716251724
+          ],
+          [
+            -0.0,
+            -0.0,
+            -0.02845405716251735
+          ]
+        ],
+        "converged": true,
+        "iterations": 8,
+        "executed_backend": "cuda",
+        "status": 0,
+        "restart_origin": "persistent_restart",
+        "warm_start_used": true,
+        "warm_start_fallback": false,
+        "fock_builds": 10,
+        "physical_residual_rms": null,
+        "density_rms": 6.921824710603588e-09,
+        "energy_change": 3.552713678800501e-15,
+        "basis_metadata": {
+          "orbital": {
+            "name": "sto-3g",
+            "role": "orbital",
+            "mathematical_identity": "fd91f42ede96c442e14679e39abb1cbdb9af7992560d3ff2d18c7620f20839aa",
+            "basis_identity": "cb4d7486a207478c98cb858e1d8b905335b17cef25cb44ae82333b9b6604505e",
+            "representation": "spherical",
+            "provenance": {
+              "source": "generativeqc/data/basis_pack.json; Basis Set Exchange",
+              "version": "Basis Set Exchange 0.11",
+              "license": "BSD-3-Clause",
+              "checksum": "6002092fea25331281cc095dc6dc41a6a3d7a2f0c88f82a1fbceac01225a897c"
+            },
+            "electrons": {
+              "atomic_numbers": [
+                1,
+                1
+              ],
+              "nuclear_charges": [
+                1,
+                1
+              ],
+              "ecp_core_electrons": [
+                0,
+                0
+              ],
+              "ionic_charge": 0,
+              "electron_count": 2,
+              "multiplicity": 1,
+              "nalpha": 1,
+              "nbeta": 1
+            },
+            "shell_count": 2,
+            "primitive_count": 6
+          },
+          "model_identity": "58be8ac8db9f695d56efc32db8f80c929acd9e8348c73903c24d9e764e72bc30"
+        }
+      },
+      "changed_geometry": {
+        "energy": -1.1031409708106337,
+        "forces": [
+          [
+            -0.0,
+            -0.0,
+            0.09979324557624152
+          ],
+          [
+            -0.0,
+            -0.0,
+            -0.09979324557624152
+          ]
+        ],
+        "converged": true,
+        "iterations": 2,
+        "executed_backend": "cuda",
+        "status": 0,
+        "restart_origin": "persistent_restart",
+        "warm_start_used": true,
+        "warm_start_fallback": false,
+        "fock_builds": 3,
+        "physical_residual_rms": null,
+        "density_rms": 3.188872858294072e-16,
+        "energy_change": 2.220446049250313e-16,
+        "basis_metadata": {
+          "orbital": {
+            "name": "sto-3g",
+            "role": "orbital",
+            "mathematical_identity": "fd91f42ede96c442e14679e39abb1cbdb9af7992560d3ff2d18c7620f20839aa",
+            "basis_identity": "cb4d7486a207478c98cb858e1d8b905335b17cef25cb44ae82333b9b6604505e",
+            "representation": "spherical",
+            "provenance": {
+              "source": "generativeqc/data/basis_pack.json; Basis Set Exchange",
+              "version": "Basis Set Exchange 0.11",
+              "license": "BSD-3-Clause",
+              "checksum": "6002092fea25331281cc095dc6dc41a6a3d7a2f0c88f82a1fbceac01225a897c"
+            },
+            "electrons": {
+              "atomic_numbers": [
+                1,
+                1
+              ],
+              "nuclear_charges": [
+                1,
+                1
+              ],
+              "ecp_core_electrons": [
+                0,
+                0
+              ],
+              "ionic_charge": 0,
+              "electron_count": 2,
+              "multiplicity": 1,
+              "nalpha": 1,
+              "nbeta": 1
+            },
+            "shell_count": 2,
+            "primitive_count": 6
+          },
+          "model_identity": "58be8ac8db9f695d56efc32db8f80c929acd9e8348c73903c24d9e764e72bc30"
+        }
+      },
+      "after_rejection": {
+        "energy": -1.1167143251757699,
+        "forces": [
+          [
+            -0.0,
+            -0.0,
+            0.02845405716251727
+          ],
+          [
+            -0.0,
+            -0.0,
+            -0.028454057162517157
+          ]
+        ],
+        "converged": true,
+        "iterations": 2,
+        "executed_backend": "cuda",
+        "status": 0,
+        "restart_origin": "persistent_restart",
+        "warm_start_used": true,
+        "warm_start_fallback": false,
+        "fock_builds": 3,
+        "physical_residual_rms": null,
+        "density_rms": 0.0,
+        "energy_change": 4.440892098500626e-16,
+        "basis_metadata": {
+          "orbital": {
+            "name": "sto-3g",
+            "role": "orbital",
+            "mathematical_identity": "fd91f42ede96c442e14679e39abb1cbdb9af7992560d3ff2d18c7620f20839aa",
+            "basis_identity": "cb4d7486a207478c98cb858e1d8b905335b17cef25cb44ae82333b9b6604505e",
+            "representation": "spherical",
+            "provenance": {
+              "source": "generativeqc/data/basis_pack.json; Basis Set Exchange",
+              "version": "Basis Set Exchange 0.11",
+              "license": "BSD-3-Clause",
+              "checksum": "6002092fea25331281cc095dc6dc41a6a3d7a2f0c88f82a1fbceac01225a897c"
+            },
+            "electrons": {
+              "atomic_numbers": [
+                1,
+                1
+              ],
+              "nuclear_charges": [
+                1,
+                1
+              ],
+              "ecp_core_electrons": [
+                0,
+                0
+              ],
+              "ionic_charge": 0,
+              "electron_count": 2,
+              "multiplicity": 1,
+              "nalpha": 1,
+              "nbeta": 1
+            },
+            "shell_count": 2,
+            "primitive_count": 6
+          },
+          "model_identity": "58be8ac8db9f695d56efc32db8f80c929acd9e8348c73903c24d9e764e72bc30"
+        }
+      }
+    },
+    "checkpoint_hashes": {
+      "nonstationary_forged_diagnostics.vqcp": "1b0b92730130252009378baf6e343a3b46801e33ebd3bf20be52af84f5f02cf0",
+      "wrong_electron_count.vqcp": "bf2001d0d90ecbd3297c9ca966fb140fab58fb5d46783540d87b057f2e7d51f0",
+      "after_rejection.vqcp": "938f52e8cd0aa4dd150e489adb1fe24dd8fb314f6f1341391aa508c8dac136a6",
+      "before_rejection.vqcp": "938f52e8cd0aa4dd150e489adb1fe24dd8fb314f6f1341391aa508c8dac136a6",
+      "source.vqcp": "d94f0e89321e55c82f68b070569219e3f59b08c360a472b9b16772ec9143bd0c"
+    },
+    "checks": [
+      {
+        "name": "source_directional_force_error_h=0.001",
+        "value": 7.254151889873883e-07,
+        "passed": true
+      },
+      {
+        "name": "source_directional_force_error_h=0.0003",
+        "value": 6.528653354043179e-08,
+        "passed": true
+      },
+      {
+        "name": "source_pyscf_converged",
+        "value": true,
+        "passed": true
+      },
+      {
+        "name": "source_independent_energy_error",
+        "value": 1.1321876769443406e-10,
+        "passed": true
+      },
+      {
+        "name": "source_independent_force_error",
+        "value": 1.2714387320755804e-09,
+        "passed": true
+      },
+      {
+        "name": "target_directional_force_error_h=0.001",
+        "value": 3.777334303400881e-07,
+        "passed": true
+      },
+      {
+        "name": "target_directional_force_error_h=0.0003",
+        "value": 3.399631748335352e-08,
+        "passed": true
+      },
+      {
+        "name": "target_pyscf_converged",
+        "value": true,
+        "passed": true
+      },
+      {
+        "name": "target_independent_energy_error",
+        "value": 3.267337511658752e-10,
+        "passed": true
+      },
+      {
+        "name": "target_independent_force_error",
+        "value": 8.824247582639444e-10,
+        "passed": true
+      },
+      {
+        "name": "source_batch_energy_difference",
+        "value": 0.0,
+        "passed": true
+      },
+      {
+        "name": "source_batch_force_difference",
+        "value": 0.0,
+        "passed": true
+      },
+      {
+        "name": "exact_restart_classification",
+        "value": "exact_restart",
+        "passed": true
+      },
+      {
+        "name": "exact_restart_verification_pending",
+        "value": "pending_execute",
+        "passed": true
+      },
+      {
+        "name": "exact_restart_energy_difference",
+        "value": 0.0,
+        "passed": true
+      },
+      {
+        "name": "exact_restart_force_difference",
+        "value": 9.71445146547012e-17,
+        "passed": true
+      },
+      {
+        "name": "exact_restart_solve_was_executed",
+        "value": 2,
+        "passed": true
+      },
+      {
+        "name": "exact_restart_persistent_restart",
+        "value": "persistent_restart",
+        "passed": true
+      },
+      {
+        "name": "exact_restart_verification_executed",
+        "value": "executed",
+        "passed": true
+      },
+      {
+        "name": "forged_diagnostics_classification",
+        "value": "exact_restart",
+        "passed": true
+      },
+      {
+        "name": "forged_diagnostics_verification_pending",
+        "value": "pending_execute",
+        "passed": true
+      },
+      {
+        "name": "forged_diagnostics_energy_difference",
+        "value": 0.0,
+        "passed": true
+      },
+      {
+        "name": "forged_diagnostics_force_difference",
+        "value": 1.249000902703301e-16,
+        "passed": true
+      },
+      {
+        "name": "forged_diagnostics_solve_was_executed",
+        "value": 8,
+        "passed": true
+      },
+      {
+        "name": "forged_diagnostics_persistent_restart",
+        "value": "persistent_restart",
+        "passed": true
+      },
+      {
+        "name": "forged_diagnostics_verification_executed",
+        "value": "executed",
+        "passed": true
+      },
+      {
+        "name": "forged_energy_not_used",
+        "value": -1.1167143251757699,
+        "passed": true
+      },
+      {
+        "name": "nonstationary_seed_requires_iterations",
+        "value": 8,
+        "passed": true
+      },
+      {
+        "name": "changed_geometry_is_warm_only",
+        "value": "warm_start_compatible",
+        "passed": true
+      },
+      {
+        "name": "changed_geometry_energy_difference",
+        "value": 0.0,
+        "passed": true
+      },
+      {
+        "name": "changed_geometry_force_difference",
+        "value": 0.0,
+        "passed": true
+      },
+      {
+        "name": "wrong_trace_error_is_physical",
+        "value": "native checkpoint validation failed: invalid initial proposal: electron_count",
+        "passed": true
+      },
+      {
+        "name": "rejected_import_preserves_live_seed",
+        "value": "938f52e8cd0aa4dd150e489adb1fe24dd8fb314f6f1341391aa508c8dac136a6",
+        "passed": true
+      },
+      {
+        "name": "after_rejection_energy_difference",
+        "value": 0.0,
+        "passed": true
+      },
+      {
+        "name": "after_rejection_force_difference",
+        "value": 9.71445146547012e-17,
+        "passed": true
+      },
+      {
+        "name": "basis_mismatch_reason",
+        "value": "checkpoint restore rejected: 0: basis/AO transport required",
+        "passed": true
+      }
+    ],
+    "scope": "H2 RHF/STO-3G neutral singlet only; no response/Hessian qualification or speedup claim."
+  },
+  "operations_closed": {
+    "cp": {
+      "completed": 35,
+      "expected_rejection": 3
+    },
+    "cross": {
+      "completed": 4
+    }
+  },
+  "cross_node": {
+    "source_raw": "job-2044-cross.raw.json",
+    "compatibility": "exact_restart",
+    "before_execute_from_fsynced_import_event": "pending_execute",
+    "after_execute_from_result": "executed",
+    "checks": {
+      "n2_cold": {
+        "energy_difference_eh": 0.0,
+        "max_force_difference_eh_per_bohr": 9.71445146547012e-17,
+        "passed": true
+      },
+      "n5_cold": {
+        "energy_difference_eh": 0.0,
+        "max_force_difference_eh_per_bohr": 9.71445146547012e-17,
+        "passed": true
+      },
+      "n5_pyscf": {
+        "energy_difference_eh": 1.1321876769443406e-10,
+        "max_force_difference_eh_per_bohr": 1.271438829220095e-09,
+        "passed": true
+      }
+    },
+    "archive_sha256": "d94f0e89321e55c82f68b070569219e3f59b08c360a472b9b16772ec9143bd0c",
+    "note": "The run summary kept a live admission dictionary. Its before_execute field was overwritten during execute(). The immutable checkpoint_load event closed before gqc_solve started; the stored raw journal records pending_execute. No scientific rerun for this report correction."
+  },
+  "verified_remote_files": {
+    "outputs/cross-2044/operations.jsonl": {
+      "sha256": "60f6ca3c02a8fed503672e6cb8fce8fbbcfe7a0f928f3e25ae135126ae17d969",
+      "bytes": 1910
+    },
+    "outputs/cross-2044/result.json": {
+      "sha256": "3eb7b0cddbcbc470412c6a7dbdccb5a831deb3e5c85a7c3039caf66d37f5199a",
+      "bytes": 1721
+    },
+    "outputs/job-2044/after_rejection.vqcp": {
+      "sha256": "938f52e8cd0aa4dd150e489adb1fe24dd8fb314f6f1341391aa508c8dac136a6",
+      "bytes": 5440
+    },
+    "outputs/job-2044/before_rejection.vqcp": {
+      "sha256": "938f52e8cd0aa4dd150e489adb1fe24dd8fb314f6f1341391aa508c8dac136a6",
+      "bytes": 5440
+    },
+    "outputs/job-2044/checks.json": {
+      "sha256": "28e0483afbb933d2acade6489c66c74ffb9cfa6c40937951c0d43d7da6f07c12",
+      "bytes": 3926
+    },
+    "outputs/job-2044/environment.json": {
+      "sha256": "3afb4b806dfd1e60f75c1f48696ff966082a82b7f09a1fb5fab13fd64eca4d3a",
+      "bytes": 1577
+    },
+    "outputs/job-2044/nonstationary_forged_diagnostics.vqcp": {
+      "sha256": "1b0b92730130252009378baf6e343a3b46801e33ebd3bf20be52af84f5f02cf0",
+      "bytes": 5407
+    },
+    "outputs/job-2044/operations.jsonl": {
+      "sha256": "f398e5895cdb49d61ab26ec90af677cc3da67045b94359ad01686fb9def5b1c0",
+      "bytes": 32785
+    },
+    "outputs/job-2044/results.json": {
+      "sha256": "d2262221bd53fefc7c29a8f2cfd8fba453784b38da9079e3c528d6f27ae279a9",
+      "bytes": 15764
+    },
+    "outputs/job-2044/run.json": {
+      "sha256": "38614ae6cfe4b1a76a63e643b7e201db5eb04f36484fb00934b146a758ca8e15",
+      "bytes": 683
+    },
+    "outputs/job-2044/source.vqcp": {
+      "sha256": "d94f0e89321e55c82f68b070569219e3f59b08c360a472b9b16772ec9143bd0c",
+      "bytes": 5439
+    },
+    "outputs/job-2044/wrong_electron_count.vqcp": {
+      "sha256": "bf2001d0d90ecbd3297c9ca966fb140fab58fb5d46783540d87b057f2e7d51f0",
+      "bytes": 5439
+    },
+    "slurm-2044.err": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "slurm-2044.out": {
+      "sha256": "05e5665b8c7b193fff46e26e1a355a4f2e65a4b683de38f32fd1da77ee0960b5",
+      "bytes": 1009
+    },
+    "inputs/n2-job-5382.json": {
+      "sha256": "91f1bd01ee8d14735b0650bcb20c18b732463224737388496784e455d618ba6c",
+      "bytes": 22150
+    },
+    "inputs/n2-runtime-pack.json": {
+      "sha256": "498b3117584cf668dcd0b8370b8d04fae160dc5f0349a767101ed8ba99bad4de",
+      "bytes": 477
+    },
+    "inputs/n2-source.vqcp": {
+      "sha256": "d94f0e89321e55c82f68b070569219e3f59b08c360a472b9b16772ec9143bd0c",
+      "bytes": 5439
+    },
+    "scripts/activate_n5_gqc.sh": {
+      "sha256": "7c98e8741c01491a41c6a8abdcd0ebdd7ba09a8bcba92ce3941447e82093a378",
+      "bytes": 1139
+    },
+    "scripts/probe_gqc_checkpoint.py": {
+      "sha256": "b760e978a68ebae718ea304a7e428f78f40303a3993657d1eca5606ad403308a",
+      "bytes": 16207
+    },
+    "scripts/probe_n5_archive.py": {
+      "sha256": "f487d5da5e2a149876d25effc08422581b11d16934452cd208bdb4925eab6ee9",
+      "bytes": 5936
+    },
+    "scripts/run_n5_checkpoint.slurm": {
+      "sha256": "d07cd18fc0a1783814b8f34d20928ae67bb7a8dbdfe1b6310b215a2685ccd2bd",
+      "bytes": 1016
+    },
+    "configs/checkpoint_probe.json": {
+      "sha256": "2ec7b69c3ae8bbff8b80905d7feb9887fcf2b5fe91b040b80959296da5468a42",
+      "bytes": 1990
+    },
+    "PROJECT_COMMIT": {
+      "sha256": "268418d83eabf7df6eeefd559083a3f09eb842bfd6490f78b853a32cefa80ccb",
+      "bytes": 41
+    },
+    "SHA256SUMS": {
+      "sha256": "9d832597c905e52a086ffcc7f68721593b5a97a723bcc9a78006cf69e39e826a",
+      "bytes": 832
+    }
+  }
+}
