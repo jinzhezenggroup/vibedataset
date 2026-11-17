@@ -66,11 +66,12 @@ def source_receipt(cache):
             'verified_members': notices}
 
 
-def scan(cache):
+def scan(cache, initial_cohort=None):
     flags = {int(m.group(1)) for m in re.finditer(r'^\s*(\d+)\s+\S+', (cache/'uncharacterized.txt').read_text(), re.M)}
     if len(flags) != 3054:
         raise ValueError('unexpected count of publisher geometry flags')
     selected, eligible, failed, skipped = {}, {s: [] for s in STRATA}, [], Counter()
+    candidates = {}
     seen = set()
     with tarfile.open(cache / ARCHIVE, 'r|bz2') as archive:
         for member in archive:
@@ -103,13 +104,14 @@ def scan(cache):
                 coords = [[float(tok.replace('*^', 'e')) for tok in a[1:4]] for a in atom_rows]
                 if any(len(v) != 3 or not all(math.isfinite(x) for x in v) for v in coords):
                     raise ValueError('nonfinite or incomplete coordinates')
-                if key not in selected or number < selected[key]['qm9_id']:
-                    selected[key] = {'qm9_id': number, 'name': f'qm9-{number:06d}',
+                candidates[number] = {'qm9_id': number, 'name': f'qm9-{number:06d}',
                                      'member': member.name, 'member_sha256': hashlib.sha256(raw).hexdigest(),
                                      'member_bytes': len(raw), 'symbols': symbols,
                                      'coordinates_angstrom': coords, 'coordinates_bohr': [
                                      [x / BOHR_ANGSTROM for x in v] for v in coords],
                                      'source_geometry_disagreement_flag': number in flags, 'n_heavy': heavy}
+                if key not in selected or number < selected[key]['qm9_id']:
+                    selected[key] = candidates[number]
             except (ValueError, UnicodeError, IndexError) as exc:
                 failed.append({'member': member.name, 'error': str(exc)})
     if len(seen) != 133885 or seen != set(range(1,133886)):
@@ -121,6 +123,21 @@ def scan(cache):
             raise ValueError('lowest-ID eligible input is invalid; do not substitute')
         rows.append({'stratum': key, 'eligible_ids': ids,
                      'eligible_flagged_ids': sorted(flags.intersection(ids)), 'selected': selected.get(key)})
+    if initial_cohort is not None:
+        prior = {row['stratum']: row for row in initial_cohort['strata']}
+        if set(prior) != set(STRATA):
+            raise ValueError('initial cohort stratum mismatch')
+        remaining = []
+        for row in rows:
+            initial = prior[row['stratum']]
+            if initial['eligible_ids'] != row['eligible_ids'] or initial['selected'] != row['selected']:
+                raise ValueError('initial cohort differs from this publication scan')
+            for number in row['eligible_ids']:
+                if number != row['selected']['qm9_id']:
+                    remaining.append({'stratum':row['stratum'], 'eligible_ids':[number],
+                                      'eligible_flagged_ids':[number] if number in flags else [],
+                                      'selected':candidates[number]})
+        rows = remaining
     return {'family_count':len(seen), 'ineligible_counts_by_nheavy':dict(skipped),
             'parse_failures':failed, 'bohr_angstrom':BOHR_ANGSTROM, 'strata':rows}
 
@@ -129,12 +146,18 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--cache', type=Path, required=True)
     parser.add_argument('--out', type=Path, required=True)
+    parser.add_argument('--remaining-from', type=Path, help='verify the initial cohort and take all other eligible members')
     args = parser.parse_args()
     t = time.perf_counter()
     args.cache.mkdir(exist_ok=True, parents=True)
     receipt = source_receipt(args.cache)
     t_scan = time.perf_counter()
-    report = scan(args.cache)
+    initial = load_metadata(args.remaining_from) if args.remaining_from else None
+    report = scan(args.cache, initial)
+    if initial is not None:
+        if receipt != initial['source']:
+            raise ValueError('source release changed')
+        report['excluded_initial_cohort_sha256'] = hashlib.sha256(args.remaining_from.read_bytes()).hexdigest()
     report.update(source=receipt, checked_at_utc=datetime.now(timezone.utc).isoformat(),
                   cached_source_validation_seconds=t_scan - t, decompression_and_selection_seconds=time.perf_counter()-t_scan)
     args.out.parent.mkdir(exist_ok=True, parents=True)

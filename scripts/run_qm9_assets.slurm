@@ -19,5 +19,5 @@ VIBEDATASET_CODE_SHA=$(cat PROJECT_COMMIT)
 export VIBEDATASET_CODE_SHA
 nvidia-smi --query-gpu=name,compute_cap,driver_version,memory.total --format=csv,noheader
 /usr/bin/time -p "$GQC_PYTHON" scripts/build_qm9_assets.py --config configs/checkpoint_probe.json \
-  --helpers upstream --cohort handoff/gqcdataset_codex_goal/research/experiments/qm9_response_assets/cohort.json \
+  --helpers upstream --cohort "${1:-handoff/gqcdataset_codex_goal/research/experiments/qm9_response_assets/cohort.json}" \
   --out "outputs/job-$SLURM_JOB_ID"
