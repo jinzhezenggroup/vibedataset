@@ -1,0 +1,7 @@
+# Local checkouts and runtime state; source locks and evidence remain tracked.
+_references/
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.work/

@@ -1,0 +1,939 @@
+{
+  "schema_version": 1,
+  "prepared_on": "2026-11-18",
+  "provenance": "依据当前可见对话重建，并在本轮核实公开入口；不是旧 ZIP 的字节级恢复。",
+  "scope": "起始目录；须沿论文、官方归档、依赖和测试扩展。",
+  "status_semantics": {
+    "verified_entry": "公开仓库入口与元数据已核实，不代表完整源码获取或审读",
+    "paper_verified_code_pending": "原论文或官方入口已核实，原始代码定位待完成",
+    "paper_verified_source_unavailable": "原文给出源码地址，但本轮无法访问"
+  },
+  "summary": {
+    "entries": 38,
+    "verified_accessible_repositories": 31,
+    "full_source_trees_acquired": 0,
+    "source_audits_completed": 0
+  },
+  "entries": [
+    {
+      "id": "gqc",
+      "title": "GenerativeQC / GQC",
+      "category": "科学编译与工作基础",
+      "priority": "P0",
+      "repository_url": "https://github.com/jinzhezenggroup/generativeqc",
+      "primary_urls": [
+        "https://github.com/jinzhezenggroup/generativeqc",
+        "https://qc.jinzhezeng.group/en/latest/developer/compiler_architecture.html",
+        "https://qc.jinzhezeng.group/en/latest/developer/stationary_problem.html"
+      ],
+      "entry_status": "verified_entry",
+      "entry_checked_on": "2026-11-18",
+      "source_status": "not_acquired",
+      "paper_revision": null,
+      "pinned_commit": null,
+      "audit_questions": [
+        "科学图、求解器、自动微分与执行计划如何解耦？",
+        "已知电子态数值能在哪层替代求解，同时保留隐式导数？",
+        "目标精度、误差证据和实际后端支持的边界是什么？"
+      ],
+      "notes": "仓库元数据确认当前名称 generativeqc，默认分支 master；旧材料中的 GQC 是项目简称。官网深层文档作为继续核查入口；本轮不把 README 的全部能力视为源码验证结果。",
+      "entry_verification": {
+        "default_branch": "master",
+        "verification_url": "https://api.github.com/repos/jinzhezenggroup/generativeqc"
+      }
+    },
+    {
+      "id": "xtbloom",
+      "title": "xTBloom",
+      "category": "科学编译与工作基础",
+      "priority": "P0",
+      "repository_url": "https://github.com/jinzhezenggroup/xtbloom",
+      "primary_urls": [
+        "https://github.com/jinzhezenggroup/xtbloom"
+      ],
+      "entry_status": "verified_entry",
+      "entry_checked_on": "2026-11-18",
+      "source_status": "not_acquired",
+      "paper_revision": null,
+      "pinned_commit": null,
+      "audit_questions": [
+        "异构批次、持久上下文与密度热启动的兼容条件是什么？",
+        "单分子失败是否隔离，哪些资源实际被复用？"
+      ],
+      "notes": "需要用实现及失败测试核实批处理设计，性能不能从接口存在推断。",
+      "entry_verification": {
+        "default_branch": "main",
+        "verification_url": "https://api.github.com/repos/jinzhezenggroup/xtbloom"
+      }
+    },
+    {
+      "id": "pyscf",
+      "title": "PySCF",
+      "category": "量化后端与强基线",
+      "priority": "P0",
+      "repository_url": "https://github.com/pyscf/pyscf",
+      "primary_urls": [
+        "https://github.com/pyscf/pyscf"
+      ],
+      "entry_status": "verified_entry",
+      "entry_checked_on": "2026-11-18",
+      "source_status": "not_acquired",
+      "paper_revision": null,
+      "pinned_commit": null,
+      "audit_questions": [
+        "档案加载、密度初猜、一次电子性质后处理分别调用什么？",
+        "响应、梯度和基组变换的依赖是什么？"
+      ],
+      "notes": "",
+      "entry_verification": {
+        "default_branch": "master",
+        "verification_url": "https://api.github.com/repos/pyscf/pyscf"
+      }
+    },
+    {
+      "id": "pyscfad",
+      "title": "PySCFAD",
+      "category": "量化后端与强基线",
+      "priority": "P0",
+      "repository_url": "https://github.com/fishjojo/pyscfad",
+      "primary_urls": [
+        "https://github.com/fishjojo/pyscfad"
+      ],
+      "entry_status": "verified_entry",
+      "entry_checked_on": "2026-11-18",
+      "source_status": "not_acquired",
+      "paper_revision": null,
+      "pinned_commit": null,
+      "audit_questions": [
+        "迭代展开与隐式微分各覆盖哪些方法？",
+        "用存档状态替代前向求解时怎样保留导数语义？"
+      ],
+      "notes": "",
+      "entry_verification": {
+        "default_branch": "main",
+        "verification_url": "https://api.github.com/repos/fishjojo/pyscfad"
+      }
+    },
+    {
+      "id": "gpu4pyscf",
+      "title": "GPU4PySCF",
+      "category": "量化后端与强基线",
+      "priority": "P1",
+      "repository_url": "https://github.com/pyscf/gpu4pyscf",
+      "primary_urls": [
+        "https://github.com/pyscf/gpu4pyscf"
+      ],
+      "entry_status": "verified_entry",
+      "entry_checked_on": "2026-11-18",
+      "source_status": "not_acquired",
+      "paper_revision": null,
+      "pinned_commit": null,
+      "audit_questions": [
+        "预热、密度拟合、数据传输与后处理成本怎样计入比较？",
+        "可比较的性质/方法/精度范围是什么？"
+      ],
+      "notes": "",
+      "entry_verification": {
+        "default_branch": "master",
+        "verification_url": "https://api.github.com/repos/pyscf/gpu4pyscf"
+      }
+    },
+    {
+      "id": "psi4",
+      "title": "Psi4",
+      "category": "量化后端与强基线",
+      "priority": "P0",
+      "repository_url": "https://github.com/psi4/psi4",
+      "primary_urls": [
+        "https://github.com/psi4/psi4",
+        "https://psicode.org/psi4manual/master/oeprop.html",
+        "https://psicode.org/psi4manual/master/api/psi4.driver.cbs.html"
+      ],
+      "entry_status": "verified_entry",
+      "entry_checked_on": "2026-11-18",
+      "source_status": "not_acquired",
+      "paper_revision": null,
+      "pinned_commit": null,
+      "audit_questions": [
+        "波函数序列化、oeprop 密度选择、CBS 去重如何实现？",
+        "固定态后处理和目标协议重收敛的差别在哪里？"
+      ],
+      "notes": "官网路径是重点审计入口；直接复用与组合计算应成为强基线。",
+      "entry_verification": {
+        "default_branch": "master",
+        "verification_url": "https://api.github.com/repos/psi4/psi4"
+      }
+    },
+    {
+      "id": "qcdb",
+      "title": "QCDB",
+      "category": "量化后端与强基线",
+      "priority": "P1",
+      "repository_url": "https://github.com/qcdb/qcdb",
+      "primary_urls": [
+        "https://github.com/qcdb/qcdb"
+      ],
+      "entry_status": "verified_entry",
+      "entry_checked_on": "2026-11-18",
+      "source_status": "not_acquired",
+      "paper_revision": null,
+      "pinned_commit": null,
+      "audit_questions": [
+        "跨程序模型/单位/计算协议如何表达？",
+        "组合计算和底层调用的可复用性边界是什么？"
+      ],
+      "notes": "",
+      "entry_verification": {
+        "default_branch": "master",
+        "verification_url": "https://api.github.com/repos/qcdb/qcdb"
+      }
+    },
+    {
+      "id": "xtb",
+      "title": "xTB",
+      "category": "量化后端与强基线",
+      "priority": "P1",
+      "repository_url": "https://github.com/grimme-lab/xtb",
+      "primary_urls": [
+        "https://github.com/grimme-lab/xtb"
+      ],
+      "entry_status": "verified_entry",
+      "entry_checked_on": "2026-11-18",
+      "source_status": "not_acquired",
+      "paper_revision": null,
+      "pinned_commit": null,
+      "audit_questions": [
+        "GFN 方法状态、重启和性质接口保存哪些信息？",
+        "作为低保真信息时如何记录与目标 DFT 的区别？"
+      ],
+      "notes": "",
+      "entry_verification": {
+        "default_branch": "main",
+        "verification_url": "https://api.github.com/repos/grimme-lab/xtb"
+      }
+    },
+    {
+      "id": "tblite",
+      "title": "tblite",
+      "category": "量化后端与强基线",
+      "priority": "P1",
+      "repository_url": "https://github.com/tblite/tblite",
+      "primary_urls": [
+        "https://github.com/tblite/tblite"
+      ],
+      "entry_status": "verified_entry",
+      "entry_checked_on": "2026-11-18",
+      "source_status": "not_acquired",
+      "paper_revision": null,
+      "pinned_commit": null,
+      "audit_questions": [
+        "库级状态和结果接口如何组织？",
+        "参数、模型身份、梯度和响应支持有哪些条件？"
+      ],
+      "notes": "",
+      "entry_verification": {
+        "default_branch": "main",
+        "verification_url": "https://api.github.com/repos/tblite/tblite"
+      }
+    },
+    {
+      "id": "dxtb",
+      "title": "dxtb",
+      "category": "量化后端与强基线",
+      "priority": "P1",
+      "repository_url": "https://github.com/grimme-lab/dxtb",
+      "primary_urls": [
+        "https://github.com/grimme-lab/dxtb"
+      ],
+      "entry_status": "verified_entry",
+      "entry_checked_on": "2026-11-18",
+      "source_status": "not_acquired",
+      "paper_revision": null,
+      "pinned_commit": null,
+      "audit_questions": [
+        "可微 xTB 的求解/响应/缓存接口如何实现？",
+        "批量、自动微分和数值收敛如何共同验收？"
+      ],
+      "notes": "",
+      "entry_verification": {
+        "default_branch": "main",
+        "verification_url": "https://api.github.com/repos/grimme-lab/dxtb"
+      }
+    },
+    {
+      "id": "qcfractal",
+      "title": "QCFractal / QCPortal / QCArchive",
+      "category": "档案、工作流与状态",
+      "priority": "P0",
+      "repository_url": "https://github.com/MolSSI/QCFractal",
+      "primary_urls": [
+        "https://github.com/MolSSI/QCFractal",
+        "https://github.com/MolSSI/QCFractal/tree/main/qcportal",
+        "https://docs.qcarchive.molssi.org/user_guide/records/singlepoint.html"
+      ],
+      "entry_status": "verified_entry",
+      "entry_checked_on": "2026-11-18",
+      "source_status": "not_acquired",
+      "paper_revision": null,
+      "pinned_commit": null,
+      "audit_questions": [
+        "单点记录如何保存波函数、规格、错误与溯源？",
+        "任务去重与数据集条目身份如何区分？"
+      ],
+      "notes": "本轮已读取根目录，qcfractal 与 qcportal 同在此主仓库；不要把历史独立 QCPortal 仓库当当前完整实现。",
+      "entry_verification": {
+        "default_branch": "main",
+        "verification_url": "https://api.github.com/repos/MolSSI/QCFractal"
+      }
+    },
+    {
+      "id": "qcengine",
+      "title": "QCEngine",
+      "category": "档案、工作流与状态",
+      "priority": "P1",
+      "repository_url": "https://github.com/MolSSI/QCEngine",
+      "primary_urls": [
+        "https://github.com/MolSSI/QCEngine"
+      ],
+      "entry_status": "verified_entry",
+      "entry_checked_on": "2026-11-18",
+      "source_status": "not_acquired",
+      "paper_revision": null,
+      "pinned_commit": null,
+      "audit_questions": [
+        "跨后端驱动、失败分类与资源配置如何定义？",
+        "结果缓存依赖由谁负责？"
+      ],
+      "notes": "",
+      "entry_verification": {
+        "default_branch": "master",
+        "verification_url": "https://api.github.com/repos/MolSSI/QCEngine"
+      }
+    },
+    {
+      "id": "qcelemental",
+      "title": "QCElemental",
+      "category": "档案、工作流与状态",
+      "priority": "P0",
+      "repository_url": "https://github.com/MolSSI/QCElemental",
+      "primary_urls": [
+        "https://github.com/MolSSI/QCElemental"
+      ],
+      "entry_status": "verified_entry",
+      "entry_checked_on": "2026-11-18",
+      "source_status": "not_acquired",
+      "paper_revision": null,
+      "pinned_commit": null,
+      "audit_questions": [
+        "模型、分子、单位、基组与 provenance 如何表达？",
+        "现有模式对中间状态和精度证据有哪些约束？"
+      ],
+      "notes": "",
+      "entry_verification": {
+        "default_branch": "master",
+        "verification_url": "https://api.github.com/repos/MolSSI/QCElemental"
+      }
+    },
+    {
+      "id": "aiida",
+      "title": "AiiDA",
+      "category": "档案、工作流与状态",
+      "priority": "P1",
+      "repository_url": "https://github.com/aiidateam/aiida-core",
+      "primary_urls": [
+        "https://github.com/aiidateam/aiida-core",
+        "https://aiida.readthedocs.io/projects/aiida-core/en/stable/topics/provenance/caching.html"
+      ],
+      "entry_status": "verified_entry",
+      "entry_checked_on": "2026-11-18",
+      "source_status": "not_acquired",
+      "paper_revision": null,
+      "pinned_commit": null,
+      "audit_questions": [
+        "内容哈希缓存怎样判定等价，如何失效？",
+        "相同计算复用与不同资产的信息充分性有何边界？"
+      ],
+      "notes": "",
+      "entry_verification": {
+        "default_branch": "main",
+        "verification_url": "https://api.github.com/repos/aiidateam/aiida-core"
+      }
+    },
+    {
+      "id": "trexio",
+      "title": "TREXIO",
+      "category": "档案、工作流与状态",
+      "priority": "P0",
+      "repository_url": "https://github.com/TREX-CoE/trexio",
+      "primary_urls": [
+        "https://github.com/TREX-CoE/trexio",
+        "https://trex-coe.github.io/trexio/lib.html"
+      ],
+      "entry_status": "verified_entry",
+      "entry_checked_on": "2026-11-18",
+      "source_status": "not_acquired",
+      "paper_revision": null,
+      "pinned_commit": null,
+      "audit_questions": [
+        "实际基组、AO/MO、密度和多体状态保存什么？",
+        "模式合法性与物理正确性分别在哪里检验？"
+      ],
+      "notes": "",
+      "entry_verification": {
+        "default_branch": "master",
+        "verification_url": "https://api.github.com/repos/TREX-CoE/trexio"
+      }
+    },
+    {
+      "id": "trexio_tools",
+      "title": "TREXIO tools",
+      "category": "档案、工作流与状态",
+      "priority": "P0",
+      "repository_url": "https://github.com/TREX-CoE/trexio_tools",
+      "primary_urls": [
+        "https://github.com/TREX-CoE/trexio_tools",
+        "https://github.com/TREX-CoE/trexio_tools/blob/master/README.md"
+      ],
+      "entry_status": "verified_entry",
+      "entry_checked_on": "2026-11-18",
+      "source_status": "not_acquired",
+      "paper_revision": null,
+      "pinned_commit": null,
+      "audit_questions": [
+        "转换器如何处理轨道顺序、球谐/笛卡尔与归一化？",
+        "现有检查工具能验证什么物理一致性？"
+      ],
+      "notes": "本轮 README 指明 PySCF↔TREXIO 转换已移至 pyscf-forge；原包叙述需随源码版本更新。",
+      "entry_verification": {
+        "default_branch": "master",
+        "verification_url": "https://api.github.com/repos/TREX-CoE/trexio_tools"
+      }
+    },
+    {
+      "id": "pyscf_forge",
+      "title": "PySCF forge（TREXIO 适配依赖）",
+      "category": "档案、工作流与状态",
+      "priority": "P1",
+      "repository_url": "https://github.com/pyscf/pyscf-forge",
+      "primary_urls": [
+        "https://github.com/pyscf/pyscf-forge",
+        "https://github.com/TREX-CoE/trexio_tools/blob/master/README.md"
+      ],
+      "entry_status": "verified_entry",
+      "entry_checked_on": "2026-11-18",
+      "source_status": "not_acquired",
+      "paper_revision": null,
+      "pinned_commit": null,
+      "audit_questions": [
+        "PySCF↔TREXIO 转换现在位于何处，覆盖哪些态？",
+        "转换与 round-trip 测试是否足以支撑目标物性不变？"
+      ],
+      "notes": "由 TREXIO tools 当前 README 追踪得到的实际依赖，不能仅审读旧转换器。",
+      "entry_verification": {
+        "default_branch": "master",
+        "verification_url": "https://api.github.com/repos/pyscf/pyscf-forge"
+      }
+    },
+    {
+      "id": "schnorb",
+      "title": "SchNOrb",
+      "category": "电子态学习与可微混合计算",
+      "priority": "P1",
+      "repository_url": "https://github.com/atomistic-machine-learning/SchNOrb",
+      "primary_urls": [
+        "https://github.com/atomistic-machine-learning/SchNOrb"
+      ],
+      "entry_status": "verified_entry",
+      "entry_checked_on": "2026-11-18",
+      "source_status": "not_acquired",
+      "paper_revision": null,
+      "pinned_commit": null,
+      "audit_questions": [
+        "Hamiltonian/overlap 预测如何变成物性和 SCF 初猜？",
+        "数据划分、分子范围和状态校正怎样影响收益？"
+      ],
+      "notes": "",
+      "entry_verification": {
+        "default_branch": "master",
+        "verification_url": "https://api.github.com/repos/atomistic-machine-learning/SchNOrb"
+      }
+    },
+    {
+      "id": "qhnet",
+      "title": "QHNet",
+      "category": "电子态学习与可微混合计算",
+      "priority": "P1",
+      "repository_url": "https://github.com/divelab/AIRS",
+      "primary_urls": [
+        "https://github.com/divelab/AIRS/tree/main/OpenDFT/QHNet"
+      ],
+      "entry_status": "verified_entry",
+      "entry_checked_on": "2026-11-18",
+      "source_status": "not_acquired",
+      "paper_revision": null,
+      "pinned_commit": null,
+      "audit_questions": [
+        "等变矩阵预测、AO 约定和下游计算如何衔接？",
+        "原始代码与其他数据集适配版有哪些变化？"
+      ],
+      "notes": "AIRS 为主仓库；已核实 OpenDFT/QHNet 目录入口。获取全树后标出重点模块，不能把局部抓取称为完整源码。",
+      "entry_verification": {
+        "default_branch": "main",
+        "verification_url": "https://api.github.com/repos/divelab/AIRS"
+      }
+    },
+    {
+      "id": "qh9",
+      "title": "QH9",
+      "category": "电子态学习与可微混合计算",
+      "priority": "P1",
+      "repository_url": "https://github.com/divelab/AIRS",
+      "primary_urls": [
+        "https://github.com/divelab/AIRS/tree/main/OpenDFT/QHBench/QH9",
+        "https://github.com/divelab/AIRS/blob/main/OpenDFT/QHBench/README.md"
+      ],
+      "entry_status": "verified_entry",
+      "entry_checked_on": "2026-11-18",
+      "source_status": "not_acquired",
+      "paper_revision": null,
+      "pinned_commit": null,
+      "audit_questions": [
+        "静态/动态划分和 Hamiltonian 数据生成协议是什么？",
+        "复用同一分子构型信息是否造成评估泄漏？"
+      ],
+      "notes": "本轮 QHBench README 明确链接 QH9 子目录；与 QHNet 共用一个仓库，不能按两个独立仓库计数。",
+      "entry_verification": {
+        "default_branch": "main",
+        "verification_url": "https://api.github.com/repos/divelab/AIRS"
+      }
+    },
+    {
+      "id": "mlelec",
+      "title": "Suman 等 2025 / mlelec",
+      "category": "电子态学习与可微混合计算",
+      "priority": "P0",
+      "repository_url": "https://github.com/curiosity54/mlelec",
+      "primary_urls": [
+        "https://github.com/curiosity54/mlelec",
+        "https://archive.materialscloud.org/records/4vezc-jtt98",
+        "https://arxiv.org/abs/2504.01187"
+      ],
+      "entry_status": "verified_entry",
+      "entry_checked_on": "2026-11-18",
+      "source_status": "not_acquired",
+      "paper_revision": null,
+      "pinned_commit": null,
+      "audit_questions": [
+        "学习 Hamiltonian 与 PySCFAD 的端到端接口怎样实现？",
+        "小表示基匹配大基组目标的模型身份、响应与泛化如何验证？"
+      ],
+      "notes": "Materials Cloud 官方记录明确将 mlelec 列为对应软件。需对照论文归档与 qm7 等分支，不能默认 main 就是论文实验版本。",
+      "entry_verification": {
+        "default_branch": "main",
+        "verification_url": "https://api.github.com/repos/curiosity54/mlelec"
+      }
+    },
+    {
+      "id": "phisnet",
+      "title": "PhiSNet 原始工作",
+      "category": "电子态学习与可微混合计算",
+      "priority": "P0",
+      "repository_url": null,
+      "primary_urls": [
+        "https://papers.nips.cc/paper/2021/hash/78f1893678afbeaa90b1fa01b9cfb860-Abstract.html",
+        "https://openreview.net/forum?id=auGY2UQfhSu"
+      ],
+      "entry_status": "paper_verified_code_pending",
+      "entry_checked_on": "2026-11-18",
+      "source_status": "not_acquired",
+      "paper_revision": null,
+      "pinned_commit": null,
+      "audit_questions": [
+        "原始补充材料是否包含代码、权重与许可？",
+        "波函数预测、迁移学习与热启动已有能力如何界定？"
+      ],
+      "notes": "原论文入口已核实；OpenReview 本轮要求浏览器验证，原始代码包尚未取得。nablaDFT 的适配版单列，不能替代原始实现审计。"
+    },
+    {
+      "id": "nabladft",
+      "title": "nablaDFT 与 PhiSNet/QHNet 适配版",
+      "category": "电子态学习与可微混合计算",
+      "priority": "P1",
+      "repository_url": "https://github.com/AIRI-Institute/nablaDFT",
+      "primary_urls": [
+        "https://github.com/AIRI-Institute/nablaDFT",
+        "https://github.com/AIRI-Institute/nablaDFT/blob/main/nablaDFT/phisnet/README.md",
+        "https://pubs.rsc.org/en/content/articlehtml/2022/cp/d2cp03966d"
+      ],
+      "entry_status": "verified_entry",
+      "entry_checked_on": "2026-11-18",
+      "source_status": "not_acquired",
+      "paper_revision": null,
+      "pinned_commit": null,
+      "audit_questions": [
+        "适配版本的批处理、数据范围、状态约定如何改变？",
+        "现有数据可否支撑跨构型、跨分子、缺物性评估？"
+      ],
+      "notes": "PhiSNet 子目录 README 明确称基于作者代码；应同时保存适配记录和上游来源。",
+      "entry_verification": {
+        "default_branch": "main",
+        "verification_url": "https://api.github.com/repos/AIRI-Institute/nablaDFT"
+      }
+    },
+    {
+      "id": "dm_phisnet",
+      "title": "dm-PhiSNet（2026）",
+      "category": "电子态学习与可微混合计算",
+      "priority": "P0",
+      "repository_url": null,
+      "primary_urls": [
+        "https://arxiv.org/abs/2604.27256",
+        "https://arxiv.org/html/2604.27256v1",
+        "https://doi.org/10.1002/chem.71739"
+      ],
+      "entry_status": "paper_verified_code_pending",
+      "entry_checked_on": "2026-11-18",
+      "source_status": "not_acquired",
+      "paper_revision": null,
+      "pinned_commit": null,
+      "audit_questions": [
+        "解析约束与 SCF 初猜收益如何实现与计时？",
+        "自旋求和密度的幂等系数、purification 公式及实际代码是否一致？",
+        "一步力与完整目标态力是否具有相同定义？"
+      ],
+      "notes": "已核实论文与 2026-10 期刊版本入口；本轮未定位独立原始仓库。必须核对预印本、期刊版、补充材料，不能把未找到代码解释为未实现。"
+    },
+    {
+      "id": "ani1",
+      "title": "ANI-1 数据支持仓库",
+      "category": "多保真、主动采样与缺失标签",
+      "priority": "P1",
+      "repository_url": "https://github.com/isayev/ANI1_dataset",
+      "primary_urls": [
+        "https://github.com/isayev/ANI1_dataset",
+        "https://arxiv.org/abs/1801.09319"
+      ],
+      "entry_status": "verified_entry",
+      "entry_checked_on": "2026-11-18",
+      "source_status": "not_acquired",
+      "paper_revision": null,
+      "pinned_commit": null,
+      "audit_questions": [
+        "数据读取脚本与生成/训练实现的边界是什么？",
+        "主动学习样本选择能否作为数据集级获取策略基线？"
+      ],
+      "notes": "已读 README：此仓库提供 ANI-1 数据访问支持；不把它写成 ANI-1ccx 完整训练实现。",
+      "entry_verification": {
+        "default_branch": "master",
+        "verification_url": "https://api.github.com/repos/isayev/ANI1_dataset"
+      }
+    },
+    {
+      "id": "ani1x_ccx",
+      "title": "ANI-1x / ANI-1ccx 数据及迁移学习路线",
+      "category": "多保真、主动采样与缺失标签",
+      "priority": "P1",
+      "repository_url": "https://github.com/aiqm/ANI1x_datasets",
+      "primary_urls": [
+        "https://github.com/aiqm/ANI1x_datasets",
+        "https://www.nature.com/articles/s41467-019-10827-4"
+      ],
+      "entry_status": "verified_entry",
+      "entry_checked_on": "2026-11-18",
+      "source_status": "not_acquired",
+      "paper_revision": null,
+      "pinned_commit": null,
+      "audit_questions": [
+        "低/高层标签的对应、缺失结构和训练划分是什么？",
+        "原始迁移训练代码、数据读取脚本、现代实现如何分别锁定？"
+      ],
+      "notes": "此入口核实为数据支持仓库；原论文训练发布路径需继续追踪，不能仅有数据读入脚本就宣称复现训练。",
+      "entry_verification": {
+        "default_branch": "master",
+        "verification_url": "https://api.github.com/repos/aiqm/ANI1x_datasets"
+      }
+    },
+    {
+      "id": "torchani",
+      "title": "TorchANI",
+      "category": "多保真、主动采样与缺失标签",
+      "priority": "P1",
+      "repository_url": "https://github.com/aiqm/torchani",
+      "primary_urls": [
+        "https://github.com/aiqm/torchani"
+      ],
+      "entry_status": "verified_entry",
+      "entry_checked_on": "2026-11-18",
+      "source_status": "not_acquired",
+      "paper_revision": null,
+      "pinned_commit": null,
+      "audit_questions": [
+        "预训练、微调、集成不确定性和数据接口能支持哪些对照？",
+        "当前版本与原始 ANI 论文实现有何差别？"
+      ],
+      "notes": "",
+      "entry_verification": {
+        "default_branch": "main",
+        "verification_url": "https://api.github.com/repos/aiqm/torchani"
+      }
+    },
+    {
+      "id": "qemfi",
+      "title": "QeMFi（原 CheMFi）",
+      "category": "多保真、主动采样与缺失标签",
+      "priority": "P1",
+      "repository_url": "https://github.com/SM4DA/QeMFi",
+      "primary_urls": [
+        "https://github.com/SM4DA/QeMFi",
+        "https://www.nature.com/articles/s41597-024-04247-3",
+        "https://zenodo.org/records/13925688"
+      ],
+      "entry_status": "verified_entry",
+      "entry_checked_on": "2026-11-18",
+      "source_status": "not_acquired",
+      "paper_revision": null,
+      "pinned_commit": null,
+      "audit_questions": [
+        "多保真标签、真实计算时间与采样策略如何配对？",
+        "构建学习曲线时是否计入所有层级的标注成本？"
+      ],
+      "notes": "论文 Code availability 指向 SM4DA/QeMFi；历史 CheMFi 命名与作者 fork 应分开记录。",
+      "entry_verification": {
+        "default_branch": "main",
+        "verification_url": "https://api.github.com/repos/SM4DA/QeMFi"
+      }
+    },
+    {
+      "id": "multifidelity_gnn",
+      "title": "多保真 GNN 迁移学习",
+      "category": "多保真、主动采样与缺失标签",
+      "priority": "P1",
+      "repository_url": "https://github.com/davidbuterez/multi-fidelity-gnns-for-drug-discovery-and-quantum-mechanics",
+      "primary_urls": [
+        "https://github.com/davidbuterez/multi-fidelity-gnns-for-drug-discovery-and-quantum-mechanics"
+      ],
+      "entry_status": "verified_entry",
+      "entry_checked_on": "2026-11-18",
+      "source_status": "not_acquired",
+      "paper_revision": null,
+      "pinned_commit": null,
+      "audit_questions": [
+        "低保真预训练、目标微调与缺失标签掩码怎样组合？",
+        "QMugs 划分和总训练成本如何核实？"
+      ],
+      "notes": "仓库 README 将其标为 Transfer learning with graph neural networks for improved molecular property prediction in the multi-fidelity setting 的对应源码。",
+      "entry_verification": {
+        "default_branch": "main",
+        "verification_url": "https://api.github.com/repos/davidbuterez/multi-fidelity-gnns-for-drug-discovery-and-quantum-mechanics"
+      }
+    },
+    {
+      "id": "im_gnn",
+      "title": "IM-GNN 缺失标签插补",
+      "category": "多保真、主动采样与缺失标签",
+      "priority": "P0",
+      "repository_url": null,
+      "primary_urls": [
+        "https://www.mi-research.net/en/article/doi/10.1007/s11633-023-1443-7"
+      ],
+      "entry_status": "paper_verified_code_pending",
+      "entry_checked_on": "2026-11-18",
+      "source_status": "not_acquired",
+      "paper_revision": null,
+      "pinned_commit": null,
+      "audit_questions": [
+        "分子—任务二部图如何表示已知/缺失标签？",
+        "不确定性筛选伪标签的校准与下游评价如何避免泄漏？"
+      ],
+      "notes": "已核实官方论文页；本轮未定位作者原始代码。不混淆名字近似但不同的 IMM-GNN。"
+    },
+    {
+      "id": "hvmc",
+      "title": "HVMC",
+      "category": "结构化矩阵补全",
+      "priority": "P1",
+      "repository_url": "https://github.com/RateTheory/HVMC",
+      "primary_urls": [
+        "https://github.com/RateTheory/HVMC",
+        "https://doi.org/10.1063/5.0018326"
+      ],
+      "entry_status": "verified_entry",
+      "entry_checked_on": "2026-11-18",
+      "source_status": "not_acquired",
+      "paper_revision": null,
+      "pinned_commit": null,
+      "audit_questions": [
+        "反应路径 Hessian 特征值矩阵的缺失模式是什么？",
+        "随机单元素采样与真实可执行计算单位如何对应？"
+      ],
+      "notes": "官方 README 说明 vmc.py 改编自 gregongie/vmc。",
+      "entry_verification": {
+        "default_branch": "main",
+        "verification_url": "https://api.github.com/repos/RateTheory/HVMC"
+      }
+    },
+    {
+      "id": "pvmc",
+      "title": "PVMC",
+      "category": "结构化矩阵补全",
+      "priority": "P1",
+      "repository_url": "https://github.com/RateTheory/PVMC",
+      "primary_urls": [
+        "https://github.com/RateTheory/PVMC"
+      ],
+      "entry_status": "verified_entry",
+      "entry_checked_on": "2026-11-18",
+      "source_status": "not_acquired",
+      "paper_revision": null,
+      "pinned_commit": null,
+      "audit_questions": [
+        "多项式侧信息如何影响列采样？",
+        "恢复矩阵误差如何传递到自由能与反应速率？"
+      ],
+      "notes": "README 区分 MATLAB 补全与 Python 后处理；需一并获取和审读。",
+      "entry_verification": {
+        "default_branch": "main",
+        "verification_url": "https://api.github.com/repos/RateTheory/PVMC"
+      }
+    },
+    {
+      "id": "vmc",
+      "title": "VMC / algebraic variety models",
+      "category": "结构化矩阵补全",
+      "priority": "P1",
+      "repository_url": "https://github.com/gregongie/vmc",
+      "primary_urls": [
+        "https://github.com/gregongie/vmc",
+        "https://arxiv.org/abs/1703.09631"
+      ],
+      "entry_status": "verified_entry",
+      "entry_checked_on": "2026-11-18",
+      "source_status": "not_acquired",
+      "paper_revision": null,
+      "pinned_commit": null,
+      "audit_questions": [
+        "代数簇约束、优化器和缺失掩码的适用条件是什么？",
+        "原始 MATLAB 与 HVMC/PVMC 适配版有何变化？"
+      ],
+      "notes": "",
+      "entry_verification": {
+        "default_branch": "master",
+        "verification_url": "https://api.github.com/repos/gregongie/vmc"
+      }
+    },
+    {
+      "id": "qpma",
+      "title": "QPMA / 带侧信息的列采样矩阵近似",
+      "category": "结构化矩阵补全",
+      "priority": "P1",
+      "repository_url": null,
+      "primary_urls": [
+        "https://arxiv.org/abs/2212.05469",
+        "https://arxiv.org/html/2212.05469v2",
+        "https://github.com/JeongminChae/QPMA"
+      ],
+      "entry_status": "paper_verified_source_unavailable",
+      "entry_checked_on": "2026-11-18",
+      "source_status": "not_acquired",
+      "paper_revision": null,
+      "pinned_commit": null,
+      "audit_questions": [
+        "谱误差保证要求哪些侧信息、秩和采样条件？",
+        "理论条件能否对应真实 QC 计算单位？"
+      ],
+      "notes": "论文 V 节明确给出 JeongminChae/QPMA，但本轮 GitHub API 返回 404；这是访问缺口，不是没有源码的证据。"
+    },
+    {
+      "id": "halide",
+      "title": "Halide",
+      "category": "编译与程序专门化背景",
+      "priority": "P2",
+      "repository_url": "https://github.com/halide/Halide",
+      "primary_urls": [
+        "https://github.com/halide/Halide"
+      ],
+      "entry_status": "verified_entry",
+      "entry_checked_on": "2026-11-18",
+      "source_status": "not_acquired",
+      "paper_revision": null,
+      "pinned_commit": null,
+      "audit_questions": [
+        "算法/调度分离、缓存、阶段化与成本模型有什么可迁移机制？",
+        "哪些想法属于已有编译优化，不能作为本项目首创？"
+      ],
+      "notes": "",
+      "entry_verification": {
+        "default_branch": "main",
+        "verification_url": "https://api.github.com/repos/halide/Halide"
+      }
+    },
+    {
+      "id": "mlir",
+      "title": "MLIR / LLVM project",
+      "category": "编译与程序专门化背景",
+      "priority": "P2",
+      "repository_url": "https://github.com/llvm/llvm-project",
+      "primary_urls": [
+        "https://github.com/llvm/llvm-project"
+      ],
+      "entry_status": "verified_entry",
+      "entry_checked_on": "2026-11-18",
+      "source_status": "not_acquired",
+      "paper_revision": null,
+      "pinned_commit": null,
+      "audit_questions": [
+        "多层 IR、合法化、依赖分析及变换验证如何组织？",
+        "科学身份与误差证据需要哪些领域特定语义？"
+      ],
+      "notes": "MLIR 位于 LLVM 单仓库，完整源码获取和阅读覆盖需诚实区分；不把 Halide 叙述为直接演化成 MLIR 的同一项目。",
+      "entry_verification": {
+        "default_branch": "main",
+        "verification_url": "https://api.github.com/repos/llvm/llvm-project"
+      }
+    },
+    {
+      "id": "qmugs",
+      "title": "QMugs",
+      "category": "现实数据候选",
+      "priority": "P0",
+      "repository_url": null,
+      "primary_urls": [
+        "https://www.nature.com/articles/s41597-022-01390-7",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC9174255/"
+      ],
+      "entry_status": "paper_verified_code_pending",
+      "entry_checked_on": "2026-11-18",
+      "source_status": "not_acquired",
+      "paper_revision": null,
+      "pinned_commit": null,
+      "audit_questions": [
+        "波函数归档中实际有哪些矩阵与基组/方法身份？",
+        "档案后处理与目标协议重收敛分别支持什么标签？",
+        "真实缺失、构型分组和质量筛选能否形成可信评价？"
+      ],
+      "notes": "论文确认提供 DFT 密度和轨道矩阵；仍需下载实际记录核查。未定位独立生成源码仓库；不是既定首个实验或固定四极矩任务。"
+    },
+    {
+      "id": "delta_ml",
+      "title": "Δ-machine learning",
+      "category": "多保真、主动采样与缺失标签",
+      "priority": "P1",
+      "repository_url": null,
+      "primary_urls": [
+        "https://arxiv.org/abs/1503.04987",
+        "https://doi.org/10.1021/acs.jctc.5b00099"
+      ],
+      "entry_status": "paper_verified_code_pending",
+      "entry_checked_on": "2026-11-18",
+      "source_status": "not_acquired",
+      "paper_revision": null,
+      "pinned_commit": null,
+      "audit_questions": [
+        "低层计算与学习修正的总成本、适用范围和误差怎么比较？",
+        "哪些补全收益已经由 Δ-learning 解释？"
+      ],
+      "notes": "已核实原论文；原始实现、数据及后续复现代码需继续定位，不以现代同类包冒充原始实现。"
+    }
+  ]
+}
+
