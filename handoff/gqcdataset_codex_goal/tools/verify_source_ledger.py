@@ -6,6 +6,7 @@ import csv
 from datetime import datetime, timezone
 import gzip
 import hashlib
+import io
 import json
 import os
 from pathlib import Path, PurePosixPath
@@ -150,6 +151,24 @@ def compare_replay(root, report, lock):
                 scope='Separate checkout and compressed-only ledger rebuild, sharing verified third-party checkouts.')
 
 
+def verify_prior_observations(commit, review, claims):
+    """Require all observations, including prior versions of root reviews, to remain retrievable."""
+    assert len(commit) == 40 and all(c in '0123456789abcdef' for c in commit), 'supply a full Git commit ID'
+    prefix = commit + ':' + str(BASE / 'research') + '/'
+    old = json.loads(subprocess.check_output(['git','show',prefix + 'intake_review.json']))
+    prior_claims = list(csv.DictReader(io.StringIO(subprocess.check_output(
+        ['git','show',prefix + 'claims.csv'], text=True))))
+    def signatures(rows):
+        return {json.dumps(row, sort_keys=True) for row in rows}
+    assert signatures(old['file_reading']) <= signatures(review['file_reading']), 'a prior file observation disappeared'
+    assert signatures(prior_claims) <= signatures(claims), 'a prior claim disappeared'
+    for id, original in old['repositories'].items():
+        current = review['repositories'][id]
+        assert current == original or original in current.get('prior_root_reviews', []), ('prior root review', id)
+    return dict(commit=commit, root_reviews=len(old['repositories']),
+                file_observations=len(old['file_reading']), claims=len(prior_claims), result='preserved')
+
+
 def main():
     if not __debug__:
         raise RuntimeError('Verification requires Python assertions enabled.')
@@ -158,6 +177,7 @@ def main():
                         help='also rehash the original release bytes and every regular tar member')
     parser.add_argument('--compare-replay', type=Path, metavar='CHECKOUT',
                         help='compare a separately rebuilt and verified compressed-only checkout')
+    parser.add_argument('--preserve-from', metavar='COMMIT', help='check retention of all observations and claims from a prior full project commit')
     args = parser.parse_args()
     raw_inputs = dict(args.archive)
     assert len(raw_inputs) == len(args.archive), 'duplicate archive ID'
@@ -323,7 +343,8 @@ def main():
     claims_path = BASE / 'research/claims.csv'
     claim_ids = set()
     with claims_path.open(newline='') as f:
-        for claim in csv.DictReader(f):
+        claims = list(csv.DictReader(f))
+        for claim in claims:
             id, repo, path = claim['claim_id'], claim['repository_id'], claim['source_path']
             assert id and id not in claim_ids and path and claim['symbol'], id
             claim_ids.add(id)
@@ -359,6 +380,8 @@ def main():
     if args.compare_replay:
         assert args.compare_replay.resolve() != Path.cwd().resolve(), 'a separate git checkout is required'
         report['compressed_only_replay'] = compare_replay(args.compare_replay, report, lock)
+    if args.preserve_from:
+        report['prior_evidence'] = verify_prior_observations(args.preserve_from, review, claims)
     (BASE / 'research/ledger_validation.json').write_text(json.dumps(report,indent=2)+'\n')
     print(json.dumps(report,indent=2))
 
