@@ -810,5 +810,22 @@
       "exit_code": 2,
       "stderr": "response completion failed: source index, cohort and oracle catalog refer to different inputs\n"
     }
-  ]
+  ],
+  "existing_suite_replays": {
+    "transaction_clients": 9,
+    "transaction_receipt_sha256": "af4226842bc0ee348660cb0050e5e3dacc47e0de494832814f4f4d8a5166c504",
+    "attempt_outcomes": {
+      "completed": 8,
+      "failed": 1
+    },
+    "history_clients": 14,
+    "history_receipt_sha256": "8b843dbf5c25409f82932ee9413a0270aca954928b76ae7821dd6a5519ae0c2b",
+    "worst_direct_vs_decoded": 1.2434497875801753e-14,
+    "worst_hand_vs_compiled_subtraction": 0.0,
+    "solver_jk": {
+      "ordinary": 22,
+      "decode": 18,
+      "partial-strict-saving": 36
+    }
+  }
 }
