@@ -13,7 +13,7 @@
 
 ## 已执行的补全工作
 
-当前主线用 GQC 科学编译器绑定已有响应解，在同一物理协议与精度下生成剩余求解。已有两份可逐条复核的输出，以及与手写、预取、缓存和原生批处理的比较。[三轮结果与成本](handoff/gqcdataset_codex_goal/research/RESULTS.md) · [响应数据 JSONL](handoff/gqcdataset_codex_goal/research/experiments/gqc_residual_multiround/response-labels.jsonl) · [n5 能量新列 CSV](handoff/gqcdataset_codex_goal/research/experiments/n5_dataset_energy/labels.csv) · [n5 持久环境](docs/N5_GQC.md)
+项目已交付基于 GQC 科学编译器的分子响应补全工具。给定有来源的历史标量或已保存的响应向量，工具生成剩余物理求解，并记录每个结果的独立验收与实际计算量。n5 已建成持久环境并实算全部 17 个符合筛选规则的 QM9 分子，153 个新目标含 37 个可发布数值。外推同算子对照中，24 项恢复将后续 J/K 从 1,000 减为 518；发布路径的收益取决于实际已有的合格信息。[153 行派生数据](handoff/gqcdataset_codex_goal/research/experiments/qm9_extension/response-labels.jsonl) · [命令行与历史文件用法](handoff/gqcdataset_codex_goal/research/experiments/response_dataset_cli/README.md) · [研究结果与成本](handoff/gqcdataset_codex_goal/research/RESULTS.md) · [n5 环境](docs/N5_GQC.md)
 
 ## 材料入口
 

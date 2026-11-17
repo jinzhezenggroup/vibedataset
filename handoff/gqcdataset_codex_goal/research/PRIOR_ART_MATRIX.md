@@ -14,4 +14,13 @@
 | SchNOrb、多保真 GNN、PVMC | SchNOrb 的 Hamiltonian head 对原子间及在位块拼接并对称化 H/S。多保真 GNN 从低保真 checkpoint 初始化并对高保真标签微调。PVMC 用核矩阵特征分解与插值项更新缺失矩阵条目并重置观测条目 | 均为局部实现审读，未训练或复现论文性能。对相同研究目标，可比较预测后再求解、学习近似与仅作 seed 三种语义；预测不能算作精确量化调用的成功。PVMC 的 `row_interpolation` 使用选中列，实验必须计入这些观测。[SchNOrb](https://github.com/atomistic-machine-learning/SchNOrb/blob/38cb268ea431b46e3b2088dda48bcd1983462ff5/src/schnorb/model.py#L335) · [多保真 GNN](https://github.com/davidbuterez/multi-fidelity-gnns-for-drug-discovery-and-quantum-mechanics/blob/84ee8a280557d7fbc2ebd1042468e21ce8ea16c6/multifidelity_gnn/train/train_fine_tune_high_fidelity.py#L148) · [PVMC](https://github.com/RateTheory/PVMC/blob/0d3340644047abc727896753f48650f8c5205a89/pvmc_step.m) |
 | GQC TensorIR 自身的通用优化 | 节点内容散列包含类型/对称性，Program 只执行可达输出。`optimize.py` 已有 exact CSE、死节点消除、受限常量折叠 | 这些已有机制构成编译后端基线。CBS-001 的联合节点减少由原生图共享实现，即使执行更少节点，也未使一个缺失发布标签通过验收。[Program](https://github.com/jinzhezenggroup/generativeqc/blob/2791504cc238fe83d328fc1718080642b288222a/python/generativeqc_compiler/tensor/program.py#L158) · [优化器](https://github.com/jinzhezenggroup/generativeqc/blob/2791504cc238fe83d328fc1718080642b288222a/python/generativeqc_compiler/tensor/optimize.py#L479) |
 
-目录之外纳入了直接插补及多体分量复用两个项目，并固定实际使用的 PySCF、Psi4 和默认 libcint 发布源码。论文映射未确定的当前树只作为该版本行为的证据。已按分子响应任务补齐 Psi4 从 Python 到原生 CPHF 的调用链，并实跑整组三轴预取、手写与 GQC 多 RHS 的公平对照。更一般的回收、伴随/降阶方法及未读范围继续保留。[Psi4 源码](audits/prior-completion-response.md) · [实测](experiments/gqc_residual_multiround/README.md)[覆盖表](source_coverage.csv) · [来源缺口](SOURCE_GAPS.md)
+目录之外纳入了直接插补及多体分量复用两个项目，并固定实际使用的 PySCF、Psi4 和默认 libcint 发布源码。论文映射未确定的当前树只作为该版本行为的证据。已按分子响应任务补齐 Psi4 从 Python 到原生 CPHF 的调用链，并实跑整组三轴预取、手写与 GQC 多 RHS 的公平对照。随后进一步核查了下列方法。[Psi4 源码](audits/prior-completion-response.md) · [实测](experiments/gqc_residual_multiround/README.md) · [覆盖表](source_coverage.csv) · [来源缺口](SOURCE_GAPS.md)
+
+## 新取得的作者源码与运行基线
+
+| 固定实现 | 源码追踪与实测 | 对 GQC 的约束 |
+|---|---|---|
+| OpenMDAO 3.45.2、CppAD 与 pyMOR 2026.1 | 比较稀疏 Jacobian 正/反向、代入着色及输出误差的对偶解；错误地把请求掩码当结构零在受控稠密矩阵上产生 165 的最大绝对偏差，已知其余 30 项时单种子和扣除恢复到舍入误差 | 最少端点、着色和已知值代入均有成熟先例；应报告分子实际 J/K。[着色与代码](audits/response-dual-prior-coloring.md) · [对偶与估计](audits/response-dual-prior-adjoint.md) |
+| PySCF 2.14.0 MP2 梯度、GQC 原生 blocked/recycled | 实际 MP2 水的九个核梯度分量共用一个 CPHF 右端，另计显式核导数；GQC 的多 RHS、未收敛回收、跨身份拒绝测试已执行 | 伴随复用已有化学先例，RHS 更少仍可能花更多算子作用。[源到运行](audits/response-dual-prior-adjoint.md) |
+| mlelec 论文相关归档与单独 qm7 Git 树 | 在作者归档代码和规定环境重跑两份几何，有场阶段各做四次对角化和零次诱导势更新；与自洽响应的差异在甲烷和水分别为 1.120365 和 1.504074 原子单位 | 固定零场有效 Hamiltonian、受监督性质模型和耦合响应各自登记。归档的代码与分支的训练入口也有实际差异。[版本、原始执行和差值](audits/mlelec-archive.md) |
+| dm-PhiSNet 第一作者历史树、PhiSNet 后续适配、DelFTa v1 | 完整取得三棵树；历史训练与密度/物性分析有源可查。另核查六个原始发布位置 | 五个原始实现位置仍待补齐，作者历史代码与确切论文 commit 分列。没有运行这些模型的训练。[逐原始来源及证据](audits/intake-originals.md) |

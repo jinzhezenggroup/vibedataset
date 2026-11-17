@@ -30,4 +30,4 @@
 
 ## 首轮研究证据
 
-基础审计、真实资产评价、路线选择及首个分子实现分别见 [工作基础](FOUNDATION_CAPABILITIES.md)、[资产与评价](DATASET_ASSETS.md)、[比较与决定](ROUTE_COMPARISON.md) 和 [三轮实验](experiments/gqc_residual_multiround/README.md)。#2 的原始实现定位、#4 的近邻扩展、#8 的生产分布与全成本，以及独立资料缺件继续在 [当前状态](STATUS.md) 跟踪。
+基础审计、真实资产评价、路线选择及首个分子实现分别见 [工作基础](FOUNDATION_CAPABILITIES.md)、[资产与评价](DATASET_ASSETS.md)、[比较与决定](ROUTE_COMPARISON.md) 和 [三轮实验](experiments/gqc_residual_multiround/README.md)。首轮之后，#2 完成可得来源锁和证据化缺口，#4 补齐响应、着色与正式发布源码的对照，#8 交付 17 个候选的多轮成本与外推实证。两份 PDF 已取得，原 ZIP 由 #9 单独跟踪。[当前状态](STATUS.md) · [外推数据](experiments/qm9_extension/README.md)

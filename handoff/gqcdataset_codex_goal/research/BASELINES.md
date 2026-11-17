@@ -10,3 +10,9 @@
 | 只能预测的缺列 | 原作者属性插补、相似分子/多保真模型。使用相同分组切分与训练/推理预算 | 对比预测误差，单列失败/分布外；进入量化路径时，只能作为可能被验收或拒绝的提议，仍需目标科学程序 |
 
 已执行分子实验、未执行数据库/学习机制与对应失败边界分别见 [前人能力表](PRIOR_ART_MATRIX.md)、[判别协议](EVALUATION_PROTOCOL.md) 和 [原始响应实验](experiments/gqc_residual_response/README.md)。
+
+## 直接、伴随与已知标量的对照
+
+OpenMDAO 的直接/代入着色、CppAD 的正反向稀疏 Jacobian 和手写已知项扣除，用于区分真正的结构零、只请求目标的掩码和已有合法数值。PySCF MP2 梯度的一次 Z-vector、pyMOR 正对偶输出和 GQC 自带 blocked/recycled 形成响应侧基线。完整三场／三读出表预取、按需双侧、直接重算和手写减法在相同精度下可直接比较。[源码与着色实跑](audits/response-dual-prior-coloring.md) · [伴随、降阶与回收](audits/response-dual-prior-adjoint.md)
+
+作者 mlelec 正式归档的有限场程序在甲烷和水上实跑。从零场有效 Hamiltonian 生成的轨道场响应与重新自洽的耦合响应有不同方程。由学习的低维 Hamiltonian 加拟合读出得到的估计亦需保留统计身份。[正式归档与科学对照](audits/mlelec-archive.md) · [项目自身的同协议对照](experiments/qm9_extension/README.md)
