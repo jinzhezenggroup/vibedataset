@@ -61,8 +61,10 @@ def main():
             [atoms], charges=[config['charge']], multiplicities=[config['multiplicity']])) as batch:
         admission = journal.call('import_n2_density', 'checkpoint_load',
                                  lambda: batch.load_checkpoint(args.checkpoint), summary=lambda x: x)
-        if (admission['items'][0]['compatibility'] != 'exact_restart'
-                or admission['target_verification'] != 'pending_execute'):
+        # execute() updates the same diagnostic dict in place.
+        compatibility = admission['items'][0]['compatibility']
+        pre = admission['target_verification']
+        if compatibility != 'exact_restart' or pre != 'pending_execute':
             raise ValueError('n2 archive not admitted as exact restart')
         result = journal.call('execute_target_on_n5', 'gqc_solve', lambda:
                               batch.execute(strict=True, properties=('energy', 'forces')).items[0])
@@ -92,8 +94,7 @@ def main():
               'driver_sha256': file_sha(Path(__file__)), 'loaded_library_sha256': lib_sha,
               'native_source_identity': library.generativeqc_get_source_identity().decode(),
               'source_declaration': source_env['gqc_source_declaration'],
-              'compatibility': admission['items'][0]['compatibility'],
-              'before_execute': admission['target_verification'], 'after_execute': post,
+              'compatibility': compatibility, 'before_execute': pre, 'after_execute': post,
               'output': output, 'checks': checks, 'operations': dict(journal.counts),
               'elapsed_seconds': time.perf_counter() - start}
     (args.out / 'result.json').write_text(json.dumps(report, indent=2, allow_nan=False) + '\n')
