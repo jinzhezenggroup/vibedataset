@@ -1,0 +1,473 @@
+{
+  "cli_sha256": "4e19b41480cd398dc7f630e3cd5041e4b7f10bcac6e4a7f1e1dc6ce11a8b93cb",
+  "grader_sha256": "1756a57cabda51408d6338687d702384e03afa46eba28cb30ebc37a7c0e14a15",
+  "verification_checks": [
+    "fresh GQC block for caller-supplied edges, duplicate group member deduplicated",
+    "failed zero-field source, unknown record and requested problem mismatch",
+    "separate process consumes a qualified scalar with zero GQC setup/actions",
+    "additional target reuses an admitted vector; failed numerical gate retains only raw value",
+    "two overlapping OS clients commit one new solution, return the same origin and value",
+    "failed vector write rolls back earlier label write; prior scientific state byte-equivalent",
+    "independent retry solves after rollback; failed attempt and spent work remain in SQLite",
+    "re-digested invalid scalar rejected and restored through physical residual validation",
+    "invalid/nonfinite requests preserve denominator, database integrity check passes"
+  ],
+  "processes": [
+    {
+      "client": "first",
+      "process_id": 364349,
+      "started_utc": "2026-11-17T20:17:10.995734+00:00",
+      "finished_utc": "2026-11-17T20:17:14.347335+00:00",
+      "seconds": 3.351607996999519,
+      "exit_code": 1,
+      "status_counts": {
+        "qualified": 3,
+        "reference_unavailable": 1,
+        "problem_mismatch": 1,
+        "record_not_indexed": 1
+      },
+      "result_sha256": "f4e609041284e497a8de3d6498aa7135a2b9283eddc0ba89b747f545e9e82a29",
+      "input_sha256": "6ce3e51999a0714c19672737784324d2dfba4a923ba733c6d4fa14c3910964f9",
+      "stdout": "",
+      "stderr": "",
+      "work": [
+        {
+          "id": "f874ee20737542a699acac885274700f",
+          "record_id": "qm9-000003",
+          "identity": "6c2d4d88cff0ce724c84236efa8186835f0ec706d1248ab493799b97ad1c3d4f",
+          "requested_lines": 3,
+          "distinct_targets": 2,
+          "scalar_hits": 0,
+          "scalar_rejections": 0,
+          "model_started": true,
+          "setup_jk": 5,
+          "round_jk": 18,
+          "rhs": 1,
+          "status": "completed",
+          "rejected_labels": [],
+          "lock_wait_seconds": 0.00552050799888093,
+          "vector_envelope_rejected": false,
+          "chosen_fields": [
+            "x"
+          ],
+          "chosen_observables": [],
+          "setup_seconds": 2.300885004005977,
+          "counts": {
+            "jk_calls": 18,
+            "operator_actions": 18,
+            "rhs_columns": 1,
+            "cache_validation_actions": 0,
+            "solver_actions": 18,
+            "cache_rejections": 0,
+            "requests": 2
+          },
+          "cache_checks": [],
+          "solve_and_assess_seconds": 0.004041576001327485,
+          "seconds": 2.310836050004582
+        }
+      ]
+    },
+    {
+      "client": "independent-hit",
+      "process_id": 364847,
+      "started_utc": "2026-11-17T20:17:14.347473+00:00",
+      "finished_utc": "2026-11-17T20:17:15.367440+00:00",
+      "seconds": 1.019979245000286,
+      "exit_code": 0,
+      "status_counts": {
+        "qualified": 1
+      },
+      "result_sha256": "fe812d46330c780d5c1f27c4fb3e2d141c3dd9c54a2ce40a324b9b3f6b0fa44a",
+      "input_sha256": "510655be4286933cb16dabe4889ea286df6f6df4829a2a34515e08c960bc065b",
+      "stdout": "",
+      "stderr": "",
+      "work": [
+        {
+          "id": "6269432419bd4838b5137703f771b2f2",
+          "record_id": "qm9-000003",
+          "identity": "6c2d4d88cff0ce724c84236efa8186835f0ec706d1248ab493799b97ad1c3d4f",
+          "requested_lines": 1,
+          "distinct_targets": 1,
+          "scalar_hits": 1,
+          "scalar_rejections": 0,
+          "model_started": false,
+          "setup_jk": 0,
+          "round_jk": 0,
+          "rhs": 0,
+          "status": "completed",
+          "rejected_labels": [],
+          "lock_wait_seconds": 0.00798255299741868,
+          "seconds": 0.0081399059999967
+        }
+      ]
+    },
+    {
+      "client": "append",
+      "process_id": 364850,
+      "started_utc": "2026-11-17T20:17:15.367553+00:00",
+      "finished_utc": "2026-11-17T20:17:18.997974+00:00",
+      "seconds": 3.630433507991256,
+      "exit_code": 1,
+      "status_counts": {
+        "qualified": 2,
+        "withheld": 1
+      },
+      "result_sha256": "e15ca94fab8a43b6080eb5c4f57f05d1131df373c78eb3cfec498cc198abeced",
+      "input_sha256": "8de30f0f1b68150154b7c3ffc0d2429c16014e76374d5ebdc03fcce509b84d8d",
+      "stdout": "",
+      "stderr": "",
+      "work": [
+        {
+          "id": "886923dd6bf443278dab3426dbbb336e",
+          "record_id": "qm9-000003",
+          "identity": "6c2d4d88cff0ce724c84236efa8186835f0ec706d1248ab493799b97ad1c3d4f",
+          "requested_lines": 2,
+          "distinct_targets": 2,
+          "scalar_hits": 1,
+          "scalar_rejections": 0,
+          "model_started": true,
+          "setup_jk": 5,
+          "round_jk": 1,
+          "rhs": 0,
+          "status": "completed",
+          "rejected_labels": [],
+          "lock_wait_seconds": 0.007347300008405,
+          "vector_envelope_rejected": false,
+          "chosen_fields": [],
+          "chosen_observables": [],
+          "setup_seconds": 0.13866286200936884,
+          "counts": {
+            "jk_calls": 1,
+            "operator_actions": 1,
+            "rhs_columns": 0,
+            "cache_validation_actions": 1,
+            "solver_actions": 0,
+            "cache_rejections": 0,
+            "requests": 1
+          },
+          "cache_checks": [
+            {
+              "group": "fields",
+              "id": "x",
+              "decision": "accepted",
+              "true_residual": 2.6242079344396317e-14
+            }
+          ],
+          "solve_and_assess_seconds": 0.00036505699972622097,
+          "seconds": 0.14701041000080295
+        },
+        {
+          "id": "ec68354b8a5f4c85b6e559c4800e2f13",
+          "record_id": "qm9-000010",
+          "identity": "190072958ca07cf1879eb758e16192f37cf1b739ec90dc8c71fede098a5a2c3f",
+          "requested_lines": 1,
+          "distinct_targets": 1,
+          "scalar_hits": 0,
+          "scalar_rejections": 0,
+          "model_started": true,
+          "setup_jk": 5,
+          "round_jk": 88,
+          "rhs": 1,
+          "status": "completed",
+          "rejected_labels": [],
+          "lock_wait_seconds": 0.005556903008255176,
+          "vector_envelope_rejected": false,
+          "chosen_fields": [
+            "x"
+          ],
+          "chosen_observables": [],
+          "setup_seconds": 2.3937139470071997,
+          "counts": {
+            "jk_calls": 88,
+            "operator_actions": 88,
+            "rhs_columns": 1,
+            "cache_validation_actions": 0,
+            "solver_actions": 88,
+            "cache_rejections": 0,
+            "requests": 1
+          },
+          "cache_checks": [],
+          "solve_and_assess_seconds": 0.06104519400105346,
+          "seconds": 2.460808800009545
+        }
+      ]
+    },
+    {
+      "client": "concurrent-0",
+      "process_id": 365364,
+      "started_utc": "2026-11-17T20:17:18.998540+00:00",
+      "finished_utc": "2026-11-17T20:17:22.468668+00:00",
+      "seconds": 3.4701303990004817,
+      "exit_code": 0,
+      "status_counts": {
+        "qualified": 1
+      },
+      "result_sha256": "93ac4ac548c7fd304514321d2c5e05298630d6258fec0140abac22bde878a1fd",
+      "input_sha256": "9c79031a2672e100a40dbbd689c57558be526121fe7417794b1a7ede301131e5",
+      "stdout": "",
+      "stderr": "",
+      "work": [
+        {
+          "id": "886e0dd404f8443b8acff77692223428",
+          "record_id": "qm9-000001",
+          "identity": "e44980d0f9a2b615046489af088163597ff3e02ddf4fa165a1ec48f3dd64bded",
+          "requested_lines": 1,
+          "distinct_targets": 1,
+          "scalar_hits": 1,
+          "scalar_rejections": 0,
+          "model_started": false,
+          "setup_jk": 0,
+          "round_jk": 0,
+          "rhs": 0,
+          "status": "completed",
+          "rejected_labels": [],
+          "lock_wait_seconds": 2.4398621100117452,
+          "seconds": 2.4400574270111974
+        }
+      ]
+    },
+    {
+      "client": "concurrent-1",
+      "process_id": 365366,
+      "started_utc": "2026-11-17T20:17:18.999039+00:00",
+      "finished_utc": "2026-11-17T20:17:22.364787+00:00",
+      "seconds": 3.3657504840084584,
+      "exit_code": 0,
+      "status_counts": {
+        "qualified": 1
+      },
+      "result_sha256": "8a2f87b2e85165d1c03e9a8eeeab8f982a6a17718d61b5fa81e9643c900d10f1",
+      "input_sha256": "9c79031a2672e100a40dbbd689c57558be526121fe7417794b1a7ede301131e5",
+      "stdout": "",
+      "stderr": "",
+      "work": [
+        {
+          "id": "cf23c389a820472eafac99c93bb59129",
+          "record_id": "qm9-000001",
+          "identity": "e44980d0f9a2b615046489af088163597ff3e02ddf4fa165a1ec48f3dd64bded",
+          "requested_lines": 1,
+          "distinct_targets": 1,
+          "scalar_hits": 0,
+          "scalar_rejections": 0,
+          "model_started": true,
+          "setup_jk": 5,
+          "round_jk": 26,
+          "rhs": 1,
+          "status": "completed",
+          "rejected_labels": [],
+          "lock_wait_seconds": 0.007944758996018209,
+          "vector_envelope_rejected": false,
+          "chosen_fields": [
+            "x"
+          ],
+          "chosen_observables": [],
+          "setup_seconds": 2.321541230994626,
+          "counts": {
+            "jk_calls": 26,
+            "operator_actions": 26,
+            "rhs_columns": 1,
+            "cache_validation_actions": 0,
+            "solver_actions": 26,
+            "cache_rejections": 0,
+            "requests": 1
+          },
+          "cache_checks": [],
+          "solve_and_assess_seconds": 0.01015290200302843,
+          "seconds": 2.3407511889963644
+        }
+      ]
+    },
+    {
+      "client": "atomic-failure",
+      "process_id": 365847,
+      "started_utc": "2026-11-17T20:17:22.479620+00:00",
+      "finished_utc": "2026-11-17T20:17:25.860911+00:00",
+      "seconds": 3.3812860699981684,
+      "exit_code": 1,
+      "status_counts": {
+        "execution_failed": 1
+      },
+      "result_sha256": "25c51340fbade820235b8a5abc10eb5ff9530d3a3aad7d48b1163d1a535f3377",
+      "input_sha256": "3100874e3c9bbf67ec67f80d7dd5b58fee1a43ad3f1ab2a2dae3fb0b79875e24",
+      "stdout": "",
+      "stderr": "",
+      "work": [
+        {
+          "id": "78c65077a6e64cb8927f1fccf7378131",
+          "record_id": "qm9-000002",
+          "identity": "3080fe5eb3a231bea19bfac3801599273e2442a33ef42062af9fda665c7e843f",
+          "requested_lines": 1,
+          "distinct_targets": 1,
+          "scalar_hits": 0,
+          "scalar_rejections": 0,
+          "model_started": true,
+          "setup_jk": 5,
+          "round_jk": 30,
+          "rhs": 1,
+          "status": "failed",
+          "rejected_labels": [],
+          "lock_wait_seconds": 0.029764174003503285,
+          "vector_envelope_rejected": false,
+          "chosen_fields": [
+            "y"
+          ],
+          "chosen_observables": [],
+          "setup_seconds": 2.2764448709931457,
+          "counts": {
+            "jk_calls": 30,
+            "operator_actions": 30,
+            "rhs_columns": 1,
+            "cache_validation_actions": 0,
+            "solver_actions": 30,
+            "cache_rejections": 0,
+            "requests": 1
+          },
+          "cache_checks": [],
+          "solve_and_assess_seconds": 0.008831011000438593,
+          "reason": "injected vector write failure",
+          "seconds": 2.3161043920117663
+        }
+      ]
+    },
+    {
+      "client": "retry",
+      "process_id": 366338,
+      "started_utc": "2026-11-17T20:17:25.869509+00:00",
+      "finished_utc": "2026-11-17T20:17:27.047734+00:00",
+      "seconds": 1.1782241160108242,
+      "exit_code": 0,
+      "status_counts": {
+        "qualified": 1
+      },
+      "result_sha256": "18b1711bbdcdc5ab373b8ab01cb39afc8878c77166e78c690dc02eca8387f682",
+      "input_sha256": "3100874e3c9bbf67ec67f80d7dd5b58fee1a43ad3f1ab2a2dae3fb0b79875e24",
+      "stdout": "",
+      "stderr": "",
+      "work": [
+        {
+          "id": "49cc624038f74d478fe8ab0429c0fa50",
+          "record_id": "qm9-000002",
+          "identity": "3080fe5eb3a231bea19bfac3801599273e2442a33ef42062af9fda665c7e843f",
+          "requested_lines": 1,
+          "distinct_targets": 1,
+          "scalar_hits": 0,
+          "scalar_rejections": 0,
+          "model_started": true,
+          "setup_jk": 5,
+          "round_jk": 30,
+          "rhs": 1,
+          "status": "completed",
+          "rejected_labels": [],
+          "lock_wait_seconds": 0.008444541002972983,
+          "vector_envelope_rejected": false,
+          "chosen_fields": [
+            "y"
+          ],
+          "chosen_observables": [],
+          "setup_seconds": 0.12124132999451831,
+          "counts": {
+            "jk_calls": 30,
+            "operator_actions": 30,
+            "rhs_columns": 1,
+            "cache_validation_actions": 0,
+            "solver_actions": 30,
+            "cache_rejections": 0,
+            "requests": 1
+          },
+          "cache_checks": [],
+          "solve_and_assess_seconds": 0.009450069002923556,
+          "seconds": 0.139626888994826
+        }
+      ]
+    },
+    {
+      "client": "bad-scalar-recovered",
+      "process_id": 366391,
+      "started_utc": "2026-11-17T20:17:27.055284+00:00",
+      "finished_utc": "2026-11-17T20:17:28.244770+00:00",
+      "seconds": 1.1894915209995816,
+      "exit_code": 0,
+      "status_counts": {
+        "qualified": 1
+      },
+      "result_sha256": "b9322481a012e6d4544005ee297edad5c5ae72040db0f6138b4839dd5b005af1",
+      "input_sha256": "510655be4286933cb16dabe4889ea286df6f6df4829a2a34515e08c960bc065b",
+      "stdout": "",
+      "stderr": "",
+      "work": [
+        {
+          "id": "05cc591425b6472e929bfe69c5f7f45a",
+          "record_id": "qm9-000003",
+          "identity": "6c2d4d88cff0ce724c84236efa8186835f0ec706d1248ab493799b97ad1c3d4f",
+          "requested_lines": 1,
+          "distinct_targets": 1,
+          "scalar_hits": 0,
+          "scalar_rejections": 1,
+          "model_started": true,
+          "setup_jk": 5,
+          "round_jk": 1,
+          "rhs": 0,
+          "status": "completed",
+          "rejected_labels": [
+            {
+              "field": "x",
+              "observable": "r2",
+              "reason": "nonfinite or missing candidate"
+            }
+          ],
+          "lock_wait_seconds": 0.007597375006298535,
+          "vector_envelope_rejected": false,
+          "chosen_fields": [],
+          "chosen_observables": [],
+          "setup_seconds": 0.14801019299193285,
+          "counts": {
+            "jk_calls": 1,
+            "operator_actions": 1,
+            "rhs_columns": 0,
+            "cache_validation_actions": 1,
+            "solver_actions": 0,
+            "cache_rejections": 0,
+            "requests": 1
+          },
+          "cache_checks": [
+            {
+              "group": "fields",
+              "id": "x",
+              "decision": "accepted",
+              "true_residual": 2.6242079344396317e-14
+            }
+          ],
+          "solve_and_assess_seconds": 0.0002936129894806072,
+          "seconds": 0.1564394740125863
+        }
+      ]
+    },
+    {
+      "client": "invalid-input",
+      "process_id": 366426,
+      "started_utc": "2026-11-17T20:17:28.244977+00:00",
+      "finished_utc": "2026-11-17T20:17:29.258851+00:00",
+      "seconds": 1.0138824809982907,
+      "exit_code": 1,
+      "status_counts": {
+        "invalid_request": 1,
+        "unsupported_source": 1
+      },
+      "result_sha256": "9b5ed890baf6635c885ee04c6980cd5edf5db01aace986fbe574e7149cd5cb3d",
+      "input_sha256": "902f203444c3776f8b45ccf21ea64d1e5a9976b15c15cb438d8ebce57e6067b2",
+      "stdout": "",
+      "stderr": "",
+      "work": []
+    }
+  ],
+  "attempt_states": {
+    "completed": 8,
+    "failed": 1
+  },
+  "table_rows": {
+    "labels": 5,
+    "vectors": 4,
+    "attempts": 9
+  },
+  "result": "passed"
+}
