@@ -56,14 +56,28 @@
     "mlelec": {
       "root_tree_reviewed": true,
       "reviewer": "Codex",
-      "reviewed_at_utc": "2026-11-17T17:58:14.475299+00:00",
-      "review_scope": "Reviewed inventory integrity, full root path scope, license locations and submodule/LFS status; not source comprehension or dependency closure.",
+      "reviewed_at_utc": "2026-11-17T20:40:32.597587+00:00",
+      "review_scope": "Root-tree integrity stayed fixed. The Materials Cloud release explicitly identifies the distinct qm7 branch. Its deposit does not state an exact Git commit.",
       "known_gaps": [
-        "Paper branch/commit not established; current default branch is not asserted to reproduce Suman 2025.",
-        "No explicit license located; see pyproject.toml."
+        "The Materials Cloud v1 deposit links the separate qm7 branch but states no exact paper Git commit. This selected default branch has distinct content and provenance.",
+        "No explicit license found in this Git tree; see pyproject.toml. The archive CC BY 4.0 record is separately scoped."
       ],
       "license_note": "No LICENSE/COPYING file in pinned tree; pyproject.toml contains license TODO. Redistribution/modification permission unresolved.",
-      "commit": "73da12b404ff13008d123767f702ca129716dccd"
+      "commit": "73da12b404ff13008d123767f702ca129716dccd",
+      "prior_root_reviews": [
+        {
+          "root_tree_reviewed": true,
+          "reviewer": "Codex",
+          "reviewed_at_utc": "2026-11-17T17:58:14.475299+00:00",
+          "review_scope": "Reviewed inventory integrity, full root path scope, license locations and submodule/LFS status; not source comprehension or dependency closure.",
+          "known_gaps": [
+            "Paper branch/commit not established; current default branch is not asserted to reproduce Suman 2025.",
+            "No explicit license located; see pyproject.toml."
+          ],
+          "license_note": "No LICENSE/COPYING file in pinned tree; pyproject.toml contains license TODO. Redistribution/modification permission unresolved.",
+          "commit": "73da12b404ff13008d123767f702ca129716dccd"
+        }
+      ]
     },
     "psi4": {
       "root_tree_reviewed": true,
@@ -385,6 +399,85 @@
       "license_note": "Apache-2.0, LICENSE.",
       "known_gaps": [
         "Default dependency specified by PySCF 2.14.0. No source-to-wheel attestation."
+      ]
+    },
+    "dm_phisnet_history": {
+      "root_tree_reviewed": true,
+      "reviewer": "Codex",
+      "reviewed_at_utc": "2026-11-17T20:01:28.566293+00:00",
+      "commit": "eb365d3e4d0e85ccf89740e5fad26970591c5b16",
+      "review_scope": "Full tracked-file inventory, clean checkout, root tree and submodule/LFS declarations. Reading and execution accounted separately.",
+      "license_note": "No tracked LICENSE or COPYING located; checkout for inspection only. No redistribution or reuse authorization established.",
+      "known_gaps": [
+        "The accessible author's October 2025 commit precedes arXiv v1 and the 2026 journal article. Exact paper revision and weights are unconfirmed.",
+        "Named nitrate database and trained checkpoint in source/base_model/args.txt absent from this tree."
+      ]
+    },
+    "phisnet_casnet_fork": {
+      "root_tree_reviewed": true,
+      "reviewer": "Codex",
+      "reviewed_at_utc": "2026-11-17T20:01:28.566293+00:00",
+      "commit": "398f215554146069a386809a4bd3bed83eddf87a",
+      "review_scope": "Full tracked-file inventory, clean checkout, root tree and submodule/LFS declarations. Reading and execution accounted separately.",
+      "license_note": "No tracked LICENSE or COPYING located; do not infer licensing from ancestry.",
+      "known_gaps": [
+        "Explicit CasNet continuation; original 2021 release byte identity unresolved."
+      ]
+    },
+    "delfta_v1": {
+      "root_tree_reviewed": true,
+      "reviewer": "Codex",
+      "reviewed_at_utc": "2026-11-17T20:01:28.566293+00:00",
+      "commit": "5635b514067b229227e27143cd87e0ad5057388e",
+      "review_scope": "Full tracked-file inventory, clean checkout, root tree and submodule/LFS declarations. Reading and execution accounted separately.",
+      "license_note": "AGPL-3.0, tracked root LICENSE; external data and weights separate.",
+      "known_gaps": [
+        "Weights, normalizers, and additional training/test data are external (delfta/download.py). The DelFTa paper is distinct from QMugs generation and the 2015 Delta-ML experiment."
+      ]
+    },
+    "openmdao_3_45_2": {
+      "root_tree_reviewed": true,
+      "reviewer": "Codex",
+      "reviewed_at_utc": "2026-11-17T19:55:04.928176+00:00",
+      "commit": "64175aa55fb541355b2fb279a6bcfde01e17a878",
+      "review_scope": "All tracked blobs examined for clean/present, integrity blockers, recursive gitlinks and LFS; selected behavior read and executed separately.",
+      "license_note": "Apache-2.0, LICENSE.txt",
+      "known_gaps": [
+        "Release implementation; no claim to have recovered the original mathematical paper source. Optional backends and transitive dependencies outside exercised paths remain separate."
+      ]
+    },
+    "cppad_2026": {
+      "root_tree_reviewed": true,
+      "reviewer": "Codex",
+      "reviewed_at_utc": "2026-11-17T19:55:04.928176+00:00",
+      "commit": "5d51b2aa6d6874c8d561da298a90b3721550d45d",
+      "review_scope": "All tracked blobs examined for clean/present, integrity blockers, recursive gitlinks and LFS; selected behavior read and executed separately.",
+      "license_note": "Root COPYING: EPL-2.0 with permitted secondary GPL-2.0-or-later under stated conditions",
+      "known_gaps": [
+        "Release implementation; no claim to have recovered the original mathematical paper source. Optional backends and transitive dependencies outside exercised paths remain separate."
+      ]
+    },
+    "pymor_2026_1": {
+      "root_tree_reviewed": true,
+      "reviewer": "Codex",
+      "reviewed_at_utc": "2026-11-17T19:55:04.928176+00:00",
+      "commit": "36a0035e180694c7ad4eb8f083d9f1d65ceb6f42",
+      "review_scope": "All tracked blobs examined for clean/present, integrity blockers, recursive gitlinks and LFS; selected behavior read and executed separately.",
+      "license_note": "BSD-2-Clause, LICENSE.txt; bundled components have additional terms in LICENSES_bundled.txt",
+      "known_gaps": [
+        "Release implementation; no claim to have recovered the original mathematical paper source. Optional backends and transitive dependencies outside exercised paths remain separate."
+      ]
+    },
+    "mlelec_qm7": {
+      "root_tree_reviewed": true,
+      "reviewer": "Codex",
+      "reviewed_at_utc": "2026-11-17T20:39:11.243084+00:00",
+      "commit": "9c34bd9e1351770d3ac5b0887ecf0a98da317417",
+      "review_scope": "Verified all 129 tracked files in the complete selected qm7 tree against inventory, no missing files, LFS or submodules; traced molecular Hamiltonian model, training losses and property derivatives; compared archive and branch Git blobs file-wise.",
+      "license_note": "No LICENSE/COPYING in tracked tree. pyproject.toml:8 is a commented license TODO. CC-BY-4.0 is recorded for the separately deposited materials.",
+      "known_gaps": [
+        "Materials Cloud links a branch and does not identify the exact training Git SHA; separate archive driver and environment are locked by content.",
+        "Model weights and ML training were not executed. Only molecular reference generator was executed from the release."
       ]
     }
   },
@@ -1503,6 +1596,622 @@
       "module_role": "Reference convention for external-field one-electron Hamiltonian",
       "evidence_paths": "research/experiments/gqc_residual_response/README.md",
       "open_questions": "Read sign/origin convention; did not execute benzene example."
+    },
+    {
+      "repository_id": "dm_phisnet_history",
+      "path": "source/base_model/nn/modules/analytic_layer.py",
+      "blob": "386adcd775f60a591a8c564d7226fbb46593db63",
+      "read": true,
+      "behavior_traced": true,
+      "executed": false,
+      "reader": "Codex",
+      "read_at": "2026-11-17T20:01:28.566293+00:00",
+      "module_role": "Gated AO density symmetrization, trace normalization and McWeeny purification",
+      "evidence_paths": "research/audits/intake-originals.md",
+      "open_questions": "Static evidence. Paper version and numerical behavior remain unverified."
+    },
+    {
+      "repository_id": "dm_phisnet_history",
+      "path": "source/base_model/nn/neural_network.py",
+      "blob": "431cdf6b80a311d9b4c12b9d86e7817f56ab2b9c",
+      "read": false,
+      "behavior_traced": true,
+      "executed": false,
+      "reader": "Codex",
+      "read_at": "2026-11-17T20:01:28.566293+00:00",
+      "module_role": "Density network analytic-layer call near line 571",
+      "evidence_paths": "research/audits/intake-originals.md",
+      "open_questions": "Partial static read; no training execution."
+    },
+    {
+      "repository_id": "dm_phisnet_history",
+      "path": "source/model_assesment/test.py",
+      "blob": "745b65a40b37680ad33ae6c7034a0dd8a4aea050",
+      "read": false,
+      "behavior_traced": true,
+      "executed": false,
+      "reader": "Codex",
+      "read_at": "2026-11-17T20:01:28.566293+00:00",
+      "module_role": "evaluate_dm_guess compares baseline and warm-start density-fitted PBE SCF",
+      "evidence_paths": "research/audits/intake-originals.md",
+      "open_questions": "Partial static read; no benchmark run."
+    },
+    {
+      "repository_id": "dm_phisnet_history",
+      "path": "source/base_model/args.txt",
+      "blob": "151631190096fc8b006b6eaf6d655adb016a35e6",
+      "read": false,
+      "behavior_traced": false,
+      "executed": false,
+      "reader": "Codex",
+      "read_at": "2026-11-17T20:01:28.566293+00:00",
+      "module_role": "Example trained checkpoint and training database",
+      "evidence_paths": "research/audits/intake-originals.md",
+      "open_questions": "Named external files not in the tree."
+    },
+    {
+      "repository_id": "phisnet_casnet_fork",
+      "path": "README.md",
+      "blob": "76be8e9bec09b50249fce70689e996d43b969e72",
+      "read": false,
+      "behavior_traced": false,
+      "executed": false,
+      "reader": "Codex",
+      "read_at": "2026-11-17T20:01:28.566293+00:00",
+      "module_role": "CasNet ancestry and retained setup notes",
+      "evidence_paths": "research/audits/intake-originals.md",
+      "open_questions": "Original 2021 release identity unconfirmed."
+    },
+    {
+      "repository_id": "delfta_v1",
+      "path": "delfta/calculator.py",
+      "blob": "39b48e9b451397fa2b992d74ae50a4c1804c2e18",
+      "read": false,
+      "behavior_traced": true,
+      "executed": false,
+      "reader": "Codex",
+      "read_at": "2026-11-17T20:01:28.566293+00:00",
+      "module_role": "GFN2 baseline and property-specific correction addition",
+      "evidence_paths": "research/audits/intake-originals.md",
+      "open_questions": "Partial static trace, no prediction validation."
+    },
+    {
+      "repository_id": "delfta_v1",
+      "path": "delfta/download.py",
+      "blob": "d788ac02d974aefd3504de1eb163ed52b0e2cf2f",
+      "read": false,
+      "behavior_traced": false,
+      "executed": false,
+      "reader": "Codex",
+      "read_at": "2026-11-17T20:01:28.566293+00:00",
+      "module_role": "External models and processed QMugs training/test inputs",
+      "evidence_paths": "research/audits/intake-originals.md",
+      "open_questions": "External downloads have not been exercised."
+    },
+    {
+      "repository_id": "openmdao_3_45_2",
+      "path": "openmdao/utils/coloring.py",
+      "blob": "af9492c253c9cf5c5f84443248ef4fe057d64db8",
+      "reader": "Codex",
+      "read_at": "2026-11-17T19:55:04.928176+00:00",
+      "module_role": "MNCO partitions, full support, compressed seeds, per-partition extraction and substitution",
+      "read": false,
+      "behavior_traced": true,
+      "executed": true,
+      "evidence_paths": "research/audits/response-dual-prior-coloring.md",
+      "open_questions": "Only cited planning/decode and numerical support detection sections were read; controlled probes and upstream total coloring integration."
+    },
+    {
+      "repository_id": "openmdao_3_45_2",
+      "path": "openmdao/core/total_jac.py",
+      "blob": "3c4fd13b417ea50751c53e899b80066baa8d2594",
+      "reader": "Codex",
+      "read_at": "2026-11-17T19:55:04.928176+00:00",
+      "module_role": "Total derivative coloring consumer, RHS preparation and final subtractions",
+      "read": false,
+      "behavior_traced": true,
+      "executed": true,
+      "evidence_paths": "research/audits/response-dual-prior-coloring.md",
+      "open_questions": "Relevant slices of the total derivative driver; no physical molecular model here."
+    },
+    {
+      "repository_id": "openmdao_3_45_2",
+      "path": "openmdao/test_suite/tot_jac_builder.py",
+      "blob": "323c7ded85c8e3a313164e2ba615d43bc423a5f2",
+      "reader": "Codex",
+      "read_at": "2026-11-17T19:55:04.928176+00:00",
+      "module_role": "Reference colored versus uncolored total Jacobian comparison",
+      "read": false,
+      "behavior_traced": true,
+      "executed": true,
+      "evidence_paths": "research/audits/response-dual-prior-coloring.md",
+      "open_questions": "Only check_sparsity_tot_coloring and its calling test studied."
+    },
+    {
+      "repository_id": "openmdao_3_45_2",
+      "path": "openmdao/core/tests/test_coloring.py",
+      "blob": "9002d7ead5f24ef243fcc7b5b9c103e30a75a5b1",
+      "reader": "Codex",
+      "read_at": "2026-11-17T19:55:04.928176+00:00",
+      "module_role": "BidirectionalTestCase::test_bidir_3colorblock and comparison with connected model totals",
+      "read": false,
+      "behavior_traced": true,
+      "executed": true,
+      "evidence_paths": "research/audits/response-dual-prior-coloring.md",
+      "open_questions": "Only the targeted upstream test case run."
+    },
+    {
+      "repository_id": "cppad_2026",
+      "path": "include/cppad/local/color_general.hpp",
+      "blob": "6dc1cbd3f3a5a2bbdfc4d5c33f19fe8ef956b54f",
+      "reader": "Codex",
+      "read_at": "2026-11-17T19:55:04.928176+00:00",
+      "module_role": "CppAD greedy coloring conflict checks for target subset and nonrequested support",
+      "read": true,
+      "behavior_traced": true,
+      "executed": true,
+      "evidence_paths": "research/audits/response-dual-prior-coloring.md",
+      "open_questions": "CppAD kernel executed; alternative ColPack path source inspected but not built."
+    },
+    {
+      "repository_id": "cppad_2026",
+      "path": "include/cppad/core/sparse_jac.hpp",
+      "blob": "1457bbda3f03b135072eba93bb9cf09ead54fb85",
+      "reader": "Codex",
+      "read_at": "2026-11-17T19:55:04.928176+00:00",
+      "module_role": "Sparse forward/reverse drivers with tape support, sparse subset, queued sweeps and extraction",
+      "read": false,
+      "behavior_traced": true,
+      "executed": true,
+      "evidence_paths": "research/audits/response-dual-prior-coloring.md",
+      "open_questions": "Native CppAD coloring, group_max=1 as direction control; no ColPack benchmarks."
+    },
+    {
+      "repository_id": "cppad_2026",
+      "path": "example/sparse/sparse_jac_for.cpp",
+      "blob": "4cc9baef41c3d55f44c6df7dcdab5fbecb59c56b",
+      "reader": "Codex",
+      "read_at": "2026-11-17T19:55:04.928176+00:00",
+      "module_role": "Published sparse_jac_for executable assertion example",
+      "read": false,
+      "behavior_traced": true,
+      "executed": true,
+      "evidence_paths": "research/audits/response-dual-prior-coloring.md",
+      "open_questions": "Whole compiled example passed; excerpt-level reading."
+    },
+    {
+      "repository_id": "cppad_2026",
+      "path": "example/sparse/sparse_jac_rev.cpp",
+      "blob": "c9582d52424e81b29d69113a6a28c8e1c9f23dab",
+      "reader": "Codex",
+      "read_at": "2026-11-17T19:55:04.928176+00:00",
+      "module_role": "Published sparse_jac_rev executable assertion example",
+      "read": false,
+      "behavior_traced": true,
+      "executed": true,
+      "evidence_paths": "research/audits/response-dual-prior-coloring.md",
+      "open_questions": "Whole compiled example passed; excerpt-level reading."
+    },
+    {
+      "repository_id": "pymor_2026_1",
+      "path": "src/pymor/reductors/dwr.py",
+      "blob": "5fda899154eade23ad9e76dc8c207f49ec198afd",
+      "reader": "Codex",
+      "read_at": "2026-11-17T19:55:04.928176+00:00",
+      "module_role": "DWR primal and per-output dual reduction, dual-weighted residual correction and specific default construction failure",
+      "read": false,
+      "behavior_traced": true,
+      "executed": true,
+      "evidence_paths": "research/audits/response-dual-prior-adjoint.md",
+      "open_questions": "Small coercive Euclidean stationary model only; no molecular operator extrapolation."
+    },
+    {
+      "repository_id": "pymor_2026_1",
+      "path": "src/pymor/reductors/coercive.py",
+      "blob": "48d0c2f80252fbc000b7ebe320c09f1c1725a2dc",
+      "reader": "Codex",
+      "read_at": "2026-11-17T19:55:04.928176+00:00",
+      "module_role": "CoerciveRBEstimator norm and optional supplied lower bound",
+      "read": false,
+      "behavior_traced": true,
+      "executed": true,
+      "evidence_paths": "research/audits/response-dual-prior-adjoint.md",
+      "open_questions": "One SPD test and false-coercivity control; no independently inferred quantum lower bound."
+    },
+    {
+      "repository_id": "pymor_2026_1",
+      "path": "src/pymor/vectorarrays/numpy.py",
+      "blob": "54374d9983c4725141dea435ad998da2ff986554",
+      "reader": "Codex",
+      "read_at": "2026-11-17T19:55:04.928176+00:00",
+      "module_role": "Default multioutput path failure on first-axis check",
+      "read": false,
+      "behavior_traced": true,
+      "executed": true,
+      "evidence_paths": "research/audits/response-dual-prior-adjoint.md",
+      "open_questions": "Specific release and NumpyMatrixOperator output case."
+    },
+    {
+      "repository_id": "pyscf_2_14",
+      "path": "pyscf/grad/mp2.py",
+      "blob": "23a63e1a00b85790b260a0d9be8120651d3a172b",
+      "reader": "Codex",
+      "read_at": "2026-11-17T19:55:04.928176+00:00",
+      "module_role": "Restricted MP2 property-side relaxation CPHF and shared nuclear derivative readouts",
+      "read": false,
+      "behavior_traced": true,
+      "executed": true,
+      "evidence_paths": "research/audits/response-dual-prior-adjoint.md",
+      "open_questions": "No frozen orbitals/open shell/DF in this probe."
+    },
+    {
+      "repository_id": "pyscf_2_14",
+      "path": "pyscf/scf/cphf.py",
+      "blob": "1c91b7d28898239c5acae79edc96f42401fb020e",
+      "reader": "Codex",
+      "read_at": "2026-11-17T19:55:04.928176+00:00",
+      "module_role": "No-overlap RHS and orbital-gap preconditioned CPHF",
+      "read": false,
+      "behavior_traced": true,
+      "executed": true,
+      "evidence_paths": "research/audits/response-dual-prior-adjoint.md",
+      "open_questions": "RMP2 relaxed density path and actual equation residual; combine with existing whole-file reads if any."
+    },
+    {
+      "repository_id": "pyscf_2_14",
+      "path": "pyscf/lib/linalg_helper.py",
+      "blob": "896eeabe756452a5f3bd50e74ba77ef0a6b872b5",
+      "reader": "Codex",
+      "read_at": "2026-11-17T19:55:04.928176+00:00",
+      "module_role": "Krylov dependence versus tolerance and accepted projected iterate",
+      "read": false,
+      "behavior_traced": true,
+      "executed": true,
+      "evidence_paths": "research/audits/response-dual-prior-adjoint.md",
+      "open_questions": "Only krylov path relevant here; default and tightened cutoff reruns retained."
+    },
+    {
+      "repository_id": "gqc",
+      "path": "python/generativeqc/response_solver.py",
+      "blob": "439f94dec3b09da511c856ccb0502f6847d6fb7d",
+      "reader": "Codex",
+      "read_at": "2026-11-17T19:55:04.928176+00:00",
+      "module_role": "Block-rank/admission and persistent versus auto-recycled initial guess / residual dispatch",
+      "read": false,
+      "behavior_traced": true,
+      "executed": true,
+      "evidence_paths": "research/audits/response-dual-prior-adjoint.md",
+      "open_questions": "Three targeted upstream tests. Merge earlier evidence on the same blob."
+    },
+    {
+      "repository_id": "gqc",
+      "path": "tests/python/test_response_krylov.py",
+      "blob": "37c5c2a76850623413beb0459d90cf6ccef155e0",
+      "reader": "Codex",
+      "read_at": "2026-11-17T19:55:04.928176+00:00",
+      "module_role": "Rank-deficient multi-RHS, stale recycle rejection and failed solve cleanup",
+      "read": false,
+      "behavior_traced": true,
+      "executed": true,
+      "evidence_paths": "research/audits/response-dual-prior-adjoint.md",
+      "open_questions": "Three named tests executed; not the full test module."
+    },
+    {
+      "repository_id": "gqc",
+      "path": "python/generativeqc_compiler/tensor/ad_program.py",
+      "blob": "5b01515771f9acef84fda672d9a6463a0ddd9da8",
+      "read": false,
+      "reader": "Codex",
+      "read_at": "2026-11-17T19:53:24.763618+00:00",
+      "module_role": "TensorIR demand-driven reverse program via transpose_program",
+      "behavior_traced": true,
+      "executed": true,
+      "evidence_paths": "research/experiments/gqc_dual_response/README.md",
+      "open_questions": "Only generation of the readout VJP with respect to closed-shell occupied-virtual amplitudes was traced and run; other primitive and differentiability contracts were not promoted."
+    },
+    {
+      "repository_id": "gqc",
+      "path": "python/generativeqc_compiler/method/rhf_orbital_response.py",
+      "blob": "ddc4ff17ed1f68d09ee1611079d68de95d059ad6",
+      "read": true,
+      "reader": "Codex",
+      "read_at": "2026-11-17T19:53:24.765766+00:00",
+      "module_role": "Real RHF frame JVP and -dFov/dX for joint direct/adjoint response",
+      "behavior_traced": true,
+      "executed": true,
+      "evidence_paths": "research/experiments/gqc_dual_response/README.md",
+      "open_questions": "External-QM9 clamped nuclei and three one-body scalar responses, not universal spin, DFT or nuclear derivatives."
+    },
+    {
+      "repository_id": "gqc",
+      "path": "python/generativeqc/response_solver.py",
+      "blob": "439f94dec3b09da511c856ccb0502f6847d6fb7d",
+      "read": false,
+      "reader": "Codex",
+      "read_at": "2026-11-17T19:53:24.767850+00:00",
+      "module_role": "Shared blocked solve for selected direct and adjoint requests",
+      "behavior_traced": true,
+      "executed": true,
+      "evidence_paths": "research/experiments/gqc_dual_response/README.md",
+      "open_questions": "Tested shared host blocked controller over locally compiled FP64 scientific kernels; numerical qualification independently evaluated per scalar."
+    },
+    {
+      "repository_id": "pyscf_2_14",
+      "path": "pyscf/gto/moleintor.py",
+      "blob": "96c3cba0392bde587c0dda1135d997b067f66bed",
+      "read": false,
+      "reader": "Codex",
+      "read_at": "2026-11-17T19:53:24.769873+00:00",
+      "module_role": "Physical field and extent integrals with int1e_r2/int1e_rr",
+      "behavior_traced": false,
+      "executed": true,
+      "evidence_paths": "research/experiments/gqc_dual_response/README.md",
+      "open_questions": "Checked operator registry and units/order and exercised library through GTO calls, lower-level full source coverage remains selective."
+    },
+    {
+      "repository_id": "pyscf_2_14",
+      "path": "pyscf/scf/cphf.py",
+      "blob": "1c91b7d28898239c5acae79edc96f42401fb020e",
+      "read": false,
+      "reader": "Codex",
+      "read_at": "2026-11-17T19:53:24.771824+00:00",
+      "module_role": "Relaxed external-field CPHF reference, solve_nos1",
+      "behavior_traced": true,
+      "executed": true,
+      "evidence_paths": "research/experiments/gqc_dual_response/README.md",
+      "open_questions": "Compared all 36 measured QM9 scalars with analytical and two-step field oracles; one external molecule had eight CPHF gate misses."
+    },
+    {
+      "repository_id": "mlelec_qm7",
+      "path": "pyproject.toml",
+      "blob": "382564800483b9e09eaa18b05b56bd2636c0c0d8",
+      "reader": "Codex",
+      "read_at": "2026-11-17T20:39:11.243084+00:00",
+      "module_role": "Package metadata and commented-out license field.",
+      "read": true,
+      "behavior_traced": false,
+      "executed": false,
+      "evidence_paths": "research/audits/mlelec-archive.md",
+      "open_questions": "No effective license identified for the separate Git tree."
+    },
+    {
+      "repository_id": "mlelec_qm7",
+      "path": "model_train.py",
+      "blob": "d301087761f1f471bd6ab026c97bdd383bdd5e22",
+      "reader": "Codex",
+      "read_at": "2026-11-17T20:39:11.243084+00:00",
+      "module_role": "Root training script configuration, data/setup and optimizer compared against external release script.",
+      "read": false,
+      "behavior_traced": true,
+      "executed": false,
+      "evidence_paths": "research/audits/mlelec-archive.md",
+      "open_questions": "Same name does not identify the deposited driver."
+    },
+    {
+      "repository_id": "mlelec_qm7",
+      "path": "src/mlelec/data/dataset.py",
+      "blob": "a6c430ed8fe40d0351f06f75ec4daaf4c0e87669",
+      "reader": "Codex",
+      "read_at": "2026-11-17T20:39:11.243084+00:00",
+      "module_role": "MoleculeDataset bases, Hickle loading and MLDataset indirect target selection for large vs small basis.",
+      "read": false,
+      "behavior_traced": true,
+      "executed": false,
+      "evidence_paths": "research/audits/mlelec-archive.md",
+      "open_questions": "Read the molecular loading and indirect-target branches, not its periodic data pipeline."
+    },
+    {
+      "repository_id": "mlelec_qm7",
+      "path": "src/mlelec/models/linear.py",
+      "blob": "6d3e4108c66fc1eb06e3e1393e1a506928d59270",
+      "reader": "Codex",
+      "read_at": "2026-11-17T20:39:11.243084+00:00",
+      "module_role": "LinearTargetModel.forward couples/uncouples learned Hamiltonian blocks and reconstructs an AO tensor.",
+      "read": false,
+      "behavior_traced": true,
+      "executed": false,
+      "evidence_paths": "research/audits/mlelec-archive.md",
+      "open_questions": "Only training-facing tensor reconstruction and fit_ridge_analytical interfaces traced."
+    },
+    {
+      "repository_id": "mlelec_qm7",
+      "path": "src/mlelec/train.py",
+      "blob": "0a5e68d70edd4be854a346442c16f8da0210f40a",
+      "reader": "Codex",
+      "read_at": "2026-11-17T20:39:11.243084+00:00",
+      "module_role": "Trainer.train_step takes predicted AO Hamiltonians and indirect targets to weighted loss, backward and Adam.",
+      "read": false,
+      "behavior_traced": true,
+      "executed": false,
+      "evidence_paths": "research/audits/mlelec-archive.md",
+      "open_questions": "Static branch trace, no model update executed."
+    },
+    {
+      "repository_id": "mlelec_qm7",
+      "path": "src/mlelec/metrics.py",
+      "blob": "656eaeb2d9c413044984cdcdb72345d98b094a25",
+      "reader": "Codex",
+      "read_at": "2026-11-17T20:39:11.243084+00:00",
+      "module_role": "mse_per_atom / loss_fn_combined divide squared errors by squared atom counts and reference variances before weighting.",
+      "read": false,
+      "behavior_traced": true,
+      "executed": false,
+      "evidence_paths": "research/audits/mlelec-archive.md",
+      "open_questions": "Inspected the training loss family used by the released driver."
+    },
+    {
+      "repository_id": "mlelec_qm7",
+      "path": "src/mlelec/utils/property_utils.py",
+      "blob": "ff4774edc316b5dc52dde0fc02a164af3ffd00c1",
+      "reader": "Codex",
+      "read_at": "2026-11-17T20:39:11.243084+00:00",
+      "module_role": "instantiate_mf, compute_batch_polarisability, compute_polarisability_from_mf trace fixed Fock + field to eigenvectors, new density and torch Jacobian.",
+      "read": false,
+      "behavior_traced": true,
+      "executed": false,
+      "evidence_paths": "research/audits/mlelec-archive.md",
+      "open_questions": "Git branch examined. Directly executed code is the separately deposited reference generator."
+    },
+    {
+      "repository_id": "mlelec_qm7",
+      "path": "src/mlelec/utils/twocenter_utils.py",
+      "blob": "ef1656ddda21cffd21dad085fea20f0f18319fde",
+      "reader": "Codex",
+      "read_at": "2026-11-17T20:39:11.243084+00:00",
+      "module_role": "isqrtp and unfix_orbital_order restore positive overlap square root and PySCF p ordering.",
+      "read": false,
+      "behavior_traced": true,
+      "executed": false,
+      "evidence_paths": "research/audits/mlelec-archive.md",
+      "open_questions": "Only positive-overlap and molecular p-order paths followed."
+    },
+    {
+      "repository_id": "mlelec_qm7",
+      "path": "src/mlelec/data/pyscf_calculator.py",
+      "blob": "dca8321925090e759930c7e1170d9517f7ff4ccb",
+      "reader": "Codex",
+      "read_at": "2026-11-17T20:39:11.243084+00:00",
+      "module_role": "_instantiate_pyscf_mol builds molecule in STO-3G default for property utilities.",
+      "read": false,
+      "behavior_traced": true,
+      "executed": false,
+      "evidence_paths": "research/audits/mlelec-archive.md",
+      "open_questions": "Only molecule construction was traced, no invocation of this Git module."
+    },
+    {
+      "repository_id": "mlelec_qm7",
+      "path": "examples/data/water_1000/water_1000.xyz",
+      "blob": "6eecb56fcd4135402244766de9eca8b0a917403c",
+      "reader": "Codex",
+      "read_at": "2026-11-17T20:39:11.243084+00:00",
+      "module_role": "Frame 0 atomic numbers and positions were used in the directly executed formal archive generator.",
+      "read": false,
+      "behavior_traced": true,
+      "executed": false,
+      "evidence_paths": "research/audits/mlelec-archive.md",
+      "open_questions": "Input data only. File-wide example labels not evaluated, source not an executable program."
     }
-  ]
+  ],
+  "catalog_origin_reviews": {
+    "phisnet": {
+      "evidence": "research/audits/intake-originals.md",
+      "acquisition_evidence": "research/acquisition/originals-evidence-20261118.json",
+      "paper_commit": null,
+      "reason": "NeurIPS supplied a 14-page supplement PDF. The arXiv source holds manuscript/figures and OpenReview returned an access challenge. Two separately acquired adaptations do not establish the original release.",
+      "next_step": "Inspect the submission attachment and original software version if the normal OpenReview route becomes available.",
+      "other_repository_ids": [
+        "nabladft",
+        "phisnet_casnet_fork"
+      ]
+    },
+    "dm_phisnet": {
+      "evidence": "research/audits/intake-originals.md",
+      "acquisition_evidence": "research/acquisition/originals-evidence-20261118.json",
+      "paper_commit": null,
+      "reason": "The first author’s repository has an empty observed default-branch tip. Its nonempty parent contains the network, analytic layer, generators, evaluation and environment. Neither the preprint nor publisher binds that Git commit to the paper.",
+      "next_step": "Check publisher SI and author-declared model weights/training assets when accessible; verify the exact version and licensing before attribution or redistribution.",
+      "historical_author_repository": "dm_phisnet_history"
+    },
+    "im_gnn": {
+      "evidence": "research/audits/intake-originals.md",
+      "acquisition_evidence": "research/acquisition/originals-evidence-20261118.json",
+      "paper_commit": null,
+      "reason": "The 15-page publisher PDF describes method and settings. The checked author/lab repositories and hyperlinks did not identify the original code or a software deposit.",
+      "next_step": "Recheck the publisher supplement and author/lab project listings for a new citable release."
+    },
+    "qpma": {
+      "evidence": "research/audits/intake-originals.md",
+      "acquisition_evidence": "research/acquisition/originals-evidence-20261118.json",
+      "paper_commit": null,
+      "reason": "GitHub and Software Heritage both returned exact-origin 404 for the implementation URL named in the paper. Migration/access/deletion is undetermined.",
+      "next_step": "Check a publisher supplement or an independently published author migration or archive identifier."
+    },
+    "qmugs": {
+      "evidence": "research/audits/intake-originals.md",
+      "acquisition_evidence": "research/acquisition/originals-evidence-20261118.json",
+      "paper_commit": null,
+      "reason": "Publisher JATS lists software versions, and ETH metadata identifies the data DOI and CC BY-SA 3.0. No version of the data generator was linked. The landing and storage API attempts returned 403/429. The original wavefunction members remain uninspected.",
+      "next_step": "Recheck ETH README, assignment table and an actual wavefunction tar member, then any versioned generating workflow. The acquired DelFTa paper release is a downstream consumer.",
+      "other_repository_ids": [
+        "delfta_v1"
+      ]
+    },
+    "delta_ml": {
+      "evidence": "research/audits/intake-originals.md",
+      "acquisition_evidence": "research/acquisition/originals-evidence-20261118.json",
+      "paper_commit": null,
+      "reason": "ACS Figshare distributes a checksummed single three-page SI PDF with no embedded attachment, including the CV pseudocode. The author data links returned 404 or failed the TLS handshake. The 2015 training and evaluation code remains unlocated.",
+      "next_step": "Recheck the original research group releases and official dataset URLs for a citable historical workflow.",
+      "other_repository_ids": [
+        "delfta_v1"
+      ]
+    }
+  },
+  "reconciled_at_utc": "2026-11-17T20:40:32.597587+00:00",
+  "release_archive_reviews": {
+    "mlelec_materialscloud_v1": {
+      "repository_id": "mlelec_materialscloud_v1",
+      "release_id": "4vezc-jtt98",
+      "doi": "10.24435/materialscloud:mg-8f",
+      "version": 1,
+      "publication_date": "2025-06-02",
+      "record_url": "https://archive.materialscloud.org/records/4vezc-jtt98",
+      "archive_url": "https://archive.materialscloud.org/api/records/4vezc-jtt98/files/dataset.tar.xz/content",
+      "archive_sha256": "df6c0894e0063a9c99ad5f94c5989f982dc7186b5476a092b32a780ad9640dfb",
+      "archive_bytes": 1156517180,
+      "publisher_md5": "86a870be93068bd7e2bb5a2524524827",
+      "regular_files": 915,
+      "directories": 267,
+      "members": 1182,
+      "total_uncompressed_regular_bytes": 2254974706,
+      "license": "CC-BY-4.0 (official deposit)",
+      "archive_file_reading": [
+        {
+          "path": "dataset/scripts/environment.yml",
+          "sha256": "9bc594149ee09d4645af157db2372b5bb2289fee72596933a4577049cf79fa36",
+          "read": true,
+          "behavior_traced": false,
+          "executed": false,
+          "role": "Explicit released runtime pins and unresolved training branch refs",
+          "evidence_paths": [
+            "research/audits/mlelec-archive.md",
+            "research/experiments/mlelec_archive/result.json"
+          ]
+        },
+        {
+          "path": "dataset/scripts/pyscf_ref_calc.py",
+          "sha256": "279e3be8d4cb240f0c75ce3cd39ac622a01614dfd8b068bbec7f98d956e69649",
+          "read": true,
+          "behavior_traced": true,
+          "executed": true,
+          "role": "Source RKS and finite perturbation output",
+          "evidence_paths": [
+            "research/audits/mlelec-archive.md",
+            "research/experiments/mlelec_archive/result.json"
+          ]
+        },
+        {
+          "path": "dataset/scripts/model_train.py",
+          "sha256": "7bad514f871f561dc76be0f605994220399b8b3577a6a700eb058176520cffd5",
+          "read": true,
+          "behavior_traced": true,
+          "executed": false,
+          "role": "Archived training and evaluation driver, distinct from Git namesake",
+          "evidence_paths": [
+            "research/audits/mlelec-archive.md",
+            "research/experiments/mlelec_archive/result.json"
+          ]
+        }
+      ],
+      "tree_summary_path": "research/experiments/mlelec_archive/release.json",
+      "member_inventory_path": "research/experiments/mlelec_archive/members.json.gz",
+      "member_inventory_uncompressed_sha256": "46c8319e89370b22b946afdd5e54cb117a2822230acb5a11204bb70177d4f2fb",
+      "member_inventory_gzip_sha256": "f869791bf2952fbc97b9448b7a97f8dfad0b43f6e25d8262ebbaa1e90612439a",
+      "receipts_path": "research/experiments/mlelec_archive/receipts.json",
+      "result_path": "research/experiments/mlelec_archive/result.json",
+      "readme_path": "research/audits/mlelec-archive.md",
+      "github_linked_checkout": "mlelec_qm7",
+      "tree_summary_sha256": "965a20d06f25c923bf8b4ea01bd4292c807f8c788839c8d016e5b01239d7675a"
+    }
+  }
 }

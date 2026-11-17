@@ -492,6 +492,110 @@
       "checkout_path": "_references/mol_prop_imputation",
       "paper_version_status": "v1.0.0-publication, explicitly identified as the frozen manuscript release by the authors",
       "selection_reason": "Direct prior work on generalized molecular property imputation with observed labels as inputs. Statistical comparator to component reuse under fixed quantum targets."
+    },
+    {
+      "id": "mlelec_qm7",
+      "catalog_ids": [
+        "mlelec"
+      ],
+      "priority": "P1",
+      "repository_url": "https://github.com/curiosity54/mlelec",
+      "role": "archive_linked_branch",
+      "commit": "9c34bd9e1351770d3ac5b0887ecf0a98da317417",
+      "checkout_path": "_references/mlelec_qm7",
+      "paper_version_status": "Materials Cloud v1 explicitly links the qm7 branch. The observed tip predates the 2025-06-02 deposit; the deposit does not specify a git SHA.",
+      "selection_reason": "Resolve the archived branch separately from main and trace the property-supervised Hamiltonian model."
+    },
+    {
+      "id": "dm_phisnet_history",
+      "catalog_ids": [
+        "dm_phisnet"
+      ],
+      "priority": "P0",
+      "repository_url": "https://github.com/zyyr17/dm-nn-so3-analytic",
+      "role": "historical_author_source",
+      "commit": "eb365d3e4d0e85ccf89740e5fad26970591c5b16",
+      "checkout_path": "_references/dm_phisnet_history",
+      "paper_version_status": "Prepublication author commit; author/paper relationship follows model and authorship, paper release equivalence unverified.",
+      "selection_reason": "Author history has a source-bearing October 2025 commit before its empty HEAD. Inspect exact available artifact without redistributing files."
+    },
+    {
+      "id": "phisnet_casnet_fork",
+      "catalog_ids": [
+        "phisnet"
+      ],
+      "priority": "P0",
+      "repository_url": "https://github.com/marquetand/phisnet_fork",
+      "role": "later_adaptation",
+      "commit": "398f215554146069a386809a4bd3bed83eddf87a",
+      "checkout_path": "_references/phisnet_casnet_fork",
+      "paper_version_status": "Later CasNet derivative, not a verified copy of original paper release.",
+      "selection_reason": "Establish a second documented descendant of the original OpenReview method, apart from nablaDFT."
+    },
+    {
+      "id": "delfta_v1",
+      "catalog_ids": [
+        "qmugs",
+        "delta_ml"
+      ],
+      "priority": "P1",
+      "repository_url": "https://github.com/josejimenezluna/delfta",
+      "role": "qmugs_authors_downstream_delta_learning",
+      "commit": "5635b514067b229227e27143cd87e0ad5057388e",
+      "checkout_path": "_references/delfta_v1",
+      "paper_version_status": "Authors designate v1.0.0 for their DelFTa paper 10.1039/D2CP00834C. Separate from the original 2015 Delta-ML and from QMugs generation.",
+      "selection_reason": "QMugs author collaboration releases a concrete GFN2 plus learned correction comparison trained on the dataset."
+    },
+    {
+      "id": "openmdao_3_45_2",
+      "catalog_ids": [],
+      "priority": "P0",
+      "repository_url": "https://github.com/OpenMDAO/OpenMDAO",
+      "role": "release_source",
+      "commit": "64175aa55fb541355b2fb279a6bcfde01e17a878",
+      "checkout_path": "_references/openmdao_3_45_2",
+      "paper_version_status": "OpenMDAO 3.45.2 release, implementation of MNCO after Coleman & Verma 1998; original paper code not claimed",
+      "selection_reason": "Direct and substitution bidirectional coloring, compressed forward/adjoint products and structural-sparsity inference for total Jacobians. Strong comparator for GQC target-graph planning."
+    },
+    {
+      "id": "cppad_2026",
+      "catalog_ids": [],
+      "priority": "P0",
+      "repository_url": "https://github.com/coin-or/CppAD",
+      "role": "release_source",
+      "commit": "5d51b2aa6d6874c8d561da298a90b3721550d45d",
+      "checkout_path": "_references/cppad_2026",
+      "paper_version_status": "Release 20260000.0; older papers and ColPack implementation not identified with this pin.",
+      "selection_reason": "Sparse Jacobian drivers distinguish requested entries (subset) from complete structural support (pattern); concrete competitor to graph-based exact target completion."
+    },
+    {
+      "id": "pymor_2026_1",
+      "catalog_ids": [],
+      "priority": "P0",
+      "repository_url": "https://github.com/pymor/pymor",
+      "role": "release_source",
+      "commit": "36a0035e180694c7ad4eb8f083d9f1d65ceb6f42",
+      "checkout_path": "_references/pymor_2026_1",
+      "paper_version_status": "2026.1.1 release implementation of DWRCoerciveRBReductor, not claimed to be the original 2017 reference code.",
+      "selection_reason": "Dual-weighted residual output functional, paired primal/dual reduced bases, and qualified output error estimator for coercive linear systems. Direct prior on archived projected response and target precision."
+    }
+  ],
+  "release_archives": [
+    {
+      "id": "mlelec_materialscloud_v1",
+      "role": "paper_data_and_source_archive",
+      "repository_id": "mlelec_qm7",
+      "record_id": "4vezc-jtt98",
+      "metadata_url": "https://archive.materialscloud.org/api/records/4vezc-jtt98",
+      "doi": "10.24435/materialscloud:mg-8f",
+      "version": 1,
+      "filename": "dataset.tar.xz",
+      "archive_bytes": 1156517180,
+      "publisher_md5": "86a870be93068bd7e2bb5a2524524827",
+      "archive_sha256": "df6c0894e0063a9c99ad5f94c5989f982dc7186b5476a092b32a780ad9640dfb",
+      "paper_git_commit": null,
+      "inspection_path": "research/experiments/mlelec_archive/release.json",
+      "member_index_path": "research/experiments/mlelec_archive/members.json.gz"
     }
   ]
 }

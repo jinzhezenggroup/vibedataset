@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "notice": "Pinned root trees and submodules only. External dependency closure, paper-version attribution and numerical validation remain separate.",
+  "notice": "Git snapshot counts include initialized submodules. Formal release archives have separate file/member hashes. Reading, execution, paper-version attribution, and external runtime closure are independent.",
   "repositories": [
     {
       "id": "gqc",
@@ -98,8 +98,8 @@
       "evidence_status": {
         "indexed": true,
         "files_read": 7,
-        "behavior_traced": 14,
-        "executed": 14
+        "behavior_traced": 16,
+        "executed": 16
       }
     },
     {
@@ -429,8 +429,8 @@
       "evidence_status": {
         "indexed": true,
         "files_read": 1,
-        "behavior_traced": 5,
-        "executed": 5
+        "behavior_traced": 7,
+        "executed": 8
       }
     },
     {
@@ -1064,14 +1064,28 @@
       "reviewer_record": {
         "root_tree_reviewed": true,
         "reviewer": "Codex",
-        "reviewed_at_utc": "2026-11-17T17:58:14.475299+00:00",
-        "review_scope": "Reviewed inventory integrity, full root path scope, license locations and submodule/LFS status; not source comprehension or dependency closure.",
+        "reviewed_at_utc": "2026-11-17T20:40:32.597587+00:00",
+        "review_scope": "Root-tree integrity stayed fixed. The Materials Cloud release explicitly identifies the distinct qm7 branch. Its deposit does not state an exact Git commit.",
         "known_gaps": [
-          "Paper branch/commit not established; current default branch is not asserted to reproduce Suman 2025.",
-          "No explicit license located; see pyproject.toml."
+          "The Materials Cloud v1 deposit links the separate qm7 branch but states no exact paper Git commit. This selected default branch has distinct content and provenance.",
+          "No explicit license found in this Git tree; see pyproject.toml. The archive CC BY 4.0 record is separately scoped."
         ],
         "license_note": "No LICENSE/COPYING file in pinned tree; pyproject.toml contains license TODO. Redistribution/modification permission unresolved.",
-        "commit": "73da12b404ff13008d123767f702ca129716dccd"
+        "commit": "73da12b404ff13008d123767f702ca129716dccd",
+        "prior_root_reviews": [
+          {
+            "root_tree_reviewed": true,
+            "reviewer": "Codex",
+            "reviewed_at_utc": "2026-11-17T17:58:14.475299+00:00",
+            "review_scope": "Reviewed inventory integrity, full root path scope, license locations and submodule/LFS status; not source comprehension or dependency closure.",
+            "known_gaps": [
+              "Paper branch/commit not established; current default branch is not asserted to reproduce Suman 2025.",
+              "No explicit license located; see pyproject.toml."
+            ],
+            "license_note": "No LICENSE/COPYING file in pinned tree; pyproject.toml contains license TODO. Redistribution/modification permission unresolved.",
+            "commit": "73da12b404ff13008d123767f702ca129716dccd"
+          }
+        ]
       },
       "file_count": 419,
       "top_level_directories": [
@@ -1089,8 +1103,8 @@
       ],
       "reviewed_integrity_notices": [],
       "known_gaps": [
-        "Paper branch/commit not established; current default branch is not asserted to reproduce Suman 2025.",
-        "No explicit license located; see pyproject.toml."
+        "The Materials Cloud v1 deposit links the separate qm7 branch but states no exact paper Git commit. This selected default branch has distinct content and provenance.",
+        "No explicit license found in this Git tree; see pyproject.toml. The archive CC BY 4.0 record is separately scoped."
       ],
       "external_dependency_closure": "pending; see SOURCE_GAPS.md",
       "evidence_status": {
@@ -2857,10 +2871,507 @@
         "behavior_traced": 3,
         "executed": 1
       }
+    },
+    {
+      "id": "mlelec_qm7",
+      "catalog_ids": [
+        "mlelec"
+      ],
+      "priority": "P1",
+      "repository_url": "https://github.com/curiosity54/mlelec",
+      "role": "archive_linked_branch",
+      "commit": "9c34bd9e1351770d3ac5b0887ecf0a98da317417",
+      "checkout_path": "_references/mlelec_qm7",
+      "paper_version_status": "Materials Cloud v1 explicitly links the qm7 branch. The observed tip predates the 2025-06-02 deposit; the deposit does not specify a git SHA.",
+      "selection_reason": "Resolve the archived branch separately from main and trace the property-supervised Hamiltonian model.",
+      "acquisition_receipts": [
+        "research/acquisition/mlelec_qm7-20261117T194159712710Z.json"
+      ],
+      "tree": "0b700a99488022a81bff992b6813d5d9af466245",
+      "retrieved_at_utc": "2026-11-17T19:42:39.735316+00:00",
+      "checkout_kind": "full-tree",
+      "history_scope": "shallow",
+      "license": {
+        "paths": [],
+        "interpretation": "No LICENSE/COPYING in tracked tree. pyproject.toml:8 is a commented license TODO. CC-BY-4.0 is recorded for the separately deposited materials."
+      },
+      "inventory_path": "research/inventories/mlelec_qm7.json.gz",
+      "inventory_sha256": "70c066c97352f8f6e71b841435f4ba4a1d6f7965401ab53554a70607f34c207d",
+      "inventory_uncompressed_sha256": "6c845d9bd2633ee17004e72ea749b1fd8759312a8f51c4c4fe5455731ca463b8",
+      "submodules": [],
+      "lfs": {
+        "pointer_count": 0,
+        "unhydrated_count": 0
+      },
+      "acquisition_status": "acquired",
+      "acquisition_scope": "Complete pinned tracked trees including initialized submodules; not all build dependencies, paper supplements, datasets or weights.",
+      "reviewer_record": {
+        "root_tree_reviewed": true,
+        "reviewer": "Codex",
+        "reviewed_at_utc": "2026-11-17T20:39:11.243084+00:00",
+        "commit": "9c34bd9e1351770d3ac5b0887ecf0a98da317417",
+        "review_scope": "Verified all 129 tracked files in the complete selected qm7 tree against inventory, no missing files, LFS or submodules; traced molecular Hamiltonian model, training losses and property derivatives; compared archive and branch Git blobs file-wise.",
+        "license_note": "No LICENSE/COPYING in tracked tree. pyproject.toml:8 is a commented license TODO. CC-BY-4.0 is recorded for the separately deposited materials.",
+        "known_gaps": [
+          "Materials Cloud links a branch and does not identify the exact training Git SHA; separate archive driver and environment are locked by content.",
+          "Model weights and ML training were not executed. Only molecular reference generator was executed from the release."
+        ]
+      },
+      "file_count": 129,
+      "top_level_directories": [
+        "examples",
+        "src",
+        "tutorials"
+      ],
+      "build_and_dependency_metadata": [
+        "pyproject.toml",
+        "setup.py"
+      ],
+      "reviewed_integrity_notices": [],
+      "known_gaps": [
+        "Materials Cloud links a branch and does not identify the exact training Git SHA; separate archive driver and environment are locked by content.",
+        "Model weights and ML training were not executed. Only molecular reference generator was executed from the release."
+      ],
+      "external_dependency_closure": "pending; see SOURCE_GAPS.md",
+      "evidence_status": {
+        "indexed": true,
+        "files_read": 1,
+        "behavior_traced": 9,
+        "executed": 0
+      }
+    },
+    {
+      "id": "dm_phisnet_history",
+      "catalog_ids": [
+        "dm_phisnet"
+      ],
+      "priority": "P0",
+      "repository_url": "https://github.com/zyyr17/dm-nn-so3-analytic",
+      "role": "historical_author_source",
+      "commit": "eb365d3e4d0e85ccf89740e5fad26970591c5b16",
+      "checkout_path": "_references/dm_phisnet_history",
+      "paper_version_status": "Prepublication author commit; author/paper relationship follows model and authorship, paper release equivalence unverified.",
+      "selection_reason": "Author history has a source-bearing October 2025 commit before its empty HEAD. Inspect exact available artifact without redistributing files.",
+      "acquisition_receipts": [
+        "research/acquisition/dm_phisnet_history-20261117T195137078095Z.json"
+      ],
+      "tree": "85ace16af649d2ed6af3efb44c17f7c79df1f154",
+      "retrieved_at_utc": "2026-11-17T19:51:43.629224+00:00",
+      "checkout_kind": "full-tree",
+      "history_scope": "shallow",
+      "license": {
+        "paths": [],
+        "interpretation": "No tracked LICENSE or COPYING located; checkout for inspection only. No redistribution or reuse authorization established."
+      },
+      "inventory_path": "research/inventories/dm_phisnet_history.json.gz",
+      "inventory_sha256": "ab6e6d2e8d79beae3360e729c425426295af9cc9b72d06dc40d22f139aad1476",
+      "inventory_uncompressed_sha256": "4383b1854e1e0a88840b86caf077f60cb7c948a597d2b7faee2f873afa6a3862",
+      "submodules": [],
+      "lfs": {
+        "pointer_count": 0,
+        "unhydrated_count": 0
+      },
+      "acquisition_status": "acquired",
+      "acquisition_scope": "Complete pinned tracked trees including initialized submodules; not all build dependencies, paper supplements, datasets or weights.",
+      "reviewer_record": {
+        "root_tree_reviewed": true,
+        "reviewer": "Codex",
+        "reviewed_at_utc": "2026-11-17T20:01:28.566293+00:00",
+        "commit": "eb365d3e4d0e85ccf89740e5fad26970591c5b16",
+        "review_scope": "Full tracked-file inventory, clean checkout, root tree and submodule/LFS declarations. Reading and execution accounted separately.",
+        "license_note": "No tracked LICENSE or COPYING located; checkout for inspection only. No redistribution or reuse authorization established.",
+        "known_gaps": [
+          "The accessible author's October 2025 commit precedes arXiv v1 and the 2026 journal article. Exact paper revision and weights are unconfirmed.",
+          "Named nitrate database and trained checkpoint in source/base_model/args.txt absent from this tree."
+        ]
+      },
+      "file_count": 190,
+      "top_level_directories": [
+        "source"
+      ],
+      "build_and_dependency_metadata": [],
+      "reviewed_integrity_notices": [],
+      "known_gaps": [
+        "The accessible author's October 2025 commit precedes arXiv v1 and the 2026 journal article. Exact paper revision and weights are unconfirmed.",
+        "Named nitrate database and trained checkpoint in source/base_model/args.txt absent from this tree."
+      ],
+      "external_dependency_closure": "pending; see SOURCE_GAPS.md",
+      "evidence_status": {
+        "indexed": true,
+        "files_read": 1,
+        "behavior_traced": 3,
+        "executed": 0
+      }
+    },
+    {
+      "id": "phisnet_casnet_fork",
+      "catalog_ids": [
+        "phisnet"
+      ],
+      "priority": "P0",
+      "repository_url": "https://github.com/marquetand/phisnet_fork",
+      "role": "later_adaptation",
+      "commit": "398f215554146069a386809a4bd3bed83eddf87a",
+      "checkout_path": "_references/phisnet_casnet_fork",
+      "paper_version_status": "Later CasNet derivative, not a verified copy of original paper release.",
+      "selection_reason": "Establish a second documented descendant of the original OpenReview method, apart from nablaDFT.",
+      "acquisition_receipts": [
+        "research/acquisition/phisnet_casnet_fork-20261117T195143638661Z.json"
+      ],
+      "tree": "ccb97a20d003cd3b0e8d6eb478ccbfdc611e3061",
+      "retrieved_at_utc": "2026-11-17T19:51:46.382394+00:00",
+      "checkout_kind": "full-tree",
+      "history_scope": "shallow",
+      "license": {
+        "paths": [],
+        "interpretation": "No tracked LICENSE or COPYING located; do not infer licensing from ancestry."
+      },
+      "inventory_path": "research/inventories/phisnet_casnet_fork.json.gz",
+      "inventory_sha256": "bb550a29e13dd620b815beeebc4c3bba167a9a8726a1617a52409dc9111f13b1",
+      "inventory_uncompressed_sha256": "26dd8efae29864d658bd197eee1968a282e891011e47d5fc3d1f2ef92236d09e",
+      "submodules": [],
+      "lfs": {
+        "pointer_count": 0,
+        "unhydrated_count": 0
+      },
+      "acquisition_status": "acquired",
+      "acquisition_scope": "Complete pinned tracked trees including initialized submodules; not all build dependencies, paper supplements, datasets or weights.",
+      "reviewer_record": {
+        "root_tree_reviewed": true,
+        "reviewer": "Codex",
+        "reviewed_at_utc": "2026-11-17T20:01:28.566293+00:00",
+        "commit": "398f215554146069a386809a4bd3bed83eddf87a",
+        "review_scope": "Full tracked-file inventory, clean checkout, root tree and submodule/LFS declarations. Reading and execution accounted separately.",
+        "license_note": "No tracked LICENSE or COPYING located; do not infer licensing from ancestry.",
+        "known_gaps": [
+          "Explicit CasNet continuation; original 2021 release byte identity unresolved."
+        ]
+      },
+      "file_count": 61,
+      "top_level_directories": [
+        "configurations",
+        "nn",
+        "training",
+        "utils"
+      ],
+      "build_and_dependency_metadata": [],
+      "reviewed_integrity_notices": [],
+      "known_gaps": [
+        "Explicit CasNet continuation; original 2021 release byte identity unresolved."
+      ],
+      "external_dependency_closure": "pending; see SOURCE_GAPS.md",
+      "evidence_status": {
+        "indexed": true,
+        "files_read": 0,
+        "behavior_traced": 0,
+        "executed": 0
+      }
+    },
+    {
+      "id": "delfta_v1",
+      "catalog_ids": [
+        "qmugs",
+        "delta_ml"
+      ],
+      "priority": "P1",
+      "repository_url": "https://github.com/josejimenezluna/delfta",
+      "role": "qmugs_authors_downstream_delta_learning",
+      "commit": "5635b514067b229227e27143cd87e0ad5057388e",
+      "checkout_path": "_references/delfta_v1",
+      "paper_version_status": "Authors designate v1.0.0 for their DelFTa paper 10.1039/D2CP00834C. Separate from the original 2015 Delta-ML and from QMugs generation.",
+      "selection_reason": "QMugs author collaboration releases a concrete GFN2 plus learned correction comparison trained on the dataset.",
+      "acquisition_receipts": [
+        "research/acquisition/delfta_v1-20261117T195617868913Z.json"
+      ],
+      "tree": "6729f5a7a5ec5cef335182c2bfafbd6c161d4a9f",
+      "retrieved_at_utc": "2026-11-17T19:56:20.691091+00:00",
+      "checkout_kind": "full-tree",
+      "history_scope": "shallow",
+      "license": {
+        "paths": [
+          "LICENSE"
+        ],
+        "interpretation": "AGPL-3.0, tracked root LICENSE; external data and weights separate."
+      },
+      "inventory_path": "research/inventories/delfta_v1.json.gz",
+      "inventory_sha256": "f5f2877d47698acdd14de4285f0f1c6479826452a363743188fa93e996f8dec8",
+      "inventory_uncompressed_sha256": "2cc1e03b67cfe1fe369c59bc183f6edd006101d06aa95147512fbbedb3d59d7e",
+      "submodules": [],
+      "lfs": {
+        "pointer_count": 0,
+        "unhydrated_count": 0
+      },
+      "acquisition_status": "acquired",
+      "acquisition_scope": "Complete pinned tracked trees including initialized submodules; not all build dependencies, paper supplements, datasets or weights.",
+      "reviewer_record": {
+        "root_tree_reviewed": true,
+        "reviewer": "Codex",
+        "reviewed_at_utc": "2026-11-17T20:01:28.566293+00:00",
+        "commit": "5635b514067b229227e27143cd87e0ad5057388e",
+        "review_scope": "Full tracked-file inventory, clean checkout, root tree and submodule/LFS declarations. Reading and execution accounted separately.",
+        "license_note": "AGPL-3.0, tracked root LICENSE; external data and weights separate.",
+        "known_gaps": [
+          "Weights, normalizers, and additional training/test data are external (delfta/download.py). The DelFTa paper is distinct from QMugs generation and the 2015 Delta-ML experiment."
+        ]
+      },
+      "file_count": 51,
+      "top_level_directories": [
+        ".github",
+        "conda-recipe",
+        "delfta",
+        "docs",
+        "tests",
+        "tutorials",
+        "utils"
+      ],
+      "build_and_dependency_metadata": [
+        "Makefile",
+        "environment.yml",
+        "environment_osx.yml",
+        "setup.py"
+      ],
+      "reviewed_integrity_notices": [],
+      "known_gaps": [
+        "Weights, normalizers, and additional training/test data are external (delfta/download.py). The DelFTa paper is distinct from QMugs generation and the 2015 Delta-ML experiment."
+      ],
+      "external_dependency_closure": "pending; see SOURCE_GAPS.md",
+      "evidence_status": {
+        "indexed": true,
+        "files_read": 0,
+        "behavior_traced": 1,
+        "executed": 0
+      }
+    },
+    {
+      "id": "openmdao_3_45_2",
+      "catalog_ids": [],
+      "priority": "P0",
+      "repository_url": "https://github.com/OpenMDAO/OpenMDAO",
+      "role": "release_source",
+      "commit": "64175aa55fb541355b2fb279a6bcfde01e17a878",
+      "checkout_path": "_references/openmdao_3_45_2",
+      "paper_version_status": "OpenMDAO 3.45.2 release, implementation of MNCO after Coleman & Verma 1998; original paper code not claimed",
+      "selection_reason": "Direct and substitution bidirectional coloring, compressed forward/adjoint products and structural-sparsity inference for total Jacobians. Strong comparator for GQC target-graph planning.",
+      "acquisition_receipts": [
+        "research/acquisition/openmdao_3_45_2-20261117T193201569420Z.json"
+      ],
+      "tree": "f960aa4407816969c2c2f1baea949c0975f0fd1b",
+      "retrieved_at_utc": "2026-11-17T19:32:07.952437+00:00",
+      "checkout_kind": "full-tree",
+      "history_scope": "shallow",
+      "license": {
+        "paths": [
+          "LICENSE.txt"
+        ],
+        "interpretation": "Apache-2.0, LICENSE.txt"
+      },
+      "inventory_path": "research/inventories/openmdao_3_45_2.json.gz",
+      "inventory_sha256": "0825abb07035194acb743c12c56f405c969cd463f7a184ee39ccd3e0b4b68018",
+      "inventory_uncompressed_sha256": "9f0d633aad6ae00302c1bdbd39e4eae7362dab191a24d65424014f33ae422a9d",
+      "submodules": [],
+      "lfs": {
+        "pointer_count": 0,
+        "unhydrated_count": 0
+      },
+      "acquisition_status": "acquired",
+      "acquisition_scope": "Complete pinned tracked trees including initialized submodules; not all build dependencies, paper supplements, datasets or weights.",
+      "reviewer_record": {
+        "root_tree_reviewed": true,
+        "reviewer": "Codex",
+        "reviewed_at_utc": "2026-11-17T19:55:04.928176+00:00",
+        "commit": "64175aa55fb541355b2fb279a6bcfde01e17a878",
+        "review_scope": "All tracked blobs examined for clean/present, integrity blockers, recursive gitlinks and LFS; selected behavior read and executed separately.",
+        "license_note": "Apache-2.0, LICENSE.txt",
+        "known_gaps": [
+          "Release implementation; no claim to have recovered the original mathematical paper source. Optional backends and transitive dependencies outside exercised paths remain separate."
+        ]
+      },
+      "file_count": 1239,
+      "top_level_directories": [
+        ".github",
+        "benchmark",
+        "openmdao",
+        "roadmaps"
+      ],
+      "build_and_dependency_metadata": [
+        "pixi.lock",
+        "pyproject.toml"
+      ],
+      "reviewed_integrity_notices": [],
+      "known_gaps": [
+        "Release implementation; no claim to have recovered the original mathematical paper source. Optional backends and transitive dependencies outside exercised paths remain separate."
+      ],
+      "external_dependency_closure": "pending; see SOURCE_GAPS.md",
+      "evidence_status": {
+        "indexed": true,
+        "files_read": 0,
+        "behavior_traced": 4,
+        "executed": 4
+      }
+    },
+    {
+      "id": "cppad_2026",
+      "catalog_ids": [],
+      "priority": "P0",
+      "repository_url": "https://github.com/coin-or/CppAD",
+      "role": "release_source",
+      "commit": "5d51b2aa6d6874c8d561da298a90b3721550d45d",
+      "checkout_path": "_references/cppad_2026",
+      "paper_version_status": "Release 20260000.0; older papers and ColPack implementation not identified with this pin.",
+      "selection_reason": "Sparse Jacobian drivers distinguish requested entries (subset) from complete structural support (pattern); concrete competitor to graph-based exact target completion.",
+      "acquisition_receipts": [
+        "research/acquisition/cppad_2026-20261117T193355135095Z.json"
+      ],
+      "tree": "7ea43540586ac79fc720d1a89599fb1c33e93607",
+      "retrieved_at_utc": "2026-11-17T19:33:59.252708+00:00",
+      "checkout_kind": "full-tree",
+      "history_scope": "shallow",
+      "license": {
+        "paths": [
+          "COPYING",
+          "appendix/license.xrst"
+        ],
+        "interpretation": "Root COPYING: EPL-2.0 with permitted secondary GPL-2.0-or-later under stated conditions"
+      },
+      "inventory_path": "research/inventories/cppad_2026.json.gz",
+      "inventory_sha256": "7de12f700da0237ec05967845c87821702954c1aa12828882a03fe1c05e154c7",
+      "inventory_uncompressed_sha256": "4d9bfb2cdc5a6ca3d49891e5d0e40b9b8a9eae66b6d7ec803bb618bb6a776bbd",
+      "submodules": [],
+      "lfs": {
+        "pointer_count": 0,
+        "unhydrated_count": 0
+      },
+      "acquisition_status": "acquired",
+      "acquisition_scope": "Complete pinned tracked trees including initialized submodules; not all build dependencies, paper supplements, datasets or weights.",
+      "reviewer_record": {
+        "root_tree_reviewed": true,
+        "reviewer": "Codex",
+        "reviewed_at_utc": "2026-11-17T19:55:04.928176+00:00",
+        "commit": "5d51b2aa6d6874c8d561da298a90b3721550d45d",
+        "review_scope": "All tracked blobs examined for clean/present, integrity blockers, recursive gitlinks and LFS; selected behavior read and executed separately.",
+        "license_note": "Root COPYING: EPL-2.0 with permitted secondary GPL-2.0-or-later under stated conditions",
+        "known_gaps": [
+          "Release implementation; no claim to have recovered the original mathematical paper source. Optional backends and transitive dependencies outside exercised paths remain separate."
+        ]
+      },
+      "file_count": 1473,
+      "top_level_directories": [
+        ".circleci",
+        ".github",
+        "appendix",
+        "bin",
+        "bug",
+        "cmake",
+        "cppad_ipopt",
+        "cppad_lib",
+        "example",
+        "include",
+        "introduction",
+        "pkgconfig",
+        "speed",
+        "test_more",
+        "val_graph",
+        "xrst"
+      ],
+      "build_and_dependency_metadata": [
+        "CMakeLists.txt"
+      ],
+      "reviewed_integrity_notices": [],
+      "known_gaps": [
+        "Release implementation; no claim to have recovered the original mathematical paper source. Optional backends and transitive dependencies outside exercised paths remain separate."
+      ],
+      "external_dependency_closure": "pending; see SOURCE_GAPS.md",
+      "evidence_status": {
+        "indexed": true,
+        "files_read": 1,
+        "behavior_traced": 4,
+        "executed": 4
+      }
+    },
+    {
+      "id": "pymor_2026_1",
+      "catalog_ids": [],
+      "priority": "P0",
+      "repository_url": "https://github.com/pymor/pymor",
+      "role": "release_source",
+      "commit": "36a0035e180694c7ad4eb8f083d9f1d65ceb6f42",
+      "checkout_path": "_references/pymor_2026_1",
+      "paper_version_status": "2026.1.1 release implementation of DWRCoerciveRBReductor, not claimed to be the original 2017 reference code.",
+      "selection_reason": "Dual-weighted residual output functional, paired primal/dual reduced bases, and qualified output error estimator for coercive linear systems. Direct prior on archived projected response and target precision.",
+      "acquisition_receipts": [
+        "research/acquisition/pymor_2026_1-20261117T194624773433Z.json"
+      ],
+      "tree": "120ef6675e0599010ea6e32366e31542f30b3b7b",
+      "retrieved_at_utc": "2026-11-17T19:46:28.839213+00:00",
+      "checkout_kind": "full-tree",
+      "history_scope": "shallow",
+      "license": {
+        "paths": [
+          "LICENSE.txt",
+          "LICENSES_bundled.txt"
+        ],
+        "interpretation": "BSD-2-Clause, LICENSE.txt; bundled components have additional terms in LICENSES_bundled.txt"
+      },
+      "inventory_path": "research/inventories/pymor_2026_1.json.gz",
+      "inventory_sha256": "4ae5f0dd2bdb08e7a38fe72677bed838c5e41f546dca5642ef29b3689285511a",
+      "inventory_uncompressed_sha256": "3f2d1398b84da9f0c2dd712988912ad9c6d16d3028828a8529752c31b5dff7db",
+      "submodules": [],
+      "lfs": {
+        "pointer_count": 0,
+        "unhydrated_count": 0
+      },
+      "acquisition_status": "acquired",
+      "acquisition_scope": "Complete pinned tracked trees including initialized submodules; not all build dependencies, paper supplements, datasets or weights.",
+      "reviewer_record": {
+        "root_tree_reviewed": true,
+        "reviewer": "Codex",
+        "reviewed_at_utc": "2026-11-17T19:55:04.928176+00:00",
+        "commit": "36a0035e180694c7ad4eb8f083d9f1d65ceb6f42",
+        "review_scope": "All tracked blobs examined for clean/present, integrity blockers, recursive gitlinks and LFS; selected behavior read and executed separately.",
+        "license_note": "BSD-2-Clause, LICENSE.txt; bundled components have additional terms in LICENSES_bundled.txt",
+        "known_gaps": [
+          "Release implementation; no claim to have recovered the original mathematical paper source. Optional backends and transitive dependencies outside exercised paths remain separate."
+        ]
+      },
+      "file_count": 518,
+      "top_level_directories": [
+        ".ci",
+        ".github",
+        "benchmarks",
+        "docker",
+        "docs",
+        "logo",
+        "src"
+      ],
+      "build_and_dependency_metadata": [
+        "Makefile",
+        "conda-linux-64.lock",
+        "conda-lock.yml",
+        "conda-osx-64.lock",
+        "conda-win-64.lock",
+        "pyproject.toml",
+        "requirements-ci-current.txt",
+        "requirements-ci-fenics-pins.in",
+        "requirements-ci-fenics.txt",
+        "requirements-ci-fenicsx.txt",
+        "requirements-ci-oldest-pins.in",
+        "requirements-ci-oldest.txt"
+      ],
+      "reviewed_integrity_notices": [],
+      "known_gaps": [
+        "Release implementation; no claim to have recovered the original mathematical paper source. Optional backends and transitive dependencies outside exercised paths remain separate."
+      ],
+      "external_dependency_closure": "pending; see SOURCE_GAPS.md",
+      "evidence_status": {
+        "indexed": true,
+        "files_read": 0,
+        "behavior_traced": 3,
+        "executed": 3
+      }
     }
   ],
-  "generated_at_utc": "2026-11-17T19:08:20.411075+00:00",
-  "unresolved_catalog_entries": [
+  "generated_at_utc": "2026-11-17T20:40:32.597587+00:00",
+  "catalog_origin_results": [
     {
       "id": "phisnet",
       "primary_urls": [
@@ -2869,7 +3380,15 @@
       ],
       "acquisition_status": "blocked_source_location",
       "commit": null,
-      "evidence": "research/SOURCE_GAPS.md"
+      "evidence": "research/audits/intake-originals.md",
+      "acquisition_evidence": "research/acquisition/originals-evidence-20261118.json",
+      "paper_commit": null,
+      "reason": "NeurIPS supplied a 14-page supplement PDF. The arXiv source holds manuscript/figures and OpenReview returned an access challenge. Two separately acquired adaptations do not establish the original release.",
+      "next_step": "Inspect the submission attachment and original software version if the normal OpenReview route becomes available.",
+      "other_repository_ids": [
+        "nabladft",
+        "phisnet_casnet_fork"
+      ]
     },
     {
       "id": "dm_phisnet",
@@ -2878,9 +3397,14 @@
         "https://arxiv.org/html/2604.27256v1",
         "https://doi.org/10.1002/chem.71739"
       ],
-      "acquisition_status": "blocked_source_location",
-      "commit": null,
-      "evidence": "research/SOURCE_GAPS.md"
+      "acquisition_status": "author_history_acquired_paper_revision_unverified",
+      "commit": "eb365d3e4d0e85ccf89740e5fad26970591c5b16",
+      "evidence": "research/audits/intake-originals.md",
+      "acquisition_evidence": "research/acquisition/originals-evidence-20261118.json",
+      "paper_commit": null,
+      "reason": "The first author’s repository has an empty observed default-branch tip. Its nonempty parent contains the network, analytic layer, generators, evaluation and environment. Neither the preprint nor publisher binds that Git commit to the paper.",
+      "next_step": "Check publisher SI and author-declared model weights/training assets when accessible; verify the exact version and licensing before attribution or redistribution.",
+      "historical_author_repository": "dm_phisnet_history"
     },
     {
       "id": "im_gnn",
@@ -2889,7 +3413,11 @@
       ],
       "acquisition_status": "blocked_source_location",
       "commit": null,
-      "evidence": "research/SOURCE_GAPS.md"
+      "evidence": "research/audits/intake-originals.md",
+      "acquisition_evidence": "research/acquisition/originals-evidence-20261118.json",
+      "paper_commit": null,
+      "reason": "The 15-page publisher PDF describes method and settings. The checked author/lab repositories and hyperlinks did not identify the original code or a software deposit.",
+      "next_step": "Recheck the publisher supplement and author/lab project listings for a new citable release."
     },
     {
       "id": "qpma",
@@ -2900,7 +3428,11 @@
       ],
       "acquisition_status": "blocked_source_location",
       "commit": null,
-      "evidence": "research/SOURCE_GAPS.md"
+      "evidence": "research/audits/intake-originals.md",
+      "acquisition_evidence": "research/acquisition/originals-evidence-20261118.json",
+      "paper_commit": null,
+      "reason": "GitHub and Software Heritage both returned exact-origin 404 for the implementation URL named in the paper. Migration/access/deletion is undetermined.",
+      "next_step": "Check a publisher supplement or an independently published author migration or archive identifier."
     },
     {
       "id": "qmugs",
@@ -2910,7 +3442,14 @@
       ],
       "acquisition_status": "blocked_source_location",
       "commit": null,
-      "evidence": "research/SOURCE_GAPS.md"
+      "evidence": "research/audits/intake-originals.md",
+      "acquisition_evidence": "research/acquisition/originals-evidence-20261118.json",
+      "paper_commit": null,
+      "reason": "Publisher JATS lists software versions, and ETH metadata identifies the data DOI and CC BY-SA 3.0. No version of the data generator was linked. The landing and storage API attempts returned 403/429. The original wavefunction members remain uninspected.",
+      "next_step": "Recheck ETH README, assignment table and an actual wavefunction tar member, then any versioned generating workflow. The acquired DelFTa paper release is a downstream consumer.",
+      "other_repository_ids": [
+        "delfta_v1"
+      ]
     },
     {
       "id": "delta_ml",
@@ -2920,14 +3459,189 @@
       ],
       "acquisition_status": "blocked_source_location",
       "commit": null,
-      "evidence": "research/SOURCE_GAPS.md"
+      "evidence": "research/audits/intake-originals.md",
+      "acquisition_evidence": "research/acquisition/originals-evidence-20261118.json",
+      "paper_commit": null,
+      "reason": "ACS Figshare distributes a checksummed single three-page SI PDF with no embedded attachment, including the CV pseudocode. The author data links returned 404 or failed the TLS handshake. The 2015 training and evaluation code remains unlocated.",
+      "next_step": "Recheck the original research group releases and official dataset URLs for a citable historical workflow.",
+      "other_repository_ids": [
+        "delfta_v1"
+      ]
+    }
+  ],
+  "unresolved_catalog_entries": [
+    {
+      "id": "phisnet",
+      "primary_urls": [
+        "https://papers.nips.cc/paper/2021/hash/78f1893678afbeaa90b1fa01b9cfb860-Abstract.html",
+        "https://openreview.net/forum?id=auGY2UQfhSu"
+      ],
+      "acquisition_status": "blocked_source_location",
+      "commit": null,
+      "evidence": "research/audits/intake-originals.md",
+      "acquisition_evidence": "research/acquisition/originals-evidence-20261118.json",
+      "paper_commit": null,
+      "reason": "NeurIPS supplied a 14-page supplement PDF. The arXiv source holds manuscript/figures and OpenReview returned an access challenge. Two separately acquired adaptations do not establish the original release.",
+      "next_step": "Inspect the submission attachment and original software version if the normal OpenReview route becomes available.",
+      "other_repository_ids": [
+        "nabladft",
+        "phisnet_casnet_fork"
+      ]
+    },
+    {
+      "id": "im_gnn",
+      "primary_urls": [
+        "https://www.mi-research.net/en/article/doi/10.1007/s11633-023-1443-7"
+      ],
+      "acquisition_status": "blocked_source_location",
+      "commit": null,
+      "evidence": "research/audits/intake-originals.md",
+      "acquisition_evidence": "research/acquisition/originals-evidence-20261118.json",
+      "paper_commit": null,
+      "reason": "The 15-page publisher PDF describes method and settings. The checked author/lab repositories and hyperlinks did not identify the original code or a software deposit.",
+      "next_step": "Recheck the publisher supplement and author/lab project listings for a new citable release."
+    },
+    {
+      "id": "qpma",
+      "primary_urls": [
+        "https://arxiv.org/abs/2212.05469",
+        "https://arxiv.org/html/2212.05469v2",
+        "https://github.com/JeongminChae/QPMA"
+      ],
+      "acquisition_status": "blocked_source_location",
+      "commit": null,
+      "evidence": "research/audits/intake-originals.md",
+      "acquisition_evidence": "research/acquisition/originals-evidence-20261118.json",
+      "paper_commit": null,
+      "reason": "GitHub and Software Heritage both returned exact-origin 404 for the implementation URL named in the paper. Migration/access/deletion is undetermined.",
+      "next_step": "Check a publisher supplement or an independently published author migration or archive identifier."
+    },
+    {
+      "id": "qmugs",
+      "primary_urls": [
+        "https://www.nature.com/articles/s41597-022-01390-7",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC9174255/"
+      ],
+      "acquisition_status": "blocked_source_location",
+      "commit": null,
+      "evidence": "research/audits/intake-originals.md",
+      "acquisition_evidence": "research/acquisition/originals-evidence-20261118.json",
+      "paper_commit": null,
+      "reason": "Publisher JATS lists software versions, and ETH metadata identifies the data DOI and CC BY-SA 3.0. No version of the data generator was linked. The landing and storage API attempts returned 403/429. The original wavefunction members remain uninspected.",
+      "next_step": "Recheck ETH README, assignment table and an actual wavefunction tar member, then any versioned generating workflow. The acquired DelFTa paper release is a downstream consumer.",
+      "other_repository_ids": [
+        "delfta_v1"
+      ]
+    },
+    {
+      "id": "delta_ml",
+      "primary_urls": [
+        "https://arxiv.org/abs/1503.04987",
+        "https://doi.org/10.1021/acs.jctc.5b00099"
+      ],
+      "acquisition_status": "blocked_source_location",
+      "commit": null,
+      "evidence": "research/audits/intake-originals.md",
+      "acquisition_evidence": "research/acquisition/originals-evidence-20261118.json",
+      "paper_commit": null,
+      "reason": "ACS Figshare distributes a checksummed single three-page SI PDF with no embedded attachment, including the CV pseudocode. The author data links returned 404 or failed the TLS handshake. The 2015 training and evaluation code remains unlocated.",
+      "next_step": "Recheck the original research group releases and official dataset URLs for a citable historical workflow.",
+      "other_repository_ids": [
+        "delfta_v1"
+      ]
+    }
+  ],
+  "release_archives": [
+    {
+      "id": "mlelec_materialscloud_v1",
+      "role": "paper_data_and_source_archive",
+      "repository_id": "mlelec_qm7",
+      "record_id": "4vezc-jtt98",
+      "metadata_url": "https://archive.materialscloud.org/api/records/4vezc-jtt98",
+      "doi": "10.24435/materialscloud:mg-8f",
+      "version": 1,
+      "filename": "dataset.tar.xz",
+      "archive_bytes": 1156517180,
+      "publisher_md5": "86a870be93068bd7e2bb5a2524524827",
+      "archive_sha256": "df6c0894e0063a9c99ad5f94c5989f982dc7186b5476a092b32a780ad9640dfb",
+      "paper_git_commit": null,
+      "inspection_path": "research/experiments/mlelec_archive/release.json",
+      "member_index_path": "research/experiments/mlelec_archive/members.json.gz",
+      "archive_url": "https://archive.materialscloud.org/api/records/4vezc-jtt98/files/dataset.tar.xz/content",
+      "rights": [
+        {
+          "id": "cc-by-4.0",
+          "title": {
+            "en": "Creative Commons Attribution 4.0 International"
+          },
+          "description": {
+            "en": "The Creative Commons Attribution license allows re-distribution and re-use of a licensed work on the condition that the creator is appropriately credited."
+          },
+          "icon": "cc-by-icon",
+          "props": {
+            "url": "https://creativecommons.org/licenses/by/4.0/legalcode",
+            "scheme": "spdx"
+          }
+        }
+      ],
+      "publication_date": "2025-06-02",
+      "related_identifiers": [
+        {
+          "identifier": "https://pubs.acs.org/doi/full/10.1021/acs.jctc.5c00522",
+          "scheme": "url",
+          "relation_type": {
+            "id": "issupplementto",
+            "title": {
+              "en": "Is supplement to"
+            }
+          },
+          "resource_type": {
+            "id": "publication-article",
+            "title": {
+              "en": "Journal article"
+            }
+          }
+        },
+        {
+          "identifier": "https://github.com/curiosity54/mlelec/tree/qm7",
+          "scheme": "url",
+          "relation_type": {
+            "id": "issupplementto",
+            "title": {
+              "en": "Is supplement to"
+            }
+          },
+          "resource_type": {
+            "id": "software",
+            "title": {
+              "de": "Software",
+              "en": "Software"
+            }
+          }
+        }
+      ],
+      "selected_branch_commit": "9c34bd9e1351770d3ac5b0887ecf0a98da317417",
+      "selected_branch_tree": "0b700a99488022a81bff992b6813d5d9af466245",
+      "inspection_sha256": "965a20d06f25c923bf8b4ea01bd4292c807f8c788839c8d016e5b01239d7675a",
+      "index_sha256": "f869791bf2952fbc97b9448b7a97f8dfad0b43f6e25d8262ebbaa1e90612439a",
+      "index_uncompressed_sha256": "46c8319e89370b22b946afdd5e54cb117a2822230acb5a11204bb70177d4f2fb",
+      "regular_files": 915,
+      "directories": 267,
+      "total_file_bytes": 2254974706,
+      "source_like_members": 12,
+      "reviewer_record": "research/intake_review.json",
+      "evidence_status": {
+        "read": 3,
+        "behavior_traced": 2,
+        "executed": 1
+      }
     }
   ],
   "summary": {
-    "repositories_indexed": 38,
-    "files_indexed": 264598,
-    "files_read": 20,
-    "behavior_traced": 60,
-    "executed": 30
+    "repositories_indexed": 45,
+    "files_indexed": 268259,
+    "files_read": 23,
+    "behavior_traced": 88,
+    "executed": 46
   }
 }

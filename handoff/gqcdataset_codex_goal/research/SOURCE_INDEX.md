@@ -1,6 +1,8 @@
-# 固定源码快照索引
+# 固定源码与论文归档索引
 
-共 38 份完整根树快照。起始目录有 31 个不同仓库；另含 equiv_dens_ml、QCManyBody、mol_prop_imputation、libcint，以及 GQC、PySCF、Psi4 的第二个固定版本。xTBloom 已取得完整可达历史和版本标签。其余 37 份是固定文件树的浅历史 checkout。覆盖总计 264,598 条，含子模块。构建依赖、论文发布物与当前实际阅读情况另列在来源锁和证据表中。
+本轮固定 45 个 Git 根快照，含初始化子模块，共 268,259 个文件。xTBloom 保留完整可达历史和标签，其余 44 棵固定树采用浅克隆。124 条人工观察覆盖 119 个不同的 Git 文件。其中 23 个明确为已通读，88 个有行为追踪，46 个参与实跑，这三个集合可以重叠。所有未审读行也在覆盖表中。28 条主张可按固定路径与证据范围逐项复查。[逐文件覆盖](source_coverage.csv) · [人工观察](intake_review.json) · [主张表](claims.csv)
+
+正式发布的 Materials Cloud 归档单列于 Git 快照之后。其成员哈希、论文版本关系和作者程序执行证据按归档字节身份核验。[版本锁](sources.lock.json)
 
 | ID | 角色 | 固定提交 | 递归文件数 | 取得状态 |
 |---|---|---|---:|---|
@@ -42,12 +44,42 @@
 | equiv_dens_ml | current | [f05a471b700b](https://github.com/MihailBogojeski/equiv_dens_ml/tree/f05a471b700ba519ed6f0f86343e1da8c288e412) | 354 | acquired |
 | qcmanybody | release_source | [90273ab21e4f](https://github.com/MolSSI/QCManyBody/tree/90273ab21e4f824b286d55411666394c80cf2472) | 108 | acquired |
 | mol_prop_imputation | author_release | [386217f233f5](https://github.com/Savoie-Research-Group/mol_prop_imputation/tree/386217f233f5607a6c69e09c8bd9375fbde06444) | 43 | acquired |
+| mlelec_qm7 | archive_linked_branch | [9c34bd9e1351](https://github.com/curiosity54/mlelec/tree/9c34bd9e1351770d3ac5b0887ecf0a98da317417) | 129 | acquired |
+| dm_phisnet_history | historical_author_source | [eb365d3e4d0e](https://github.com/zyyr17/dm-nn-so3-analytic/tree/eb365d3e4d0e85ccf89740e5fad26970591c5b16) | 190 | acquired |
+| phisnet_casnet_fork | later_adaptation | [398f21555414](https://github.com/marquetand/phisnet_fork/tree/398f215554146069a386809a4bd3bed83eddf87a) | 61 | acquired |
+| delfta_v1 | qmugs_authors_downstream_delta_learning | [5635b514067b](https://github.com/josejimenezluna/delfta/tree/5635b514067b229227e27143cd87e0ad5057388e) | 51 | acquired |
+| openmdao_3_45_2 | release_source | [64175aa55fb5](https://github.com/OpenMDAO/OpenMDAO/tree/64175aa55fb541355b2fb279a6bcfde01e17a878) | 1,239 | acquired |
+| cppad_2026 | release_source | [5d51b2aa6d68](https://github.com/coin-or/CppAD/tree/5d51b2aa6d6874c8d561da298a90b3721550d45d) | 1,473 | acquired |
+| pymor_2026_1 | release_source | [36a0035e1806](https://github.com/pymor/pymor/tree/36a0035e180694c7ad4eb8f083d9f1d65ceb6f42) | 518 | acquired |
 
-AIRS 的 QHNet / QH9 共用 `qhnet` 快照；未把两个子目录算作两个仓库。
-具体许可路径、子模块 pin、库存哈希和未解决缺口见 [sources.lock.json](sources.lock.json)。
+AIRS 的 QHNet 和 QH9 共用同一树。GQC、PySCF、Psi4 的独立发行版与当前开发树各自列出。dm-PhiSNet 第一作者历史树早于论文；CasNet 的 PhiSNet fork 与 DelFTa v1.0.0 各为后续应用。六个起始目录无明确仓库 URL 的条目已逐项核查，其中五个原始软件位置仍待获取。[版本角色与具体缺件](SOURCE_GAPS.md) · [六项原始来源](audits/intake-originals.md)
+
+## 正式归档
+
+| 发布物 | 文件身份 | 成员及人工证据 |
+|---|---|---|
+| Materials Cloud v1，2025-06-02，DOI `10.24435/materialscloud:mg-8f` | `dataset.tar.xz`，1,156,517,180 字节，官方 MD5 `86a870be93068bd7e2bb5a2524524827`，本机 SHA-256 `df6c0894e0063a9c99ad5f94c5989f982dc7186b5476a092b32a780ad9640dfb` | 915 个普通文件、267 个目录，所有普通文件有独立 SHA-256。3 个成员通读、2 个行为追踪、1 个按归档代码实跑。 |
+
+归档声明 CC BY 4.0，链接论文与 Git 的 `qm7` 分支。已取得该分支的固定树；官方记录给出分支名，未载明论文的精确 Git SHA。归档中识别的 12 个源码/笔记本/环境文件与该 Git 树逐一按字节比较，均没有完全相同的 Git blob。原始 1.16 GB 归档可向出版服务获取，仓库保留发布身份、完整成员清单及重复检查入口。[官方发布](https://archive.materialscloud.org/records/4vezc-jtt98) · [校验回执](experiments/mlelec_archive/release.json) · [成员库存](experiments/mlelec_archive/members.json.gz) · [行为及运行证据](audits/mlelec-archive.md)
 
 ## 子模块
 
-- `trexio/docs/org-html-themes` → `20f84182239a537f4c6b533eb65daa2d342428dd`（已初始化，递归内容见父库存）。
-- `trexio/python/examples` → `ad5c60aa6a7bca802c5918cef2aeb4debfa9f134`（已初始化，递归内容见父库存）。
-- `xtb/assets/aur/xtb-git` → `4c3d1a9078ff0e37a3c5ca1388e23394ce26bd8c`（已初始化，递归内容见父库存）。
+- `trexio/docs/org-html-themes` 固定为 `20f84182239a537f4c6b533eb65daa2d342428dd`，递归内容见父库存。
+- `trexio/python/examples` 固定为 `ad5c60aa6a7bca802c5918cef2aeb4debfa9f134`，递归内容见父库存。
+- `xtb/assets/aur/xtb-git` 固定为 `4c3d1a9078ff0e37a3c5ca1388e23394ce26bd8c`，递归内容见父库存。
+
+## 重放中央台账
+
+在仓库根目录运行，已有 `_references/` 的固定快照与子模块应与版本锁相符。新的 checkout 可按获取协议重建。每次真实获取都会产生新时间戳；复核已发布库存时使用随仓库提交的压缩文件。覆盖表每个文件一行，同一 blob 的不同日期和证据保留在人工观察文件内，CSV 多个证据路径以 JSON 数组表示。[接管与重新获取命令](INTAKE.md) · [生成器](../tools/build_source_ledger.py) · [验证器](../tools/verify_source_ledger.py)
+
+```bash
+python3 handoff/gqcdataset_codex_goal/tools/build_source_ledger.py
+python3 handoff/gqcdataset_codex_goal/tools/verify_source_ledger.py
+```
+
+取得正式 tar.xz 后可同时复验官方 MD5、本机 SHA-256、长度，以及解包后的每一项名称、类型、尺寸和普通文件 SHA-256。此处以 `MATERIALSCLOUD_ARCHIVE` 指定下载的本地文件。[核验结果](ledger_validation.json) · [归档复现](experiments/mlelec_archive/README.md)
+
+```bash
+python3 handoff/gqcdataset_codex_goal/tools/verify_source_ledger.py \
+  --archive mlelec_materialscloud_v1 "$MATERIALSCLOUD_ARCHIVE"
+```
