@@ -1,0 +1,22 @@
+{
+  "path": "n5:~/vibedataset/runs/152c1e44ba24-qm9-unseen-20261117T203313Z",
+  "scheduler": {
+    "JobId": "2047",
+    "JobState": "FAILED",
+    "Restarts": "0",
+    "ExitCode": "1:0",
+    "RunTime": "00:00:08",
+    "SubmitTime": "2026-11-18T04:33:17",
+    "StartTime": "2026-11-18T04:33:17",
+    "EndTime": "2026-11-18T04:33:25",
+    "Partition": "main",
+    "NumCPUs": "4",
+    "MinMemoryNode": "16G",
+    "TresPerNode": "gres:gpu:5090:1"
+  },
+  "pre_submit_state": "main up, gpu:5090:1 idle, no jobs for submitting user",
+  "asset_pairs": 8,
+  "asset_bytes": 5780168,
+  "all_11_processed": true,
+  "nonzero_reason": "3 source references failed the predeclared independent external-stability gate."
+}

@@ -1,0 +1,37 @@
+PROJECT_COMMIT: OK
+scripts/activate_n5_gqc.sh: OK
+scripts/build_qm9_assets.py: OK
+scripts/probe_gqc_checkpoint.py: OK
+scripts/run_qm9_assets.slurm: OK
+configs/checkpoint_probe.json: OK
+handoff/gqcdataset_codex_goal/research/experiments/qm9_extension/cohort.json: OK
+upstream/LICENSE: OK
+upstream/tools/__init__.py: OK
+upstream/tools/generate_validation_references.py: OK
+upstream/tools/generativeqc_posthf/__init__.py: OK
+upstream/tools/generativeqc_posthf/conventions.py: OK
+upstream/tools/generativeqc_posthf/fixtures.py: OK
+upstream/tools/generativeqc_posthf/reference.py: OK
+upstream/tools/generativeqc_validation/__init__.py: OK
+upstream/tools/generativeqc_validation/fixtures.py: OK
+NVIDIA GeForce RTX 5090, 12.0, 570.86.16, 32607 MiB
+{
+  "job": "2047",
+  "outcomes": {
+    "failed": 3,
+    "verified": 8
+  },
+  "operation_attempts": {
+    "load_library": 1,
+    "gqc_prepare": 1,
+    "gqc_execute": 1,
+    "reference_molecule": 11,
+    "reference_scf": 11,
+    "orbital_stability": 11,
+    "integrals_and_state": 11,
+    "snapshot_validation": 8,
+    "persist_reference": 8
+  },
+  "gqc_batch_seconds": 1.9627241361886263,
+  "total_production_seconds_through_assets": 6.732422979082912
+}

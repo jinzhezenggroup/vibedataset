@@ -43,8 +43,8 @@ def write_table(path, rows):
         writer.writerows(rows)
 
 
-def cohort():
-    source = json.loads((EXPERIMENTS / 'qm9_response_assets/index.json').read_text())
+def cohort(source_path=EXPERIMENTS / 'qm9_response_assets/index.json', oracle_dir=EXPERIMENTS / 'gqc_dual_response/oracles'):
+    source = json.loads(source_path.read_text())
     labels = []
     by_name = {}
     for case in source['rows']:
@@ -53,7 +53,7 @@ def cohort():
             continue
         oracle = {}
         if case['status'] == 'verified':
-            path = EXPERIMENTS / 'gqc_dual_response/oracles' / (name + '.json')
+            path = oracle_dir / (name + '.json')
             oracle = json.loads(path.read_text())
             check(oracle['source']['array_sha256'] == case['array_file_sha256'], f'{name}: source array')
             check(oracle['source']['metadata_sha256'] == case['metadata_sha256'], f'{name}: source metadata')
@@ -63,7 +63,7 @@ def cohort():
             qualified = row.get('qualified', False)
             labels.append({'molecule': name, 'qm9_id': case['qm9_id'], 'stratum': case['stratum'],
                            'source_member_sha256': case['member_sha256'], 'reference_identity': case.get('reference_identity'),
-                           'response_contract': oracle.get('operator_attestation', {}).get('contract_identity'),
+                           'response_contract': oracle.get('operator_attestation', oracle.get('setup', {})).get('contract_identity'),
                            'field': f, 'observable': o,
                            'unit': ('e' if o == 'q0' else 'bohr^2') + ' per atomic unit of electric field',
                            'status': ('qualified' if qualified else 'response_rejected') if oracle else 'reference_unavailable',

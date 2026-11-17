@@ -1,0 +1,64 @@
+{
+  "all_status": {
+    "qualified": 37,
+    "reference_unavailable": 45,
+    "response_rejected": 71
+  },
+  "client_jk": 1000,
+  "client_seconds": 17.812827287008986,
+  "client_setup_jk": 40,
+  "client_status": {
+    "qualified": 9,
+    "reference_unavailable": 27,
+    "withheld": 63
+  },
+  "cphf_calls": 8,
+  "cphf_density_columns": 160,
+  "cphf_jk_batches": 56,
+  "diagnostic_eligible_sources": 8,
+  "diagnostic_independently_qualified": 3,
+  "diagnostic_max_abs_difference": 7.617018127348274e-12,
+  "diagnostic_preparation_jk": 40,
+  "diagnostic_same_operator_passed": 24,
+  "diagnostic_seconds": 19.631012188008754,
+  "diagnostic_totals": {
+    "combined_jk": 518,
+    "combined_rhs": 8,
+    "combined_seconds": 0.47773541702190414,
+    "direct_jk": 1000,
+    "direct_rhs": 24,
+    "direct_seconds": 1.1100996930035762,
+    "history_jk": 1000,
+    "operand_bytes": 17997
+  },
+  "five_policy_jk": 8980,
+  "five_policy_seconds": 28.57576173300913,
+  "five_policy_shared_setup_jk": 40,
+  "five_policy_trajectories": 40,
+  "gpu_focks": 141,
+  "gpu_scf_cycles": 139,
+  "holdout_status": {
+    "qualified": 9,
+    "reference_unavailable": 27,
+    "response_rejected": 63
+  },
+  "independent_base_scf_cycles": 498,
+  "independent_response_scf": 104,
+  "independent_response_scf_cycles": 4823,
+  "independent_response_scf_jk": 5031,
+  "independent_response_scf_status": {
+    "completed": 104
+  },
+  "initial_status": {
+    "qualified": 28,
+    "reference_unavailable": 18,
+    "response_rejected": 8
+  },
+  "n5_outcomes": {
+    "failed": 3,
+    "verified": 8
+  },
+  "oracle_adjoint_jk": 990,
+  "oracle_direct_jk": 1000,
+  "oracle_setup_jk": 40
+}
