@@ -69,7 +69,7 @@ class Journal:
 
 def run(config, out, journal):
     import numpy as np
-    from generativeqc import Calculator
+    from generativeqc import Calculator, _native
     from generativeqc.checkpoint import CheckpointError, _HEADER, _json, _read
     from pyscf import gto, scf
 
@@ -83,11 +83,16 @@ def run(config, out, journal):
     library_sha = sha(os.environ['GQC_NATIVE_LIBRARY'])
     if not os.environ.get('SLURM_JOB_ID'):
         raise RuntimeError('run inside Slurm only')
+    library = journal.call('load_pinned_native_library','native_library_load',
+                           lambda:_native.load_library(device=config['calculator']['device']))
+    loaded_sha = sha(library._name)
     dump('environment.json', dict(
         python=platform.python_version(), host=platform.node(),
         versions={p:importlib.metadata.version(p) for p in ('generativeqc','numpy','pyscf')},
         gqc_source_declaration=os.environ['GQC_SOURCE_SHA'],
         native_library_sha256=library_sha, python_source_sha256=observed,
+        loaded_native_library_sha256=loaded_sha,
+        loaded_library_matches_designated_path=Path(library._name).samefile(os.environ['GQC_NATIVE_LIBRARY']),
         allocation={k:os.environ.get(k) for k in
                     ('SLURM_JOB_ID','SLURM_CPUS_PER_TASK','SLURM_MEM_PER_NODE','CUDA_VISIBLE_DEVICES')},
         protocol_sha256=sha(args.config), driver_sha256=sha(__file__),
@@ -98,6 +103,8 @@ def run(config, out, journal):
             raise RuntimeError(f'installed Python source differs from pinned checkout: {name}')
     if library_sha != config['native_library_sha256']:
         raise RuntimeError('native library identity differs from predeclared build')
+    if loaded_sha != library_sha:
+        raise RuntimeError('ctypes loaded a different native library')
     if os.environ['GQC_SOURCE_SHA'] != config['gqc_source_commit']:
         raise RuntimeError('runtime source declaration differs from protocol')
 

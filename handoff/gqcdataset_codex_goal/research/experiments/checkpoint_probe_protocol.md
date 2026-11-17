@@ -16,6 +16,9 @@
 - GQC 源码声明 `2bf3fd98da9c6cfba46ca83345e63e1d934e4780`，原生库
   `67bc98a4549fe8854ed6ae65791c824024bd77a9e8e498c6891dea3b8de670c4`。
   同时检查 7 个相关已安装 Python 模块的字节哈希；不将当前上游混入该二进制。
+  仪器修订：首个作业 5381 只记录了指定库文件的哈希，未记录 ctypes 实际加载路径。
+  后续作业显式设置 GENERATIVEQC_LIBRARY 并记录已加载 CDLL 的哈希与 samefile 结果；
+  保留首轮全部成本和结果，不改变科学输入、阈值或接受条件。
 - H₂，气相中性单重态，RHF/STO-3G，球谐表示，FP64、direct、CUDA。
   原子沿 z 轴 ±0.7 Bohr（源）及 ±0.8 Bohr（改变几何目标）。
   坐标 Bohr、能量 Hartree、力 Hartree/Bohr。显式禁用自动 preliminary guess。

@@ -10,6 +10,7 @@ set -euo pipefail
 source ~/miniconda3/etc/profile.d/conda.sh
 conda activate xtbflow-qc
 source ~/.config/n2-qc/runtime.env
+export GENERATIVEQC_LIBRARY="$GQC_NATIVE_LIBRARY"
 export LD_LIBRARY_PATH="$GQC_OPENBLAS_DIR:$CONDA_PREFIX/lib${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}"
 export OMP_NUM_THREADS="$SLURM_CPUS_PER_TASK"
 export OPENBLAS_NUM_THREADS="$SLURM_CPUS_PER_TASK"
