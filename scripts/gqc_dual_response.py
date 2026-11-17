@@ -70,6 +70,34 @@ def derivative_kernels(n, no):
     return field_rhs, pullback.program
 
 
+def assess_scalar(oracle, endpoint_identity, field, observable, value):
+    """Grade a supplied scalar under a validated operator and independent reference."""
+    check(field in FIELD_IDS and observable in OBSERVABLE_IDS, 'unknown scalar response endpoint')
+    def finite(v):
+        return isinstance(v, (float, int, np.floating, np.integer)) and not isinstance(v, (bool, np.bool_)) and math.isfinite(v)
+    raw = float(value) if finite(value) else None
+    out = {'field': field, 'observable': observable, 'raw_value': raw,
+           'target_identity': json_hash([endpoint_identity['fields'][field],
+                                         endpoint_identity['observables'][observable]]),
+           'qualified': None, 'value': None, 'status': 'awaiting_independent_reference', 'reasons': []}
+    if raw is None:
+        out.update(qualified=False, status='withheld', reasons=['nonfinite or missing candidate'])
+        return out
+    if oracle is None:
+        return out
+    ref = oracle['targets'][field][observable]
+    reference_failures = list(ref['reasons'])
+    comparable = {method: ref.get(method) for method in ('direct', 'adjoint', 'cphf')}
+    comparable.update({str(h): ref['finite_fields'].get(str(h)) for h in STEPS})
+    errors = {method: abs(raw - float(expected)) for method, expected in comparable.items() if finite(expected)}
+    failed = [tag for tag, err in errors.items() if err > (FIELD_TOL if tag in ref['finite_fields'] else ANALYTIC_TOL)]
+    failed.extend(f'missing or nonfinite {tag}' for tag, expected in comparable.items() if not finite(expected))
+    reasons = sorted(set(reference_failures + failed))
+    out.update(qualified=not reasons, value=None if reasons else raw, status='withheld' if reasons else 'qualified',
+               errors=errors, reasons=reasons)
+    return out
+
+
 class DualResponseModel(MoleculeResponse):
     """Validated shared operator. Each direct or adjoint action uses the native TensorIR kernels."""
 
@@ -217,30 +245,7 @@ class DualResponseModel(MoleculeResponse):
         self.oracle = oracle
 
     def assess(self, field, observable, value):
-        check(field in FIELD_IDS and observable in OBSERVABLE_IDS, 'unknown scalar response endpoint')
-        def finite(v):
-            return isinstance(v, (float, int, np.floating, np.integer)) and not isinstance(v, (bool, np.bool_)) and math.isfinite(v)
-        raw = float(value) if finite(value) else None
-        out = {'field': field, 'observable': observable, 'raw_value': raw,
-               'target_identity': json_hash([self.endpoint_identity['fields'][field],
-                                             self.endpoint_identity['observables'][observable]]),
-               'qualified': None, 'value': None, 'status': 'awaiting_independent_reference', 'reasons': []}
-        if raw is None:
-            out.update(qualified=False, status='withheld', reasons=['nonfinite or missing candidate'])
-            return out
-        if self.oracle is None:
-            return out
-        ref = self.oracle['targets'][field][observable]
-        reference_failures = list(ref['reasons'])
-        comparable = {method: ref.get(method) for method in ('direct', 'adjoint', 'cphf')}
-        comparable.update({str(h): ref['finite_fields'].get(str(h)) for h in STEPS})
-        errors = {method: abs(raw - float(expected)) for method, expected in comparable.items() if finite(expected)}
-        failed = [tag for tag, err in errors.items() if err > (FIELD_TOL if tag in ref['finite_fields'] else ANALYTIC_TOL)]
-        failed.extend(f'missing or nonfinite {tag}' for tag, expected in comparable.items() if not finite(expected))
-        reasons = sorted(set(reference_failures + failed))
-        out.update(qualified=not reasons, value=None if reasons else raw, status='withheld' if reasons else 'qualified',
-                   errors=errors, reasons=reasons)
-        return out
+        return assess_scalar(self.oracle, self.endpoint_identity, field, observable, value)
 
     def combined_field(self, coefficients, observables=OBSERVABLE_IDS):
         """Solve one physical superposition. Recovery of individual scalars is caller-owned."""
