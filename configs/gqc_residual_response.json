@@ -1,0 +1,17 @@
+{
+  "gqc_commit": "2791504cc238fe83d328fc1718080642b288222a",
+  "pyscf_commit": "c63a953ba603a5ad8c1d65d88da72aaf05ede4d8",
+  "pyscf_version": "2.14.0",
+  "fixtures": ["water", "lih"],
+  "archived_fields": [[1, 0, 0], [0, 1, 0]],
+  "requested_fields": [[1, 1, 0], [1, 0, 1], [0, 1, 1]],
+  "field_steps_au": [0.0005, 0.0002],
+  "scf_energy_tolerance": 1e-13,
+  "scf_gradient_tolerance": 1e-11,
+  "max_scf_cycles": 100,
+  "gmres_rtol": 1e-12,
+  "gmres_atol": 1e-13,
+  "target_residual_tolerance": 1e-10,
+  "analytic_max_abs_tolerance": 1e-8,
+  "finite_field_max_abs_tolerance": 1e-4
+}
