@@ -1,0 +1,23 @@
+{
+  "observed_at_utc": "2026-11-17T17:59:42.023259+00:00",
+  "python": "Python 3.10.12",
+  "git": "git version 2.34.1",
+  "handoff_base": "de60ee48eb7e567b494c558daeba85a8e1aff400",
+  "branch": "codex/source-intake-20261118",
+  "initial_state": "unborn main, origin/main missing; untracked AGENTS.md and docs/N2_GQC.md",
+  "preserved_local_contract": {
+    "before_sha256": "84f31dc6857111f0d908fa3af1c8a183a97b3e815dcf6a7a023df3e760fbf6b1",
+    "after_sha256": "84f31dc6857111f0d908fa3af1c8a183a97b3e815dcf6a7a023df3e760fbf6b1"
+  },
+  "preserved_local_environment_doc": {
+    "before_sha256": "39204a37cb0677216b4e51ac9bd342e228aa2a0ccf3dfd5cbba63bf441e90d99",
+    "after_sha256": "39204a37cb0677216b4e51ac9bd342e228aa2a0ccf3dfd5cbba63bf441e90d99"
+  },
+  "bootstrap_command_failure": {
+    "command": "python - heredoc",
+    "cause": "python command not found; switched to python3",
+    "changed_remote_state": false
+  },
+  "xtbflow_modified": false,
+  "gpu_jobs": 0
+}

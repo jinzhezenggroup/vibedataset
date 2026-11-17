@@ -1,0 +1,122 @@
+{
+  "id": "vmc",
+  "source": {
+    "id": "vmc",
+    "catalog_ids": [
+      "vmc"
+    ],
+    "priority": "P1",
+    "repository_url": "https://github.com/gregongie/vmc",
+    "role": "current",
+    "commit": null,
+    "checkout_path": "_references/vmc",
+    "paper_version_status": "not_established",
+    "selection_reason": "\u7ed3\u6784\u5316\u77e9\u9635\u8865\u5168"
+  },
+  "started_at_utc": "2026-11-17T17:57:25.807279+00:00",
+  "status": "indexed_pending_review",
+  "commands": [
+    {
+      "argv": [
+        "git",
+        "ls-remote",
+        "https://github.com/gregongie/vmc",
+        "HEAD"
+      ],
+      "cwd": ".",
+      "started_at_utc": "2026-11-17T17:57:25.807406+00:00",
+      "stdout": "e8ae5d1d8d306379c6ef11621cb3614078900f1d\tHEAD\n",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 1.6444533949979814,
+      "ended_at_utc": "2026-11-17T17:57:27.452025+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "init",
+        "--quiet"
+      ],
+      "cwd": "_references/vmc",
+      "started_at_utc": "2026-11-17T17:57:27.452745+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.006454959002439864,
+      "ended_at_utc": "2026-11-17T17:57:27.462024+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "remote",
+        "add",
+        "origin",
+        "https://github.com/gregongie/vmc"
+      ],
+      "cwd": "_references/vmc",
+      "started_at_utc": "2026-11-17T17:57:27.462578+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.004374138996354304,
+      "ended_at_utc": "2026-11-17T17:57:27.467480+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "protocol.file.allow=never",
+        "fetch",
+        "--depth=1",
+        "--no-tags",
+        "origin",
+        "e8ae5d1d8d306379c6ef11621cb3614078900f1d"
+      ],
+      "cwd": "_references/vmc",
+      "started_at_utc": "2026-11-17T17:57:27.468009+00:00",
+      "stdout": "",
+      "stderr": "\u6765\u81ea https://github.com/gregongie/vmc\n * branch            e8ae5d1d8d306379c6ef11621cb3614078900f1d -> FETCH_HEAD\n",
+      "returncode": 0,
+      "elapsed_seconds": 3.9721850839996478,
+      "ended_at_utc": "2026-11-17T17:57:31.440766+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "core.autocrlf=false",
+        "checkout",
+        "--detach",
+        "e8ae5d1d8d306379c6ef11621cb3614078900f1d"
+      ],
+      "cwd": "_references/vmc",
+      "started_at_utc": "2026-11-17T17:57:31.441202+00:00",
+      "stdout": "",
+      "stderr": "HEAD \u76ee\u524d\u4f4d\u4e8e e8ae5d1 updated readme\n",
+      "returncode": 0,
+      "elapsed_seconds": 0.009823128988500684,
+      "ended_at_utc": "2026-11-17T17:57:31.453748+00:00"
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "/home/lhshen/vibedataset/handoff/gqcdataset_codex_goal/tools/inventory_sources.py",
+        "_references/vmc",
+        "--recurse-submodules",
+        "--json",
+        "handoff/gqcdataset_codex_goal/research/inventories/vmc.json"
+      ],
+      "cwd": ".",
+      "started_at_utc": "2026-11-17T17:57:31.454220+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.08728863199939951,
+      "ended_at_utc": "2026-11-17T17:57:31.541873+00:00"
+    }
+  ],
+  "receipt_path": "handoff/gqcdataset_codex_goal/research/acquisition/vmc-20261117T175725807262Z.json",
+  "resolved_commit": "e8ae5d1d8d306379c6ef11621cb3614078900f1d",
+  "inventory_path": "handoff/gqcdataset_codex_goal/research/inventories/vmc.json",
+  "ended_at_utc": "2026-11-17T17:57:31.542376+00:00"
+}

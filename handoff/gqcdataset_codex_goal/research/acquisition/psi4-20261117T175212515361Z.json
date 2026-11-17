@@ -1,0 +1,122 @@
+{
+  "id": "psi4",
+  "source": {
+    "id": "psi4",
+    "catalog_ids": [
+      "psi4"
+    ],
+    "priority": "P0",
+    "repository_url": "https://github.com/psi4/psi4",
+    "role": "current",
+    "commit": null,
+    "checkout_path": "_references/psi4",
+    "paper_version_status": "not_established",
+    "selection_reason": "\u91cf\u5316\u540e\u7aef\u4e0e\u5f3a\u57fa\u7ebf"
+  },
+  "started_at_utc": "2026-11-17T17:52:12.515385+00:00",
+  "status": "indexed_pending_review",
+  "commands": [
+    {
+      "argv": [
+        "git",
+        "ls-remote",
+        "https://github.com/psi4/psi4",
+        "HEAD"
+      ],
+      "cwd": ".",
+      "started_at_utc": "2026-11-17T17:52:12.515521+00:00",
+      "stdout": "4a005192ac03d1777915f4449a22f51b3ba06971\tHEAD\n",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 2.7498989010055084,
+      "ended_at_utc": "2026-11-17T17:52:15.265576+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "init",
+        "--quiet"
+      ],
+      "cwd": "_references/psi4",
+      "started_at_utc": "2026-11-17T17:52:15.266087+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.0046743669954594225,
+      "ended_at_utc": "2026-11-17T17:52:15.273509+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "remote",
+        "add",
+        "origin",
+        "https://github.com/psi4/psi4"
+      ],
+      "cwd": "_references/psi4",
+      "started_at_utc": "2026-11-17T17:52:15.274067+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.0037573709996649995,
+      "ended_at_utc": "2026-11-17T17:52:15.278353+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "protocol.file.allow=never",
+        "fetch",
+        "--depth=1",
+        "--no-tags",
+        "origin",
+        "4a005192ac03d1777915f4449a22f51b3ba06971"
+      ],
+      "cwd": "_references/psi4",
+      "started_at_utc": "2026-11-17T17:52:15.278779+00:00",
+      "stdout": "",
+      "stderr": "\u6765\u81ea https://github.com/psi4/psi4\n * branch            4a005192ac03d1777915f4449a22f51b3ba06971 -> FETCH_HEAD\n",
+      "returncode": 0,
+      "elapsed_seconds": 22.910659564004163,
+      "ended_at_utc": "2026-11-17T17:52:38.189875+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "core.autocrlf=false",
+        "checkout",
+        "--detach",
+        "4a005192ac03d1777915f4449a22f51b3ba06971"
+      ],
+      "cwd": "_references/psi4",
+      "started_at_utc": "2026-11-17T17:52:38.190485+00:00",
+      "stdout": "",
+      "stderr": "HEAD \u76ee\u524d\u4f4d\u4e8e 4a00519 Reduce disk usage in CI lanes (#3631)\n",
+      "returncode": 0,
+      "elapsed_seconds": 0.7871788990014466,
+      "ended_at_utc": "2026-11-17T17:52:38.978165+00:00"
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "/home/lhshen/vibedataset/handoff/gqcdataset_codex_goal/tools/inventory_sources.py",
+        "_references/psi4",
+        "--recurse-submodules",
+        "--json",
+        "handoff/gqcdataset_codex_goal/research/inventories/psi4.json"
+      ],
+      "cwd": ".",
+      "started_at_utc": "2026-11-17T17:52:38.978694+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 1.4198759749997407,
+      "ended_at_utc": "2026-11-17T17:52:40.398793+00:00"
+    }
+  ],
+  "receipt_path": "handoff/gqcdataset_codex_goal/research/acquisition/psi4-20261117T175212515361Z.json",
+  "resolved_commit": "4a005192ac03d1777915f4449a22f51b3ba06971",
+  "inventory_path": "handoff/gqcdataset_codex_goal/research/inventories/psi4.json",
+  "ended_at_utc": "2026-11-17T17:52:40.399100+00:00"
+}

@@ -1,0 +1,122 @@
+{
+  "id": "qcengine",
+  "source": {
+    "id": "qcengine",
+    "catalog_ids": [
+      "qcengine"
+    ],
+    "priority": "P1",
+    "repository_url": "https://github.com/MolSSI/QCEngine",
+    "role": "current",
+    "commit": null,
+    "checkout_path": "_references/qcengine",
+    "paper_version_status": "not_established",
+    "selection_reason": "\u6863\u6848\u3001\u5de5\u4f5c\u6d41\u4e0e\u72b6\u6001"
+  },
+  "started_at_utc": "2026-11-17T17:51:49.783597+00:00",
+  "status": "indexed_pending_review",
+  "commands": [
+    {
+      "argv": [
+        "git",
+        "ls-remote",
+        "https://github.com/MolSSI/QCEngine",
+        "HEAD"
+      ],
+      "cwd": ".",
+      "started_at_utc": "2026-11-17T17:51:49.783723+00:00",
+      "stdout": "64982fd087b9b02a76507e2ad2cb75c6f4b4a7e9\tHEAD\n",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 2.0765107049955986,
+      "ended_at_utc": "2026-11-17T17:51:51.860379+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "init",
+        "--quiet"
+      ],
+      "cwd": "_references/qcengine",
+      "started_at_utc": "2026-11-17T17:51:51.861492+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.007116580003639683,
+      "ended_at_utc": "2026-11-17T17:51:51.871474+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "remote",
+        "add",
+        "origin",
+        "https://github.com/MolSSI/QCEngine"
+      ],
+      "cwd": "_references/qcengine",
+      "started_at_utc": "2026-11-17T17:51:51.871965+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.0037644090043613687,
+      "ended_at_utc": "2026-11-17T17:51:51.876104+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "protocol.file.allow=never",
+        "fetch",
+        "--depth=1",
+        "--no-tags",
+        "origin",
+        "64982fd087b9b02a76507e2ad2cb75c6f4b4a7e9"
+      ],
+      "cwd": "_references/qcengine",
+      "started_at_utc": "2026-11-17T17:51:51.876789+00:00",
+      "stdout": "",
+      "stderr": "\u6765\u81ea https://github.com/MolSSI/QCEngine\n * branch            64982fd087b9b02a76507e2ad2cb75c6f4b4a7e9 -> FETCH_HEAD\n",
+      "returncode": 0,
+      "elapsed_seconds": 3.235087947003194,
+      "ended_at_utc": "2026-11-17T17:51:55.112447+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "core.autocrlf=false",
+        "checkout",
+        "--detach",
+        "64982fd087b9b02a76507e2ad2cb75c6f4b4a7e9"
+      ],
+      "cwd": "_references/qcengine",
+      "started_at_utc": "2026-11-17T17:51:55.113122+00:00",
+      "stdout": "",
+      "stderr": "HEAD \u76ee\u524d\u4f4d\u4e8e 64982fd s-dftd3 Hessians (#525)\n",
+      "returncode": 0,
+      "elapsed_seconds": 0.027261219001957215,
+      "ended_at_utc": "2026-11-17T17:51:55.140856+00:00"
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "/home/lhshen/vibedataset/handoff/gqcdataset_codex_goal/tools/inventory_sources.py",
+        "_references/qcengine",
+        "--recurse-submodules",
+        "--json",
+        "handoff/gqcdataset_codex_goal/research/inventories/qcengine.json"
+      ],
+      "cwd": ".",
+      "started_at_utc": "2026-11-17T17:51:55.141333+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.07601253100438043,
+      "ended_at_utc": "2026-11-17T17:51:55.217645+00:00"
+    }
+  ],
+  "receipt_path": "handoff/gqcdataset_codex_goal/research/acquisition/qcengine-20261117T175149783578Z.json",
+  "resolved_commit": "64982fd087b9b02a76507e2ad2cb75c6f4b4a7e9",
+  "inventory_path": "handoff/gqcdataset_codex_goal/research/inventories/qcengine.json",
+  "ended_at_utc": "2026-11-17T17:51:55.217937+00:00"
+}

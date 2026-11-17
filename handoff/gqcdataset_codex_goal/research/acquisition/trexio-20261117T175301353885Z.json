@@ -1,0 +1,122 @@
+{
+  "id": "trexio",
+  "source": {
+    "id": "trexio",
+    "catalog_ids": [
+      "trexio"
+    ],
+    "priority": "P0",
+    "repository_url": "https://github.com/TREX-CoE/trexio",
+    "role": "current",
+    "commit": null,
+    "checkout_path": "_references/trexio",
+    "paper_version_status": "not_established",
+    "selection_reason": "\u6863\u6848\u3001\u5de5\u4f5c\u6d41\u4e0e\u72b6\u6001"
+  },
+  "started_at_utc": "2026-11-17T17:53:01.353906+00:00",
+  "status": "indexed_pending_review",
+  "commands": [
+    {
+      "argv": [
+        "git",
+        "ls-remote",
+        "https://github.com/TREX-CoE/trexio",
+        "HEAD"
+      ],
+      "cwd": ".",
+      "started_at_utc": "2026-11-17T17:53:01.354054+00:00",
+      "stdout": "663f6af01736344d843dc93d1fa010b35536655d\tHEAD\n",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 1.8659908539993921,
+      "ended_at_utc": "2026-11-17T17:53:03.220303+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "init",
+        "--quiet"
+      ],
+      "cwd": "_references/trexio",
+      "started_at_utc": "2026-11-17T17:53:03.220974+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.006032024000887759,
+      "ended_at_utc": "2026-11-17T17:53:03.229784+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "remote",
+        "add",
+        "origin",
+        "https://github.com/TREX-CoE/trexio"
+      ],
+      "cwd": "_references/trexio",
+      "started_at_utc": "2026-11-17T17:53:03.230300+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.0037026359932497144,
+      "ended_at_utc": "2026-11-17T17:53:03.234467+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "protocol.file.allow=never",
+        "fetch",
+        "--depth=1",
+        "--no-tags",
+        "origin",
+        "663f6af01736344d843dc93d1fa010b35536655d"
+      ],
+      "cwd": "_references/trexio",
+      "started_at_utc": "2026-11-17T17:53:03.234989+00:00",
+      "stdout": "",
+      "stderr": "\u6765\u81ea https://github.com/TREX-CoE/trexio\n * branch            663f6af01736344d843dc93d1fa010b35536655d -> FETCH_HEAD\n",
+      "returncode": 0,
+      "elapsed_seconds": 5.221874013004708,
+      "ended_at_utc": "2026-11-17T17:53:08.457396+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "core.autocrlf=false",
+        "checkout",
+        "--detach",
+        "663f6af01736344d843dc93d1fa010b35536655d"
+      ],
+      "cwd": "_references/trexio",
+      "started_at_utc": "2026-11-17T17:53:08.457809+00:00",
+      "stdout": "",
+      "stderr": "HEAD \u76ee\u524d\u4f4d\u4e8e 663f6af Merge pull request #377 from TREX-CoE/fix/python-hdf5-required\n",
+      "returncode": 0,
+      "elapsed_seconds": 0.019442664008238353,
+      "ended_at_utc": "2026-11-17T17:53:08.478129+00:00"
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "/home/lhshen/vibedataset/handoff/gqcdataset_codex_goal/tools/inventory_sources.py",
+        "_references/trexio",
+        "--recurse-submodules",
+        "--json",
+        "handoff/gqcdataset_codex_goal/research/inventories/trexio.json"
+      ],
+      "cwd": ".",
+      "started_at_utc": "2026-11-17T17:53:08.478481+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.1135643970046658,
+      "ended_at_utc": "2026-11-17T17:53:08.592259+00:00"
+    }
+  ],
+  "receipt_path": "handoff/gqcdataset_codex_goal/research/acquisition/trexio-20261117T175301353885Z.json",
+  "resolved_commit": "663f6af01736344d843dc93d1fa010b35536655d",
+  "inventory_path": "handoff/gqcdataset_codex_goal/research/inventories/trexio.json",
+  "ended_at_utc": "2026-11-17T17:53:08.592709+00:00"
+}

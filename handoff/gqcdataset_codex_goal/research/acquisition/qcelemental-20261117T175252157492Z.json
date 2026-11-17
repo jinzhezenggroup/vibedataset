@@ -1,0 +1,122 @@
+{
+  "id": "qcelemental",
+  "source": {
+    "id": "qcelemental",
+    "catalog_ids": [
+      "qcelemental"
+    ],
+    "priority": "P0",
+    "repository_url": "https://github.com/MolSSI/QCElemental",
+    "role": "current",
+    "commit": null,
+    "checkout_path": "_references/qcelemental",
+    "paper_version_status": "not_established",
+    "selection_reason": "\u6863\u6848\u3001\u5de5\u4f5c\u6d41\u4e0e\u72b6\u6001"
+  },
+  "started_at_utc": "2026-11-17T17:52:52.157508+00:00",
+  "status": "indexed_pending_review",
+  "commands": [
+    {
+      "argv": [
+        "git",
+        "ls-remote",
+        "https://github.com/MolSSI/QCElemental",
+        "HEAD"
+      ],
+      "cwd": ".",
+      "started_at_utc": "2026-11-17T17:52:52.157635+00:00",
+      "stdout": "90fda8fa100444da90b47c316a600130af3f1dc4\tHEAD\n",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 2.3252115299983416,
+      "ended_at_utc": "2026-11-17T17:52:54.482985+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "init",
+        "--quiet"
+      ],
+      "cwd": "_references/qcelemental",
+      "started_at_utc": "2026-11-17T17:52:54.483493+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.004369339992990717,
+      "ended_at_utc": "2026-11-17T17:52:54.490659+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "remote",
+        "add",
+        "origin",
+        "https://github.com/MolSSI/QCElemental"
+      ],
+      "cwd": "_references/qcelemental",
+      "started_at_utc": "2026-11-17T17:52:54.491121+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.0031791859946679324,
+      "ended_at_utc": "2026-11-17T17:52:54.494899+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "protocol.file.allow=never",
+        "fetch",
+        "--depth=1",
+        "--no-tags",
+        "origin",
+        "90fda8fa100444da90b47c316a600130af3f1dc4"
+      ],
+      "cwd": "_references/qcelemental",
+      "started_at_utc": "2026-11-17T17:52:54.495217+00:00",
+      "stdout": "",
+      "stderr": "\u6765\u81ea https://github.com/MolSSI/QCElemental\n * branch            90fda8fa100444da90b47c316a600130af3f1dc4 -> FETCH_HEAD\n",
+      "returncode": 0,
+      "elapsed_seconds": 6.691720447997795,
+      "ended_at_utc": "2026-11-17T17:53:01.187302+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "core.autocrlf=false",
+        "checkout",
+        "--detach",
+        "90fda8fa100444da90b47c316a600130af3f1dc4"
+      ],
+      "cwd": "_references/qcelemental",
+      "started_at_utc": "2026-11-17T17:53:01.187796+00:00",
+      "stdout": "",
+      "stderr": "HEAD \u76ee\u524d\u4f4d\u4e8e 90fda8f Fix units registry for pint 0.26.2 CODATA unit braces (#418)\n",
+      "returncode": 0,
+      "elapsed_seconds": 0.06769443399389274,
+      "ended_at_utc": "2026-11-17T17:53:01.255867+00:00"
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "/home/lhshen/vibedataset/handoff/gqcdataset_codex_goal/tools/inventory_sources.py",
+        "_references/qcelemental",
+        "--recurse-submodules",
+        "--json",
+        "handoff/gqcdataset_codex_goal/research/inventories/qcelemental.json"
+      ],
+      "cwd": ".",
+      "started_at_utc": "2026-11-17T17:53:01.256159+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.0959057069994742,
+      "ended_at_utc": "2026-11-17T17:53:01.352292+00:00"
+    }
+  ],
+  "receipt_path": "handoff/gqcdataset_codex_goal/research/acquisition/qcelemental-20261117T175252157492Z.json",
+  "resolved_commit": "90fda8fa100444da90b47c316a600130af3f1dc4",
+  "inventory_path": "handoff/gqcdataset_codex_goal/research/inventories/qcelemental.json",
+  "ended_at_utc": "2026-11-17T17:53:01.352735+00:00"
+}

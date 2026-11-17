@@ -1,0 +1,121 @@
+{
+  "id": "equiv_dens_ml",
+  "source": {
+    "id": "equiv_dens_ml",
+    "catalog_ids": [],
+    "priority": "P1",
+    "repository_url": "https://github.com/MihailBogojeski/equiv_dens_ml",
+    "role": "current",
+    "commit": null,
+    "checkout_path": "_references/equiv_dens_ml",
+    "paper_version_status": "not_established",
+    "selection_reason": "Followed PhiSNet author citation: density-learning, MD and property reuse; distinct from original PhiSNet and dm-PhiSNet",
+    "primary_url": "https://dft.uci.edu/pubs/BHVMBT26.pdf"
+  },
+  "started_at_utc": "2026-11-17T17:54:30.653673+00:00",
+  "status": "indexed_pending_review",
+  "commands": [
+    {
+      "argv": [
+        "git",
+        "ls-remote",
+        "https://github.com/MihailBogojeski/equiv_dens_ml",
+        "HEAD"
+      ],
+      "cwd": ".",
+      "started_at_utc": "2026-11-17T17:54:30.653798+00:00",
+      "stdout": "f05a471b700ba519ed6f0f86343e1da8c288e412\tHEAD\n",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 3.1168127069977345,
+      "ended_at_utc": "2026-11-17T17:54:33.770758+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "init",
+        "--quiet"
+      ],
+      "cwd": "_references/equiv_dens_ml",
+      "started_at_utc": "2026-11-17T17:54:33.771481+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.005371944993385114,
+      "ended_at_utc": "2026-11-17T17:54:33.779598+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "remote",
+        "add",
+        "origin",
+        "https://github.com/MihailBogojeski/equiv_dens_ml"
+      ],
+      "cwd": "_references/equiv_dens_ml",
+      "started_at_utc": "2026-11-17T17:54:33.780045+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.003460224994341843,
+      "ended_at_utc": "2026-11-17T17:54:33.784050+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "protocol.file.allow=never",
+        "fetch",
+        "--depth=1",
+        "--no-tags",
+        "origin",
+        "f05a471b700ba519ed6f0f86343e1da8c288e412"
+      ],
+      "cwd": "_references/equiv_dens_ml",
+      "started_at_utc": "2026-11-17T17:54:33.784360+00:00",
+      "stdout": "",
+      "stderr": "\u6765\u81ea https://github.com/MihailBogojeski/equiv_dens_ml\n * branch            f05a471b700ba519ed6f0f86343e1da8c288e412 -> FETCH_HEAD\n",
+      "returncode": 0,
+      "elapsed_seconds": 15.161635536001995,
+      "ended_at_utc": "2026-11-17T17:54:48.946319+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "core.autocrlf=false",
+        "checkout",
+        "--detach",
+        "f05a471b700ba519ed6f0f86343e1da8c288e412"
+      ],
+      "cwd": "_references/equiv_dens_ml",
+      "started_at_utc": "2026-11-17T17:54:48.946718+00:00",
+      "stdout": "",
+      "stderr": "HEAD \u76ee\u524d\u4f4d\u4e8e f05a471 Merge pull request #38 from MihailBogojeski/md-continue\n",
+      "returncode": 0,
+      "elapsed_seconds": 0.19634501199470833,
+      "ended_at_utc": "2026-11-17T17:54:49.143412+00:00"
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "/home/lhshen/vibedataset/handoff/gqcdataset_codex_goal/tools/inventory_sources.py",
+        "_references/equiv_dens_ml",
+        "--recurse-submodules",
+        "--json",
+        "handoff/gqcdataset_codex_goal/research/inventories/equiv_dens_ml.json"
+      ],
+      "cwd": ".",
+      "started_at_utc": "2026-11-17T17:54:49.143766+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.22128308800165541,
+      "ended_at_utc": "2026-11-17T17:54:49.365380+00:00"
+    }
+  ],
+  "receipt_path": "handoff/gqcdataset_codex_goal/research/acquisition/equiv_dens_ml-20261117T175430653655Z.json",
+  "resolved_commit": "f05a471b700ba519ed6f0f86343e1da8c288e412",
+  "inventory_path": "handoff/gqcdataset_codex_goal/research/inventories/equiv_dens_ml.json",
+  "ended_at_utc": "2026-11-17T17:54:49.365657+00:00"
+}

@@ -43,3 +43,7 @@
 ## 本次材料边界
 
 这套材料于 2026-11-18（Asia/Shanghai）依据当前可见对话重新整理。原 ZIP 与两份历史 PDF 未在当前工作区提供；缺件见 [附件说明](handoff/gqcdataset_codex_goal/attachments/README.md)。不得声称原包被逐字恢复，也不得把缺件说成已上传。源码获取、全量阅读和科学实验需要在后续 issues 中真正执行。
+
+## 本地 n2 运行约定
+
+实际 n2/GQC 操作同时遵守 [n2 执行约定](docs/N2_EXECUTION_CONTRACT.md) 与 [环境记录](docs/N2_GQC.md)。这些文件保留接管前本地约定；历史验证不代表新任务已通过。

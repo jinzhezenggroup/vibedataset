@@ -1,0 +1,21 @@
+{
+  "checked_at_utc": "2026-11-17T18:05:22.060339+00:00",
+  "result": "passed",
+  "coverage_counts": {
+    "indexed": 252312,
+    "read": 3,
+    "behavior_traced": 0,
+    "executed": 0
+  },
+  "source_lock_sha256": "781517b933f237c612e56b407bd0991e0ad753e4c53a47c8cc0f1498f96b3478",
+  "source_coverage_sha256": "42f033ea33b377dda78ae5ce1611aa2e10ce1df7312e3670a6ce3616a2d284bb",
+  "checks": [
+    "inventory gzip and SHA256 round-trip",
+    "lock vs checkout commit/tree and clean state",
+    "exact full-tree coverage including submodule commits",
+    "no duplicate or missing paths",
+    "reviewed CRLF conversions verified against pinned blobs and Git attributes",
+    "read/traced/executed flags backed by explicit blob-bound reviewer records"
+  ],
+  "scope": "Ledger consistency only; no third-party behavior or numerical validation."
+}

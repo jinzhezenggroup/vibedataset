@@ -1,0 +1,122 @@
+{
+  "id": "pyscf",
+  "source": {
+    "id": "pyscf",
+    "catalog_ids": [
+      "pyscf"
+    ],
+    "priority": "P0",
+    "repository_url": "https://github.com/pyscf/pyscf",
+    "role": "current",
+    "commit": null,
+    "checkout_path": "_references/pyscf",
+    "paper_version_status": "not_established",
+    "selection_reason": "\u91cf\u5316\u540e\u7aef\u4e0e\u5f3a\u57fa\u7ebf"
+  },
+  "started_at_utc": "2026-11-17T17:51:54.169685+00:00",
+  "status": "indexed_pending_review",
+  "commands": [
+    {
+      "argv": [
+        "git",
+        "ls-remote",
+        "https://github.com/pyscf/pyscf",
+        "HEAD"
+      ],
+      "cwd": ".",
+      "started_at_utc": "2026-11-17T17:51:54.169817+00:00",
+      "stdout": "2cdf8dc82e679a6a8fc053ce04493d94ad4fc18a\tHEAD\n",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 2.3502103539940435,
+      "ended_at_utc": "2026-11-17T17:51:56.520186+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "init",
+        "--quiet"
+      ],
+      "cwd": "_references/pyscf",
+      "started_at_utc": "2026-11-17T17:51:56.520836+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.005921731004491448,
+      "ended_at_utc": "2026-11-17T17:51:56.529473+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "remote",
+        "add",
+        "origin",
+        "https://github.com/pyscf/pyscf"
+      ],
+      "cwd": "_references/pyscf",
+      "started_at_utc": "2026-11-17T17:51:56.530066+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.0038211500068427995,
+      "ended_at_utc": "2026-11-17T17:51:56.534400+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "protocol.file.allow=never",
+        "fetch",
+        "--depth=1",
+        "--no-tags",
+        "origin",
+        "2cdf8dc82e679a6a8fc053ce04493d94ad4fc18a"
+      ],
+      "cwd": "_references/pyscf",
+      "started_at_utc": "2026-11-17T17:51:56.534856+00:00",
+      "stdout": "",
+      "stderr": "\u6765\u81ea https://github.com/pyscf/pyscf\n * branch            2cdf8dc82e679a6a8fc053ce04493d94ad4fc18a -> FETCH_HEAD\n",
+      "returncode": 0,
+      "elapsed_seconds": 9.531352756006527,
+      "ended_at_utc": "2026-11-17T17:52:06.066670+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "core.autocrlf=false",
+        "checkout",
+        "--detach",
+        "2cdf8dc82e679a6a8fc053ce04493d94ad4fc18a"
+      ],
+      "cwd": "_references/pyscf",
+      "started_at_utc": "2026-11-17T17:52:06.067266+00:00",
+      "stdout": "",
+      "stderr": "HEAD \u76ee\u524d\u4f4d\u4e8e 2cdf8dc Restore deprecated NumInt2C attributes for backward compatibility (#3641)\n",
+      "returncode": 0,
+      "elapsed_seconds": 0.22313325299182907,
+      "ended_at_utc": "2026-11-17T17:52:06.290886+00:00"
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "/home/lhshen/vibedataset/handoff/gqcdataset_codex_goal/tools/inventory_sources.py",
+        "_references/pyscf",
+        "--recurse-submodules",
+        "--json",
+        "handoff/gqcdataset_codex_goal/research/inventories/pyscf.json"
+      ],
+      "cwd": ".",
+      "started_at_utc": "2026-11-17T17:52:06.291214+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.38530491999699734,
+      "ended_at_utc": "2026-11-17T17:52:06.677564+00:00"
+    }
+  ],
+  "receipt_path": "handoff/gqcdataset_codex_goal/research/acquisition/pyscf-20261117T175154169667Z.json",
+  "resolved_commit": "2cdf8dc82e679a6a8fc053ce04493d94ad4fc18a",
+  "inventory_path": "handoff/gqcdataset_codex_goal/research/inventories/pyscf.json",
+  "ended_at_utc": "2026-11-17T17:52:06.677912+00:00"
+}

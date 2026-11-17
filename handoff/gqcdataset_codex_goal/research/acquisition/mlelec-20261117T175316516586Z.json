@@ -1,0 +1,122 @@
+{
+  "id": "mlelec",
+  "source": {
+    "id": "mlelec",
+    "catalog_ids": [
+      "mlelec"
+    ],
+    "priority": "P0",
+    "repository_url": "https://github.com/curiosity54/mlelec",
+    "role": "current",
+    "commit": null,
+    "checkout_path": "_references/mlelec",
+    "paper_version_status": "not_established",
+    "selection_reason": "\u7535\u5b50\u6001\u5b66\u4e60\u4e0e\u53ef\u5fae\u6df7\u5408\u8ba1\u7b97"
+  },
+  "started_at_utc": "2026-11-17T17:53:16.516612+00:00",
+  "status": "indexed_pending_review",
+  "commands": [
+    {
+      "argv": [
+        "git",
+        "ls-remote",
+        "https://github.com/curiosity54/mlelec",
+        "HEAD"
+      ],
+      "cwd": ".",
+      "started_at_utc": "2026-11-17T17:53:16.516792+00:00",
+      "stdout": "73da12b404ff13008d123767f702ca129716dccd\tHEAD\n",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 1.7226529120089253,
+      "ended_at_utc": "2026-11-17T17:53:18.239626+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "init",
+        "--quiet"
+      ],
+      "cwd": "_references/mlelec",
+      "started_at_utc": "2026-11-17T17:53:18.240207+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.005964447002043016,
+      "ended_at_utc": "2026-11-17T17:53:18.248979+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "remote",
+        "add",
+        "origin",
+        "https://github.com/curiosity54/mlelec"
+      ],
+      "cwd": "_references/mlelec",
+      "started_at_utc": "2026-11-17T17:53:18.249331+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.002728902007220313,
+      "ended_at_utc": "2026-11-17T17:53:18.252376+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "protocol.file.allow=never",
+        "fetch",
+        "--depth=1",
+        "--no-tags",
+        "origin",
+        "73da12b404ff13008d123767f702ca129716dccd"
+      ],
+      "cwd": "_references/mlelec",
+      "started_at_utc": "2026-11-17T17:53:18.252685+00:00",
+      "stdout": "",
+      "stderr": "\u6765\u81ea https://github.com/curiosity54/mlelec\n * branch            73da12b404ff13008d123767f702ca129716dccd -> FETCH_HEAD\n",
+      "returncode": 0,
+      "elapsed_seconds": 61.29046346399991,
+      "ended_at_utc": "2026-11-17T17:54:19.543449+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "core.autocrlf=false",
+        "checkout",
+        "--detach",
+        "73da12b404ff13008d123767f702ca129716dccd"
+      ],
+      "cwd": "_references/mlelec",
+      "started_at_utc": "2026-11-17T17:54:19.543975+00:00",
+      "stdout": "",
+      "stderr": "HEAD \u76ee\u524d\u4f4d\u4e8e 73da12b Squashed all commits into one\n",
+      "returncode": 0,
+      "elapsed_seconds": 1.476503917001537,
+      "ended_at_utc": "2026-11-17T17:54:21.020896+00:00"
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "/home/lhshen/vibedataset/handoff/gqcdataset_codex_goal/tools/inventory_sources.py",
+        "_references/mlelec",
+        "--recurse-submodules",
+        "--json",
+        "handoff/gqcdataset_codex_goal/research/inventories/mlelec.json"
+      ],
+      "cwd": ".",
+      "started_at_utc": "2026-11-17T17:54:21.021443+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.6928320560109569,
+      "ended_at_utc": "2026-11-17T17:54:21.714490+00:00"
+    }
+  ],
+  "receipt_path": "handoff/gqcdataset_codex_goal/research/acquisition/mlelec-20261117T175316516586Z.json",
+  "resolved_commit": "73da12b404ff13008d123767f702ca129716dccd",
+  "inventory_path": "handoff/gqcdataset_codex_goal/research/inventories/mlelec.json",
+  "ended_at_utc": "2026-11-17T17:54:21.714869+00:00"
+}

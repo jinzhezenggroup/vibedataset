@@ -1,0 +1,27 @@
+{
+  "id": "xtb-submodule",
+  "status": "complete",
+  "started_at_utc": "2026-11-17T17:52:58.538186+00:00",
+  "commands": [
+    {
+      "argv": [
+        "git",
+        "-c",
+        "protocol.file.allow=never",
+        "submodule",
+        "update",
+        "--init",
+        "--recursive",
+        "--depth=1"
+      ],
+      "cwd": "_references/xtb",
+      "started_at_utc": "2026-11-17T17:52:58.538216+00:00",
+      "stdout": "\u5b50\u6a21\u7ec4\u8def\u5f84 'assets/aur/xtb-git'\uff1a\u68c0\u51fa '4c3d1a9078ff0e37a3c5ca1388e23394ce26bd8c'\n",
+      "stderr": "\u5b50\u6a21\u7ec4 'assets/aur/xtb-git'\uff08https://aur.archlinux.org/xtb-git.git\uff09\u5df2\u5bf9\u8def\u5f84 'assets/aur/xtb-git' \u6ce8\u518c\n\u6b63\u514b\u9686\u5230 '/home/lhshen/vibedataset/_references/xtb/assets/aur/xtb-git'...\n\u6765\u81ea https://aur.archlinux.org/xtb-git\n * branch            4c3d1a9078ff0e37a3c5ca1388e23394ce26bd8c -> FETCH_HEAD\n",
+      "returncode": 0,
+      "elapsed_seconds": 8.20259200099099,
+      "ended_at_utc": "2026-11-17T17:53:06.741040+00:00"
+    }
+  ],
+  "receipt_path": "handoff/gqcdataset_codex_goal/research/acquisition/xtb-submodule-20261118.json"
+}

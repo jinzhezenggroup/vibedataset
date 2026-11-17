@@ -1,0 +1,122 @@
+{
+  "id": "hvmc",
+  "source": {
+    "id": "hvmc",
+    "catalog_ids": [
+      "hvmc"
+    ],
+    "priority": "P1",
+    "repository_url": "https://github.com/RateTheory/HVMC",
+    "role": "current",
+    "commit": null,
+    "checkout_path": "_references/hvmc",
+    "paper_version_status": "not_established",
+    "selection_reason": "\u7ed3\u6784\u5316\u77e9\u9635\u8865\u5168"
+  },
+  "started_at_utc": "2026-11-17T17:56:51.494416+00:00",
+  "status": "indexed_pending_review",
+  "commands": [
+    {
+      "argv": [
+        "git",
+        "ls-remote",
+        "https://github.com/RateTheory/HVMC",
+        "HEAD"
+      ],
+      "cwd": ".",
+      "started_at_utc": "2026-11-17T17:56:51.494563+00:00",
+      "stdout": "389bc8abad78d574ae971289226a27c620a0c351\tHEAD\n",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 1.6191228800016688,
+      "ended_at_utc": "2026-11-17T17:56:53.113849+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "init",
+        "--quiet"
+      ],
+      "cwd": "_references/hvmc",
+      "started_at_utc": "2026-11-17T17:56:53.114483+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.005521136990864761,
+      "ended_at_utc": "2026-11-17T17:56:53.122749+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "remote",
+        "add",
+        "origin",
+        "https://github.com/RateTheory/HVMC"
+      ],
+      "cwd": "_references/hvmc",
+      "started_at_utc": "2026-11-17T17:56:53.123236+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.0037345360033214092,
+      "ended_at_utc": "2026-11-17T17:56:53.127517+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "protocol.file.allow=never",
+        "fetch",
+        "--depth=1",
+        "--no-tags",
+        "origin",
+        "389bc8abad78d574ae971289226a27c620a0c351"
+      ],
+      "cwd": "_references/hvmc",
+      "started_at_utc": "2026-11-17T17:56:53.127951+00:00",
+      "stdout": "",
+      "stderr": "\u6765\u81ea https://github.com/RateTheory/HVMC\n * branch            389bc8abad78d574ae971289226a27c620a0c351 -> FETCH_HEAD\n",
+      "returncode": 0,
+      "elapsed_seconds": 16.998231129997293,
+      "ended_at_utc": "2026-11-17T17:57:10.126572+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "core.autocrlf=false",
+        "checkout",
+        "--detach",
+        "389bc8abad78d574ae971289226a27c620a0c351"
+      ],
+      "cwd": "_references/hvmc",
+      "started_at_utc": "2026-11-17T17:57:10.127015+00:00",
+      "stdout": "",
+      "stderr": "HEAD \u76ee\u524d\u4f4d\u4e8e 389bc8a Update calcFreeEnergy.py\n",
+      "returncode": 0,
+      "elapsed_seconds": 0.43387317001179326,
+      "ended_at_utc": "2026-11-17T17:57:10.563634+00:00"
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "/home/lhshen/vibedataset/handoff/gqcdataset_codex_goal/tools/inventory_sources.py",
+        "_references/hvmc",
+        "--recurse-submodules",
+        "--json",
+        "handoff/gqcdataset_codex_goal/research/inventories/hvmc.json"
+      ],
+      "cwd": ".",
+      "started_at_utc": "2026-11-17T17:57:10.563944+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.38300479600729886,
+      "ended_at_utc": "2026-11-17T17:57:10.947135+00:00"
+    }
+  ],
+  "receipt_path": "handoff/gqcdataset_codex_goal/research/acquisition/hvmc-20261117T175651494393Z.json",
+  "resolved_commit": "389bc8abad78d574ae971289226a27c620a0c351",
+  "inventory_path": "handoff/gqcdataset_codex_goal/research/inventories/hvmc.json",
+  "ended_at_utc": "2026-11-17T17:57:10.947450+00:00"
+}

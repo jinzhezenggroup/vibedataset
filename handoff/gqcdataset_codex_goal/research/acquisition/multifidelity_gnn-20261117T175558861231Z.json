@@ -1,0 +1,122 @@
+{
+  "id": "multifidelity_gnn",
+  "source": {
+    "id": "multifidelity_gnn",
+    "catalog_ids": [
+      "multifidelity_gnn"
+    ],
+    "priority": "P1",
+    "repository_url": "https://github.com/davidbuterez/multi-fidelity-gnns-for-drug-discovery-and-quantum-mechanics",
+    "role": "current",
+    "commit": null,
+    "checkout_path": "_references/multifidelity_gnn",
+    "paper_version_status": "not_established",
+    "selection_reason": "\u591a\u4fdd\u771f\u3001\u4e3b\u52a8\u91c7\u6837\u4e0e\u7f3a\u5931\u6807\u7b7e"
+  },
+  "started_at_utc": "2026-11-17T17:55:58.861268+00:00",
+  "status": "indexed_pending_review",
+  "commands": [
+    {
+      "argv": [
+        "git",
+        "ls-remote",
+        "https://github.com/davidbuterez/multi-fidelity-gnns-for-drug-discovery-and-quantum-mechanics",
+        "HEAD"
+      ],
+      "cwd": ".",
+      "started_at_utc": "2026-11-17T17:55:58.861482+00:00",
+      "stdout": "84ee8a280557d7fbc2ebd1042468e21ce8ea16c6\tHEAD\n",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 1.4574041360028787,
+      "ended_at_utc": "2026-11-17T17:56:00.319160+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "init",
+        "--quiet"
+      ],
+      "cwd": "_references/multifidelity_gnn",
+      "started_at_utc": "2026-11-17T17:56:00.319821+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.005739094995078631,
+      "ended_at_utc": "2026-11-17T17:56:00.328170+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "remote",
+        "add",
+        "origin",
+        "https://github.com/davidbuterez/multi-fidelity-gnns-for-drug-discovery-and-quantum-mechanics"
+      ],
+      "cwd": "_references/multifidelity_gnn",
+      "started_at_utc": "2026-11-17T17:56:00.328756+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.0037164449895499274,
+      "ended_at_utc": "2026-11-17T17:56:00.332903+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "protocol.file.allow=never",
+        "fetch",
+        "--depth=1",
+        "--no-tags",
+        "origin",
+        "84ee8a280557d7fbc2ebd1042468e21ce8ea16c6"
+      ],
+      "cwd": "_references/multifidelity_gnn",
+      "started_at_utc": "2026-11-17T17:56:00.333328+00:00",
+      "stdout": "",
+      "stderr": "\u6765\u81ea https://github.com/davidbuterez/multi-fidelity-gnns-for-drug-discovery-and-quantum-mechanics\n * branch            84ee8a280557d7fbc2ebd1042468e21ce8ea16c6 -> FETCH_HEAD\n",
+      "returncode": 0,
+      "elapsed_seconds": 49.58135168599256,
+      "ended_at_utc": "2026-11-17T17:56:49.915030+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "core.autocrlf=false",
+        "checkout",
+        "--detach",
+        "84ee8a280557d7fbc2ebd1042468e21ce8ea16c6"
+      ],
+      "cwd": "_references/multifidelity_gnn",
+      "started_at_utc": "2026-11-17T17:56:49.915640+00:00",
+      "stdout": "",
+      "stderr": "HEAD \u76ee\u524d\u4f4d\u4e8e 84ee8a2 Update README.md with published paper information\n",
+      "returncode": 0,
+      "elapsed_seconds": 0.9277608970005531,
+      "ended_at_utc": "2026-11-17T17:56:50.843779+00:00"
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "/home/lhshen/vibedataset/handoff/gqcdataset_codex_goal/tools/inventory_sources.py",
+        "_references/multifidelity_gnn",
+        "--recurse-submodules",
+        "--json",
+        "handoff/gqcdataset_codex_goal/research/inventories/multifidelity_gnn.json"
+      ],
+      "cwd": ".",
+      "started_at_utc": "2026-11-17T17:56:50.844121+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.6449505149939796,
+      "ended_at_utc": "2026-11-17T17:56:51.491076+00:00"
+    }
+  ],
+  "receipt_path": "handoff/gqcdataset_codex_goal/research/acquisition/multifidelity_gnn-20261117T175558861231Z.json",
+  "resolved_commit": "84ee8a280557d7fbc2ebd1042468e21ce8ea16c6",
+  "inventory_path": "handoff/gqcdataset_codex_goal/research/inventories/multifidelity_gnn.json",
+  "ended_at_utc": "2026-11-17T17:56:51.491403+00:00"
+}

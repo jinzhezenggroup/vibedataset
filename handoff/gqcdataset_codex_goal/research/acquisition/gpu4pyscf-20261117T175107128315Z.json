@@ -1,0 +1,122 @@
+{
+  "id": "gpu4pyscf",
+  "source": {
+    "id": "gpu4pyscf",
+    "catalog_ids": [
+      "gpu4pyscf"
+    ],
+    "priority": "P1",
+    "repository_url": "https://github.com/pyscf/gpu4pyscf",
+    "role": "current",
+    "commit": null,
+    "checkout_path": "_references/gpu4pyscf",
+    "paper_version_status": "not_established",
+    "selection_reason": "\u91cf\u5316\u540e\u7aef\u4e0e\u5f3a\u57fa\u7ebf"
+  },
+  "started_at_utc": "2026-11-17T17:51:07.128349+00:00",
+  "status": "indexed_pending_review",
+  "commands": [
+    {
+      "argv": [
+        "git",
+        "ls-remote",
+        "https://github.com/pyscf/gpu4pyscf",
+        "HEAD"
+      ],
+      "cwd": ".",
+      "started_at_utc": "2026-11-17T17:51:07.128621+00:00",
+      "stdout": "5a717f899cb40d64a5799ef1df7e3626c505c3bd\tHEAD\n",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 2.0820846920105396,
+      "ended_at_utc": "2026-11-17T17:51:09.211020+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "init",
+        "--quiet"
+      ],
+      "cwd": "_references/gpu4pyscf",
+      "started_at_utc": "2026-11-17T17:51:09.211493+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.0026686230121413246,
+      "ended_at_utc": "2026-11-17T17:51:09.216747+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "remote",
+        "add",
+        "origin",
+        "https://github.com/pyscf/gpu4pyscf"
+      ],
+      "cwd": "_references/gpu4pyscf",
+      "started_at_utc": "2026-11-17T17:51:09.217015+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.0025156629999401048,
+      "ended_at_utc": "2026-11-17T17:51:09.219736+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "protocol.file.allow=never",
+        "fetch",
+        "--depth=1",
+        "--no-tags",
+        "origin",
+        "5a717f899cb40d64a5799ef1df7e3626c505c3bd"
+      ],
+      "cwd": "_references/gpu4pyscf",
+      "started_at_utc": "2026-11-17T17:51:09.220028+00:00",
+      "stdout": "",
+      "stderr": "\u6765\u81ea https://github.com/pyscf/gpu4pyscf\n * branch            5a717f899cb40d64a5799ef1df7e3626c505c3bd -> FETCH_HEAD\n",
+      "returncode": 0,
+      "elapsed_seconds": 9.484350400991389,
+      "ended_at_utc": "2026-11-17T17:51:18.704591+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "core.autocrlf=false",
+        "checkout",
+        "--detach",
+        "5a717f899cb40d64a5799ef1df7e3626c505c3bd"
+      ],
+      "cwd": "_references/gpu4pyscf",
+      "started_at_utc": "2026-11-17T17:51:18.705031+00:00",
+      "stdout": "",
+      "stderr": "HEAD \u76ee\u524d\u4f4d\u4e8e 5a717f8 Adapt API change for cuEST interface (#1045)\n",
+      "returncode": 0,
+      "elapsed_seconds": 0.09424630299326964,
+      "ended_at_utc": "2026-11-17T17:51:18.799658+00:00"
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "/home/lhshen/vibedataset/handoff/gqcdataset_codex_goal/tools/inventory_sources.py",
+        "_references/gpu4pyscf",
+        "--recurse-submodules",
+        "--json",
+        "handoff/gqcdataset_codex_goal/research/inventories/gpu4pyscf.json"
+      ],
+      "cwd": ".",
+      "started_at_utc": "2026-11-17T17:51:18.800191+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.2166903170000296,
+      "ended_at_utc": "2026-11-17T17:51:19.017444+00:00"
+    }
+  ],
+  "receipt_path": "handoff/gqcdataset_codex_goal/research/acquisition/gpu4pyscf-20261117T175107128315Z.json",
+  "resolved_commit": "5a717f899cb40d64a5799ef1df7e3626c505c3bd",
+  "inventory_path": "handoff/gqcdataset_codex_goal/research/inventories/gpu4pyscf.json",
+  "ended_at_utc": "2026-11-17T17:51:19.017884+00:00"
+}

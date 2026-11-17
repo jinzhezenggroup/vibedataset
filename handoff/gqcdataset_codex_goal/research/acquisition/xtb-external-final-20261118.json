@@ -1,0 +1,25 @@
+{
+  "id": "xtb-external-final",
+  "status": "complete",
+  "started_at_utc": "2026-11-17T17:53:49.680986+00:00",
+  "commands": [
+    {
+      "argv": [
+        "python3",
+        "handoff/gqcdataset_codex_goal/tools/inventory_sources.py",
+        "_references/xtb",
+        "--recurse-submodules",
+        "--json",
+        "handoff/gqcdataset_codex_goal/research/inventories/xtb.json"
+      ],
+      "cwd": ".",
+      "started_at_utc": "2026-11-17T17:53:49.681277+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.1655230339965783,
+      "ended_at_utc": "2026-11-17T17:53:49.846957+00:00"
+    }
+  ],
+  "receipt_path": "handoff/gqcdataset_codex_goal/research/acquisition/xtb-external-final-20261118.json"
+}

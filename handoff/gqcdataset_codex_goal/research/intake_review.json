@@ -1,0 +1,373 @@
+{
+  "schema_version": 1,
+  "repositories": {
+    "aiida": {
+      "root_tree_reviewed": true,
+      "reviewer": "Codex",
+      "reviewed_at_utc": "2026-11-17T17:58:14.475299+00:00",
+      "review_scope": "Reviewed inventory integrity, full root path scope, license locations and submodule/LFS status; not source comprehension or dependency closure.",
+      "known_gaps": [],
+      "commit": "31c1dcf5936359c7eaaebaeb335dabe141dfb40e"
+    },
+    "dxtb": {
+      "root_tree_reviewed": true,
+      "reviewer": "Codex",
+      "reviewed_at_utc": "2026-11-17T17:58:14.475299+00:00",
+      "review_scope": "Reviewed inventory integrity, full root path scope, license locations and submodule/LFS status; not source comprehension or dependency closure.",
+      "known_gaps": [],
+      "commit": "6961f9ceba9ce813e78a5be1ed5e383b8eb7824b"
+    },
+    "equiv_dens_ml": {
+      "root_tree_reviewed": true,
+      "reviewer": "Codex",
+      "reviewed_at_utc": "2026-11-17T17:58:14.475299+00:00",
+      "review_scope": "Reviewed inventory integrity, full root path scope, license locations and submodule/LFS status; not source comprehension or dependency closure.",
+      "known_gaps": [],
+      "commit": "f05a471b700ba519ed6f0f86343e1da8c288e412"
+    },
+    "gpu4pyscf": {
+      "root_tree_reviewed": true,
+      "reviewer": "Codex",
+      "reviewed_at_utc": "2026-11-17T17:58:14.475299+00:00",
+      "review_scope": "Reviewed inventory integrity, full root path scope, license locations and submodule/LFS status; not source comprehension or dependency closure.",
+      "known_gaps": [],
+      "commit": "5a717f899cb40d64a5799ef1df7e3626c505c3bd"
+    },
+    "gqc": {
+      "root_tree_reviewed": true,
+      "reviewer": "Codex",
+      "reviewed_at_utc": "2026-11-17T17:58:14.475299+00:00",
+      "review_scope": "Reviewed inventory integrity, full root path scope, license locations and submodule/LFS status; not source comprehension or dependency closure.",
+      "known_gaps": [
+        "Current source differs from n2 runtime-source pin; no matching current native binary was built or tested."
+      ],
+      "commit": "2791504cc238fe83d328fc1718080642b288222a"
+    },
+    "gqc_runtime": {
+      "root_tree_reviewed": true,
+      "reviewer": "Codex",
+      "reviewed_at_utc": "2026-11-17T17:58:14.475299+00:00",
+      "review_scope": "Reviewed inventory integrity, full root path scope, license locations and submodule/LFS status; not source comprehension or dependency closure.",
+      "known_gaps": [
+        "runtime.env declares this source; matching native hash is observed, but no reproducible-build attestation independently proves exact source-to-binary correspondence."
+      ],
+      "commit": "2bf3fd98da9c6cfba46ca83345e63e1d934e4780"
+    },
+    "mlelec": {
+      "root_tree_reviewed": true,
+      "reviewer": "Codex",
+      "reviewed_at_utc": "2026-11-17T17:58:14.475299+00:00",
+      "review_scope": "Reviewed inventory integrity, full root path scope, license locations and submodule/LFS status; not source comprehension or dependency closure.",
+      "known_gaps": [
+        "Paper branch/commit not established; current default branch is not asserted to reproduce Suman 2025.",
+        "No explicit license located; see pyproject.toml."
+      ],
+      "license_note": "No LICENSE/COPYING file in pinned tree; pyproject.toml contains license TODO. Redistribution/modification permission unresolved.",
+      "commit": "73da12b404ff13008d123767f702ca129716dccd"
+    },
+    "psi4": {
+      "root_tree_reviewed": true,
+      "reviewer": "Codex",
+      "reviewed_at_utc": "2026-11-17T17:58:14.475299+00:00",
+      "review_scope": "Reviewed inventory integrity, full root path scope, license locations and submodule/LFS status; not source comprehension or dependency closure.",
+      "known_gaps": [],
+      "commit": "4a005192ac03d1777915f4449a22f51b3ba06971"
+    },
+    "pyscf": {
+      "root_tree_reviewed": true,
+      "reviewer": "Codex",
+      "reviewed_at_utc": "2026-11-17T17:58:14.475299+00:00",
+      "review_scope": "Reviewed inventory integrity, full root path scope, license locations and submodule/LFS status; not source comprehension or dependency closure.",
+      "known_gaps": [],
+      "commit": "2cdf8dc82e679a6a8fc053ce04493d94ad4fc18a"
+    },
+    "pyscf_forge": {
+      "root_tree_reviewed": true,
+      "reviewer": "Codex",
+      "reviewed_at_utc": "2026-11-17T17:58:14.475299+00:00",
+      "review_scope": "Reviewed inventory integrity, full root path scope, license locations and submodule/LFS status; not source comprehension or dependency closure.",
+      "known_gaps": [],
+      "commit": "7e386107da6a463be73cfe67c3e01e087683b164"
+    },
+    "pyscfad": {
+      "root_tree_reviewed": true,
+      "reviewer": "Codex",
+      "reviewed_at_utc": "2026-11-17T17:58:14.475299+00:00",
+      "review_scope": "Reviewed inventory integrity, full root path scope, license locations and submodule/LFS status; not source comprehension or dependency closure.",
+      "known_gaps": [],
+      "commit": "190fbb4670de4c989333a5eb49b401efd5395a3b"
+    },
+    "qcdb": {
+      "root_tree_reviewed": true,
+      "reviewer": "Codex",
+      "reviewed_at_utc": "2026-11-17T17:58:14.475299+00:00",
+      "review_scope": "Reviewed inventory integrity, full root path scope, license locations and submodule/LFS status; not source comprehension or dependency closure.",
+      "known_gaps": [],
+      "commit": "d9e156ef8b313ac0633211fc6b841f84a3ddde24"
+    },
+    "qcelemental": {
+      "root_tree_reviewed": true,
+      "reviewer": "Codex",
+      "reviewed_at_utc": "2026-11-17T17:58:14.475299+00:00",
+      "review_scope": "Reviewed inventory integrity, full root path scope, license locations and submodule/LFS status; not source comprehension or dependency closure.",
+      "known_gaps": [],
+      "commit": "90fda8fa100444da90b47c316a600130af3f1dc4"
+    },
+    "qcengine": {
+      "root_tree_reviewed": true,
+      "reviewer": "Codex",
+      "reviewed_at_utc": "2026-11-17T17:58:14.475299+00:00",
+      "review_scope": "Reviewed inventory integrity, full root path scope, license locations and submodule/LFS status; not source comprehension or dependency closure.",
+      "known_gaps": [],
+      "commit": "64982fd087b9b02a76507e2ad2cb75c6f4b4a7e9"
+    },
+    "qcfractal": {
+      "root_tree_reviewed": true,
+      "reviewer": "Codex",
+      "reviewed_at_utc": "2026-11-17T17:58:14.475299+00:00",
+      "review_scope": "Reviewed inventory integrity, full root path scope, license locations and submodule/LFS status; not source comprehension or dependency closure.",
+      "known_gaps": [],
+      "commit": "4ec1ed623f82536076c069dd65a4eb132969d9ed"
+    },
+    "schnorb": {
+      "root_tree_reviewed": true,
+      "reviewer": "Codex",
+      "reviewed_at_utc": "2026-11-17T17:58:14.475299+00:00",
+      "review_scope": "Reviewed inventory integrity, full root path scope, license locations and submodule/LFS status; not source comprehension or dependency closure.",
+      "known_gaps": [],
+      "commit": "38cb268ea431b46e3b2088dda48bcd1983462ff5"
+    },
+    "tblite": {
+      "root_tree_reviewed": true,
+      "reviewer": "Codex",
+      "reviewed_at_utc": "2026-11-17T17:58:14.475299+00:00",
+      "review_scope": "Reviewed inventory integrity, full root path scope, license locations and submodule/LFS status; not source comprehension or dependency closure.",
+      "known_gaps": [],
+      "commit": "c6f66b93f7b3ed5db77698021822eaedb8074ce6"
+    },
+    "trexio": {
+      "root_tree_reviewed": true,
+      "reviewer": "Codex",
+      "reviewed_at_utc": "2026-11-17T17:58:14.475299+00:00",
+      "review_scope": "Reviewed inventory integrity, full root path scope, license locations and submodule/LFS status; not source comprehension or dependency closure.",
+      "known_gaps": [],
+      "commit": "663f6af01736344d843dc93d1fa010b35536655d"
+    },
+    "trexio_tools": {
+      "root_tree_reviewed": true,
+      "reviewer": "Codex",
+      "reviewed_at_utc": "2026-11-17T17:58:14.475299+00:00",
+      "review_scope": "Reviewed inventory integrity, full root path scope, license locations and submodule/LFS status; not source comprehension or dependency closure.",
+      "known_gaps": [],
+      "commit": "b07bf8d94cf4de9d93118ca023fff9dda5213450"
+    },
+    "xtb": {
+      "root_tree_reviewed": true,
+      "reviewer": "Codex",
+      "reviewed_at_utc": "2026-11-17T17:58:14.475299+00:00",
+      "review_scope": "Reviewed inventory integrity, full root path scope, license locations and submodule/LFS status; not source comprehension or dependency closure.",
+      "known_gaps": [],
+      "commit": "4b8c987066c7e9bd0c2b727ce026fb9a581c273a"
+    },
+    "xtbloom": {
+      "root_tree_reviewed": true,
+      "reviewer": "Codex",
+      "reviewed_at_utc": "2026-11-17T17:58:14.475299+00:00",
+      "review_scope": "Reviewed inventory integrity, full root path scope, license locations and submodule/LFS status; not source comprehension or dependency closure.",
+      "known_gaps": [
+        "pyproject.toml setuptools_scm pre_parse=fail_on_shallow; fetch history and tags before building. Native runtime not installed or tested here."
+      ],
+      "commit": "16ec6bb04629b568b20e012e9b6409fb0ccff0f8"
+    },
+    "ani1": {
+      "root_tree_reviewed": true,
+      "reviewer": "Codex",
+      "reviewed_at_utc": "2026-11-17T17:59:08.919219+00:00",
+      "review_scope": "Reviewed complete root index scope, integrity blockers, submodule/LFS states and license locations; not source comprehension or external dependency closure.",
+      "known_gaps": [],
+      "commit": "62abf3b7deb00a5ee03b3749b32873a5654042cb"
+    },
+    "ani1x_ccx": {
+      "root_tree_reviewed": true,
+      "reviewer": "Codex",
+      "reviewed_at_utc": "2026-11-17T17:59:08.919219+00:00",
+      "review_scope": "Reviewed complete root index scope, integrity blockers, submodule/LFS states and license locations; not source comprehension or external dependency closure.",
+      "known_gaps": [
+        "Pinned README identifies data-access scripts; actual FigShare dataset and original training pipeline not acquired."
+      ],
+      "commit": "c6b6d20b9915a4534204800b634fc1f8ee0a08bc"
+    },
+    "halide": {
+      "root_tree_reviewed": true,
+      "reviewer": "Codex",
+      "reviewed_at_utc": "2026-11-17T17:59:08.919219+00:00",
+      "review_scope": "Reviewed complete root index scope, integrity blockers, submodule/LFS states and license locations; not source comprehension or external dependency closure.",
+      "known_gaps": [],
+      "commit": "ac9f247583a633bd64e4b828d9bdcd4ffd952ce8"
+    },
+    "hvmc": {
+      "root_tree_reviewed": true,
+      "reviewer": "Codex",
+      "reviewed_at_utc": "2026-11-17T17:59:08.919219+00:00",
+      "review_scope": "Reviewed complete root index scope, integrity blockers, submodule/LFS states and license locations; not source comprehension or external dependency closure.",
+      "known_gaps": [],
+      "commit": "389bc8abad78d574ae971289226a27c620a0c351"
+    },
+    "multifidelity_gnn": {
+      "root_tree_reviewed": true,
+      "reviewer": "Codex",
+      "reviewed_at_utc": "2026-11-17T17:59:08.919219+00:00",
+      "review_scope": "Reviewed complete root index scope, integrity blockers, submodule/LFS states and license locations; not source comprehension or external dependency closure.",
+      "known_gaps": [],
+      "commit": "84ee8a280557d7fbc2ebd1042468e21ce8ea16c6"
+    },
+    "nabladft": {
+      "root_tree_reviewed": true,
+      "reviewer": "Codex",
+      "reviewed_at_utc": "2026-11-17T17:59:08.919219+00:00",
+      "review_scope": "Reviewed complete root index scope, integrity blockers, submodule/LFS states and license locations; not source comprehension or external dependency closure.",
+      "known_gaps": [],
+      "commit": "67ca402809806e5dd55095e1f095ec9b2683ac41"
+    },
+    "pvmc": {
+      "root_tree_reviewed": true,
+      "reviewer": "Codex",
+      "reviewed_at_utc": "2026-11-17T17:59:08.919219+00:00",
+      "review_scope": "Reviewed complete root index scope, integrity blockers, submodule/LFS states and license locations; not source comprehension or external dependency closure.",
+      "known_gaps": [],
+      "commit": "0d3340644047abc727896753f48650f8c5205a89"
+    },
+    "qemfi": {
+      "root_tree_reviewed": true,
+      "reviewer": "Codex",
+      "reviewed_at_utc": "2026-11-17T17:59:08.919219+00:00",
+      "review_scope": "Reviewed complete root index scope, integrity blockers, submodule/LFS states and license locations; not source comprehension or external dependency closure.",
+      "known_gaps": [],
+      "commit": "883eca5b12c96ca2248fddcc671fcd032696552a"
+    },
+    "qhnet": {
+      "root_tree_reviewed": true,
+      "reviewer": "Codex",
+      "reviewed_at_utc": "2026-11-17T17:59:08.919219+00:00",
+      "review_scope": "Reviewed complete root index scope, integrity blockers, submodule/LFS states and license locations; not source comprehension or external dependency closure.",
+      "known_gaps": [
+        "AIRS complete monorepo acquired; QHNet and QH9 share this pin. Their paper versions and individual dependencies remain unaudited."
+      ],
+      "commit": "594e8bad8cd0b24a207c818e09b39ccc0aebcd4d"
+    },
+    "torchani": {
+      "root_tree_reviewed": true,
+      "reviewer": "Codex",
+      "reviewed_at_utc": "2026-11-17T17:59:08.919219+00:00",
+      "review_scope": "Reviewed complete root index scope, integrity blockers, submodule/LFS states and license locations; not source comprehension or external dependency closure.",
+      "known_gaps": [],
+      "commit": "4f9c239eac706e010d3ca1f7c5b7c91abc9ac4c7"
+    },
+    "vmc": {
+      "root_tree_reviewed": true,
+      "reviewer": "Codex",
+      "reviewed_at_utc": "2026-11-17T17:59:08.919219+00:00",
+      "review_scope": "Reviewed complete root index scope, integrity blockers, submodule/LFS states and license locations; not source comprehension or external dependency closure.",
+      "known_gaps": [],
+      "commit": "e8ae5d1d8d306379c6ef11621cb3614078900f1d"
+    },
+    "mlir": {
+      "commit": "46b9e6906663004e06c1d5be382b84b378d68846",
+      "root_tree_reviewed": true,
+      "reviewer": "Codex",
+      "reviewed_at_utc": "2026-11-17T18:01:51.147116+00:00",
+      "review_scope": "Complete LLVM monorepo including MLIR; six inventory byte mismatches individually verified as tracked Git eol=crlf conversions. No file was rewritten or excluded.",
+      "known_gaps": [
+        "No semantic code audit, build or LLVM tests executed."
+      ],
+      "reviewed_checkout_conversions": {
+        "lld/test/wasm/Inputs/libstub.so": {
+          "kind": "git_eol_crlf",
+          "commit_object_id": "70f6648c60eeea02540b18e0d6accc54c5b677bb",
+          "worktree_sha256": "eae6cb0a6f701dce4879d42074e3d4cc90c5ef7b972278527857f79abc195830",
+          "verified_lf_to_crlf": true,
+          "git_attribute": "lld/test/wasm/Inputs/libstub.so: eol: crlf",
+          "scope": "Only checkout line-ending expansion; source bytes not edited."
+        },
+        "llvm/test/MC/AsmParser/preserve-comments-crlf.s": {
+          "kind": "git_eol_crlf",
+          "commit_object_id": "27c5b2e070719e34eaba9eadc007ed1ed54376a0",
+          "worktree_sha256": "1d21c1e5dc6bc57809bbac59bdcdfd1c7b99c1531ffdc700ee1ad02cc02d5d7b",
+          "verified_lf_to_crlf": true,
+          "git_attribute": "llvm/test/MC/AsmParser/preserve-comments-crlf.s: eol: crlf",
+          "scope": "Only checkout line-ending expansion; source bytes not edited."
+        },
+        "llvm/test/tools/llvm-mca/X86/directives-handle-crlf.s": {
+          "kind": "git_eol_crlf",
+          "commit_object_id": "db797a75c2617e4152cd8d06a45a8d69a1c91270",
+          "worktree_sha256": "61d867b1992032a4ae53890210fd3ee4e1ed68f40e982616d784412d1c017044",
+          "verified_lf_to_crlf": true,
+          "git_attribute": "llvm/test/tools/llvm-mca/X86/directives-handle-crlf.s: eol: crlf",
+          "scope": "Only checkout line-ending expansion; source bytes not edited."
+        },
+        "llvm/test/tools/split-file/Inputs/basic-aa.crlf": {
+          "kind": "git_eol_crlf",
+          "commit_object_id": "0b9ddeb2fc12a1405569a5269f37d4c41f4b4654",
+          "worktree_sha256": "c0f4c51937b2bd9b8582d7a66a41d98991e7df263cb0582925e3702c4f239e1e",
+          "verified_lf_to_crlf": true,
+          "git_attribute": "llvm/test/tools/split-file/Inputs/basic-aa.crlf: eol: crlf",
+          "scope": "Only checkout line-ending expansion; source bytes not edited."
+        },
+        "llvm/test/tools/split-file/Inputs/basic-bb.crlf": {
+          "kind": "git_eol_crlf",
+          "commit_object_id": "b6c3c808ec62fd7b693e657312037160695bbfda",
+          "worktree_sha256": "71049ad75863b7c2bb17720bcfc11945b9cbfed2507e8e3e2571fb06f6058c65",
+          "verified_lf_to_crlf": true,
+          "git_attribute": "llvm/test/tools/split-file/Inputs/basic-bb.crlf: eol: crlf",
+          "scope": "Only checkout line-ending expansion; source bytes not edited."
+        },
+        "llvm/test/tools/split-file/basic.crlf.test": {
+          "kind": "git_eol_crlf",
+          "commit_object_id": "f01074a87963028ea5fe008ea6452c06b8dd644b",
+          "worktree_sha256": "e239166284fa9beea9834cd772966f75fcc28215da442980bfc392dc693972b7",
+          "verified_lf_to_crlf": true,
+          "git_attribute": "llvm/test/tools/split-file/basic.crlf.test: eol: crlf",
+          "scope": "Only checkout line-ending expansion; source bytes not edited."
+        }
+      }
+    }
+  },
+  "file_reading": [
+    {
+      "repository_id": "gqc",
+      "path": "python/generativeqc/checkpoint.py",
+      "blob": "a2e291a17d3d876848416041027df6b5dda7e8bf",
+      "read": true,
+      "reader": "Codex",
+      "read_at": "2026-11-17T17:58:14.475299+00:00",
+      "module_role": "HF checkpoint schema, source metadata and target admission",
+      "behavior_traced": false,
+      "evidence_paths": "research/audits/gqc-intake.md",
+      "open_questions": "Trace native metric validation, plan execution and response consumers; tests were inspected only in part and not executed."
+    },
+    {
+      "repository_id": "gqc",
+      "path": "python/generativeqc/_warm_state.py",
+      "blob": "16356c08503aa94d595d37456f8759ba24b54a86",
+      "read": true,
+      "reader": "Codex",
+      "read_at": "2026-11-17T17:58:14.475299+00:00",
+      "module_role": "Python warm-start provenance and restart-origin bookkeeping",
+      "behavior_traced": false,
+      "evidence_paths": "research/audits/gqc-intake.md",
+      "open_questions": "Python metadata does not establish native convergence or response semantics."
+    },
+    {
+      "repository_id": "gqc",
+      "path": "src/scf/warm_state.hpp",
+      "blob": "d606a431def9450d22ac8614bcc2c4dfebcfd7cb",
+      "read": true,
+      "reader": "Codex",
+      "read_at": "2026-11-17T17:58:14.475299+00:00",
+      "module_role": "Owned HF density and source-geometry seed",
+      "behavior_traced": false,
+      "evidence_paths": "research/audits/gqc-intake.md",
+      "open_questions": "Trace consumer validation and use of the seed in a new target solve."
+    }
+  ]
+}

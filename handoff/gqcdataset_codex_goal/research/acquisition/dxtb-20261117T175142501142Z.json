@@ -1,0 +1,122 @@
+{
+  "id": "dxtb",
+  "source": {
+    "id": "dxtb",
+    "catalog_ids": [
+      "dxtb"
+    ],
+    "priority": "P1",
+    "repository_url": "https://github.com/grimme-lab/dxtb",
+    "role": "current",
+    "commit": null,
+    "checkout_path": "_references/dxtb",
+    "paper_version_status": "not_established",
+    "selection_reason": "\u91cf\u5316\u540e\u7aef\u4e0e\u5f3a\u57fa\u7ebf"
+  },
+  "started_at_utc": "2026-11-17T17:51:42.501166+00:00",
+  "status": "indexed_pending_review",
+  "commands": [
+    {
+      "argv": [
+        "git",
+        "ls-remote",
+        "https://github.com/grimme-lab/dxtb",
+        "HEAD"
+      ],
+      "cwd": ".",
+      "started_at_utc": "2026-11-17T17:51:42.501371+00:00",
+      "stdout": "6961f9ceba9ce813e78a5be1ed5e383b8eb7824b\tHEAD\n",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 2.011829098992166,
+      "ended_at_utc": "2026-11-17T17:51:44.513454+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "init",
+        "--quiet"
+      ],
+      "cwd": "_references/dxtb",
+      "started_at_utc": "2026-11-17T17:51:44.514121+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.005737785992096178,
+      "ended_at_utc": "2026-11-17T17:51:44.522629+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "remote",
+        "add",
+        "origin",
+        "https://github.com/grimme-lab/dxtb"
+      ],
+      "cwd": "_references/dxtb",
+      "started_at_utc": "2026-11-17T17:51:44.523207+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.00411957799224183,
+      "ended_at_utc": "2026-11-17T17:51:44.527849+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "protocol.file.allow=never",
+        "fetch",
+        "--depth=1",
+        "--no-tags",
+        "origin",
+        "6961f9ceba9ce813e78a5be1ed5e383b8eb7824b"
+      ],
+      "cwd": "_references/dxtb",
+      "started_at_utc": "2026-11-17T17:51:44.528307+00:00",
+      "stdout": "",
+      "stderr": "\u6765\u81ea https://github.com/grimme-lab/dxtb\n * branch            6961f9ceba9ce813e78a5be1ed5e383b8eb7824b -> FETCH_HEAD\n",
+      "returncode": 0,
+      "elapsed_seconds": 5.062805143010337,
+      "ended_at_utc": "2026-11-17T17:51:49.591559+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "core.autocrlf=false",
+        "checkout",
+        "--detach",
+        "6961f9ceba9ce813e78a5be1ed5e383b8eb7824b"
+      ],
+      "cwd": "_references/dxtb",
+      "started_at_utc": "2026-11-17T17:51:49.592171+00:00",
+      "stdout": "",
+      "stderr": "HEAD \u76ee\u524d\u4f4d\u4e8e 6961f9c [pre-commit.ci] pre-commit autoupdate (#279)\n",
+      "returncode": 0,
+      "elapsed_seconds": 0.04795674400520511,
+      "ended_at_utc": "2026-11-17T17:51:49.640794+00:00"
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "/home/lhshen/vibedataset/handoff/gqcdataset_codex_goal/tools/inventory_sources.py",
+        "_references/dxtb",
+        "--recurse-submodules",
+        "--json",
+        "handoff/gqcdataset_codex_goal/research/inventories/dxtb.json"
+      ],
+      "cwd": ".",
+      "started_at_utc": "2026-11-17T17:51:49.641400+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.13898682700528298,
+      "ended_at_utc": "2026-11-17T17:51:49.780631+00:00"
+    }
+  ],
+  "receipt_path": "handoff/gqcdataset_codex_goal/research/acquisition/dxtb-20261117T175142501142Z.json",
+  "resolved_commit": "6961f9ceba9ce813e78a5be1ed5e383b8eb7824b",
+  "inventory_path": "handoff/gqcdataset_codex_goal/research/inventories/dxtb.json",
+  "ended_at_utc": "2026-11-17T17:51:49.780918+00:00"
+}

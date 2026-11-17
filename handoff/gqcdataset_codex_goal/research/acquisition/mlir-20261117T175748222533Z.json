@@ -1,0 +1,122 @@
+{
+  "id": "mlir",
+  "source": {
+    "id": "mlir",
+    "catalog_ids": [
+      "mlir"
+    ],
+    "priority": "P2",
+    "repository_url": "https://github.com/llvm/llvm-project",
+    "role": "current",
+    "commit": null,
+    "checkout_path": "_references/mlir",
+    "paper_version_status": "not_established",
+    "selection_reason": "\u7f16\u8bd1\u4e0e\u7a0b\u5e8f\u4e13\u95e8\u5316\u80cc\u666f"
+  },
+  "started_at_utc": "2026-11-17T17:57:48.222549+00:00",
+  "status": "indexed_pending_review",
+  "commands": [
+    {
+      "argv": [
+        "git",
+        "ls-remote",
+        "https://github.com/llvm/llvm-project",
+        "HEAD"
+      ],
+      "cwd": ".",
+      "started_at_utc": "2026-11-17T17:57:48.222655+00:00",
+      "stdout": "46b9e6906663004e06c1d5be382b84b378d68846\tHEAD\n41d4aa7de68ed551010f27ff04ffc54e7616292a\trefs/remotes/gonzalo/HEAD\n",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 8.24324766099744,
+      "ended_at_utc": "2026-11-17T17:57:56.466029+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "init",
+        "--quiet"
+      ],
+      "cwd": "_references/mlir",
+      "started_at_utc": "2026-11-17T17:57:56.466381+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.0034355749958194792,
+      "ended_at_utc": "2026-11-17T17:57:56.472452+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "remote",
+        "add",
+        "origin",
+        "https://github.com/llvm/llvm-project"
+      ],
+      "cwd": "_references/mlir",
+      "started_at_utc": "2026-11-17T17:57:56.472589+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.0017626619955990463,
+      "ended_at_utc": "2026-11-17T17:57:56.474546+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "protocol.file.allow=never",
+        "fetch",
+        "--depth=1",
+        "--no-tags",
+        "origin",
+        "46b9e6906663004e06c1d5be382b84b378d68846"
+      ],
+      "cwd": "_references/mlir",
+      "started_at_utc": "2026-11-17T17:57:56.474849+00:00",
+      "stdout": "",
+      "stderr": "\u6765\u81ea https://github.com/llvm/llvm-project\n * branch                46b9e6906663004e06c1d5be382b84b378d68846 -> FETCH_HEAD\n",
+      "returncode": 0,
+      "elapsed_seconds": 128.71382666200225,
+      "ended_at_utc": "2026-11-17T18:00:05.189015+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "core.autocrlf=false",
+        "checkout",
+        "--detach",
+        "46b9e6906663004e06c1d5be382b84b378d68846"
+      ],
+      "cwd": "_references/mlir",
+      "started_at_utc": "2026-11-17T18:00:05.189379+00:00",
+      "stdout": "",
+      "stderr": "HEAD \u76ee\u524d\u4f4d\u4e8e 46b9e6906 [mlir][LLVMIR] Translate dso_local on llvm.mlir.alias (#234012)\n",
+      "returncode": 0,
+      "elapsed_seconds": 9.062120920003508,
+      "ended_at_utc": "2026-11-17T18:00:14.254410+00:00"
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "/home/lhshen/vibedataset/handoff/gqcdataset_codex_goal/tools/inventory_sources.py",
+        "_references/mlir",
+        "--recurse-submodules",
+        "--json",
+        "handoff/gqcdataset_codex_goal/research/inventories/mlir.json"
+      ],
+      "cwd": ".",
+      "started_at_utc": "2026-11-17T18:00:14.254770+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 13.071007410995662,
+      "ended_at_utc": "2026-11-17T18:00:27.325979+00:00"
+    }
+  ],
+  "receipt_path": "handoff/gqcdataset_codex_goal/research/acquisition/mlir-20261117T175748222533Z.json",
+  "resolved_commit": "46b9e6906663004e06c1d5be382b84b378d68846",
+  "inventory_path": "handoff/gqcdataset_codex_goal/research/inventories/mlir.json",
+  "ended_at_utc": "2026-11-17T18:00:27.326384+00:00"
+}
