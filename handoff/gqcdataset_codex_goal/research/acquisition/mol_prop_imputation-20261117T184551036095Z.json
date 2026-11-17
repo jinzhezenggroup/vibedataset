@@ -1,0 +1,105 @@
+{
+  "id": "mol_prop_imputation",
+  "source": {
+    "id": "mol_prop_imputation",
+    "catalog_ids": [],
+    "priority": "P1",
+    "repository_url": "https://github.com/Savoie-Research-Group/mol_prop_imputation",
+    "role": "author_release",
+    "commit": "386217f233f5607a6c69e09c8bd9375fbde06444",
+    "checkout_path": "_references/mol_prop_imputation",
+    "paper_version_status": "author_v1.0.0_release; publication association to be checked separately",
+    "selection_reason": "Direct prior work on generalized molecular property imputation with observed labels as inputs. Statistical comparator to component reuse under fixed quantum targets."
+  },
+  "started_at_utc": "2026-11-17T18:45:51.036116+00:00",
+  "status": "indexed_pending_review",
+  "commands": [
+    {
+      "argv": [
+        "git",
+        "init",
+        "--quiet"
+      ],
+      "cwd": "_references/mol_prop_imputation",
+      "started_at_utc": "2026-11-17T18:45:51.036304+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.002266306008095853,
+      "ended_at_utc": "2026-11-17T18:45:51.038733+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "remote",
+        "add",
+        "origin",
+        "https://github.com/Savoie-Research-Group/mol_prop_imputation"
+      ],
+      "cwd": "_references/mol_prop_imputation",
+      "started_at_utc": "2026-11-17T18:45:51.038895+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.002095051997457631,
+      "ended_at_utc": "2026-11-17T18:45:51.041147+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "protocol.file.allow=never",
+        "fetch",
+        "--depth=1",
+        "--no-tags",
+        "origin",
+        "386217f233f5607a6c69e09c8bd9375fbde06444"
+      ],
+      "cwd": "_references/mol_prop_imputation",
+      "started_at_utc": "2026-11-17T18:45:51.041284+00:00",
+      "stdout": "",
+      "stderr": "\u6765\u81ea https://github.com/Savoie-Research-Group/mol_prop_imputation\n * branch            386217f233f5607a6c69e09c8bd9375fbde06444 -> FETCH_HEAD\n",
+      "returncode": 0,
+      "elapsed_seconds": 1.8213932969956659,
+      "ended_at_utc": "2026-11-17T18:45:52.862853+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "core.autocrlf=false",
+        "checkout",
+        "--detach",
+        "386217f233f5607a6c69e09c8bd9375fbde06444"
+      ],
+      "cwd": "_references/mol_prop_imputation",
+      "started_at_utc": "2026-11-17T18:45:52.863410+00:00",
+      "stdout": "",
+      "stderr": "HEAD \u76ee\u524d\u4f4d\u4e8e 386217f Update README.md\n",
+      "returncode": 0,
+      "elapsed_seconds": 0.010774459995445795,
+      "ended_at_utc": "2026-11-17T18:45:52.877012+00:00"
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "/home/lhshen/vibedataset/handoff/gqcdataset_codex_goal/tools/inventory_sources.py",
+        "_references/mol_prop_imputation",
+        "--recurse-submodules",
+        "--json",
+        "handoff/gqcdataset_codex_goal/research/inventories/mol_prop_imputation.json"
+      ],
+      "cwd": ".",
+      "started_at_utc": "2026-11-17T18:45:52.877546+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.07742065099591855,
+      "ended_at_utc": "2026-11-17T18:45:52.955368+00:00"
+    }
+  ],
+  "receipt_path": "handoff/gqcdataset_codex_goal/research/acquisition/mol_prop_imputation-20261117T184551036095Z.json",
+  "resolved_commit": "386217f233f5607a6c69e09c8bd9375fbde06444",
+  "inventory_path": "handoff/gqcdataset_codex_goal/research/inventories/mol_prop_imputation.json",
+  "ended_at_utc": "2026-11-17T18:45:52.955908+00:00"
+}

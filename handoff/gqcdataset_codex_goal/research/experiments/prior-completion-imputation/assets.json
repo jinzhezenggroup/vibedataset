@@ -1,0 +1,28 @@
+{
+  "record": "https://zenodo.org/api/records/17519032",
+  "doi": "10.5281/zenodo.17519032",
+  "license": "cc-by-4.0",
+  "reads": [
+    {
+      "archive": "random_drop_prop2prop_checkpoints.tar.gz",
+      "archive_bytes": 701236081,
+      "publisher_checksum": "md5:86ff806bbf7a040ca28b777b2d166c01",
+      "full_archive_verified": false,
+      "member": "random_drop_prop2prop_zenodo/model_random_drop_8_cp_overall.pt",
+      "response_bytes_read": 77916160,
+      "retained_bytes": 84279982,
+      "retained_sha256": "5c87f90555fca68a0d485b9befaf71e41647a67b0637e85579d28d6540ededfb"
+    },
+    {
+      "archive": "struct_prop_comparison.tar.gz",
+      "archive_bytes": 2283281211,
+      "publisher_checksum": "md5:c53132f14675e06d4c694fff8a50a62a",
+      "full_archive_verified": false,
+      "member": "zenodo/large_property_combined.csv",
+      "response_bytes_read": 10240,
+      "retained_bytes": 9342,
+      "retained_sha256": "37d591e2a33dbeea64369b9336d1d8a3f7f33a1b7f1b258fee7686eb5650ebb6"
+    }
+  ],
+  "elapsed_seconds": 55.34889212400594
+}
