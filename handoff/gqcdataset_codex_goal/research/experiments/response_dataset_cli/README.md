@@ -61,3 +61,5 @@ python scripts/complete_response_dataset.py --requests "$examples/diagonal.jsonl
 ```bash
 python "$examples/verify_history.py" --work .work/response_cli_history_replay
 ```
+
+三个编译恢复值与直接求解的最大差为 1.25×10⁻¹⁴ 以内；对同一组合种子的手写减法与生成程序三个结果逐项相等。包含首次解码程序 JIT 的本次单次进程墙时为 1.57 秒，普通 block 为 1.22 秒，不能据此主张端到端提速。扩展后的默认模式重跑了全部九进程检查，并从旧版 SQLite 的副本在新进程读回同一生产 ID 与数值，实际准备／求解 J/K 仍均为零。[跨版本复核](cross-version.json)
