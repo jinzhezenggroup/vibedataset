@@ -13,8 +13,11 @@ import tempfile
 import time
 from uuid import uuid4
 
-from gqc_dual_response import ANALYTIC_TOL, FIELD_IDS, FIELD_TOL, GATE, OBSERVABLE_IDS, STEPS, DualResponseModel, assess_scalar
+import numpy as np
+
+from gqc_dual_response import ANALYTIC_TOL, FIELD_IDS, FIELD_TOL, GATE, GQC_PIN, OBSERVABLE_IDS, STEPS, DualResponseModel, assess_scalar
 from probe_gqc_residual import ROOT, file_hash, json_hash
+from probe_scalar_response import DIAGONAL, decoder, recoverable
 from response_cover import plan_cover
 
 EXPERIMENTS = ROOT / 'handoff/gqcdataset_codex_goal/research/experiments'
@@ -58,7 +61,9 @@ def load_catalog(source_index, oracle_index):
               'oracle_index_sha256': hashlib.sha256(raw_oracle).hexdigest()}
     if source['cohort_sha256'] != hashlib.sha256(raw_cohort).hexdigest() or oracles['index_sha256'] != hashes['source_index_sha256']:
         raise ValueError('source index, cohort and oracle catalog refer to different inputs')
-    release = next(x for x in cohort['source']['verified_members'] if x['name'] == 'dsgdb9nsd.xyz.tar.bz2')
+    release = next((x for x in cohort['source']['verified_members'] if x['name'] == 'dsgdb9nsd.xyz.tar.bz2'), None)
+    if not release:
+        raise ValueError('cohort does not identify the versioned QM9 coordinate release')
     records = {x['name']: x for x in source['rows'] if x.get('name')}
     outputs = {x['name']: x for x in oracles['strata'] if x.get('name')}
     selected = {x['selected']['name']: x['selected'] for x in cohort['strata'] if x.get('selected')}
@@ -182,7 +187,8 @@ def load_vectors(db, identity, problem):
         try:
             data = strict_json(stored[0])
             if (json_hash(data) == stored[1] and data['problem_identity'] == problem
-                    and isinstance(data['fields'], dict) and isinstance(data['observables'], dict)):
+                    and isinstance(data['fields'], dict) and isinstance(data['observables'], dict)
+                    and set(data['fields']) <= set(FIELD_IDS) and set(data['observables']) <= set(OBSERVABLE_IDS)):
                 return data, False
         except (ValueError, KeyError, TypeError):
             pass
@@ -203,12 +209,128 @@ def load_label(db, identity, edge, o, endpoint):
             return None, 'scalar scientific identity mismatch'
         if not grade['qualified']:
             return None, ', '.join(grade['reasons'])
+        if 'historical_batch_sha256' in origin:
+            grade['historical_batch_sha256'] = origin['historical_batch_sha256']
         return (grade, origin['attempt'], origin['via']), None
     except (ValueError, KeyError, TypeError) as e:
         return None, str(e)
 
 
-def run_group(db, name, ctx, requests, kernel_dir):
+def save_label(db, identity, edge, grade, attempt, via):
+    origin = {'scope': identity, 'target_identity': grade['target_identity'], 'value': grade['value'],
+              'attempt': attempt, 'via': via}
+    if 'historical_batch_sha256' in grade:
+        origin['historical_batch_sha256'] = grade['historical_batch_sha256']
+    db.execute('INSERT OR REPLACE INTO labels VALUES(?,?,?,?,?)', (identity, *edge, compact(origin), json_hash(origin)))
+
+
+def load_history(spec, catalog_hashes):
+    """Only caller-pinned completed batches are accepted as external scalar evidence."""
+    if spec is None:
+        return None, {}
+    start = time.perf_counter()
+    expected, path = spec
+    info = {'expected_sha256': expected, 'status': 'rejected'}
+    try:
+        raw = Path(path).read_bytes()
+        info.update(bytes=len(raw), sha256=hashlib.sha256(raw).hexdigest())
+        if info['sha256'] != expected:
+            raise ValueError('historical batch digest mismatch')
+        batch = strict_json(raw)
+        if (batch['schema'] != 'vibedataset.response_batch.v1' or batch['definition'] != DEFINITION or
+                batch['units'] != UNITS or any(batch[k] != v for k, v in catalog_hashes.items())):
+            raise ValueError('historical publication, units or source catalogs differ')
+        by_attempt = {r['id']: r for r in batch['work'] if r['status'] == 'completed' and r['model_started']}
+        grouped = defaultdict(list)
+        for row in batch['records']:
+            if row.get('status') == 'qualified' and row.get('source_attempt') in by_attempt:
+                producer = by_attempt[row['source_attempt']]
+                grouped[producer['record_id']].append((row, producer['identity'], expected))
+        info.update(status='read', eligible_rows=sum(map(len, grouped.values())),
+                    producer_setup_jk=sum(r['setup_jk'] for r in by_attempt.values()),
+                    producer_round_jk=sum(r['round_jk'] for r in by_attempt.values()))
+    except (OSError, ValueError, KeyError, TypeError) as e:
+        info['reason'] = str(e)
+        grouped = {}
+    info['seconds'] = time.perf_counter() - start
+    return info, grouped
+
+
+def historical_scalars(history, ctx):
+    _, _, oracle, endpoint, provenance, identity = ctx
+    good, rejected, conflicts = {}, [], set()
+    for record, source_identity, digest in history:
+        try:
+            edge = record['request']['field'], record['request']['observable']
+            if (source_identity != identity or record['source'] != provenance or
+                    record['unit'] != UNITS[edge[1]] or record['request']['source'] != provenance['release']):
+                raise ValueError('historical record, scientific identity or unit mismatch')
+            grade = assess_scalar(oracle, endpoint, *edge, record['value'])
+            if grade['target_identity'] != record['target_identity'] or not grade['qualified']:
+                raise ValueError('historical scalar failed target identity or independent quality gate')
+            if edge in good and good[edge][0]['value'] != grade['value']:
+                conflicts.add(edge)
+                raise ValueError('conflicting published values for one target')
+            grade['historical_batch_sha256'] = digest
+            good[edge] = grade, record['source_attempt'], record['via']
+        except (ValueError, KeyError, TypeError) as e:
+            rejected.append({'line': record.get('line'), 'reason': str(e)})
+    for edge in conflicts:
+        good.pop(edge, None)
+    return good, rejected
+
+
+def complete_missing(model, missing, cache, kernel_dir, known):
+    """Use the bounded PLAN-002 rule only when it reduces the RHS count."""
+    def cover(edges, vector_cache):
+        return plan_cover(edges, vector_cache['fields'], vector_cache['observables'])
+    fields, obs = cover(missing, cache)
+    candidates = {edge: deps for edge, deps in recoverable(known).items() if edge in missing}
+    unserved = sorted(set(missing) - candidates.keys())
+    cold_fields, cold_obs = plan_cover(unserved)
+    unit_count = len(fields) + len(obs)
+    use_relation = bool(candidates and 1 + len(cold_fields) + len(cold_obs) < unit_count)
+    relation = {'ordinary_cover_rhs_lower_bound': unit_count, 'eligible_diagonals': sorted(candidates),
+                'combined_plus_cold_remainder_upper_bound': 1 + len(cold_fields) + len(cold_obs),
+                'used': use_relation, 'reconstructions': []}
+    computed, combo_counts = [], Counter()
+    if use_relation:
+        start = time.perf_counter()
+        kernel = decoder(kernel_dir)
+        relation['decoder_setup_seconds'] = time.perf_counter() - start
+        relation['decoder_binary_sha256'] = file_hash(kernel.library._name)
+        combined = model.combined_field([1, 1, 1], [o for _, o in candidates])
+        combo_counts.update(combined['counts'])
+        relation['combined'] = combined
+        retry = []
+        for (field, observable), deps in sorted(candidates.items()):
+            values = [combined['values'][observable]] + [known[p][0]['value'] for p in deps]
+            feeds = {name: np.asarray(v, dtype=np.float64) for name, v in zip(('combined', 'first', 'second'), values, strict=True)}
+            candidate = float(kernel.execute(feeds)['missing'])
+            grade = model.assess(field, observable, candidate)
+            grade['via'] = 'compiled_scalar_relation'
+            relation['reconstructions'].append({'field': field, 'observable': observable, 'operands': [
+                {'pair': p, 'value': known[p][0]['value'], 'target_identity': known[p][0]['target_identity'],
+                 'source_attempt': known[p][1]} for p in deps], 'candidate': grade})
+            if grade['qualified']:
+                computed.append(grade)
+            else:
+                retry.append((field, observable))
+        missing = sorted(set(unserved + retry))
+        # Starting with a cold cover bounds work despite a corrupt old vector.
+        # Reassess a numerically rejected recovered scalar on the ordinary path.
+        fields, obs = plan_cover(missing)
+        relation['ordinary_retries'] = retry
+    ordinary = model.run_round(missing, fields, obs, cache)
+    total = Counter(ordinary['counts'])
+    total.update(combo_counts)
+    total['requests'] = len(computed) + len(ordinary['results'])
+    ordinary.update(results=computed + ordinary['results'], counts=dict(total), relation=relation,
+                    chosen_fields=list(fields), chosen_observables=list(obs))
+    return ordinary
+
+
+def run_group(db, name, ctx, requests, kernel_dir, history, relations):
     meta, array, oracle, endpoint, provenance, identity = ctx
     grouped = defaultdict(list)
     for row in requests:
@@ -229,39 +351,56 @@ def run_group(db, name, ctx, requests, kernel_dir):
     # become visible together with the completed receipt below.
     db.execute('INSERT INTO attempts VALUES (?,?,?,?,?,NULL)', (aid, name, identity, timestamp(), 'started'))
     labels, hits, model = {}, set(), None
+    historical_hits = set()
     try:
         db.execute('BEGIN IMMEDIATE')
         work['lock_wait_seconds'] = time.perf_counter() - start
-        for edge in grouped:
+        imported, work['rejected_history'] = historical_scalars(history, ctx)
+        operands = {(other, observable) for field, observable in grouped if (field, observable) in DIAGONAL
+                    for other in FIELD_IDS if other != field} if relations else set()
+        known = {}
+        for edge in sorted(grouped.keys() | operands):
             saved, rejected = load_label(db, identity, edge, oracle, endpoint)
             if rejected:
                 work['scalar_rejections'] += 1
                 work['rejected_labels'].append({'field': edge[0], 'observable': edge[1], 'reason': rejected})
             if saved:
-                labels[edge] = saved
+                known[edge] = saved
+            elif edge in imported:
+                known[edge] = imported[edge]
+                save_label(db, identity, edge, *imported[edge])
+                if edge in grouped:
+                    historical_hits.add(edge)
+            if edge in known and edge in grouped:
+                labels[edge] = known[edge]
                 hits.add(edge)
         work['scalar_hits'] = len(hits)
+        work['historical_hits'] = len(historical_hits)
         missing = sorted(grouped.keys() - hits)
         if missing:
             cache, bad = load_vectors(db, identity, oracle['problem_identity'])
-            fields, obs = plan_cover(missing, cache['fields'], cache['observables'])
-            work.update(model_started=True, setup_jk=None, vector_envelope_rejected=bad,
-                        chosen_fields=list(fields), chosen_observables=list(obs))
+            work.update(model_started=True, setup_jk=None, vector_envelope_rejected=bad)
             model = DualResponseModel(meta, array, kernel_dir, oracle=oracle)
             work['setup_jk'] = model.setup['counts']['jk_calls']
             work['setup_seconds'] = model.setup['seconds']
-            measured = model.run_round(missing, fields, obs, cache)
+            solve_start = time.perf_counter()
+            if relations:
+                measured = complete_missing(model, missing, cache, kernel_dir, known)
+                work.update(relation=measured['relation'], chosen_fields=measured['chosen_fields'],
+                            chosen_observables=measured['chosen_observables'])
+            else:
+                fields, obs = plan_cover(missing, cache['fields'], cache['observables'])
+                work.update(chosen_fields=list(fields), chosen_observables=list(obs))
+                measured = model.run_round(missing, fields, obs, cache)
             work.update(round_jk=measured['counts']['jk_calls'], rhs=measured['counts']['rhs_columns'],
                         counts=measured['counts'], cache_checks=measured['cache_checks'],
-                        solve_and_assess_seconds=measured['elapsed_seconds'])
+                        solve_and_assess_seconds=time.perf_counter() - solve_start,
+                        native_kernel_sha256=[k['binary_sha256'] for k in model.setup['native_kernels']])
             for grade in measured['results']:
                 edge = grade['field'], grade['observable']
                 labels[edge] = grade, aid, grade['via']
                 if grade['qualified']:
-                    origin = {'scope': identity, 'target_identity': grade['target_identity'], 'value': grade['value'],
-                              'attempt': aid, 'via': grade['via']}
-                    db.execute('INSERT OR REPLACE INTO labels VALUES(?,?,?,?,?)',
-                               (identity, *edge, compact(origin), json_hash(origin)))
+                    save_label(db, identity, edge, grade, aid, grade['via'])
                 else:
                     db.execute('DELETE FROM labels WHERE identity=? AND field=? AND observable=?', (identity, *edge))
             db.execute('INSERT OR REPLACE INTO vectors VALUES(?,?,?)', (identity, compact(cache), json_hash(cache)))
@@ -284,6 +423,10 @@ def run_group(db, name, ctx, requests, kernel_dir):
             row.update(status=grade['status'], value=grade['value'], target_identity=grade['target_identity'],
                        source_attempt=origin, via=via, delivery='scalar_cache' if edge in hits else 'computed',
                        diagnostic={'raw_value': grade['raw_value'], 'reasons': grade['reasons'], 'errors': grade['errors']})
+            if 'historical_batch_sha256' in grade:
+                row['historical_batch_sha256'] = grade['historical_batch_sha256']
+            if edge in historical_hits:
+                row['delivery'] = 'historical_scalar'
             if number:
                 row.update(delivery='same_batch_duplicate', duplicate_of_line=repeated[0]['line'])
     return work
@@ -297,6 +440,8 @@ def main():
     parser.add_argument('--source-index', type=Path, default=EXPERIMENTS/'qm9_response_assets/index.json')
     parser.add_argument('--oracle-index', type=Path, default=EXPERIMENTS/'gqc_dual_response/summary.json')
     parser.add_argument('--kernel-cache', type=Path, help='GQC generated binary cache')
+    parser.add_argument('--decode-known-scalars', action='store_true', help='enable exact 3x3 scalar relations using qualified cached operands')
+    parser.add_argument('--history', nargs=2, metavar=('SHA256', 'JSON'), help='accept producer-computed labels from this checksum-pinned earlier batch; enables scalar relations')
     args = parser.parse_args()
     start = time.perf_counter()
     release, records, members, oracles, hashes = load_catalog(args.source_index, args.oracle_index)
@@ -308,9 +453,12 @@ def main():
     protected.update((args.oracle_index.parent / item['oracle']).resolve() for item in oracles.values() if item.get('oracle'))
     if args.requests != '-':
         protected.add(Path(args.requests).resolve())
+    if args.history:
+        protected.add(Path(args.history[1]).resolve())
     if args.cache_db.resolve() in protected or (args.out != '-' and Path(args.out).resolve() in protected | {args.cache_db.resolve()}):
         parser.error('cache and output require distinct destinations outside the input files')
     request_digest, rows, groups = read_inputs(args.requests, release, records)
+    history_info, history = load_history(args.history, hashes)
     args.cache_db.parent.mkdir(parents=True, exist_ok=True)
     kernel_dir = args.kernel_cache or args.cache_db.with_name(args.cache_db.name + '-gqc')
     attempts = []
@@ -324,7 +472,8 @@ def main():
                                  'record_id': name, 'member': members[name]['member'], 'member_sha256': cohort['member_sha256']}
             try:
                 ctx = bound_context(name, cohort, oracles.get(name), members[name], release, args.source_index, args.oracle_index)
-                receipt = run_group(db, name, ctx, requests, kernel_dir)
+                receipt = run_group(db, name, ctx, requests, kernel_dir, history.get(name, []),
+                                    args.decode_known_scalars or args.history is not None)
                 if receipt:
                     attempts.append(receipt)
             except (OSError, ValueError, KeyError, TypeError, sqlite3.Error) as e:
@@ -335,7 +484,8 @@ def main():
         db.close()
     counts = Counter(r['status'] for r in rows)
     batch = {'schema': 'vibedataset.response_batch.v1', 'definition': DEFINITION, 'units': UNITS,
-             **hashes,
+             **hashes, 'history': history_info, 'gqc_commit': GQC_PIN,
+             'cli_sha256': file_hash(__file__), 'model_source_sha256': file_hash(ROOT/'scripts/gqc_dual_response.py'),
              'input_sha256': request_digest, 'counts_by_status': counts, 'work': attempts,
              'seconds': time.perf_counter() - start, 'records': rows}
     publish(args.out, batch)
