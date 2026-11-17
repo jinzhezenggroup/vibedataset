@@ -66,15 +66,25 @@ def manual_cartesian(op, accepted, targets):
 
 
 def manual_differences(op, accepted):
-    if len(accepted) == 3:
-        check([f for f, x in accepted] == op.config['requested_fields'], 'hand mixed-field basis mismatch')
-        a, b, c = [x for f, x in accepted]
-        return np.column_stack((b - c, a - c, a - b))
-    # With just x+y from the prior gate there is no nonzero vector shared with
-    # the difference plane. Two new independent responses determine all three.
-    check(not accepted or [f for f, x in accepted] == [[1, 1, 0]], 'unsupported manual partial mixed basis')
-    u, v = op.solve(DIFFERENCES[:2], 'manual_independent_differences').T
-    return np.column_stack((u, v, v - u))
+    positive = [tuple(f) for f in op.config['requested_fields']]
+    vectors = {tuple(f): x for f, x in accepted}
+    # Pairwise differences of the accepted mixed fields are already known. Any
+    # two independent differences suffice because d_yz = d_xz - d_xy.
+    known = {}
+    for index, (i, j) in enumerate(((1, 2), (0, 2), (0, 1))):
+        if positive[i] in vectors and positive[j] in vectors:
+            known[index] = vectors[positive[i]] - vectors[positive[j]]
+    missing = [i for i in range(3) if i not in known][:max(0, 2 - len(known))]
+    if missing:
+        new = op.solve([DIFFERENCES[i] for i in missing], 'manual_independent_differences')
+        known.update(zip(missing, new.T, strict=True))
+    if 0 not in known:
+        known[0] = known[1] - known[2]
+    if 1 not in known:
+        known[1] = known[0] + known[2]
+    if 2 not in known:
+        known[2] = known[1] - known[0]
+    return np.column_stack([known[i] for i in range(3)])
 
 
 def topology_checks(run):

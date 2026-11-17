@@ -1,0 +1,5402 @@
+{
+  "cases": [
+    {
+      "axes_oracle": {
+        "cphf": [
+          [
+            4.490404729900755,
+            -0.14470355257195808,
+            -0.1328328696625387,
+            -0.15538969341382464
+          ],
+          [
+            -0.14470355257195772,
+            0.07769540784689022,
+            0.32436970705756724,
+            -0.23178439542990764
+          ],
+          [
+            -0.1328328696625415,
+            0.32436970705756785,
+            2.548641676729343,
+            -1.854470185142865
+          ]
+        ],
+        "cphf_counts": {
+          "jk_batches": 4,
+          "jk_density_columns": 10
+        },
+        "finite_fields": {
+          "0.0002": [
+            [
+              4.490404670768333,
+              -0.14470355017205672,
+              -0.13283285940801637,
+              -0.15538968728190383
+            ],
+            [
+              -0.1447035525259377,
+              0.0776954056307122,
+              0.32436970609117655,
+              -0.23178439500615156
+            ],
+            [
+              -0.132832866900634,
+              0.32436971852164986,
+              2.5486417526959793,
+              -1.8544701906142436
+            ]
+          ],
+          "0.0005": [
+            [
+              4.490404350004251,
+              -0.14470353728388008,
+              -0.13283281449449902,
+              -0.1553896545960498
+            ],
+            [
+              -0.14470355002127455,
+              0.07769541169283523,
+              0.3243696986443556,
+              -0.23178439274396112
+            ],
+            [
+              -0.13283285550158563,
+              0.32436977658981125,
+              2.5486421524576475,
+              -1.854470219429416
+            ]
+          ]
+        },
+        "independent_zero_field_density_error": 1.7763568394002505e-15,
+        "integral_errors": {
+          "eri": 8.881784197001252e-16,
+          "hcore": 0.0,
+          "overlap": 0.0
+        },
+        "scf": [
+          {
+            "cycles": 40,
+            "dipole_and_charge": [
+              0.057769305457061604,
+              0.08816125543042905,
+              0.7050639488567063,
+              -0.36706977576964306
+            ],
+            "electronic_plus_nuclear_energy_at_zero_nuclear_field_coupling": -74.95823295653702,
+            "field_au": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "seconds": 0.03707462800957728
+          },
+          {
+            "cycles": 41,
+            "dipole_and_charge": [
+              0.06001432112630478,
+              0.08808881458203097,
+              0.7049967909256694,
+              -0.367147188453643
+            ],
+            "electronic_plus_nuclear_energy_at_zero_nuclear_field_coupling": -74.95816240245927,
+            "field_au": [
+              0.0005,
+              0.0,
+              0.0
+            ],
+            "seconds": 0.031496188006713055
+          },
+          {
+            "cycles": 40,
+            "dipole_and_charge": [
+              0.05552391677630053,
+              0.08823351811931485,
+              0.7051296237401639,
+              -0.366991798799047
+            ],
+            "electronic_plus_nuclear_energy_at_zero_nuclear_field_coupling": -74.95830463321593,
+            "field_au": [
+              -0.0005,
+              -0.0,
+              -0.0
+            ],
+            "seconds": 0.031104749999940395
+          },
+          {
+            "cycles": 44,
+            "dipole_and_charge": [
+              0.057696960833861666,
+              0.08820010448730525,
+              0.7052261315310742,
+              -0.367185648110226
+            ],
+            "electronic_plus_nuclear_energy_at_zero_nuclear_field_coupling": -74.95812704687688,
+            "field_au": [
+              0.0,
+              0.0005,
+              0.0
+            ],
+            "seconds": 0.03259096299007069
+          },
+          {
+            "cycles": 44,
+            "dipole_and_charge": [
+              0.05784166438388294,
+              0.08812240907561242,
+              0.7049017618324298,
+              -0.36695386371748206
+            ],
+            "electronic_plus_nuclear_energy_at_zero_nuclear_field_coupling": -74.958338885621,
+            "field_au": [
+              -0.0,
+              -0.0005,
+              -0.0
+            ],
+            "seconds": 0.03248934500152245
+          },
+          {
+            "cycles": 41,
+            "dipole_and_charge": [
+              0.05770296395300556,
+              0.08832337352738973,
+              0.7063377771526176,
+              -0.3679968639437856
+            ],
+            "electronic_plus_nuclear_energy_at_zero_nuclear_field_coupling": -74.95738580700959,
+            "field_au": [
+              0.0,
+              0.0,
+              0.0005
+            ],
+            "seconds": 0.031413001008331776
+          },
+          {
+            "cycles": 40,
+            "dipole_and_charge": [
+              0.057835796808507145,
+              0.08799900375079991,
+              0.7037891350001599,
+              -0.3661423937243562
+            ],
+            "electronic_plus_nuclear_energy_at_zero_nuclear_field_coupling": -74.959080743225,
+            "field_au": [
+              -0.0,
+              -0.0,
+              -0.0005
+            ],
+            "seconds": 0.030136714995023794
+          },
+          {
+            "cycles": 33,
+            "dipole_and_charge": [
+              0.05866735655060984,
+              0.08813230046761589,
+              0.7050372636411355,
+              -0.3671008085641638
+            ],
+            "electronic_plus_nuclear_energy_at_zero_nuclear_field_coupling": -74.95820460020423,
+            "field_au": [
+              0.0002,
+              0.0,
+              0.0
+            ],
+            "seconds": 0.02780311599781271
+          },
+          {
+            "cycles": 42,
+            "dipole_and_charge": [
+              0.056871194682302506,
+              0.08819018188768471,
+              0.7050903967848987,
+              -0.36703865268925107
+            ],
+            "electronic_plus_nuclear_energy_at_zero_nuclear_field_coupling": -74.95826149248606,
+            "field_au": [
+              -0.0002,
+              -0.0,
+              -0.0
+            ],
+            "seconds": 0.03280255300342105
+          },
+          {
+            "cycles": 41,
+            "dipole_and_charge": [
+              0.05774036589109066,
+              0.08817679472771006,
+              0.7051288224499104,
+              -0.3671161294717251
+            ],
+            "electronic_plus_nuclear_energy_at_zero_nuclear_field_coupling": -74.95819059034201,
+            "field_au": [
+              0.0,
+              0.0002,
+              0.0
+            ],
+            "seconds": 0.03040369800874032
+          },
+          {
+            "cycles": 41,
+            "dipole_and_charge": [
+              0.057798247312101036,
+              0.08814571656545778,
+              0.7049990745674739,
+              -0.36702341571372266
+            ],
+            "electronic_plus_nuclear_energy_at_zero_nuclear_field_coupling": -74.95827532583985,
+            "field_au": [
+              -0.0,
+              -0.0002,
+              -0.0
+            ],
+            "seconds": 0.0305488659942057
+          },
+          {
+            "cycles": 41,
+            "dipole_and_charge": [
+              0.057742750871675796,
+              0.08822611868750899,
+              0.7055735983623845,
+              -0.3674406462980748
+            ],
+            "electronic_plus_nuclear_energy_at_zero_nuclear_field_coupling": -74.95789402029439,
+            "field_au": [
+              0.0,
+              0.0,
+              0.0002
+            ],
+            "seconds": 0.03045639999618288
+          },
+          {
+            "cycles": 40,
+            "dipole_and_charge": [
+              0.05779588401843605,
+              0.08809637080010033,
+              0.7045541416613061,
+              -0.3666988582218291
+            ],
+            "electronic_plus_nuclear_energy_at_zero_nuclear_field_coupling": -74.95857199472533,
+            "field_au": [
+              -0.0,
+              -0.0,
+              -0.0002
+            ],
+            "seconds": 0.030515709004248492
+          }
+        ]
+      },
+      "independent_preflight_counts": {
+        "jk_calls": 1
+      },
+      "independent_seconds": 2.601601563001168,
+      "name": "water",
+      "retained_second_round_reference": "2bcfaf3f1cd8f610914a4ff1fbaf01ddaf04c6e0a843b1b63cd4af953bc3f09e",
+      "strategies": {
+        "gqc_incremental": {
+          "first_trajectory_seconds": 3.1575637939968146,
+          "rounds": [
+            {
+              "counts": {
+                "density_jvp_calls": 24,
+                "jk_calls": 22,
+                "observation_calls": 2,
+                "response_operator_actions": 22,
+                "rhs_sent_to_solver": 2
+              },
+              "elapsed_seconds": 0.004441578013938852,
+              "fields": [
+                [
+                  1,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  0
+                ]
+              ],
+              "label_bytes_written": 366,
+              "max_errors_vs_direct": [
+                0.0,
+                0.0
+              ],
+              "numeric_vector_bytes": 160,
+              "published": [
+                {
+                  "field": [
+                    1,
+                    0,
+                    0
+                  ],
+                  "qualified": true,
+                  "values": [
+                    4.490404729900849,
+                    -0.1447035525718919,
+                    -0.13283286966199714
+                  ]
+                },
+                {
+                  "field": [
+                    0,
+                    1,
+                    0
+                  ],
+                  "qualified": true,
+                  "values": [
+                    -0.14470355257189405,
+                    0.07769540784688514,
+                    0.3243697070575431
+                  ]
+                }
+              ],
+              "qualification": [
+                {
+                  "cphf_error": 5.415667914121514e-13,
+                  "fd_errors": {
+                    "0.0002": 5.913251577283063e-08,
+                    "0.0005": 3.798965977352964e-07
+                  },
+                  "field": [
+                    1,
+                    0,
+                    0
+                  ],
+                  "passed": true
+                },
+                {
+                  "cphf_error": 6.367129046225273e-14,
+                  "fd_errors": {
+                    "0.0002": 2.216172939606409e-09,
+                    "0.0005": 8.413187480016404e-09
+                  },
+                  "field": [
+                    0,
+                    1,
+                    0
+                  ],
+                  "passed": true
+                }
+              ],
+              "residuals": [
+                8.840140587047988e-15,
+                4.607077704473585e-15
+              ],
+              "state_bytes_written": 1198,
+              "state_sha256": "fea229a3f958a23ede337f194cb0e26d575cb54bf28a2e1e973a27668c0987f8"
+            },
+            {
+              "admission": [
+                {
+                  "decision": "accepted",
+                  "elapsed_seconds": 0.00015030500071588904,
+                  "field": [
+                    1,
+                    0,
+                    0
+                  ],
+                  "residual": 8.840140587047988e-15
+                },
+                {
+                  "decision": "accepted",
+                  "elapsed_seconds": 0.00010277799447067082,
+                  "field": [
+                    0,
+                    1,
+                    0
+                  ],
+                  "residual": 4.607077704473585e-15
+                }
+              ],
+              "counts": {
+                "density_jvp_calls": 28,
+                "jk_calls": 25,
+                "observation_calls": 3,
+                "response_operator_actions": 25,
+                "rhs_sent_to_solver": 1
+              },
+              "elapsed_seconds": 0.47116954300145153,
+              "fields": [
+                [
+                  1,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  0,
+                  1,
+                  1
+                ]
+              ],
+              "label_bytes_written": 624,
+              "max_errors_vs_direct": [
+                9.325873406851315e-15,
+                1.2434497875801753e-14,
+                7.993605777301127e-15
+              ],
+              "new_fields": [
+                [
+                  "0",
+                  "0",
+                  "1"
+                ]
+              ],
+              "numeric_vector_bytes": 240,
+              "planning_seconds": 0.0006669819995295256,
+              "published": [
+                {
+                  "field": [
+                    1,
+                    1,
+                    0
+                  ],
+                  "qualified": true,
+                  "values": [
+                    4.345701177328955,
+                    -0.06700814472500682,
+                    0.1915368373955455,
+                    -0.3871740888439149
+                  ]
+                },
+                {
+                  "field": [
+                    1,
+                    0,
+                    1
+                  ],
+                  "qualified": true,
+                  "values": [
+                    4.357571860238837,
+                    0.17966615448565187,
+                    2.4158088070672736,
+                    -2.0098598785568256
+                  ]
+                },
+                {
+                  "field": [
+                    0,
+                    1,
+                    1
+                  ],
+                  "qualified": true,
+                  "values": [
+                    -0.2775364222339052,
+                    0.40206511490442887,
+                    2.8730113837868148,
+                    -2.0862545805726946
+                  ]
+                }
+              ],
+              "qualification": [
+                {
+                  "cphf_error": 5.190292640122607e-13,
+                  "fd_errors": {
+                    "0.0002": 6.364985427609327e-08,
+                    "0.0005": 4.168911234003758e-07
+                  },
+                  "field": [
+                    1,
+                    1,
+                    0
+                  ],
+                  "passed": true
+                },
+                {
+                  "cphf_error": 6.359357485052897e-13,
+                  "fd_errors": {
+                    "0.0002": 1.4337441545109186e-07,
+                    "0.0005": 8.884816136145446e-07
+                  },
+                  "field": [
+                    1,
+                    0,
+                    1
+                  ],
+                  "passed": true
+                },
+                {
+                  "cphf_error": 6.041833700010102e-13,
+                  "fd_errors": {
+                    "0.0002": 1.0174117281991357e-07,
+                    "0.0005": 6.339576659186719e-07
+                  },
+                  "field": [
+                    0,
+                    1,
+                    1
+                  ],
+                  "passed": true
+                }
+              ],
+              "reconstruction_ir": "8f6de7d32bb1f88f1ec69fa66af1e6769e779cd31aee438f07915697a3709c10",
+              "residuals": [
+                1.1913958285407867e-14,
+                9.846025231567746e-15,
+                5.850186115734509e-15
+              ],
+              "state_bytes_written": 1791,
+              "state_read_bytes": 1198,
+              "state_read_seconds": 3.293300687801093e-05,
+              "state_sha256": "5eb5b999d9f15d69e331e3ceef0a398715ac91c4faa617cc6d075b00d23f90d9",
+              "weights": [
+                [
+                  "1",
+                  "1",
+                  "0"
+                ],
+                [
+                  "1",
+                  "0",
+                  "1"
+                ],
+                [
+                  "0",
+                  "1",
+                  "1"
+                ]
+              ]
+            },
+            {
+              "admission": [
+                {
+                  "decision": "accepted",
+                  "elapsed_seconds": 0.0002845670096576214,
+                  "field": [
+                    1,
+                    1,
+                    0
+                  ],
+                  "residual": 1.1913958285407867e-14
+                },
+                {
+                  "decision": "accepted",
+                  "elapsed_seconds": 0.00021158999879844487,
+                  "field": [
+                    1,
+                    0,
+                    1
+                  ],
+                  "residual": 9.846025231567746e-15
+                },
+                {
+                  "decision": "accepted",
+                  "elapsed_seconds": 0.00017606400069780648,
+                  "field": [
+                    0,
+                    1,
+                    1
+                  ],
+                  "residual": 5.850186115734509e-15
+                }
+              ],
+              "counts": {
+                "density_jvp_calls": 9,
+                "extent_calls": 3,
+                "jk_calls": 6,
+                "response_operator_actions": 6
+              },
+              "elapsed_seconds": 0.891354103005142,
+              "fields": [
+                [
+                  1,
+                  -1,
+                  0
+                ],
+                [
+                  1,
+                  0,
+                  -1
+                ],
+                [
+                  0,
+                  1,
+                  -1
+                ]
+              ],
+              "label_bytes_written": 385,
+              "max_errors_vs_direct": [
+                1.1546319456101628e-13,
+                1.1191048088221578e-13,
+                7.105427357601002e-15
+              ],
+              "new_fields": [],
+              "planning_seconds": 0.0012606060045072809,
+              "published": [
+                {
+                  "field": [
+                    1,
+                    -1,
+                    0
+                  ],
+                  "qualified": true,
+                  "values": [
+                    0.3064146573640265
+                  ]
+                },
+                {
+                  "field": [
+                    1,
+                    0,
+                    -1
+                  ],
+                  "qualified": true,
+                  "values": [
+                    7.162792959675787
+                  ]
+                },
+                {
+                  "field": [
+                    0,
+                    1,
+                    -1
+                  ],
+                  "qualified": true,
+                  "values": [
+                    6.856378302311757
+                  ]
+                }
+              ],
+              "qualification": [
+                {
+                  "cphf_error": 1.177724584522366e-12,
+                  "fd_errors": {
+                    "0.0002": 7.515208011454888e-09,
+                    "0.0005": 3.589428487771329e-08
+                  },
+                  "field": [
+                    1,
+                    -1,
+                    0
+                  ],
+                  "passed": true
+                },
+                {
+                  "cphf_error": 1.198152688175469e-12,
+                  "fd_errors": {
+                    "0.0002": 7.314324435014896e-08,
+                    "0.0005": 4.3116441261759064e-07
+                  },
+                  "field": [
+                    1,
+                    0,
+                    -1
+                  ],
+                  "passed": true
+                },
+                {
+                  "cphf_error": 2.3092638912203256e-14,
+                  "fd_errors": {
+                    "0.0002": 4.279190690681389e-08,
+                    "0.0005": 2.676129575718278e-07
+                  },
+                  "field": [
+                    0,
+                    1,
+                    -1
+                  ],
+                  "passed": true
+                }
+              ],
+              "reconstruction_ir": "97dbf83b5898c3b842430b5389059034ad39b38b7931d64c5d0fbb5047890e5a",
+              "residuals": [
+                6.723289164443525e-15,
+                8.17468819332453e-15,
+                4.860482049191168e-15
+              ],
+              "state_read_bytes": 1791,
+              "state_read_seconds": 5.1619004807434976e-05,
+              "weights": [
+                [
+                  "0",
+                  "1",
+                  "-1"
+                ],
+                [
+                  "1",
+                  "0",
+                  "-1"
+                ],
+                [
+                  "1",
+                  "-1",
+                  "0"
+                ]
+              ]
+            }
+          ],
+          "setup_seconds": 1.7905649390013423,
+          "trajectory_counts": {
+            "density_jvp_calls": 61,
+            "extent_calls": 3,
+            "jk_calls": 54,
+            "observation_calls": 5,
+            "response_operator_actions": 53,
+            "rhs_sent_to_solver": 3
+          },
+          "warm_third_round_replay": {
+            "admission": [
+              {
+                "decision": "accepted",
+                "elapsed_seconds": 0.00021167899831198156,
+                "field": [
+                  1,
+                  1,
+                  0
+                ],
+                "residual": 1.1913958285407867e-14
+              },
+              {
+                "decision": "accepted",
+                "elapsed_seconds": 0.0001186700101243332,
+                "field": [
+                  1,
+                  0,
+                  1
+                ],
+                "residual": 9.846025231567746e-15
+              },
+              {
+                "decision": "accepted",
+                "elapsed_seconds": 0.0001061389921233058,
+                "field": [
+                  0,
+                  1,
+                  1
+                ],
+                "residual": 5.850186115734509e-15
+              }
+            ],
+            "counts": {
+              "density_jvp_calls": 9,
+              "extent_calls": 3,
+              "jk_calls": 6,
+              "response_operator_actions": 6
+            },
+            "elapsed_seconds": 0.0022698060056427494,
+            "fields": [
+              [
+                1,
+                -1,
+                0
+              ],
+              [
+                1,
+                0,
+                -1
+              ],
+              [
+                0,
+                1,
+                -1
+              ]
+            ],
+            "new_fields": [],
+            "planning_seconds": 0.0007111169979907572,
+            "published": [
+              {
+                "field": [
+                  1,
+                  -1,
+                  0
+                ],
+                "qualified": true,
+                "values": [
+                  0.3064146573640265
+                ]
+              },
+              {
+                "field": [
+                  1,
+                  0,
+                  -1
+                ],
+                "qualified": true,
+                "values": [
+                  7.162792959675787
+                ]
+              },
+              {
+                "field": [
+                  0,
+                  1,
+                  -1
+                ],
+                "qualified": true,
+                "values": [
+                  6.856378302311757
+                ]
+              }
+            ],
+            "qualification": [
+              {
+                "cphf_error": 1.177724584522366e-12,
+                "fd_errors": {
+                  "0.0002": 7.515208011454888e-09,
+                  "0.0005": 3.589428487771329e-08
+                },
+                "field": [
+                  1,
+                  -1,
+                  0
+                ],
+                "passed": true
+              },
+              {
+                "cphf_error": 1.198152688175469e-12,
+                "fd_errors": {
+                  "0.0002": 7.314324435014896e-08,
+                  "0.0005": 4.3116441261759064e-07
+                },
+                "field": [
+                  1,
+                  0,
+                  -1
+                ],
+                "passed": true
+              },
+              {
+                "cphf_error": 2.3092638912203256e-14,
+                "fd_errors": {
+                  "0.0002": 4.279190690681389e-08,
+                  "0.0005": 2.676129575718278e-07
+                },
+                "field": [
+                  0,
+                  1,
+                  -1
+                ],
+                "passed": true
+              }
+            ],
+            "reconstruction_ir": "97dbf83b5898c3b842430b5389059034ad39b38b7931d64c5d0fbb5047890e5a",
+            "residuals": [
+              6.723289164443525e-15,
+              8.17468819332453e-15,
+              4.860482049191168e-15
+            ],
+            "state_read_bytes": 1791,
+            "state_read_seconds": 4.084499960299581e-05,
+            "weights": [
+              [
+                "0",
+                "1",
+                "-1"
+              ],
+              [
+                "1",
+                "0",
+                "-1"
+              ],
+              [
+                "1",
+                "-1",
+                "0"
+              ]
+            ]
+          }
+        },
+        "hand_all_axes": {
+          "first_trajectory_seconds": 2.1945759850059403,
+          "rounds": [
+            {
+              "counts": {
+                "density_jvp_calls": 28,
+                "jk_calls": 25,
+                "observation_calls": 3,
+                "response_operator_actions": 25,
+                "rhs_sent_to_solver": 3
+              },
+              "elapsed_seconds": 0.012393553988658823,
+              "fields": [
+                [
+                  1,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  0
+                ]
+              ],
+              "label_bytes_written": 366,
+              "max_errors_vs_direct": [
+                3.1086244689504383e-15,
+                1.2490009027033011e-15
+              ],
+              "numeric_vector_bytes": 240,
+              "published": [
+                {
+                  "field": [
+                    1,
+                    0,
+                    0
+                  ],
+                  "qualified": true,
+                  "values": [
+                    4.490404729900849,
+                    -0.1447035525718913,
+                    -0.13283286966199404
+                  ]
+                },
+                {
+                  "field": [
+                    0,
+                    1,
+                    0
+                  ],
+                  "qualified": true,
+                  "values": [
+                    -0.1447035525718928,
+                    0.07769540784688514,
+                    0.32436970705754287
+                  ]
+                }
+              ],
+              "qualification": [
+                {
+                  "cphf_error": 5.446754158811018e-13,
+                  "fd_errors": {
+                    "0.0002": 5.913251577283063e-08,
+                    "0.0005": 3.798965977352964e-07
+                  },
+                  "field": [
+                    1,
+                    0,
+                    0
+                  ],
+                  "passed": true
+                },
+                {
+                  "cphf_error": 6.492029136495603e-14,
+                  "fd_errors": {
+                    "0.0002": 2.216172939606409e-09,
+                    "0.0005": 8.4131872579718e-09
+                  },
+                  "field": [
+                    0,
+                    1,
+                    0
+                  ],
+                  "passed": true
+                },
+                {
+                  "cphf_error": 5.327960295176126e-13,
+                  "fd_errors": {
+                    "0.0002": 7.596671069975969e-08,
+                    "0.0005": 4.7572837891252107e-07
+                  },
+                  "field": [
+                    0,
+                    0,
+                    1
+                  ],
+                  "passed": true
+                }
+              ],
+              "residuals": [
+                9.156784675583605e-15,
+                3.911004240119554e-15,
+                3.2095293650201e-14
+              ],
+              "state_bytes_written": 1794,
+              "state_sha256": "e77ff062975d4606bed104c512ce9928e1413e6d763f3a770dd93b9a0362c729"
+            },
+            {
+              "admission": [
+                {
+                  "decision": "accepted",
+                  "elapsed_seconds": 0.00022748499759472907,
+                  "field": [
+                    1,
+                    0,
+                    0
+                  ],
+                  "residual": 9.156784675583605e-15
+                },
+                {
+                  "decision": "accepted",
+                  "elapsed_seconds": 0.00015952601097524166,
+                  "field": [
+                    0,
+                    1,
+                    0
+                  ],
+                  "residual": 3.911004240119554e-15
+                },
+                {
+                  "decision": "accepted",
+                  "elapsed_seconds": 0.00014977098908275366,
+                  "field": [
+                    0,
+                    0,
+                    1
+                  ],
+                  "residual": 3.2095293650201e-14
+                }
+              ],
+              "counts": {
+                "density_jvp_calls": 9,
+                "jk_calls": 6,
+                "observation_calls": 3,
+                "response_operator_actions": 6
+              },
+              "elapsed_seconds": 0.0014223200123524293,
+              "fields": [
+                [
+                  1,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  0,
+                  1,
+                  1
+                ]
+              ],
+              "label_bytes_written": 623,
+              "max_errors_vs_direct": [
+                1.2878587085651816e-14,
+                1.2434497875801753e-14,
+                4.440892098500626e-15
+              ],
+              "published": [
+                {
+                  "field": [
+                    1,
+                    1,
+                    0
+                  ],
+                  "qualified": true,
+                  "values": [
+                    4.345701177328956,
+                    -0.06700814472500621,
+                    0.19153683739554905,
+                    -0.38717408884391735
+                  ]
+                },
+                {
+                  "field": [
+                    1,
+                    0,
+                    1
+                  ],
+                  "qualified": true,
+                  "values": [
+                    4.35757186023884,
+                    0.1796661544856517,
+                    2.4158088070672736,
+                    -2.0098598785568282
+                  ]
+                },
+                {
+                  "field": [
+                    0,
+                    1,
+                    1
+                  ],
+                  "qualified": true,
+                  "values": [
+                    -0.2775364222339016,
+                    0.40206511490442826,
+                    2.873011383786811,
+                    -2.0862545805726933
+                  ]
+                }
+              ],
+              "qualification": [
+                {
+                  "cphf_error": 5.225819776910612e-13,
+                  "fd_errors": {
+                    "0.0002": 6.364985516427168e-08,
+                    "0.0005": 4.1689112428855424e-07
+                  },
+                  "field": [
+                    1,
+                    1,
+                    0
+                  ],
+                  "passed": true
+                },
+                {
+                  "cphf_error": 6.394884621840902e-13,
+                  "fd_errors": {
+                    "0.0002": 1.4337441545109186e-07,
+                    "0.0005": 8.884816136145446e-07
+                  },
+                  "field": [
+                    1,
+                    0,
+                    1
+                  ],
+                  "passed": true
+                },
+                {
+                  "cphf_error": 6.077360836798107e-13,
+                  "fd_errors": {
+                    "0.0002": 1.0174117637262725e-07,
+                    "0.0005": 6.339576694713855e-07
+                  },
+                  "field": [
+                    0,
+                    1,
+                    1
+                  ],
+                  "passed": true
+                }
+              ],
+              "residuals": [
+                1.184169122294876e-14,
+                3.8049475235524495e-14,
+                3.6474048445686846e-14
+              ],
+              "state_read_bytes": 1794,
+              "state_read_seconds": 5.484600842464715e-05
+            },
+            {
+              "admission": [
+                {
+                  "decision": "accepted",
+                  "elapsed_seconds": 0.00020052999025210738,
+                  "field": [
+                    1,
+                    0,
+                    0
+                  ],
+                  "residual": 9.156784675583605e-15
+                },
+                {
+                  "decision": "accepted",
+                  "elapsed_seconds": 0.00015163900388870388,
+                  "field": [
+                    0,
+                    1,
+                    0
+                  ],
+                  "residual": 3.911004240119554e-15
+                },
+                {
+                  "decision": "accepted",
+                  "elapsed_seconds": 0.0001390469988109544,
+                  "field": [
+                    0,
+                    0,
+                    1
+                  ],
+                  "residual": 3.2095293650201e-14
+                }
+              ],
+              "counts": {
+                "density_jvp_calls": 9,
+                "extent_calls": 3,
+                "jk_calls": 6,
+                "response_operator_actions": 6
+              },
+              "elapsed_seconds": 0.42036995699163526,
+              "fields": [
+                [
+                  1,
+                  -1,
+                  0
+                ],
+                [
+                  1,
+                  0,
+                  -1
+                ],
+                [
+                  0,
+                  1,
+                  -1
+                ]
+              ],
+              "label_bytes_written": 385,
+              "max_errors_vs_direct": [
+                1.3145040611561853e-13,
+                1.3322676295501878e-13,
+                1.7763568394002505e-15
+              ],
+              "published": [
+                {
+                  "field": [
+                    1,
+                    -1,
+                    0
+                  ],
+                  "qualified": true,
+                  "values": [
+                    0.3064146573640105
+                  ]
+                },
+                {
+                  "field": [
+                    1,
+                    0,
+                    -1
+                  ],
+                  "qualified": true,
+                  "values": [
+                    7.162792959675766
+                  ]
+                },
+                {
+                  "field": [
+                    0,
+                    1,
+                    -1
+                  ],
+                  "qualified": true,
+                  "values": [
+                    6.856378302311752
+                  ]
+                }
+              ],
+              "qualification": [
+                {
+                  "cphf_error": 1.1937117960769683e-12,
+                  "fd_errors": {
+                    "0.0002": 7.515192024243333e-09,
+                    "0.0005": 3.5894268890501735e-08
+                  },
+                  "field": [
+                    1,
+                    -1,
+                    0
+                  ],
+                  "passed": true
+                },
+                {
+                  "cphf_error": 1.219468970248272e-12,
+                  "fd_errors": {
+                    "0.0002": 7.314322303386689e-08,
+                    "0.0005": 4.3116439130130857e-07
+                  },
+                  "field": [
+                    1,
+                    0,
+                    -1
+                  ],
+                  "passed": true
+                },
+                {
+                  "cphf_error": 2.842170943040401e-14,
+                  "fd_errors": {
+                    "0.0002": 4.279191223588441e-08,
+                    "0.0005": 2.676129629008983e-07
+                  },
+                  "field": [
+                    0,
+                    1,
+                    -1
+                  ],
+                  "passed": true
+                }
+              ],
+              "residuals": [
+                8.51219323116136e-15,
+                2.882323515014354e-14,
+                2.86601016631395e-14
+              ],
+              "state_read_bytes": 1794,
+              "state_read_seconds": 5.223300831858069e-05
+            }
+          ],
+          "setup_seconds": 1.760351514996728,
+          "trajectory_counts": {
+            "density_jvp_calls": 46,
+            "extent_calls": 3,
+            "jk_calls": 38,
+            "observation_calls": 6,
+            "response_operator_actions": 37,
+            "rhs_sent_to_solver": 3
+          },
+          "warm_third_round_replay": {
+            "admission": [
+              {
+                "decision": "accepted",
+                "elapsed_seconds": 0.00042503200529608876,
+                "field": [
+                  1,
+                  0,
+                  0
+                ],
+                "residual": 9.156784675583605e-15
+              },
+              {
+                "decision": "accepted",
+                "elapsed_seconds": 0.0003304349957033992,
+                "field": [
+                  0,
+                  1,
+                  0
+                ],
+                "residual": 3.911004240119554e-15
+              },
+              {
+                "decision": "accepted",
+                "elapsed_seconds": 0.00032194500090554357,
+                "field": [
+                  0,
+                  0,
+                  1
+                ],
+                "residual": 3.2095293650201e-14
+              }
+            ],
+            "counts": {
+              "density_jvp_calls": 9,
+              "extent_calls": 3,
+              "jk_calls": 6,
+              "response_operator_actions": 6
+            },
+            "elapsed_seconds": 0.003351343999383971,
+            "fields": [
+              [
+                1,
+                -1,
+                0
+              ],
+              [
+                1,
+                0,
+                -1
+              ],
+              [
+                0,
+                1,
+                -1
+              ]
+            ],
+            "published": [
+              {
+                "field": [
+                  1,
+                  -1,
+                  0
+                ],
+                "qualified": true,
+                "values": [
+                  0.3064146573640105
+                ]
+              },
+              {
+                "field": [
+                  1,
+                  0,
+                  -1
+                ],
+                "qualified": true,
+                "values": [
+                  7.162792959675766
+                ]
+              },
+              {
+                "field": [
+                  0,
+                  1,
+                  -1
+                ],
+                "qualified": true,
+                "values": [
+                  6.856378302311752
+                ]
+              }
+            ],
+            "qualification": [
+              {
+                "cphf_error": 1.1937117960769683e-12,
+                "fd_errors": {
+                  "0.0002": 7.515192024243333e-09,
+                  "0.0005": 3.5894268890501735e-08
+                },
+                "field": [
+                  1,
+                  -1,
+                  0
+                ],
+                "passed": true
+              },
+              {
+                "cphf_error": 1.219468970248272e-12,
+                "fd_errors": {
+                  "0.0002": 7.314322303386689e-08,
+                  "0.0005": 4.3116439130130857e-07
+                },
+                "field": [
+                  1,
+                  0,
+                  -1
+                ],
+                "passed": true
+              },
+              {
+                "cphf_error": 2.842170943040401e-14,
+                "fd_errors": {
+                  "0.0002": 4.279191223588441e-08,
+                  "0.0005": 2.676129629008983e-07
+                },
+                "field": [
+                  0,
+                  1,
+                  -1
+                ],
+                "passed": true
+              }
+            ],
+            "residuals": [
+              8.51219323116136e-15,
+              2.882323515014354e-14,
+              2.86601016631395e-14
+            ],
+            "state_read_bytes": 1794,
+            "state_read_seconds": 7.243099389597774e-05
+          }
+        },
+        "hand_incremental": {
+          "first_trajectory_seconds": 2.221297747993958,
+          "rounds": [
+            {
+              "counts": {
+                "density_jvp_calls": 24,
+                "jk_calls": 22,
+                "observation_calls": 2,
+                "response_operator_actions": 22,
+                "rhs_sent_to_solver": 2
+              },
+              "elapsed_seconds": 0.006043062996468507,
+              "fields": [
+                [
+                  1,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  0
+                ]
+              ],
+              "label_bytes_written": 366,
+              "max_errors_vs_direct": [
+                0.0,
+                0.0
+              ],
+              "numeric_vector_bytes": 160,
+              "published": [
+                {
+                  "field": [
+                    1,
+                    0,
+                    0
+                  ],
+                  "qualified": true,
+                  "values": [
+                    4.490404729900849,
+                    -0.1447035525718919,
+                    -0.13283286966199714
+                  ]
+                },
+                {
+                  "field": [
+                    0,
+                    1,
+                    0
+                  ],
+                  "qualified": true,
+                  "values": [
+                    -0.14470355257189405,
+                    0.07769540784688514,
+                    0.3243697070575431
+                  ]
+                }
+              ],
+              "qualification": [
+                {
+                  "cphf_error": 5.415667914121514e-13,
+                  "fd_errors": {
+                    "0.0002": 5.913251577283063e-08,
+                    "0.0005": 3.798965977352964e-07
+                  },
+                  "field": [
+                    1,
+                    0,
+                    0
+                  ],
+                  "passed": true
+                },
+                {
+                  "cphf_error": 6.367129046225273e-14,
+                  "fd_errors": {
+                    "0.0002": 2.216172939606409e-09,
+                    "0.0005": 8.413187480016404e-09
+                  },
+                  "field": [
+                    0,
+                    1,
+                    0
+                  ],
+                  "passed": true
+                }
+              ],
+              "residuals": [
+                8.840140587047988e-15,
+                4.607077704473585e-15
+              ],
+              "state_bytes_written": 1198,
+              "state_sha256": "fea229a3f958a23ede337f194cb0e26d575cb54bf28a2e1e973a27668c0987f8"
+            },
+            {
+              "admission": [
+                {
+                  "decision": "accepted",
+                  "elapsed_seconds": 0.00020226500055287033,
+                  "field": [
+                    1,
+                    0,
+                    0
+                  ],
+                  "residual": 8.840140587047988e-15
+                },
+                {
+                  "decision": "accepted",
+                  "elapsed_seconds": 0.00016471699927933514,
+                  "field": [
+                    0,
+                    1,
+                    0
+                  ],
+                  "residual": 4.607077704473585e-15
+                }
+              ],
+              "counts": {
+                "density_jvp_calls": 28,
+                "jk_calls": 25,
+                "observation_calls": 3,
+                "response_operator_actions": 25,
+                "rhs_sent_to_solver": 1
+              },
+              "elapsed_seconds": 0.007292163994861767,
+              "fields": [
+                [
+                  1,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  0,
+                  1,
+                  1
+                ]
+              ],
+              "label_bytes_written": 624,
+              "max_errors_vs_direct": [
+                9.325873406851315e-15,
+                1.2434497875801753e-14,
+                7.993605777301127e-15
+              ],
+              "numeric_vector_bytes": 240,
+              "published": [
+                {
+                  "field": [
+                    1,
+                    1,
+                    0
+                  ],
+                  "qualified": true,
+                  "values": [
+                    4.345701177328955,
+                    -0.06700814472500682,
+                    0.1915368373955455,
+                    -0.3871740888439149
+                  ]
+                },
+                {
+                  "field": [
+                    1,
+                    0,
+                    1
+                  ],
+                  "qualified": true,
+                  "values": [
+                    4.357571860238837,
+                    0.17966615448565187,
+                    2.4158088070672736,
+                    -2.0098598785568256
+                  ]
+                },
+                {
+                  "field": [
+                    0,
+                    1,
+                    1
+                  ],
+                  "qualified": true,
+                  "values": [
+                    -0.2775364222339052,
+                    0.40206511490442887,
+                    2.8730113837868148,
+                    -2.0862545805726946
+                  ]
+                }
+              ],
+              "qualification": [
+                {
+                  "cphf_error": 5.190292640122607e-13,
+                  "fd_errors": {
+                    "0.0002": 6.364985427609327e-08,
+                    "0.0005": 4.168911234003758e-07
+                  },
+                  "field": [
+                    1,
+                    1,
+                    0
+                  ],
+                  "passed": true
+                },
+                {
+                  "cphf_error": 6.359357485052897e-13,
+                  "fd_errors": {
+                    "0.0002": 1.4337441545109186e-07,
+                    "0.0005": 8.884816136145446e-07
+                  },
+                  "field": [
+                    1,
+                    0,
+                    1
+                  ],
+                  "passed": true
+                },
+                {
+                  "cphf_error": 6.041833700010102e-13,
+                  "fd_errors": {
+                    "0.0002": 1.0174117281991357e-07,
+                    "0.0005": 6.339576659186719e-07
+                  },
+                  "field": [
+                    0,
+                    1,
+                    1
+                  ],
+                  "passed": true
+                }
+              ],
+              "residuals": [
+                1.1913958285407867e-14,
+                9.846025231567746e-15,
+                5.850186115734509e-15
+              ],
+              "state_bytes_written": 1791,
+              "state_read_bytes": 1198,
+              "state_read_seconds": 4.726499901153147e-05,
+              "state_sha256": "5eb5b999d9f15d69e331e3ceef0a398715ac91c4faa617cc6d075b00d23f90d9"
+            },
+            {
+              "admission": [
+                {
+                  "decision": "accepted",
+                  "elapsed_seconds": 0.00024425699666608125,
+                  "field": [
+                    1,
+                    1,
+                    0
+                  ],
+                  "residual": 1.1913958285407867e-14
+                },
+                {
+                  "decision": "accepted",
+                  "elapsed_seconds": 0.0001757220015861094,
+                  "field": [
+                    1,
+                    0,
+                    1
+                  ],
+                  "residual": 9.846025231567746e-15
+                },
+                {
+                  "decision": "accepted",
+                  "elapsed_seconds": 0.0001630080078030005,
+                  "field": [
+                    0,
+                    1,
+                    1
+                  ],
+                  "residual": 5.850186115734509e-15
+                }
+              ],
+              "counts": {
+                "density_jvp_calls": 9,
+                "extent_calls": 3,
+                "jk_calls": 6,
+                "response_operator_actions": 6
+              },
+              "elapsed_seconds": 0.4279707500099903,
+              "fields": [
+                [
+                  1,
+                  -1,
+                  0
+                ],
+                [
+                  1,
+                  0,
+                  -1
+                ],
+                [
+                  0,
+                  1,
+                  -1
+                ]
+              ],
+              "label_bytes_written": 385,
+              "max_errors_vs_direct": [
+                1.1546319456101628e-13,
+                1.1191048088221578e-13,
+                7.105427357601002e-15
+              ],
+              "published": [
+                {
+                  "field": [
+                    1,
+                    -1,
+                    0
+                  ],
+                  "qualified": true,
+                  "values": [
+                    0.3064146573640265
+                  ]
+                },
+                {
+                  "field": [
+                    1,
+                    0,
+                    -1
+                  ],
+                  "qualified": true,
+                  "values": [
+                    7.162792959675787
+                  ]
+                },
+                {
+                  "field": [
+                    0,
+                    1,
+                    -1
+                  ],
+                  "qualified": true,
+                  "values": [
+                    6.856378302311757
+                  ]
+                }
+              ],
+              "qualification": [
+                {
+                  "cphf_error": 1.177724584522366e-12,
+                  "fd_errors": {
+                    "0.0002": 7.515208011454888e-09,
+                    "0.0005": 3.589428487771329e-08
+                  },
+                  "field": [
+                    1,
+                    -1,
+                    0
+                  ],
+                  "passed": true
+                },
+                {
+                  "cphf_error": 1.198152688175469e-12,
+                  "fd_errors": {
+                    "0.0002": 7.314324435014896e-08,
+                    "0.0005": 4.3116441261759064e-07
+                  },
+                  "field": [
+                    1,
+                    0,
+                    -1
+                  ],
+                  "passed": true
+                },
+                {
+                  "cphf_error": 2.3092638912203256e-14,
+                  "fd_errors": {
+                    "0.0002": 4.279190690681389e-08,
+                    "0.0005": 2.676129575718278e-07
+                  },
+                  "field": [
+                    0,
+                    1,
+                    -1
+                  ],
+                  "passed": true
+                }
+              ],
+              "residuals": [
+                6.723289164443525e-15,
+                8.17468819332453e-15,
+                4.860482049191168e-15
+              ],
+              "state_read_bytes": 1791,
+              "state_read_seconds": 7.258298865053803e-05
+            }
+          ],
+          "setup_seconds": 1.7799573980009882,
+          "trajectory_counts": {
+            "density_jvp_calls": 61,
+            "extent_calls": 3,
+            "jk_calls": 54,
+            "observation_calls": 5,
+            "response_operator_actions": 53,
+            "rhs_sent_to_solver": 3
+          },
+          "warm_third_round_replay": {
+            "admission": [
+              {
+                "decision": "accepted",
+                "elapsed_seconds": 0.00020401300571393222,
+                "field": [
+                  1,
+                  1,
+                  0
+                ],
+                "residual": 1.1913958285407867e-14
+              },
+              {
+                "decision": "accepted",
+                "elapsed_seconds": 0.00012173700088169426,
+                "field": [
+                  1,
+                  0,
+                  1
+                ],
+                "residual": 9.846025231567746e-15
+              },
+              {
+                "decision": "accepted",
+                "elapsed_seconds": 0.00010658700193744153,
+                "field": [
+                  0,
+                  1,
+                  1
+                ],
+                "residual": 5.850186115734509e-15
+              }
+            ],
+            "counts": {
+              "density_jvp_calls": 9,
+              "extent_calls": 3,
+              "jk_calls": 6,
+              "response_operator_actions": 6
+            },
+            "elapsed_seconds": 0.0013640859979204834,
+            "fields": [
+              [
+                1,
+                -1,
+                0
+              ],
+              [
+                1,
+                0,
+                -1
+              ],
+              [
+                0,
+                1,
+                -1
+              ]
+            ],
+            "published": [
+              {
+                "field": [
+                  1,
+                  -1,
+                  0
+                ],
+                "qualified": true,
+                "values": [
+                  0.3064146573640265
+                ]
+              },
+              {
+                "field": [
+                  1,
+                  0,
+                  -1
+                ],
+                "qualified": true,
+                "values": [
+                  7.162792959675787
+                ]
+              },
+              {
+                "field": [
+                  0,
+                  1,
+                  -1
+                ],
+                "qualified": true,
+                "values": [
+                  6.856378302311757
+                ]
+              }
+            ],
+            "qualification": [
+              {
+                "cphf_error": 1.177724584522366e-12,
+                "fd_errors": {
+                  "0.0002": 7.515208011454888e-09,
+                  "0.0005": 3.589428487771329e-08
+                },
+                "field": [
+                  1,
+                  -1,
+                  0
+                ],
+                "passed": true
+              },
+              {
+                "cphf_error": 1.198152688175469e-12,
+                "fd_errors": {
+                  "0.0002": 7.314324435014896e-08,
+                  "0.0005": 4.3116441261759064e-07
+                },
+                "field": [
+                  1,
+                  0,
+                  -1
+                ],
+                "passed": true
+              },
+              {
+                "cphf_error": 2.3092638912203256e-14,
+                "fd_errors": {
+                  "0.0002": 4.279190690681389e-08,
+                  "0.0005": 2.676129575718278e-07
+                },
+                "field": [
+                  0,
+                  1,
+                  -1
+                ],
+                "passed": true
+              }
+            ],
+            "residuals": [
+              6.723289164443525e-15,
+              8.17468819332453e-15,
+              4.860482049191168e-15
+            ],
+            "state_read_bytes": 1791,
+            "state_read_seconds": 4.4464002712629735e-05
+          }
+        },
+        "labels_only": {
+          "first_trajectory_seconds": 2.18390190199716,
+          "rounds": [
+            {
+              "counts": {
+                "density_jvp_calls": 24,
+                "jk_calls": 22,
+                "observation_calls": 2,
+                "response_operator_actions": 22,
+                "rhs_sent_to_solver": 2
+              },
+              "elapsed_seconds": 0.011399559996789321,
+              "fields": [
+                [
+                  1,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  0
+                ]
+              ],
+              "label_bytes_written": 366,
+              "max_errors_vs_direct": [
+                0.0,
+                0.0
+              ],
+              "published": [
+                {
+                  "field": [
+                    1,
+                    0,
+                    0
+                  ],
+                  "qualified": true,
+                  "values": [
+                    4.490404729900849,
+                    -0.1447035525718919,
+                    -0.13283286966199714
+                  ]
+                },
+                {
+                  "field": [
+                    0,
+                    1,
+                    0
+                  ],
+                  "qualified": true,
+                  "values": [
+                    -0.14470355257189405,
+                    0.07769540784688514,
+                    0.3243697070575431
+                  ]
+                }
+              ],
+              "qualification": [
+                {
+                  "cphf_error": 5.415667914121514e-13,
+                  "fd_errors": {
+                    "0.0002": 5.913251577283063e-08,
+                    "0.0005": 3.798965977352964e-07
+                  },
+                  "field": [
+                    1,
+                    0,
+                    0
+                  ],
+                  "passed": true
+                },
+                {
+                  "cphf_error": 6.367129046225273e-14,
+                  "fd_errors": {
+                    "0.0002": 2.216172939606409e-09,
+                    "0.0005": 8.413187480016404e-09
+                  },
+                  "field": [
+                    0,
+                    1,
+                    0
+                  ],
+                  "passed": true
+                }
+              ],
+              "residuals": [
+                8.840140587047988e-15,
+                4.607077704473585e-15
+              ]
+            },
+            {
+              "counts": {
+                "density_jvp_calls": 28,
+                "jk_calls": 25,
+                "observation_calls": 3,
+                "response_operator_actions": 25,
+                "rhs_sent_to_solver": 3
+              },
+              "elapsed_seconds": 0.0066904549894388765,
+              "fields": [
+                [
+                  1,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  0,
+                  1,
+                  1
+                ]
+              ],
+              "label_bytes_written": 625,
+              "max_errors_vs_direct": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "published": [
+                {
+                  "field": [
+                    1,
+                    1,
+                    0
+                  ],
+                  "qualified": true,
+                  "values": [
+                    4.345701177328951,
+                    -0.06700814472500788,
+                    0.19153683739553617,
+                    -0.38717408884391125
+                  ]
+                },
+                {
+                  "field": [
+                    1,
+                    0,
+                    1
+                  ],
+                  "qualified": true,
+                  "values": [
+                    4.357571860238834,
+                    0.17966615448565015,
+                    2.415808807067261,
+                    -2.0098598785568207
+                  ]
+                },
+                {
+                  "field": [
+                    0,
+                    1,
+                    1
+                  ],
+                  "qualified": true,
+                  "values": [
+                    -0.27753642223390296,
+                    0.4020651149044275,
+                    2.8730113837868068,
+                    -2.0862545805726915
+                  ]
+                }
+              ],
+              "qualification": [
+                {
+                  "cphf_error": 5.097033906054094e-13,
+                  "fd_errors": {
+                    "0.0002": 6.364984983520117e-08,
+                    "0.0005": 4.168911189594837e-07
+                  },
+                  "field": [
+                    1,
+                    1,
+                    0
+                  ],
+                  "passed": true
+                },
+                {
+                  "cphf_error": 6.332712132461893e-13,
+                  "fd_errors": {
+                    "0.0002": 1.4337442788558974e-07,
+                    "0.0005": 8.884816260490425e-07
+                  },
+                  "field": [
+                    1,
+                    0,
+                    1
+                  ],
+                  "passed": true
+                },
+                {
+                  "cphf_error": 6.064038160502605e-13,
+                  "fd_errors": {
+                    "0.0002": 1.0174118081351935e-07,
+                    "0.0005": 6.339576739122776e-07
+                  },
+                  "field": [
+                    0,
+                    1,
+                    1
+                  ],
+                  "passed": true
+                }
+              ],
+              "residuals": [
+                9.93970292361281e-15,
+                4.4974987394102275e-14,
+                4.6963633953513485e-14
+              ]
+            },
+            {
+              "counts": {
+                "density_jvp_calls": 31,
+                "extent_calls": 3,
+                "jk_calls": 28,
+                "response_operator_actions": 28,
+                "rhs_sent_to_solver": 3
+              },
+              "elapsed_seconds": 0.4271189019927988,
+              "fields": [
+                [
+                  1,
+                  -1,
+                  0
+                ],
+                [
+                  1,
+                  0,
+                  -1
+                ],
+                [
+                  0,
+                  1,
+                  -1
+                ]
+              ],
+              "label_bytes_written": 383,
+              "max_errors_vs_direct": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "published": [
+                {
+                  "field": [
+                    1,
+                    -1,
+                    0
+                  ],
+                  "qualified": true,
+                  "values": [
+                    0.306414657364142
+                  ]
+                },
+                {
+                  "field": [
+                    1,
+                    0,
+                    -1
+                  ],
+                  "qualified": true,
+                  "values": [
+                    7.162792959675899
+                  ]
+                },
+                {
+                  "field": [
+                    0,
+                    1,
+                    -1
+                  ],
+                  "qualified": true,
+                  "values": [
+                    6.85637830231175
+                  ]
+                }
+              ],
+              "qualification": [
+                {
+                  "cphf_error": 1.0622613899613498e-12,
+                  "fd_errors": {
+                    "0.0002": 7.515323474649449e-09,
+                    "0.0005": 3.589440034090785e-08
+                  },
+                  "field": [
+                    1,
+                    -1,
+                    0
+                  ],
+                  "passed": true
+                },
+                {
+                  "cphf_error": 1.0862422072932532e-12,
+                  "fd_errors": {
+                    "0.0002": 7.314335626062984e-08,
+                    "0.0005": 4.311645245280715e-07
+                  },
+                  "field": [
+                    1,
+                    0,
+                    -1
+                  ],
+                  "passed": true
+                },
+                {
+                  "cphf_error": 3.019806626980426e-14,
+                  "fd_errors": {
+                    "0.0002": 4.279191401224125e-08,
+                    "0.0005": 2.6761296467725515e-07
+                  },
+                  "field": [
+                    0,
+                    1,
+                    -1
+                  ],
+                  "passed": true
+                }
+              ],
+              "residuals": [
+                1.4492557392561064e-14,
+                1.530223938209936e-14,
+                3.844804953323992e-15
+              ]
+            }
+          ],
+          "setup_seconds": 1.7386645519873127,
+          "trajectory_counts": {
+            "density_jvp_calls": 83,
+            "extent_calls": 3,
+            "jk_calls": 76,
+            "observation_calls": 5,
+            "response_operator_actions": 75,
+            "rhs_sent_to_solver": 8
+          },
+          "warm_third_round_replay": {
+            "counts": {
+              "density_jvp_calls": 31,
+              "extent_calls": 3,
+              "jk_calls": 28,
+              "response_operator_actions": 28,
+              "rhs_sent_to_solver": 3
+            },
+            "elapsed_seconds": 0.004957676006597467,
+            "fields": [
+              [
+                1,
+                -1,
+                0
+              ],
+              [
+                1,
+                0,
+                -1
+              ],
+              [
+                0,
+                1,
+                -1
+              ]
+            ],
+            "published": [
+              {
+                "field": [
+                  1,
+                  -1,
+                  0
+                ],
+                "qualified": true,
+                "values": [
+                  0.306414657364142
+                ]
+              },
+              {
+                "field": [
+                  1,
+                  0,
+                  -1
+                ],
+                "qualified": true,
+                "values": [
+                  7.162792959675899
+                ]
+              },
+              {
+                "field": [
+                  0,
+                  1,
+                  -1
+                ],
+                "qualified": true,
+                "values": [
+                  6.85637830231175
+                ]
+              }
+            ],
+            "qualification": [
+              {
+                "cphf_error": 1.0622613899613498e-12,
+                "fd_errors": {
+                  "0.0002": 7.515323474649449e-09,
+                  "0.0005": 3.589440034090785e-08
+                },
+                "field": [
+                  1,
+                  -1,
+                  0
+                ],
+                "passed": true
+              },
+              {
+                "cphf_error": 1.0862422072932532e-12,
+                "fd_errors": {
+                  "0.0002": 7.314335626062984e-08,
+                  "0.0005": 4.311645245280715e-07
+                },
+                "field": [
+                  1,
+                  0,
+                  -1
+                ],
+                "passed": true
+              },
+              {
+                "cphf_error": 3.019806626980426e-14,
+                "fd_errors": {
+                  "0.0002": 4.279191401224125e-08,
+                  "0.0005": 2.6761296467725515e-07
+                },
+                "field": [
+                  0,
+                  1,
+                  -1
+                ],
+                "passed": true
+              }
+            ],
+            "residuals": [
+              1.4492557392561064e-14,
+              1.530223938209936e-14,
+              3.844804953323992e-15
+            ]
+          }
+        }
+      },
+      "third_round_oracle": {
+        "cphf": [
+          [
+            0.30641465736520423
+          ],
+          [
+            7.1627929596769855
+          ],
+          [
+            6.85637830231178
+          ]
+        ],
+        "cphf_counts": {
+          "jk_batches": 5,
+          "jk_density_columns": 10
+        },
+        "finite_fields": {
+          "0.0002": [
+            [
+              0.3064146498488185
+            ],
+            [
+              7.162792886532543
+            ],
+            [
+              6.856378345103664
+            ]
+          ],
+          "0.0005": [
+            [
+              0.30641462146974163
+            ],
+            [
+              7.162792528511375
+            ],
+            [
+              6.856378569924715
+            ]
+          ]
+        },
+        "independent_zero_field_density_error": 1.7763568394002505e-15,
+        "integral_errors": {
+          "eri": 8.881784197001252e-16,
+          "hcore": 0.0,
+          "overlap": 0.0
+        },
+        "scf": [
+          {
+            "cycles": 40,
+            "electronic_plus_nuclear_energy_at_zero_nuclear_field_coupling": -74.95823295653702,
+            "electronic_spatial_extent": [
+              17.908114268318258
+            ],
+            "field_au": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "seconds": 0.02983916300581768
+          },
+          {
+            "cycles": 44,
+            "electronic_plus_nuclear_energy_at_zero_nuclear_field_coupling": -74.95826836776715,
+            "electronic_spatial_extent": [
+              17.90826951274716
+            ],
+            "field_au": [
+              0.0005,
+              -0.0005,
+              0.0
+            ],
+            "seconds": 0.03087142300501
+          },
+          {
+            "cycles": 41,
+            "electronic_plus_nuclear_energy_at_zero_nuclear_field_coupling": -74.95819875968354,
+            "electronic_spatial_extent": [
+              17.90796309812569
+            ],
+            "field_au": [
+              -0.0005,
+              0.0005,
+              -0.0
+            ],
+            "seconds": 0.030497744999593124
+          },
+          {
+            "cycles": 41,
+            "electronic_plus_nuclear_energy_at_zero_nuclear_field_coupling": -74.95901022276365,
+            "electronic_spatial_extent": [
+              17.91169869060642
+            ],
+            "field_au": [
+              0.0005,
+              0.0,
+              -0.0005
+            ],
+            "seconds": 0.029868664001696743
+          },
+          {
+            "cycles": 40,
+            "electronic_plus_nuclear_energy_at_zero_nuclear_field_coupling": -74.9574575164885,
+            "electronic_spatial_extent": [
+              17.90453589807791
+            ],
+            "field_au": [
+              -0.0005,
+              -0.0,
+              0.0005
+            ],
+            "seconds": 0.030092326996964402
+          },
+          {
+            "cycles": 45,
+            "electronic_plus_nuclear_energy_at_zero_nuclear_field_coupling": -74.9589747524401,
+            "electronic_spatial_extent": [
+              17.911543303717004
+            ],
+            "field_au": [
+              0.0,
+              0.0005,
+              -0.0005
+            ],
+            "seconds": 0.03189441699942108
+          },
+          {
+            "cycles": 45,
+            "electronic_plus_nuclear_energy_at_zero_nuclear_field_coupling": -74.95749165503338,
+            "electronic_spatial_extent": [
+              17.90468692514708
+            ],
+            "field_au": [
+              -0.0,
+              -0.0005,
+              0.0005
+            ],
+            "seconds": 0.03241728901048191
+          },
+          {
+            "cycles": 38,
+            "electronic_plus_nuclear_energy_at_zero_nuclear_field_coupling": -74.95824697529822,
+            "electronic_spatial_extent": [
+              17.908175877187226
+            ],
+            "field_au": [
+              0.0002,
+              -0.0002,
+              0.0
+            ],
+            "seconds": 0.029638678999617696
+          },
+          {
+            "cycles": 41,
+            "electronic_plus_nuclear_energy_at_zero_nuclear_field_coupling": -74.9582191320761,
+            "electronic_spatial_extent": [
+              17.908053311327286
+            ],
+            "field_au": [
+              -0.0002,
+              0.0002,
+              -0.0
+            ],
+            "seconds": 0.030342442012624815
+          },
+          {
+            "cycles": 31,
+            "electronic_plus_nuclear_energy_at_zero_nuclear_field_coupling": -74.95854364373199,
+            "electronic_spatial_extent": [
+              17.909547311059203
+            ],
+            "field_au": [
+              0.0002,
+              0.0,
+              -0.0002
+            ],
+            "seconds": 0.026931656000670046
+          },
+          {
+            "cycles": 41,
+            "electronic_plus_nuclear_energy_at_zero_nuclear_field_coupling": -74.95792256153057,
+            "electronic_spatial_extent": [
+              17.90668219390459
+            ],
+            "field_au": [
+              -0.0002,
+              -0.0,
+              0.0002
+            ],
+            "seconds": 0.030562741012545303
+          },
+          {
+            "cycles": 41,
+            "electronic_plus_nuclear_energy_at_zero_nuclear_field_coupling": -74.9585296155535,
+            "electronic_spatial_extent": [
+              17.90948567936551
+            ],
+            "field_au": [
+              0.0,
+              0.0002,
+              -0.0002
+            ],
+            "seconds": 0.03045911899243947
+          },
+          {
+            "cycles": 42,
+            "electronic_plus_nuclear_energy_at_zero_nuclear_field_coupling": -74.95793637662447,
+            "electronic_spatial_extent": [
+              17.90674312802747
+            ],
+            "field_au": [
+              -0.0,
+              -0.0002,
+              0.0002
+            ],
+            "seconds": 0.030914695002138615
+          }
+        ]
+      }
+    },
+    {
+      "axes_oracle": {
+        "cphf": [
+          [
+            15.231231461642727,
+            0.02058670634275197,
+            -0.617601190282665,
+            -0.1935398721052418
+          ],
+          [
+            0.020586706342742716,
+            15.262111521156873,
+            0.30880059514115654,
+            0.09676993605238327
+          ],
+          [
+            -0.61760119028151,
+            0.30880059514074937,
+            6.008387020106138,
+            -2.9030980815543703
+          ]
+        ],
+        "cphf_counts": {
+          "jk_batches": 4,
+          "jk_density_columns": 8
+        },
+        "finite_fields": {
+          "0.0002": [
+            [
+              15.231235178150698,
+              0.020586467058131275,
+              -0.617594011680378,
+              -0.1935406646791371
+            ],
+            [
+              0.020586466083771793,
+              15.262114518219127,
+              0.3087969913084798,
+              0.09677033315447225
+            ],
+            [
+              -0.617602716040111,
+              0.30880135801533704,
+              6.008476816199426,
+              -2.9031027093018302
+            ]
+          ],
+          "0.0005": [
+            [
+              15.231254483447588,
+              0.02058521040673722,
+              -0.6175563122070571,
+              -0.19354482559874597
+            ],
+            [
+              0.020585204415057845,
+              15.262130046177157,
+              0.30877806621720794,
+              0.0967724178631002
+            ],
+            [
+              -0.6176100813707341,
+              0.3088050406834797,
+              6.008948243739098,
+              -2.9031270076900206
+            ]
+          ]
+        },
+        "independent_zero_field_density_error": 6.422640197456531e-13,
+        "integral_errors": {
+          "eri": 2.220446049250313e-16,
+          "hcore": 0.0,
+          "overlap": 0.0
+        },
+        "scf": [
+          {
+            "cycles": 50,
+            "dipole_and_charge": [
+              -0.1270337231199083,
+              0.06351686155995365,
+              -1.9055058467985742,
+              -0.016166679307365595
+            ],
+            "electronic_plus_nuclear_energy_at_zero_nuclear_field_coupling": -7.862117374103371,
+            "field_au": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "seconds": 0.04293755500111729
+          },
+          {
+            "cycles": 49,
+            "dipole_and_charge": [
+              -0.11941259685704136,
+              0.06352624368467363,
+              -1.9057873105402177,
+              -0.01626901507061973
+            ],
+            "electronic_plus_nuclear_energy_at_zero_nuclear_field_coupling": -7.861955762063691,
+            "field_au": [
+              0.0005,
+              0.0,
+              0.0
+            ],
+            "seconds": 0.02923955800361
+          },
+          {
+            "cycles": 49,
+            "dipole_and_charge": [
+              -0.13464385134048895,
+              0.0635056584742669,
+              -1.9051697542280106,
+              -0.016075470245020984
+            ],
+            "electronic_plus_nuclear_energy_at_zero_nuclear_field_coupling": -7.8622827939537965,
+            "field_au": [
+              -0.0005,
+              -0.0,
+              -0.0
+            ],
+            "seconds": 0.028418501999112777
+          },
+          {
+            "cycles": 49,
+            "dipole_and_charge": [
+              -0.1270215960026399,
+              0.07114517029569178,
+              -1.905323940039601,
+              -0.01612386964789181
+            ],
+            "electronic_plus_nuclear_energy_at_zero_nuclear_field_coupling": -7.862201039839873,
+            "field_au": [
+              0.0,
+              0.0005,
+              0.0
+            ],
+            "seconds": 0.029686882000532933
+          },
+          {
+            "cycles": 49,
+            "dipole_and_charge": [
+              -0.12704218120705496,
+              0.055883040249514626,
+              -1.9056327181058181,
+              -0.01622064206575491
+            ],
+            "electronic_plus_nuclear_energy_at_zero_nuclear_field_coupling": -7.862037523897077,
+            "field_au": [
+              -0.0,
+              -0.0005,
+              -0.0
+            ],
+            "seconds": 0.029117056998074986
+          },
+          {
+            "cycles": 52,
+            "dipole_and_charge": [
+              -0.12734475552900154,
+              0.06367237776449947,
+              -1.9024796097496974,
+              -0.017619863976133576
+            ],
+            "electronic_plus_nuclear_energy_at_zero_nuclear_field_coupling": -7.859665375890356,
+            "field_au": [
+              0.0,
+              0.0,
+              0.0005
+            ],
+            "seconds": 0.028955838992260396
+          },
+          {
+            "cycles": 54,
+            "dipole_and_charge": [
+              -0.1267271454476308,
+              0.06336357272381599,
+              -1.9084885579934365,
+              -0.014716736968443556
+            ],
+            "electronic_plus_nuclear_energy_at_zero_nuclear_field_coupling": -7.864570874483301,
+            "field_au": [
+              -0.0,
+              -0.0,
+              -0.0005
+            ],
+            "seconds": 0.02987614400626626
+          },
+          {
+            "cycles": 50,
+            "dipole_and_charge": [
+              -0.12398659623929548,
+              0.06352083317715723,
+              -1.9056249953147217,
+              -0.01620627757877724
+            ],
+            "electronic_plus_nuclear_energy_at_zero_nuclear_field_coupling": -7.862052272042074,
+            "field_au": [
+              0.0002,
+              0.0,
+              0.0
+            ],
+            "seconds": 0.02939292301016394
+          },
+          {
+            "cycles": 50,
+            "dipole_and_charge": [
+              -0.13007909031055576,
+              0.06351259859033398,
+              -1.9053779577100496,
+              -0.016128861312905585
+            ],
+            "electronic_plus_nuclear_energy_at_zero_nuclear_field_coupling": -7.862183085414007,
+            "field_au": [
+              -0.0002,
+              -0.0,
+              -0.0
+            ],
+            "seconds": 0.028739315006532706
+          },
+          {
+            "cycles": 50,
+            "dipole_and_charge": [
+              -0.12702931230550485,
+              0.06656884345674094,
+              -1.9054396845825599,
+              -0.016148217491174233
+            ],
+            "electronic_plus_nuclear_energy_at_zero_nuclear_field_coupling": -7.862150382688545,
+            "field_au": [
+              0.0,
+              0.0002,
+              0.0
+            ],
+            "seconds": 0.02843142500205431
+          },
+          {
+            "cycles": 50,
+            "dipole_and_charge": [
+              -0.12703754689193836,
+              0.06046399764945329,
+              -1.9055632033790832,
+              -0.01618692562443602
+            ],
+            "electronic_plus_nuclear_energy_at_zero_nuclear_field_coupling": -7.862084976002724,
+            "field_au": [
+              -0.0,
+              -0.0002,
+              -0.0
+            ],
+            "seconds": 0.028527162998216227
+          },
+          {
+            "cycles": 54,
+            "dipole_and_charge": [
+              -0.12715760005239957,
+              0.06357880002619806,
+              -1.9043006698142566,
+              -0.0167475592133286
+            ],
+            "electronic_plus_nuclear_energy_at_zero_nuclear_field_coupling": -7.861136393334751,
+            "field_au": [
+              0.0,
+              0.0,
+              0.0002
+            ],
+            "seconds": 0.030623719008872285
+          },
+          {
+            "cycles": 54,
+            "dipole_and_charge": [
+              -0.12691055896598352,
+              0.06345527948299193,
+              -1.9067040605407364,
+              -0.015586318129607868
+            ],
+            "electronic_plus_nuclear_energy_at_zero_nuclear_field_coupling": -7.863098595209267,
+            "field_au": [
+              -0.0,
+              -0.0,
+              -0.0002
+            ],
+            "seconds": 0.030594518990255892
+          }
+        ]
+      },
+      "independent_preflight_counts": {
+        "jk_calls": 1
+      },
+      "independent_seconds": 2.6067180989921326,
+      "name": "lih",
+      "retained_second_round_reference": "2bcfaf3f1cd8f610914a4ff1fbaf01ddaf04c6e0a843b1b63cd4af953bc3f09e",
+      "strategies": {
+        "gqc_incremental": {
+          "first_trajectory_seconds": 3.1352807609946467,
+          "rounds": [
+            {
+              "counts": {
+                "density_jvp_calls": 24,
+                "jk_calls": 22,
+                "observation_calls": 2,
+                "response_operator_actions": 22,
+                "rhs_sent_to_solver": 2
+              },
+              "elapsed_seconds": 0.01142034500662703,
+              "fields": [
+                [
+                  1,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  0
+                ]
+              ],
+              "label_bytes_written": 363,
+              "max_errors_vs_direct": [
+                0.0,
+                0.0
+              ],
+              "numeric_vector_bytes": 128,
+              "published": [
+                {
+                  "field": [
+                    1,
+                    0,
+                    0
+                  ],
+                  "qualified": true,
+                  "values": [
+                    15.231231461686829,
+                    0.02058670634272676,
+                    -0.617601190281935
+                  ]
+                },
+                {
+                  "field": [
+                    0,
+                    1,
+                    0
+                  ],
+                  "qualified": true,
+                  "values": [
+                    0.02058670634273363,
+                    15.262111521200886,
+                    0.3088005951409536
+                  ]
+                }
+              ],
+              "qualification": [
+                {
+                  "cphf_error": 4.410161125179002e-11,
+                  "fd_errors": {
+                    "0.0002": 7.178601557078501e-06,
+                    "0.0005": 4.487807487796314e-05
+                  },
+                  "field": [
+                    1,
+                    0,
+                    0
+                  ],
+                  "passed": true
+                },
+                {
+                  "cphf_error": 4.4012793409820006e-11,
+                  "fd_errors": {
+                    "0.0002": 3.6038324737752703e-06,
+                    "0.0005": 2.252892374565718e-05
+                  },
+                  "field": [
+                    0,
+                    1,
+                    0
+                  ],
+                  "passed": true
+                }
+              ],
+              "residuals": [
+                5.695417106314149e-16,
+                3.267807218897021e-15
+              ],
+              "state_bytes_written": 1068,
+              "state_sha256": "c10efbe6a7f2e7880e10375bbc247d1eebb538934cdeb511323df39fffca3bcc"
+            },
+            {
+              "admission": [
+                {
+                  "decision": "accepted",
+                  "elapsed_seconds": 0.0002804349933285266,
+                  "field": [
+                    1,
+                    0,
+                    0
+                  ],
+                  "residual": 5.695417106314149e-16
+                },
+                {
+                  "decision": "accepted",
+                  "elapsed_seconds": 0.00018608299433253706,
+                  "field": [
+                    0,
+                    1,
+                    0
+                  ],
+                  "residual": 3.267807218897021e-15
+                }
+              ],
+              "counts": {
+                "density_jvp_calls": 20,
+                "jk_calls": 17,
+                "observation_calls": 3,
+                "response_operator_actions": 17,
+                "rhs_sent_to_solver": 1
+              },
+              "elapsed_seconds": 0.4389758919860469,
+              "fields": [
+                [
+                  1,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  0,
+                  1,
+                  1
+                ]
+              ],
+              "label_bytes_written": 625,
+              "max_errors_vs_direct": [
+                4.440892098500626e-14,
+                3.197442310920451e-14,
+                6.927791673660977e-14
+              ],
+              "new_fields": [
+                [
+                  "0",
+                  "0",
+                  "1"
+                ]
+              ],
+              "numeric_vector_bytes": 192,
+              "planning_seconds": 0.0010527400008868426,
+              "published": [
+                {
+                  "field": [
+                    1,
+                    1,
+                    0
+                  ],
+                  "qualified": true,
+                  "values": [
+                    15.251818168029551,
+                    15.282698227543609,
+                    -0.3088005951409813,
+                    -0.09676993605181447
+                  ]
+                },
+                {
+                  "field": [
+                    1,
+                    0,
+                    1
+                  ],
+                  "qualified": false,
+                  "values": [
+                    14.613630271404897,
+                    0.3293873014836777,
+                    5.3907858298619775,
+                    -3.0966379536581954
+                  ]
+                },
+                {
+                  "field": [
+                    0,
+                    1,
+                    1
+                  ],
+                  "qualified": false,
+                  "values": [
+                    -0.5970144839391989,
+                    15.570912116341836,
+                    6.317187615284865,
+                    -2.8063281455027544
+                  ]
+                }
+              ],
+              "qualification": [
+                {
+                  "cphf_error": 4.61017890529547e-11,
+                  "fd_errors": {
+                    "0.0002": 7.213087618473946e-06,
+                    "0.0005": 4.508814670750594e-05
+                  },
+                  "field": [
+                    1,
+                    1,
+                    0
+                  ],
+                  "passed": true
+                },
+                {
+                  "cphf_error": 4.9390713741104264e-11,
+                  "fd_errors": {
+                    "0.0002": 0.00020248468889327853,
+                    "0.0005": 0.0012656632007885804
+                  },
+                  "field": [
+                    1,
+                    0,
+                    1
+                  ],
+                  "passed": false
+                },
+                {
+                  "cphf_error": 4.403943876241101e-11,
+                  "fd_errors": {
+                    "0.0002": 0.0001990028993965609,
+                    "0.0005": 0.0012438444757663092
+                  },
+                  "field": [
+                    0,
+                    1,
+                    1
+                  ],
+                  "passed": false
+                }
+              ],
+              "reconstruction_ir": "034ec2bfd333104ddb9ab4453cd130e98fe3994dd9b092131ad3e280ecc54105",
+              "residuals": [
+                3.645519037336531e-15,
+                2.090395773025374e-15,
+                3.933515987546044e-15
+              ],
+              "state_bytes_written": 1584,
+              "state_read_bytes": 1068,
+              "state_read_seconds": 4.7053006710484624e-05,
+              "state_sha256": "07dc9373df95160985612588bf51e4f2c29650ffc0ec545061fc038f61524dd6",
+              "weights": [
+                [
+                  "1",
+                  "1",
+                  "0"
+                ],
+                [
+                  "1",
+                  "0",
+                  "1"
+                ],
+                [
+                  "0",
+                  "1",
+                  "1"
+                ]
+              ]
+            },
+            {
+              "admission": [
+                {
+                  "decision": "accepted",
+                  "elapsed_seconds": 0.00022763900051359087,
+                  "field": [
+                    1,
+                    1,
+                    0
+                  ],
+                  "residual": 3.645519037336531e-15
+                },
+                {
+                  "decision": "previous independent gate failed",
+                  "elapsed_seconds": 2.232300175819546e-05,
+                  "field": [
+                    1,
+                    0,
+                    1
+                  ],
+                  "residual": null
+                },
+                {
+                  "decision": "previous independent gate failed",
+                  "elapsed_seconds": 1.483599771745503e-05,
+                  "field": [
+                    0,
+                    1,
+                    1
+                  ],
+                  "residual": null
+                }
+              ],
+              "counts": {
+                "density_jvp_calls": 27,
+                "extent_calls": 3,
+                "jk_calls": 24,
+                "response_operator_actions": 24,
+                "rhs_sent_to_solver": 2
+              },
+              "elapsed_seconds": 0.8814465930045117,
+              "fields": [
+                [
+                  1,
+                  -1,
+                  0
+                ],
+                [
+                  1,
+                  0,
+                  -1
+                ],
+                [
+                  0,
+                  1,
+                  -1
+                ]
+              ],
+              "label_bytes_written": 391,
+              "max_errors_vs_direct": [
+                1.2434497875801753e-14,
+                7.105427357601002e-15,
+                3.552713678800501e-15
+              ],
+              "new_fields": [
+                [
+                  "0",
+                  "-2",
+                  "0"
+                ],
+                [
+                  "0",
+                  "0",
+                  "-1"
+                ]
+              ],
+              "planning_seconds": 0.0009948640072252601,
+              "published": [
+                {
+                  "field": [
+                    1,
+                    -1,
+                    0
+                  ],
+                  "qualified": false,
+                  "values": [
+                    0.37270546356517364
+                  ]
+                },
+                {
+                  "field": [
+                    1,
+                    0,
+                    -1
+                  ],
+                  "qualified": false,
+                  "values": [
+                    -3.478584326608747
+                  ]
+                },
+                {
+                  "field": [
+                    0,
+                    1,
+                    -1
+                  ],
+                  "qualified": false,
+                  "values": [
+                    -3.851289790173915
+                  ]
+                }
+              ],
+              "qualification": [
+                {
+                  "cphf_error": 2.7101323407663358e-08,
+                  "fd_errors": {
+                    "0.0002": 4.1765810667726555e-06,
+                    "0.0005": 2.610184444939989e-05
+                  },
+                  "field": [
+                    1,
+                    -1,
+                    0
+                  ],
+                  "passed": false
+                },
+                {
+                  "cphf_error": 2.527421010256603e-07,
+                  "fd_errors": {
+                    "0.0002": 3.8374776245575504e-05,
+                    "0.0005": 0.00023984801966747682
+                  },
+                  "field": [
+                    1,
+                    0,
+                    -1
+                  ],
+                  "passed": false
+                },
+                {
+                  "cphf_error": 2.798434497464086e-07,
+                  "fd_errors": {
+                    "0.0002": 4.233341609705121e-05,
+                    "0.0005": 0.00026459397449940525
+                  },
+                  "field": [
+                    0,
+                    1,
+                    -1
+                  ],
+                  "passed": false
+                }
+              ],
+              "reconstruction_ir": "8d4a8b1f3b306eca5d33f7b20e5c0428978e1342145b11c870428830d7d636b9",
+              "residuals": [
+                4.3058929290871496e-15,
+                3.8893355303912034e-15,
+                2.730163537139226e-15
+              ],
+              "state_read_bytes": 1584,
+              "state_read_seconds": 5.089100159239024e-05,
+              "weights": [
+                [
+                  "1",
+                  "1",
+                  "0"
+                ],
+                [
+                  "1",
+                  "1/2",
+                  "1"
+                ],
+                [
+                  "0",
+                  "-1/2",
+                  "1"
+                ]
+              ]
+            }
+          ],
+          "setup_seconds": 1.8033980640029768,
+          "trajectory_counts": {
+            "density_jvp_calls": 71,
+            "extent_calls": 3,
+            "jk_calls": 64,
+            "observation_calls": 5,
+            "response_operator_actions": 63,
+            "rhs_sent_to_solver": 5
+          },
+          "warm_third_round_replay": {
+            "admission": [
+              {
+                "decision": "accepted",
+                "elapsed_seconds": 0.0005539139965549111,
+                "field": [
+                  1,
+                  1,
+                  0
+                ],
+                "residual": 3.645519037336531e-15
+              },
+              {
+                "decision": "previous independent gate failed",
+                "elapsed_seconds": 3.779500548262149e-05,
+                "field": [
+                  1,
+                  0,
+                  1
+                ],
+                "residual": null
+              },
+              {
+                "decision": "previous independent gate failed",
+                "elapsed_seconds": 1.2019998393952847e-05,
+                "field": [
+                  0,
+                  1,
+                  1
+                ],
+                "residual": null
+              }
+            ],
+            "counts": {
+              "density_jvp_calls": 27,
+              "extent_calls": 3,
+              "jk_calls": 24,
+              "response_operator_actions": 24,
+              "rhs_sent_to_solver": 2
+            },
+            "elapsed_seconds": 0.0068419759918469936,
+            "fields": [
+              [
+                1,
+                -1,
+                0
+              ],
+              [
+                1,
+                0,
+                -1
+              ],
+              [
+                0,
+                1,
+                -1
+              ]
+            ],
+            "new_fields": [
+              [
+                "0",
+                "-2",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "-1"
+              ]
+            ],
+            "planning_seconds": 0.0010487760009709746,
+            "published": [
+              {
+                "field": [
+                  1,
+                  -1,
+                  0
+                ],
+                "qualified": false,
+                "values": [
+                  0.37270546356517364
+                ]
+              },
+              {
+                "field": [
+                  1,
+                  0,
+                  -1
+                ],
+                "qualified": false,
+                "values": [
+                  -3.478584326608747
+                ]
+              },
+              {
+                "field": [
+                  0,
+                  1,
+                  -1
+                ],
+                "qualified": false,
+                "values": [
+                  -3.851289790173915
+                ]
+              }
+            ],
+            "qualification": [
+              {
+                "cphf_error": 2.7101323407663358e-08,
+                "fd_errors": {
+                  "0.0002": 4.1765810667726555e-06,
+                  "0.0005": 2.610184444939989e-05
+                },
+                "field": [
+                  1,
+                  -1,
+                  0
+                ],
+                "passed": false
+              },
+              {
+                "cphf_error": 2.527421010256603e-07,
+                "fd_errors": {
+                  "0.0002": 3.8374776245575504e-05,
+                  "0.0005": 0.00023984801966747682
+                },
+                "field": [
+                  1,
+                  0,
+                  -1
+                ],
+                "passed": false
+              },
+              {
+                "cphf_error": 2.798434497464086e-07,
+                "fd_errors": {
+                  "0.0002": 4.233341609705121e-05,
+                  "0.0005": 0.00026459397449940525
+                },
+                "field": [
+                  0,
+                  1,
+                  -1
+                ],
+                "passed": false
+              }
+            ],
+            "reconstruction_ir": "8d4a8b1f3b306eca5d33f7b20e5c0428978e1342145b11c870428830d7d636b9",
+            "residuals": [
+              4.3058929290871496e-15,
+              3.8893355303912034e-15,
+              2.730163537139226e-15
+            ],
+            "state_read_bytes": 1584,
+            "state_read_seconds": 7.390401151496917e-05,
+            "weights": [
+              [
+                "1",
+                "1",
+                "0"
+              ],
+              [
+                "1",
+                "1/2",
+                "1"
+              ],
+              [
+                "0",
+                "-1/2",
+                "1"
+              ]
+            ]
+          }
+        },
+        "hand_all_axes": {
+          "first_trajectory_seconds": 2.260312905011233,
+          "rounds": [
+            {
+              "counts": {
+                "density_jvp_calls": 26,
+                "jk_calls": 23,
+                "observation_calls": 3,
+                "response_operator_actions": 23,
+                "rhs_sent_to_solver": 3
+              },
+              "elapsed_seconds": 0.01053886600129772,
+              "fields": [
+                [
+                  1,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  0
+                ]
+              ],
+              "label_bytes_written": 365,
+              "max_errors_vs_direct": [
+                2.9178048865929895e-15,
+                2.842170943040401e-14
+              ],
+              "numeric_vector_bytes": 192,
+              "published": [
+                {
+                  "field": [
+                    1,
+                    0,
+                    0
+                  ],
+                  "qualified": true,
+                  "values": [
+                    15.231231461686827,
+                    0.020586706342723842,
+                    -0.6176011902819338
+                  ]
+                },
+                {
+                  "field": [
+                    0,
+                    1,
+                    0
+                  ],
+                  "qualified": true,
+                  "values": [
+                    0.02058670634272229,
+                    15.262111521200914,
+                    0.3088005951409493
+                  ]
+                }
+              ],
+              "qualification": [
+                {
+                  "cphf_error": 4.409983489495062e-11,
+                  "fd_errors": {
+                    "0.0002": 7.178601555857256e-06,
+                    "0.0005": 4.487807487674189e-05
+                  },
+                  "field": [
+                    1,
+                    0,
+                    0
+                  ],
+                  "passed": true
+                },
+                {
+                  "cphf_error": 4.404121511925041e-11,
+                  "fd_errors": {
+                    "0.0002": 3.6038324695009116e-06,
+                    "0.0005": 2.2528923741382822e-05
+                  },
+                  "field": [
+                    0,
+                    1,
+                    0
+                  ],
+                  "passed": true
+                },
+                {
+                  "cphf_error": 3.778133361720393e-11,
+                  "fd_errors": {
+                    "0.0002": 8.979605550685221e-05,
+                    "0.0005": 0.0005612235951790723
+                  },
+                  "field": [
+                    0,
+                    0,
+                    1
+                  ],
+                  "passed": false
+                }
+              ],
+              "residuals": [
+                1.3502148048152435e-15,
+                1.1594823618065645e-15,
+                1.5463811962973276e-15
+              ],
+              "state_bytes_written": 1598,
+              "state_sha256": "bbb7cd29c874266eeacce591082c339b29c3b52a1afe0b0be0cf860a1627cce2"
+            },
+            {
+              "admission": [
+                {
+                  "decision": "accepted",
+                  "elapsed_seconds": 0.00025601200468372554,
+                  "field": [
+                    1,
+                    0,
+                    0
+                  ],
+                  "residual": 1.3502148048152435e-15
+                },
+                {
+                  "decision": "accepted",
+                  "elapsed_seconds": 0.0001674189988989383,
+                  "field": [
+                    0,
+                    1,
+                    0
+                  ],
+                  "residual": 1.1594823618065645e-15
+                },
+                {
+                  "decision": "previous independent gate failed",
+                  "elapsed_seconds": 2.2267005988396704e-05,
+                  "field": [
+                    0,
+                    0,
+                    1
+                  ],
+                  "residual": null
+                }
+              ],
+              "counts": {
+                "density_jvp_calls": 20,
+                "jk_calls": 17,
+                "observation_calls": 3,
+                "response_operator_actions": 17,
+                "rhs_sent_to_solver": 1
+              },
+              "elapsed_seconds": 0.004550354991806671,
+              "fields": [
+                [
+                  1,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  0,
+                  1,
+                  1
+                ]
+              ],
+              "label_bytes_written": 624,
+              "max_errors_vs_direct": [
+                1.9539925233402755e-14,
+                3.197442310920451e-14,
+                7.37188088351104e-14
+              ],
+              "published": [
+                {
+                  "field": [
+                    1,
+                    1,
+                    0
+                  ],
+                  "qualified": true,
+                  "values": [
+                    15.251818168029539,
+                    15.282698227543634,
+                    -0.3088005951409845,
+                    -0.09676993605180921
+                  ]
+                },
+                {
+                  "field": [
+                    1,
+                    0,
+                    1
+                  ],
+                  "qualified": false,
+                  "values": [
+                    14.613630271404897,
+                    0.3293873014836748,
+                    5.3907858298619775,
+                    -3.0966379536581963
+                  ]
+                },
+                {
+                  "field": [
+                    0,
+                    1,
+                    1
+                  ],
+                  "qualified": false,
+                  "values": [
+                    -0.5970144839392093,
+                    15.570912116341864,
+                    6.317187615284861,
+                    -2.806328145502749
+                  ]
+                }
+              ],
+              "qualification": [
+                {
+                  "cphf_error": 4.60893545550789e-11,
+                  "fd_errors": {
+                    "0.0002": 7.213087621693592e-06,
+                    "0.0005": 4.5088146710725585e-05
+                  },
+                  "field": [
+                    1,
+                    1,
+                    0
+                  ],
+                  "passed": true
+                },
+                {
+                  "cphf_error": 4.9390713741104264e-11,
+                  "fd_errors": {
+                    "0.0002": 0.00020248468889327853,
+                    "0.0005": 0.0012656632007885804
+                  },
+                  "field": [
+                    1,
+                    0,
+                    1
+                  ],
+                  "passed": false
+                },
+                {
+                  "cphf_error": 4.4067860471841414e-11,
+                  "fd_errors": {
+                    "0.0002": 0.0001990028994010018,
+                    "0.0005": 0.00124384447577075
+                  },
+                  "field": [
+                    0,
+                    1,
+                    1
+                  ],
+                  "passed": false
+                }
+              ],
+              "residuals": [
+                1.6260541333559631e-15,
+                2.6084058086857188e-15,
+                2.7013605015405176e-15
+              ],
+              "state_read_bytes": 1598,
+              "state_read_seconds": 6.708501314278692e-05
+            },
+            {
+              "admission": [
+                {
+                  "decision": "accepted",
+                  "elapsed_seconds": 0.0001902759977383539,
+                  "field": [
+                    1,
+                    0,
+                    0
+                  ],
+                  "residual": 1.3502148048152435e-15
+                },
+                {
+                  "decision": "accepted",
+                  "elapsed_seconds": 0.00013527700502891093,
+                  "field": [
+                    0,
+                    1,
+                    0
+                  ],
+                  "residual": 1.1594823618065645e-15
+                },
+                {
+                  "decision": "previous independent gate failed",
+                  "elapsed_seconds": 1.6969002899713814e-05,
+                  "field": [
+                    0,
+                    0,
+                    1
+                  ],
+                  "residual": null
+                }
+              ],
+              "counts": {
+                "density_jvp_calls": 20,
+                "extent_calls": 3,
+                "jk_calls": 17,
+                "response_operator_actions": 17,
+                "rhs_sent_to_solver": 1
+              },
+              "elapsed_seconds": 0.4374040819966467,
+              "fields": [
+                [
+                  1,
+                  -1,
+                  0
+                ],
+                [
+                  1,
+                  0,
+                  -1
+                ],
+                [
+                  0,
+                  1,
+                  -1
+                ]
+              ],
+              "label_bytes_written": 390,
+              "max_errors_vs_direct": [
+                7.993605777301127e-15,
+                1.0658141036401503e-14,
+                3.552713678800501e-15
+              ],
+              "published": [
+                {
+                  "field": [
+                    1,
+                    -1,
+                    0
+                  ],
+                  "qualified": false,
+                  "values": [
+                    0.3727054635651692
+                  ]
+                },
+                {
+                  "field": [
+                    1,
+                    0,
+                    -1
+                  ],
+                  "qualified": false,
+                  "values": [
+                    -3.478584326608729
+                  ]
+                },
+                {
+                  "field": [
+                    0,
+                    1,
+                    -1
+                  ],
+                  "qualified": false,
+                  "values": [
+                    -3.851289790173908
+                  ]
+                }
+              ],
+              "qualification": [
+                {
+                  "cphf_error": 2.7101327848555457e-08,
+                  "fd_errors": {
+                    "0.0002": 4.176581071213548e-06,
+                    "0.0005": 2.6101844453840783e-05
+                  },
+                  "field": [
+                    1,
+                    -1,
+                    0
+                  ],
+                  "passed": false
+                },
+                {
+                  "cphf_error": 2.527421187892287e-07,
+                  "fd_errors": {
+                    "0.0002": 3.837477626333907e-05,
+                    "0.0005": 0.0002398480196852404
+                  },
+                  "field": [
+                    1,
+                    0,
+                    -1
+                  ],
+                  "passed": false
+                },
+                {
+                  "cphf_error": 2.79843456851836e-07,
+                  "fd_errors": {
+                    "0.0002": 4.233341610415664e-05,
+                    "0.0005": 0.0002645939745065107
+                  },
+                  "field": [
+                    0,
+                    1,
+                    -1
+                  ],
+                  "passed": false
+                }
+              ],
+              "residuals": [
+                1.9812159788364465e-15,
+                2.0993114349726316e-15,
+                1.857489538108701e-15
+              ],
+              "state_read_bytes": 1598,
+              "state_read_seconds": 4.93929983349517e-05
+            }
+          ],
+          "setup_seconds": 1.807778941001743,
+          "trajectory_counts": {
+            "density_jvp_calls": 66,
+            "extent_calls": 3,
+            "jk_calls": 58,
+            "observation_calls": 6,
+            "response_operator_actions": 57,
+            "rhs_sent_to_solver": 5
+          },
+          "warm_third_round_replay": {
+            "admission": [
+              {
+                "decision": "accepted",
+                "elapsed_seconds": 0.00039462999848183244,
+                "field": [
+                  1,
+                  0,
+                  0
+                ],
+                "residual": 1.3502148048152435e-15
+              },
+              {
+                "decision": "accepted",
+                "elapsed_seconds": 0.0003074179985560477,
+                "field": [
+                  0,
+                  1,
+                  0
+                ],
+                "residual": 1.1594823618065645e-15
+              },
+              {
+                "decision": "previous independent gate failed",
+                "elapsed_seconds": 3.720700624398887e-05,
+                "field": [
+                  0,
+                  0,
+                  1
+                ],
+                "residual": null
+              }
+            ],
+            "counts": {
+              "density_jvp_calls": 20,
+              "extent_calls": 3,
+              "jk_calls": 17,
+              "response_operator_actions": 17,
+              "rhs_sent_to_solver": 1
+            },
+            "elapsed_seconds": 0.012224627993418835,
+            "fields": [
+              [
+                1,
+                -1,
+                0
+              ],
+              [
+                1,
+                0,
+                -1
+              ],
+              [
+                0,
+                1,
+                -1
+              ]
+            ],
+            "published": [
+              {
+                "field": [
+                  1,
+                  -1,
+                  0
+                ],
+                "qualified": false,
+                "values": [
+                  0.3727054635651692
+                ]
+              },
+              {
+                "field": [
+                  1,
+                  0,
+                  -1
+                ],
+                "qualified": false,
+                "values": [
+                  -3.478584326608729
+                ]
+              },
+              {
+                "field": [
+                  0,
+                  1,
+                  -1
+                ],
+                "qualified": false,
+                "values": [
+                  -3.851289790173908
+                ]
+              }
+            ],
+            "qualification": [
+              {
+                "cphf_error": 2.7101327848555457e-08,
+                "fd_errors": {
+                  "0.0002": 4.176581071213548e-06,
+                  "0.0005": 2.6101844453840783e-05
+                },
+                "field": [
+                  1,
+                  -1,
+                  0
+                ],
+                "passed": false
+              },
+              {
+                "cphf_error": 2.527421187892287e-07,
+                "fd_errors": {
+                  "0.0002": 3.837477626333907e-05,
+                  "0.0005": 0.0002398480196852404
+                },
+                "field": [
+                  1,
+                  0,
+                  -1
+                ],
+                "passed": false
+              },
+              {
+                "cphf_error": 2.79843456851836e-07,
+                "fd_errors": {
+                  "0.0002": 4.233341610415664e-05,
+                  "0.0005": 0.0002645939745065107
+                },
+                "field": [
+                  0,
+                  1,
+                  -1
+                ],
+                "passed": false
+              }
+            ],
+            "residuals": [
+              1.9812159788364465e-15,
+              2.0993114349726316e-15,
+              1.857489538108701e-15
+            ],
+            "state_read_bytes": 1598,
+            "state_read_seconds": 7.005500083323568e-05
+          }
+        },
+        "hand_incremental": {
+          "first_trajectory_seconds": 2.2502256199950352,
+          "rounds": [
+            {
+              "counts": {
+                "density_jvp_calls": 24,
+                "jk_calls": 22,
+                "observation_calls": 2,
+                "response_operator_actions": 22,
+                "rhs_sent_to_solver": 2
+              },
+              "elapsed_seconds": 0.004452074004802853,
+              "fields": [
+                [
+                  1,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  0
+                ]
+              ],
+              "label_bytes_written": 363,
+              "max_errors_vs_direct": [
+                0.0,
+                0.0
+              ],
+              "numeric_vector_bytes": 128,
+              "published": [
+                {
+                  "field": [
+                    1,
+                    0,
+                    0
+                  ],
+                  "qualified": true,
+                  "values": [
+                    15.231231461686829,
+                    0.02058670634272676,
+                    -0.617601190281935
+                  ]
+                },
+                {
+                  "field": [
+                    0,
+                    1,
+                    0
+                  ],
+                  "qualified": true,
+                  "values": [
+                    0.02058670634273363,
+                    15.262111521200886,
+                    0.3088005951409536
+                  ]
+                }
+              ],
+              "qualification": [
+                {
+                  "cphf_error": 4.410161125179002e-11,
+                  "fd_errors": {
+                    "0.0002": 7.178601557078501e-06,
+                    "0.0005": 4.487807487796314e-05
+                  },
+                  "field": [
+                    1,
+                    0,
+                    0
+                  ],
+                  "passed": true
+                },
+                {
+                  "cphf_error": 4.4012793409820006e-11,
+                  "fd_errors": {
+                    "0.0002": 3.6038324737752703e-06,
+                    "0.0005": 2.252892374565718e-05
+                  },
+                  "field": [
+                    0,
+                    1,
+                    0
+                  ],
+                  "passed": true
+                }
+              ],
+              "residuals": [
+                5.695417106314149e-16,
+                3.267807218897021e-15
+              ],
+              "state_bytes_written": 1068,
+              "state_sha256": "c10efbe6a7f2e7880e10375bbc247d1eebb538934cdeb511323df39fffca3bcc"
+            },
+            {
+              "admission": [
+                {
+                  "decision": "accepted",
+                  "elapsed_seconds": 0.0001474169985158369,
+                  "field": [
+                    1,
+                    0,
+                    0
+                  ],
+                  "residual": 5.695417106314149e-16
+                },
+                {
+                  "decision": "accepted",
+                  "elapsed_seconds": 0.00010539600043557584,
+                  "field": [
+                    0,
+                    1,
+                    0
+                  ],
+                  "residual": 3.267807218897021e-15
+                }
+              ],
+              "counts": {
+                "density_jvp_calls": 20,
+                "jk_calls": 17,
+                "observation_calls": 3,
+                "response_operator_actions": 17,
+                "rhs_sent_to_solver": 1
+              },
+              "elapsed_seconds": 0.0032723689946578816,
+              "fields": [
+                [
+                  1,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  0,
+                  1,
+                  1
+                ]
+              ],
+              "label_bytes_written": 625,
+              "max_errors_vs_direct": [
+                4.440892098500626e-14,
+                3.197442310920451e-14,
+                6.927791673660977e-14
+              ],
+              "numeric_vector_bytes": 192,
+              "published": [
+                {
+                  "field": [
+                    1,
+                    1,
+                    0
+                  ],
+                  "qualified": true,
+                  "values": [
+                    15.251818168029551,
+                    15.282698227543609,
+                    -0.3088005951409813,
+                    -0.09676993605181447
+                  ]
+                },
+                {
+                  "field": [
+                    1,
+                    0,
+                    1
+                  ],
+                  "qualified": false,
+                  "values": [
+                    14.613630271404897,
+                    0.3293873014836777,
+                    5.3907858298619775,
+                    -3.0966379536581954
+                  ]
+                },
+                {
+                  "field": [
+                    0,
+                    1,
+                    1
+                  ],
+                  "qualified": false,
+                  "values": [
+                    -0.5970144839391989,
+                    15.570912116341836,
+                    6.317187615284865,
+                    -2.8063281455027544
+                  ]
+                }
+              ],
+              "qualification": [
+                {
+                  "cphf_error": 4.61017890529547e-11,
+                  "fd_errors": {
+                    "0.0002": 7.213087618473946e-06,
+                    "0.0005": 4.508814670750594e-05
+                  },
+                  "field": [
+                    1,
+                    1,
+                    0
+                  ],
+                  "passed": true
+                },
+                {
+                  "cphf_error": 4.9390713741104264e-11,
+                  "fd_errors": {
+                    "0.0002": 0.00020248468889327853,
+                    "0.0005": 0.0012656632007885804
+                  },
+                  "field": [
+                    1,
+                    0,
+                    1
+                  ],
+                  "passed": false
+                },
+                {
+                  "cphf_error": 4.403943876241101e-11,
+                  "fd_errors": {
+                    "0.0002": 0.0001990028993965609,
+                    "0.0005": 0.0012438444757663092
+                  },
+                  "field": [
+                    0,
+                    1,
+                    1
+                  ],
+                  "passed": false
+                }
+              ],
+              "residuals": [
+                3.645519037336531e-15,
+                2.090395773025374e-15,
+                3.933515987546044e-15
+              ],
+              "state_bytes_written": 1584,
+              "state_read_bytes": 1068,
+              "state_read_seconds": 3.142400237265974e-05,
+              "state_sha256": "07dc9373df95160985612588bf51e4f2c29650ffc0ec545061fc038f61524dd6"
+            },
+            {
+              "admission": [
+                {
+                  "decision": "accepted",
+                  "elapsed_seconds": 0.0001634319924050942,
+                  "field": [
+                    1,
+                    1,
+                    0
+                  ],
+                  "residual": 3.645519037336531e-15
+                },
+                {
+                  "decision": "previous independent gate failed",
+                  "elapsed_seconds": 1.825900108087808e-05,
+                  "field": [
+                    1,
+                    0,
+                    1
+                  ],
+                  "residual": null
+                },
+                {
+                  "decision": "previous independent gate failed",
+                  "elapsed_seconds": 1.6022997442632914e-05,
+                  "field": [
+                    0,
+                    1,
+                    1
+                  ],
+                  "residual": null
+                }
+              ],
+              "counts": {
+                "density_jvp_calls": 27,
+                "extent_calls": 3,
+                "jk_calls": 24,
+                "response_operator_actions": 24,
+                "rhs_sent_to_solver": 2
+              },
+              "elapsed_seconds": 0.42571675799263176,
+              "fields": [
+                [
+                  1,
+                  -1,
+                  0
+                ],
+                [
+                  1,
+                  0,
+                  -1
+                ],
+                [
+                  0,
+                  1,
+                  -1
+                ]
+              ],
+              "label_bytes_written": 392,
+              "max_errors_vs_direct": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "published": [
+                {
+                  "field": [
+                    1,
+                    -1,
+                    0
+                  ],
+                  "qualified": false,
+                  "values": [
+                    0.3727054635651612
+                  ]
+                },
+                {
+                  "field": [
+                    1,
+                    0,
+                    -1
+                  ],
+                  "qualified": false,
+                  "values": [
+                    -3.4785843266087397
+                  ]
+                },
+                {
+                  "field": [
+                    0,
+                    1,
+                    -1
+                  ],
+                  "qualified": false,
+                  "values": [
+                    -3.8512897901739116
+                  ]
+                }
+              ],
+              "qualification": [
+                {
+                  "cphf_error": 2.7101335842161234e-08,
+                  "fd_errors": {
+                    "0.0002": 4.176581079207153e-06,
+                    "0.0005": 2.610184446183439e-05
+                  },
+                  "field": [
+                    1,
+                    -1,
+                    0
+                  ],
+                  "passed": false
+                },
+                {
+                  "cphf_error": 2.5274210813108766e-07,
+                  "fd_errors": {
+                    "0.0002": 3.837477625268093e-05,
+                    "0.0005": 0.00023984801967458225
+                  },
+                  "field": [
+                    1,
+                    0,
+                    -1
+                  ],
+                  "passed": false
+                },
+                {
+                  "cphf_error": 2.798434532991223e-07,
+                  "fd_errors": {
+                    "0.0002": 4.233341610060393e-05,
+                    "0.0005": 0.00026459397450295796
+                  },
+                  "field": [
+                    0,
+                    1,
+                    -1
+                  ],
+                  "passed": false
+                }
+              ],
+              "residuals": [
+                2.714948094767768e-15,
+                2.6870100901061896e-15,
+                3.2795446541486274e-15
+              ],
+              "state_read_bytes": 1584,
+              "state_read_seconds": 3.977399319410324e-05
+            }
+          ],
+          "setup_seconds": 1.8167518819973338,
+          "trajectory_counts": {
+            "density_jvp_calls": 71,
+            "extent_calls": 3,
+            "jk_calls": 64,
+            "observation_calls": 5,
+            "response_operator_actions": 63,
+            "rhs_sent_to_solver": 5
+          },
+          "warm_third_round_replay": {
+            "admission": [
+              {
+                "decision": "accepted",
+                "elapsed_seconds": 0.00039027800085023046,
+                "field": [
+                  1,
+                  1,
+                  0
+                ],
+                "residual": 3.645519037336531e-15
+              },
+              {
+                "decision": "previous independent gate failed",
+                "elapsed_seconds": 4.7613997594453394e-05,
+                "field": [
+                  1,
+                  0,
+                  1
+                ],
+                "residual": null
+              },
+              {
+                "decision": "previous independent gate failed",
+                "elapsed_seconds": 2.9914997867308557e-05,
+                "field": [
+                  0,
+                  1,
+                  1
+                ],
+                "residual": null
+              }
+            ],
+            "counts": {
+              "density_jvp_calls": 27,
+              "extent_calls": 3,
+              "jk_calls": 24,
+              "response_operator_actions": 24,
+              "rhs_sent_to_solver": 2
+            },
+            "elapsed_seconds": 0.011857573001179844,
+            "fields": [
+              [
+                1,
+                -1,
+                0
+              ],
+              [
+                1,
+                0,
+                -1
+              ],
+              [
+                0,
+                1,
+                -1
+              ]
+            ],
+            "published": [
+              {
+                "field": [
+                  1,
+                  -1,
+                  0
+                ],
+                "qualified": false,
+                "values": [
+                  0.3727054635651612
+                ]
+              },
+              {
+                "field": [
+                  1,
+                  0,
+                  -1
+                ],
+                "qualified": false,
+                "values": [
+                  -3.4785843266087397
+                ]
+              },
+              {
+                "field": [
+                  0,
+                  1,
+                  -1
+                ],
+                "qualified": false,
+                "values": [
+                  -3.8512897901739116
+                ]
+              }
+            ],
+            "qualification": [
+              {
+                "cphf_error": 2.7101335842161234e-08,
+                "fd_errors": {
+                  "0.0002": 4.176581079207153e-06,
+                  "0.0005": 2.610184446183439e-05
+                },
+                "field": [
+                  1,
+                  -1,
+                  0
+                ],
+                "passed": false
+              },
+              {
+                "cphf_error": 2.5274210813108766e-07,
+                "fd_errors": {
+                  "0.0002": 3.837477625268093e-05,
+                  "0.0005": 0.00023984801967458225
+                },
+                "field": [
+                  1,
+                  0,
+                  -1
+                ],
+                "passed": false
+              },
+              {
+                "cphf_error": 2.798434532991223e-07,
+                "fd_errors": {
+                  "0.0002": 4.233341610060393e-05,
+                  "0.0005": 0.00026459397450295796
+                },
+                "field": [
+                  0,
+                  1,
+                  -1
+                ],
+                "passed": false
+              }
+            ],
+            "residuals": [
+              2.714948094767768e-15,
+              2.6870100901061896e-15,
+              3.2795446541486274e-15
+            ],
+            "state_read_bytes": 1584,
+            "state_read_seconds": 7.30580068193376e-05
+          }
+        },
+        "labels_only": {
+          "first_trajectory_seconds": 2.2394960610108683,
+          "rounds": [
+            {
+              "counts": {
+                "density_jvp_calls": 24,
+                "jk_calls": 22,
+                "observation_calls": 2,
+                "response_operator_actions": 22,
+                "rhs_sent_to_solver": 2
+              },
+              "elapsed_seconds": 0.005932380998274311,
+              "fields": [
+                [
+                  1,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  0
+                ]
+              ],
+              "label_bytes_written": 363,
+              "max_errors_vs_direct": [
+                0.0,
+                0.0
+              ],
+              "published": [
+                {
+                  "field": [
+                    1,
+                    0,
+                    0
+                  ],
+                  "qualified": true,
+                  "values": [
+                    15.231231461686829,
+                    0.02058670634272676,
+                    -0.617601190281935
+                  ]
+                },
+                {
+                  "field": [
+                    0,
+                    1,
+                    0
+                  ],
+                  "qualified": true,
+                  "values": [
+                    0.02058670634273363,
+                    15.262111521200886,
+                    0.3088005951409536
+                  ]
+                }
+              ],
+              "qualification": [
+                {
+                  "cphf_error": 4.410161125179002e-11,
+                  "fd_errors": {
+                    "0.0002": 7.178601557078501e-06,
+                    "0.0005": 4.487807487796314e-05
+                  },
+                  "field": [
+                    1,
+                    0,
+                    0
+                  ],
+                  "passed": true
+                },
+                {
+                  "cphf_error": 4.4012793409820006e-11,
+                  "fd_errors": {
+                    "0.0002": 3.6038324737752703e-06,
+                    "0.0005": 2.252892374565718e-05
+                  },
+                  "field": [
+                    0,
+                    1,
+                    0
+                  ],
+                  "passed": true
+                }
+              ],
+              "residuals": [
+                5.695417106314149e-16,
+                3.267807218897021e-15
+              ]
+            },
+            {
+              "counts": {
+                "density_jvp_calls": 26,
+                "jk_calls": 23,
+                "observation_calls": 3,
+                "response_operator_actions": 23,
+                "rhs_sent_to_solver": 3
+              },
+              "elapsed_seconds": 0.005312975001288578,
+              "fields": [
+                [
+                  1,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  0,
+                  1,
+                  1
+                ]
+              ],
+              "label_bytes_written": 624,
+              "max_errors_vs_direct": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "published": [
+                {
+                  "field": [
+                    1,
+                    1,
+                    0
+                  ],
+                  "qualified": true,
+                  "values": [
+                    15.251818168029533,
+                    15.282698227543653,
+                    -0.3088005951409784,
+                    -0.09676993605181125
+                  ]
+                },
+                {
+                  "field": [
+                    1,
+                    0,
+                    1
+                  ],
+                  "qualified": false,
+                  "values": [
+                    14.613630271404872,
+                    0.32938730148369355,
+                    5.3907858298619455,
+                    -3.0966379536581936
+                  ]
+                },
+                {
+                  "field": [
+                    0,
+                    1,
+                    1
+                  ],
+                  "qualified": false,
+                  "values": [
+                    -0.5970144839392034,
+                    15.570912116341875,
+                    6.317187615284935,
+                    -2.80632814550276
+                  ]
+                }
+              ],
+              "qualification": [
+                {
+                  "cphf_error": 4.60840254845607e-11,
+                  "fd_errors": {
+                    "0.0002": 7.213087615587366e-06,
+                    "0.0005": 4.508814670461936e-05
+                  },
+                  "field": [
+                    1,
+                    1,
+                    0
+                  ],
+                  "passed": true
+                },
+                {
+                  "cphf_error": 4.935873931799506e-11,
+                  "fd_errors": {
+                    "0.0002": 0.00020248468892525295,
+                    "0.0005": 0.0012656632008205548
+                  },
+                  "field": [
+                    1,
+                    0,
+                    1
+                  ],
+                  "passed": false
+                },
+                {
+                  "cphf_error": 4.4078518612877815e-11,
+                  "fd_errors": {
+                    "0.0002": 0.000199002899327283,
+                    "0.0005": 0.0012438444756970313
+                  },
+                  "field": [
+                    0,
+                    1,
+                    1
+                  ],
+                  "passed": false
+                }
+              ],
+              "residuals": [
+                2.0051566907323495e-15,
+                1.1107693822947302e-14,
+                1.559634454253075e-14
+              ]
+            },
+            {
+              "counts": {
+                "density_jvp_calls": 32,
+                "extent_calls": 3,
+                "jk_calls": 29,
+                "response_operator_actions": 29,
+                "rhs_sent_to_solver": 3
+              },
+              "elapsed_seconds": 0.42544544200063683,
+              "fields": [
+                [
+                  1,
+                  -1,
+                  0
+                ],
+                [
+                  1,
+                  0,
+                  -1
+                ],
+                [
+                  0,
+                  1,
+                  -1
+                ]
+              ],
+              "label_bytes_written": 392,
+              "max_errors_vs_direct": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "published": [
+                {
+                  "field": [
+                    1,
+                    -1,
+                    0
+                  ],
+                  "qualified": false,
+                  "values": [
+                    0.3727054635651612
+                  ]
+                },
+                {
+                  "field": [
+                    1,
+                    0,
+                    -1
+                  ],
+                  "qualified": false,
+                  "values": [
+                    -3.4785843266087397
+                  ]
+                },
+                {
+                  "field": [
+                    0,
+                    1,
+                    -1
+                  ],
+                  "qualified": false,
+                  "values": [
+                    -3.8512897901739116
+                  ]
+                }
+              ],
+              "qualification": [
+                {
+                  "cphf_error": 2.7101335842161234e-08,
+                  "fd_errors": {
+                    "0.0002": 4.176581079207153e-06,
+                    "0.0005": 2.610184446183439e-05
+                  },
+                  "field": [
+                    1,
+                    -1,
+                    0
+                  ],
+                  "passed": false
+                },
+                {
+                  "cphf_error": 2.5274210813108766e-07,
+                  "fd_errors": {
+                    "0.0002": 3.837477625268093e-05,
+                    "0.0005": 0.00023984801967458225
+                  },
+                  "field": [
+                    1,
+                    0,
+                    -1
+                  ],
+                  "passed": false
+                },
+                {
+                  "cphf_error": 2.798434532991223e-07,
+                  "fd_errors": {
+                    "0.0002": 4.233341610060393e-05,
+                    "0.0005": 0.00026459397450295796
+                  },
+                  "field": [
+                    0,
+                    1,
+                    -1
+                  ],
+                  "passed": false
+                }
+              ],
+              "residuals": [
+                2.714948094767768e-15,
+                2.6870100901061896e-15,
+                4.330378854633441e-15
+              ]
+            }
+          ],
+          "setup_seconds": 1.8027830370119773,
+          "trajectory_counts": {
+            "density_jvp_calls": 82,
+            "extent_calls": 3,
+            "jk_calls": 75,
+            "observation_calls": 5,
+            "response_operator_actions": 74,
+            "rhs_sent_to_solver": 8
+          },
+          "warm_third_round_replay": {
+            "counts": {
+              "density_jvp_calls": 32,
+              "extent_calls": 3,
+              "jk_calls": 29,
+              "response_operator_actions": 29,
+              "rhs_sent_to_solver": 3
+            },
+            "elapsed_seconds": 0.006125323998276144,
+            "fields": [
+              [
+                1,
+                -1,
+                0
+              ],
+              [
+                1,
+                0,
+                -1
+              ],
+              [
+                0,
+                1,
+                -1
+              ]
+            ],
+            "published": [
+              {
+                "field": [
+                  1,
+                  -1,
+                  0
+                ],
+                "qualified": false,
+                "values": [
+                  0.3727054635651612
+                ]
+              },
+              {
+                "field": [
+                  1,
+                  0,
+                  -1
+                ],
+                "qualified": false,
+                "values": [
+                  -3.4785843266087397
+                ]
+              },
+              {
+                "field": [
+                  0,
+                  1,
+                  -1
+                ],
+                "qualified": false,
+                "values": [
+                  -3.8512897901739116
+                ]
+              }
+            ],
+            "qualification": [
+              {
+                "cphf_error": 2.7101335842161234e-08,
+                "fd_errors": {
+                  "0.0002": 4.176581079207153e-06,
+                  "0.0005": 2.610184446183439e-05
+                },
+                "field": [
+                  1,
+                  -1,
+                  0
+                ],
+                "passed": false
+              },
+              {
+                "cphf_error": 2.5274210813108766e-07,
+                "fd_errors": {
+                  "0.0002": 3.837477625268093e-05,
+                  "0.0005": 0.00023984801967458225
+                },
+                "field": [
+                  1,
+                  0,
+                  -1
+                ],
+                "passed": false
+              },
+              {
+                "cphf_error": 2.798434532991223e-07,
+                "fd_errors": {
+                  "0.0002": 4.233341610060393e-05,
+                  "0.0005": 0.00026459397450295796
+                },
+                "field": [
+                  0,
+                  1,
+                  -1
+                ],
+                "passed": false
+              }
+            ],
+            "residuals": [
+              2.714948094767768e-15,
+              2.6870100901061896e-15,
+              4.330378854633441e-15
+            ]
+          }
+        }
+      },
+      "third_round_oracle": {
+        "cphf": [
+          [
+            0.37270549066649705
+          ],
+          [
+            -3.478584579350848
+          ],
+          [
+            -3.851290070017365
+          ]
+        ],
+        "cphf_counts": {
+          "jk_batches": 5,
+          "jk_density_columns": 7
+        },
+        "finite_fields": {
+          "0.0002": [
+            [
+              0.3727096401462404
+            ],
+            [
+              -3.4786227013849924
+            ],
+            [
+              -3.851332123590012
+            ]
+          ],
+          "0.0005": [
+            [
+              0.37273156540962304
+            ],
+            [
+              -3.4788241746284143
+            ],
+            [
+              -3.8515543841484146
+            ]
+          ]
+        },
+        "independent_zero_field_density_error": 6.422640197456531e-13,
+        "integral_errors": {
+          "eri": 2.220446049250313e-16,
+          "hcore": 0.0,
+          "overlap": 0.0
+        },
+        "scf": [
+          {
+            "cycles": 50,
+            "electronic_plus_nuclear_energy_at_zero_nuclear_field_coupling": -7.862117374103371,
+            "electronic_spatial_extent": [
+              23.459684768247158
+            ],
+            "field_au": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "seconds": 0.029032588994596153
+          },
+          {
+            "cycles": 49,
+            "electronic_plus_nuclear_energy_at_zero_nuclear_field_coupling": -7.861875908086547,
+            "electronic_spatial_extent": [
+              23.459885698455007
+            ],
+            "field_au": [
+              0.0005,
+              -0.0005,
+              0.0
+            ],
+            "seconds": 0.02800761300022714
+          },
+          {
+            "cycles": 49,
+            "electronic_plus_nuclear_energy_at_zero_nuclear_field_coupling": -7.8623664531744675,
+            "electronic_spatial_extent": [
+              23.459512966889598
+            ],
+            "field_au": [
+              -0.0005,
+              0.0005,
+              -0.0
+            ],
+            "seconds": 0.027614620004897006
+          },
+          {
+            "cycles": 49,
+            "electronic_plus_nuclear_energy_at_zero_nuclear_field_coupling": -7.864409402149323,
+            "electronic_spatial_extent": [
+              23.457959792714387
+            ],
+            "field_au": [
+              0.0005,
+              0.0,
+              -0.0005
+            ],
+            "seconds": 0.028405252000084147
+          },
+          {
+            "cycles": 49,
+            "electronic_plus_nuclear_energy_at_zero_nuclear_field_coupling": -7.8598309649891585,
+            "electronic_spatial_extent": [
+              23.461438616889016
+            ],
+            "field_au": [
+              -0.0005,
+              -0.0,
+              0.0005
+            ],
+            "seconds": 0.028925036996952258
+          },
+          {
+            "cycles": 49,
+            "electronic_plus_nuclear_energy_at_zero_nuclear_field_coupling": -7.864654449908007,
+            "electronic_spatial_extent": [
+              23.457773398437148
+            ],
+            "field_au": [
+              0.0,
+              0.0005,
+              -0.0005
+            ],
+            "seconds": 0.027653755998471752
+          },
+          {
+            "cycles": 49,
+            "electronic_plus_nuclear_energy_at_zero_nuclear_field_coupling": -7.8595854617775744,
+            "electronic_spatial_extent": [
+              23.461624952821296
+            ],
+            "field_au": [
+              -0.0,
+              -0.0005,
+              0.0005
+            ],
+            "seconds": 0.028258220001589507
+          },
+          {
+            "cycles": 50,
+            "electronic_plus_nuclear_energy_at_zero_nuclear_field_coupling": -7.862019873205878,
+            "electronic_spatial_extent": [
+              23.459761640500318
+            ],
+            "field_au": [
+              0.0002,
+              -0.0002,
+              0.0
+            ],
+            "seconds": 0.02891824400285259
+          },
+          {
+            "cycles": 50,
+            "electronic_plus_nuclear_energy_at_zero_nuclear_field_coupling": -7.862216093087954,
+            "electronic_spatial_extent": [
+              23.45961255664426
+            ],
+            "field_au": [
+              -0.0002,
+              0.0002,
+              -0.0
+            ],
+            "seconds": 0.028922001001774333
+          },
+          {
+            "cycles": 50,
+            "electronic_plus_nuclear_energy_at_zero_nuclear_field_coupling": -7.863033516908637,
+            "electronic_spatial_extent": [
+              23.458991353441395
+            ],
+            "field_au": [
+              0.0002,
+              0.0,
+              -0.0002
+            ],
+            "seconds": 0.028823817992815748
+          },
+          {
+            "cycles": 50,
+            "electronic_plus_nuclear_energy_at_zero_nuclear_field_coupling": -7.861202130296747,
+            "electronic_spatial_extent": [
+              23.46038280252195
+            ],
+            "field_au": [
+              -0.0002,
+              -0.0,
+              0.0002
+            ],
+            "seconds": 0.05881822599621955
+          },
+          {
+            "cycles": 50,
+            "electronic_plus_nuclear_energy_at_zero_nuclear_field_coupling": -7.863131590599813,
+            "electronic_spatial_extent": [
+              23.45891680685515
+            ],
+            "field_au": [
+              0.0,
+              0.0002,
+              -0.0002
+            ],
+            "seconds": 0.02823549999448005
+          },
+          {
+            "cycles": 50,
+            "electronic_plus_nuclear_energy_at_zero_nuclear_field_coupling": -7.861103983729351,
+            "electronic_spatial_extent": [
+              23.460457339704586
+            ],
+            "field_au": [
+              -0.0,
+              -0.0002,
+              0.0002
+            ],
+            "seconds": 0.028230633994098753
+          }
+        ]
+      }
+    }
+  ],
+  "config_sha256": "c19cad046777203e2548ac29771cd4f487657a7db56c0704901236e463171d5d",
+  "cxx": "c++ (Ubuntu 11.4.0-1ubuntu1~22.04.3) 11.4.0",
+  "drivers": {
+    "gqc_residual_plan.py": "3935b860d90cdbf1ad4bbcb44e179b7e66b9f6069b733fe9a1f3be3c9da30ca0",
+    "probe_gqc_residual.py": "6959858631769158358d17f80a159112e646d10dc59cd4b473f4929496ec9df7",
+    "probe_gqc_residual_multiround.py": "a8dd0a42c4ed32523593ca886aff841e37824e573ee7342db0f90e55ffce3fcc"
+  },
+  "gqc": "2791504cc238fe83d328fc1718080642b288222a",
+  "numpy": "2.5.5",
+  "planning_controls": {
+    "duplicate_inputs_and_targets": "passed",
+    "empty_archive": "passed",
+    "empty_target_list": "response completion requires at least one target direction",
+    "zero": [
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "project_commit": "a468f4f3aa8f609c9f58c653df59aae4ee48de60",
+  "pyscf": "2.14.0",
+  "pyscf_reference": "c63a953ba603a5ad8c1d65d88da72aaf05ede4d8",
+  "python": "3.13.16",
+  "sccache": "sccache 0.16.0",
+  "threads": {
+    "MKL_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1"
+  }
+}

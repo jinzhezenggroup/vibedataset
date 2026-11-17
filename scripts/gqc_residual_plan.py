@@ -25,6 +25,9 @@ def decompose(columns, target):
 def plan_fields(known_directions, targets):
     if not len(targets):
         raise ValueError("response completion requires at least one target direction")
+    for field in (*known_directions, *targets):
+        if len(field) != 3 or any(type(value) not in (int, Fraction) for value in field):
+            raise ValueError("expected three exact rational field components")
     columns, retained = [], []
     for index, direction in enumerate(known_directions):
         _, residual = decompose(columns, direction)
