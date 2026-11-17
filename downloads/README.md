@@ -11,3 +11,5 @@ sha256sum -c gqcdataset_codex_goal_20261118_rebuilt.zip.sha256
 ```
 
 快照内 `handoff/gqcdataset_codex_goal/MANIFEST.json` 记录文件清单与散列。清单相对仓库根目录，不包含清单自身或 downloads 目录，以避免校验和循环。它只描述交接快照，不证明第三方源码已获取或科学实验已完成。
+
+这份压缩快照生成后，已在用户本机找回两份 PDF，当前可分别下载并校验。原始目标 ZIP 仍有独立记录。[历史附件与逐页核对](../handoff/gqcdataset_codex_goal/attachments/README.md)
