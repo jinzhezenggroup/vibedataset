@@ -24,6 +24,8 @@
 
 2026-11-18 独立复查了远程 `main`（`de60ee4`）与研究分支（`db97afd`）可达的全部 72 个提交，以及当时 PR #10 的合并树，历史中唯一的 ZIP 对象是重建包 `466160579c927d79d0dfc12f3b263cf0809b60c4`。原 README 的下载路径在初始提交和当日 `main` 均返回 HTTP 404，GitHub 发布记录与 Actions 产物均为零，本机另查的 A100 备份 9,042 个条目也无原包文件名，仍需能取得原始字节的文件或链接。[当时的研究树](https://github.com/jinzhezenggroup/vibedataset/tree/db97afd179bab1ab6ca06fefc69884dc86e8d014/downloads) · [初始 README](https://github.com/jinzhezenggroup/vibedataset/blob/8e329d573ce3cdc9210cdc9d2d1766940cfa7d1c/README.md#L20) · [官方发布](https://github.com/jinzhezenggroup/vibedataset/releases)
 
+到研究提交 `64c5bfab3e6b4d2382c9878a48d76c4e6e59f9b7` 再查两条已公布分支的全部 98 个可达提交，仍只检出重建包的同一 Git 对象。本机可读的下载及回收站目录中未见以原名开头的完整、重名或部分下载。另核对了 n2 的项目目录 `~/vibedataset`，精确文件名命中为 0，遍历错误为 0。原包的 SHA-256 和内部清单仍待原始字节核对。
+
 [重建版与校验文件](../../../downloads/)保留最初发布的字节。找到原 ZIP 后才能核对其文件清单和差异。独立附件任务继续跟踪该项。[资料 issue #9](https://github.com/jinzhezenggroup/vibedataset/issues/9)
 
 在仓库根目录可运行以下检查。
