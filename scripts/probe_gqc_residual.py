@@ -124,7 +124,7 @@ class MoleculeResponse:
         jk, observe = jk_and_observables(ref.nmo)
         self.direction, self.orbital, self.jk, self.observe = [
             run.native(p) for p in (frame.density_direction, frame.orbital_action, jk, observe)]
-        self.integer_basis = np.eye(ref.nmo)
+        self.identity_rotation = np.eye(ref.nmo)
         identity = {"frame_jvp": frame.orbital_action.logical_hash, "density_jvp": frame.density_direction.logical_hash,
                     "jk": jk.logical_hash, "eri": array_hash(self.eri), "field_operator": array_hash(self.r),
                     "field_coupling": "hcore plus uniform field dot position in atomic units",
@@ -142,7 +142,7 @@ class MoleculeResponse:
         k = np.zeros_like(self.ref.coefficients)
         k[:self.nocc, self.nocc:] = vector.reshape(self.nocc, -1)
         k[self.nocc:, :self.nocc] = -k[:self.nocc, self.nocc:].T
-        return {'coefficients': self.ref.coefficients, 'rotation': self.integer_basis,
+        return {'coefficients': self.ref.coefficients, 'rotation': self.identity_rotation,
                 'd_rotation': k, 'fock_ao': self.ref.fock}
 
     def density_direction(self, feeds):
@@ -197,7 +197,7 @@ def store_assets(operator, fields, solutions, path):
     write_json(path, [{'payload': obj, 'sha256': json_hash(obj)} for obj in records])
 
 
-def admit(operator, assets):
+def admit(operator, assets, qualified_fields=None):
     accepted, decisions = [], []
     for asset in assets:
         start = time.perf_counter()
@@ -216,6 +216,8 @@ def admit(operator, assets):
                 isinstance(field, list) and len(field) == 3 and all(type(x) is int for x in field)
             ):
                 reason = 'invalid response record'
+            elif qualified_fields is not None and tuple(field) not in qualified_fields:
+                reason = 'previous independent gate failed'
             else:
                 residual = operator.residual(vector, field)
                 if residual <= operator.config['target_residual_tolerance']:
@@ -225,6 +227,20 @@ def admit(operator, assets):
         decisions.append({'field': doc['field'], 'decision': reason, 'residual': residual,
                           'elapsed_seconds': time.perf_counter() - start})
     return accepted, decisions
+
+
+def planned_solutions(op, accepted, targets, label, details):
+    start = time.perf_counter()
+    retained, new_fields, weights = plan_fields([field for field, _ in accepted], targets)
+    ir = recovery_program(op.dimension, weights)
+    details.update(new_fields=[[str(v) for v in field] for field in new_fields],
+                   weights=[[str(v) for v in row] for row in weights],
+                   reconstruction_ir=ir.logical_hash, planning_seconds=time.perf_counter() - start)
+    native = op.run.native(ir)
+    new_vectors = op.solve(new_fields, label)
+    columns = [accepted[k][1] for k in retained] + list(new_vectors.T)
+    outputs = native.execute({f'x{k}': v for k, v in enumerate(columns)})
+    return np.column_stack([outputs[f'target{i}'] for i in range(len(targets))])
 
 
 def evaluate_route(op, cfg, route, path, mutation=None):
@@ -245,21 +261,13 @@ def evaluate_route(op, cfg, route, path, mutation=None):
             archive[0]['sha256'] = json_hash(bad)
         accepted, details['admission'] = admit(op, archive)
         if route == 'hand_basis':
+            check([f for f, _ in accepted] == [[1, 0, 0], [0, 1, 0]] and
+                  targets == [[1, 1, 0], [1, 0, 1], [0, 1, 1]], 'hand baseline field contract')
             x, y = [vec for _, vec in accepted]
             z = op.solve([[0, 0, 1]], route)[:, 0]
             solutions = np.column_stack((x + y, x + z, y + z))
         else:
-            plan_start = time.perf_counter()
-            retained, new_fields, weights = plan_fields([f for f, _ in accepted], targets)
-            ir = recovery_program(op.dimension, weights)
-            details.update(new_fields=[[str(v) for v in field] for field in new_fields],
-                           weights=[[str(v) for v in row] for row in weights],
-                           reconstruction_ir=ir.logical_hash, planning_seconds=time.perf_counter() - plan_start)
-            native = op.run.native(ir)
-            new_vectors = op.solve(new_fields, route + ('_' + mutation if mutation else ''))
-            columns = [accepted[k][1] for k in retained] + list(new_vectors.T)
-            reconstructed = native.execute({f'x{k}': v for k, v in enumerate(columns)})
-            solutions = np.column_stack([reconstructed[f'target{i}'] for i in range(len(targets))])
+            solutions = planned_solutions(op, accepted, targets, mutation or route, details)
     residuals = [op.residual(x, field) for x, field in zip(solutions.T, targets, strict=True)]
     check(max(residuals) <= cfg['target_residual_tolerance'], f'{route} failed final response residual')
     observables = op.outputs(solutions)
@@ -268,11 +276,14 @@ def evaluate_route(op, cfg, route, path, mutation=None):
     return details
 
 
-def independent_observables(op, cfg, log):
+def independent_observables(op, cfg, log, *, spatial_extent=False):
     """PySCF ground states, independent CPHF and two-step fully relaxed field derivatives."""
     mol = op.mol
     field_directions = np.asarray(cfg['requested_fields'], dtype=float)
     s = mol.intor_symmetric('int1e_ovlp')
+    if spatial_extent:
+        with mol.with_common_orig(np.zeros(3)):
+            r2 = mol.intor_symmetric('int1e_r2')
     h0 = scf.hf.get_hcore(mol)
     g = mol.intor('int2e', aosym='s1')
     eri8 = ao2mo.restore(8, g, mol.nao_nr())
@@ -299,8 +310,12 @@ def independent_observables(op, cfg, log):
         density = mf.make_rdm1()
         atom = mol.aoslice_by_atom()[0]
         q0 = mol.atom_charge(0) - np.einsum('ij,ji->i', density, s)[atom[2]:atom[3]].sum()
-        values = np.r_[mf.dip_moment(dm=density, unit='AU', origin=np.zeros(3), verbose=0), q0]
-        row = {'field_au': field.tolist(), 'dipole_and_charge': values.tolist(), 'cycles': mf.cycles,
+        if spatial_extent:
+            values = np.array([np.einsum('ij,ji->', density, r2)])
+        else:
+            values = np.r_[mf.dip_moment(dm=density, unit='AU', origin=np.zeros(3), verbose=0), q0]
+        value_name = 'electronic_spatial_extent' if spatial_extent else 'dipole_and_charge'
+        row = {'field_au': field.tolist(), value_name: values.tolist(), 'cycles': mf.cycles,
                'electronic_plus_nuclear_energy_at_zero_nuclear_field_coupling': mf.e_tot,
                'seconds': time.perf_counter() - begin}
         records.append(row)
@@ -329,6 +344,8 @@ def independent_observables(op, cfg, log):
     a = mol.aoslice_by_atom()[0]
     dq = -np.einsum('nuv,vu->nu', dm1, s)[:, a[2]:a[3]].sum(axis=1)
     cphf_values = np.column_stack((dmu, dq))
+    if spatial_extent:
+        cphf_values = np.einsum('nuv,vu->n', dm1, r2)[:, None]
     log.event('independent_cphf_completed', molecule=op.name, seconds=time.perf_counter() - start, counts=dict(counts))
     finite = {}
     for step in cfg['field_steps_au']:

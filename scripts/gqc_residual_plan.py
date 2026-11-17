@@ -1,7 +1,7 @@
 """Exact span planning for a three-dimensional static external electric field."""
 from fractions import Fraction
 
-from generativeqc_compiler.tensor import Index, IndexSpace, Program, TensorSpec, add, input_tensor
+from generativeqc_compiler.tensor import Index, IndexSpace, Program, TensorSpec, add, constant, input_tensor
 
 
 def decompose(columns, target):
@@ -23,6 +23,8 @@ def decompose(columns, target):
 
 
 def plan_fields(known_directions, targets):
+    if not len(targets):
+        raise ValueError("response completion requires at least one target direction")
     columns, retained = [], []
     for index, direction in enumerate(known_directions):
         _, residual = decompose(columns, direction)
@@ -41,11 +43,12 @@ def plan_fields(known_directions, targets):
 
 def recovery_program(dimension, weights):
     """Compile the exact map from solved rotation directions to every requested solution."""
+    if not len(weights):
+        raise ValueError("response completion requires at least one target direction")
     space = IndexSpace("occupied_virtual_rotations", "orbital", dimension)
     spec = TensorSpec((Index("k", space),), role="input")
     # A zero-valued target (or repeated column) can be satisfied by a zero
     # vector even if there are no response solves.
-    from generativeqc_compiler.tensor import constant
     inputs = [input_tensor(f"x{i}", spec) for i in range(len(weights[0]))]
     outputs = {}
     for j, row in enumerate(weights):
@@ -54,5 +57,5 @@ def recovery_program(dimension, weights):
             outputs[f"target{j}"] = add(*(node for node, _ in live),
                                         coefficients=tuple(a for _, a in live))
         else:
-            outputs[f"target{j}"] = constant([0.0] * dimension, spec)
+            outputs[f"target{j}"] = constant([0] * dimension, TensorSpec(spec.indices, role="constant"))
     return Program(outputs, provenance={"response": "exact-linear-field-reconstruction-v1"})
