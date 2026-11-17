@@ -1,0 +1,1147 @@
+{
+  "protocol": {
+    "column": "gqc_rhf_sto3g_direct_fp64_total_energy_hartree",
+    "property": "total_electronic_plus_nuclear_energy",
+    "environment": "isolated gas phase, all-electron nonrelativistic Coulomb",
+    "state_branch": "closed-shell RHF cold start with default SCF branch selection",
+    "energy_unit": "hartree",
+    "coordinate_unit": "bohr",
+    "options": {
+      "method": "rhf",
+      "basis": "sto-3g",
+      "device": "cuda",
+      "precision": "fp64",
+      "basis_representation": "spherical",
+      "density_fitting": "none",
+      "max_iterations": 150,
+      "energy_tolerance": 1e-10,
+      "density_tolerance": 1e-08,
+      "screening_tolerance": 1e-12,
+      "initial_guess": null
+    },
+    "controls": {
+      "max_iterations": 150,
+      "energy_tolerance": 1e-10,
+      "density_tolerance": 1e-08,
+      "diis_history": 8,
+      "screening_tolerance": 1e-12,
+      "target_accuracy": null,
+      "precision_policy": null,
+      "runtime_policy": {
+        "GENERATIVEQC_SCF_INCREMENTAL_DIIS_GRAM": null,
+        "GENERATIVEQC_SCF_INCREMENTAL_DIIS_GRAM_REDUCTION": null,
+        "GENERATIVEQC_FINAL_FOCK_REBUILD": null,
+        "GENERATIVEQC_MIXED_PRECISION_FOCK_THRESHOLD": null,
+        "GENERATIVEQC_GRAPH_EIGENSOLVER_OVERRIDE": null,
+        "GENERATIVEQC_XSYEV_PROBE_SKIP_DIAGNOSTIC": null,
+        "GENERATIVEQC_BOUNDED_DIRECT_STREAMING": null,
+        "GENERATIVEQC_BOUNDED_DIRECT_COUNT_DIAGNOSTIC": null,
+        "GENERATIVEQC_BOUNDED_DIRECT_AOT_ONLY_DIAGNOSTIC": null,
+        "GENERATIVEQC_BOUNDED_DIRECT_FOCK_ONLY_DIAGNOSTIC": null,
+        "GENERATIVEQC_BOUNDED_DIRECT_FOCK_CLASS_PROFILE": null,
+        "GENERATIVEQC_DIRECT_TILE_VALIDATION": null,
+        "GENERATIVEQC_FORCE_DENSITY_PRODUCT_SCREENING": null,
+        "GENERATIVEQC_PPPS_RESIDENT_BRA": null,
+        "GENERATIVEQC_PPPS_SIGNATURE_BUCKETING": null,
+        "GENERATIVEQC_PSPS_SIGNATURE_BUCKETING": null,
+        "GENERATIVEQC_PPSS_SIGNATURE_BUCKETING": null,
+        "GENERATIVEQC_PPPS_BLOCK_THREADS": null,
+        "GENERATIVEQC_ONE_ELECTRON_VALUE_MAPPING": null,
+        "GENERATIVEQC_HF_COLD_SCREENING": null,
+        "GENERATIVEQC_EXPERIMENT_DDDD_FORCE_CLASS_MAJOR": null,
+        "GENERATIVEQC_ONE_ELECTRON_DERIVATIVE_MAPPING": null,
+        "GENERATIVEQC_PSSS_RESIDENT_BRA": null,
+        "GENERATIVEQC_DF_VALUE_MAPPING": null,
+        "GENERATIVEQC_DF_MD_CHARGE_SPLITS": null,
+        "GENERATIVEQC_DF_DERIVATIVE_MAPPING": null,
+        "GENERATIVEQC_DF_WEIGHTED_EXECUTION": null,
+        "GENERATIVEQC_DF_SHELL_SCHEDULE": null,
+        "GENERATIVEQC_DF_DERIVATIVE_PAIRS": null,
+        "GENERATIVEQC_DF_METRIC_DERIVATIVE_PAIRS": null,
+        "GENERATIVEQC_DF_PRIMITIVE_BUCKETS": null,
+        "GENERATIVEQC_DF_PACKED_AO_BLOCK_ROWS": null,
+        "GENERATIVEQC_DF_RESPONSE_ALGEBRA": null,
+        "GENERATIVEQC_DF_RAW_STAGING": null,
+        "GENERATIVEQC_DF_EXCHANGE": null,
+        "GENERATIVEQC_CUDA_HF_SHARED_RYS_XY": null,
+        "GENERATIVEQC_CUDA_HF_SHARED_RYS_WEIGHTED_Z": null,
+        "GENERATIVEQC_HF_BLOCK_CONVERGENCE": null,
+        "GENERATIVEQC_BOUNDED_ANGULAR_FORCE": null,
+        "GENERATIVEQC_DIRECT_SPD_FORCE_DOMAINS": null,
+        "GENERATIVEQC_DIRECT_WEIGHTED_FORCE_RESPONSES": null,
+        "GENERATIVEQC_DIRECT_FORCE_PAIR_SEPARABLE": null,
+        "GENERATIVEQC_DIRECT_LR_WEIGHTED_FORCES": null,
+        "GENERATIVEQC_DIRECT_FP32_BLOCK_SCREENING": null,
+        "GENERATIVEQC_CUDA_KS_DEVICE_FINAL_VALIDATION": null,
+        "GENERATIVEQC_KS_FIXED_ANCHOR_DELTA": null,
+        "GENERATIVEQC_DIRECT_COULOMB_REACHABLE": null,
+        "GENERATIVEQC_DIRECT_HERMITE_CONVOLUTION": null,
+        "GENERATIVEQC_CANONICAL_RSH_VALUES": null,
+        "GENERATIVEQC_DF_VALUE_STORAGE": null,
+        "GENERATIVEQC_DF_SHARED_SOURCE": null,
+        "GENERATIVEQC_DF_REFERENCE_FINAL_VALIDATION": null,
+        "GENERATIVEQC_DF_VALUE_RAW_MAPPING": null,
+        "GENERATIVEQC_DF_VALUE_MATH": null,
+        "GENERATIVEQC_DF_SEED_EXCHANGE": null,
+        "GENERATIVEQC_DF_SEED_VERIFY": null,
+        "GENERATIVEQC_DF_FINAL_EXCHANGE": null,
+        "GENERATIVEQC_DF_SHELL_POLICY": null,
+        "GENERATIVEQC_DF_FORCE_SCREEN_ABS": null,
+        "GENERATIVEQC_DF_SHELL_SCREEN_ABS": null,
+        "GENERATIVEQC_DF_RESIDENT_EXCHANGE": null,
+        "GENERATIVEQC_DF_PACKED_PROJECTION": null,
+        "GENERATIVEQC_DF_RAW_REUSE": null,
+        "GENERATIVEQC_DF_RESPONSE_BATCHING": null,
+        "GENERATIVEQC_DF_FINAL_PROJECTION": null,
+        "GENERATIVEQC_DF_DIIS_DOTS": null,
+        "GENERATIVEQC_DF_RESPONSE_STORAGE": null,
+        "GENERATIVEQC_DF_RESPONSE_SPACE": null,
+        "GENERATIVEQC_DF_OCCUPIED_METRIC": null,
+        "GENERATIVEQC_DF_COULOMB_RESPONSE": null,
+        "GENERATIVEQC_DF_HOST_MAX_BYTES": null
+      }
+    },
+    "warm_start": false,
+    "gqc_source_declaration": "2bf3fd98da9c6cfba46ca83345e63e1d934e4780",
+    "native_library_sha256": "67bc98a4549fe8854ed6ae65791c824024bd77a9e8e498c6891dea3b8de670c4",
+    "native_source_identity": "bda7f76be67202a57eb1001cfbe29bd4d4d844a85c144b1854a264a96ffdb208",
+    "basis_pack_sha256": "1bbb5611e5580d033e56eea7e24cf17ef85e58d0d6d67aa25e3732690822d6fe"
+  },
+  "source_commit": "4ec1ed623f82536076c069dd65a4eb132969d9ed",
+  "scientific_identities": {
+    "f374a87671beb6f3f954cbc47ad569fdafb9d7bc3deb502400e334f9da05c09f": {
+      "protocol_sha256": "b0fd67b44b464e391d59db25732baff591a8bf7c9536c100ec9623f2860634ce",
+      "ordered_atomic_numbers": [
+        8,
+        1,
+        1
+      ],
+      "coordinates_bohr_hex": [
+        [
+          "0x0.0p+0",
+          "0x0.0p+0",
+          "0x1.c5f83b3a93a4cp-3"
+        ],
+        [
+          "0x0.0p+0",
+          "0x1.6e4f80c6b9e34p+0",
+          "-0x1.c5f83be6601bdp-1"
+        ],
+        [
+          "0x0.0p+0",
+          "-0x1.6e4f80c6b9e34p+0",
+          "-0x1.c5f83be6601bdp-1"
+        ]
+      ],
+      "charge": 0,
+      "multiplicity": 1,
+      "resolved_model": {
+        "method": "rhf",
+        "geometry_hash": "95af568ab830a20abb3d20b7d21614cea1f6be3ab8dfa85d4142b1ef46058b1d",
+        "basis_hash": "218ca59e55bea191c1ab300eba88d0c52c2f8f9230cdce4ce180a72f6d246b97",
+        "electron_count": 10,
+        "multiplicity": 1,
+        "charge": 0,
+        "representation": "real_spherical",
+        "hamiltonian": "all-electron-nonrelativistic-coulomb",
+        "approximation": "conventional",
+        "auxiliary_basis_hash": null,
+        "metric_relative_threshold": null,
+        "schema_version": 1,
+        "identity": "9c9579661d5eed28692c026408c840b97bd751f413c9a6f8559deb7b11f66eaf"
+      },
+      "basis_metadata": {
+        "orbital": {
+          "name": "sto-3g",
+          "role": "orbital",
+          "mathematical_identity": "218ca59e55bea191c1ab300eba88d0c52c2f8f9230cdce4ce180a72f6d246b97",
+          "basis_identity": "cb4d7486a207478c98cb858e1d8b905335b17cef25cb44ae82333b9b6604505e",
+          "representation": "spherical",
+          "provenance": {
+            "source": "generativeqc/data/basis_pack.json; Basis Set Exchange",
+            "version": "Basis Set Exchange 0.11",
+            "license": "BSD-3-Clause",
+            "checksum": "6002092fea25331281cc095dc6dc41a6a3d7a2f0c88f82a1fbceac01225a897c"
+          },
+          "electrons": {
+            "atomic_numbers": [
+              8,
+              1,
+              1
+            ],
+            "nuclear_charges": [
+              8,
+              1,
+              1
+            ],
+            "ecp_core_electrons": [
+              0,
+              0,
+              0
+            ],
+            "ionic_charge": 0,
+            "electron_count": 10,
+            "multiplicity": 1,
+            "nalpha": 5,
+            "nbeta": 5
+          },
+          "shell_count": 5,
+          "primitive_count": 15
+        },
+        "model_identity": "8120e2594dce15d6267cb971aeef9af0d1b04bb5f2a02d89ce2793b2090a06aa"
+      }
+    },
+    "a23b0f8f715abc31dd491976d0acfbb2cf3e32c7444f999c629ecc8057ccdb92": {
+      "protocol_sha256": "b0fd67b44b464e391d59db25732baff591a8bf7c9536c100ec9623f2860634ce",
+      "ordered_atomic_numbers": [
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "coordinates_bohr_hex": [
+        [
+          "0x0.0p+0",
+          "0x1.51e9cbe114827p+1",
+          "0x0.0p+0"
+        ],
+        [
+          "0x1.24a1e55809008p+1",
+          "0x1.51e9cbe114827p+0",
+          "0x0.0p+0"
+        ],
+        [
+          "0x1.24a1e55809008p+1",
+          "-0x1.51e9cbe114827p+0",
+          "0x0.0p+0"
+        ],
+        [
+          "0x0.0p+0",
+          "-0x1.51e9cbe114827p+1",
+          "0x0.0p+0"
+        ],
+        [
+          "-0x1.24a1e55809008p+1",
+          "-0x1.51e9cbe114827p+0",
+          "0x0.0p+0"
+        ],
+        [
+          "-0x1.24a1e55809008p+1",
+          "0x1.51e9cbe114827p+0",
+          "0x0.0p+0"
+        ],
+        [
+          "0x0.0p+0",
+          "0x1.2c0eeaff67d4ap+2",
+          "0x0.0p+0"
+        ],
+        [
+          "0x1.03db640994d43p+2",
+          "0x1.2c0eeaff67d4ap+1",
+          "0x0.0p+0"
+        ],
+        [
+          "0x1.03db640994d43p+2",
+          "-0x1.2c0eeaff67d4ap+1",
+          "0x0.0p+0"
+        ],
+        [
+          "0x0.0p+0",
+          "-0x1.2c0eeaff67d4ap+2",
+          "0x0.0p+0"
+        ],
+        [
+          "-0x1.03db640994d43p+2",
+          "-0x1.2c0eeaff67d4ap+1",
+          "0x0.0p+0"
+        ],
+        [
+          "-0x1.03db640994d43p+2",
+          "0x1.2c0eeaff67d4ap+1",
+          "0x0.0p+0"
+        ]
+      ],
+      "charge": 0,
+      "multiplicity": 1,
+      "resolved_model": {
+        "method": "rhf",
+        "geometry_hash": "4b07072571806907441edaa656c4386f9b0d6e83e071648fa90e3326dcda674b",
+        "basis_hash": "4fd84a8939eca5805c3745eb07d62aae79ff0675f2a9a2b14bd2187077cb20b8",
+        "electron_count": 42,
+        "multiplicity": 1,
+        "charge": 0,
+        "representation": "real_spherical",
+        "hamiltonian": "all-electron-nonrelativistic-coulomb",
+        "approximation": "conventional",
+        "auxiliary_basis_hash": null,
+        "metric_relative_threshold": null,
+        "schema_version": 1,
+        "identity": "704c2a3ed8bf03a1ab22a22a2ea076425cad7f1b7e8915a92e8fbc4f875bb341"
+      },
+      "basis_metadata": {
+        "orbital": {
+          "name": "sto-3g",
+          "role": "orbital",
+          "mathematical_identity": "4fd84a8939eca5805c3745eb07d62aae79ff0675f2a9a2b14bd2187077cb20b8",
+          "basis_identity": "cb4d7486a207478c98cb858e1d8b905335b17cef25cb44ae82333b9b6604505e",
+          "representation": "spherical",
+          "provenance": {
+            "source": "generativeqc/data/basis_pack.json; Basis Set Exchange",
+            "version": "Basis Set Exchange 0.11",
+            "license": "BSD-3-Clause",
+            "checksum": "6002092fea25331281cc095dc6dc41a6a3d7a2f0c88f82a1fbceac01225a897c"
+          },
+          "electrons": {
+            "atomic_numbers": [
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "nuclear_charges": [
+              6,
+              6,
+              6,
+              6,
+              6,
+              6,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "ecp_core_electrons": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "ionic_charge": 0,
+            "electron_count": 42,
+            "multiplicity": 1,
+            "nalpha": 21,
+            "nbeta": 21
+          },
+          "shell_count": 24,
+          "primitive_count": 72
+        },
+        "model_identity": "413d2e05531879083047f0f95f51559e1b64276defc2e33b4380ff6451182f3c"
+      }
+    },
+    "2962ca0d2e7e17935d1762e29d95671e260682c4e9f4433561a2e8d56fe62fa3": {
+      "protocol_sha256": "b0fd67b44b464e391d59db25732baff591a8bf7c9536c100ec9623f2860634ce",
+      "ordered_atomic_numbers": [
+        6,
+        6,
+        9,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "coordinates_bohr_hex": [
+        [
+          "0x0.0p+0",
+          "0x1.0dcc684df2265p+0",
+          "0x0.0p+0"
+        ],
+        [
+          "0x1.1148179bd304dp+1",
+          "-0x1.a66d88c48a332p-1",
+          "0x0.0p+0"
+        ],
+        [
+          "-0x1.27e5d9a39fd7dp+1",
+          "-0x1.cc8c870c79352p-3",
+          "0x0.0p+0"
+        ],
+        [
+          "-0x1.9ee1978a1fd40p-7",
+          "0x1.210d712cbdf92p+1",
+          "0x1.aebfab51270f1p+0"
+        ],
+        [
+          "-0x1.9ee1978a1fd40p-7",
+          "0x1.210d712cbdf92p+1",
+          "-0x1.aebfab51270f1p+0"
+        ],
+        [
+          "0x1.f8358be881085p+1",
+          "0x1.621e9b4ba0677p-3",
+          "0x0.0p+0"
+        ],
+        [
+          "0x1.053628301fd86p+1",
+          "-0x1.026e0c379bcdap+1",
+          "0x1.ad01d3bfb02ebp+0"
+        ],
+        [
+          "0x1.053628301fd86p+1",
+          "-0x1.026e0c379bcdap+1",
+          "-0x1.ad01d3bfb02ebp+0"
+        ]
+      ],
+      "charge": 0,
+      "multiplicity": 1,
+      "resolved_model": {
+        "method": "rhf",
+        "geometry_hash": "794774dfdf2bedd3a1d080d4411bfb727caab6acc71135eac09b11ef2ae84bb8",
+        "basis_hash": "f4c5f94df0d0155a60b59954fd26daa66f1fe5b05097e94ed305ffa4120a79ea",
+        "electron_count": 26,
+        "multiplicity": 1,
+        "charge": 0,
+        "representation": "real_spherical",
+        "hamiltonian": "all-electron-nonrelativistic-coulomb",
+        "approximation": "conventional",
+        "auxiliary_basis_hash": null,
+        "metric_relative_threshold": null,
+        "schema_version": 1,
+        "identity": "e9a3102c5c66dfd0fc05a6e4ff7f5e8511ba16307e83d8487f416ff2434472e3"
+      },
+      "basis_metadata": {
+        "orbital": {
+          "name": "sto-3g",
+          "role": "orbital",
+          "mathematical_identity": "f4c5f94df0d0155a60b59954fd26daa66f1fe5b05097e94ed305ffa4120a79ea",
+          "basis_identity": "cb4d7486a207478c98cb858e1d8b905335b17cef25cb44ae82333b9b6604505e",
+          "representation": "spherical",
+          "provenance": {
+            "source": "generativeqc/data/basis_pack.json; Basis Set Exchange",
+            "version": "Basis Set Exchange 0.11",
+            "license": "BSD-3-Clause",
+            "checksum": "6002092fea25331281cc095dc6dc41a6a3d7a2f0c88f82a1fbceac01225a897c"
+          },
+          "electrons": {
+            "atomic_numbers": [
+              6,
+              6,
+              9,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "nuclear_charges": [
+              6,
+              6,
+              9,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "ecp_core_electrons": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "ionic_charge": 0,
+            "electron_count": 26,
+            "multiplicity": 1,
+            "nalpha": 13,
+            "nbeta": 13
+          },
+          "shell_count": 14,
+          "primitive_count": 42
+        },
+        "model_identity": "ac0fb307e16bae3b4bfddd3f4a762d71bab02c9da6a0b5bad33d5a6579221a09"
+      }
+    },
+    "8058d443ddc2ae410e7da6a79990e095667c42e6ecb726a716a487af4af636fb": {
+      "protocol_sha256": "b0fd67b44b464e391d59db25732baff591a8bf7c9536c100ec9623f2860634ce",
+      "ordered_atomic_numbers": [
+        1,
+        1
+      ],
+      "coordinates_bohr_hex": [
+        [
+          "0x0.0p+0",
+          "0x0.0p+0",
+          "0x0.0p+0"
+        ],
+        [
+          "0x0.0p+0",
+          "0x0.0p+0",
+          "0x1.6666666666666p+0"
+        ]
+      ],
+      "charge": 0,
+      "multiplicity": 1,
+      "resolved_model": {
+        "method": "rhf",
+        "geometry_hash": "e7022c3db32b77ef78d0250848d3aa988dfcc4bda01306d77ca327176ca84530",
+        "basis_hash": "fd91f42ede96c442e14679e39abb1cbdb9af7992560d3ff2d18c7620f20839aa",
+        "electron_count": 2,
+        "multiplicity": 1,
+        "charge": 0,
+        "representation": "real_spherical",
+        "hamiltonian": "all-electron-nonrelativistic-coulomb",
+        "approximation": "conventional",
+        "auxiliary_basis_hash": null,
+        "metric_relative_threshold": null,
+        "schema_version": 1,
+        "identity": "424cdeecb5d6a46b7bdf1a8af38d61f3f2bc4d250b1e16a06f7577af486237cb"
+      },
+      "basis_metadata": {
+        "orbital": {
+          "name": "sto-3g",
+          "role": "orbital",
+          "mathematical_identity": "fd91f42ede96c442e14679e39abb1cbdb9af7992560d3ff2d18c7620f20839aa",
+          "basis_identity": "cb4d7486a207478c98cb858e1d8b905335b17cef25cb44ae82333b9b6604505e",
+          "representation": "spherical",
+          "provenance": {
+            "source": "generativeqc/data/basis_pack.json; Basis Set Exchange",
+            "version": "Basis Set Exchange 0.11",
+            "license": "BSD-3-Clause",
+            "checksum": "6002092fea25331281cc095dc6dc41a6a3d7a2f0c88f82a1fbceac01225a897c"
+          },
+          "electrons": {
+            "atomic_numbers": [
+              1,
+              1
+            ],
+            "nuclear_charges": [
+              1,
+              1
+            ],
+            "ecp_core_electrons": [
+              0,
+              0
+            ],
+            "ionic_charge": 0,
+            "electron_count": 2,
+            "multiplicity": 1,
+            "nalpha": 1,
+            "nbeta": 1
+          },
+          "shell_count": 2,
+          "primitive_count": 6
+        },
+        "model_identity": "58be8ac8db9f695d56efc32db8f80c929acd9e8348c73903c24d9e764e72bc30"
+      }
+    },
+    "e3138ae06f46f97a0582bba6290dbb943e16d46f52631c8a8388d7620e9b4816": {
+      "protocol_sha256": "b0fd67b44b464e391d59db25732baff591a8bf7c9536c100ec9623f2860634ce",
+      "ordered_atomic_numbers": [
+        8,
+        8,
+        1,
+        1
+      ],
+      "coordinates_bohr_hex": [
+        [
+          "0x0.0p+0",
+          "0x1.64c7c14a37b1ap+0",
+          "-0x1.98b05572ce28cp-4"
+        ],
+        [
+          "0x0.0p+0",
+          "-0x1.64c7c14a37b1ap+0",
+          "-0x1.98b05572ce28cp-4"
+        ],
+        [
+          "0x1.8c352149fca35p+0",
+          "0x1.8b3d7078e3ec8p+0",
+          "0x1.984d41a73f499p-1"
+        ],
+        [
+          "-0x1.8c352149fca35p+0",
+          "-0x1.8b3d7078e3ec8p+0",
+          "0x1.984d41a73f499p-1"
+        ]
+      ],
+      "charge": 0,
+      "multiplicity": 1,
+      "resolved_model": {
+        "method": "rhf",
+        "geometry_hash": "11740a270e3824d39cce9fcca032f15dd58fbc4cd4bedd10633fd35d537e9b7a",
+        "basis_hash": "e3b61bf32e52fcb46c9028dc4cf410d45225d64a729a0c8e4d57690ba2b551f8",
+        "electron_count": 18,
+        "multiplicity": 1,
+        "charge": 0,
+        "representation": "real_spherical",
+        "hamiltonian": "all-electron-nonrelativistic-coulomb",
+        "approximation": "conventional",
+        "auxiliary_basis_hash": null,
+        "metric_relative_threshold": null,
+        "schema_version": 1,
+        "identity": "472724bb628bc2835b9e7fd818a71c0ab07dd8db429b6227d492c8e5f0d5f08b"
+      },
+      "basis_metadata": {
+        "orbital": {
+          "name": "sto-3g",
+          "role": "orbital",
+          "mathematical_identity": "e3b61bf32e52fcb46c9028dc4cf410d45225d64a729a0c8e4d57690ba2b551f8",
+          "basis_identity": "cb4d7486a207478c98cb858e1d8b905335b17cef25cb44ae82333b9b6604505e",
+          "representation": "spherical",
+          "provenance": {
+            "source": "generativeqc/data/basis_pack.json; Basis Set Exchange",
+            "version": "Basis Set Exchange 0.11",
+            "license": "BSD-3-Clause",
+            "checksum": "6002092fea25331281cc095dc6dc41a6a3d7a2f0c88f82a1fbceac01225a897c"
+          },
+          "electrons": {
+            "atomic_numbers": [
+              8,
+              8,
+              1,
+              1
+            ],
+            "nuclear_charges": [
+              8,
+              8,
+              1,
+              1
+            ],
+            "ecp_core_electrons": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "ionic_charge": 0,
+            "electron_count": 18,
+            "multiplicity": 1,
+            "nalpha": 9,
+            "nbeta": 9
+          },
+          "shell_count": 8,
+          "primitive_count": 24
+        },
+        "model_identity": "ec8b09e032dcb756147bcc55003668bfeb0716c0109e086c20f361a9575b07b6"
+      }
+    }
+  },
+  "rows": [
+    {
+      "id": "error_psi4_water_energy_1.json.xz",
+      "source_sha256": "d852cc5e4839535a9fc52bc30ff141e2efab1918709ffdf3450d75d0f6422ce3",
+      "molecule": "H2O",
+      "source_model": {
+        "method": "b3lyp",
+        "basis": "made_up_basis"
+      },
+      "source_driver": "energy",
+      "source_keywords": {},
+      "source_protocols": {},
+      "source_success": false,
+      "source_error": "upstream_basis_not_found",
+      "charge": 0,
+      "multiplicity": 1,
+      "target_key": "f374a87671beb6f3f954cbc47ad569fdafb9d7bc3deb502400e334f9da05c09f",
+      "representative_row": "error_psi4_water_energy_1.json.xz",
+      "energy_hartree": -74.96302316266413,
+      "status": "verified",
+      "failed_checks": [],
+      "max_pairwise_gqc_difference_eh": 0.0,
+      "max_independent_difference_eh": 1.9895196601282805e-13,
+      "per_row_cold": {
+        "stage_status": "valid",
+        "status_code": 0,
+        "status_message": "success",
+        "iterations": 8,
+        "fock_builds": 9,
+        "converged": true,
+        "executed_backend": "cuda",
+        "warm_start_used": false,
+        "warm_start_fallback": false,
+        "restart_origin": "cold",
+        "basis_identity": "cb4d7486a207478c98cb858e1d8b905335b17cef25cb44ae82333b9b6604505e",
+        "energy_hartree": -74.96302316266413
+      }
+    },
+    {
+      "id": "error_psi4_water_energy_2.json.xz",
+      "source_sha256": "b97d2c0dbfd79164a377e69eb0b13f5e11c084c84b2e37851189961eb0a45e98",
+      "molecule": "H2O",
+      "source_model": {
+        "method": "b3lyp",
+        "basis": "sto-3g"
+      },
+      "source_driver": "energy",
+      "source_keywords": {
+        "maxiter": 1
+      },
+      "source_protocols": {},
+      "source_success": false,
+      "source_error": "upstream_scf_nonconvergence",
+      "charge": 0,
+      "multiplicity": 1,
+      "target_key": "f374a87671beb6f3f954cbc47ad569fdafb9d7bc3deb502400e334f9da05c09f",
+      "representative_row": "error_psi4_water_energy_1.json.xz",
+      "energy_hartree": -74.96302316266413,
+      "status": "verified",
+      "failed_checks": [],
+      "max_pairwise_gqc_difference_eh": 0.0,
+      "max_independent_difference_eh": 1.9895196601282805e-13,
+      "per_row_cold": {
+        "stage_status": "valid",
+        "status_code": 0,
+        "status_message": "success",
+        "iterations": 8,
+        "fock_builds": 9,
+        "converged": true,
+        "executed_backend": "cuda",
+        "warm_start_used": false,
+        "warm_start_fallback": false,
+        "restart_origin": "cold",
+        "basis_identity": "cb4d7486a207478c98cb858e1d8b905335b17cef25cb44ae82333b9b6604505e",
+        "energy_hartree": -74.96302316266413
+      }
+    },
+    {
+      "id": "sp_psi4_benzene_energy_1.json.xz",
+      "source_sha256": "f1d23c766fc2d7ff9cd6c7f9b0fac0ca7f009f36aa082edac560e2ad48e00ad8",
+      "molecule": "C6H6",
+      "source_model": {
+        "method": "b3lyp",
+        "basis": "6-31g"
+      },
+      "source_driver": "energy",
+      "source_keywords": {},
+      "source_protocols": {},
+      "source_success": true,
+      "source_error": null,
+      "charge": 0,
+      "multiplicity": 1,
+      "target_key": "a23b0f8f715abc31dd491976d0acfbb2cf3e32c7444f999c629ecc8057ccdb92",
+      "representative_row": "sp_psi4_benzene_energy_1.json.xz",
+      "energy_hartree": -227.89060348505083,
+      "status": "verified",
+      "failed_checks": [],
+      "max_pairwise_gqc_difference_eh": 1.7053025658242404e-13,
+      "max_independent_difference_eh": 3.410605131648481e-13,
+      "per_row_cold": {
+        "stage_status": "valid",
+        "status_code": 0,
+        "status_message": "success",
+        "iterations": 11,
+        "fock_builds": 12,
+        "converged": true,
+        "executed_backend": "cuda",
+        "warm_start_used": false,
+        "warm_start_fallback": false,
+        "restart_origin": "cold",
+        "basis_identity": "cb4d7486a207478c98cb858e1d8b905335b17cef25cb44ae82333b9b6604505e",
+        "energy_hartree": -227.89060348505072
+      }
+    },
+    {
+      "id": "sp_psi4_benzene_energy_2.json.xz",
+      "source_sha256": "a89c5155bc8d31b0cde2a9fd7bcf7abeec3501d7bf364bc4c193eb06315300a1",
+      "molecule": "C6H6",
+      "source_model": {
+        "method": "b3lyp",
+        "basis": "6-31g"
+      },
+      "source_driver": "energy",
+      "source_keywords": {
+        "maxiter": 100
+      },
+      "source_protocols": {},
+      "source_success": true,
+      "source_error": null,
+      "charge": 0,
+      "multiplicity": 1,
+      "target_key": "a23b0f8f715abc31dd491976d0acfbb2cf3e32c7444f999c629ecc8057ccdb92",
+      "representative_row": "sp_psi4_benzene_energy_1.json.xz",
+      "energy_hartree": -227.89060348505083,
+      "status": "verified",
+      "failed_checks": [],
+      "max_pairwise_gqc_difference_eh": 5.684341886080802e-14,
+      "max_independent_difference_eh": 2.2737367544323206e-13,
+      "per_row_cold": {
+        "stage_status": "valid",
+        "status_code": 0,
+        "status_message": "success",
+        "iterations": 11,
+        "fock_builds": 12,
+        "converged": true,
+        "executed_backend": "cuda",
+        "warm_start_used": false,
+        "warm_start_fallback": false,
+        "restart_origin": "cold",
+        "basis_identity": "cb4d7486a207478c98cb858e1d8b905335b17cef25cb44ae82333b9b6604505e",
+        "energy_hartree": -227.89060348505083
+      }
+    },
+    {
+      "id": "sp_psi4_benzene_energy_3.json.xz",
+      "source_sha256": "2377bf8f8fc780a846a96187d47d649983de12a3b0cd1c3373e043b5d16a43c1",
+      "molecule": "C6H6",
+      "source_model": {
+        "method": "b3lyp",
+        "basis": "6-31g"
+      },
+      "source_driver": "energy",
+      "source_keywords": {
+        "e_convergence": 1e-06
+      },
+      "source_protocols": {},
+      "source_success": true,
+      "source_error": null,
+      "charge": 0,
+      "multiplicity": 1,
+      "target_key": "a23b0f8f715abc31dd491976d0acfbb2cf3e32c7444f999c629ecc8057ccdb92",
+      "representative_row": "sp_psi4_benzene_energy_1.json.xz",
+      "energy_hartree": -227.89060348505083,
+      "status": "verified",
+      "failed_checks": [],
+      "max_pairwise_gqc_difference_eh": 1.1368683772161603e-13,
+      "max_independent_difference_eh": 2.2737367544323206e-13,
+      "per_row_cold": {
+        "stage_status": "valid",
+        "status_code": 0,
+        "status_message": "success",
+        "iterations": 11,
+        "fock_builds": 12,
+        "converged": true,
+        "executed_backend": "cuda",
+        "warm_start_used": false,
+        "warm_start_fallback": false,
+        "restart_origin": "cold",
+        "basis_identity": "cb4d7486a207478c98cb858e1d8b905335b17cef25cb44ae82333b9b6604505e",
+        "energy_hartree": -227.89060348505095
+      }
+    },
+    {
+      "id": "sp_psi4_fluoroethane_wfn.json.xz",
+      "source_sha256": "6deb072f36ba1fb106ef888029d5d9e7409e6e0a5c23fdcc0c604dc2832fa143",
+      "molecule": "C2FH5",
+      "source_model": {
+        "method": "b3lyp",
+        "basis": "sto-3g"
+      },
+      "source_driver": "energy",
+      "source_keywords": {},
+      "source_protocols": {
+        "wavefunction": "orbitals_and_eigenvalues"
+      },
+      "source_success": true,
+      "source_error": null,
+      "charge": 0,
+      "multiplicity": 1,
+      "target_key": "2962ca0d2e7e17935d1762e29d95671e260682c4e9f4433561a2e8d56fe62fa3",
+      "representative_row": "sp_psi4_fluoroethane_wfn.json.xz",
+      "energy_hartree": -175.75070650021047,
+      "status": "verified",
+      "failed_checks": [],
+      "max_pairwise_gqc_difference_eh": 1.7053025658242404e-13,
+      "max_independent_difference_eh": 1.9042545318370685e-12,
+      "per_row_cold": {
+        "stage_status": "valid",
+        "status_code": 0,
+        "status_message": "success",
+        "iterations": 14,
+        "fock_builds": 14,
+        "converged": true,
+        "executed_backend": "cuda",
+        "warm_start_used": false,
+        "warm_start_fallback": false,
+        "restart_origin": "cold",
+        "basis_identity": "cb4d7486a207478c98cb858e1d8b905335b17cef25cb44ae82333b9b6604505e",
+        "energy_hartree": -175.75070650021053
+      }
+    },
+    {
+      "id": "sp_psi4_h2_b3lyp_nativefiles.json.xz",
+      "source_sha256": "e8dd80de3375028bacbfae1e3839439e895ce5524c5ecb937d0cae1167a580fe",
+      "molecule": "H2",
+      "source_model": {
+        "method": "b3lyp",
+        "basis": "sto-3g"
+      },
+      "source_driver": "gradient",
+      "source_keywords": {
+        "gradient_write": true
+      },
+      "source_protocols": {
+        "wavefunction": "all",
+        "native_files": "all"
+      },
+      "source_success": true,
+      "source_error": null,
+      "charge": 0,
+      "multiplicity": 1,
+      "target_key": "8058d443ddc2ae410e7da6a79990e095667c42e6ecb726a716a487af4af636fb",
+      "representative_row": "sp_psi4_h2_b3lyp_nativefiles.json.xz",
+      "energy_hartree": -1.1167143251757699,
+      "status": "verified",
+      "failed_checks": [],
+      "max_pairwise_gqc_difference_eh": 0.0,
+      "max_independent_difference_eh": 1.9095836023552692e-14,
+      "per_row_cold": {
+        "stage_status": "valid",
+        "status_code": 0,
+        "status_message": "success",
+        "iterations": 2,
+        "fock_builds": 2,
+        "converged": true,
+        "executed_backend": "cuda",
+        "warm_start_used": false,
+        "warm_start_fallback": false,
+        "restart_origin": "cold",
+        "basis_identity": "cb4d7486a207478c98cb858e1d8b905335b17cef25cb44ae82333b9b6604505e",
+        "energy_hartree": -1.1167143251757699
+      }
+    },
+    {
+      "id": "sp_psi4_peroxide_energy_wfn.json.xz",
+      "source_sha256": "370d0dc1eb7c77037634c6f04f7502abdce0f1fc23efad2a1a5dc5448c48b339",
+      "molecule": "H2O2",
+      "source_model": {
+        "method": "b3lyp",
+        "basis": "sto-3g"
+      },
+      "source_driver": "energy",
+      "source_keywords": {},
+      "source_protocols": {
+        "wavefunction": "all"
+      },
+      "source_success": true,
+      "source_error": null,
+      "charge": 0,
+      "multiplicity": 1,
+      "target_key": "e3138ae06f46f97a0582bba6290dbb943e16d46f52631c8a8388d7620e9b4816",
+      "representative_row": "sp_psi4_peroxide_energy_wfn.json.xz",
+      "energy_hartree": -148.74899484906297,
+      "status": "verified",
+      "failed_checks": [],
+      "max_pairwise_gqc_difference_eh": 0.0,
+      "max_independent_difference_eh": 2.842170943040401e-14,
+      "per_row_cold": {
+        "stage_status": "valid",
+        "status_code": 0,
+        "status_message": "success",
+        "iterations": 12,
+        "fock_builds": 13,
+        "converged": true,
+        "executed_backend": "cuda",
+        "warm_start_used": false,
+        "warm_start_fallback": false,
+        "restart_origin": "cold",
+        "basis_identity": "cb4d7486a207478c98cb858e1d8b905335b17cef25cb44ae82333b9b6604505e",
+        "energy_hartree": -148.74899484906297
+      }
+    },
+    {
+      "id": "sp_psi4_water_energy.json.xz",
+      "source_sha256": "edf0fb632e686c79f8ef3b3d1310abefc0f898bb5234cb1d30b309762d1af9ab",
+      "molecule": "H2O",
+      "source_model": {
+        "method": "b3lyp",
+        "basis": "sto-3g"
+      },
+      "source_driver": "energy",
+      "source_keywords": {},
+      "source_protocols": {},
+      "source_success": true,
+      "source_error": null,
+      "charge": 0,
+      "multiplicity": 1,
+      "target_key": "f374a87671beb6f3f954cbc47ad569fdafb9d7bc3deb502400e334f9da05c09f",
+      "representative_row": "error_psi4_water_energy_1.json.xz",
+      "energy_hartree": -74.96302316266413,
+      "status": "verified",
+      "failed_checks": [],
+      "max_pairwise_gqc_difference_eh": 0.0,
+      "max_independent_difference_eh": 1.9895196601282805e-13,
+      "per_row_cold": {
+        "stage_status": "valid",
+        "status_code": 0,
+        "status_message": "success",
+        "iterations": 8,
+        "fock_builds": 9,
+        "converged": true,
+        "executed_backend": "cuda",
+        "warm_start_used": false,
+        "warm_start_fallback": false,
+        "restart_origin": "cold",
+        "basis_identity": "cb4d7486a207478c98cb858e1d8b905335b17cef25cb44ae82333b9b6604505e",
+        "energy_hartree": -74.96302316266413
+      }
+    },
+    {
+      "id": "sp_psi4_water_gradient.json.xz",
+      "source_sha256": "83da9c3c51db17cca02685069099bf484b3b756e15229511f5922d64e8f27d54",
+      "molecule": "H2O",
+      "source_model": {
+        "method": "b3lyp",
+        "basis": "sto-3g"
+      },
+      "source_driver": "gradient",
+      "source_keywords": {},
+      "source_protocols": {},
+      "source_success": true,
+      "source_error": null,
+      "charge": 0,
+      "multiplicity": 1,
+      "target_key": "f374a87671beb6f3f954cbc47ad569fdafb9d7bc3deb502400e334f9da05c09f",
+      "representative_row": "error_psi4_water_energy_1.json.xz",
+      "energy_hartree": -74.96302316266413,
+      "status": "verified",
+      "failed_checks": [],
+      "max_pairwise_gqc_difference_eh": 0.0,
+      "max_independent_difference_eh": 1.9895196601282805e-13,
+      "per_row_cold": {
+        "stage_status": "valid",
+        "status_code": 0,
+        "status_message": "success",
+        "iterations": 8,
+        "fock_builds": 9,
+        "converged": true,
+        "executed_backend": "cuda",
+        "warm_start_used": false,
+        "warm_start_fallback": false,
+        "restart_origin": "cold",
+        "basis_identity": "cb4d7486a207478c98cb858e1d8b905335b17cef25cb44ae82333b9b6604505e",
+        "energy_hartree": -74.96302316266413
+      }
+    },
+    {
+      "id": "sp_psi4_water_hessian.json.xz",
+      "source_sha256": "d752f8456cb7f49ed38896d81f289c54861605beda38fc301f0dbe87701dc519",
+      "molecule": "H2O",
+      "source_model": {
+        "method": "b3lyp",
+        "basis": "sto-3g"
+      },
+      "source_driver": "hessian",
+      "source_keywords": {},
+      "source_protocols": {},
+      "source_success": true,
+      "source_error": null,
+      "charge": 0,
+      "multiplicity": 1,
+      "target_key": "f374a87671beb6f3f954cbc47ad569fdafb9d7bc3deb502400e334f9da05c09f",
+      "representative_row": "error_psi4_water_energy_1.json.xz",
+      "energy_hartree": -74.96302316266413,
+      "status": "verified",
+      "failed_checks": [],
+      "max_pairwise_gqc_difference_eh": 0.0,
+      "max_independent_difference_eh": 1.9895196601282805e-13,
+      "per_row_cold": {
+        "stage_status": "valid",
+        "status_code": 0,
+        "status_message": "success",
+        "iterations": 8,
+        "fock_builds": 9,
+        "converged": true,
+        "executed_backend": "cuda",
+        "warm_start_used": false,
+        "warm_start_fallback": false,
+        "restart_origin": "cold",
+        "basis_identity": "cb4d7486a207478c98cb858e1d8b905335b17cef25cb44ae82333b9b6604505e",
+        "energy_hartree": -74.96302316266413
+      }
+    },
+    {
+      "id": "sp_rdkit_benzene_energy.json.xz",
+      "source_sha256": "1e03c193fbabb76a1c7130051a1a29ddecd0fa052c5af29cc2e15d628750f00c",
+      "molecule": "C6H6",
+      "source_model": {
+        "method": "uff",
+        "basis": ""
+      },
+      "source_driver": "energy",
+      "source_keywords": {},
+      "source_protocols": {},
+      "source_success": true,
+      "source_error": null,
+      "charge": 0,
+      "multiplicity": 1,
+      "target_key": "a23b0f8f715abc31dd491976d0acfbb2cf3e32c7444f999c629ecc8057ccdb92",
+      "representative_row": "sp_psi4_benzene_energy_1.json.xz",
+      "energy_hartree": -227.89060348505083,
+      "status": "verified",
+      "failed_checks": [],
+      "max_pairwise_gqc_difference_eh": 5.684341886080802e-14,
+      "max_independent_difference_eh": 2.2737367544323206e-13,
+      "per_row_cold": {
+        "stage_status": "valid",
+        "status_code": 0,
+        "status_message": "success",
+        "iterations": 11,
+        "fock_builds": 12,
+        "converged": true,
+        "executed_backend": "cuda",
+        "warm_start_used": false,
+        "warm_start_fallback": false,
+        "restart_origin": "cold",
+        "basis_identity": "cb4d7486a207478c98cb858e1d8b905335b17cef25cb44ae82333b9b6604505e",
+        "energy_hartree": -227.89060348505083
+      }
+    },
+    {
+      "id": "sp_rdkit_water_energy.json.xz",
+      "source_sha256": "df4701bb7605b1c0d0a360e75a29506dbd50b7e4653d770e5bd452c6cca4d414",
+      "molecule": "H2O",
+      "source_model": {
+        "method": "uff",
+        "basis": ""
+      },
+      "source_driver": "energy",
+      "source_keywords": {},
+      "source_protocols": {},
+      "source_success": true,
+      "source_error": null,
+      "charge": 0,
+      "multiplicity": 1,
+      "target_key": "f374a87671beb6f3f954cbc47ad569fdafb9d7bc3deb502400e334f9da05c09f",
+      "representative_row": "error_psi4_water_energy_1.json.xz",
+      "energy_hartree": -74.96302316266413,
+      "status": "verified",
+      "failed_checks": [],
+      "max_pairwise_gqc_difference_eh": 0.0,
+      "max_independent_difference_eh": 1.9895196601282805e-13,
+      "per_row_cold": {
+        "stage_status": "valid",
+        "status_code": 0,
+        "status_message": "success",
+        "iterations": 8,
+        "fock_builds": 9,
+        "converged": true,
+        "executed_backend": "cuda",
+        "warm_start_used": false,
+        "warm_start_fallback": false,
+        "restart_origin": "cold",
+        "basis_identity": "cb4d7486a207478c98cb858e1d8b905335b17cef25cb44ae82333b9b6604505e",
+        "energy_hartree": -74.96302316266413
+      }
+    }
+  ]
+}

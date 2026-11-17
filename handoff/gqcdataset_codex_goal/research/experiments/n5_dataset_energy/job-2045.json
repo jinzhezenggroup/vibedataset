@@ -1,0 +1,56 @@
+{
+  "remote_directory": "n5:~/vibedataset/runs/6ab9a0ae6a47-dataset-20261117T190744Z",
+  "scheduler_command": "scontrol show job -o 2045",
+  "scheduler": {
+    "JobId": "2045",
+    "JobState": "COMPLETED",
+    "ExitCode": "0:0",
+    "Partition": "main",
+    "StartTime": "2026-11-18T03:07:49",
+    "EndTime": "2026-11-18T03:07:54",
+    "RunTime": "00:00:05",
+    "TimeLimit": "00:10:00",
+    "NumCPUs": "4",
+    "MinMemoryNode": "16G",
+    "TresPerNode": "gres:gpu:5090:1",
+    "Restarts": "0"
+  },
+  "preflight": "PARTITION AVAIL GRES STATE\nmain* up gpu:5090:1 idle\nJOBID NAME STATE TIME\n",
+  "gpu_observation": "NVIDIA GeForce RTX 5090, 12.0, 570.86.16, 32607 MiB",
+  "command_cost_seconds": {
+    "real": 5.02,
+    "user": 5.81,
+    "sys": 1.44
+  },
+  "transfer_seconds": 1.630645,
+  "transfer_payload_bytes": 115629,
+  "remote_file_hashes": {
+    "outputs/job-2045/labels.json": {
+      "sha256": "2c0ebd79c94db26e1b89d6c958c7bf0c322902ec0619999b793e814543205b70",
+      "bytes": 38184
+    },
+    "outputs/job-2045/operations.jsonl": {
+      "sha256": "98175f742c1a1bfd64ef31869917e9b9df4302d9cb17c3eb0cf850fb9cb22f35",
+      "bytes": 17974
+    },
+    "outputs/job-2045/result.json": {
+      "sha256": "655b4b7695b0a87ce5499e8205cb7e1ee149a2dc8c4b24844e1b218f5ae4c2fc",
+      "bytes": 8477
+    },
+    "slurm-2045.err": {
+      "sha256": "80106fe925ea5912df6cb816fb30078d5dbe4ddf97437d9ea696a01e1cefeb05",
+      "bytes": 29
+    },
+    "slurm-2045.out": {
+      "sha256": "f591da4fbde34db990b8dd674ab06fea395557ece49e8299ca4215bf8a0a332f",
+      "bytes": 2642
+    },
+    "SHA256SUMS": {
+      "sha256": "377f886e9571cecba5a5dd03f25c3ec5060a5cb93e0369b9e645a94bea375385",
+      "bytes": 2757
+    }
+  },
+  "operation_pairs_verified": 44,
+  "export_csv_sha256": "7cd3decaf835648b67305fecd4024be31f1fcc1f7b1703e22de0759219f29516",
+  "scope": "Input Git blobs, staged project files, remote result/log hashes, all paired operation events, counter sums, all numerical gates and CSV joins verified offline. Slurm accounting storage is disabled."
+}
