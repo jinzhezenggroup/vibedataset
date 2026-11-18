@@ -1,0 +1,105 @@
+{
+  "id": "dm_dp_surfaces",
+  "source": {
+    "id": "dm_dp_surfaces",
+    "catalog_ids": [],
+    "priority": "P0",
+    "repository_url": "https://github.com/kmherman/dm-dp-surfaces",
+    "role": "author_release",
+    "commit": "c7e355fd22eb0b66c2135f21601c5ea0709ac6c2",
+    "checkout_path": "_references/dm_dp_surfaces",
+    "paper_version_status": "Author repository at the fixed commit. No paper-specific release commit or electronic-structure producer verified.",
+    "selection_reason": "Published water distributed dipole\u2013quadrupole response arrays and their interpolation/export consumer; direct legacy-asset and precision comparator for issue 15."
+  },
+  "started_at_utc": "2026-11-18T04:43:05.403295+00:00",
+  "status": "indexed_pending_review",
+  "commands": [
+    {
+      "argv": [
+        "git",
+        "init",
+        "--quiet"
+      ],
+      "cwd": "_references/dm_dp_surfaces",
+      "started_at_utc": "2026-11-18T04:43:05.403494+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.002295682003023103,
+      "ended_at_utc": "2026-11-18T04:43:05.405964+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "remote",
+        "add",
+        "origin",
+        "https://github.com/kmherman/dm-dp-surfaces"
+      ],
+      "cwd": "_references/dm_dp_surfaces",
+      "started_at_utc": "2026-11-18T04:43:05.406167+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.00221568500273861,
+      "ended_at_utc": "2026-11-18T04:43:05.408583+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "protocol.file.allow=never",
+        "fetch",
+        "--depth=1",
+        "--no-tags",
+        "origin",
+        "c7e355fd22eb0b66c2135f21601c5ea0709ac6c2"
+      ],
+      "cwd": "_references/dm_dp_surfaces",
+      "started_at_utc": "2026-11-18T04:43:05.408742+00:00",
+      "stdout": "",
+      "stderr": "\u6765\u81ea https://github.com/kmherman/dm-dp-surfaces\n * branch            c7e355fd22eb0b66c2135f21601c5ea0709ac6c2 -> FETCH_HEAD\n",
+      "returncode": 0,
+      "elapsed_seconds": 6.043435970990686,
+      "ended_at_utc": "2026-11-18T04:43:11.452336+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "core.autocrlf=false",
+        "checkout",
+        "--detach",
+        "c7e355fd22eb0b66c2135f21601c5ea0709ac6c2"
+      ],
+      "cwd": "_references/dm_dp_surfaces",
+      "started_at_utc": "2026-11-18T04:43:11.452740+00:00",
+      "stdout": "",
+      "stderr": "HEAD \u76ee\u524d\u4f4d\u4e8e c7e355f Update README.md\n",
+      "returncode": 0,
+      "elapsed_seconds": 0.031370135984616354,
+      "ended_at_utc": "2026-11-18T04:43:11.484422+00:00"
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "/home/lhshen/vibedataset/.work/response-next-stage/handoff/gqcdataset_codex_goal/tools/inventory_sources.py",
+        "_references/dm_dp_surfaces",
+        "--recurse-submodules",
+        "--json",
+        "handoff/gqcdataset_codex_goal/research/inventories/dm_dp_surfaces.json"
+      ],
+      "cwd": ".",
+      "started_at_utc": "2026-11-18T04:43:11.484840+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.07758757201372646,
+      "ended_at_utc": "2026-11-18T04:43:11.562812+00:00"
+    }
+  ],
+  "receipt_path": "handoff/gqcdataset_codex_goal/research/acquisition/dm_dp_surfaces-20261118T044305403269Z.json",
+  "resolved_commit": "c7e355fd22eb0b66c2135f21601c5ea0709ac6c2",
+  "inventory_path": "handoff/gqcdataset_codex_goal/research/inventories/dm_dp_surfaces.json",
+  "ended_at_utc": "2026-11-18T04:43:11.563427+00:00"
+}
