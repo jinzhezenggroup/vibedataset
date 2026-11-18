@@ -72,7 +72,9 @@ def journal(directory, data):
 
 
 def quality_code(work):
-    raw = subprocess.check_output(['git', 'show', Q_COMMIT + ':scripts/target_response_quality.py'], cwd=ROOT)
+    archived = HERE / 'evidence/quality.py.gz'
+    raw = (gzip.decompress(archived.read_bytes()) if archived.is_file()
+           else subprocess.check_output(['git', 'show', Q_COMMIT + ':scripts/target_response_quality.py'], cwd=ROOT))
     check(digest(raw) == Q_SHA, 'quality-evidence source digest')
     dest = work / 'target_response_quality.py'
     dest.write_bytes(raw)
@@ -245,6 +247,13 @@ def serve(ctx, scenario, method, assets, directory, identity, trace):
         finally:
             trace['input_seconds'] += clock() - t
 
+    def verify_scalar(f, o, r):
+        check(r['source'] == model.name and r['unit'] == UNITS[o] and r['schema'] == quality.SCHEMA
+              and r['status'] == 'accepted' and 0 <= r['error_estimate'] <= quality.TOLERANCE
+              and r['raw_value'] == r['value'] and math.isfinite(r['value'])
+              and r['target_identity'] == json_hash([model.endpoint_identity['fields'][f],
+                                                      model.endpoint_identity['observables'][o]]), 'scalar identity or evidence')
+
     try:
         if table:
             history = read('scalars')
@@ -258,6 +267,8 @@ def serve(ctx, scenario, method, assets, directory, identity, trace):
             trace['plan_cache_hit'] = compile_plan.cache_info().hits != count
             use_old = any(c.startswith('H:') for _, _, terms in plan[1] for c, _, _ in terms)
             hist = {tuple(k.split('/')): v for k, v in read('scalars').items()} if use_old else {}
+            for (f, o), r in hist.items():
+                verify_scalar(f, o, r)
             vectors = read(method) if set(plan[0]).intersection(stored) else {}
             result, _ = evaluate(model, quality, stability, plan, hist, vectors, trace, decoders,
                                  compiled=method in ('single', 'two'), dense=method == 'dense')
@@ -266,10 +277,7 @@ def serve(ctx, scenario, method, assets, directory, identity, trace):
         result, _ = evaluate(model, quality, stability, ordinary(requests, 'field'), {}, {}, trace, decoders)
     trace['outputs'] = {f + '/' + o: v for (f, o), v in result.items()}
     for (f, o), r in result.items():
-        check(r['source'] == model.name and r['unit'] == UNITS[o] and r['status'] == 'accepted'
-              and 0 <= r['error_estimate'] <= quality.TOLERANCE and math.isfinite(r['value'])
-              and r['target_identity'] == json_hash([model.endpoint_identity['fields'][f],
-                                                      model.endpoint_identity['observables'][o]]), 'final target identity or evidence')
+        verify_scalar(f, o, r)
     trace['output_asset'] = save(directory / (scenario + '-' + method + '.json'),
                                  {'identity': identity, 'rows': trace['outputs']})
 
@@ -284,7 +292,13 @@ def record(out, model, base, action):
     except Exception as exc:
         trace.update(status='failed', reason=type(exc).__name__ + ': ' + str(exc))
         result = None
-    trace.update(cost=response_work(model.counts - before), seconds=clock() - start)
+    cost = response_work(model.counts - before)
+    if trace['status'] == 'completed':
+        native_actions = sum(b['native_actions'] for b in trace['blocks'])
+        check(native_actions + trace['quality_native_actions'] == cost['jk_calls'], 'physical cost conservation')
+        cost.update(solver_actions=native_actions, quality_native_actions=trace['quality_native_actions'],
+                    cache_validation_actions=sum(d['from_store'] for d in trace['directions']))
+    trace.update(cost=cost, seconds=clock() - start)
     journal(out, {**base, **trace})
     return result
 

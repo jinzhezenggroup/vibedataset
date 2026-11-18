@@ -4,7 +4,7 @@ from datetime import datetime, timezone
 import os
 from pathlib import Path
 
-from run import (Decoders, HISTORIES, HERE, ROOT, Q_COMMIT, Q_SHA, clock, evaluate, file_hash, git, journal, json_hash,
+from run import (Decoders, HISTORIES, HERE, ROOT, Q_COMMIT, Q_SHA, UNITS, clock, evaluate, file_hash, git, journal, json_hash,
                  json, ordinary, plan_cover, quality_code, record, save, setup)
 
 
@@ -42,7 +42,7 @@ def main():
             if stability.report['status'] != 'available':
                 raise ValueError('missing stability evidence')
             scope = json_hash({'problem':model.problem.identity,'source':model.source,'contract':model.contract_identity,
-                               'units':{'q0':'e / au_field','r2':'bohr^2 / au_field','zz':'bohr^2 / au_field'},
+                               'units':UNITS,
                                'quality_sha256':Q_SHA,'matrix':stability.report['matrix_sha256']})
             journal(out, dict(phase='quality_setup', source=name, report=stability.report))
             for rep in range(4):
