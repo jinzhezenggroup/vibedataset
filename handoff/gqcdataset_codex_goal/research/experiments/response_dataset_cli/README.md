@@ -85,3 +85,33 @@ python scripts/complete_response_dataset.py --requests "$examples/both-catalogs.
 ```bash
 python "$examples/verify_catalogs.py" --work .work/response_cli_catalog_replay
 ```
+
+## 构造或求解失败时如何读取费用
+
+带有 `cost_schema=vibedataset.response_work.v2` 的分子回执在构造模型前启动计量。`cost_stages` 按实际执行顺序记录模型准备、解码核准备及每次组合或普通响应的状态、墙时、已提交操作和异常。各阶段的 `operations` 只列发生过的操作。顶层 `setup_jk` 是构造阶段的 J/K。`round_jk`、`rhs` 和 `counts.submitted_blocks` 是构造之后全部尝试的总量，包括失败块、普通回退和缓存物理残差复核。阶段小计已经包含在相应总数中。
+
+`counts.solver_actions` 和 `counts.cache_validation_actions` 分别归属求解与复核。`native_kernel_attempts` 保留各准备操作实际经过的时间和取得的二进制散列。加载已有编译缓存也要经过准备，单次调用中仅属于编译器的用时记作 null。执行中断时，已经提交的科学调用仍计数，未能返回整批读出时 `counts.requests` 记作 null。若进程在写终态前被杀，SQLite 中的 started 行没有终态费用回执。
+
+科学表与成功回执同时提交。可捕获的异常先回滚标量、向量和本次导入，再持久化 failed 回执。相同输入的重试产生新的 attempt ID。按 ID 汇总费用时，每个实际尝试只计一次。读取带有失败尝试的历史批次时，`producer_failed_attempts` 列出相应 ID，`producer_setup_jk` 和 `producer_round_jk` 包含同批已知的失败费用。若旧模型构造中断且此前的成本未测得，读取该历史批次时总量为 null。
+
+下表来自 QM9 水分子、固定 GQC 源码和真实 SQLite 的独立进程验证。每个求解失败控制只允许一次迭代。构造控制在一次实际 J/K 返回后改变测试进程中的 Fock 结果，触发原有物理门槛。
+
+| 失败位置 | 准备 J/K | 响应 RHS / 块 | 响应 J/K | 检查 |
+|---|---:|---:|---:|---|
+| 已存方向复核后普通块未收敛 | 5 | 1 / 1 | 3 | 含 1 次旧解复核，原标签和向量逐字节恢复 |
+| 组合块及普通回退都未收敛 | 5 | 2 / 1，再 3 / 1 | 4 + 6 | 两个已验证的历史操作数在事务回滚后均未入库 |
+| 构造中的物理 Fock 检查失败 | 1 | 0 / 0 | 0 | 留有 5 个核的准备记录 |
+
+每例逐阶段计数都与包裹实际求解入口、算子及 J/K 调用取得的独立观察一致。失败的 JSON 回执与数据库记录逐字段相等。三个新进程分别重试成功，再次打开数据库均纯标量命中。本组实验用两次初始资产生产、三次失败、三次重试和三次重开，共 11 个不同尝试、36 次准备 J/K、107 次响应 J/K、13 个 RHS。[完整回执](failure_costs/batches.json.gz) · [回滚、独立计数及时间](failure_costs/verification.json)
+
+开发期间还跑了两次上述控制、两次已有组合块与成功回退检查，以及两次九进程事务回归，共增加 64 个尝试、252 次准备 J/K、1,092 次响应 J/K 和 92 个 RHS。各批实际输出、代码摘要、命令和用时均可复核。本地部分验证并行执行，单次墙时只计入验证费用。[附加验证原始输出及逐次计数](failure_costs/additional-checks.json.gz)
+
+在审查提交 `faf93dd4a95d9a12ee06bdcf85040ecb38d9107b` 的实验树中遍历 JSON、JSONL、gzip 和 tar 成员，辨认出 119 个唯一 CLI attempt。117 个完成，2 个在求解成功后的向量写入处注入异常，均有 5 次准备、30 次响应 J/K 及 1 个 RHS。旧回执缺少提交块数。此次清点覆盖提交的实验文件，工作站私有数据库和进程中断时未写出的费用不在该分母内。[审查版本回执清点](failure_costs/reviewed-archive.json)
+
+在上述固定 CPU 环境的仓库根目录运行，给 `--work` 指定新目录。
+
+```bash
+python scripts/check_response_failure_receipts.py --work .work/failure-cost-check
+examples=handoff/gqcdataset_codex_goal/research/experiments/response_dataset_cli
+python "$examples/failure_costs/audit.py" --out .work/failure-cost-check/reviewed-archive.json
+```

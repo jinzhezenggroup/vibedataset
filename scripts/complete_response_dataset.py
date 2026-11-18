@@ -2,6 +2,7 @@
 """Complete a JSONL batch of pinned QM9 static RHF response requests."""
 import argparse
 from collections import Counter, defaultdict
+from contextlib import contextmanager
 from datetime import datetime, timezone
 import hashlib
 import json
@@ -17,6 +18,7 @@ import numpy as np
 
 from cphf_reference import SCHEMA as CPHF_SCHEMA
 from gqc_dual_response import ANALYTIC_TOL, FIELD_IDS, FIELD_TOL, GATE, GQC_PIN, OBSERVABLE_IDS, STEPS, DualResponseModel, assess_scalar
+from gqc_dual_response import response_work
 from probe_gqc_residual import ROOT, file_hash, json_hash
 from probe_scalar_response import DIAGONAL, decoder, recoverable
 from response_cover import plan_cover
@@ -284,7 +286,19 @@ def load_history(spec, catalog_by_record):
                 if name in declared:
                     raise ValueError('duplicate historical record-to-catalog binding')
                 declared[name] = {k: catalog[k] for k in keys}
-        by_attempt = {r['id']: r for r in batch['work'] if r['status'] == 'completed' and r['model_started']}
+        production = {r['id']: r for r in batch['work'] if r['model_started']}
+        by_attempt = {aid: r for aid, r in production.items() if r['status'] == 'completed'}
+
+        def total_cost(key):
+            total = 0
+            for attempt in production.values():
+                value = attempt.get(key)
+                if (attempt['status'] not in ('completed', 'failed') or attempt.get('setup_jk') is None or
+                        type(value) is not int or value < 0):
+                    return None
+                total += value
+            return total
+
         grouped = defaultdict(list)
         excluded = []
         for row in batch['records']:
@@ -301,8 +315,8 @@ def load_history(spec, catalog_by_record):
                 grouped[name].append((row, producer['identity'], expected))
         info.update(status='read', input_rows=len(batch['records']), eligible_rows=sum(map(len, grouped.values())),
                     excluded_catalog_records=excluded,
-                    producer_setup_jk=sum(r['setup_jk'] for r in by_attempt.values()),
-                    producer_round_jk=sum(r['round_jk'] for r in by_attempt.values()))
+                    producer_failed_attempts=[aid for aid, r in production.items() if r['status'] == 'failed'],
+                    producer_setup_jk=total_cost('setup_jk'), producer_round_jk=total_cost('round_jk'))
     except (OSError, ValueError, KeyError, TypeError) as e:
         info['reason'] = str(e)
         grouped = {}
@@ -353,7 +367,8 @@ def complete_missing(model, missing, cache, kernel_dir, known):
     computed, combo_counts = [], Counter()
     if use_relation:
         start = time.perf_counter()
-        kernel = decoder(kernel_dir)
+        with model.measure('decoder_setup'):
+            kernel = decoder(kernel_dir)
         relation['decoder_setup_seconds'] = time.perf_counter() - start
         relation['decoder_binary_sha256'] = file_hash(kernel.library._name)
         combined = model.combined_field([1, 1, 1], [o for _, o in candidates])
@@ -407,7 +422,8 @@ def complete_field_block(model, missing, cache, kernel_dir, known, *, supports=S
         return measured
 
     start = time.perf_counter()
-    kernel = decoder(kernel_dir, len(plan.support) - 1)
+    with model.measure('decoder_setup'):
+        kernel = decoder(kernel_dir, len(plan.support) - 1)
     relation.update(decoder_setup_seconds=time.perf_counter() - start,
                     decoder_binary_sha256=file_hash(kernel.library._name))
     before = model.counts.copy()
@@ -418,9 +434,7 @@ def complete_field_block(model, missing, cache, kernel_dir, known, *, supports=S
     except ResponseSolveError as error:
         # Count the unsuccessful joint solve before reverting to the unmodified physical problem.
         spent = model.counts - before
-        lost = {'jk_calls': spent['jk_calls'], 'operator_actions': spent['response_operator_actions'],
-                'rhs_columns': spent['submitted_rhs'], 'cache_validation_actions': spent['cache_validation_actions'],
-                'solver_actions': spent['response_operator_actions'] - spent['cache_validation_actions']}
+        lost = response_work(spent)
         relation.update(failed_block={'reason': str(error), 'counts': lost, 'submitted_blocks': spent['submitted_blocks']},
                         ordinary_retries=sorted(missing))
         measured = model.run_round(missing, baseline_fields, baseline_obs, cache)
@@ -462,6 +476,50 @@ def complete_field_block(model, missing, cache, kernel_dir, known, *, supports=S
     return measured
 
 
+class AttemptMeter:
+    """Own the live operation counters before construction and through every retry."""
+
+    def __init__(self):
+        self.counts = Counter()
+        self.native_kernels = []
+        self.stages = []
+
+    @contextmanager
+    def measure(self, phase):
+        start = time.perf_counter()
+        before = self.counts.copy()
+        stage = {'phase': phase, 'status': 'completed'}
+        try:
+            yield
+        except Exception as error:
+            stage.update(status='failed', reason=str(error))
+            raise
+        finally:
+            stage['seconds'] = time.perf_counter() - start
+            stage['operations'] = dict(self.counts - before)
+            self.stages.append(stage)
+
+    def finish(self, work):
+        setup = next((s for s in self.stages if s['phase'] == 'model_setup'), None)
+        setup_ops = Counter(setup['operations']) if setup else Counter()
+        remaining = self.counts - setup_ops
+        counts = work.setdefault('counts', {})
+        counts.update(response_work(remaining))
+        # An interrupt between projections and the returned batch can leave the
+        # number of assessed outputs unknown even though every submission is metered.
+        counts.setdefault('requests', None if work.get('failed_stage') == 'solve_and_assess' else 0)
+        work.update(cost_schema='vibedataset.response_work.v2', cost_stages=self.stages,
+                    setup_status=setup['status'] if setup else 'skipped', setup_jk=setup_ops['jk_calls'],
+                    setup_seconds=setup['seconds'] if setup else 0., round_jk=counts['jk_calls'], rhs=counts['rhs_columns'])
+        if setup:
+            work['native_kernel_attempts'] = [{k: entry[k] for k in ('source', 'elapsed_seconds', 'binary_sha256')}
+                                              for entry in self.native_kernels]
+            work['native_kernel_sha256'] = [k['binary_sha256'] for k in self.native_kernels if k['binary_sha256']]
+            # NativeTensorProgram may load a cached binary. Its inclusive elapsed
+            # time is observed, its compiler-only share for this call is unknown.
+            work['setup_compile_only_seconds'] = None if self.native_kernels else 0.
+
+
 def run_group(db, name, ctx, requests, kernel_dir, history, relations, scalar_plan='blocked'):
     meta, array, oracle, endpoint, provenance, identity = ctx
     grouped = defaultdict(list)
@@ -477,16 +535,25 @@ def run_group(db, name, ctx, requests, kernel_dir, history, relations, scalar_pl
     aid = uuid4().hex
     work = {'id': aid, 'record_id': name, 'identity': identity, 'requested_lines': sum(map(len, grouped.values())),
             'distinct_targets': len(grouped), 'scalar_hits': 0, 'scalar_rejections': 0, 'model_started': False,
-            'setup_jk': 0, 'round_jk': 0, 'rhs': 0, 'status': 'started', 'rejected_labels': []}
+            'status': 'started', 'rejected_labels': []}
     start = time.perf_counter()
+    meter = AttemptMeter()
+
+    def persist_receipt(status):
+        meter.finish(work)
+        work.update(status=status, seconds=time.perf_counter() - start)
+        db.execute('UPDATE attempts SET status=?,receipt=? WHERE id=?', (status, compact(work), aid))
+
     # A killed process can leave a started receipt. Labels and vectors only
     # become visible together with the completed receipt below.
     db.execute('INSERT INTO attempts VALUES (?,?,?,?,?,NULL)', (aid, name, identity, timestamp(), 'started'))
-    labels, hits, model = {}, set(), None
+    labels, hits = {}, set()
     historical_hits = set()
+    stage = 'acquire_lock'
     try:
         db.execute('BEGIN IMMEDIATE')
         work['lock_wait_seconds'] = time.perf_counter() - start
+        stage = 'load_assets'
         imported, work['rejected_history'] = historical_scalars(history, ctx)
         work['validated_history_scalars'] = len(imported)
         use_relations = relations and scalar_plan != 'ordinary'
@@ -513,11 +580,12 @@ def run_group(db, name, ctx, requests, kernel_dir, history, relations, scalar_pl
         missing = sorted(grouped.keys() - hits)
         if missing:
             cache, bad = load_vectors(db, identity, oracle['problem_identity'])
-            work.update(model_started=True, setup_jk=None, vector_envelope_rejected=bad)
-            model = DualResponseModel(meta, array, kernel_dir, oracle=oracle)
-            work['setup_jk'] = model.setup['counts']['jk_calls']
-            work['setup_seconds'] = model.setup['seconds']
+            work.update(model_started=True, vector_envelope_rejected=bad)
+            stage = 'model_setup'
+            with meter.measure(stage):
+                model = DualResponseModel(meta, array, kernel_dir, oracle=oracle, meter=meter)
             solve_start = time.perf_counter()
+            stage = 'solve_and_assess'
             work['scalar_plan'] = scalar_plan if relations else 'ordinary'
             if use_relations:
                 complete = complete_field_block if scalar_plan == 'blocked' else complete_missing_split
@@ -528,10 +596,9 @@ def run_group(db, name, ctx, requests, kernel_dir, history, relations, scalar_pl
                 fields, obs = plan_cover(missing, cache['fields'], cache['observables'])
                 work.update(chosen_fields=list(fields), chosen_observables=list(obs))
                 measured = model.run_round(missing, fields, obs, cache)
-            work.update(round_jk=measured['counts']['jk_calls'], rhs=measured['counts']['rhs_columns'],
-                        counts=measured['counts'], block=measured['block'], cache_checks=measured['cache_checks'],
-                        solve_and_assess_seconds=time.perf_counter() - solve_start,
-                        native_kernel_sha256=[k['binary_sha256'] for k in model.setup['native_kernels']])
+            work.update(counts=measured['counts'], block=measured['block'], cache_checks=measured['cache_checks'],
+                        solve_and_assess_seconds=time.perf_counter() - solve_start)
+            stage = 'store_assets'
             for grade in measured['results']:
                 edge = grade['field'], grade['observable']
                 labels[edge] = grade, aid, grade['via']
@@ -540,15 +607,16 @@ def run_group(db, name, ctx, requests, kernel_dir, history, relations, scalar_pl
                 else:
                     db.execute('DELETE FROM labels WHERE identity=? AND field=? AND observable=?', (identity, *edge))
             db.execute('INSERT OR REPLACE INTO vectors VALUES(?,?,?)', (identity, compact(cache), json_hash(cache)))
-        work.update(status='completed', seconds=time.perf_counter() - start)
-        db.execute('UPDATE attempts SET status=?,receipt=? WHERE id=?', ('completed', compact(work), aid))
+        stage = 'commit'
+        persist_receipt('completed')
         db.commit()
     except Exception as e:
+        if stage == 'solve_and_assess':
+            work['solve_and_assess_seconds'] = time.perf_counter() - solve_start
         db.rollback()
-        if model is not None:
-            work['round_jk'] = model.counts['jk_calls'] - work['setup_jk']
-        work.update(status='failed', reason=str(e), seconds=time.perf_counter() - start)
-        db.execute('UPDATE attempts SET status=?,receipt=? WHERE id=?', ('failed', compact(work), aid))
+        work.update(failed_stage=stage, reason=str(e))
+        persist_receipt('failed')
+        db.commit()
     for edge, repeated in grouped.items():
         for number, row in enumerate(repeated):
             row['attempt'] = aid

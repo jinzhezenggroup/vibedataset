@@ -5,6 +5,7 @@ proposal whose physical residual is rechecked at consumption. Independent
 scalar reference data is used only after the requested contractions are made.
 """
 from collections import Counter
+from contextlib import nullcontext
 from itertools import combinations
 import json
 import math
@@ -36,6 +37,15 @@ GATE = 1e-10
 ANALYTIC_TOL = 1e-8
 FIELD_TOL = 1e-4
 STEPS = (0.0005, 0.0002)
+
+
+def response_work(operations):
+    """Translate deltas of submitted model operations into round receipt units."""
+    return {'jk_calls': operations['jk_calls'], 'operator_actions': operations['response_operator_actions'],
+            'density_jvp_calls': operations['density_jvp_calls'], 'submitted_blocks': operations['submitted_blocks'],
+            'rhs_columns': operations['submitted_rhs'], 'cache_validation_actions': operations['cache_validation_actions'],
+            'cache_rejections': operations['cache_rejections'],
+            'solver_actions': operations['response_operator_actions'] - operations['cache_validation_actions']}
 
 
 def operator_matrices(mol):
@@ -119,8 +129,11 @@ def assess_scalar(oracle, endpoint_identity, field, observable, value):
 class DualResponseModel(MoleculeResponse):
     """Validated shared operator. Each direct or adjoint action uses the native TensorIR kernels."""
 
-    def __init__(self, metadata_file, array_file, workdir, oracle=None):
+    def __init__(self, metadata_file, array_file, workdir, oracle=None, *, meter=None):
         started = time.perf_counter()
+        self.meter = meter
+        self.counts = Counter() if meter is None else meter.counts
+        self.artifacts = [] if meter is None else meter.native_kernels
         check(git(GQC, 'rev-parse', 'HEAD') == GQC_PIN and not git(GQC, 'status', '--porcelain'),
               'GQC source checkout differs from the protocol')
         meta_path, arr_path = Path(metadata_file), Path(array_file)
@@ -134,8 +147,6 @@ class DualResponseModel(MoleculeResponse):
         check(meta.get('array_hash') == canonical_hash(checksums), 'published molecular-array hash mismatch')
         self.ref = ref = fixture_snapshot(meta, arrays)
         self.mol, self.scale, _ = pyscf_molecule(meta['inputs'])
-        self.counts = Counter()
-        self.artifacts = []
         self.options = GMRESOptions(rtol=1e-12, atol=1e-13, max_iterations=200)
         self.oracle = None
         n = ref.nmo
@@ -147,11 +158,15 @@ class DualResponseModel(MoleculeResponse):
 
         def compile_kernel(program):
             begin = time.perf_counter()
-            owner = NativeTensorProgram(program, compiler=cxx, cache=kernel_cache,
-                                        max_bytes=256 << 20, max_work=1_000_000_000)
-            self.artifacts.append({'source': program.logical_hash, 'lowered': owner.identity,
-                                   'binary_sha256': file_hash(owner.library._name), 'resources': owner.resources,
-                                   'elapsed_seconds': time.perf_counter() - begin})
+            entry = {'source': program.logical_hash, 'binary_sha256': None}
+            self.artifacts.append(entry)
+            try:
+                owner = NativeTensorProgram(program, compiler=cxx, cache=kernel_cache,
+                                            max_bytes=256 << 20, max_work=1_000_000_000)
+                entry.update(lowered=owner.identity, binary_sha256=file_hash(owner.library._name),
+                             resources=owner.resources)
+            finally:
+                entry['elapsed_seconds'] = time.perf_counter() - begin
             return owner
 
         frame = build_rhf_frame_response(ref.nocc, n - ref.nocc)
@@ -225,6 +240,9 @@ class DualResponseModel(MoleculeResponse):
         if oracle is not None:
             self.attach_oracle(oracle)
 
+    def measure(self, phase):
+        return self.meter.measure(phase) if self.meter is not None else nullcontext()
+
     def new_cache(self):
         return {'problem_identity': self.problem.identity, 'fields': {}, 'observables': {}}
 
@@ -270,8 +288,7 @@ class DualResponseModel(MoleculeResponse):
         check(coefficients is not None, 'invalid field coefficients')
         batch = self.run_round((), (), (), self.new_cache(), combined_coefficients=coefficients,
                                combined_observables=observables)
-        counts = {key: batch['counts'][key] for key in
-                  ('rhs_columns', 'jk_calls', 'operator_actions', 'solver_actions', 'cache_validation_actions')}
+        counts = {key: count for key, count in batch['counts'].items() if key != 'requests'}
         return {**batch['combined'], 'counts': counts, 'elapsed_seconds': batch['elapsed_seconds']}
 
     def _combined_column(self, coefficients, observables):
@@ -320,6 +337,8 @@ class DualResponseModel(MoleculeResponse):
                         reason, residual = 'nonfinite physical response residual', None
                     elif residual > GATE:
                         reason = 'physical response residual'
+        if reason != 'accepted':
+            self.counts['cache_rejections'] += 1
         return vector, {'group': group, 'id': key, 'decision': reason, 'true_residual': residual}
 
     def run_round(self, requests, fields, observables, cache, *,
@@ -336,6 +355,11 @@ class DualResponseModel(MoleculeResponse):
         Cumulative submitted_rhs, submitted_blocks and cache_validation_actions
         also include work incurred by calls that raise before returning.
         """
+        phase = 'combined_response' if combined_coefficients is not None else 'ordinary_response'
+        with self.measure(phase):
+            return self._run_round(requests, fields, observables, cache, combined_coefficients, combined_observables)
+
+    def _run_round(self, requests, fields, observables, cache, combined_coefficients, combined_observables):
         start = time.perf_counter()
         before = self.counts.copy()
         edges = sorted(set(tuple(x) for x in requests))
@@ -364,7 +388,6 @@ class DualResponseModel(MoleculeResponse):
                     continue
             missing.append((g, key))
         before_solve = self.counts['response_operator_actions']
-        cache_actions = before_solve - before['response_operator_actions']
         stats = {'rhs_rank': 0, 'residuals': {}, 'solver_actions': 0}
         columns.extend(self.rhs_values[g][key] for g, key in missing)
         held = {}
@@ -439,11 +462,8 @@ class DualResponseModel(MoleculeResponse):
                 cache.update(self.new_cache())
             for (g, key), record in held.items():
                 cache[g][key] = record
-        actions = self.counts['response_operator_actions'] - before['response_operator_actions']
-        counts = {'jk_calls': self.counts['jk_calls'] - before['jk_calls'], 'operator_actions': actions,
-                  'rhs_columns': len(columns), 'cache_validation_actions': cache_actions,
-                  'solver_actions': stats['solver_actions'], 'cache_rejections': sum(
-                      x['decision'] != 'accepted' for x in checks), 'requests': len(rows)}
+        counts = response_work(self.counts - before)
+        counts['requests'] = len(rows)
         return {'problem_identity': self.problem.identity, 'results': rows, 'counts': counts, 'block': stats,
                 'new_fields': [k for g, k in missing if g == 'fields'],
                 'new_observables': [k for g, k in missing if g == 'observables'],
