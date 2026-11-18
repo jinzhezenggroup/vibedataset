@@ -76,8 +76,12 @@ def main():
             row[ref] = float('inf')
         model.attach_oracle(tainted)
         assessment = model.assess('x', 'q0', original)
-        check(assessment['qualified'] is False and assessment['value'] is None, 'nonfinite independent value accepted')
-        nonfinite_gates[ref] = assessment['reasons']
+        independent = ref not in ('direct', 'adjoint')
+        check(assessment['qualified'] is (None if independent else False) and assessment['value'] is None,
+              'nonfinite reference obtained a publishable response')
+        check(assessment['status'] == ('oracle_unqualified' if independent else 'withheld')
+              and 'missing or nonfinite ' + ref in assessment['reasons'], 'nonfinite reference disposition')
+        nonfinite_gates[ref] = {'status': assessment['status'], 'reasons': assessment['reasons']}
     model.attach_oracle(oracle)
     combined = model.combined_field([1, 1, 1])
     discrepancies = {o: abs(combined['values'][o] - sum(oracle['targets'][f][o]['direct'] for f in FIELD_IDS))

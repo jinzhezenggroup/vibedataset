@@ -167,11 +167,12 @@ def check_molecular_report(expected_index, generated_index, code):
         require(digest(published) == original['sha256'] and digest(measured) == replay['sha256'],
                 'molecular oracle checksum')
         targets, fresh = read(published)['targets'], read(measured)['targets']
-        n = 0
+        decisions = Counter()
         for f in ('x', 'y', 'z'):
             for o in ('q0', 'r2', 'zz'):
                 ref, cell = targets[f][o], fresh[f][o]
-                require(cell['qualified'] is ref['qualified'] and set(cell['reasons']) == set(ref['reasons']),
+                require(cell['status'] == ref['status'] and cell['qualified'] is ref['qualified']
+                        and set(cell['reasons']) == set(ref['reasons']),
                         f'qualification changed for {replay["name"]}/{f}/{o}')
                 require(cell['value'] == (cell['direct'] if cell['qualified'] else None),
                         'published value disagrees with the qualified direct response')
@@ -186,12 +187,14 @@ def check_molecular_report(expected_index, generated_index, code):
                         require(math.isfinite(delta) and delta <= tolerance,
                                 f'{method} differs by {delta} for {replay["name"]}/{f}/{o}')
                         max_differences[method] = max(delta, max_differences.get(method, 0.0))
-                n += int(cell['qualified'])
+                decisions[cell['status']] += 1
+        n = decisions['qualified']
         require(n == replay['qualified'] == original['qualified'] and replay['targets'] == original['targets'] == 9,
                 'molecular denominator disagrees with target records')
-        totals.update(molecules=1, qualified=n, withheld=9-n)
+        totals.update(molecules=1, qualified=n, response_rejected=decisions['response_rejected'],
+                      oracle_unqualified=decisions['oracle_unqualified'])
     require(totals['molecules'] == 4 and totals['skipped_input_strata'] == 4, 'initial cohort denominator')
-    require(code == int(totals['withheld'] > 0), 'scientific exit code disagrees with complete report')
+    require(code == int(totals['qualified'] < 9 * totals['molecules']), 'scientific exit code disagrees with complete report')
     return {**totals, 'maximum_absolute_difference_from_release': max_differences}
 
 
