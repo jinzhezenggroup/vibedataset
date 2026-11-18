@@ -1,6 +1,6 @@
 # gqcdataset 当前状态
 
-更新于 2026-11-18，工作分支 `codex/source-intake-20261118`。当前首要目标是用 GQC 科学编译器在同一精度和物理定义下减少补全数据所需的量化工作。数值异常单列输入、差值和命令，保留给用户向 GQC 项目反馈。[草稿 PR #10](https://github.com/jinzhezenggroup/vibedataset/pull/10) · [结果与全成本](RESULTS.md)
+更新于 2026-11-18，工作分支 `codex/source-intake-20261118`。当前首要目标是用 GQC 科学编译器在同一精度和物理定义下减少补全数据所需的量化工作。数值异常单列输入、差值和命令，保留给用户向 GQC 项目反馈。[PR #10](https://github.com/jinzhezenggroup/vibedataset/pull/10) · [结果与全成本](RESULTS.md)
 
 | 本轮产物 | 已核验的结果 |
 |---|---|
@@ -11,13 +11,13 @@
 | 可用算力与环境 | n2 作业 5381/5382 做过跨节点种子验证，n5 持久环境及作业 2044/2045 已交付 13 行通过的能量。n5 RTX 5090 在 2046/2047 中实算全部 17 个 QM9 分子，分别用 77 和 141 次 Fock；独立核验共保留 12 对参考态，其余五份的终态与成本均可追溯。[n5 环境](../../../docs/N5_GQC.md) · [2046](experiments/qm9_response_assets/job-2046.json) · [2047](experiments/qm9_extension/n5-job.json) |
 | 前人源码 | 45 个固定 Git 快照、268,259 条索引；125 条有证据的审读观察涉及 119 个文件。完整阅读标记 23 个，88 个有行为追踪，46 个含已执行路径。另有 Materials Cloud 正式归档 915 个文件、267 个目录，逐成员核对；五个原始实现位置仍缺。已有实现包括 Schofield 属性插补、QCManyBody、OpenMDAO/CppAD、pyMOR、PySCF 伴随和 mlelec 作者归档。[锁和源码索引](SOURCE_INDEX.md) · [审计矩阵](PRIOR_ART_MATRIX.md) · [核验](ledger_validation.json) |
 | 真实既有资产 | 已读取 13 份 QCFractal fixture、357 行 ANI 记录及学习/工作流工程。固定态后处理、真实缺失组合分量、统计预测和新耦合响应有独立的定义、正反例和成本记录。[资产](DATASET_ASSETS.md) · [总结果](RESULTS.md) |
-| 原交接材料 | 在用户本机找回 44 页历史讨论和 3 页矢量设计稿，两份已逐字节核对并与重建文本比较。原 ZIP 仍待取得。[原件与对照](../attachments/README.md) |
+| 原交接材料 | 在用户本机找回 44 页历史讨论和 3 页矢量设计稿，两份已逐字节核对并与重建文本比较。用户已取消原 ZIP 的交付要求。[原件与对照](../attachments/README.md) |
 
 ## 任务验收与剩余范围
 
 | Issue | 阶段验收依据 |
 |---|---|
-| #1 | 科研队列 #2–#8 已有可复核产物和决定。五条主线后续可扩展，独立附件 #9 保留原 ZIP 缺口。[第二轮决定](decisions/0002-scalar-and-vector-response.md) |
+| #1 | 科研任务 #2–#8 及独立附件任务 #9 均已满足本轮验收条件。[第二轮决定](decisions/0002-scalar-and-vector-response.md) |
 | #2 | 45 份所选 Git 全树和正式归档有锁、完整性与覆盖复验。五项原始来源阻塞及论文版本/许可证/外部资产边界保留。[来源缺口](SOURCE_GAPS.md) |
 | #3 | 基础能力与科学依赖、实现图、原生算子与拒绝/运行证据已提交。[工作基础](FOUNDATION_CAPABILITIES.md) |
 | #4 | 已完成与本轮路线直接相关的源码审计、强基线及可执行反例，包括正版归档与后续适配的分别核对。[对照矩阵](PRIOR_ART_MATRIX.md) · [基线](BASELINES.md) |
@@ -25,6 +25,6 @@
 | #6 | 五主线与竞争解释可查，选择过的两步研究路径均保留预登记和停止条件。[路线](ROUTE_COMPARISON.md) |
 | #7 | 已实现编译的分子求解、外部交叉验证、失效处理、可持续的清单式补全入口。[独立基准](experiments/gqc_dual_response/README.md) · [实现入口](../../../scripts/complete_response_dataset.py) |
 | #8 | 完成首批规划和全部未见候选的外推，归档全部分母、前期和后续成本、失败/正负结果、竞争策略及多进程保存恢复。[外推报告](experiments/qm9_extension/README.md) · [资产策略](ASSET_POLICY.md) |
-| #9 | 两份 PDF 已核验。原 ZIP 已查公开分支历史、发布入口、本机下载位置及 n2/n5 项目目录。尚需原文件、可下载原件的链接或用户明确取消该项。[资料核对](../attachments/README.md) |
+| #9 | 两份 PDF 已核验。用户于 2026-11-18 明确取消原 ZIP 要求，按此验收。[资料核对](../attachments/README.md) |
 
 这些数字来自受控三轴与三读出、固定的小分子协议。生产请求的自然到达分布、更大体系和不同物理算符的净收益尚未测量。数值差异供用户向 GQC 反馈，后续可以复用本轮协议、资产和输入输出。

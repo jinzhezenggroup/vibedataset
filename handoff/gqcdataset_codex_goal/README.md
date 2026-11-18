@@ -2,7 +2,7 @@
 
 本目录提供可以直接交给 Codex 执行的研究目标、工作约定、源码目录、验证要求和证据模板。日期：2026-11-18（Asia/Shanghai）。
 
-**初版依据可见对话重建。后续已取得并核对两份原始 PDF，仍待取得原 ZIP。** 具体来源和恢复边界见 [PROVENANCE.md](PROVENANCE.md)，附件缺口见 [attachments/README.md](attachments/README.md)。
+**初版依据可见对话重建。两份历史 PDF 已核验，用户已取消原 ZIP 的交付要求。** 具体来源和恢复边界见 [PROVENANCE.md](PROVENANCE.md)，附件核对与结项记录见 [attachments/README.md](attachments/README.md)。
 
 ## Codex 阅读顺序
 
@@ -38,4 +38,4 @@
 
 模板中的空列表和空表头表示待填写，不表示工作完成。后续每项结论应追溯至固定版本、代码/论文、实际命令和结果。保留未知、失败和负结果。
 
-原始 PDF 的页码、字节校验与差异已记录。后续取得原 ZIP 时继续核对文件清单。
+原始 PDF 的页码、字节校验与差异已记录。

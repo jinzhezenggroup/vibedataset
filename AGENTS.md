@@ -44,7 +44,7 @@
 
 这套材料于 2026-11-18（Asia/Shanghai）依据当前可见对话重新整理。原 ZIP 与两份历史 PDF 未在当前工作区提供；缺件见 [附件说明](handoff/gqcdataset_codex_goal/attachments/README.md)。不得声称原包被逐字恢复，也不得把缺件说成已上传。源码获取、全量阅读和科学实验需要在后续 issues 中真正执行。
 
-2026-11-18 后续核对已在用户本机找回两份历史 PDF。原件、页码、散列和与重建版本的差异见[附件说明](handoff/gqcdataset_codex_goal/attachments/README.md)。原 ZIP 仍待取得。
+2026-11-18 后续核对已在用户本机找回两份历史 PDF。原件、页码、散列和与重建版本的差异见[附件说明](handoff/gqcdataset_codex_goal/attachments/README.md)。用户随后确认原 ZIP 不再需要。
 
 ## 本地 n2 运行约定
 

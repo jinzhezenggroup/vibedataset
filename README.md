@@ -31,7 +31,7 @@
 
 ## 当前阶段
 
-本次交接材料于 2026-11-18（Asia/Shanghai）根据当前可见对话重建，修复了初始化 README 指向不存在文件的问题。后来取得两份历史 PDF，已核对原始字节、页码及内容差异。原 ZIP 继续单独跟踪。[附件原件与核对记录](handoff/gqcdataset_codex_goal/attachments/README.md)
+本次交接材料于 2026-11-18（Asia/Shanghai）根据当前可见对话重建，修复了初始化 README 指向不存在文件的问题。后来取得两份历史 PDF，已核对原始字节、页码及内容差异。用户已取消原 ZIP 的交付要求。[附件原件与核对记录](handoff/gqcdataset_codex_goal/attachments/README.md)
 
 固定版本、逐文件清单、实际审读与运行证据见[来源索引](handoff/gqcdataset_codex_goal/research/SOURCE_INDEX.md)和[研究结果](handoff/gqcdataset_codex_goal/research/RESULTS.md)。
 

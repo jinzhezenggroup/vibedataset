@@ -24,10 +24,10 @@
 
 ## 结项规则
 
-每项 issue 已包含任务、输入、产物和可勾选验收条件。完成时附提交、固定版本代码证据、命令/原始结果、限制、失败和下一步。不能执行的部分说明真实阻塞；仍待取得的附件保持 #9 打开。
+每项 issue 已包含任务、输入、产物和可勾选验收条件。完成时附提交、固定版本代码证据、命令/原始结果、限制、失败和下一步。不能执行的部分说明真实阻塞；附件可通过取得原件并核对，或由用户明确取消原件要求来验收。
 
 请以 [STATUS.md](STATUS.md) 和后续 issue 更新为准。创建这些 issues 不表示 Codex 已启动，也不表示源码获取、实验或科研结论已经完成。
 
 ## 首轮研究证据
 
-基础审计、真实资产评价、路线选择及首个分子实现分别见 [工作基础](FOUNDATION_CAPABILITIES.md)、[资产与评价](DATASET_ASSETS.md)、[比较与决定](ROUTE_COMPARISON.md) 和 [三轮实验](experiments/gqc_residual_multiround/README.md)。首轮之后，#2 完成可得来源锁和证据化缺口，#4 补齐响应、着色与正式发布源码的对照，#8 交付 17 个候选的多轮成本与外推实证。两份 PDF 已取得，原 ZIP 由 #9 单独跟踪。[当前状态](STATUS.md) · [外推数据](experiments/qm9_extension/README.md)
+基础审计、真实资产评价、路线选择及首个分子实现分别见 [工作基础](FOUNDATION_CAPABILITIES.md)、[资产与评价](DATASET_ASSETS.md)、[比较与决定](ROUTE_COMPARISON.md) 和 [三轮实验](experiments/gqc_residual_multiround/README.md)。首轮之后，#2 完成可得来源锁和证据化缺口，#4 补齐响应、着色与正式发布源码的对照，#8 交付 17 个候选的多轮成本与外推实证。两份 PDF 已核验，用户已取消原 ZIP 要求，#9 随之验收。[当前状态](STATUS.md) · [外推数据](experiments/qm9_extension/README.md)

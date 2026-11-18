@@ -18,15 +18,15 @@
 | 设计第 2 页；讨论 39–41 | QMugs 存档态的 ωB97X-D/def2-SVP 四极矩候选，固定原点，合并 α/β 自旋密度并检查 Tr(DS)。无迹定义含 1/2，单位 e·a₀²，六个对称分量中五个独立。以同态 Psi4、矩阵法及分块收缩作对照 | 为此候选保留更完整的科学定义。现有 QM9 实验的电子二阶矩场导数与此性质分别命名 |
 | 设计第 3 页；讨论 42–44 | 列出升阶重叠积分实现候选、primitive 归一化与收缩系数限制、坐标平移及 CPU 到 CUDA 验证顺序 | 作为待核验的实现提案保存。当前精度差异只记原始输入、差值与门槛，由用户决定对上游的反馈 |
 
-### 尚缺的文件
+### 原 ZIP 的查找与结项
 
-原 `gqcdataset_codex_goal_20261118.zip` 仍缺原始字节与原始散列。已查本机项目、用户目录的相应文件名与下载目录中的相关包，以及仓库发布入口。2026-10-29 的 `gqc_handover.zip` 含 8,810 个归档条目，顶层是早期 GQC 文档与 A100 包。另一个十月论文对话 ZIP 只有三个条目。两者都没有该原包或这两份 PDF 的同名成员。讨论第 37 页列出的另一个压缩包用于矢量图源。
+查找期间未取得 `gqcdataset_codex_goal_20261118.zip` 的原始字节或散列。已查本机项目、用户目录的相应文件名与下载目录中的相关包，以及仓库发布入口。2026-10-29 的 `gqc_handover.zip` 含 8,810 个归档条目，顶层是早期 GQC 文档与 A100 包。另一个十月论文对话 ZIP 只有三个条目。两者都没有该原包或这两份 PDF 的同名成员。讨论第 37 页列出的另一个压缩包用于矢量图源。
 
-2026-11-18 独立复查了远程 `main`（`de60ee4`）与研究分支（`db97afd`）可达的全部 72 个提交，以及当时 PR #10 的合并树，历史中唯一的 ZIP 对象是重建包 `466160579c927d79d0dfc12f3b263cf0809b60c4`。原 README 的下载路径在初始提交和当日 `main` 均返回 HTTP 404，GitHub 发布记录与 Actions 产物均为零，本机另查的 A100 备份 9,042 个条目也无原包文件名，仍需能取得原始字节的文件或链接。[当时的研究树](https://github.com/jinzhezenggroup/vibedataset/tree/db97afd179bab1ab6ca06fefc69884dc86e8d014/downloads) · [初始 README](https://github.com/jinzhezenggroup/vibedataset/blob/8e329d573ce3cdc9210cdc9d2d1766940cfa7d1c/README.md#L20) · [官方发布](https://github.com/jinzhezenggroup/vibedataset/releases)
+2026-11-18 独立复查了远程 `main`（`de60ee4`）与研究分支（`db97afd`）可达的全部 72 个提交，以及当时 PR #10 的合并树，历史中唯一的 ZIP 对象是重建包 `466160579c927d79d0dfc12f3b263cf0809b60c4`。原 README 的下载路径在初始提交和当日 `main` 均返回 HTTP 404，GitHub 发布记录与 Actions 产物均为零，本机另查的 A100 备份 9,042 个条目也无原包文件名。[当时的研究树](https://github.com/jinzhezenggroup/vibedataset/tree/db97afd179bab1ab6ca06fefc69884dc86e8d014/downloads) · [初始 README](https://github.com/jinzhezenggroup/vibedataset/blob/8e329d573ce3cdc9210cdc9d2d1766940cfa7d1c/README.md#L20) · [官方发布](https://github.com/jinzhezenggroup/vibedataset/releases)
 
-到研究提交 `64c5bfab3e6b4d2382c9878a48d76c4e6e59f9b7` 再查两条已公布分支的全部 98 个可达提交，仍只检出重建包的同一 Git 对象。本机可读的下载及回收站目录中未见以原名开头的完整、重名或部分下载。另核对了 n2 的项目目录 `~/vibedataset`，精确文件名命中为 0，遍历错误为 0。原包的 SHA-256 和内部清单仍待原始字节核对。
+到研究提交 `64c5bfab3e6b4d2382c9878a48d76c4e6e59f9b7` 再查两条已公布分支的全部 98 个可达提交，仍只检出重建包的同一 Git 对象。本机可读的下载及回收站目录中未见以原名开头的完整、重名或部分下载。另核对了 n2 的项目目录 `~/vibedataset`，精确文件名命中为 0，遍历错误为 0。原包的 SHA-256 和内部清单均未知。
 
-[重建版与校验文件](../../../downloads/)保留最初发布的字节。找到原 ZIP 后才能核对其文件清单和差异。独立附件任务继续跟踪该项。[资料 issue #9](https://github.com/jinzhezenggroup/vibedataset/issues/9)
+2026-11-18，用户明确确认原 ZIP 不再需要，按 #9 的验收条件结束原包追踪。两份历史 PDF 的原件及散列见上表。[重建 ZIP 与校验文件](../../../downloads/) · [资料 issue #9](https://github.com/jinzhezenggroup/vibedataset/issues/9)
 
 在仓库根目录可运行以下检查。
 
