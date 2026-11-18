@@ -7,6 +7,7 @@ from datetime import datetime, timezone
 from hashlib import sha256
 from importlib import metadata
 import json
+import math
 import os
 from pathlib import Path
 import platform
@@ -92,6 +93,14 @@ def archive(run):
     run.receipt['v1_labels'] = labels
     run.python('partial-cohort', EXP / 'partial_response_blocks/cohort/evidence.py',
                '--receipt', run.out / 'cohort.json')
+    migration = run.out / 'cphf_v2'
+    run.python('cphf-migration', SCRIPTS / 'summarize_cphf_migration.py', '--out', migration)
+    migrations = {}
+    for name in ('response-labels.jsonl', 'migration.csv', 'qualification-costs.json'):
+        measured = migration / name
+        require(measured.read_bytes() == (EXP / 'cphf_v2' / name).read_bytes(), 'v2 archive differs: ' + name)
+        migrations[name] = digest(measured)
+    run.receipt['v2_migration_sha256'] = migrations
     # Exercise the same archived-summary entry point against a private damaged copy.
     raw = EXP / 'response_planning/raw'
     with tempfile.TemporaryDirectory(dir=run.out) as directory:
@@ -145,6 +154,7 @@ def check_molecular_report(expected_index, generated_index, code):
     expected, actual = read(expected_index), read(generated_index)
     require(expected['index_sha256'] == actual['index_sha256'], 'molecular input index differs from release')
     totals = Counter()
+    max_differences = {}
     for original, replay in zip(expected['strata'], actual['strata'], strict=True):
         for key in ('name', 'stratum', 'input_status', 'status'):
             require(original[key] == replay[key], f'{key} differs for {original["stratum"]}')
@@ -163,14 +173,26 @@ def check_molecular_report(expected_index, generated_index, code):
                 ref, cell = targets[f][o], fresh[f][o]
                 require(cell['qualified'] is ref['qualified'] and set(cell['reasons']) == set(ref['reasons']),
                         f'qualification changed for {replay["name"]}/{f}/{o}')
-                require((cell['value'] is not None) is cell['qualified'], 'publication gate and value disagree')
+                require(cell['value'] == (cell['direct'] if cell['qualified'] else None),
+                        'published value disagrees with the qualified direct response')
+                methods = [(method, ref[method], cell[method], 1e-8) for method in ('direct', 'adjoint', 'cphf')]
+                methods.extend((step, ref['finite_fields'][step], cell['finite_fields'][step], 1e-4)
+                               for step in ('0.0005', '0.0002'))
+                for method, old, new, tolerance in methods:
+                    if old is None:
+                        require(new is None, f'previously missing {method} changed for {replay["name"]}/{f}/{o}')
+                    else:
+                        delta = abs(old - new)
+                        require(math.isfinite(delta) and delta <= tolerance,
+                                f'{method} differs by {delta} for {replay["name"]}/{f}/{o}')
+                        max_differences[method] = max(delta, max_differences.get(method, 0.0))
                 n += int(cell['qualified'])
         require(n == replay['qualified'] == original['qualified'] and replay['targets'] == original['targets'] == 9,
                 'molecular denominator disagrees with target records')
         totals.update(molecules=1, qualified=n, withheld=9-n)
     require(totals['molecules'] == 4 and totals['skipped_input_strata'] == 4, 'initial cohort denominator')
     require(code == int(totals['withheld'] > 0), 'scientific exit code disagrees with complete report')
-    return totals
+    return {**totals, 'maximum_absolute_difference_from_release': max_differences}
 
 
 def science(run):
