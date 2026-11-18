@@ -9,6 +9,7 @@ from pathlib import Path
 import shutil
 import subprocess
 import sys
+import time
 
 ROOT = Path(__file__).resolve().parents[1]
 EXPS = ROOT / 'handoff/gqcdataset_codex_goal/research/experiments'
@@ -31,6 +32,7 @@ def main():
     p.add_argument('--out', type=Path, required=True)
     p.add_argument('--smoke', action='store_true', help='one available source, three sparse targets')
     args = p.parse_args()
+    start = time.perf_counter()
     out = args.out.resolve()
     out.mkdir(parents=True, exist_ok=False)
     staged = out / 'source-only'
@@ -79,7 +81,7 @@ try:
 finally:
     audit_log.write_text(json.dumps(dict(opened_source=sorted(touched), denied=denied)))
 """)
-    receipts, audits = {}, {}
+    receipts, audits, client_seconds = {}, {}, {}
 
     def run(label, mode, history=None, only=None):
         dst = out / label
@@ -95,7 +97,9 @@ finally:
             argv.extend(['--record', only or record_filter])
         env = dict(os.environ, PYTHONDONTWRITEBYTECODE='1', OPENBLAS_NUM_THREADS='1', OMP_NUM_THREADS='1',
                    MKL_NUM_THREADS='1')
+        began = time.perf_counter()
         subprocess.run(argv, check=True, cwd=staged, env=env)
+        client_seconds[label] = time.perf_counter() - began
         path = dst / 'report.json'
         receipts[label] = sha(path.read_bytes())
         audits[label] = json.loads(audit.read_bytes())
@@ -154,7 +158,8 @@ finally:
     seal = dict(split=args.split, record_filter=record_filter, requests=REQUESTS, source_sha256=sha(index.read_bytes()),
                 reports=receipts, prebaseline_decisions_sha256=decisions_digest, code={k: sha((scripts/k).read_bytes()) for k in FILES},
                 launcher_sha256=sha(Path(__file__).read_bytes()), visible_inputs=sorted(p.name for p in inputs.iterdir()),
-                source_opens=audits, evaluated_in_producer=False)
+                source_opens=audits, client_seconds=client_seconds, suite_seconds=time.perf_counter() - start,
+                evaluated_in_producer=False)
     (sealed / 'seal.json').write_bytes(encoded(seal))
     print('sealed', sha(encoded(seal)), sealed)
 

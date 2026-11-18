@@ -78,7 +78,7 @@ def score(sealed):
                 phase = costs[event['phase']]
                 phase.update(event['operations'])
                 phase.update(seconds=event['seconds'], invocations=1, failed=int(event['status'] == 'failed'))
-                for data in ('bytes_read', 'input_file_bytes'):
+                for data in ('bytes_read', 'input_file_bytes', 'vector_bytes', 'rhs_bytes', 'readout_bytes'):
                     phase[data] += event.get(data, 0)
                 phase['asset_bytes_written'] += sum(event.get('bytes_written', {}).values())
             require(counted == Counter(r['operations']), 'unmetered or overlapping operations')
@@ -132,7 +132,8 @@ def score(sealed):
                           max_cphf_difference=max((x['absolute_difference'] for x in observations if 'absolute_difference' in x), default=None),
                           max_dense_difference=max((x['same_archived_equation_difference'] for x in observations
                               if x.get('same_archived_equation_difference') is not None), default=None),
-                          operations=totals, phase_costs=costs, batch_elapsed_seconds=report['seconds'])
+                          operations=totals, phase_costs=costs, batch_elapsed_seconds=report['seconds'],
+                          process_seconds=seal.get('client_seconds', {}).get(k))
         details[k] = observations
     return dict(split=seal['split'], outputs=metrics, targets=details, seal_sha256=sha((sealed/'seal.json').read_bytes()),
                 independent_index_sha256=sha((refs/'index.json').read_bytes()))

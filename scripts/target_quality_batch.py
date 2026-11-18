@@ -115,13 +115,16 @@ def produce(model, stability, costs, out):
 def load_assets(root, entry, kind, model, costs):
     with costs.stage('read_history', kind=kind) as log:
         descriptor = entry['files'][kind]
+        if descriptor['file'] != f'{model.name}-{kind}.json':
+            raise ValueError('unexpected historical asset path')
         path = root / descriptor['file']
         data = path.read_bytes()
         log.update(bytes_read=len(data), expected_sha256=descriptor['sha256'])
         if (len(data) != descriptor['bytes'] or hashlib.sha256(data).hexdigest() != descriptor['sha256']):
             raise ValueError('historical bytes disagree with trusted producer digest')
         saved = json.loads(data)
-        if saved['scope'] != scope_of(model) or saved['kind'] != kind:
+        if (not isinstance(saved, dict) or saved.get('scope') != scope_of(model) or saved.get('kind') != kind or
+                not isinstance(saved.get('assets'), dict)):
             raise ValueError('historical protocol, problem, operators, units or source differ')
         verified = {}
         for key, item in saved['assets'].items():
@@ -196,8 +199,10 @@ def complete(model, stability, costs, requests, method, assets):
     for key, (vector, reported) in directions.items():
         if new_actions >= budget:
             raise ValueError('plan exceeds allocated physical validation actions')
-        with costs.stage('target_evidence', column=key):
+        with costs.stage('target_evidence', column=key, vector_bytes=vector.nbytes, rhs_bytes=columns[key].nbytes,
+                         readout_bytes=sum(obs[o].nbytes for o in want[key])):
             result = check_direction(model, stability, vector, columns[key], {o: obs[o] for o in sorted(want[key])})
+        result['solution'] = vector.tolist()
         new_actions += result.get('extra_native_actions', 0)
         evidence[key] = result
         for o, projection in result['projections'].items():
@@ -215,12 +220,14 @@ def complete(model, stability, costs, requests, method, assets):
     retried = solve_or_retry(model, retry, costs, 'ordinary_refinement')
     for f, (vector, reported) in retried.items():
         use_reported = new_actions >= budget
-        with costs.stage('refinement_evidence', column=f, uses_solver_true_residual=use_reported):
+        with costs.stage('refinement_evidence', column=f, uses_solver_true_residual=use_reported,
+                         vector_bytes=vector.nbytes, rhs_bytes=fields[f].nbytes):
             result = check_direction(model, stability, vector, fields[f],
                                      {o: obs[o] for (field, o), row in initial.items()
                                       if field == f and row['status'] == 'refine'},
                                      measured_residual=reported if use_reported else None)
         new_actions += result.get('extra_native_actions', 0)
+        result['solution'] = vector.tolist()
         evidence['refine/' + f] = result
         final.update({(f, o): row for o, row in result['projections'].items()})
     decisions = [{'field': f, 'observable': o, 'initial': row, 'final': final.get((f, o), row)}
@@ -273,8 +280,6 @@ def main():
         try:
             if row['status'] != 'verified':
                 raise LookupError(row.get('error', 'source state unavailable'))
-            if history_error:
-                raise ValueError(history_error)
             meta, array = (args.source_index.parent / row[k] for k in ('metadata_file', 'array_file'))
             with costs.stage('source_hashes') as step:
                 step['bytes_read'] = meta.stat().st_size + array.stat().st_size
@@ -296,11 +301,19 @@ def main():
             else:
                 assets = {}
                 if needs_history:
-                    produced = next((r for r in prior['records'] if r['name'] == name), {})
-                    if not produced.get('files'):
-                        raise LookupError('no measured historical asset for this state')
                     kind = {'mixed': 'scalars', 'retained': 'vectors'}.get(args.mode, args.mode)
-                    assets = load_assets(path.parent, produced, kind, model, costs)
+                    try:
+                        if history_error:
+                            raise ValueError(history_error)
+                        produced = next((r for r in prior['records'] if r['name'] == name), {})
+                        if not produced.get('files'):
+                            raise LookupError('no measured historical asset for this state')
+                        assets = load_assets(path.parent, produced, kind, model, costs)
+                    except (OSError, KeyError, LookupError, TypeError, ValueError, OverflowError) as error:
+                        status = 'evidence_unavailable' if isinstance(error, (OSError, LookupError)) else 'reject'
+                        # Preserve independent ordinary requests when an external archive is unusable.
+                        keys = [f for f, _ in HISTORY] if kind == 'vectors' else [f + '/' + o for f, o in HISTORY]
+                        assets = {key: disposition(status, str(error)) for key in keys}
                 record['decisions'], record['directions'], record['validation_budget'] = complete(
                     model, stability, costs, requests, args.mode, assets)
             record['status'] = 'completed'
