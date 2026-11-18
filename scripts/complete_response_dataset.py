@@ -15,6 +15,7 @@ from uuid import uuid4
 
 import numpy as np
 
+from cphf_reference import SCHEMA as CPHF_SCHEMA
 from gqc_dual_response import ANALYTIC_TOL, FIELD_IDS, FIELD_TOL, GATE, GQC_PIN, OBSERVABLE_IDS, STEPS, DualResponseModel, assess_scalar
 from probe_gqc_residual import ROOT, file_hash, json_hash
 from probe_scalar_response import DIAGONAL, decoder, recoverable
@@ -23,9 +24,13 @@ from response_field_plan import SUPPORTS, plan_field_block
 from generativeqc.response_solver import ResponseSolveError
 
 EXPERIMENTS = ROOT / 'handoff/gqcdataset_codex_goal/research/experiments'
-DEFAULT_CATALOGS = (
+LEGACY_CATALOGS = (
     (EXPERIMENTS/'qm9_response_assets/index.json', EXPERIMENTS/'gqc_dual_response/summary.json'),
     (EXPERIMENTS/'qm9_extension/assets/index.json', EXPERIMENTS/'qm9_extension/oracle-index.json'),
+)
+DEFAULT_CATALOGS = (
+    (LEGACY_CATALOGS[0][0], EXPERIMENTS/'cphf_v2/seed/index.json'),
+    (LEGACY_CATALOGS[1][0], EXPERIMENTS/'cphf_v2/extension/index.json'),
 )
 UNITS = {'q0': 'e / au_field', 'r2': 'bohr^2 / au_field', 'zz': 'bohr^2 / au_field'}
 DEFINITION = {'method': 'conventional closed-shell all-electron RHF/STO-3G', 'precision': 'float64',
@@ -114,6 +119,8 @@ def bound_context(name, source, result, member, release, source_index, oracle_in
     if hashlib.sha256(raw_meta).hexdigest() != expected['metadata_sha256'] or file_hash(array) != expected['array_sha256'] or hashlib.sha256(raw_oracle).hexdigest() != result['sha256']:
         raise RequestError('source_digest_mismatch', 'reference artifact or independently measured oracle changed')
     o = strict_json(raw_oracle)
+    if o.get('schema') != CPHF_SCHEMA:
+        raise RequestError('oracle_unqualified', 'reference lacks the v2 physical residual and readout qualification')
     reference = strict_json(raw_meta)
     if (o['name'] != name or o['source'] != expected or o['reference_identity'] != source['reference_identity']
             or reference['source_qm9']['member_sha256'] != member['member_sha256']):
@@ -127,7 +134,7 @@ def bound_context(name, source, result, member, release, source_index, oracle_in
                   'reference_identity': o['reference_identity'], 'problem_identity': o['problem_identity'],
                   'geometry_hash': o['setup']['geometry_hash'], 'basis_hash': o['setup']['basis_hash'],
                   'operator_contract': attest['contract_identity'], 'reference_files': expected,
-                  'oracle_file': result['oracle'], 'oracle_sha256': result['sha256']}
+                  'oracle_schema': CPHF_SCHEMA, 'oracle_file': result['oracle'], 'oracle_sha256': result['sha256']}
     identity = json_hash({'schema': 1, 'provenance': provenance, 'definition': DEFINITION, 'units': UNITS,
                           'residual': GATE, 'analytic': ANALYTIC_TOL, 'finite_field': FIELD_TOL, 'steps': STEPS})
     return meta, array, o, endpoint, provenance, identity

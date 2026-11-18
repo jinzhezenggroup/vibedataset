@@ -15,6 +15,7 @@ import time
 
 import numpy as np
 
+import cphf_reference
 from probe_gqc_residual import (GQC, MoleculeResponse, array_hash, check, file_hash,
                                 git, jk_and_observables, json_hash, max_error, write_json)
 from generativeqc.profiles import canonical_hash
@@ -85,18 +86,29 @@ def assess_scalar(oracle, endpoint_identity, field, observable, value):
     out = {'field': field, 'observable': observable, 'raw_value': raw,
            'target_identity': json_hash([endpoint_identity['fields'][field],
                                          endpoint_identity['observables'][observable]]),
-           'qualified': None, 'value': None, 'status': 'awaiting_independent_reference', 'reasons': []}
+           'qualified': None, 'value': None, 'status': 'awaiting_independent_reference', 'reasons': [], 'errors': {}}
     if raw is None:
         out.update(qualified=False, status='withheld', reasons=['nonfinite or missing candidate'])
         return out
     if oracle is None:
         return out
     ref = oracle['targets'][field][observable]
+    evidence = ref.get('reference_precision')
+    problems = cphf_reference.precision_reasons(oracle.get('schema'), evidence)
+    independent = {'cphf': ref.get('cphf'), **{str(h): ref['finite_fields'].get(str(h)) for h in STEPS}}
+    problems.extend('missing or nonfinite ' + k for k, v in independent.items() if not finite(v))
+    if ref.get('status') == 'oracle_unqualified':
+        problems.extend(ref['reasons'] or ['independent reference unqualified'])
+    if problems:
+        out.update(status='oracle_unqualified', reasons=sorted(set(problems)))
+        return out
     reference_failures = list(ref['reasons'])
     comparable = {method: ref.get(method) for method in ('direct', 'adjoint', 'cphf')}
     comparable.update({str(h): ref['finite_fields'].get(str(h)) for h in STEPS})
     errors = {method: abs(raw - float(expected)) for method, expected in comparable.items() if finite(expected)}
     failed = [tag for tag, err in errors.items() if err > (FIELD_TOL if tag in ref['finite_fields'] else ANALYTIC_TOL)]
+    if errors['cphf'] + evidence['readout_error_estimate'] > ANALYTIC_TOL:
+        failed.append('cphf')
     failed.extend(f'missing or nonfinite {tag}' for tag, expected in comparable.items() if not finite(expected))
     reasons = sorted(set(reference_failures + failed))
     out.update(qualified=not reasons, value=None if reasons else raw, status='withheld' if reasons else 'qualified',
