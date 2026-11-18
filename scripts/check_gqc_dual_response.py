@@ -11,16 +11,27 @@ from gqc_dual_response import DualResponseModel, FIELD_IDS, OBSERVABLE_IDS, arra
 from probe_gqc_residual import ROOT, check, write_json
 
 
+def release_oracle(name):
+    from complete_response_dataset import DEFAULT_CATALOGS
+
+    for _, index in DEFAULT_CATALOGS:
+        for row in json.loads(index.read_bytes())['strata']:
+            if row.get('name') == name and row['status'] == 'completed':
+                return index.parent / row['oracle']
+    raise ValueError(f'no current independent reference for {name}')
+
+
 def main():
     parser = ArgumentParser(description=__doc__)
     base = ROOT / 'handoff/gqcdataset_codex_goal/research/experiments'
     parser.add_argument('--assets', type=Path, default=base / 'qm9_response_assets')
-    parser.add_argument('--oracles', type=Path, default=base / 'gqc_dual_response/oracles')
+    parser.add_argument('--oracles', type=Path, help='override the published water reference directory')
     parser.add_argument('--out', type=Path, required=True)
     args = parser.parse_args()
     args.out.mkdir(parents=True, exist_ok=False)
     name = 'qm9-000003'
-    oracle = json.loads((args.oracles / (name + '.json')).read_text())
+    path = args.oracles / (name + '.json') if args.oracles else release_oracle(name)
+    oracle = json.loads(path.read_bytes())
     model = DualResponseModel(args.assets / (name + '.json'), args.assets / (name + '.npz'), args.out, oracle=oracle)
     edges = [('x', 'q0'), ('x', 'r2'), ('z', 'zz')]
     cache = model.new_cache()

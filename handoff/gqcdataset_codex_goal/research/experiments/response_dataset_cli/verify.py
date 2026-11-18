@@ -63,11 +63,16 @@ def main():
     w, = replay['work']
     assert w['scalar_hits'] == 1 and not w['model_started'] and w['round_jk'] == w['setup_jk'] == 0
     assert replay['records'][0]['value'] == labels[1]['value'] and replay['records'][0]['source_attempt'] == first_work['id']
-    appended = visit('append', HERE/'append.jsonl', 1)
+    # Match the versioned scientific disposition for the 000010 probe.
+    sys.path.insert(0, str(ROOT / 'scripts'))
+    from check_gqc_dual_response import release_oracle
+    target = json.loads(release_oracle('qm9-000010').read_bytes())['targets']['x']['zz']
+    appended = visit('append', HERE/'append.jsonl', int(not target['qualified']))
     assert appended['work'][0]['rhs'] == 0 and appended['work'][0]['counts']['cache_validation_actions'] == 1
-    failed_gate = appended['records'][2]
-    assert failed_gate['value'] is None and failed_gate['status'] == 'withheld' and failed_gate['diagnostic']['raw_value'] is not None
-    assert 'cphf' in failed_gate['diagnostic']['reasons']
+    row = appended['records'][2]
+    assert row['diagnostic']['raw_value'] is not None and (row['value'] is not None) is target['qualified']
+    assert row['status'] == ('qualified' if target['qualified'] else 'withheld')
+    assert set(row['diagnostic']['reasons']) == set(target['reasons'])
 
     shared = request_file('concurrent', {'record_id': 1, 'field': 'x', 'observable': 'q0'})
     with ThreadPoolExecutor(2) as pool:
@@ -131,7 +136,7 @@ def main():
               'fresh GQC block for caller-supplied edges, duplicate group member deduplicated',
               'failed zero-field source, unknown record and requested problem mismatch',
               'separate process consumes a qualified scalar with zero GQC setup/actions',
-              'additional target reuses an admitted vector; failed numerical gate retains only raw value',
+              'additional target reuses an admitted vector; 000010 matches its independently graded disposition',
               'two overlapping OS clients commit one new solution, return the same origin and value',
               'failed vector write rolls back earlier label write; prior scientific state byte-equivalent',
               'independent retry solves after rollback; failed attempt and spent work remain in SQLite',

@@ -36,3 +36,23 @@
 固定版本、逐文件清单、实际审读与运行证据见[来源索引](handoff/gqcdataset_codex_goal/research/SOURCE_INDEX.md)和[研究结果](handoff/gqcdataset_codex_goal/research/RESULTS.md)。
 
 信息充分性、剩余科学程序生成、联合信息获取、目标质量控制、可持续扩展资产五条主线保持开放。历史 QMugs 四极矩、固定样本数和接口草案均为候选，后续路线依据源码与实验决定。
+
+## 响应验证
+
+在仓库根目录运行以下命令。每次使用新的输出目录，`checks.json` 会记录实际提交、环境、命令和退出状态。两个检查均可在 Linux CPU 上运行。
+
+```bash
+python3 scripts/check_response_ci.py archive --out .work/response-archive-01
+```
+
+归档检查仅用 Python 标准库，核对两套规划器的全部已登记组合、两批 v1 标签的逐字节重建、17 个分子的成本与操作记录。它还在临时副本中故意破坏一份归档，要求重放因校验和错误而失败。
+
+科学回归使用 Python 3.13、Git 和 C++ 编译器。在单独的 Python 环境中安装固定依赖后，运行同一入口的 `science` 模式。
+
+```bash
+python3.13 -m venv .work/response-science-env
+.work/response-science-env/bin/python -m pip install --only-binary=:all: -r configs/response-science-requirements.txt
+.work/response-science-env/bin/python scripts/check_response_ci.py science --out .work/response-science-01
+```
+
+科学回归会按仓库版本锁获取缺少的 GQC 与 PySCF 源码树，并为浅克隆取得旧 CLI 的固定提交。它实算直接／伴随响应、组合块和独立 CPHF，按冻结资格核对每个可计算目标、跳过的输入与退出码。CLI 测试覆盖历史来源、版本隔离、损坏的缓存、求解失败与 SQLite 回滚。每个 PR 的两项检查分别保存原始 JSON、JSONL 和命令日志。[工作流](.github/workflows/response.yml) · [CPU 依赖](configs/response-science-requirements.txt)

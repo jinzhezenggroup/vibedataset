@@ -4,6 +4,7 @@ from argparse import ArgumentParser
 from dataclasses import replace
 from pathlib import Path
 
+from check_gqc_dual_response import release_oracle
 from gqc_dual_response import ANALYTIC_TOL, FIELD_IDS, GATE, DualResponseModel
 from generativeqc.response_problem import ResponseSolveError
 from probe_gqc_residual import ROOT, check, file_hash, write_json
@@ -16,7 +17,7 @@ def main():
     args.out.mkdir(parents=True, exist_ok=False)
     base = ROOT / 'handoff/gqcdataset_codex_goal/research/experiments'
     stem = base / 'qm9_response_assets/qm9-000003'
-    oracle = base / 'gqc_dual_response/oracles/qm9-000003.json'
+    oracle = release_oracle('qm9-000003')
     model = DualResponseModel(stem.with_suffix('.json'), stem.with_suffix('.npz'), args.out, oracle=oracle)
     target = [('z', 'zz')]
     observations = ['q0', 'r2']
