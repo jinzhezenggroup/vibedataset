@@ -2,6 +2,7 @@
 """Verify sealed sparse decisions with an independent qualified oracle in a separate process (stdlib)."""
 from argparse import ArgumentParser
 from collections import Counter, defaultdict
+import csv
 import gzip
 import hashlib
 import json
@@ -49,10 +50,12 @@ def score(sealed):
         raw = (refs / r['oracle']).read_bytes()
         require(sha(raw) == r['sha256'], 'changed independent oracle')
         oracles[r['name']] = json.loads(raw)
+    histories = {}
     for h in reports['history']['records']:
-        for asset in h.get('files', {}).values():
+        for kind, asset in h.get('files', {}).items():
             raw = gzip.decompress((sealed / (asset['file'] + '.gz')).read_bytes())
             require(sha(raw) == asset['sha256'] and len(raw) == asset['bytes'], 'historical asset not as produced')
+            histories[h['name'], kind] = json.loads(raw)['assets']
     normal_jk = {r['name']: sum(s['operations'].get('jk_calls', 0) for s in r['costs'] if 'solve' in s['phase'])
                  for r in reports['ordinary']['records']}
     dense_values = {(r['name'], d['field'], d['observable']): d['final']['value']
@@ -70,7 +73,9 @@ def score(sealed):
             name = r['name']
             reference = oracles.get(name)
             if reference and 'scope' in r:
-                require(r['scope']['problem'] == reference['problem_identity'] and r['scope']['source'] == reference['source'],
+                attest = reference.get('operator_attestation', reference['setup'])
+                require(r['scope']['problem'] == reference['problem_identity'] and r['scope']['source'] == reference['source']
+                        and r['scope']['operators'] == attest['contract_identity'],
                         'molecular or operator source mismatch')
             counted = Counter()
             for event in r['costs']:
@@ -81,11 +86,14 @@ def score(sealed):
                 for data in ('bytes_read', 'input_file_bytes', 'vector_bytes', 'rhs_bytes', 'readout_bytes'):
                     phase[data] += event.get(data, 0)
                 phase['asset_bytes_written'] += sum(event.get('bytes_written', {}).values())
+                for kind, length in event.get('bytes_written', {}).items():
+                    phase[kind + '_bytes_written'] += length
             require(counted == Counter(r['operations']), 'unmetered or overlapping operations')
             totals.update(counted)
             if s := r.get('stability'):
                 for key in ('svd_calls', 'ao_to_mo_transforms', 'matrix_bytes', 'transformed_eri_bytes'):
                     totals[key] += s.get(key, 0)
+                    costs['stability_evidence'][key] += s.get(key, 0)
             if k == 'history':
                 continue
             rows_for_record = r.get('decisions', [])
@@ -99,6 +107,16 @@ def score(sealed):
             for d in rows_for_record:
                 f, o = d['field'], d['observable']
                 decision = d['final']
+                before = d['initial']
+                if k in ('mixed', 'quantized') and 'history_operand' in before:
+                    kind = 'scalars' if k == 'mixed' else k
+                    old = histories[name, kind][before['history_operand']]
+                    mixed = r['directions']['x+y']['projections'][o]
+                    require(before['historical_error'] == old['error_estimate'] and
+                            before['propagated_error'] == old['error_estimate'] + mixed['error_estimate'] and
+                            before['raw_value'] == mixed['raw_value'] - old['raw_value'] and
+                            before['error_estimate'] == before['propagated_error'] + before['roundoff_allowance'],
+                            'historical operand, propagated error or reconstructed scalar differs')
                 states[decision['status']] += 1
                 initial[d['initial']['status']] += 1
                 detail = dict(name=name, field=f, observable=o, terminal=decision['status'],
@@ -136,15 +154,52 @@ def score(sealed):
                           process_seconds=seal.get('client_seconds', {}).get(k))
         details[k] = observations
     return dict(split=seal['split'], outputs=metrics, targets=details, seal_sha256=sha((sealed/'seal.json').read_bytes()),
-                independent_index_sha256=sha((refs/'index.json').read_bytes()))
+                independent_index_sha256=sha((refs/'index.json').read_bytes()), evaluator_sha256=sha(Path(__file__).read_bytes()))
+
+
+def check_frozen_controls(result):
+    for name, metrics in result['outputs'].items():
+        require(metrics['false_accept_central'] == metrics['crosses_with_reference_budget'] ==
+                metrics['unscored_accepted'] == 0, 'failed independent acceptance control: ' + name)
+    if result['split'] == 'seed':
+        for label in ('wrong-rhs', 'wrong-readout', 'no-origin', 'huge-number', 'wrong-problem', 'bad-digest'):
+            outcomes = {(d['field'], d['observable']): d['terminal'] for d in result['targets'][label]}
+            altered = 'evidence_unavailable' if label == 'no-origin' else 'reject'
+            require(outcomes == {('x', 'q0'): 'reject' if label in ('wrong-problem', 'bad-digest') else 'accepted',
+                                 ('y', 'r2'): altered, ('z', 'zz'): 'accepted'}, 'history control changed: ' + label)
+    for name in ('mixed', 'retained', 'ordinary', 'dense', 'quantized'):
+        require(result['outputs'][name]['states'].get('accepted', 0) > 0, 'no numerically accepted control')
+    require(result['outputs']['quantized']['refined_to_accept'] > 0 and
+            result['outputs']['unrated']['states'].get('evidence_unavailable', 0) > 0, 'missing refinement/withholding')
+
+
+def write_costs(path, result):
+    fields = ('invocations', 'failed', 'jk_calls', 'submitted_rhs', 'submitted_blocks', 'dense_solve_rhs',
+              'ao_to_mo_transforms', 'svd_calls', 'matrix_bytes', 'transformed_eri_bytes', 'bytes_read',
+              'input_file_bytes', 'vector_bytes', 'rhs_bytes', 'readout_bytes', 'asset_bytes_written',
+              'scalars_bytes_written', 'vectors_bytes_written', 'quantized_bytes_written', 'unrated_bytes_written',
+              'seconds')
+    with path.open('w', newline='') as output:
+        writer = csv.writer(output, lineterminator='\n')
+        writer.writerow(('split', 'mode', 'phase', *fields))
+        for mode, report in sorted(result['outputs'].items()):
+            for name, costs in sorted(report['phase_costs'].items()):
+                writer.writerow((result['split'], mode, name, *(costs.get(k, 0) for k in fields)))
 
 
 def main():
     p = ArgumentParser(description=__doc__)
     p.add_argument('--sealed', type=Path, required=True)
     p.add_argument('--out', type=Path, required=True)
+    p.add_argument('--costs', type=Path, help='write stage costs as CSV')
+    p.add_argument('--check-controls', action='store_true', help='enforce the frozen molecular acceptance and negative controls')
     args = p.parse_args()
-    args.out.write_bytes(encoded(score(args.sealed)))
+    result = score(args.sealed)
+    args.out.write_bytes(encoded(result))
+    if args.costs:
+        write_costs(args.costs, result)
+    if args.check_controls:
+        check_frozen_controls(result)
 
 
 if __name__ == '__main__':
