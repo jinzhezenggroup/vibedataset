@@ -1,0 +1,359 @@
+{
+  "aggregation": "Actual GQC setup/round J/K and submitted RHS from unique executing attempts within each client check. PySCF batch calls, columns and SCFs have distinct units. The two independent references to qm9-000010 in a complete science run are charged individually.",
+  "archive": "cpu-reports.tar.gz",
+  "bytes": 720072,
+  "incomplete_phase": "v2-dual-control-interrupted stopped during its nonfinite-reference control after the table of four molecular oracles had been written. Its aborted control did not write final kernel counters. Its cache and log are retained; completed-phase totals exclude these unmeasured actions.",
+  "runs": {
+    "release-archive": {
+      "costs_by_completed_phase": {},
+      "head": "87e984ee005ceefca7f30e56ecd5e1a74a9145ae",
+      "passed": true,
+      "reports": 22,
+      "subprocess_seconds": 2.7882511079660617,
+      "totals_from_completed_phase_reports": {}
+    },
+    "release-science": {
+      "costs_by_completed_phase": {
+        "catalogs": {
+          "gqc_round_jk": 170,
+          "gqc_setup_jk": 35,
+          "gqc_submitted_rhs": 7
+        },
+        "cli": {
+          "gqc_round_jk": 195,
+          "gqc_setup_jk": 40,
+          "gqc_submitted_rhs": 5
+        },
+        "cphf-controls": {
+          "gqc_round_jk": 288,
+          "gqc_setup_jk": 5,
+          "gqc_submitted_rhs": 6,
+          "pyscf_cphf_ao_to_mo_transforms": 2,
+          "pyscf_cphf_dense_rhs": 3,
+          "pyscf_cphf_dense_solves": 1,
+          "pyscf_cphf_density_columns": 28,
+          "pyscf_cphf_jk_calls": 10,
+          "pyscf_cphf_krylov_solves": 1,
+          "pyscf_cphf_singular_value_decompositions": 1,
+          "pyscf_scf": 13,
+          "pyscf_scf_cycles": 1337,
+          "pyscf_scf_jk": 1363
+        },
+        "dual-controls": {
+          "gqc_round_jk": 113,
+          "gqc_setup_jk": 5,
+          "gqc_submitted_rhs": 7
+        },
+        "failure-costs": {
+          "gqc_round_jk": 107,
+          "gqc_setup_jk": 36,
+          "gqc_submitted_rhs": 13
+        },
+        "history": {
+          "gqc_round_jk": 232,
+          "gqc_setup_jk": 65,
+          "gqc_submitted_rhs": 22
+        },
+        "independent-dual": {
+          "gqc_round_jk": 474,
+          "gqc_setup_jk": 20,
+          "gqc_submitted_rhs": 24,
+          "pyscf_cphf_ao_to_mo_transforms": 8,
+          "pyscf_cphf_dense_rhs": 12,
+          "pyscf_cphf_dense_solves": 4,
+          "pyscf_cphf_density_columns": 82,
+          "pyscf_cphf_jk_calls": 30,
+          "pyscf_cphf_krylov_solves": 4,
+          "pyscf_cphf_singular_value_decompositions": 4,
+          "pyscf_scf": 52,
+          "pyscf_scf_cycles": 2772,
+          "pyscf_scf_jk": 2876
+        },
+        "joint-block": {
+          "gqc_round_jk": 243,
+          "gqc_setup_jk": 5,
+          "gqc_submitted_rhs": 19
+        },
+        "solver-fallback": {
+          "gqc_round_jk": 245,
+          "gqc_setup_jk": 55,
+          "gqc_submitted_rhs": 28
+        }
+      },
+      "head": "87e984ee005ceefca7f30e56ecd5e1a74a9145ae",
+      "passed": true,
+      "reports": 152,
+      "subprocess_seconds": 212.2372181279643,
+      "totals_from_completed_phase_reports": {
+        "gqc_round_jk": 2067,
+        "gqc_setup_jk": 266,
+        "gqc_submitted_rhs": 131,
+        "pyscf_cphf_ao_to_mo_transforms": 10,
+        "pyscf_cphf_dense_rhs": 15,
+        "pyscf_cphf_dense_solves": 5,
+        "pyscf_cphf_density_columns": 110,
+        "pyscf_cphf_jk_calls": 40,
+        "pyscf_cphf_krylov_solves": 5,
+        "pyscf_cphf_singular_value_decompositions": 5,
+        "pyscf_scf": 65,
+        "pyscf_scf_cycles": 4109,
+        "pyscf_scf_jk": 4239
+      }
+    },
+    "v1-archive-clean": {
+      "costs_by_completed_phase": {},
+      "head": "2029c68e328a1b0a3beb4fb656662d1b4f276453",
+      "passed": true,
+      "reports": 16,
+      "subprocess_seconds": 1.9065547400678042,
+      "totals_from_completed_phase_reports": {}
+    },
+    "v1-cache-boundary": {
+      "costs_by_completed_phase": {
+        "cli": {
+          "gqc_round_jk": 195,
+          "gqc_setup_jk": 40,
+          "gqc_submitted_rhs": 5
+        }
+      },
+      "reports": 14,
+      "totals_from_completed_phase_reports": {
+        "gqc_round_jk": 195,
+        "gqc_setup_jk": 40,
+        "gqc_submitted_rhs": 5
+      }
+    },
+    "v1-dual-boundary": {
+      "costs_by_completed_phase": {
+        "dual-controls": {
+          "gqc_round_jk": 113,
+          "gqc_setup_jk": 5,
+          "gqc_submitted_rhs": 7
+        }
+      },
+      "reports": 2,
+      "totals_from_completed_phase_reports": {
+        "gqc_round_jk": 113,
+        "gqc_setup_jk": 5,
+        "gqc_submitted_rhs": 7
+      }
+    },
+    "v1-history-boundary": {
+      "costs_by_completed_phase": {
+        "history": {
+          "gqc_round_jk": 232,
+          "gqc_setup_jk": 65,
+          "gqc_submitted_rhs": 22
+        }
+      },
+      "reports": 37,
+      "totals_from_completed_phase_reports": {
+        "gqc_round_jk": 232,
+        "gqc_setup_jk": 65,
+        "gqc_submitted_rhs": 22
+      }
+    },
+    "v2-dual-control-interrupted": {
+      "costs_by_completed_phase": {
+        "independent-dual": {
+          "gqc_round_jk": 474,
+          "gqc_setup_jk": 20,
+          "gqc_submitted_rhs": 24,
+          "pyscf_cphf_ao_to_mo_transforms": 8,
+          "pyscf_cphf_dense_rhs": 12,
+          "pyscf_cphf_dense_solves": 4,
+          "pyscf_cphf_density_columns": 82,
+          "pyscf_cphf_jk_calls": 30,
+          "pyscf_cphf_krylov_solves": 4,
+          "pyscf_cphf_singular_value_decompositions": 4,
+          "pyscf_scf": 52,
+          "pyscf_scf_cycles": 2772,
+          "pyscf_scf_jk": 2876
+        }
+      },
+      "head": "2cfecac9b8af4a14bc929415829300b3dabaa605",
+      "passed": false,
+      "reports": 12,
+      "subprocess_seconds": 16.180065726017347,
+      "totals_from_completed_phase_reports": {
+        "gqc_round_jk": 474,
+        "gqc_setup_jk": 20,
+        "gqc_submitted_rhs": 24,
+        "pyscf_cphf_ao_to_mo_transforms": 8,
+        "pyscf_cphf_dense_rhs": 12,
+        "pyscf_cphf_dense_solves": 4,
+        "pyscf_cphf_density_columns": 82,
+        "pyscf_cphf_jk_calls": 30,
+        "pyscf_cphf_krylov_solves": 4,
+        "pyscf_cphf_singular_value_decompositions": 4,
+        "pyscf_scf": 52,
+        "pyscf_scf_cycles": 2772,
+        "pyscf_scf_jk": 2876
+      }
+    },
+    "v2-integrated-science": {
+      "costs_by_completed_phase": {
+        "catalogs": {
+          "gqc_round_jk": 170,
+          "gqc_setup_jk": 35,
+          "gqc_submitted_rhs": 7
+        },
+        "cli": {
+          "gqc_round_jk": 195,
+          "gqc_setup_jk": 40,
+          "gqc_submitted_rhs": 5
+        },
+        "cphf-controls": {
+          "gqc_round_jk": 288,
+          "gqc_setup_jk": 5,
+          "gqc_submitted_rhs": 6,
+          "pyscf_cphf_ao_to_mo_transforms": 2,
+          "pyscf_cphf_dense_rhs": 3,
+          "pyscf_cphf_dense_solves": 1,
+          "pyscf_cphf_density_columns": 28,
+          "pyscf_cphf_jk_calls": 10,
+          "pyscf_cphf_krylov_solves": 1,
+          "pyscf_cphf_singular_value_decompositions": 1,
+          "pyscf_scf": 13,
+          "pyscf_scf_cycles": 1337,
+          "pyscf_scf_jk": 1363
+        },
+        "dual-controls": {
+          "gqc_round_jk": 113,
+          "gqc_setup_jk": 5,
+          "gqc_submitted_rhs": 7
+        },
+        "failure-costs": {
+          "gqc_round_jk": 107,
+          "gqc_setup_jk": 36,
+          "gqc_submitted_rhs": 13
+        },
+        "history": {
+          "gqc_round_jk": 232,
+          "gqc_setup_jk": 65,
+          "gqc_submitted_rhs": 22
+        },
+        "independent-dual": {
+          "gqc_round_jk": 474,
+          "gqc_setup_jk": 20,
+          "gqc_submitted_rhs": 24,
+          "pyscf_cphf_ao_to_mo_transforms": 8,
+          "pyscf_cphf_dense_rhs": 12,
+          "pyscf_cphf_dense_solves": 4,
+          "pyscf_cphf_density_columns": 82,
+          "pyscf_cphf_jk_calls": 30,
+          "pyscf_cphf_krylov_solves": 4,
+          "pyscf_cphf_singular_value_decompositions": 4,
+          "pyscf_scf": 52,
+          "pyscf_scf_cycles": 2772,
+          "pyscf_scf_jk": 2876
+        },
+        "joint-block": {
+          "gqc_round_jk": 243,
+          "gqc_setup_jk": 5,
+          "gqc_submitted_rhs": 19
+        },
+        "solver-fallback": {
+          "gqc_round_jk": 245,
+          "gqc_setup_jk": 55,
+          "gqc_submitted_rhs": 28
+        }
+      },
+      "head": "c29fcfe45404acdfc5d8f9c764ac21cdf5fa3cae",
+      "passed": true,
+      "reports": 148,
+      "subprocess_seconds": 97.61575450497912,
+      "totals_from_completed_phase_reports": {
+        "gqc_round_jk": 2067,
+        "gqc_setup_jk": 266,
+        "gqc_submitted_rhs": 131,
+        "pyscf_cphf_ao_to_mo_transforms": 10,
+        "pyscf_cphf_dense_rhs": 15,
+        "pyscf_cphf_dense_solves": 5,
+        "pyscf_cphf_density_columns": 110,
+        "pyscf_cphf_jk_calls": 40,
+        "pyscf_cphf_krylov_solves": 5,
+        "pyscf_cphf_singular_value_decompositions": 5,
+        "pyscf_scf": 65,
+        "pyscf_scf_cycles": 4109,
+        "pyscf_scf_jk": 4239
+      }
+    },
+    "v2-standalone-cache": {
+      "costs_by_completed_phase": {
+        "cli": {
+          "gqc_round_jk": 195,
+          "gqc_setup_jk": 40,
+          "gqc_submitted_rhs": 5
+        }
+      },
+      "reports": 14,
+      "totals_from_completed_phase_reports": {
+        "gqc_round_jk": 195,
+        "gqc_setup_jk": 40,
+        "gqc_submitted_rhs": 5
+      }
+    },
+    "v2-standalone-catalogs": {
+      "costs_by_completed_phase": {
+        "catalogs": {
+          "gqc_round_jk": 170,
+          "gqc_setup_jk": 35,
+          "gqc_submitted_rhs": 7
+        }
+      },
+      "reports": 15,
+      "totals_from_completed_phase_reports": {
+        "gqc_round_jk": 170,
+        "gqc_setup_jk": 35,
+        "gqc_submitted_rhs": 7
+      }
+    },
+    "v2-standalone-fallback": {
+      "costs_by_completed_phase": {
+        "solver-fallback": {
+          "gqc_round_jk": 245,
+          "gqc_setup_jk": 55,
+          "gqc_submitted_rhs": 28
+        }
+      },
+      "reports": 30,
+      "totals_from_completed_phase_reports": {
+        "gqc_round_jk": 245,
+        "gqc_setup_jk": 55,
+        "gqc_submitted_rhs": 28
+      }
+    },
+    "v2-standalone-history": {
+      "costs_by_completed_phase": {
+        "history": {
+          "gqc_round_jk": 232,
+          "gqc_setup_jk": 65,
+          "gqc_submitted_rhs": 22
+        }
+      },
+      "reports": 37,
+      "totals_from_completed_phase_reports": {
+        "gqc_round_jk": 232,
+        "gqc_setup_jk": 65,
+        "gqc_submitted_rhs": 22
+      }
+    },
+    "v2-standalone-joint": {
+      "costs_by_completed_phase": {
+        "joint-block": {
+          "gqc_round_jk": 243,
+          "gqc_setup_jk": 5,
+          "gqc_submitted_rhs": 19
+        }
+      },
+      "reports": 2,
+      "totals_from_completed_phase_reports": {
+        "gqc_round_jk": 243,
+        "gqc_setup_jk": 5,
+        "gqc_submitted_rhs": 19
+      }
+    }
+  },
+  "sha256": "b89e635748736d0f6783a70ac45e219eb15ed14b7bfc7607ed3e417e58a37d7f"
+}
