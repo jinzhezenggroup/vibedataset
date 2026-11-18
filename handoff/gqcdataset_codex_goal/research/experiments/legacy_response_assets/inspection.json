@@ -1,0 +1,25 @@
+{
+  "argv": [
+    "handoff/gqcdataset_codex_goal/research/experiments/legacy_response_assets/inspect_assets.py",
+    "--qm9",
+    "../qm9_source",
+    "--references",
+    "../../_references",
+    "--water",
+    "../legacy-15-inputs/dm-dp-surfaces",
+    "--qca",
+    "../legacy-15-inputs",
+    "--out",
+    "../legacy-15-published"
+  ],
+  "python": "3.10.12 (main, Aug 31 2026, 10:18:17) [GCC 11.4.0]",
+  "report_uncompressed_bytes": 95289,
+  "report_uncompressed_sha256": "5973bdc8b188502f9c6d8eb4489d03591b590ee8c5e42742022761d3b3049cc1",
+  "seconds_by_source": {
+    "psi4": 0.03275701601523906,
+    "qcarchive": 0.11711392199504189,
+    "qcfractal_fixtures": 0.031444330990780145,
+    "qm9": 46.59929354698397,
+    "water": 0.06966585898771882
+  }
+}
