@@ -74,7 +74,13 @@ def assess_scalar(oracle, endpoint_identity, field, observable, value):
     """Grade a supplied scalar under a validated operator and independent reference."""
     check(field in FIELD_IDS and observable in OBSERVABLE_IDS, 'unknown scalar response endpoint')
     def finite(v):
-        return isinstance(v, (float, int, np.floating, np.integer)) and not isinstance(v, (bool, np.bool_)) and math.isfinite(v)
+        if isinstance(v, (bool, np.bool_)) or not isinstance(v, (float, int, np.floating, np.integer)):
+            return False
+        try:
+            return math.isfinite(v)
+        except OverflowError:
+            # A JSON integer can exceed the range of the FP64 protocol.
+            return False
     raw = float(value) if finite(value) else None
     out = {'field': field, 'observable': observable, 'raw_value': raw,
            'target_identity': json_hash([endpoint_identity['fields'][field],

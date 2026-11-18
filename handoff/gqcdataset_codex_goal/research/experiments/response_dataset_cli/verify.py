@@ -102,19 +102,20 @@ def main():
         db.execute('DROP TRIGGER inject_failure')
     retry = visit('retry', probe, 0)
     assert retry['records'][0]['delivery'] == 'computed' and retry['work'][0]['scalar_hits'] == 0
-    with sqlite3.connect(db_path) as db:
-        q = 'SELECT identity,field,observable,record FROM labels WHERE identity=? AND field=? AND observable=?'
-        key = (first_work['identity'], 'x', 'r2')
-        stored = json.loads(db.execute(q, key).fetchone()[3])
-        stored['value'] = None
-        encoded = json.dumps(stored, sort_keys=True, separators=(',', ':'), allow_nan=False)
-        db.execute('UPDATE labels SET record=?,digest=? WHERE identity=? AND field=? AND observable=?',
-                   (encoded, digest(encoded.encode()), *key))
-    repaired = visit('bad-scalar-recovered', HERE/'hit.jsonl', 0)
-    r, = repaired['work']
-    assert r['scalar_rejections'] == 1 and r['scalar_hits'] == 0 and r['counts']['cache_validation_actions'] == 1
-    assert 'nonfinite or missing candidate' in r['rejected_labels'][0]['reason']
-    assert repaired['records'][0]['value'] == replay['records'][0]['value']
+    for label, invalid_value in [('missing', None), ('oversized-integer', 10**400)]:
+        with sqlite3.connect(db_path) as db:
+            key = (first_work['identity'], 'x', 'r2')
+            q = 'SELECT record FROM labels WHERE identity=? AND field=? AND observable=?'
+            stored = json.loads(db.execute(q, key).fetchone()[0])
+            stored['value'] = invalid_value
+            encoded = json.dumps(stored, sort_keys=True, separators=(',', ':'), allow_nan=False)
+            db.execute('UPDATE labels SET record=?,digest=? WHERE identity=? AND field=? AND observable=?',
+                       (encoded, digest(encoded.encode()), *key))
+        repaired = visit(label + '-scalar-recovered', HERE/'hit.jsonl', 0)
+        r, = repaired['work']
+        assert r['scalar_rejections'] == 1 and r['scalar_hits'] == 0 and r['counts']['cache_validation_actions'] == 1
+        assert 'nonfinite or missing candidate' in r['rejected_labels'][0]['reason']
+        assert repaired['records'][0]['value'] == replay['records'][0]['value']
 
     invalid = work/'invalid.jsonl'
     invalid.write_text('{"request_id":NaN}\n' + json.dumps({'source': 'unrelated', 'record_id': 3,

@@ -45,7 +45,7 @@ def main():
     cache['fields']['x']['solution'] = None
     bad = model.run_round([('x', 'q0')], [], [], cache)
     check(bad['counts']['cache_rejections'] == 1, 'malformed cache accepted')
-    for value in (None, float('nan'), float('inf'), float('-inf')):
+    for value in (None, float('nan'), float('inf'), float('-inf'), 10**400):
         row = model.assess('x', 'r2', value)
         check(row['qualified'] is False and row['value'] is None, 'nonfinite candidate accepted')
         try:

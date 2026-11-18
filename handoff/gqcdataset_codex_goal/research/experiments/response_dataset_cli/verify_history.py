@@ -82,6 +82,16 @@ def main():
     _, hybrid = run('partial-strict-saving', DIAG, history=work/'four-terms.json')
     assert hybrid['relation']['used'] and hybrid['rhs'] == 2
 
+    # One authenticated batch can contain a representable JSON integer that
+    # cannot enter an FP64 label. Its other five operands remain independent.
+    oversized = json.loads((work/'history.json').read_bytes())
+    oversized['records'][0]['value'] = 10**400
+    damaged = work/'oversized-value.json'
+    damaged.write_text(json.dumps(oversized, allow_nan=False))
+    recovered, check = run('one-oversized-history-row', HISTORY, history=damaged)
+    assert check['historical_hits'] == 5 and len(check['rejected_history']) == 1
+    assert [r['delivery'] for r in recovered['records']] == ['computed', *['historical_scalar']*5]
+
     foreign = json.loads((work/'history.json').read_text())
     for record in foreign['records']:
         record['source']['reference_identity'] = 'different-physical-state'
