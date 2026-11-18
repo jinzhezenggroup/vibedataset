@@ -1,5 +1,5 @@
 {
-  "checked_at_utc": "2026-11-18T04:11:34.835136+00:00",
+  "checked_at_utc": "2026-11-18T04:18:59.804342+00:00",
   "result": "passed",
   "coverage_counts": {
     "indexed": 268259,
@@ -32,6 +32,15 @@
     "catalog origin evidence and formal release archive inventories verified"
   ],
   "scope": "Ledger consistency only; no third-party behavior or numerical validation.",
+  "compressed_only_replay": {
+    "result": "identical",
+    "repository_commit": "da6742b94aab54683c7acc91b125c1b1e6af6041",
+    "git_inventories": 45,
+    "release_member_inventories": 1,
+    "local_uncompressed_inventories": 0,
+    "replay_validated_at_utc": "2026-11-18T04:17:32.745371+00:00",
+    "scope": "Separate checkout and compressed-only ledger rebuild, sharing verified third-party checkouts."
+  },
   "prior_evidence": {
     "commit": "faf93dd4a95d9a12ee06bdcf85040ecb38d9107b",
     "root_reviews": 45,
