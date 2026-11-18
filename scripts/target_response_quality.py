@@ -13,6 +13,15 @@ SCHEMA = 'vibedataset.discrete_response_error.v1'
 EPS = np.finfo(np.float64).eps
 
 
+def finite(value):
+    if isinstance(value, (bool, np.bool_)) or not isinstance(value, (int, float, np.integer, np.floating)):
+        return False
+    try:
+        return math.isfinite(float(value))
+    except (TypeError, ValueError, OverflowError):
+        return False
+
+
 def gamma(n):
     return n * EPS / (1 - n * EPS)
 
@@ -117,7 +126,7 @@ def check_direction(model, stability, vector, rhs, readouts, *, measured_residua
         c = np.asarray(readout)
         dot_rounding = gamma(2 * n + 4) * float(np.abs(c) @ np.abs(x))
         projected[key] = scalar_result(float(c @ x), np.linalg.norm(c) * factor + dot_rounding, tolerance,
-                                       contraction_roundoff=float(dot_rounding))
+                                       contraction_roundoff=float(dot_rounding), readout_sha256=array_hash(c))
     statuses = {p['status'] for p in projected.values()}
     status = 'reject' if 'reject' in statuses else 'refine' if 'refine' in statuses else 'accepted'
     return {'schema': SCHEMA, 'status': status, 'reason': 'per-readout numerical error estimate',
@@ -129,17 +138,21 @@ def check_direction(model, stability, vector, rhs, readouts, *, measured_residua
 
 def linear_combination(terms, divisor=1., *, tolerance=TOLERANCE):
     """Propagate measured term errors through a signed linear readout and division."""
-    if not terms or not all(math.isfinite(k) for k in (divisor, tolerance)) or divisor == 0 or tolerance <= 0:
+    if not terms or not all(finite(k) for k in (divisor, tolerance)) or divisor == 0 or tolerance <= 0:
         return disposition('reject', 'invalid coefficients or error budget')
     products, errors = [], []
     for coefficient, term in terms:
-        if term.get('status') in ('reject', 'evidence_unavailable'):
-            return disposition(term['status'], 'unusable term in scalar relation')
+        if not isinstance(term, dict) or term.get('status') not in ('accepted', 'refine', 'reject', 'evidence_unavailable'):
+            return disposition('evidence_unavailable', 'missing or unrecognized term qualification')
+        if term['status'] in ('reject', 'evidence_unavailable'):
+            return disposition(term['status'], term.get('reason', 'unusable term in scalar relation'))
+        if term.get('schema') != SCHEMA:
+            return disposition('evidence_unavailable', 'missing or different numerical error protocol')
         value = term.get('raw_value', term.get('value'))
         error = term.get('error_estimate')
         if value is None or error is None:
             return disposition('evidence_unavailable', 'historical value or error estimate missing')
-        if not all(math.isfinite(k) for k in (value, error, coefficient)) or error < 0:
+        if not all(finite(k) for k in (value, error, coefficient)) or error < 0:
             return disposition('reject', 'nonfinite coefficient or invalid operand evidence')
         products.append(coefficient * value)
         errors.append(abs(coefficient) * error)
