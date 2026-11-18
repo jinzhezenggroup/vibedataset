@@ -102,6 +102,40 @@ def legacy_cache_control(work):
     return controls
 
 
+def check_scalar_file(data, identity, rows):
+    obj = json.loads(data)
+    body = obj['payload']
+    digest = sha(json.dumps(body, sort_keys=True, separators=(',', ':'), allow_nan=False).encode())
+    check(digest == obj['sha256'] and body['scientific_identity'] == identity, 'scalar archive identity')
+    saved = {(t['field'], t['observable']): t['value'] for t in body['labels']}
+    check(len(saved) == len(body['labels']) and saved == {
+        (t['field'], t['observable']): t['value'] for t in rows if t['qualified'] is True}, 'published scalar archive')
+
+
+def check_scalar_assets(directory, run, summary, events):
+    ended = {(e['case'], e['policy'], e['event']): e['counts'] for e in events if e['event'].endswith('_finished')}
+    policy_set = {'legacy_recompute', 'legacy_decode', 'keep_vectors', 'eager_table', 'remove_history'}
+    identities = {r['name']: r['scalar_identity'] for r in summary['strata'] if 'scalar_identity' in r}
+    seen = set()
+    with tarfile.open(directory / (run + '-assets.tar.gz'), 'r:gz') as archive:
+        for r in summary['runs']:
+            name, policy = key = r['name'], r['policy']
+            check(key not in seen, 'repeated scalar trajectory')
+            seen.add(key)
+            prefix = name + '/' + policy + '/'
+            inputs = archive.extractfile(prefix + 'scalars.json').read()
+            outputs = archive.extractfile(prefix + 'new-labels.json').read()
+            vector_size = archive.getmember(prefix + 'vectors.json').size if policy == 'keep_vectors' else 0
+            check_scalar_file(inputs, identities[name], r['first_results'])
+            check_scalar_file(outputs, identities[name], r['completion_results'])
+            check((len(inputs), vector_size, len(inputs) + vector_size, len(outputs)) ==
+                  (r['history_scalar_bytes'], r['history_vector_bytes'], r['second_read_bytes'], r['second_label_bytes']),
+                  'serialized inputs/outputs or read charges')
+            for event_name, tag in [('history_finished', 'first_counts'), ('completion_finished', 'second_counts')]:
+                check(ended.pop((*key, event_name)) == r[tag], 'actual scalar solve costs')
+    check(seen == {(source, p) for source in identities for p in policy_set} and not ended, 'scalar policy coverage')
+
+
 def verify(dest, package=False):
     manifest = json.loads((dest / 'manifest.json').read_bytes())
     expected = {run + suffix for run in RUNS for suffix in ('-summary.json.gz', '-events.jsonl.gz', '-assets.tar.gz')}
@@ -127,6 +161,7 @@ def verify(dest, package=False):
         row = {'computed_sources': len(setups), 'selected_sources': sum(bool(r['name']) for r in states),
                'setup_jk': sum(s['counts']['jk_calls'] for s in setups), 'setup_seconds': sum(s['seconds'] for s in setups)}
         if run.endswith('-scalar'):
+            check_scalar_assets(dest, run, summary, events)
             result, extrema = scalar_tables(summary, events, oracles, {'all_sources': set(oracles)})
             costs.extend(dict(cohort=catalog, **r) for r in result)
             prior = [r for r in json.loads(readgz(LEGACY[catalog]))['strata'] if 'scalar_identity' in r]
@@ -136,6 +171,10 @@ def verify(dest, package=False):
                        new_rhs=sum(r[k].get('rhs_columns', 0) for r in summary['runs'] for k in ('first_counts', 'second_counts')),
                        decoder_setup_seconds=summary['decoder_startup_seconds'], hand_and_oracle_errors=extrema)
         elif run.startswith('seed-'):
+            prior = json.loads(readgz(EXP / 'response_planning/raw' / (
+                'plan001-paired-' + run.split('-')[1] + '-summary.json.gz')))
+            check(all(summary[key] == prior[key] for key in ('traces', 'policies', 'replicates', 'order_seed',
+                      'remember_reference_rejections')), 'changed trajectory protocol or sampling seed')
             groups = verify_trajectories(summary, events, oracles)
             result = planning_rows(run, summary, groups, {'all_sources': set(oracles)})
             acquisitions.extend(result)
@@ -177,6 +216,18 @@ def verify(dest, package=False):
             with (dest / name).open('xb') as f:
                 f.write(content)
         check((dest / name).read_bytes() == content, name + ': derived table')
+    controls = json.loads((dest / 'v1-history-rejections.json').read_bytes())
+    seed = json.loads(readgz(dest / 'seed-scalar-summary.json.gz'))
+    identities = {r['name']: r['scalar_identity'] for r in seed['strata'] if 'scalar_identity' in r}
+    check(controls.keys() == identities.keys(), 'v1 history control coverage')
+    with tarfile.open(EXP / 'response_planning/raw/plan002-first-assets.tar.gz', 'r:gz') as old:
+        for name, control in controls.items():
+            data = old.extractfile(name + '/legacy_decode/scalars.json').read()
+            body = json.loads(data)['payload']
+            check(control['v1_sha256'] == sha(data) and control['v1_identity'] == body['scientific_identity']
+                  and control['v1_entries'] == len(body['labels'])
+                  and control['v2_identity'] == identities[name] != control['v1_identity']
+                  and control['reason'] == 'scalar payload or scientific identity mismatch', 'v1 cache rejection')
     print(json.dumps({k: {'charged_jk': v['setup_jk'] + v['history_and_completion_jk'], 'new_rhs': v['new_rhs']}
                       for k, v in account.items()}, sort_keys=True))
 

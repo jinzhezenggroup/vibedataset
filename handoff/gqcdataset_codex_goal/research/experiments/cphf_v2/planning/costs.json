@@ -1,0 +1,93 @@
+{
+  "extension-diagnostic": {
+    "computed_sources": 8,
+    "decoder_setup_seconds": 0.6053353949973825,
+    "history_and_completion_jk": 2518,
+    "measured_project_commit": "ffeeeee40363a63efa42fdce1e97e96803441c67",
+    "new_rhs": 56,
+    "selected_sources": 11,
+    "setup_jk": 40,
+    "setup_seconds": 17.630882060999284,
+    "wall_seconds": 21.875374279014068
+  },
+  "extension-scalar": {
+    "computed_sources": 8,
+    "decoder_setup_seconds": 0.5425550760119222,
+    "hand_and_oracle_errors": {
+      "q0": {
+        "cphf": 2.8525792838962616e-13,
+        "hand": 0.0,
+        "without_known_terms": 1.467831955036458
+      },
+      "r2": {
+        "cphf": 1.4443557461163437e-11,
+        "hand": 0.0,
+        "without_known_terms": 24.92029344631137
+      },
+      "zz": {
+        "cphf": 6.488143355909415e-12,
+        "hand": 0.0,
+        "without_known_terms": 8.805123455291973
+      }
+    },
+    "history_and_completion_jk": 7542,
+    "measured_project_commit": "ffeeeee40363a63efa42fdce1e97e96803441c67",
+    "new_rhs": 176,
+    "selected_sources": 11,
+    "setup_jk": 40,
+    "setup_seconds": 20.70253250200767,
+    "trajectories": 40,
+    "wall_seconds": 36.967152788012754
+  },
+  "seed-remember": {
+    "computed_sources": 4,
+    "history_and_completion_jk": 14006,
+    "measured_project_commit": "ffeeeee40363a63efa42fdce1e97e96803441c67",
+    "new_rhs": 576,
+    "selected_sources": 6,
+    "setup_jk": 20,
+    "setup_seconds": 13.116589570010547,
+    "trajectories": 168,
+    "wall_seconds": 25.61919092098833
+  },
+  "seed-retry": {
+    "computed_sources": 4,
+    "history_and_completion_jk": 14006,
+    "measured_project_commit": "ffeeeee40363a63efa42fdce1e97e96803441c67",
+    "new_rhs": 576,
+    "selected_sources": 6,
+    "setup_jk": 20,
+    "setup_seconds": 22.753857383009745,
+    "trajectories": 168,
+    "wall_seconds": 52.86936383598368
+  },
+  "seed-scalar": {
+    "computed_sources": 4,
+    "decoder_setup_seconds": 0.44568908200017177,
+    "hand_and_oracle_errors": {
+      "q0": {
+        "cphf": 5.546645228619168e-13,
+        "hand": 0.0,
+        "without_known_terms": 1.8940520801402845
+      },
+      "r2": {
+        "cphf": 2.291500322826323e-12,
+        "hand": 0.0,
+        "without_known_terms": 11.02040367055657
+      },
+      "zz": {
+        "cphf": 1.311839525897085e-12,
+        "hand": 0.0,
+        "without_known_terms": 1.7159725357408773
+      }
+    },
+    "history_and_completion_jk": 1833,
+    "measured_project_commit": "ffeeeee40363a63efa42fdce1e97e96803441c67",
+    "new_rhs": 88,
+    "selected_sources": 6,
+    "setup_jk": 20,
+    "setup_seconds": 10.432672247989103,
+    "trajectories": 20,
+    "wall_seconds": 12.375987785024336
+  }
+}
