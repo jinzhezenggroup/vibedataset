@@ -91,13 +91,15 @@ def check_direction(model, stability, vector, rhs, readouts, *, measured_residua
     measured_residual is the *same solve/column's* returned native true residual,
     for internal normal-solve fallback. External vector proposals must omit it.
     """
-    def fail(status, reason):
-        return {**disposition(status, reason), 'projections': {k: disposition(status, reason) for k in readouts}}
+    def fail(status, reason, actions=0):
+        return {**disposition(status, reason), 'extra_native_actions': actions, 'projections': {k: disposition(status, reason) for k in readouts}}
 
     if model.problem.identity != stability.report['problem'] or model.contract_identity != stability.report['contract']:
         return fail('reject', 'response problem or operator contract mismatch')
     if stability.matrix is None:
         return fail('evidence_unavailable', stability.report.get('reason', 'no matrix stability evidence'))
+    if not isinstance(readouts, dict):
+        return disposition('reject', 'expected a named set of requested readouts', projections={})
     x, b = np.asarray(vector), np.asarray(rhs)
     vectors = [x, b, *(np.asarray(c) for c in readouts.values())]
     if (not math.isfinite(tolerance) or tolerance <= 0 or not readouts or
@@ -118,7 +120,7 @@ def check_direction(model, stability, vector, rhs, readouts, *, measured_residua
         action_delta = abs(dense - residual)
         delta_limit = 1e-10 * max(1., np.linalg.norm(b), np.linalg.norm(dense_action))
     if (not all(map(math.isfinite, (dense, residual, action_delta))) or residual < 0 or action_delta > delta_limit):
-        return fail('reject', 'dense response and native residual/action differ')
+        return fail('reject', 'dense response and native residual/action differ', int(measured_residual is None))
     residual_rounding = gamma(8 * n + 16) * (np.linalg.norm(b) + np.linalg.norm(np.abs(a) @ np.abs(x)))
     factor = (max(dense, residual) + residual_rounding) / stability.report['effective_sigma']
     projected = {}

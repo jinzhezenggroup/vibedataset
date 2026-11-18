@@ -1,0 +1,93 @@
+{
+  "downweighted_interval": {
+    "absolute_term_sum": 2.0,
+    "cancellation_ratio": 1.0,
+    "error_estimate": 5.000000266453525e-10,
+    "evidence_level": "FP64 discrete-equation numerical estimate",
+    "propagated_error": 4.999999999999999e-10,
+    "raw_value": 0.02,
+    "reason": "within target budget",
+    "roundoff_allowance": 2.6645352591003793e-17,
+    "schema": "vibedataset.discrete_response_error.v1",
+    "status": "accepted",
+    "value": 0.02
+  },
+  "invalid_terms": {
+    "missing_error": {
+      "reason": "historical value or error estimate missing",
+      "schema": "vibedataset.discrete_response_error.v1",
+      "status": "evidence_unavailable",
+      "value": null
+    },
+    "overflow": {
+      "reason": "nonfinite coefficient or invalid operand evidence",
+      "schema": "vibedataset.discrete_response_error.v1",
+      "status": "reject",
+      "value": null
+    },
+    "unknown_status": {
+      "reason": "missing or unrecognized term qualification",
+      "schema": "vibedataset.discrete_response_error.v1",
+      "status": "evidence_unavailable",
+      "value": null
+    },
+    "wrong_protocol": {
+      "reason": "missing or different numerical error protocol",
+      "schema": "vibedataset.discrete_response_error.v1",
+      "status": "evidence_unavailable",
+      "value": null
+    }
+  },
+  "issued_physical_jk": 0,
+  "result": "passed",
+  "signed_coefficient_cancellation": {
+    "absolute_term_sum": 4000000000002.0,
+    "cancellation_ratio": 2000000000001.0,
+    "error_estimate": 0.003552713678802284,
+    "evidence_level": "FP64 discrete-equation numerical estimate",
+    "propagated_error": 0.0,
+    "raw_value": 1.0,
+    "reason": "target budget exceeded",
+    "roundoff_allowance": 0.003552713678802284,
+    "schema": "vibedataset.discrete_response_error.v1",
+    "status": "refine",
+    "value": null
+  },
+  "weak_mode": {
+    "decision": {
+      "extra_native_actions": 0,
+      "projections": {
+        "q": {
+          "reason": "asymmetric or numerically ill-conditioned response",
+          "schema": "vibedataset.discrete_response_error.v1",
+          "status": "evidence_unavailable",
+          "value": null
+        }
+      },
+      "reason": "asymmetric or numerically ill-conditioned response",
+      "schema": "vibedataset.discrete_response_error.v1",
+      "status": "evidence_unavailable",
+      "value": null
+    },
+    "readout_error": 1.0,
+    "residual": 1e-12,
+    "stability": {
+      "ao_to_mo_transforms": 2,
+      "contract": "unit-coordinate",
+      "dimension": 2,
+      "effective_sigma": 9.92894572642399e-13,
+      "matrix_bytes": 32,
+      "matrix_sha256": "167d3f28cc18bc1e771f53af2b8377cfc594ce0b6d24b49c0972bd569e386731",
+      "problem": "two-mode-control",
+      "reason": "asymmetric or numerically ill-conditioned response",
+      "schema": "vibedataset.discrete_response_error.v1",
+      "seconds": 0.0008377660124097019,
+      "sigma_max": 1.0,
+      "sigma_min": 1e-12,
+      "skew_frobenius": 0.0,
+      "status": "evidence_unavailable",
+      "svd_calls": 1,
+      "transformed_eri_bytes": 64
+    }
+  }
+}

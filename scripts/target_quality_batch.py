@@ -115,13 +115,16 @@ def produce(model, stability, costs, out):
 def load_assets(root, entry, kind, model, costs):
     with costs.stage('read_history', kind=kind) as log:
         descriptor = entry['files'][kind]
+        if descriptor['file'] != f'{model.name}-{kind}.json':
+            raise ValueError('unexpected historical asset path')
         path = root / descriptor['file']
         data = path.read_bytes()
         log.update(bytes_read=len(data), expected_sha256=descriptor['sha256'])
         if (len(data) != descriptor['bytes'] or hashlib.sha256(data).hexdigest() != descriptor['sha256']):
             raise ValueError('historical bytes disagree with trusted producer digest')
         saved = json.loads(data)
-        if saved['scope'] != scope_of(model) or saved['kind'] != kind:
+        if (not isinstance(saved, dict) or saved.get('scope') != scope_of(model) or saved.get('kind') != kind or
+                not isinstance(saved.get('assets'), dict)):
             raise ValueError('historical protocol, problem, operators, units or source differ')
         verified = {}
         for key, item in saved['assets'].items():
@@ -196,8 +199,10 @@ def complete(model, stability, costs, requests, method, assets):
     for key, (vector, reported) in directions.items():
         if new_actions >= budget:
             raise ValueError('plan exceeds allocated physical validation actions')
-        with costs.stage('target_evidence', column=key):
+        with costs.stage('target_evidence', column=key, vector_bytes=vector.nbytes, rhs_bytes=columns[key].nbytes,
+                         readout_bytes=sum(obs[o].nbytes for o in want[key])):
             result = check_direction(model, stability, vector, columns[key], {o: obs[o] for o in sorted(want[key])})
+        result['solution'] = vector.tolist()
         new_actions += result.get('extra_native_actions', 0)
         evidence[key] = result
         for o, projection in result['projections'].items():
@@ -215,12 +220,14 @@ def complete(model, stability, costs, requests, method, assets):
     retried = solve_or_retry(model, retry, costs, 'ordinary_refinement')
     for f, (vector, reported) in retried.items():
         use_reported = new_actions >= budget
-        with costs.stage('refinement_evidence', column=f, uses_solver_true_residual=use_reported):
+        with costs.stage('refinement_evidence', column=f, uses_solver_true_residual=use_reported,
+                         vector_bytes=vector.nbytes, rhs_bytes=fields[f].nbytes):
             result = check_direction(model, stability, vector, fields[f],
                                      {o: obs[o] for (field, o), row in initial.items()
                                       if field == f and row['status'] == 'refine'},
                                      measured_residual=reported if use_reported else None)
         new_actions += result.get('extra_native_actions', 0)
+        result['solution'] = vector.tolist()
         evidence['refine/' + f] = result
         final.update({(f, o): row for o, row in result['projections'].items()})
     decisions = [{'field': f, 'observable': o, 'initial': row, 'final': final.get((f, o), row)}
@@ -241,14 +248,30 @@ def main():
     p.add_argument('--kernel-cache', type=Path, required=True)
     args = p.parse_args()
     started = time.perf_counter()
-    args.out.mkdir(parents=True, exist_ok=False)
-    if file_hash(args.source_index) != args.source_sha256:
-        p.error('source index digest mismatch')
-    source = json.loads(args.source_index.read_bytes())
-    requests = [] if args.mode == 'history' else json.loads(args.requests.read_bytes())
-    if args.mode != 'history' and (not requests or len(set(map(tuple, requests))) != len(requests) or
-                                   not all(f in FIELD_IDS and o in OBSERVABLE_IDS for f, o in requests)):
-        p.error('completion requires distinct requests in the source protocol')
+    try:
+        raw_source = args.source_index.read_bytes()
+        if hashlib.sha256(raw_source).hexdigest() != args.source_sha256:
+            p.error('source index digest mismatch')
+        source = json.loads(raw_source)
+        if (not isinstance(source, dict) or not isinstance(source.get('rows'), list) or
+                not all(isinstance(r, dict) and isinstance(r.get('status'), str) for r in source['rows'])):
+            p.error('invalid source index rows')
+        names = [r['name'] for r in source['rows'] if r.get('name') is not None]
+        if not all(isinstance(n, str) for n in names) or len(set(names)) != len(names):
+            p.error('invalid or ambiguous source record IDs')
+        if args.record is not None and args.record not in names:
+            p.error('requested record is absent from source index')
+        requests = []
+        if args.mode != 'history':
+            if args.requests is None:
+                p.error('completion requires --requests')
+            requests = json.loads(args.requests.read_bytes())
+            if (not isinstance(requests, list) or not requests or
+                    not all(isinstance(r, list) and len(r) == 2 and r[0] in FIELD_IDS and r[1] in OBSERVABLE_IDS
+                            for r in requests) or len(set(map(tuple, requests))) != len(requests)):
+                p.error('completion requires distinct [field, observable] request pairs')
+    except (OSError, ValueError, UnicodeError) as error:
+        p.error(str(error))
     needs_history = args.mode in ('retained', 'mixed', 'quantized', 'unrated')
     prior, history_error = None, None
     if needs_history:
@@ -256,13 +279,24 @@ def main():
             p.error('a producer manifest and separate trusted digest are required')
         digest, filename = args.history
         path = Path(filename)
-        raw = path.read_bytes()
-        if hashlib.sha256(raw).hexdigest() != digest:
-            history_error = 'historical producer manifest digest mismatch'
-        else:
+        try:
+            raw = path.read_bytes()
+            if hashlib.sha256(raw).hexdigest() != digest:
+                raise ValueError('historical producer manifest digest mismatch')
             prior = json.loads(raw)
-            if prior['source_index_sha256'] != args.source_sha256 or prior['mode'] != 'history':
-                history_error = 'historical producer catalog differs'
+            if (not isinstance(prior, dict) or prior.get('source_index_sha256') != args.source_sha256 or
+                    prior.get('mode') != 'history' or not isinstance(prior.get('records'), list) or
+                    not all(isinstance(r, dict) and isinstance(r.get('name'), str) for r in prior['records'])):
+                raise ValueError('invalid producer manifest or different historical catalog')
+            ids = [r['name'] for r in prior['records']]
+            if len(set(ids)) != len(ids):
+                raise ValueError('ambiguous history record ID')
+        except (OSError, ValueError) as error:
+            history_error = error
+    try:
+        args.out.mkdir(parents=True, exist_ok=False)
+    except OSError as error:
+        p.error(str(error))
     records = []
     for row in source['rows']:
         name = row.get('name')
@@ -273,8 +307,6 @@ def main():
         try:
             if row['status'] != 'verified':
                 raise LookupError(row.get('error', 'source state unavailable'))
-            if history_error:
-                raise ValueError(history_error)
             meta, array = (args.source_index.parent / row[k] for k in ('metadata_file', 'array_file'))
             with costs.stage('source_hashes') as step:
                 step['bytes_read'] = meta.stat().st_size + array.stat().st_size
@@ -296,11 +328,19 @@ def main():
             else:
                 assets = {}
                 if needs_history:
-                    produced = next((r for r in prior['records'] if r['name'] == name), {})
-                    if not produced.get('files'):
-                        raise LookupError('no measured historical asset for this state')
                     kind = {'mixed': 'scalars', 'retained': 'vectors'}.get(args.mode, args.mode)
-                    assets = load_assets(path.parent, produced, kind, model, costs)
+                    try:
+                        if history_error:
+                            raise history_error
+                        produced = next((r for r in prior['records'] if r['name'] == name), {})
+                        if not produced.get('files'):
+                            raise LookupError('no measured historical asset for this state')
+                        assets = load_assets(path.parent, produced, kind, model, costs)
+                    except (OSError, KeyError, LookupError, TypeError, ValueError, OverflowError) as error:
+                        status = 'evidence_unavailable' if isinstance(error, (OSError, LookupError)) else 'reject'
+                        # Preserve independent ordinary requests when an external archive is unusable.
+                        keys = [f for f, _ in HISTORY] if kind == 'vectors' else [f + '/' + o for f, o in HISTORY]
+                        assets = {key: disposition(status, str(error)) for key in keys}
                 record['decisions'], record['directions'], record['validation_budget'] = complete(
                     model, stability, costs, requests, args.mode, assets)
             record['status'] = 'completed'
