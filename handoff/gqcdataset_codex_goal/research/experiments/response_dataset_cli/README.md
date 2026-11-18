@@ -1,6 +1,6 @@
 # 按输入清单补全 QM9 响应
 
-在仓库根目录使用 DUAL-001 的环境和固定源码。输入为 JSONL，一个对象请求一个标量。source 填写固定版本的 QM9 坐标文件元数据地址；record_id 接受整数 QM9 ID 或形如 qm9-000003 的名称。field 取 x/y/z，observable 取 q0/r2/zz。程序保留每条请求、单位、构型及文件散列、问题身份、原始诊断和发布值。可附 request_id 或 expected_problem_identity。每条输入均有输出，空行作为分隔符。默认的科学定义、基态与独立验收门槛见关联协议。[科学协议](../gqc_dual_response/protocol.md) · [首轮输入](first.jsonl) · [追加输入](append.jsonl)
+在仓库根目录使用 DUAL-001 的环境和固定源码。输入为 JSONL，一个对象请求一个标量。source 填写固定版本的 QM9 坐标文件元数据地址；record_id 接受整数 QM9 ID 或形如 qm9-000003 的名称。field 取 x/y/z，observable 取 q0/r2/zz。程序保留每条请求、单位、构型及文件散列、问题身份、原始诊断和发布值。可附 request_id 或 expected_problem_identity。每条输入均有输出，空行作为分隔符。当前默认使用 v2 独立参照；单列参照质量、候选误差及缺少基态的原因。[科学协议](../cphf_v2/protocol.md) · [首轮输入](first.jsonl) · [追加输入](append.jsonl)
 
 ```bash
 source .work/dual_response_env/bin/activate
@@ -11,7 +11,7 @@ python scripts/complete_response_dataset.py --requests "$examples/hit.jsonl" --c
 python scripts/complete_response_dataset.py --requests "$examples/append.jsonl" --cache-db .work/my_response.sqlite --out .work/response_append.json
 ```
 
-默认加载同一 QM9 固定发布的两套源／独立验收索引，覆盖全部 17 个已选 ID。首批 6 个和后续 11 个中，共有 12 个获得可用零场态。一次请求可混合两批，每条记录带有实际来源的索引摘要。显式传入 `--source-index` 和 `--oracle-index` 会只使用指定的一套，与早期版本相同。[首批来源](../qm9_response_assets/index.json) · [首批验收](../gqc_dual_response/summary.json) · [后续来源](../qm9_extension/assets/index.json) · [后续验收](../qm9_extension/oracle-index.json)
+默认加载同一 QM9 固定发布的两套源／独立验收索引，覆盖全部 17 个已选 ID。首批 6 个和后续 11 个中，共有 12 个获得可用零场态。一次请求可混合两批，每条记录带有实际来源的索引摘要。显式传入 `--source-index` 和 `--oracle-index` 会只使用指定的一套，与早期版本相同。[首批来源](../qm9_response_assets/index.json) · [首批 v2 验收](../cphf_v2/seed/index.json) · [后续来源](../qm9_extension/assets/index.json) · [后续 v2 验收](../cphf_v2/extension/index.json)
 
 请求文件也可由标准输入提供。输出文件以一次原子替换发布，out 取短横线可写到标准输出。全部请求通过时退出 0；部分参考态未取得、请求错误或科学拒绝时输出完整批报告并退出 1；全局参数或目录不可用时退出 2。数值资格由每个标量独立判断，暂缓发布项的 value 为 null，实测值及原因在 diagnostic。其他 QM9 ID 需先建立可核验的参考态和独立参照再加入来源索引。
 
@@ -21,7 +21,9 @@ SQLite 的每个科学身份绑定版本化来源、原结构 member/SHA、S/h/F
 
 每个分子在实际核验或求解前提交 started 收据。随后在 SQLite 写事务中重新读取当前命中项，同一事务提交合格标量、向量及 completed 收据。两个并发客户端会串行更新同一数据库；失败时回滚此分子的新状态，并给已发生的操作计费。异常终止可留下 started 状态，表示尚无已提交的终态。若数据库已提交而输出文件发布前进程退出，重试会复用已提交的数值。数据库和输出文件应置于支持 SQLite 文件锁与原子重命名的文件系统。
 
-## 小型实测
+旧版 CPHF 参照缺少实际残差与读出精度证据，显式使用旧参照时返回 oracle_unqualified。v2 目录摘要、逐分子参照摘要及科学身份保证 SQL 标量、向量和外部历史都按新资格处理。全队列实测中 37 个旧标量均未命中，12 个有态分子重算 108 个目标。随后重开 v2 库或在新库导入 v2 历史，108 项全部命中。[逐批回执与费用](../cphf_v2/cli/cache-replay.json)
+
+## v1 的历史小型实测
 
 使用提交 `eaa6def` 的入口启动 9 个独立 OS 进程。首轮 2 个不同水分子目标共享 1 个 RHS，共有 5 次准备和 18 次科学 J/K；同批重复项直接关联第一条结果。第二进程的纯标量命中没有构造 GQC 模型，准备和求解各为零。随后追加 x→zz 用 1 次物理残差复核，新增 RHS 为零。000010 的 x→zz 实际求解后因为独立 CPHF 门槛未通过而留空。注入的向量写失败发生在标量写入之后，两张科学表均回滚；新的独立进程重试后才产生合格标签。两个并发进程同时索取同一新标量，一份科学计算和一个来源 ID 服务了两次请求。验证结束时数据库完整性检查通过，留有 5 个合格标量、4 份向量存档、8 份完成与 1 份失败作业收据。[验证摘要](verification.json) · [9 份完整批输出](client-results.json.gz)
 
@@ -33,7 +35,7 @@ python "$examples/verify.py" --work .work/response_cli_replay
 
 ## 用已有标量补算响应
 
-指定历史文件或使用 `--decode-known-scalars` 时，默认 `--scalar-plan blocked`。程序根据每个读出真正可用的历史标量选择场组合，保留真残差和独立验收。若在类似负载上优先使用普通端点块，`--scalar-plan ordinary` 仍可读取历史精确命中，同时直接求缺项。要回放早期的全三轴分开对照，可指定 `--scalar-plan split-xyz`。[当前实验和适用范围](../partial_response_blocks/README.md)
+指定历史文件或使用 `--decode-known-scalars` 时，默认 `--scalar-plan blocked`。程序根据每个读出真正可用的历史标量选择场组合，保留真残差和独立验收。若在类似负载上优先使用普通端点块，`--scalar-plan ordinary` 仍可读取历史精确命中，同时直接求缺项。要回放早期的全三轴分开对照，可指定 `--scalar-plan split-xyz`。[当前实验和适用范围](../cphf_v2/cohort/README.md)
 
 在新数据库中可显式提供先前通过同一 CLI 真实计算的历史批结果和可信 SHA-256。本文示例的历史请求包含六个已知标量，第二份清单索取三个尚缺标量。每列是同一读出对三个场的线性响应。若 x、y、z 中的两个响应已经独立合格，可以求一次 (1,1,1) 组合电场，从该读出的合计中减去两项，取得第三项。GQC 为这个减法生成 FP64 CPU 程序。最初的固定三轴方案只接受三个配对目标。当前的单块方案适用于这套场和读出中的任意缺项；例如只存 y→q0 和 x→r2 时，x+y 一个方向就能服务 x→q0 和 y→r2。其余普通列可以与组合列同块。相同算符、原点、输入与容差下，手写相同减法可得到相同结果。程序对每个恢复值重新验收，若未通过，正常端点求解也会执行并计费。[历史输入](history.jsonl) · [新请求](diagonal.jsonl) · [14 个独立 CLI 进程的结果](history-verification.json)
 
@@ -71,7 +73,7 @@ python "$examples/verify_history.py" --work .work/response_cli_history_replay
 
 ## 两批记录共用一个入口
 
-以下请求同时读取两批中的合格、缺态和重复项。旧批次的 SQLite 科学身份键沿用其原始定义。单一来源时保留 v1 的顶层 source/oracle 摘要，跨批时在 catalogs 中列出各批明确包含的 ID 和各自的两个摘要；逐条输入／输出始终按记录路由。导入早期单批历史时读取原有两个摘要，导入混合批结果时核对逐条摘要及所在目录，再进行原科学身份与资格校验。[混合请求](both-catalogs.jsonl) · [11 个独立客户端结果](catalog-verification.json)
+以下请求同时读取两批中的合格、缺态和重复项。每个分子依照其来源目录和参照版本生成 SQLite 科学身份键。单一来源时保留 v1 的顶层 source/oracle 摘要，跨批时在 catalogs 中列出各批明确包含的 ID 和各自的两个摘要；逐条输入／输出始终按记录路由。导入早期单批历史时读取原有两个摘要，导入混合批结果时核对逐条摘要及所在目录，再进行原科学身份与资格校验。[混合请求](both-catalogs.jsonl) · [11 个独立客户端结果](catalog-verification.json)
 
 ```bash
 python scripts/complete_response_dataset.py --requests "$examples/both-catalogs.jsonl" \
@@ -80,7 +82,7 @@ python scripts/complete_response_dataset.py --requests "$examples/both-catalogs.
 
 初次执行在同一进程得到 000003 的 x 场首原子电荷导数 −1.457841087281 e/原子单位电场，以及 000005 的 z 场电子二阶矩导数 −0.253391138431 Bohr²/原子单位电场。两分子各解 1 个 RHS，准备各用 5 次 J/K，求解分别用 18、40 次 J/K。本次进程墙时 5.55 秒。另一条相同的 000003 请求直接关联原生产回执；000004 与 000009 缺少已验收基态，均保留在分母中。重开同一数据库及在新数据库导入该批合格历史，两次独立运行各为零模型启动、零 J/K。这些单次墙时仅反映该工作站上的实测。
 
-将旧版 `dbfde3e` 执行文件真实写出的 SQLite 缓存用新版重开，标量及原生产回执不变。使用 `eaa6def` 生成、摘要与已提交归档一致的历史文件时，首批请求直接命中，后续批仅为新分子求解。故意把混合历史中的首批行绑定到另一个来源摘要时，程序只拒绝该行，另一个批次仍可使用。对全部 17 个 ID 另外执行了不触发求解的身份核查，明确返回 12 个预期身份不符和 5 个基态不可用。显式指定来源批次及故意交叉两套 source/oracle 索引的行为均已检查。
+在 v1 的同参照兼容性实验中，将 `dbfde3e` 执行文件真实写出的 SQLite 缓存用当时新版重开，标量及原生产回执不变。使用 `eaa6def` 生成、摘要与已提交归档一致的历史文件时，首批请求直接命中，后续批仅为新分子求解。故意把混合历史中的首批行绑定到另一个来源摘要时，程序只拒绝该行，另一个批次仍可使用。对全部 17 个 ID 另外执行了不触发求解的身份核查，明确返回 12 个预期身份不符和 5 个基态不可用。显式指定来源批次及故意交叉两套 source/oracle 索引的行为均已检查。
 
 ```bash
 python "$examples/verify_catalogs.py" --work .work/response_cli_catalog_replay

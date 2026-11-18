@@ -3,7 +3,7 @@
   "prepared_on": "2026-11-18",
   "repository": "jinzhezenggroup/vibedataset",
   "goal_issue": 1,
-  "notice": "Issues created as an execution plan; no Codex run or scientific work is inferred.",
+  "notice": "Phase 1 issues 1–9 are historical. PR 10 follow-up acceptance and next-stage work are tracked in 11–15.",
   "issues": [
     {
       "key": "goal",
@@ -92,6 +92,58 @@
       "title": "[资料缺件] 原始 ZIP 与两份 PDF：待补齐并核对来源差异",
       "depends_on": [
         1
+      ],
+      "nonblocking": true
+    },
+    {
+      "key": "cphf_reference",
+      "number": 11,
+      "url": "https://github.com/jinzhezenggroup/vibedataset/issues/11",
+      "title": "[P1][PR #10] 核验独立 CPHF 参照的真实精度，重放 71 个仅因 CPHF 被拒绝的目标",
+      "depends_on": [
+        7
+      ],
+      "nonblocking": false
+    },
+    {
+      "key": "failure_costs",
+      "number": 12,
+      "url": "https://github.com/jinzhezenggroup/vibedataset/issues/12",
+      "title": "[P2][PR #10] 修复失败回执漏记 RHS、提交块和模型构造成本",
+      "depends_on": [
+        7
+      ],
+      "nonblocking": false
+    },
+    {
+      "key": "response_ci",
+      "number": 13,
+      "url": "https://github.com/jinzhezenggroup/vibedataset/issues/13",
+      "title": "[P2] 将现有归档验证接入 PR 检查，并建立独立的科学 CPU 回归入口",
+      "depends_on": [
+        11,
+        12
+      ],
+      "nonblocking": false
+    },
+    {
+      "key": "missing_target_evidence",
+      "number": 14,
+      "url": "https://github.com/jinzhezenggroup/vibedataset/issues/14",
+      "title": "[研究 P1] 验证无需预算完整目标真值的质量证据与补全接受规则",
+      "depends_on": [
+        11
+      ],
+      "nonblocking": true
+    },
+    {
+      "key": "asset_and_request_benefit",
+      "number": 15,
+      "url": "https://github.com/jinzhezenggroup/vibedataset/issues/15",
+      "title": "[研究 P2] 以真实资产、请求和强基线重验净收益，决定多组合场与存储策略",
+      "depends_on": [
+        11,
+        12
       ],
       "nonblocking": true
     }

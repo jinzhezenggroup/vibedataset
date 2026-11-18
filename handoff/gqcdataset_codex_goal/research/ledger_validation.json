@@ -1,15 +1,15 @@
 {
-  "checked_at_utc": "2026-11-17T22:05:17.918261+00:00",
+  "checked_at_utc": "2026-11-18T04:11:34.835136+00:00",
   "result": "passed",
   "coverage_counts": {
     "indexed": 268259,
-    "read": 23,
-    "behavior_traced": 88,
-    "executed": 46
+    "read": 24,
+    "behavior_traced": 90,
+    "executed": 48
   },
-  "reviewer_observations": 125,
-  "reviewed_paths": 119,
-  "unique_claims": 29,
+  "reviewer_observations": 129,
+  "reviewed_paths": 121,
+  "unique_claims": 30,
   "catalog_original_source_locations_blocked": 5,
   "release_archives": {
     "mlelec_materialscloud_v1": {
@@ -17,10 +17,10 @@
       "bytes_and_members_rechecked": true
     }
   },
-  "source_review_sha256": "c92e3090086dbf26a31cd10232c11e992faf50c9b5896a009ad33f45dbb5af19",
-  "claims_sha256": "c5ca8ea3964f54a8b6d2e5ded967934395dab4034ae07162752015e6e47b643c",
-  "source_lock_sha256": "d80d933f445aa6adfe5157de183552bdd6862d21ff6b3a902d6924586db5ae02",
-  "source_coverage_sha256": "ceef5affe590f85209e1e99a40dd3d7f83fba37ee9617a7df75ffa3d5807ca5c",
+  "source_review_sha256": "e6e7ad8c465158817311cebb026501da9d981da6b4e9db9f5840219a707afaf4",
+  "claims_sha256": "7600779462293ea60096bd8062ba0021ed68ac5db75ff4e0a4cdb0ce3e7f08d8",
+  "source_lock_sha256": "8a7b5270fb33af37fa322e35c2dc6474f27cf3152b6bb6a1fb9fa507b6d4bc06",
+  "source_coverage_sha256": "481378b9ef9725f4be7aa660860fd6a8cc0bfece74da1e35b76b14d75ee5e83a",
   "checks": [
     "inventory gzip and SHA256 round-trip",
     "lock vs checkout commit/tree and clean state",
@@ -32,20 +32,11 @@
     "catalog origin evidence and formal release archive inventories verified"
   ],
   "scope": "Ledger consistency only; no third-party behavior or numerical validation.",
-  "compressed_only_replay": {
-    "result": "identical",
-    "repository_commit": "5db48a1a6e8fa6da6e6f89687367caf501ccc851",
-    "git_inventories": 45,
-    "release_member_inventories": 1,
-    "local_uncompressed_inventories": 0,
-    "replay_validated_at_utc": "2026-11-17T22:03:35.733272+00:00",
-    "scope": "Separate checkout and compressed-only ledger rebuild, sharing verified third-party checkouts."
-  },
   "prior_evidence": {
-    "commit": "db97afd179bab1ab6ca06fefc69884dc86e8d014",
+    "commit": "faf93dd4a95d9a12ee06bdcf85040ecb38d9107b",
     "root_reviews": 45,
-    "file_observations": 124,
-    "claims": 28,
+    "file_observations": 125,
+    "claims": 29,
     "result": "preserved"
   }
 }

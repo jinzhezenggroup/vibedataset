@@ -428,9 +428,9 @@
       "external_dependency_closure": "pending; see SOURCE_GAPS.md",
       "evidence_status": {
         "indexed": true,
-        "files_read": 1,
-        "behavior_traced": 7,
-        "executed": 8
+        "files_read": 2,
+        "behavior_traced": 9,
+        "executed": 10
       }
     },
     {
@@ -3370,7 +3370,7 @@
       }
     }
   ],
-  "generated_at_utc": "2026-11-17T22:02:47.642888+00:00",
+  "generated_at_utc": "2026-11-18T04:10:14.516000+00:00",
   "catalog_origin_results": [
     {
       "id": "phisnet",
@@ -3640,8 +3640,8 @@
   "summary": {
     "repositories_indexed": 45,
     "files_indexed": 268259,
-    "files_read": 23,
-    "behavior_traced": 88,
-    "executed": 46
+    "files_read": 24,
+    "behavior_traced": 90,
+    "executed": 48
   }
 }

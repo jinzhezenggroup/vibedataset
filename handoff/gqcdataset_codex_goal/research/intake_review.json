@@ -2103,6 +2103,58 @@
       "module_role": "Shared block-Arnoldi basis, expansion and per-column true residual cost on joined partial scalar response panels",
       "evidence_paths": "research/audits/partial-response-blocks.md",
       "open_questions": "n5 job 2048 on one QM9 water reference. Applied native CPU FP64 kernels and attributed actions to fixed lines 1602 and 1642. This observation covers the blocked host branch and the reported cases."
+    },
+    {
+      "repository_id": "pyscf_2_14",
+      "path": "pyscf/scf/cphf.py",
+      "blob": "1c91b7d28898239c5acae79edc96f42401fb020e",
+      "reader": "Codex",
+      "read_at": "2026-11-18T04:10:14.516000+00:00",
+      "read": true,
+      "behavior_traced": true,
+      "executed": true,
+      "module_role": "Field-independent RHF solve_nos1 preconditions -h(ai) and returns a block Krylov solution without a physical residual receipt.",
+      "evidence_paths": "research/experiments/cphf_v2/README.md",
+      "open_questions": "Measured for three electric fields on the 12 available, fixed closed-shell states. No claim about general Krylov accuracy."
+    },
+    {
+      "repository_id": "pyscf_2_14",
+      "path": "pyscf/lib/linalg_helper.py",
+      "blob": "896eeabe756452a5f3bd50e74ba77ef0a6b872b5",
+      "reader": "Codex",
+      "read_at": "2026-11-18T04:10:14.516000+00:00",
+      "read": false,
+      "behavior_traced": true,
+      "executed": true,
+      "module_role": "krylov and block _qr use trial-norm squared thresholds. Measured finite solutions against an independent dense AO-integral equation.",
+      "evidence_paths": "research/experiments/cphf_v2/README.md",
+      "open_questions": "Measured for three electric fields on the 12 available, fixed closed-shell states. No claim about general Krylov accuracy."
+    },
+    {
+      "repository_id": "pyscf_2_14",
+      "path": "pyscf/lib/logger.py",
+      "blob": "655e9fa8117d324d6bb54ce68d200a4793b6f67f",
+      "reader": "Codex",
+      "read_at": "2026-11-18T04:10:14.516000+00:00",
+      "read": false,
+      "behavior_traced": true,
+      "executed": true,
+      "module_role": "new_logger returns an existing Logger unchanged, allowing the numeric trial norms emitted by the original Krylov kernel to be retained.",
+      "evidence_paths": "research/experiments/cphf_v2/README.md",
+      "open_questions": "Measured for three electric fields on the 12 available, fixed closed-shell states. No claim about general Krylov accuracy."
+    },
+    {
+      "repository_id": "pyscf_2_14",
+      "path": "pyscf/lib/test/test_linalg_helper.py",
+      "blob": "23994b1b146f25595bce5c7bc37ae37b468502e3",
+      "reader": "Codex",
+      "read_at": "2026-11-18T04:10:14.516000+00:00",
+      "read": false,
+      "behavior_traced": true,
+      "executed": true,
+      "module_role": "Ran the pinned Krylov multiple-root, zero RHS and level shift tests and inspected their reference tolerances.",
+      "evidence_paths": "research/experiments/cphf_v2/README.md",
+      "open_questions": "Measured for three electric fields on the 12 available, fixed closed-shell states. No claim about general Krylov accuracy."
     }
   ],
   "catalog_origin_reviews": {
@@ -2160,7 +2212,7 @@
       ]
     }
   },
-  "reconciled_at_utc": "2026-11-17T22:02:47.642888+00:00",
+  "reconciled_at_utc": "2026-11-18T04:10:14.516000+00:00",
   "release_archive_reviews": {
     "mlelec_materialscloud_v1": {
       "repository_id": "mlelec_materialscloud_v1",

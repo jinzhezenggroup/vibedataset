@@ -9,11 +9,11 @@
 3. 打开 [任务与依赖导航](handoff/gqcdataset_codex_goal/research/ISSUES.md) 及 [当前研究状态](handoff/gqcdataset_codex_goal/research/STATUS.md)。
 4. 获取完整可用源码并固定版本，再依据实现和测试证据推进路线比较、实现与科学验证。
 
-**总任务：[Goal #1](https://github.com/jinzhezenggroup/vibedataset/issues/1)。第一项执行任务：[#2 完整源码接管](https://github.com/jinzhezenggroup/vibedataset/issues/2)。** 后续依赖和验收已写入各 issue，当前共 9 个 issues。
+研究总目标和审查后的任务顺序见 [Goal #1](https://github.com/jinzhezenggroup/vibedataset/issues/1#issuecomment-6968146709)。PR #10 的本轮修订覆盖 #11–#13，下一阶段的质量证据和真实资产收益分别由 #14、#15 跟踪。[任务导航](handoff/gqcdataset_codex_goal/research/ISSUES.md)
 
 ## 已执行的补全工作
 
-项目已交付基于 GQC 科学编译器的分子响应补全工具。给定有来源的历史标量或已保存的响应向量，工具生成剩余物理求解，并记录每个结果的独立验收与实际计算量。n5 已建成持久环境并实算全部 17 个符合筛选规则的 QM9 分子，153 个新目标含 37 个可发布数值。外推同算子对照中，24 项恢复将后续 J/K 从 1,000 减为 518；发布路径的收益取决于实际已有的合格信息。[153 行派生数据](handoff/gqcdataset_codex_goal/research/experiments/qm9_extension/response-labels.jsonl) · [命令行与历史文件用法](handoff/gqcdataset_codex_goal/research/experiments/response_dataset_cli/README.md) · [研究结果与成本](handoff/gqcdataset_codex_goal/research/RESULTS.md) · [n5 环境](docs/N5_GQC.md)
+项目用有来源的历史标量或响应向量补全相同协议下的分子响应。17 个 QM9 候选对应 153 个唯一目标。用独立 AO 方程逐项验收后，108 项可发布，45 项保留缺基态的原因。在十个受控请求掩码上，普通块、已验收标量扣除、保留方向向量的后轮成本分别为 12,370、10,371、7,102 次 J/K。独立验收、历史生产与失败费用均可追溯。[v2 数据与精度](handoff/gqcdataset_codex_goal/research/experiments/cphf_v2/README.md) · [全部 153 项](handoff/gqcdataset_codex_goal/research/experiments/cphf_v2/response-labels.jsonl) · [命令行用法](handoff/gqcdataset_codex_goal/research/experiments/response_dataset_cli/README.md) · [研究结果与成本](handoff/gqcdataset_codex_goal/research/RESULTS.md)
 
 ## 材料入口
 
