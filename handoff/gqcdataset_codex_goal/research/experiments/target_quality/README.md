@@ -65,3 +65,5 @@ python scripts/check_target_quality_controls.py --out .work/target-quality-contr
 ```
 
 冻结版本 c6b183c6512f23106d96e6854bf8b9c12fac17f1 的两批均在相同单线程 CPU 配置、同一把性能任务锁下运行。开发探索、正式首批、正式留出和额外的独立 smoke 分别实际花费 1,794、1,838、5,984 和 353 次 GQC J/K，共 9,969 次。原生核、数据、估计函数、版本和每个阶段可从回执和提交定位。温控、系统缓存和跨运行耗时变化仍然存在。[开发探索](development-pilot.tar.gz) · [正式首批成本](seed/costs.csv) · [正式留出成本](holdout/costs.csv) · [独立 smoke](smoke.tar.gz)
+
+冻结后的 CLI 另行补齐缺参、畸形请求表、未知 ID 和损坏历史清单的输入处理。四个全局参数失败均返回 2，在启动科学计算之前退出。对无法读取或格式错误的历史清单，只拒绝或暂缓使用该历史的两个新请求，独立的 z→zz 正常发布。两次新分子检查另付 54 次 GQC J/K，本研究含这项输入回归的总成本为 10,023 次。该改动没有改变上述科学规则。复现使用 `python scripts/check_target_quality_inputs.py --work 新目录`。[入口控制的原始回执](input-controls.json.gz)
