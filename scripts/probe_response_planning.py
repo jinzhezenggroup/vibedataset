@@ -38,7 +38,8 @@ def scalar_identity(model):
         'problem': model.problem.identity, 'derivative_contract': model.contract_identity, 'source': model.source,
         'rhs': {g: {k: array_hash(v) for k, v in group.items()} for g, group in model.rhs_values.items()},
         'qualification': {'residual': GATE, 'analytic_absolute': ANALYTIC_TOL,
-                          'finite_field_absolute': FIELD_TOL, 'field_steps': STEPS},
+                          'finite_field_absolute': FIELD_TOL, 'field_steps': STEPS,
+                          'oracle_sha256': json_hash(model.oracle) if model.oracle is not None else None},
     })
 
 

@@ -173,13 +173,15 @@ def pack(work, failed, dest):
     metadata=json.loads((work/'protocol.json').read_bytes())
     packed=collect_journals(work)
     rows=[json.loads(l) for l in packed.splitlines()]
-    previous=collect_journals(failed)
-    pilot=pilot_receipt(failed,[json.loads(l) for l in previous.splitlines()])
     summary,rows_csv=derive(metadata,rows)
     require(len(rows_csv)==1200,'incomplete final cohort')
-    raw={'operations.jsonl.gz':gzip.compress(packed,mtime=0),'pilot-operations.jsonl.gz':gzip.compress(previous,mtime=0),
-         'pilot.json':pretty(pilot),'protocol.json':pretty(metadata),'timing.json':pretty(json.loads((work/'run.json').read_bytes())),
+    raw={'operations.jsonl.gz':gzip.compress(packed,mtime=0),
+         'protocol.json':pretty(metadata),'timing.json':pretty(json.loads((work/'run.json').read_bytes())),
          'summary.json':pretty(summary),'costs.csv.gz':gzip.compress(table(rows_csv),mtime=0)}
+    if failed is not None:
+        previous=collect_journals(failed)
+        pilot=pilot_receipt(failed,[json.loads(l) for l in previous.splitlines()])
+        raw.update({'pilot-operations.jsonl.gz':gzip.compress(previous,mtime=0),'pilot.json':pretty(pilot)})
     for name,data in raw.items():
         with (dest/name).open('xb') as f:
             f.write(data)
@@ -189,9 +191,10 @@ def pack(work, failed, dest):
                                                 for name in raw_names}))
 
 
-def oracle_for(setup):
+def oracle_for(setup, pinned=None):
     prov=setup['provenance']
-    paths=[EXP/folder/prov['oracle_file'] for folder in ('qm9_extension','gqc_dual_response')]
+    paths=([pinned] if pinned is not None else
+           [EXP/folder/prov['oracle_file'] for folder in ('qm9_extension','gqc_dual_response')])
     candidates=[p.read_bytes() for p in paths if p.is_file()]
     matches=[data for data in candidates if sha(data)==prov['oracle_sha256']]
     require(len(matches)==1,'exactly one pinned independent oracle per source')
@@ -214,12 +217,23 @@ def check_grade(row, ref, mode):
     if mode=='diagnostic':
         require(row['qualified'] is None and row['value'] is None and row['status']=='residual_verified','diagnostic published')
         return
+    if ref.get('status') == 'oracle_unqualified':
+        require(row['qualified'] is not True and row['value'] is None and row['status'] == 'oracle_unqualified',
+                'unqualified oracle produced a publication')
+        return
     errors={key:abs(raw-val) for key,val in [('direct',ref['direct']),('adjoint',ref['adjoint']),('cphf',ref['cphf']),
                     *ref['finite_fields'].items()] if isinstance(val,(int,float)) and math.isfinite(val)}
     bad=set(ref['reasons'])
     for key,delta in errors.items():
         if delta>(1e-4 if key in ref['finite_fields'] else 1e-8):
             bad.add(key)
+    if 'reference_precision' in ref:
+        precision = ref['reference_precision']
+        estimate = precision['readout_error_estimate']
+        require(0 <= precision['physical_residual_l2'] <= 1e-10 and 0 <= estimate <= 1e-9,
+                'CPHF reference precision')
+        if errors['cphf'] + estimate > 1e-8:
+            bad.add('cphf')
     require(len(errors)==5,'incomplete independent references')
     require(row['qualified']==(not bad) and set(row['reasons'])==bad,'wrong independent qualification')
     require(row['value']==(raw if not bad else None),'wrong public scalar')
@@ -241,26 +255,28 @@ def artifact(data,path,rec):
     return json.loads(raw)
 
 
-def verify(dest, scripts=None):
+def verify(dest, scripts=None, *, oracle_paths=None, expect_pilot=True):
     manifest=json.loads((dest/'manifest.json').read_bytes())
     for name,r in manifest.items():
         require(len((dest/name).read_bytes())==r['bytes'] and sha((dest/name).read_bytes())==r['sha256'],'manifest '+name)
     metadata=json.loads((dest/'protocol.json').read_bytes())
     rows=events(dest/'operations.jsonl.gz')
-    prem=events(dest/'pilot-operations.jsonl.gz')
     complete,failed=pairs(rows)
     require(not failed and len(complete)==1332,'complete final event set')
-    finished,rejected=pairs(prem)
-    pilot=json.loads((dest/'pilot.json').read_bytes())
-    require(len(rejected)==len(pilot['failed_calls'])==11,'pilot failures')
-    require(sum((r['setup']['counts'] if r['phase']=='setup' else r['counts'])['jk_calls'] for r in finished)==pilot['total_observed_completed_jk'],'pilot JK')
+    rejected=[]
+    if expect_pilot:
+        finished,rejected=pairs(events(dest/'pilot-operations.jsonl.gz'))
+        pilot=json.loads((dest/'pilot.json').read_bytes())
+        require(len(rejected)==len(pilot['failed_calls'])==11,'pilot failures')
+        require(sum((r['setup']['counts'] if r['phase']=='setup' else r['counts'])['jk_calls'] for r in finished)==pilot['total_observed_completed_jk'],'pilot JK')
     summary,cost_rows=derive(metadata,rows)
     require(summary==json.loads((dest/'summary.json').read_bytes()),'summary differs')
     require(gzip.decompress((dest/'costs.csv.gz').read_bytes())==table(cost_rows),'costs table differs')
     assets=read_assets(dest/'assets.tar.gz')
     require(len(assets)==1560,'persisted assets missing')
     setups={r['source']:r for r in complete if r['phase']=='setup'}
-    oracles={name:oracle_for(event) for name,event in setups.items()}
+    oracles={name:oracle_for(event, oracle_paths[name] if oracle_paths is not None else None)
+             for name,event in setups.items()}
     masks={n:([tuple(x) for x in history],[tuple(x) for x in missing]) for n,history,missing in metadata['masks']}
     history={}
     values={}
@@ -307,6 +323,7 @@ def verify(dest, scripts=None):
                         ref=oracles[name]['targets'][edge[0]][edge[1]]
                         if edge not in admitted:
                             require(bool(ref['reasons']) or any(abs(z['raw_value']-ref[tag])>1e-8 for tag in ('cphf','direct','adjoint')) or
+                                    abs(z['raw_value']-ref['cphf'])+ref.get('reference_precision',{}).get('readout_error_estimate',0)>1e-8 or
                                     any(abs(z['raw_value']-v)>1e-4 for v in ref['finite_fields'].values()),'qualified history was lost')
                             continue
                         check_grade(admitted[edge],ref,mode)

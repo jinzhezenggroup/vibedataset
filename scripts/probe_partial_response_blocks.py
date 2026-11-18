@@ -245,7 +245,7 @@ def measure_policy(model, oracle, identity, history, requests, mode, policy, pat
         if mode == 'diagnostic':
             require(row['qualified'] is None and row['value'] is None, 'unexpected diagnostic publication')
             assessment = assess_scalar(oracle, model.endpoint_identity,row['field'],row['observable'],row['raw_value'])
-            diagnostic_assessments.append({k:assessment[k] for k in ('field','observable','qualified','reasons')})
+            diagnostic_assessments.append({k:assessment[k] for k in ('field','observable','qualified','status','reasons')})
     t = time.perf_counter()
     publications = [r for r in result['results'] if mode == 'diagnostic' or r['qualified']]
     output = save_file(path/'out'/f'{mode}-{policy}.json',dumps(
@@ -308,14 +308,17 @@ def execute_source(arg):
             'elapsed_seconds':time.perf_counter()-start,'strategies':case_stats}
 
 
-def run(out, kernel, jobs):
+def run(out, kernel, jobs, oracle_indexes=None):
     import numpy, pyscf, scipy
     from complete_response_dataset import DEFAULT_CATALOGS, route_catalogs
     from gqc_dual_response import GQC_PIN
     out.mkdir(parents=True,exist_ok=False)
     kernel.mkdir(parents=True,exist_ok=True)
     start = time.perf_counter()
-    release, routes, _, catalogs = route_catalogs(DEFAULT_CATALOGS)
+    pairs = DEFAULT_CATALOGS
+    if oracle_indexes is not None:
+        pairs = [(source, oracle) for (source, _), oracle in zip(DEFAULT_CATALOGS, oracle_indexes, strict=True)]
+    release, routes, _, catalogs = route_catalogs(pairs)
     sources = {name:{'stratum':r[0]['stratum'],'status':r[0]['status'],'reason':r[0].get('error'),
                      'member_sha256':r[0]['member_sha256'],'catalog':r[-1]} for name,r in sorted(routes.items())}
     time_env = {k:os.environ.get(k) for k in ('OMP_NUM_THREADS','OPENBLAS_NUM_THREADS','MKL_NUM_THREADS')}
@@ -342,11 +345,13 @@ def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument('--out', required=True, type=Path)
     p.add_argument('--kernel-cache', required=True, type=Path)
+    p.add_argument('--oracle-indexes', nargs=2, type=Path, metavar=('SEED', 'EXTENSION'),
+                   help='pin both qualification catalogs for a versioned replay')
     p.add_argument('--jobs', type=int, default=1, help='independent single-threaded molecular workers')
     args = p.parse_args()
     if args.jobs < 1:
         p.error('--jobs must be positive')
-    run(args.out.resolve(), args.kernel_cache.resolve(), args.jobs)
+    run(args.out.resolve(), args.kernel_cache.resolve(), args.jobs, args.oracle_indexes)
 
 
 if __name__ == '__main__':
