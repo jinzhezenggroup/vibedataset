@@ -101,6 +101,8 @@ def archive(run):
         require(measured.read_bytes() == (EXP / 'cphf_v2' / name).read_bytes(), 'v2 archive differs: ' + name)
         migrations[name] = digest(measured)
     run.receipt['v2_migration_sha256'] = migrations
+    for batch in ('cohort', 'planning'):
+        run.python('cphf-v2-' + batch, EXP / 'cphf_v2' / batch / 'verify.py')
     # Exercise the same archived-summary entry point against a private damaged copy.
     raw = EXP / 'response_planning/raw'
     with tempfile.TemporaryDirectory(dir=run.out) as directory:
