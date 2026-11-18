@@ -1,5 +1,5 @@
 {
-  "checked_at_utc": "2026-11-18T04:56:11.102404+00:00",
+  "checked_at_utc": "2026-11-18T04:59:33.557187+00:00",
   "result": "passed",
   "coverage_counts": {
     "indexed": 268477,
@@ -14,7 +14,7 @@
   "release_archives": {
     "mlelec_materialscloud_v1": {
       "indexed_members": 1182,
-      "bytes_and_members_rechecked": false
+      "bytes_and_members_rechecked": true
     }
   },
   "source_review_sha256": "26f8fdb4ec258e33b042fa8e1fcb298317af82674a986e5ce97462c133912c3d",
@@ -32,6 +32,15 @@
     "catalog origin evidence and formal release archive inventories verified"
   ],
   "scope": "Ledger consistency only; no third-party behavior or numerical validation.",
+  "compressed_only_replay": {
+    "result": "identical",
+    "repository_commit": "3fe918a0aa32a0a8a9f4b5f8e4172f521c29eb21",
+    "git_inventories": 46,
+    "release_member_inventories": 1,
+    "local_uncompressed_inventories": 0,
+    "replay_validated_at_utc": "2026-11-18T04:57:47.248580+00:00",
+    "scope": "Separate checkout and compressed-only ledger rebuild, sharing verified third-party checkouts."
+  },
   "prior_evidence": {
     "commit": "b5359eba67e2215bcc0c050cd5d55500ac5ef265",
     "root_reviews": 45,
