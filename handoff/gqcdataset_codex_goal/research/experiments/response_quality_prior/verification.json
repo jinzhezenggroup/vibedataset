@@ -1,0 +1,20 @@
+{
+  "gqc_pin": "2791504cc238fe83d328fc1718080642b288222a",
+  "hardware": "Intel Core i7-1360P, local Linux CPU",
+  "imports": "pinned GQC python/ and root on PYTHONPATH; pyMOR imported from pinned src/",
+  "molecular_jk": 0,
+  "molecular_scf": 0,
+  "project_commit": "17951b0eebb301bdd4b077ca943774b065597fd8",
+  "pymor_command": "python handoff/gqcdataset_codex_goal/research/experiments/response_quality_prior/compare.py --out NEW",
+  "pymor_log_sha256_uncompressed": "a6a42b4bfd5242dbac8dd288cafa2e911e997ab18aef9d406aeb68e564c32700",
+  "pymor_pin": "36a0035e180694c7ad4eb8f083d9f1d65ceb6f42",
+  "pymor_report_sha256": "68277a8673ddd6e662a4c751b5424a169c8484e2319d198f70ca9eae8e8536db",
+  "pymor_wall_seconds": 0.78,
+  "pytest_command": "python -m pytest -q --import-mode=importlib -p no:cacheprovider _references/gqc/tests/python/test_accuracy_estimator.py _references/gqc/tests/python/test_accuracy.py::test_small_empirical_estimate_with_bad_conditioning_is_never_success _references/gqc/tests/python/test_response_krylov.py::test_block_solver_preserves_tiny_nonzero_rhs_and_indefinite_operator _references/gqc/tests/python/test_response_krylov.py::test_block_solver_reuses_last_true_residual_without_duplicate_actions",
+  "pytest_output": [
+    ".....................                                                    [100%]",
+    "21 passed in 0.64s"
+  ],
+  "pytest_wall_seconds": 0.96,
+  "threads": 1
+}
