@@ -19,8 +19,15 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--source', type=Path, help='exact file from the pinned quality commit')
     args = parser.parse_args()
-    raw = args.source.read_bytes() if args.source else subprocess.check_output(
-        ['git','show',PIN + ':scripts/target_response_quality.py'], cwd=ROOT)
+    if args.source:
+        raw = args.source.read_bytes()
+    else:
+        present = subprocess.run(['git', 'cat-file', '-e', PIN + '^{commit}'], cwd=ROOT,
+                                 stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        if present.returncode:
+            subprocess.run(['git', 'fetch', '--no-tags', '--depth=1',
+                            'https://github.com/jinzhezenggroup/vibedataset.git', PIN], cwd=ROOT, check=True)
+        raw = subprocess.check_output(['git', 'show', PIN + ':scripts/target_response_quality.py'], cwd=ROOT)
     if sha(raw) != DIGEST:
         raise ValueError('quality evidence source digest')
     sys.path.insert(0, str(ROOT/'scripts'))

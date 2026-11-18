@@ -103,6 +103,17 @@ def archive(run):
     run.receipt['v2_migration_sha256'] = migrations
     for batch in ('cohort', 'planning'):
         run.python('cphf-v2-' + batch, EXP / 'cphf_v2' / batch / 'verify.py')
+    for experiment in ('response_quality_prior', 'represented_matrix_bound', 'legacy_response_assets', 'response_benefit'):
+        run.python('check-' + experiment, EXP / experiment / 'verify.py')
+    run.python('dense-history-baseline', EXP / 'response_benefit/verify_dense.py')
+    for split in ('seed', 'holdout'):
+        published = EXP / 'target_quality' / split
+        score = run.out / (split + '-quality.json')
+        costs = score.with_suffix('.csv')
+        run.python('sealed-quality-' + split, SCRIPTS / 'score_target_quality.py',
+                   '--sealed', published, '--out', score, '--costs', costs, '--check-controls')
+        require(score.read_bytes() == (published / 'score.json').read_bytes() and
+                costs.read_bytes() == (published / 'costs.csv').read_bytes(), split + ' blind decisions or costs differ')
     # Exercise the same archived-summary entry point against a private damaged copy.
     raw = EXP / 'response_planning/raw'
     with tempfile.TemporaryDirectory(dir=run.out) as directory:
@@ -218,6 +229,15 @@ def science(run):
                           ('failure-costs', SCRIPTS / 'check_response_failure_receipts.py')]:
         run.python(label, script, '--work', run.out / label)
     run.python('cphf-controls', SCRIPTS / 'check_cphf_reference.py', '--out', run.out / 'cphf-controls')
+    run.python('output-quality-controls', SCRIPTS / 'check_target_quality_controls.py',
+               '--out', run.out / 'numerical-controls.json')
+    run.python('quality-inputs', SCRIPTS / 'check_target_quality_inputs.py', '--work', run.out / 'quality-inputs')
+    for label, filename in (('two-field-identities', 'check_algebra.py'), ('measured-operand-errors', 'check_quality_terms.py')):
+        run.python(label, EXP / 'response_benefit' / filename)
+    blind = run.out / 'blind-production'
+    run.python('blind-production', SCRIPTS / 'run_blind_target_quality.py', '--split', 'seed', '--smoke', '--out', blind)
+    run.python('independent-output-score', SCRIPTS / 'score_target_quality.py', '--sealed', blind / 'sealed',
+               '--out', run.out / 'blind-score.json', '--check-controls')
 
 
 def main():
