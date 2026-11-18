@@ -105,7 +105,8 @@ def assess_scalar(oracle, endpoint_identity, field, observable, value):
     ref = oracle['targets'][field][observable]
     evidence = ref.get('reference_precision')
     problems = cphf_reference.precision_reasons(oracle.get('schema'), evidence)
-    independent = {'cphf': ref.get('cphf'), **{str(h): ref['finite_fields'].get(str(h)) for h in STEPS}}
+    fields = {str(h): ref['finite_fields'].get(str(h)) for h in STEPS}
+    independent = {'cphf': ref.get('cphf'), **fields}
     problems.extend('missing or nonfinite ' + k for k, v in independent.items() if not finite(v))
     if ref.get('status') == 'oracle_unqualified':
         problems.extend(ref['reasons'] or ['independent reference unqualified'])
@@ -114,9 +115,9 @@ def assess_scalar(oracle, endpoint_identity, field, observable, value):
         return out
     reference_failures = list(ref['reasons'])
     comparable = {method: ref.get(method) for method in ('direct', 'adjoint', 'cphf')}
-    comparable.update({str(h): ref['finite_fields'].get(str(h)) for h in STEPS})
+    comparable.update(fields)
     errors = {method: abs(raw - float(expected)) for method, expected in comparable.items() if finite(expected)}
-    failed = [tag for tag, err in errors.items() if err > (FIELD_TOL if tag in ref['finite_fields'] else ANALYTIC_TOL)]
+    failed = [tag for tag, err in errors.items() if err > (FIELD_TOL if tag in fields else ANALYTIC_TOL)]
     if errors['cphf'] + evidence['readout_error_estimate'] > ANALYTIC_TOL:
         failed.append('cphf')
     failed.extend(f'missing or nonfinite {tag}' for tag, expected in comparable.items() if not finite(expected))

@@ -120,7 +120,8 @@ def run_pyscf(op, journal):
             _, p = relax(step * direction)
             _, m = relax(-step * direction)
             row = (p - m) / (2 * step) if p is not None and m is not None else None
-            slopes[str(step)].append(row.tolist() if row is not None else [None] * len(OBSERVABLE_IDS))
+            slopes[str(step)].append([float(v) if np.isfinite(v) else None for v in row]
+                                     if row is not None else [None] * len(OBSERVABLE_IDS))
     return {'integral_errors': integral_errors, 'zero_field_density_error': branch_error,
             'zero_field_energy_error': energy_error, 'cphf': analytical, 'cphf_solver': solver,
             'cphf_error': error, 'cphf_counts': dict(cphf_counts), 'scf': scf_rows, 'finite_fields': slopes}
@@ -158,6 +159,10 @@ def validate_case(meta_path, arrays_path, directory, *, expected_identity=None, 
             reasons.extend('missing ' + k for k, v in finite.items() if v is None)
             if reasons:
                 status = 'oracle_unqualified'
+            elif d[f, o] is None or a[f, o] is None:
+                reasons.extend('missing or nonfinite ' + label for label, value in
+                               (('direct', d[f, o]), ('adjoint', a[f, o])) if value is None)
+                status = 'response_rejected'
             else:
                 if abs(d[f, o] - a[f, o]) > ANALYTIC_TOL:
                     reasons.append('direct/adjoint disagreement')

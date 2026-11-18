@@ -136,7 +136,10 @@ def solve_reference(zero, eri, fields, observables, report, counts):
         u, _ = cphf.solve(potential, zero.mo_energy, zero.mo_occ, h, tol=tol, max_cycle=200, verbose=trace)
         if trace.norms:
             last = trace.norms[-1]
-            legacy['termination'] = 'trial norm below tolerance and/or QR truncation' if last < tol else 'linear dependence threshold'
+            if last == 0 and len(h) > 1:
+                legacy['termination'] = 'block QR retained no new directions'
+            else:
+                legacy['termination'] = 'trial norm below tolerance' if last < tol else 'linear dependence threshold'
         else:
             legacy['termination'] = 'initial trial space below threshold'
         legacy.update(inspect_solution(u))
