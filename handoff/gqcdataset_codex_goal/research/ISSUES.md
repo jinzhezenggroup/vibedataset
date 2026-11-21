@@ -1,6 +1,6 @@
 # Codex 任务导航
 
-创建日期：2026-11-18（Asia/Shanghai）。初轮为 #1–#9。PR #10 再评审的依据由 #11–#13 跟踪，#14、#15 进入后续研究。
+创建日期：2026-11-18（Asia/Shanghai）。初轮为 #1–#9。PR #10 的修订和自动检查对应 #11–#13，PR #16 的独立研究证据对应 #14、#15。
 
 | Issue | 工作与产物 | 依赖 |
 |---|---|---|
@@ -16,14 +16,14 @@
 | [#11 CPHF 独立资格](https://github.com/jinzhezenggroup/vibedataset/issues/11) | 108 个有态目标独立实算，153 项迁移、缓存失效、规划与成本重放。[证据](experiments/cphf_v2/README.md) | PR #10 的原始基态、参照和审查反例 |
 | [#12 失败费用](https://github.com/jinzhezenggroup/vibedataset/issues/12) | 构造、普通失败及双回退的 SQLite 与 JSON 回执，科学表回滚和重试。[回归](experiments/response_dataset_cli/failure_costs/verification.json) | 正常 CLI 与真实 SQLite |
 | [#13 PR 检查](https://github.com/jinzhezenggroup/vibedataset/issues/13) | 默认 PR 运行归档／代数及固定依赖的 CPU 科学回归，保留预期缺态和失败。[检查入口](../../../README.md#响应验证) | #11、#12 的版本化证据及控制 |
-| [#14 真实缺项的质量证据](https://github.com/jinzhezenggroup/vibedataset/issues/14) | 对规划器隐藏完整参照，比较接受／精修／拒绝、误接受与取得证据的成本 | #11 的评估基准 |
-| [#15 真实资产与请求的净收益](https://github.com/jinzhezenggroup/vibedataset/issues/15) | 遗留标量和在线留存分别评价，普通块、手写、单／双场、向量及预取公平比较 | #11、#12；生产净收益需 #14 的成本 |
+| [#14 真实缺项的质量证据](https://github.com/jinzhezenggroup/vibedataset/issues/14) | 源态隔离运行与两批封存独立评分，留出有态 24 项均通过，含真实精修、拒绝和全部费用。[研究证据](experiments/target_quality/README.md) | #11 的评估基准 |
+| [#15 真实资产与请求的净收益](https://github.com/jinzhezenggroup/vibedataset/issues/15) | 第三方档案逐项核查；普通、手写、单／双场、向量和稠密预取实测，附时间与存储区间。[资产](experiments/legacy_response_assets/README.md) · [实测](experiments/response_benefit/README.md) | #11、#12；生产净收益需 #14 的成本 |
 
 机器可读映射见 [ISSUES.json](ISSUES.json)。不要只凭序号判断工作已经就绪；每项 issue 的具体证据要求和当前输入决定下一步。
 
 ## 给 Codex 的启动指令
 
-读取根目录 AGENTS.md、交接 Goal 及当前状态，从各 issue 的验收证据接续。此次 PR 再评审核对 #11、#12 的修复和 #13 的提交检查。接下来的质量证据和强基线实验有各自的输入、预算、竞争解释及停止条件。[审查后的导航](https://github.com/jinzhezenggroup/vibedataset/issues/1#issuecomment-6968146709) · [后续研究决定](decisions/0003-independent-response-qualification.md)
+读取根目录 AGENTS.md、交接 Goal 及当前状态，从各 issue 的验收证据接续。此次 PR 再评审核对 #11、#12 的修复和 #13 的提交检查。后续两项研究已按预登记完成首个判别阶段。项目重启扩大范围的条件见[研究决定](decisions/0004-blind-evidence-and-asset-budgets.md)。[审查后的导航](https://github.com/jinzhezenggroup/vibedataset/issues/1#issuecomment-6968146709) · [后续研究决定](decisions/0003-independent-response-qualification.md)
 
 研究记录的路径以 `handoff/gqcdataset_codex_goal/` 为基准，第三方 checkout 默认位于仓库未跟踪的 `_references/`。不要把创建任务、获取文件或自动索引当成源码阅读/研究实验的完成。
 

@@ -1,15 +1,17 @@
 # gqcdataset 当前状态
 
-更新于 2026-11-18，工作分支 `codex/source-intake-20261118`。当前首要目标是用 GQC 科学编译器在同一精度和物理定义下减少补全数据所需的量化工作。数值异常单列输入、差值和命令，保留给用户向 GQC 项目反馈。[PR #10](https://github.com/jinzhezenggroup/vibedataset/pull/10) · [结果与全成本](RESULTS.md)
+更新于 2026-11-18。PR #10 的独立参照、失败账本和自动检查已具备复评证据。后续盲验与资产研究位于分支 `codex/response-quality-benefit-20261118`，通过单独 PR 接续。[PR #10](https://github.com/jinzhezenggroup/vibedataset/pull/10) · [PR #16](https://github.com/jinzhezenggroup/vibedataset/pull/16) · [结果与全成本](RESULTS.md)
 
 | 本轮产物 | 已核验的结果 |
 |---|---|
+| 盲验的目标质量 | 符合协议的留出分子有 24/33 个请求在完整真值封存时取得可审核的接受决定，独立评分全部通过，9 项缺态。量化历史触发 16 次精修；只知道旧值时保留 16 个依赖项的未知质量。[验收与费用](experiments/target_quality/README.md) |
+| 真实资产与强基线 | 公开 QM9、QCArchive、Psi4 与实际水表均经核查，范围内没有合格的第三方旧标量或自然请求。留出循环三目标的双场／手写后轮同为 824 次 J/K；当数值验收已组装稠密矩阵时，按需稠密解和预取都更有竞争力。[资产](experiments/legacy_response_assets/README.md) · [全成本](experiments/response_benefit/README.md) |
 | 独立 CPHF 及数据发布 | 对全部 12 份可用态重算直接／伴随、独立零场和两档正负场。153 项中 108 项通过、45 项缺态。原来仅因 CPHF 被拒的 71 项均有逐项证据。未预条件物理残差最大 3.61×10⁻¹⁵。[资格迁移](experiments/cphf_v2/migration.csv) · [新数据](experiments/cphf_v2/response-labels.jsonl) |
 | 部分已知标量的剩余程序 | 十种掩码中，普通块／标量方案的后轮 J/K 为 12,370／10,371，含共有历史生产为 21,287／19,288。保存方向向量的后轮为 7,102。原 v1 的 12,319 次属于旧资格。七个氨掩码仍有少一列却多一次 J/K 的反例。[逐策略与成本](experiments/cphf_v2/cohort/README.md) |
 | 既有标量与强基线 | 首批四份有态的三个对角请求合计 12 项，后轮 237→162 次 J/K；留出八份的 24 项为 1,000→518。留出保留方向向量时后轮 24 次，首轮预取全表后为零。首批稀疏流混合留存／预取为 206／237，密集为 516／237。[首批及留出重放](experiments/cphf_v2/planning/README.md) |
 | 缓存与失败 | 跨版本迁移重新计算 108 项，另开进程重取或从 v2 生产批导入时均为零新 RHS。模型构造中断、普通块失败及双重失败都有可复核的实际费用，科学表回滚、重试和重开均有进程级回归。[缓存迁移](experiments/cphf_v2/cli/cache-replay.json) · [失败回执](experiments/response_dataset_cli/failure_costs/verification.json) |
 | 可用算力与环境 | n2 作业 5381/5382 做过跨节点种子验证，n5 持久环境及作业 2044/2045 已交付 13 行通过的能量。n5 RTX 5090 在 2046/2047 中实算全部 17 个 QM9 分子，分别用 77 和 141 次 Fock；独立核验共保留 12 对参考态，其余五份的终态与成本均可追溯。[n5 环境](../../../docs/N5_GQC.md) · [2046](experiments/qm9_response_assets/job-2046.json) · [2047](experiments/qm9_extension/n5-job.json) |
-| 前人源码 | 45 个固定 Git 快照、268,259 条索引；129 条有证据的审读观察涉及 121 个文件。完整阅读标记 24 个，90 个有行为追踪，48 个含已执行路径。另有 Materials Cloud 正式归档 915 个文件、267 个目录，逐成员核对；五个原始实现位置仍缺。已有实现包括 Schofield 属性插补、QCManyBody、OpenMDAO/CppAD、pyMOR、PySCF 伴随和 mlelec 作者归档。[锁和源码索引](SOURCE_INDEX.md) · [审计矩阵](PRIOR_ART_MATRIX.md) · [核验](ledger_validation.json) |
+| 前人源码 | 46 个固定 Git 快照、268,477 条索引；141 条有证据的审读观察涉及 126 个文件。完整阅读标记 27 个，94 个有行为追踪，51 个含已执行路径。另有 Materials Cloud 正式归档 915 个文件、267 个目录，逐成员核对；五个原始实现位置仍缺。已有实现包括 Schofield 属性插补、QCManyBody、OpenMDAO/CppAD、pyMOR、PySCF 伴随和 mlelec 作者归档。[锁和源码索引](SOURCE_INDEX.md) · [审计矩阵](PRIOR_ART_MATRIX.md) · [核验](ledger_validation.json) |
 | 真实既有资产 | 已读取 13 份 QCFractal fixture、357 行 ANI 记录及学习/工作流工程。固定态后处理、真实缺失组合分量、统计预测和新耦合响应有独立的定义、正反例和成本记录。[资产](DATASET_ASSETS.md) · [总结果](RESULTS.md) |
 | 原交接材料 | 在用户本机找回 44 页历史讨论和 3 页矢量设计稿，两份已逐字节核对并与重建文本比较。用户已取消原 ZIP 的交付要求。[原件与对照](../attachments/README.md) |
 
@@ -29,6 +31,7 @@
 | #11 | 独立精度、两版本数据与缓存失效、十个掩码的重新计量已提交。[核验与费用](experiments/cphf_v2/README.md) |
 | #12 | 科学表和费用回执分别核验；117 个完成、2 个失败的旧尝试已按 ID 去重核查。[失败核查](experiments/response_dataset_cli/failure_costs/reviewed-archive.json) |
 | #13 | 归档一致性与实际分子 CPU 计算有独立入口、预期的拒绝控制和逐项原始报告。[检查与复现](experiments/response_ci/README.md) |
-| #14、#15 | 下一阶段先验证不读目标真值的质量证据，并按遗留标量和可保存向量两种资产条件比较净收益。[研究决定](decisions/0003-independent-response-qualification.md) |
+| #14 | 科学入口、精修/拒绝、近奇异反例、独立盲验、受控的严格离散界与密集强基线已实测。[生产与评分](experiments/target_quality/README.md) · [精确矩阵界](experiments/represented_matrix_bound/README.md) |
+| #15 | 完成资产、单／双场、最强手写和留存／预取的同质量比较，记录预算与停止条件。[实测](experiments/response_benefit/README.md) · [研究决定](decisions/0004-blind-evidence-and-asset-budgets.md) |
 
 这些数字来自受控三轴与三读出、固定的小分子协议。生产请求的自然到达分布、更大体系和不同物理算符的净收益尚未测量。数值差异供用户向 GQC 反馈，后续可以复用本轮协议、资产和输入输出。

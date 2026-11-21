@@ -479,6 +479,17 @@
         "Materials Cloud links a branch and does not identify the exact training Git SHA; separate archive driver and environment are locked by content.",
         "Model weights and ML training were not executed. Only molecular reference generator was executed from the release."
       ]
+    },
+    "dm_dp_surfaces": {
+      "root_tree_reviewed": true,
+      "reviewer": "Codex",
+      "reviewed_at_utc": "2026-11-18T04:44:31.912896+00:00",
+      "commit": "c7e355fd22eb0b66c2135f21601c5ea0709ac6c2",
+      "review_scope": "Verified all 218 tracked blobs, 216 NPY arrays, script and README; no LFS pointers or gitlinks. Per-file grid metadata and actual consumer reads are recorded in the legacy asset experiment.",
+      "license_note": "No license, COPYING or permission statement located in the selected tree. Full upstream bytes remain in the third-party checkout.",
+      "known_gaps": [
+        "HF/aug-cc-pVTZ and PBE0/aug-cc-pVTZ were specified by the author. No per-point electronic-structure solver, response-quality certificate, paper-specific SHA or demand history was identified."
+      ]
     }
   },
   "file_reading": [
@@ -2155,6 +2166,162 @@
       "module_role": "Ran the pinned Krylov multiple-root, zero RHS and level shift tests and inspected their reference tolerances.",
       "evidence_paths": "research/experiments/cphf_v2/README.md",
       "open_questions": "Measured for three electric fields on the 12 available, fixed closed-shell states. No claim about general Krylov accuracy."
+    },
+    {
+      "repository_id": "dm_dp_surfaces",
+      "path": "README.md",
+      "blob": "fe87e337eb7edbacb87d577d9193d514017e7e41",
+      "reader": "Codex",
+      "read_at": "2026-11-18T04:44:31.912896+00:00",
+      "read": true,
+      "behavior_traced": false,
+      "executed": false,
+      "module_role": "Author model and basis declarations for distributed water properties.",
+      "evidence_paths": "research/experiments/legacy_response_assets/README.md",
+      "open_questions": "Scope is the pinned code, declared model and worked controls in the linked report."
+    },
+    {
+      "repository_id": "dm_dp_surfaces",
+      "path": "interpolate_dp_dm.py",
+      "blob": "64b110a075e6107c79e373edf7271a142683d1b3",
+      "reader": "Codex",
+      "read_at": "2026-11-18T04:44:31.912896+00:00",
+      "read": true,
+      "behavior_traced": true,
+      "executed": true,
+      "module_role": "Read get_dp/get_dm and execute get_dp; grid layout, symmetric distributed response packing, interpolation and five-place export.",
+      "evidence_paths": "research/experiments/legacy_response_assets/README.md",
+      "open_questions": "Scope is the pinned code, declared model and worked controls in the linked report."
+    },
+    {
+      "repository_id": "gqc",
+      "path": "python/generativeqc/accuracy.py",
+      "blob": "1ce2dffe7ce7bfbb6263315ad956965e91418d29",
+      "reader": "Codex",
+      "read_at": "2026-11-18T04:44:31.912896+00:00",
+      "read": false,
+      "behavior_traced": true,
+      "executed": true,
+      "module_role": "ErrorEvidence and AccuracyAssessment distinguish observed, unavailable, empirical and certified evidence.",
+      "evidence_paths": "research/audits/response-target-evidence.md",
+      "open_questions": "Scope is the pinned code, declared model and worked controls in the linked report."
+    },
+    {
+      "repository_id": "gqc",
+      "path": "python/generativeqc/accuracy_estimator.py",
+      "blob": "5ed7be6013d26386b4535d9b4f034b2200cfedae",
+      "reader": "Codex",
+      "read_at": "2026-11-18T04:44:31.912896+00:00",
+      "read": false,
+      "behavior_traced": true,
+      "executed": true,
+      "module_role": "Calibrated HF energy/force envelope is gated by its fitted scope, linked to training evidence, and scored on held-out families.",
+      "evidence_paths": "research/audits/response-target-evidence.md",
+      "open_questions": "Scope is the pinned code, declared model and worked controls in the linked report."
+    },
+    {
+      "repository_id": "gqc",
+      "path": "python/generativeqc/response_solver.py",
+      "blob": "439f94dec3b09da511c856ccb0502f6847d6fb7d",
+      "reader": "Codex",
+      "read_at": "2026-11-18T04:44:31.912896+00:00",
+      "read": false,
+      "behavior_traced": true,
+      "executed": true,
+      "module_role": "Block solver absolute/relative residual and counted final native actions are distinct from observable error.",
+      "evidence_paths": "research/audits/response-target-evidence.md",
+      "open_questions": "Scope is the pinned code, declared model and worked controls in the linked report."
+    },
+    {
+      "repository_id": "gqc",
+      "path": "tests/python/test_accuracy_estimator.py",
+      "blob": "9abae22c3946238ac6093210a371590c5db89bf3",
+      "reader": "Codex",
+      "read_at": "2026-11-18T04:44:31.912896+00:00",
+      "read": true,
+      "behavior_traced": true,
+      "executed": true,
+      "module_role": "Executed the estimator tests for out-of-domain inputs, empirical status, corrupted records, and evaluation leakage.",
+      "evidence_paths": "research/audits/response-target-evidence.md",
+      "open_questions": "Scope is the pinned code, declared model and worked controls in the linked report."
+    },
+    {
+      "repository_id": "gqc",
+      "path": "tests/python/test_accuracy.py",
+      "blob": "422ff44c6278c78abd0bd7d74a136467bc2d7d61",
+      "reader": "Codex",
+      "read_at": "2026-11-18T04:44:31.912896+00:00",
+      "read": false,
+      "behavior_traced": true,
+      "executed": true,
+      "module_role": "Executed the bad conditioning/small empirical estimate test.",
+      "evidence_paths": "research/audits/response-target-evidence.md",
+      "open_questions": "Scope is the pinned code, declared model and worked controls in the linked report."
+    },
+    {
+      "repository_id": "gqc",
+      "path": "tests/python/test_response_krylov.py",
+      "blob": "37c5c2a76850623413beb0459d90cf6ccef155e0",
+      "reader": "Codex",
+      "read_at": "2026-11-18T04:44:31.912896+00:00",
+      "read": false,
+      "behavior_traced": true,
+      "executed": true,
+      "module_role": "Executed the small RHS/indefinite system and reuse of the final true residual controls.",
+      "evidence_paths": "research/audits/response-target-evidence.md",
+      "open_questions": "Scope is the pinned code, declared model and worked controls in the linked report."
+    },
+    {
+      "repository_id": "pymor_2026_1",
+      "path": "src/pymor/reductors/dwr.py",
+      "blob": "5fda899154eade23ad9e76dc8c207f49ec198afd",
+      "reader": "Codex",
+      "read_at": "2026-11-18T04:44:31.912896+00:00",
+      "read": false,
+      "behavior_traced": true,
+      "executed": true,
+      "module_role": "Computed primal-dual corrections and estimates at calibrated/invalid stability inputs in a nearly singular represented operator.",
+      "evidence_paths": "research/audits/response-target-evidence.md",
+      "open_questions": "Scope is the pinned code, declared model and worked controls in the linked report."
+    },
+    {
+      "repository_id": "pymor_2026_1",
+      "path": "src/pymor/reductors/coercive.py",
+      "blob": "48d0c2f80252fbc000b7ebe320c09f1c1725a2dc",
+      "reader": "Codex",
+      "read_at": "2026-11-18T04:44:31.912896+00:00",
+      "read": false,
+      "behavior_traced": true,
+      "executed": true,
+      "module_role": "Primal residual division by supplied coercivity functional; checked in all four output controls.",
+      "evidence_paths": "research/audits/response-target-evidence.md",
+      "open_questions": "Scope is the pinned code, declared model and worked controls in the linked report."
+    },
+    {
+      "repository_id": "psi4_1_10",
+      "path": "psi4/driver/procrouting/response/scf_response.py",
+      "blob": "19f79d847af9e0e45a07b66b58b37db741bdbd81",
+      "reader": "Codex",
+      "read_at": "2026-11-18T04:44:31.912896+00:00",
+      "read": false,
+      "behavior_traced": true,
+      "executed": false,
+      "module_role": "Checked whether external SCF property tests construct mixed or like-operator response matrices.",
+      "evidence_paths": "research/experiments/legacy_response_assets/README.md",
+      "open_questions": "Scope is the pinned code, declared model and worked controls in the linked report."
+    },
+    {
+      "repository_id": "qcfractal",
+      "path": "qcfractal/qcfractal/components/singlepoint/routes.py",
+      "blob": "d4a0bcb333055db8fc0cf61f64e5a74d978a01d0",
+      "reader": "Codex",
+      "read_at": "2026-11-18T04:44:31.912896+00:00",
+      "read": false,
+      "behavior_traced": true,
+      "executed": false,
+      "module_role": "Inspected public record-detail and wavefunction API behavior; the remote service version is separately identified.",
+      "evidence_paths": "research/experiments/legacy_response_assets/README.md",
+      "open_questions": "Scope is the pinned code, declared model and worked controls in the linked report."
     }
   ],
   "catalog_origin_reviews": {
@@ -2212,7 +2379,7 @@
       ]
     }
   },
-  "reconciled_at_utc": "2026-11-18T04:10:14.516000+00:00",
+  "reconciled_at_utc": "2026-11-18T04:44:31.912896+00:00",
   "release_archive_reviews": {
     "mlelec_materialscloud_v1": {
       "repository_id": "mlelec_materialscloud_v1",

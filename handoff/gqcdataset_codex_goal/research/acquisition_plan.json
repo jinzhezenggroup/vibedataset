@@ -578,6 +578,17 @@
       "checkout_path": "_references/pymor_2026_1",
       "paper_version_status": "2026.1.1 release implementation of DWRCoerciveRBReductor, not claimed to be the original 2017 reference code.",
       "selection_reason": "Dual-weighted residual output functional, paired primal/dual reduced bases, and qualified output error estimator for coercive linear systems. Direct prior on archived projected response and target precision."
+    },
+    {
+      "id": "dm_dp_surfaces",
+      "catalog_ids": [],
+      "priority": "P0",
+      "repository_url": "https://github.com/kmherman/dm-dp-surfaces",
+      "role": "author_release",
+      "commit": "c7e355fd22eb0b66c2135f21601c5ea0709ac6c2",
+      "checkout_path": "_references/dm_dp_surfaces",
+      "paper_version_status": "Author repository at the fixed commit. No paper-specific release commit or electronic-structure producer verified.",
+      "selection_reason": "Published water distributed dipole–quadrupole response arrays and their interpolation/export consumer; direct legacy-asset and precision comparator for issue 15."
     }
   ],
   "release_archives": [

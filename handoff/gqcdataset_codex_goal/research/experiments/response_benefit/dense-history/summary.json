@@ -1,0 +1,12 @@
+{
+  "actual_auxiliary_dense_rhs": 240,
+  "actual_auxiliary_jk": 360,
+  "blind_seconds": 25.492977816989878,
+  "dense_historical_values_scored": 240,
+  "dense_history_batches": 96,
+  "reused_marginal_history_input_bytes": 0,
+  "shared_marginals": 144,
+  "sources": 17,
+  "supplemental_first_rounds_have_separate_timing": true,
+  "with_state": 12
+}

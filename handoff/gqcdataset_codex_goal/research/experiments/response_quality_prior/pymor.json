@@ -1,0 +1,97 @@
+{
+  "basis_order": "e1,e2,e3",
+  "cases": [
+    {
+      "accepted": false,
+      "dual_basis": "unresolved_output_mode",
+      "dwr_estimate": 0.25,
+      "error": 0.25,
+      "evaluate_seconds": 0.003711683995788917,
+      "false_accept": false,
+      "q_corrected": 0.0,
+      "reduction_seconds": 0.013375045004067943,
+      "supplied_alpha": 1.1641532182693481e-10
+    },
+    {
+      "accepted": true,
+      "dual_basis": "unresolved_output_mode",
+      "dwr_estimate": 2.9103830456733704e-11,
+      "error": 0.25,
+      "evaluate_seconds": 0.000589025003137067,
+      "false_accept": true,
+      "q_corrected": 0.0,
+      "reduction_seconds": 0.0034100000048056245,
+      "supplied_alpha": 1.0
+    },
+    {
+      "accepted": true,
+      "dual_basis": "resolved_output_mode",
+      "dwr_estimate": 0.0,
+      "error": 0.0,
+      "evaluate_seconds": 0.0004912950098514557,
+      "false_accept": false,
+      "q_corrected": 0.25,
+      "reduction_seconds": 0.003662222996354103,
+      "supplied_alpha": 1.1641532182693481e-10
+    },
+    {
+      "accepted": true,
+      "dual_basis": "resolved_output_mode",
+      "dwr_estimate": 0.0,
+      "error": 0.0,
+      "evaluate_seconds": 0.000513920997036621,
+      "false_accept": false,
+      "q_corrected": 0.25,
+      "reduction_seconds": 0.002863881003577262,
+      "supplied_alpha": 1.0
+    }
+  ],
+  "code_sha256": "9bd42a50fa283a79a5bd10cefaabac32bbfd507cf3e03a606e79d7ace1bc912b",
+  "exact_target": "1/4",
+  "matrix": [
+    [
+      1.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      1.1641532182693481e-10,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      2.0
+    ]
+  ],
+  "numpy": "2.5.5",
+  "pymor": "2026.1.1",
+  "pymor_commit": "36a0035e180694c7ad4eb8f083d9f1d65ceb6f42",
+  "python": "3.13.16",
+  "readout": [
+    0.0,
+    1.0,
+    0.0
+  ],
+  "represented_exact_minimum": "1/8589934592",
+  "residual_only": {
+    "accepted": true,
+    "candidate": 0.0,
+    "observed_error": 0.25,
+    "physical_residual": 2.9103830456733704e-11,
+    "residual_gate": 1e-10
+  },
+  "rhs": [
+    1.0,
+    2.9103830456733704e-11,
+    0.0
+  ],
+  "scipy": "1.18.1",
+  "threads": {
+    "MKL_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1"
+  },
+  "tolerance": 1e-08
+}

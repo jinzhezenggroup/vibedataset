@@ -103,7 +103,9 @@
       "depends_on": [
         7
       ],
-      "nonblocking": false
+      "nonblocking": false,
+      "review_pr": 10,
+      "evidence": "experiments/cphf_v2/README.md"
     },
     {
       "key": "failure_costs",
@@ -113,7 +115,9 @@
       "depends_on": [
         7
       ],
-      "nonblocking": false
+      "nonblocking": false,
+      "review_pr": 10,
+      "evidence": "experiments/response_dataset_cli/failure_costs/verification.json"
     },
     {
       "key": "response_ci",
@@ -124,7 +128,9 @@
         11,
         12
       ],
-      "nonblocking": false
+      "nonblocking": false,
+      "review_pr": 10,
+      "evidence": "experiments/response_ci/README.md"
     },
     {
       "key": "missing_target_evidence",
@@ -134,7 +140,9 @@
       "depends_on": [
         11
       ],
-      "nonblocking": true
+      "nonblocking": true,
+      "review_pr": 16,
+      "evidence": "experiments/target_quality/README.md"
     },
     {
       "key": "asset_and_request_benefit",
@@ -145,7 +153,9 @@
         11,
         12
       ],
-      "nonblocking": true
+      "nonblocking": true,
+      "review_pr": 16,
+      "evidence": "experiments/response_benefit/README.md"
     }
   ]
 }

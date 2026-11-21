@@ -1,6 +1,8 @@
 # 固定源码与论文归档索引
 
-本轮固定 45 个 Git 根快照，含初始化子模块，共 268,259 个文件。xTBloom 保留完整可达历史和标签，其余 44 棵固定树采用浅克隆。129 条人工观察覆盖 121 个不同的 Git 文件。其中 24 个明确为已通读，90 个有行为追踪，48 个参与实跑，这三个集合可以重叠。所有未审读行也在覆盖表中。30 条主张可按固定路径与证据范围逐项复查。[逐文件覆盖](source_coverage.csv) · [人工观察](intake_review.json) · [主张表](claims.csv)
+本轮固定 46 个 Git 根快照，含初始化子模块，共 268,477 个文件。xTBloom 保留完整可达历史和标签，其余 45 棵固定树采用浅克隆。141 条人工观察覆盖 126 个不同的 Git 文件。其中 27 个明确为已通读，94 个有行为追踪，51 个参与实跑，这三个集合可以重叠。所有未审读行也在覆盖表中。34 条主张可按固定路径与证据范围逐项复查。[逐文件覆盖](source_coverage.csv) · [人工观察](intake_review.json) · [主张表](claims.csv)
+
+TQ-001、TQ-PRIOR-001 与 PLAN-005 把实际目标误差估计、原作者 DWR 对照和单／双场实测分别绑定到科学输入及固定实现。作者水表的 216 份 NPY 和消费源码有逐文件身份与外部许可记录，数值审查保存在资产清单中。[误差对照](audits/response-target-evidence.md) · [资产与数值覆盖](experiments/legacy_response_assets/README.md)
 
 CPHF-002 追踪固定 PySCF 的 Krylov 停止、块 QR 与日志路径，并运行三个上游 Krylov 测试。新的分子对照使用独立 AO 积分、实测残差、读出误差估计和双步长有限场。[源码及分子证据](experiments/cphf_v2/README.md)
 
@@ -55,6 +57,7 @@ PLAN-004 将同一上游求解器的早期观察与 n5 作业 2048 的新行为�
 | openmdao_3_45_2 | release_source | [64175aa55fb5](https://github.com/OpenMDAO/OpenMDAO/tree/64175aa55fb541355b2fb279a6bcfde01e17a878) | 1,239 | acquired |
 | cppad_2026 | release_source | [5d51b2aa6d68](https://github.com/coin-or/CppAD/tree/5d51b2aa6d6874c8d561da298a90b3721550d45d) | 1,473 | acquired |
 | pymor_2026_1 | release_source | [36a0035e1806](https://github.com/pymor/pymor/tree/36a0035e180694c7ad4eb8f083d9f1d65ceb6f42) | 518 | acquired |
+| dm_dp_surfaces | author_release | [c7e355fd22eb](https://github.com/kmherman/dm-dp-surfaces/tree/c7e355fd22eb0b66c2135f21601c5ea0709ac6c2) | 218 | acquired |
 
 AIRS 的 QHNet 和 QH9 共用同一树。GQC、PySCF、Psi4 的独立发行版与当前开发树各自列出。dm-PhiSNet 第一作者历史树早于论文；CasNet 的 PhiSNet fork 与 DelFTa v1.0.0 各为后续应用。六个起始目录无明确仓库 URL 的条目已逐项核查，其中五个原始软件位置仍待获取。[版本角色与具体缺件](SOURCE_GAPS.md) · [六项原始来源](audits/intake-originals.md)
 
@@ -76,10 +79,10 @@ AIRS 的 QHNet 和 QH9 共用同一树。GQC、PySCF、Psi4 的独立发行版�
 
 | #2 验收范围 | 可核查的结果 |
 |---|---|
-| 版本、用途、访问阻塞及继续处理方式 | 45 棵 Git 树逐项固定 SHA 与角色，正式归档锁定 DOI、版本、文件哈希；六项旧目录分别标明作者历史版本、衍生项目和原始缺件。[来源缺口](SOURCE_GAPS.md) |
+| 版本、用途、访问阻塞及继续处理方式 | 46 棵 Git 树逐项固定 SHA 与角色，正式归档锁定 DOI、版本、文件哈希；六项旧目录分别标明作者历史版本、衍生项目和原始缺件。[来源缺口](SOURCE_GAPS.md) |
 | 取得范围与可重做的完整性检查 | 各 Git 树列文件、模式、对象、子模块及 LFS 状态；外部权重、训练输入、数据服务与程序依赖另有具体缺件。正式归档对 915 份普通文件逐一记录哈希。[版本锁](sources.lock.json) |
 | 获取、索引、阅读、追踪与运行独立记账 | Git 文件与归档成员使用各自的字节身份。重复审读观察保留各自时间与证据，未读文件也在完整库存内。[人工记录](intake_review.json) · [逐文件表](source_coverage.csv) |
-| 后续审计可定位确定版本，缺口持续跟踪 | 30 条主张的固定 Git 源文件或正式归档成员路径均已解析。作者历史源码的论文对应、五项原始代码位置和外部资产可继续核实。[主张](claims.csv) · [遗留缺件](SOURCE_GAPS.md) |
+| 后续审计可定位确定版本，缺口持续跟踪 | 34 条主张的固定 Git 源文件或正式归档成员路径均已解析。作者历史源码的论文对应、五项原始代码位置和外部资产可继续核实。[主张](claims.csv) · [遗留缺件](SOURCE_GAPS.md) |
 
 ## 重放中央台账
 
@@ -97,7 +100,7 @@ python3 handoff/gqcdataset_codex_goal/tools/verify_source_ledger.py \
   --archive mlelec_materialscloud_v1 "$MATERIALSCLOUD_ARCHIVE"
 ```
 
-独立重放新建一个 Git checkout，仅复用已核验的第三方源码树。工作机的未压缩库存没有进入该 checkout。以下命令重新生成发布锁和覆盖表，逐字节比较审读记录、主张、锁、覆盖表及每份压缩库存，并把比较结果写入当前工作区的核验回执。选项 `--preserve-from` 此次核对上一轮固定提交中的 45 个根审查、125 条文件观察、29 条主张。前一版的保留检查同样可以复查。[前一版回执](https://github.com/jinzhezenggroup/vibedataset/blob/faf93dd4a95d9a12ee06bdcf85040ecb38d9107b/handoff/gqcdataset_codex_goal/research/ledger_validation.json)
+独立重放新建一个 Git checkout，仅复用已核验的第三方源码树。工作机的未压缩库存没有进入该 checkout。以下命令重新生成发布锁和覆盖表，逐字节比较审读记录、主张、锁、覆盖表及每份压缩库存，并把比较结果写入当前工作区的核验回执。选项 `--preserve-from` 此次核对上一轮固定提交中的 45 个根审查、129 条文件观察、30 条主张。前一版的保留检查同样可以复查。[前一版回执](https://github.com/jinzhezenggroup/vibedataset/blob/b5359eba67e2215bcc0c050cd5d55500ac5ef265/handoff/gqcdataset_codex_goal/research/ledger_validation.json)
 
 ```bash
 ledger_replay=$(mktemp -d)
@@ -111,5 +114,5 @@ ln -s "$PWD/_references" "$ledger_replay/_references"
 )
 python3 handoff/gqcdataset_codex_goal/tools/verify_source_ledger.py \
   --archive mlelec_materialscloud_v1 "$MATERIALSCLOUD_ARCHIVE" --compare-replay "$ledger_replay" \
-  --preserve-from faf93dd4a95d9a12ee06bdcf85040ecb38d9107b
+  --preserve-from b5359eba67e2215bcc0c050cd5d55500ac5ef265
 ```

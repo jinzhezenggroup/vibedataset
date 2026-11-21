@@ -97,9 +97,9 @@
       "external_dependency_closure": "pending; see SOURCE_GAPS.md",
       "evidence_status": {
         "indexed": true,
-        "files_read": 7,
-        "behavior_traced": 16,
-        "executed": 16
+        "files_read": 8,
+        "behavior_traced": 18,
+        "executed": 18
       }
     },
     {
@@ -796,7 +796,7 @@
       "evidence_status": {
         "indexed": true,
         "files_read": 1,
-        "behavior_traced": 3,
+        "behavior_traced": 4,
         "executed": 0
       }
     },
@@ -3368,9 +3368,68 @@
         "behavior_traced": 3,
         "executed": 3
       }
+    },
+    {
+      "id": "dm_dp_surfaces",
+      "catalog_ids": [],
+      "priority": "P0",
+      "repository_url": "https://github.com/kmherman/dm-dp-surfaces",
+      "role": "author_release",
+      "commit": "c7e355fd22eb0b66c2135f21601c5ea0709ac6c2",
+      "checkout_path": "_references/dm_dp_surfaces",
+      "paper_version_status": "Author repository at the fixed commit. No paper-specific release commit or electronic-structure producer verified.",
+      "selection_reason": "Published water distributed dipole–quadrupole response arrays and their interpolation/export consumer; direct legacy-asset and precision comparator for issue 15.",
+      "acquisition_receipts": [
+        "research/acquisition/dm_dp_surfaces-20261118T044305403269Z.json"
+      ],
+      "tree": "7591714551d82c8eb29153c0fe14ce8e0d79c3fa",
+      "retrieved_at_utc": "2026-11-18T04:43:11.556604+00:00",
+      "checkout_kind": "full-tree",
+      "history_scope": "shallow",
+      "license": {
+        "paths": [],
+        "interpretation": "No license, COPYING or permission statement located in the selected tree. Full upstream bytes remain in the third-party checkout."
+      },
+      "inventory_path": "research/inventories/dm_dp_surfaces.json.gz",
+      "inventory_sha256": "5174618f770130ba6cbf37f77dca27b61bdb417b3ed936088d19d192977849fb",
+      "inventory_uncompressed_sha256": "af0a16540574afcef44b3a53090118036c54c8f9b84acbf1e5ba9b02cc4b6e49",
+      "submodules": [],
+      "lfs": {
+        "pointer_count": 0,
+        "unhydrated_count": 0
+      },
+      "acquisition_status": "acquired",
+      "acquisition_scope": "Complete pinned tracked trees including initialized submodules; not all build dependencies, paper supplements, datasets or weights.",
+      "reviewer_record": {
+        "root_tree_reviewed": true,
+        "reviewer": "Codex",
+        "reviewed_at_utc": "2026-11-18T04:44:31.912896+00:00",
+        "commit": "c7e355fd22eb0b66c2135f21601c5ea0709ac6c2",
+        "review_scope": "Verified all 218 tracked blobs, 216 NPY arrays, script and README; no LFS pointers or gitlinks. Per-file grid metadata and actual consumer reads are recorded in the legacy asset experiment.",
+        "license_note": "No license, COPYING or permission statement located in the selected tree. Full upstream bytes remain in the third-party checkout.",
+        "known_gaps": [
+          "HF/aug-cc-pVTZ and PBE0/aug-cc-pVTZ were specified by the author. No per-point electronic-structure solver, response-quality certificate, paper-specific SHA or demand history was identified."
+        ]
+      },
+      "file_count": 218,
+      "top_level_directories": [
+        "H2O"
+      ],
+      "build_and_dependency_metadata": [],
+      "reviewed_integrity_notices": [],
+      "known_gaps": [
+        "HF/aug-cc-pVTZ and PBE0/aug-cc-pVTZ were specified by the author. No per-point electronic-structure solver, response-quality certificate, paper-specific SHA or demand history was identified."
+      ],
+      "external_dependency_closure": "pending; see SOURCE_GAPS.md",
+      "evidence_status": {
+        "indexed": true,
+        "files_read": 2,
+        "behavior_traced": 1,
+        "executed": 1
+      }
     }
   ],
-  "generated_at_utc": "2026-11-18T04:10:14.516000+00:00",
+  "generated_at_utc": "2026-11-18T04:44:31.912896+00:00",
   "catalog_origin_results": [
     {
       "id": "phisnet",
@@ -3638,10 +3697,10 @@
     }
   ],
   "summary": {
-    "repositories_indexed": 45,
-    "files_indexed": 268259,
-    "files_read": 24,
-    "behavior_traced": 90,
-    "executed": 48
+    "repositories_indexed": 46,
+    "files_indexed": 268477,
+    "files_read": 27,
+    "behavior_traced": 94,
+    "executed": 51
   }
 }
