@@ -1,0 +1,122 @@
+{
+  "id": "qcfractal",
+  "source": {
+    "id": "qcfractal",
+    "catalog_ids": [
+      "qcfractal"
+    ],
+    "priority": "P0",
+    "repository_url": "https://github.com/MolSSI/QCFractal",
+    "role": "current",
+    "commit": null,
+    "checkout_path": "_references/qcfractal",
+    "paper_version_status": "not_established",
+    "selection_reason": "\u6863\u6848\u3001\u5de5\u4f5c\u6d41\u4e0e\u72b6\u6001"
+  },
+  "started_at_utc": "2026-11-17T17:52:40.401860+00:00",
+  "status": "indexed_pending_review",
+  "commands": [
+    {
+      "argv": [
+        "git",
+        "ls-remote",
+        "https://github.com/MolSSI/QCFractal",
+        "HEAD"
+      ],
+      "cwd": ".",
+      "started_at_utc": "2026-11-17T17:52:40.402055+00:00",
+      "stdout": "4ec1ed623f82536076c069dd65a4eb132969d9ed\tHEAD\n",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 2.269413247006014,
+      "ended_at_utc": "2026-11-17T17:52:42.671733+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "init",
+        "--quiet"
+      ],
+      "cwd": "_references/qcfractal",
+      "started_at_utc": "2026-11-17T17:52:42.672403+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.006013808000716381,
+      "ended_at_utc": "2026-11-17T17:52:42.688115+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "remote",
+        "add",
+        "origin",
+        "https://github.com/MolSSI/QCFractal"
+      ],
+      "cwd": "_references/qcfractal",
+      "started_at_utc": "2026-11-17T17:52:42.688555+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.00378886800899636,
+      "ended_at_utc": "2026-11-17T17:52:42.692751+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "protocol.file.allow=never",
+        "fetch",
+        "--depth=1",
+        "--no-tags",
+        "origin",
+        "4ec1ed623f82536076c069dd65a4eb132969d9ed"
+      ],
+      "cwd": "_references/qcfractal",
+      "started_at_utc": "2026-11-17T17:52:42.693168+00:00",
+      "stdout": "",
+      "stderr": "\u6765\u81ea https://github.com/MolSSI/QCFractal\n * branch            4ec1ed623f82536076c069dd65a4eb132969d9ed -> FETCH_HEAD\n",
+      "returncode": 0,
+      "elapsed_seconds": 9.242062368997722,
+      "ended_at_utc": "2026-11-17T17:52:51.935691+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "core.autocrlf=false",
+        "checkout",
+        "--detach",
+        "4ec1ed623f82536076c069dd65a4eb132969d9ed"
+      ],
+      "cwd": "_references/qcfractal",
+      "started_at_utc": "2026-11-17T17:52:51.936386+00:00",
+      "stdout": "",
+      "stderr": "HEAD \u76ee\u524d\u4f4d\u4e8e 4ec1ed6 Merge pull request #1076 from MolSSI/dependency\n",
+      "returncode": 0,
+      "elapsed_seconds": 0.0676216400024714,
+      "ended_at_utc": "2026-11-17T17:52:52.004549+00:00"
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "/home/lhshen/vibedataset/handoff/gqcdataset_codex_goal/tools/inventory_sources.py",
+        "_references/qcfractal",
+        "--recurse-submodules",
+        "--json",
+        "handoff/gqcdataset_codex_goal/research/inventories/qcfractal.json"
+      ],
+      "cwd": ".",
+      "started_at_utc": "2026-11-17T17:52:52.004915+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.14946568199957255,
+      "ended_at_utc": "2026-11-17T17:52:52.154615+00:00"
+    }
+  ],
+  "receipt_path": "handoff/gqcdataset_codex_goal/research/acquisition/qcfractal-20261117T175240401835Z.json",
+  "resolved_commit": "4ec1ed623f82536076c069dd65a4eb132969d9ed",
+  "inventory_path": "handoff/gqcdataset_codex_goal/research/inventories/qcfractal.json",
+  "ended_at_utc": "2026-11-17T17:52:52.154909+00:00"
+}

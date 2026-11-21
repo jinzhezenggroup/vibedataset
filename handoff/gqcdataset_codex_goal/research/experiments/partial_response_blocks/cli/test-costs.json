@@ -1,0 +1,44 @@
+{
+  "catalog_regression": {
+    "client_runs": 11,
+    "molecular_work_receipts": 14,
+    "round_jk": 134,
+    "setup_jk": 25
+  },
+  "final_client_controls": {
+    "client_runs": 12,
+    "molecular_work_receipts": 12,
+    "round_jk": 245,
+    "setup_jk": 55
+  },
+  "full_index_cache_reopen": {
+    "client_runs": 1,
+    "molecular_work_receipts": 12,
+    "round_jk": 25,
+    "setup_jk": 45
+  },
+  "historical_scalar_regression": {
+    "client_runs": 14,
+    "molecular_work_receipts": 14,
+    "round_jk": 214,
+    "setup_jk": 60
+  },
+  "initial_client_controls": {
+    "client_runs": 11,
+    "molecular_work_receipts": 11,
+    "round_jk": 223,
+    "setup_jk": 50
+  },
+  "release_client_controls": {
+    "client_runs": 11,
+    "molecular_work_receipts": 11,
+    "round_jk": 223,
+    "setup_jk": 50
+  },
+  "transaction_regression": {
+    "client_runs": 9,
+    "molecular_work_receipts": 9,
+    "round_jk": 194,
+    "setup_jk": 35
+  }
+}

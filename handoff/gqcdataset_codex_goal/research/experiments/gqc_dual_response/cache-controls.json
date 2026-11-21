@@ -1,0 +1,557 @@
+{
+  "all_counts": {
+    "density_jvp_calls": 119,
+    "jk_calls": 118,
+    "response_operator_actions": 117
+  },
+  "cache_hit": {
+    "block": {
+      "residuals": {},
+      "rhs_rank": 0,
+      "solver_actions": 0
+    },
+    "cache_checks": [
+      {
+        "decision": "accepted",
+        "group": "fields",
+        "id": "x",
+        "true_residual": 3.2456312884445896e-14
+      },
+      {
+        "decision": "accepted",
+        "group": "observables",
+        "id": "zz",
+        "true_residual": 7.057561353423633e-14
+      }
+    ],
+    "counts": {
+      "cache_rejections": 0,
+      "cache_validation_actions": 2,
+      "jk_calls": 2,
+      "operator_actions": 2,
+      "requests": 3,
+      "rhs_columns": 0,
+      "solver_actions": 0
+    },
+    "elapsed_seconds": 0.000331970994011499,
+    "new_fields": [],
+    "new_observables": [],
+    "problem_identity": "68a1d313efcd76ed8286f00bd3d58de757e4c6c05982fd639e4ce5a408ca1fd5",
+    "results": [
+      {
+        "errors": {
+          "0.0002": 1.1759981655146134e-08,
+          "0.0005": 7.345107833067743e-08,
+          "adjoint": 3.552713678800501e-15,
+          "cphf": 4.4164671919588727e-13,
+          "direct": 2.6645352591003757e-15
+        },
+        "field": "x",
+        "observable": "q0",
+        "qualified": true,
+        "raw_value": -1.4578410872805867,
+        "reasons": [],
+        "status": "qualified",
+        "target_identity": "b135407ee58882782986c91120d641c68557240d6722ca29bd1e78b362d0359f",
+        "value": -1.4578410872805867,
+        "via": "direct"
+      },
+      {
+        "errors": {
+          "0.0002": 7.036982552222071e-08,
+          "0.0005": 4.31425011271358e-07,
+          "adjoint": 1.7763568394002505e-14,
+          "cphf": 1.98596694644948e-12,
+          "direct": 1.0658141036401503e-14
+        },
+        "field": "x",
+        "observable": "r2",
+        "qualified": true,
+        "raw_value": -11.06144786237218,
+        "reasons": [],
+        "status": "qualified",
+        "target_identity": "a56c15bca8b4ff2dc0e009c74b7ca62735b10061d3c9e1087f3c4225e08b4add",
+        "value": -11.06144786237218,
+        "via": "direct"
+      },
+      {
+        "errors": {
+          "0.0002": 2.742783257458914e-11,
+          "0.0005": 4.5242120640109906e-10,
+          "adjoint": 3.469446951953614e-18,
+          "cphf": 6.284903153463972e-15,
+          "direct": 4.336808689942018e-18
+        },
+        "field": "z",
+        "observable": "zz",
+        "qualified": true,
+        "raw_value": 0.005750967189915629,
+        "reasons": [],
+        "status": "qualified",
+        "target_identity": "feb5f0547155d169c17952435c73c031ee976061350305cf0ad4ebb2aac1b99d",
+        "value": 0.005750967189915629,
+        "via": "adjoint"
+      }
+    ]
+  },
+  "changed_endpoint": {
+    "block": {
+      "residuals": {
+        "fields/x": 2.6242079344396317e-14
+      },
+      "rhs_rank": 1,
+      "solver_actions": 18
+    },
+    "cache_checks": [
+      {
+        "decision": "problem or endpoint identity",
+        "group": "fields",
+        "id": "x",
+        "true_residual": null
+      }
+    ],
+    "counts": {
+      "cache_rejections": 1,
+      "cache_validation_actions": 0,
+      "jk_calls": 18,
+      "operator_actions": 18,
+      "requests": 1,
+      "rhs_columns": 1,
+      "solver_actions": 18
+    },
+    "elapsed_seconds": 0.0029697220015805215,
+    "new_fields": [
+      "x"
+    ],
+    "new_observables": [],
+    "problem_identity": "68a1d313efcd76ed8286f00bd3d58de757e4c6c05982fd639e4ce5a408ca1fd5",
+    "results": [
+      {
+        "errors": {
+          "0.0002": 1.1759977214254036e-08,
+          "0.0005": 7.345107388978533e-08,
+          "adjoint": 8.881784197001252e-16,
+          "cphf": 4.3720582709738665e-13,
+          "direct": 1.7763568394002505e-15
+        },
+        "field": "x",
+        "observable": "q0",
+        "qualified": true,
+        "raw_value": -1.4578410872805823,
+        "reasons": [],
+        "status": "qualified",
+        "target_identity": "b135407ee58882782986c91120d641c68557240d6722ca29bd1e78b362d0359f",
+        "value": -1.4578410872805823,
+        "via": "direct"
+      }
+    ]
+  },
+  "combined": {
+    "coefficients": [
+      1,
+      1,
+      1
+    ],
+    "combined_rhs_sha256": "f4136566c2ab4626d2f5efc42eede7aa6f815c5cc59e514cfd46bc4f8ebd1349",
+    "counts": {
+      "cache_validation_actions": 0,
+      "jk_calls": 18,
+      "operator_actions": 18,
+      "rhs_columns": 1,
+      "solver_actions": 18
+    },
+    "elapsed_seconds": 0.0029576399974757805,
+    "field_identity": "4998e394ee815a7ddfc7a0f10dd3e771fe60c823554a347a9b50e44d2a75b676",
+    "observable_identities": {
+      "q0": "f2955166efa6a518937440496d1065d5ad6007946ba45bc79e599ab5beb7632b",
+      "r2": "6e611062487509050977581d4df3a676d0c829654a704e33a37975d1ed0e3baf",
+      "zz": "1f507985b529e728776862db8bbd24eca914016a8ef6f9e563ded6ac0e55a743"
+    },
+    "origin_bohr": [
+      0,
+      0,
+      0
+    ],
+    "problem_identity": "68a1d313efcd76ed8286f00bd3d58de757e4c6c05982fd639e4ce5a408ca1fd5",
+    "solution_sha256": "70d888d69e7ff356c7515e69fe3fe0f5bdc3251e7d303d950133475b97ddbc0e",
+    "true_residual": 9.240953473393832e-15,
+    "values": {
+      "q0": -0.5200195874682092,
+      "r2": -22.99428993940004,
+      "zz": -0.17723984255639516
+    }
+  },
+  "malformed": {
+    "block": {
+      "residuals": {
+        "fields/x": 2.6242079344396317e-14
+      },
+      "rhs_rank": 1,
+      "solver_actions": 18
+    },
+    "cache_checks": [
+      {
+        "decision": "shape or finiteness",
+        "group": "fields",
+        "id": "x",
+        "true_residual": null
+      }
+    ],
+    "counts": {
+      "cache_rejections": 1,
+      "cache_validation_actions": 0,
+      "jk_calls": 18,
+      "operator_actions": 18,
+      "requests": 1,
+      "rhs_columns": 1,
+      "solver_actions": 18
+    },
+    "elapsed_seconds": 0.0028762000001734123,
+    "new_fields": [
+      "x"
+    ],
+    "new_observables": [],
+    "problem_identity": "68a1d313efcd76ed8286f00bd3d58de757e4c6c05982fd639e4ce5a408ca1fd5",
+    "results": [
+      {
+        "errors": {
+          "0.0002": 1.1759977214254036e-08,
+          "0.0005": 7.345107388978533e-08,
+          "adjoint": 8.881784197001252e-16,
+          "cphf": 4.3720582709738665e-13,
+          "direct": 1.7763568394002505e-15
+        },
+        "field": "x",
+        "observable": "q0",
+        "qualified": true,
+        "raw_value": -1.4578410872805823,
+        "reasons": [],
+        "status": "qualified",
+        "target_identity": "b135407ee58882782986c91120d641c68557240d6722ca29bd1e78b362d0359f",
+        "value": -1.4578410872805823,
+        "via": "direct"
+      }
+    ]
+  },
+  "mixed": {
+    "block": {
+      "residuals": {
+        "fields/x": 3.24563128844459e-14,
+        "observables/zz": 7.057561353423633e-14
+      },
+      "rhs_rank": 2,
+      "solver_actions": 20
+    },
+    "cache_checks": [],
+    "counts": {
+      "cache_rejections": 0,
+      "cache_validation_actions": 0,
+      "jk_calls": 20,
+      "operator_actions": 20,
+      "requests": 3,
+      "rhs_columns": 2,
+      "solver_actions": 20
+    },
+    "elapsed_seconds": 0.004657354002119973,
+    "new_fields": [
+      "x"
+    ],
+    "new_observables": [
+      "zz"
+    ],
+    "problem_identity": "68a1d313efcd76ed8286f00bd3d58de757e4c6c05982fd639e4ce5a408ca1fd5",
+    "results": [
+      {
+        "errors": {
+          "0.0002": 1.1759981655146134e-08,
+          "0.0005": 7.345107833067743e-08,
+          "adjoint": 3.552713678800501e-15,
+          "cphf": 4.4164671919588727e-13,
+          "direct": 2.6645352591003757e-15
+        },
+        "field": "x",
+        "observable": "q0",
+        "qualified": true,
+        "raw_value": -1.4578410872805867,
+        "reasons": [],
+        "status": "qualified",
+        "target_identity": "b135407ee58882782986c91120d641c68557240d6722ca29bd1e78b362d0359f",
+        "value": -1.4578410872805867,
+        "via": "direct"
+      },
+      {
+        "errors": {
+          "0.0002": 7.036982552222071e-08,
+          "0.0005": 4.31425011271358e-07,
+          "adjoint": 1.7763568394002505e-14,
+          "cphf": 1.98596694644948e-12,
+          "direct": 1.0658141036401503e-14
+        },
+        "field": "x",
+        "observable": "r2",
+        "qualified": true,
+        "raw_value": -11.06144786237218,
+        "reasons": [],
+        "status": "qualified",
+        "target_identity": "a56c15bca8b4ff2dc0e009c74b7ca62735b10061d3c9e1087f3c4225e08b4add",
+        "value": -11.06144786237218,
+        "via": "direct"
+      },
+      {
+        "errors": {
+          "0.0002": 2.742783257458914e-11,
+          "0.0005": 4.5242120640109906e-10,
+          "adjoint": 3.469446951953614e-18,
+          "cphf": 6.284903153463972e-15,
+          "direct": 4.336808689942018e-18
+        },
+        "field": "z",
+        "observable": "zz",
+        "qualified": true,
+        "raw_value": 0.005750967189915629,
+        "reasons": [],
+        "status": "qualified",
+        "target_identity": "feb5f0547155d169c17952435c73c031ee976061350305cf0ad4ebb2aac1b99d",
+        "value": 0.005750967189915629,
+        "via": "adjoint"
+      }
+    ]
+  },
+  "name": "qm9-000003",
+  "nonfinite_candidate_and_coefficient": "all four rejected",
+  "nonfinite_references": {
+    "0.0002": [
+      "missing or nonfinite 0.0002"
+    ],
+    "0.0005": [
+      "missing or nonfinite 0.0005"
+    ],
+    "adjoint": [
+      "missing or nonfinite adjoint"
+    ],
+    "cphf": [
+      "missing or nonfinite cphf"
+    ],
+    "direct": [
+      "missing or nonfinite direct"
+    ]
+  },
+  "rehashed_unphysical": {
+    "block": {
+      "residuals": {
+        "fields/x": 2.6242079344396317e-14
+      },
+      "rhs_rank": 1,
+      "solver_actions": 18
+    },
+    "cache_checks": [
+      {
+        "decision": "physical response residual",
+        "group": "fields",
+        "id": "x",
+        "true_residual": 2.0135598046792387
+      }
+    ],
+    "counts": {
+      "cache_rejections": 1,
+      "cache_validation_actions": 1,
+      "jk_calls": 19,
+      "operator_actions": 19,
+      "requests": 1,
+      "rhs_columns": 1,
+      "solver_actions": 18
+    },
+    "elapsed_seconds": 0.0033017219975590706,
+    "new_fields": [
+      "x"
+    ],
+    "new_observables": [],
+    "problem_identity": "68a1d313efcd76ed8286f00bd3d58de757e4c6c05982fd639e4ce5a408ca1fd5",
+    "results": [
+      {
+        "errors": {
+          "0.0002": 1.1759977214254036e-08,
+          "0.0005": 7.345107388978533e-08,
+          "adjoint": 8.881784197001252e-16,
+          "cphf": 4.3720582709738665e-13,
+          "direct": 1.7763568394002505e-15
+        },
+        "field": "x",
+        "observable": "q0",
+        "qualified": true,
+        "raw_value": -1.4578410872805823,
+        "reasons": [],
+        "status": "qualified",
+        "target_identity": "b135407ee58882782986c91120d641c68557240d6722ca29bd1e78b362d0359f",
+        "value": -1.4578410872805823,
+        "via": "direct"
+      }
+    ]
+  },
+  "setup": {
+    "basis_hash": "15721216c85b7a4f6e765f507d17248ed2aba27d378383a6cac1e127d94f8869",
+    "contract_identity": "9ee1a6907505ace396f1bcb7967b6982b573d944e19bdcc01073feac0cf8b49b",
+    "counts": {
+      "density_jvp_calls": 6,
+      "jk_calls": 5,
+      "response_operator_actions": 4
+    },
+    "dimension": 10,
+    "endpoint_identities": {
+      "fields": {
+        "x": "368050c09a853f7f1af2281fa016835a61e9c3842addb9d316a5f34ed3bf62f1",
+        "y": "46a13a91e5e3caf8fab903ac6936ab6818f99cae48f323a035ea14f45b7f786f",
+        "z": "8d6079617bd28f122fe4060e265ce42ea4f5e7b9d03a2003445ae95502fcc280"
+      },
+      "observables": {
+        "q0": "f2955166efa6a518937440496d1065d5ad6007946ba45bc79e599ab5beb7632b",
+        "r2": "6e611062487509050977581d4df3a676d0c829654a704e33a37975d1ed0e3baf",
+        "zz": "1f507985b529e728776862db8bbd24eca914016a8ef6f9e563ded6ac0e55a743"
+      }
+    },
+    "fock_error": 4.6074255521944e-15,
+    "geometry_hash": "6a7fb4c0d61917a47ac7e9daba776b68bf4ac26ae764031b2e34506c261354ad",
+    "minimum_ov_gap": 0.9937597739724868,
+    "name": "qm9-000003",
+    "native_kernels": [
+      {
+        "binary_sha256": "5ad2cdfb2cef339cb06e0b0e9a4a15cc33aad617e83a228def3e300253d3ce23",
+        "elapsed_seconds": 0.39463694900041446,
+        "lowered": "0c58c46cf39806f7f9163f9471a3de8891de70346c6cd7f771c3122801d9a037",
+        "resources": {
+          "input_count": 147,
+          "output_count": 49,
+          "required_bytes": 7616,
+          "scalar_work": 2667
+        },
+        "source": "2215f904b3e4f0856f3c6c2826f6e0bc994f322a9327904703ae8593203ce68c"
+      },
+      {
+        "binary_sha256": "2c1d48ea23fb0e7349e0f49df567b3cce2df9d3e75f0dd17ecf85221796fd793",
+        "elapsed_seconds": 0.412286334001692,
+        "lowered": "0101d433d1d29a0b8907ceb0e8e0bc2b4f031c44de4f6f938f7afb6e36941c31",
+        "resources": {
+          "input_count": 245,
+          "output_count": 10,
+          "required_bytes": 12240,
+          "scalar_work": 5655
+        },
+        "source": "7ee92213a506aa9ed708d1d2f0550dc948b5aaa7cf7574544bc58c4230ef4d12"
+      },
+      {
+        "binary_sha256": "0f5bd32236819ffeeea68633f8cf007ceed69374cebd0a40bb0419e4c40110a4",
+        "elapsed_seconds": 0.382596190989716,
+        "lowered": "9ab0375b5479d6b2fc193137534be870eec8d346bfa594ebcc4d96c348ab74f4",
+        "resources": {
+          "input_count": 2450,
+          "output_count": 49,
+          "required_bytes": 61544,
+          "scalar_work": 12152
+        },
+        "source": "caa60a48909653385008641a1385c9bcbef773b13bc9f9818d0777d72b801e8c"
+      },
+      {
+        "binary_sha256": "08f8ef0713e6c08a0bfa979cf81b506b67bac159ae9d9d93262fcaa7ccec2c34",
+        "elapsed_seconds": 0.3805831029894762,
+        "lowered": "8344bcf27af725fe5ad358293450f22e89ce3e8d5c859a920568c83fc3b84bed",
+        "resources": {
+          "input_count": 98,
+          "output_count": 10,
+          "required_bytes": 2864,
+          "scalar_work": 434
+        },
+        "source": "2282a74d907e8d317f885d7506667efbade4a0c48bbe6aee341547e018a89680"
+      },
+      {
+        "binary_sha256": "bfcd29c570f79272831966662fbf317d15ebdade9015c33419510fc5398dad6f",
+        "elapsed_seconds": 0.3923171639908105,
+        "lowered": "d1721810a5943fc10aaf0514d959ff75432dcbb1b860e01eeba018fbf04c3dc6",
+        "resources": {
+          "input_count": 99,
+          "output_count": 10,
+          "required_bytes": 4456,
+          "scalar_work": 729
+        },
+        "source": "3d7d3c5649aa2071e2a399b27c88547494528fd5218793ebb1d5b8331fcf9312"
+      }
+    ],
+    "nbasis": 7,
+    "nocc": 5,
+    "problem_identity": "68a1d313efcd76ed8286f00bd3d58de757e4c6c05982fd639e4ce5a408ca1fd5",
+    "readout_dot_error": 2.6645352591003757e-15,
+    "reference_identity": "06223ff4dd5e4188137226482258f37c4961bbc447709d03f72f987ef0bfe941",
+    "scaled_dot_errors": [
+      3.4139796101167527e-16,
+      2.533326850237405e-16
+    ],
+    "seconds": 2.0052452689997153,
+    "source": {
+      "array_file": "qm9-000003.npz",
+      "array_sha256": "08d0cec5d6ac38620732cb37e07955668a07576e5ca3fc424212db1e8094f4ce",
+      "metadata_file": "qm9-000003.json",
+      "metadata_sha256": "c0e5212e5f0def071ff6ec5dac88c0f9b893aa9c10107e73c514edba6e416e8f"
+    },
+    "vjp_errors": {
+      "q0": 4.647817236868291e-16,
+      "r2": 1.7763568394002505e-15,
+      "zz": 3.6197783594323074e-16
+    }
+  },
+  "stale_reference": {
+    "block": {
+      "residuals": {
+        "fields/x": 2.6242079344396317e-14
+      },
+      "rhs_rank": 1,
+      "solver_actions": 18
+    },
+    "cache_checks": [
+      {
+        "decision": "problem or endpoint identity",
+        "group": "fields",
+        "id": "x",
+        "true_residual": null
+      }
+    ],
+    "counts": {
+      "cache_rejections": 1,
+      "cache_validation_actions": 0,
+      "jk_calls": 18,
+      "operator_actions": 18,
+      "requests": 1,
+      "rhs_columns": 1,
+      "solver_actions": 18
+    },
+    "elapsed_seconds": 0.002920111990533769,
+    "new_fields": [
+      "x"
+    ],
+    "new_observables": [],
+    "problem_identity": "68a1d313efcd76ed8286f00bd3d58de757e4c6c05982fd639e4ce5a408ca1fd5",
+    "results": [
+      {
+        "errors": {
+          "0.0002": 1.1759977214254036e-08,
+          "0.0005": 7.345107388978533e-08,
+          "adjoint": 8.881784197001252e-16,
+          "cphf": 4.3720582709738665e-13,
+          "direct": 1.7763568394002505e-15
+        },
+        "field": "x",
+        "observable": "q0",
+        "qualified": true,
+        "raw_value": -1.4578410872805823,
+        "reasons": [],
+        "status": "qualified",
+        "target_identity": "b135407ee58882782986c91120d641c68557240d6722ca29bd1e78b362d0359f",
+        "value": -1.4578410872805823,
+        "via": "direct"
+      }
+    ]
+  },
+  "superposition_errors": {
+    "q0": 2.220446049250313e-15,
+    "r2": 1.0658141036401503e-14,
+    "zz": 9.159339953157541e-16
+  }
+}

@@ -1,0 +1,122 @@
+{
+  "id": "ani1x_ccx",
+  "source": {
+    "id": "ani1x_ccx",
+    "catalog_ids": [
+      "ani1x_ccx"
+    ],
+    "priority": "P1",
+    "repository_url": "https://github.com/aiqm/ANI1x_datasets",
+    "role": "current",
+    "commit": null,
+    "checkout_path": "_references/ani1x_ccx",
+    "paper_version_status": "not_established",
+    "selection_reason": "\u591a\u4fdd\u771f\u3001\u4e3b\u52a8\u91c7\u6837\u4e0e\u7f3a\u5931\u6807\u7b7e"
+  },
+  "started_at_utc": "2026-11-17T17:55:27.526722+00:00",
+  "status": "indexed_pending_review",
+  "commands": [
+    {
+      "argv": [
+        "git",
+        "ls-remote",
+        "https://github.com/aiqm/ANI1x_datasets",
+        "HEAD"
+      ],
+      "cwd": ".",
+      "started_at_utc": "2026-11-17T17:55:27.526852+00:00",
+      "stdout": "c6b6d20b9915a4534204800b634fc1f8ee0a08bc\tHEAD\n",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 1.5178497669985518,
+      "ended_at_utc": "2026-11-17T17:55:29.044865+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "init",
+        "--quiet"
+      ],
+      "cwd": "_references/ani1x_ccx",
+      "started_at_utc": "2026-11-17T17:55:29.045459+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.00569255200389307,
+      "ended_at_utc": "2026-11-17T17:55:29.054099+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "remote",
+        "add",
+        "origin",
+        "https://github.com/aiqm/ANI1x_datasets"
+      ],
+      "cwd": "_references/ani1x_ccx",
+      "started_at_utc": "2026-11-17T17:55:29.054427+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.003035902002011426,
+      "ended_at_utc": "2026-11-17T17:55:29.057844+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "protocol.file.allow=never",
+        "fetch",
+        "--depth=1",
+        "--no-tags",
+        "origin",
+        "c6b6d20b9915a4534204800b634fc1f8ee0a08bc"
+      ],
+      "cwd": "_references/ani1x_ccx",
+      "started_at_utc": "2026-11-17T17:55:29.058149+00:00",
+      "stdout": "",
+      "stderr": "\u6765\u81ea https://github.com/aiqm/ANI1x_datasets\n * branch            c6b6d20b9915a4534204800b634fc1f8ee0a08bc -> FETCH_HEAD\n",
+      "returncode": 0,
+      "elapsed_seconds": 16.02662564298953,
+      "ended_at_utc": "2026-11-17T17:55:45.085095+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "core.autocrlf=false",
+        "checkout",
+        "--detach",
+        "c6b6d20b9915a4534204800b634fc1f8ee0a08bc"
+      ],
+      "cwd": "_references/ani1x_ccx",
+      "started_at_utc": "2026-11-17T17:55:45.085521+00:00",
+      "stdout": "",
+      "stderr": "HEAD \u76ee\u524d\u4f4d\u4e8e c6b6d20 add direct link to the data file\n",
+      "returncode": 0,
+      "elapsed_seconds": 0.6756534160085721,
+      "ended_at_utc": "2026-11-17T17:55:45.763997+00:00"
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "/home/lhshen/vibedataset/handoff/gqcdataset_codex_goal/tools/inventory_sources.py",
+        "_references/ani1x_ccx",
+        "--recurse-submodules",
+        "--json",
+        "handoff/gqcdataset_codex_goal/research/inventories/ani1x_ccx.json"
+      ],
+      "cwd": ".",
+      "started_at_utc": "2026-11-17T17:55:45.764321+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.559763559998828,
+      "ended_at_utc": "2026-11-17T17:55:46.324275+00:00"
+    }
+  ],
+  "receipt_path": "handoff/gqcdataset_codex_goal/research/acquisition/ani1x_ccx-20261117T175527526703Z.json",
+  "resolved_commit": "c6b6d20b9915a4534204800b634fc1f8ee0a08bc",
+  "inventory_path": "handoff/gqcdataset_codex_goal/research/inventories/ani1x_ccx.json",
+  "ended_at_utc": "2026-11-17T17:55:46.324633+00:00"
+}

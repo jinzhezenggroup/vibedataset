@@ -1,0 +1,122 @@
+{
+  "id": "pyscf_forge",
+  "source": {
+    "id": "pyscf_forge",
+    "catalog_ids": [
+      "pyscf_forge"
+    ],
+    "priority": "P1",
+    "repository_url": "https://github.com/pyscf/pyscf-forge",
+    "role": "current",
+    "commit": null,
+    "checkout_path": "_references/pyscf_forge",
+    "paper_version_status": "not_established",
+    "selection_reason": "\u6863\u6848\u3001\u5de5\u4f5c\u6d41\u4e0e\u72b6\u6001"
+  },
+  "started_at_utc": "2026-11-17T17:52:09.273621+00:00",
+  "status": "indexed_pending_review",
+  "commands": [
+    {
+      "argv": [
+        "git",
+        "ls-remote",
+        "https://github.com/pyscf/pyscf-forge",
+        "HEAD"
+      ],
+      "cwd": ".",
+      "started_at_utc": "2026-11-17T17:52:09.273747+00:00",
+      "stdout": "7e386107da6a463be73cfe67c3e01e087683b164\tHEAD\n",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 2.6190731770038838,
+      "ended_at_utc": "2026-11-17T17:52:11.892975+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "init",
+        "--quiet"
+      ],
+      "cwd": "_references/pyscf_forge",
+      "started_at_utc": "2026-11-17T17:52:11.893946+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.005135846004122868,
+      "ended_at_utc": "2026-11-17T17:52:11.901707+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "remote",
+        "add",
+        "origin",
+        "https://github.com/pyscf/pyscf-forge"
+      ],
+      "cwd": "_references/pyscf_forge",
+      "started_at_utc": "2026-11-17T17:52:11.902193+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.0038937140052439645,
+      "ended_at_utc": "2026-11-17T17:52:11.906778+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "protocol.file.allow=never",
+        "fetch",
+        "--depth=1",
+        "--no-tags",
+        "origin",
+        "7e386107da6a463be73cfe67c3e01e087683b164"
+      ],
+      "cwd": "_references/pyscf_forge",
+      "started_at_utc": "2026-11-17T17:52:11.907406+00:00",
+      "stdout": "",
+      "stderr": "\u6765\u81ea https://github.com/pyscf/pyscf-forge\n * branch            7e386107da6a463be73cfe67c3e01e087683b164 -> FETCH_HEAD\n",
+      "returncode": 0,
+      "elapsed_seconds": 7.787089276011102,
+      "ended_at_utc": "2026-11-17T17:52:19.695094+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "core.autocrlf=false",
+        "checkout",
+        "--detach",
+        "7e386107da6a463be73cfe67c3e01e087683b164"
+      ],
+      "cwd": "_references/pyscf_forge",
+      "started_at_utc": "2026-11-17T17:52:19.695600+00:00",
+      "stdout": "",
+      "stderr": "HEAD \u76ee\u524d\u4f4d\u4e8e 7e38610 Adding analytic L-PDFT transition dipole moments (#237)\n",
+      "returncode": 0,
+      "elapsed_seconds": 0.05286734100081958,
+      "ended_at_utc": "2026-11-17T17:52:19.748880+00:00"
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "/home/lhshen/vibedataset/handoff/gqcdataset_codex_goal/tools/inventory_sources.py",
+        "_references/pyscf_forge",
+        "--recurse-submodules",
+        "--json",
+        "handoff/gqcdataset_codex_goal/research/inventories/pyscf_forge.json"
+      ],
+      "cwd": ".",
+      "started_at_utc": "2026-11-17T17:52:19.749206+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.14805689900822472,
+      "ended_at_utc": "2026-11-17T17:52:19.897484+00:00"
+    }
+  ],
+  "receipt_path": "handoff/gqcdataset_codex_goal/research/acquisition/pyscf_forge-20261117T175209273601Z.json",
+  "resolved_commit": "7e386107da6a463be73cfe67c3e01e087683b164",
+  "inventory_path": "handoff/gqcdataset_codex_goal/research/inventories/pyscf_forge.json",
+  "ended_at_utc": "2026-11-17T17:52:19.897769+00:00"
+}

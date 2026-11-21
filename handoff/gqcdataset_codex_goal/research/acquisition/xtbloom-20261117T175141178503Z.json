@@ -1,0 +1,122 @@
+{
+  "id": "xtbloom",
+  "source": {
+    "id": "xtbloom",
+    "catalog_ids": [
+      "xtbloom"
+    ],
+    "priority": "P0",
+    "repository_url": "https://github.com/jinzhezenggroup/xtbloom",
+    "role": "current",
+    "commit": null,
+    "checkout_path": "_references/xtbloom",
+    "paper_version_status": "not_established",
+    "selection_reason": "\u79d1\u5b66\u7f16\u8bd1\u4e0e\u5de5\u4f5c\u57fa\u7840"
+  },
+  "started_at_utc": "2026-11-17T17:51:41.178519+00:00",
+  "status": "indexed_pending_review",
+  "commands": [
+    {
+      "argv": [
+        "git",
+        "ls-remote",
+        "https://github.com/jinzhezenggroup/xtbloom",
+        "HEAD"
+      ],
+      "cwd": ".",
+      "started_at_utc": "2026-11-17T17:51:41.178636+00:00",
+      "stdout": "16ec6bb04629b568b20e012e9b6409fb0ccff0f8\tHEAD\n",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 3.0026320979959564,
+      "ended_at_utc": "2026-11-17T17:51:44.181410+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "init",
+        "--quiet"
+      ],
+      "cwd": "_references/xtbloom",
+      "started_at_utc": "2026-11-17T17:51:44.182048+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.004541870002867654,
+      "ended_at_utc": "2026-11-17T17:51:44.189323+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "remote",
+        "add",
+        "origin",
+        "https://github.com/jinzhezenggroup/xtbloom"
+      ],
+      "cwd": "_references/xtbloom",
+      "started_at_utc": "2026-11-17T17:51:44.189788+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.0037218020006548613,
+      "ended_at_utc": "2026-11-17T17:51:44.194033+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "protocol.file.allow=never",
+        "fetch",
+        "--depth=1",
+        "--no-tags",
+        "origin",
+        "16ec6bb04629b568b20e012e9b6409fb0ccff0f8"
+      ],
+      "cwd": "_references/xtbloom",
+      "started_at_utc": "2026-11-17T17:51:44.194644+00:00",
+      "stdout": "",
+      "stderr": "\u6765\u81ea https://github.com/jinzhezenggroup/xtbloom\n * branch            16ec6bb04629b568b20e012e9b6409fb0ccff0f8 -> FETCH_HEAD\n",
+      "returncode": 0,
+      "elapsed_seconds": 9.495972752003581,
+      "ended_at_utc": "2026-11-17T17:51:53.691052+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "core.autocrlf=false",
+        "checkout",
+        "--detach",
+        "16ec6bb04629b568b20e012e9b6409fb0ccff0f8"
+      ],
+      "cwd": "_references/xtbloom",
+      "started_at_utc": "2026-11-17T17:51:53.691718+00:00",
+      "stdout": "",
+      "stderr": "HEAD \u76ee\u524d\u4f4d\u4e8e 16ec6bb [pre-commit.ci] pre-commit autoupdate (#563)\n",
+      "returncode": 0,
+      "elapsed_seconds": 0.1754783919895999,
+      "ended_at_utc": "2026-11-17T17:51:53.867782+00:00"
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "/home/lhshen/vibedataset/handoff/gqcdataset_codex_goal/tools/inventory_sources.py",
+        "_references/xtbloom",
+        "--recurse-submodules",
+        "--json",
+        "handoff/gqcdataset_codex_goal/research/inventories/xtbloom.json"
+      ],
+      "cwd": ".",
+      "started_at_utc": "2026-11-17T17:51:53.868513+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.299825875001261,
+      "ended_at_utc": "2026-11-17T17:51:54.169164+00:00"
+    }
+  ],
+  "receipt_path": "handoff/gqcdataset_codex_goal/research/acquisition/xtbloom-20261117T175141178503Z.json",
+  "resolved_commit": "16ec6bb04629b568b20e012e9b6409fb0ccff0f8",
+  "inventory_path": "handoff/gqcdataset_codex_goal/research/inventories/xtbloom.json",
+  "ended_at_utc": "2026-11-17T17:51:54.169485+00:00"
+}

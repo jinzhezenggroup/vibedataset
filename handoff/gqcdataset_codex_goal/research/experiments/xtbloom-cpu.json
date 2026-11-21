@@ -1,0 +1,30 @@
+{
+  "source_commit": "16ec6bb04629b568b20e012e9b6409fb0ccff0f8",
+  "tree": "da278b5ad02c91d6a2bdbdc99232a405d34a9855",
+  "git_describe": "v0.2.3-49-g16ec6bb",
+  "configuration": "Release static C++ CPU, CUDA and Torch extension OFF, upstream tests ON, Ninja, parallel build jobs 4",
+  "compiler": "GNU 11.4.0",
+  "cmake": "4.4.5",
+  "ninja": "1.13.2",
+  "openblas_package": "scipy-openblas32==0.3.34.0.0",
+  "configured_provider_sha256": "b2dfe24b9aa11cf1d1cec8edbca9423b50cfd186b486d59dd4efe45826261a98",
+  "public_inference_executable_sha256": "d08531863c43e45e41a7d9460bcea82a18a2bbe5a7c5aa9e070219ddd45fd40e",
+  "configure_seconds": {
+    "real": 2.78,
+    "user": 4.43,
+    "sys": 0.71
+  },
+  "build_seconds": {
+    "real": 16.26,
+    "user": 50.91,
+    "sys": 3.25
+  },
+  "ctest_stdout": "Test project .work/xtbloom-16ec6bb-cpu\n    Start 20: xtbloom.cpu.public_inference\n1/1 Test #20: xtbloom.cpu.public_inference .....   Passed    6.62 sec\n\n100% tests passed out of 1\n\nTotal Test time (real) =   6.62 sec\n",
+  "ctest_exit_status": 0,
+  "unconditional_cases_inspected": [
+    "test_public_warm_start_transactions",
+    "test_one_member_numerical_failure_isolated"
+  ],
+  "raw_logs": ".work/xtbloom-16ec6bb-cpu/{configure.log,build.log,ctest.log,Testing/Temporary/LastTest.log}",
+  "scope": "One upstream CTest executable. Individual SCC call counts and energy consumption not instrumented."
+}

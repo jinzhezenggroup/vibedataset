@@ -1,0 +1,775 @@
+{
+  "checked_at_utc": "2026-11-17T20:04:36.247443+00:00",
+  "scope": "Six legacy catalog origin questions. This receipt records versions, publicly accessible bytes, scoped searches, failures, and alternate implementations. It does not redistribute third-party sources, papers or weights.",
+  "reused_sources": {
+    "qmugs.jats": {
+      "source": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC9174255/fullTextXML",
+      "bytes": 119009,
+      "sha256": "b9d62b313590b882a51ef401cc3bb32334357ce1f75fe15c504ac840b9f077d3",
+      "snapshot_file_mtime_utc": "2026-11-17T19:32:54.097619+00:00",
+      "scope": "Private intake snapshot reused for content inspection. Filesystem observation time, not an HTTP Date."
+    },
+    "qmugs_meta.json": {
+      "source": "https://api.datacite.org/dois/10.3929/ethz-b-000482129",
+      "bytes": 5585,
+      "sha256": "a6c3b3bc7c92ae9c283bf70686a41a249e65c94a24e11d5d0e9496c296f1cad6",
+      "snapshot_file_mtime_utc": "2026-11-17T19:32:51.537868+00:00",
+      "scope": "Private intake snapshot reused for content inspection. Filesystem observation time, not an HTTP Date."
+    },
+    "delta-si.json": {
+      "source": "https://api.figshare.com/v2/articles/2167927",
+      "bytes": 5774,
+      "sha256": "06a35b00b617636fd3be03a5b9664db44719e612b493cb66c37aba5b6e70662e",
+      "snapshot_file_mtime_utc": "2026-11-17T19:42:01.656335+00:00",
+      "scope": "Private intake snapshot reused for content inspection. Filesystem observation time, not an HTTP Date."
+    },
+    "dmphisnet.json": {
+      "source": "https://api.crossref.org/works/10.1002/chem.71739",
+      "bytes": 11999,
+      "sha256": "3e690e96a9663eb71554594a253d0239455db859faa2aedd22039c2624e9b4a8",
+      "snapshot_file_mtime_utc": "2026-11-17T19:32:50.855934+00:00",
+      "scope": "Private intake snapshot reused for content inspection. Filesystem observation time, not an HTTP Date."
+    },
+    "dmphisnet-arxiv": {
+      "source": "https://arxiv.org/html/2604.27256v1",
+      "bytes": 119408,
+      "sha256": "0a3e93f827d0d7e5f618faf4f5594b61c5a02d374d62179b6febf1aec158501d",
+      "snapshot_file_mtime_utc": "2026-11-17T19:40:09.786027+00:00",
+      "scope": "Private intake snapshot reused for content inspection. Filesystem observation time, not an HTTP Date."
+    },
+    "im-gnn-article": {
+      "source": "https://www.mi-research.net/en/article/doi/10.1007/s11633-023-1443-7",
+      "bytes": 330342,
+      "sha256": "2dc92840c4643070322851d7fbcb662ec310fae1f3f21c56fe80f4f287d3828a",
+      "snapshot_file_mtime_utc": "2026-11-17T19:40:13.015853+00:00",
+      "scope": "Private intake snapshot reused for content inspection. Filesystem observation time, not an HTTP Date."
+    },
+    "phisnet.json": {
+      "source": "https://api2.openreview.net/notes?forum=auGY2UQfhSu",
+      "bytes": 277,
+      "sha256": "b7014c440db044fcd068b4f4c3959893f1942fcbbd057754d97ffdc9451cd1ab",
+      "snapshot_file_mtime_utc": "2026-11-17T19:32:50.832936+00:00",
+      "scope": "Private intake snapshot reused for content inspection. Filesystem observation time, not an HTTP Date."
+    },
+    "qpma.json": {
+      "source": "https://api.github.com/repos/JeongminChae/QPMA",
+      "bytes": 118,
+      "sha256": "4f50e254a719a6b1b06b529bdaa08980e4acf0878aad0090cba7771f6ebdf0b9",
+      "snapshot_file_mtime_utc": "2026-11-17T19:32:50.825937+00:00",
+      "scope": "Private intake snapshot reused for content inspection. Filesystem observation time, not an HTTP Date."
+    }
+  },
+  "http_receipts": [
+    {
+      "id": "delta-arxiv",
+      "at_utc": "2026-11-17T19:47:07.065489+00:00",
+      "url": "https://arxiv.org/pdf/1503.04987",
+      "status": 200,
+      "content_type": "application/pdf",
+      "final_url": "https://arxiv.org/pdf/1503.04987",
+      "redirects": [],
+      "bytes": 6231840,
+      "sha256": "1d6c4ab9ed70617cc8f4b77be22fb35dbe7a8410149a9925a23c0cb54405d19c"
+    },
+    {
+      "id": "delta-author-datasets",
+      "at_utc": "2026-11-17T19:56:36.309653+00:00",
+      "url": "https://www.tifrh.res.in/~ramakrishnan/?page_id=66",
+      "status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "final_url": "https://www.tifrh.res.in/~ramakrishnan/?page_id=66",
+      "redirects": [],
+      "bytes": 151588,
+      "sha256": "a03546162939a00fd11d4ac670702d27e2eff26e6634f83d67cfd5b48bca394c"
+    },
+    {
+      "id": "delta-collection",
+      "at_utc": "2026-11-17T19:54:38.389229+00:00",
+      "url": "https://api.figshare.com/v2/articles?resource_doi=10.1021%2Facs.jctc.5b00099&page_size=100",
+      "status": 200,
+      "content_type": "application/json",
+      "final_url": "https://api.figshare.com/v2/articles?resource_doi=10.1021%2Facs.jctc.5b00099&page_size=100",
+      "redirects": [],
+      "bytes": 1128,
+      "sha256": "d66da78f933d5e55462f0ffacddd720860372b26eea363233bf6d0ca9e7a2f36"
+    },
+    {
+      "id": "delta-correlations-6k",
+      "at_utc": "2026-11-17T19:57:31.305769+00:00",
+      "url": "https://wwwold.tifrh.res.in/~ramakrishnan/uploads/6k_correlation_deltaML.tar.gz",
+      "error": "SSLError: HTTPSConnectionPool(host='wwwold.tifrh.res.in', port=443): Max retries exceeded with url: /~ramakrishnan/uploads/6k_correlation_deltaML.tar.gz (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1007)')))"
+    },
+    {
+      "id": "delta-datacite",
+      "at_utc": "2026-11-17T19:54:38.390116+00:00",
+      "url": "https://api.datacite.org/dois?query=relatedIdentifiers.relatedIdentifier:%2210.1021/acs.jctc.5b00099%22&page%5Bsize%5D=30",
+      "status": 200,
+      "content_type": "application/json; charset=utf-8",
+      "final_url": "https://api.datacite.org/dois?query=relatedIdentifiers.relatedIdentifier:%2210.1021/acs.jctc.5b00099%22&page%5Bsize%5D=30",
+      "redirects": [],
+      "bytes": 55005,
+      "sha256": "566e282ded898a303e8023bba17afdea307d540e63f80d0aee02d0094642e5eb"
+    },
+    {
+      "id": "delta-diastereomers",
+      "at_utc": "2026-11-17T19:57:31.306190+00:00",
+      "url": "https://wwwold.tifrh.res.in/~ramakrishnan/uploads/10k_diastereomers_B3LYP_G4MP2.tar.gz",
+      "error": "SSLError: HTTPSConnectionPool(host='wwwold.tifrh.res.in', port=443): Max retries exceeded with url: /~ramakrishnan/uploads/10k_diastereomers_B3LYP_G4MP2.tar.gz (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1007)')))"
+    },
+    {
+      "id": "delta-pm7-134k",
+      "at_utc": "2026-11-17T19:57:31.305234+00:00",
+      "url": "https://www.tifrh.res.in/~ramakrishnan/index.php/big-datasets/134_dataset_heat_PM7_B3LYP.tar.gz",
+      "status": 404,
+      "content_type": "text/html; charset=iso-8859-1",
+      "final_url": "https://www.tifrh.res.in/~ramakrishnan/big-datasets/134_dataset_heat_PM7_B3LYP.tar.gz/",
+      "redirects": [
+        {
+          "status": 301,
+          "url": "https://www.tifrh.res.in/~ramakrishnan/index.php/big-datasets/134_dataset_heat_PM7_B3LYP.tar.gz"
+        }
+      ],
+      "bytes": 196,
+      "sha256": "80c3fe2ae1062abf56456f52518bd670f9ec3917b7f85e152b347ac6b6faf880"
+    },
+    {
+      "id": "delta-si.pdf",
+      "at_utc": "2026-11-17T19:47:02.230939+00:00",
+      "url": "https://ndownloader.figshare.com/files/3801826",
+      "status": 200,
+      "content_type": "application/pdf",
+      "final_url": "https://s3-eu-west-1.amazonaws.com/pstorage-acs-6854636/3801826/ct5b00099_si_001.pdf",
+      "redirects": [
+        {
+          "status": 302,
+          "url": "https://ndownloader.figshare.com/files/3801826"
+        }
+      ],
+      "bytes": 384114,
+      "sha256": "9f4b4c2f6f727847429c9ca9b6c1e549a1ac8ed145a92383b40d04de6c620563"
+    },
+    {
+      "id": "dm-datacite",
+      "at_utc": "2026-11-17T19:54:38.390420+00:00",
+      "url": "https://api.datacite.org/dois?query=relatedIdentifiers.relatedIdentifier:%2210.1002/chem.71739%22&page%5Bsize%5D=25",
+      "status": 200,
+      "content_type": "application/json; charset=utf-8",
+      "final_url": "https://api.datacite.org/dois?query=relatedIdentifiers.relatedIdentifier:%2210.1002/chem.71739%22&page%5Bsize%5D=25",
+      "redirects": [],
+      "bytes": 194,
+      "sha256": "f0af8f670d73e9918ecf186101ac87c6a3015c69629b9d39df8310b0f518f4f3"
+    },
+    {
+      "id": "dmphisnet-arxiv-src",
+      "at_utc": "2026-11-17T19:47:02.238403+00:00",
+      "url": "https://arxiv.org/src/2604.27256v1",
+      "status": 200,
+      "content_type": "application/gzip",
+      "final_url": "https://arxiv.org/src/2604.27256v1",
+      "redirects": [],
+      "bytes": 4628957,
+      "sha256": "67f97f8122351b5af519de1cee5abaa3858b51950ce3818eace554a9e7ec9da1"
+    },
+    {
+      "id": "dmphisnet-journal",
+      "at_utc": "2026-11-17T19:47:02.239517+00:00",
+      "url": "https://chemistry-europe.onlinelibrary.wiley.com/doi/10.1002/chem.71739",
+      "status": 403,
+      "content_type": "text/html; charset=UTF-8",
+      "final_url": "https://chemistry-europe.onlinelibrary.wiley.com/doi/10.1002/chem.71739",
+      "redirects": [],
+      "bytes": 5635,
+      "sha256": "078b1ab1e07162284b11fd9b84c94161c736ad8cb88abac747aee2a6e3cd6c25"
+    },
+    {
+      "id": "im-gnn-paper",
+      "at_utc": "2026-11-17T19:47:03.482530+00:00",
+      "url": "https://www.mi-research.net/en/article/pdf/preview/10.1007/s11633-023-1443-7.pdf",
+      "status": 200,
+      "content_type": "application/pdf",
+      "final_url": "https://www.mi-research.net/en/article/pdf/preview/10.1007/s11633-023-1443-7.pdf",
+      "redirects": [],
+      "bytes": 1447414,
+      "sha256": "5782f0f0685394c1fe3929a0c61019bb820fe221d61b16cc90cd894d7f6cb0ac"
+    },
+    {
+      "id": "phisnet-arxiv-src",
+      "at_utc": "2026-11-17T19:47:02.236805+00:00",
+      "url": "https://arxiv.org/src/2106.02347v2",
+      "status": 200,
+      "content_type": "application/gzip",
+      "final_url": "https://arxiv.org/src/2106.02347v2",
+      "redirects": [],
+      "bytes": 18761068,
+      "sha256": "2025b8c8ce32cece79d9af395721d123d427d602e8faaea60a7ef25a244c759e"
+    },
+    {
+      "id": "phisnet-neurips",
+      "at_utc": "2026-11-17T19:47:02.235575+00:00",
+      "url": "https://proceedings.neurips.cc/paper/2021/hash/78f1893678afbeaa90b1fa01b9cfb860-Abstract.html",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "final_url": "https://proceedings.neurips.cc/paper/2021/hash/78f1893678afbeaa90b1fa01b9cfb860-Abstract.html",
+      "redirects": [],
+      "bytes": 10610,
+      "sha256": "bc722c058cf5c8b8ede034af8fb9d57eedf284d86cb5dee113af5737c467c046"
+    },
+    {
+      "id": "phisnet-paper",
+      "at_utc": "2026-11-17T19:47:02.231927+00:00",
+      "url": "https://proceedings.neurips.cc/paper/2021/file/78f1893678afbeaa90b1fa01b9cfb860-Paper.pdf",
+      "status": 200,
+      "content_type": "application/pdf",
+      "final_url": "https://proceedings.neurips.cc/paper/2021/file/78f1893678afbeaa90b1fa01b9cfb860-Paper.pdf",
+      "redirects": [],
+      "bytes": 2241213,
+      "sha256": "73fa7a776e93f2a326ce7588490bedb5499c19551d3d9a190115290e19b9aafd"
+    },
+    {
+      "id": "phisnet-si",
+      "at_utc": "2026-11-17T19:47:02.233995+00:00",
+      "url": "https://proceedings.neurips.cc/paper/2021/file/78f1893678afbeaa90b1fa01b9cfb860-Supplemental.pdf",
+      "status": 200,
+      "content_type": "application/pdf",
+      "final_url": "https://proceedings.neurips.cc/paper/2021/file/78f1893678afbeaa90b1fa01b9cfb860-Supplemental.pdf",
+      "redirects": [],
+      "bytes": 9826351,
+      "sha256": "75258edbe31f6ba1289d6af4d7cf26aa262539053831769ca1e03d5501df2152"
+    },
+    {
+      "id": "qmugs-doi",
+      "at_utc": "2026-11-17T19:47:07.347847+00:00",
+      "url": "https://doi.org/10.3929/ethz-b-000482129",
+      "status": 403,
+      "content_type": "text/html; charset=UTF-8",
+      "final_url": "http://hdl.handle.net/20.500.11850/482129",
+      "redirects": [
+        {
+          "status": 302,
+          "url": "https://doi.org/10.3929/ethz-b-000482129"
+        }
+      ],
+      "bytes": 5472,
+      "sha256": "2b172dd2e566262868aac817876e48627d834b1fd09a3be05629d441279f7bac"
+    },
+    {
+      "id": "qpma-arxiv",
+      "at_utc": "2026-11-17T19:47:04.081344+00:00",
+      "url": "https://arxiv.org/html/2212.05469v2",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "final_url": "https://arxiv.org/html/2212.05469v2",
+      "redirects": [],
+      "bytes": 616152,
+      "sha256": "29d20822099e98f400f83eba48ae6725ea9269770d8f58d8043de3b8e53c4cd9"
+    },
+    {
+      "id": "qpma-datacite",
+      "at_utc": "2026-11-17T19:54:38.389729+00:00",
+      "url": "https://api.datacite.org/dois?query=titles.title:%22Matrix%20Approximation%20with%20Side%20Information%22&page%5Bsize%5D=25",
+      "status": 200,
+      "content_type": "application/json; charset=utf-8",
+      "final_url": "https://api.datacite.org/dois?query=titles.title:%22Matrix%20Approximation%20with%20Side%20Information%22&page%5Bsize%5D=25",
+      "redirects": [],
+      "bytes": 4050,
+      "sha256": "6d3382a937775aca638f1c3ca0c3c3441aedc439cfc1120899c57ebb4fbb6182"
+    },
+    {
+      "id": "qpma-swh",
+      "at_utc": "2026-11-17T19:54:38.388542+00:00",
+      "url": "https://archive.softwareheritage.org/api/1/origin/https://github.com/JeongminChae/QPMA/get/",
+      "status": 404,
+      "content_type": "application/json",
+      "final_url": "https://archive.softwareheritage.org/api/1/origin/https://github.com/JeongminChae/QPMA/get/",
+      "redirects": [],
+      "bytes": 102,
+      "sha256": "a4091e5909981842ccd2e804eca2d762d80a04f05704b71ba39316f4089e04ff"
+    }
+  ],
+  "pdf_inspection": {
+    "delta-si.pdf": {
+      "pages": 3,
+      "size": 384114,
+      "sha256": "9f4b4c2f6f727847429c9ca9b6c1e549a1ac8ed145a92383b40d04de6c620563",
+      "embedded_files": "0 embedded files",
+      "code_host_link_annotations": [],
+      "publisher_md5": "0e2865b967befc890b7f2b4e9cf5bbe7",
+      "actual_md5": "0e2865b967befc890b7f2b4e9cf5bbe7",
+      "rendered_and_visually_checked_pages": [
+        1,
+        2,
+        3
+      ],
+      "findings": [
+        "KRR closed-form coefficients and kernels",
+        "cross-validation pseudocode and Coulomb-matrix representation",
+        "offset tables and references; no source listing, executable attachment, or code link"
+      ]
+    },
+    "phisnet-paper": {
+      "pages": 14,
+      "size": 2241213,
+      "sha256": "73fa7a776e93f2a326ce7588490bedb5499c19551d3d9a190115290e19b9aafd",
+      "embedded_files": "0 embedded files",
+      "code_host_link_annotations": []
+    },
+    "phisnet-si": {
+      "pages": 14,
+      "size": 9826351,
+      "sha256": "75258edbe31f6ba1289d6af4d7cf26aa262539053831769ca1e03d5501df2152",
+      "embedded_files": "0 embedded files",
+      "code_host_link_annotations": []
+    },
+    "im-gnn-paper": {
+      "pages": 15,
+      "size": 1447414,
+      "sha256": "5782f0f0685394c1fe3929a0c61019bb820fe221d61b16cc90cd894d7f6cb0ac",
+      "embedded_files": "0 embedded files",
+      "code_host_link_annotations": [],
+      "findings": [
+        "Publisher PDF includes algorithm and implementation details, MC-dropout/reliable pseudo-label selection and hardware/hyperparameters. The Tox21 link in the PDF is a benchmark data source."
+      ]
+    },
+    "delta-arxiv": {
+      "pages": 14,
+      "size": 6231840,
+      "sha256": "1d6c4ab9ed70617cc8f4b77be22fb35dbe7a8410149a9925a23c0cb54405d19c",
+      "embedded_files": "0 embedded files",
+      "code_host_link_annotations": []
+    }
+  },
+  "arxiv_source_archives": {
+    "phisnet-arxiv-src": {
+      "signed_version": "2106.02347v2",
+      "members": [
+        "figures/activation.pdf",
+        "figures/network_layers_v2.svg",
+        "figures/overview.svg",
+        "figures/network_layers_v4.svg",
+        "figures/global_architecture.pdf",
+        "figures/hamiltonian_construction.pdf",
+        "figures/overview_v2.svg",
+        "figures/hamiltonian_construction.svg",
+        "figures/sph.pdf",
+        "figures/overview.pdf",
+        "figures/network_layers_v4.pdf",
+        "figures/overview_v2.pdf",
+        "figures/network_layers_v3.pdf",
+        "figures/network_layers_v2.pdf",
+        "figures/architecture.svg",
+        "figures/rbfs.pdf",
+        "figures/network_layers.svg",
+        "figures/hamiltonian_construction_v2.svg",
+        "figures/hamiltonian_construction_v3.svg",
+        "figures/network_layers.pdf",
+        "figures/hamiltonian_construction_v2.pdf",
+        "figures/hamiltonian_construction_v3.pdf",
+        "ms.bbl",
+        "ms.tex",
+        "neurips_2021.sty",
+        "supplement.bbl",
+        "supplement.tex",
+        "xxms.tex",
+        "xxsupplement.tex"
+      ],
+      "file_count": 29,
+      "extensions": {
+        ".pdf": 13,
+        ".svg": 9,
+        ".bbl": 2,
+        ".tex": 4,
+        ".sty": 1
+      },
+      "content_role": "manuscript, figures and bibliography assets"
+    },
+    "dmphisnet-arxiv-src": {
+      "signed_version": "2604.27256v1",
+      "members": [
+        "00README.json",
+        "Fig01.pdf",
+        "Fig02.pdf",
+        "Fig03.pdf",
+        "main.bbl",
+        "main.tex",
+        "references.bib"
+      ],
+      "file_count": 7,
+      "extensions": {
+        ".json": 1,
+        ".pdf": 3,
+        ".bbl": 1,
+        ".tex": 1,
+        ".bib": 1
+      },
+      "content_role": "manuscript, figures and bibliography assets"
+    }
+  },
+  "github_queries": [
+    {
+      "id": "phisnet_named",
+      "checked_at_utc": "2026-11-17T20:03:18.069217+00:00",
+      "url": "https://api.github.com/search/repositories?q=PhiSNet+in%3Aname&per_page=100",
+      "return_code": 0,
+      "total_count": 26,
+      "incomplete_results": false,
+      "response_sha256": "846391d4e9733f0f922df135230558105300ed2beba9bdbc139811b3cf65d194",
+      "relevant_returns": [
+        "zyyr17/phisnet_out",
+        "marquetand/phisnet_fork",
+        "zyyr17/phisNet_outputs"
+      ],
+      "scope": "Search response at this time; unrelated name collisions omitted."
+    },
+    {
+      "id": "dm_named",
+      "checked_at_utc": "2026-11-17T20:03:18.069893+00:00",
+      "url": "https://api.github.com/search/repositories?q=%22dm-PhiSNet%22+in%3Aname%2Cdescription%2Creadme&per_page=100",
+      "return_code": 0,
+      "total_count": 0,
+      "incomplete_results": false,
+      "response_sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "relevant_returns": [],
+      "scope": "Search response at this time; unrelated name collisions omitted."
+    },
+    {
+      "id": "im_title",
+      "checked_at_utc": "2026-11-17T20:03:18.070112+00:00",
+      "url": "https://api.github.com/search/repositories?q=%22Improving+Multi-task+GNNs%22+in%3Areadme&per_page=100",
+      "return_code": 0,
+      "total_count": 0,
+      "incomplete_results": false,
+      "response_sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "relevant_returns": [],
+      "scope": "Search response at this time; unrelated name collisions omitted."
+    },
+    {
+      "id": "im_keywords",
+      "checked_at_utc": "2026-11-17T20:03:19.537008+00:00",
+      "url": "https://api.github.com/search/repositories?q=IM-GNN+molecular&per_page=100",
+      "return_code": 0,
+      "total_count": 0,
+      "incomplete_results": false,
+      "response_sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "relevant_returns": [],
+      "scope": "Search response at this time; unrelated name collisions omitted."
+    },
+    {
+      "id": "qpma_title",
+      "checked_at_utc": "2026-11-17T20:03:19.544486+00:00",
+      "url": "https://api.github.com/search/repositories?q=%22Matrix+Approximation+With+Side+Information%22+in%3Areadme&per_page=100",
+      "return_code": 0,
+      "total_count": 0,
+      "incomplete_results": false,
+      "response_sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "relevant_returns": [],
+      "scope": "Search response at this time; unrelated name collisions omitted."
+    },
+    {
+      "id": "qmugs_named",
+      "checked_at_utc": "2026-11-17T20:03:20.450393+00:00",
+      "url": "https://api.github.com/search/repositories?q=QMugs+in%3Aname&per_page=100",
+      "return_code": 0,
+      "total_count": 4,
+      "incomplete_results": false,
+      "response_sha256": "8331ae20c208643211daf07094abc1911e674d9f7662c8aba6e575a0287c01a2",
+      "relevant_returns": [
+        "marcomulinex/QMugs2XYZ",
+        "jobaumann/qmugs-analysis"
+      ],
+      "scope": "Search response at this time; unrelated name collisions omitted."
+    },
+    {
+      "id": "delta_doi",
+      "checked_at_utc": "2026-11-17T20:03:21.094116+00:00",
+      "url": "https://api.github.com/search/repositories?q=%22Ramakrishnan%22+%225b00099%22+in%3Areadme&per_page=100",
+      "return_code": 0,
+      "total_count": 1,
+      "incomplete_results": false,
+      "response_sha256": "9262170094c821c8384d2d96442e437d7483091eb70a4377a87570163c5249e4",
+      "relevant_returns": [
+        "jonathanamara/delta-ml-reproduction"
+      ],
+      "scope": "Search response at this time; unrelated name collisions omitted."
+    }
+  ],
+  "github_metadata": [
+    {
+      "endpoint": "https://api.github.com/repos/zyyr17/dm-nn-so3-analytic",
+      "snapshot_file_mtime_utc": "2026-11-17T19:49:17.007134+00:00",
+      "bytes": 5563,
+      "sha256": "ed6415ba899c095471995adbdab3cf0b9887ac828305c9ed4ebebb93b98973aa"
+    },
+    {
+      "endpoint": "https://api.github.com/repos/zyyr17/dm-nn-so3-analytic/commits?per_page=100",
+      "snapshot_file_mtime_utc": "2026-11-17T19:50:34.799612+00:00",
+      "bytes": 2683,
+      "sha256": "c05e27c99623e90dfec33e58b47608fc15806fee38dd2bb879860ef6529457a8",
+      "entry_count": 2,
+      "commits": [
+        {
+          "sha": "54a566de8ef854a5e62fb434a41b509e1cf44185",
+          "tree": "4b825dc642cb6eb9a060e54bf8d69288fbee4904",
+          "author": "Zuriel Yescas",
+          "date": "2025-10-03T17:17:41Z",
+          "message": "Delete all project files"
+        },
+        {
+          "sha": "eb365d3e4d0e85ccf89740e5fad26970591c5b16",
+          "tree": "85ace16af649d2ed6af3efb44c17f7c79df1f154",
+          "author": "Zuriel Yescas",
+          "date": "2025-10-03T04:32:36Z",
+          "message": "Add project code and data generators"
+        }
+      ]
+    },
+    {
+      "endpoint": "https://api.github.com/repos/marquetand/phisnet_fork/commits?per_page=100",
+      "snapshot_file_mtime_utc": "2026-11-17T19:50:37.574524+00:00",
+      "bytes": 88947,
+      "sha256": "82a51236398628962e9837b7dbe647fb33d3e5c0143162c45e6b5a7f0d58a357",
+      "entry_count": 26
+    },
+    {
+      "endpoint": "https://api.github.com/repos/josejimenezluna/delfta/tags?per_page=100",
+      "snapshot_file_mtime_utc": "2026-11-17T19:54:39.740327+00:00",
+      "bytes": 3829,
+      "sha256": "f89785e3753b47a87d69055cfa5e0828c7afe6107a690c82f84a150836a56456",
+      "entry_count": 9,
+      "paper_tag": {
+        "name": "v1.0.0",
+        "commit": "5635b514067b229227e27143cd87e0ad5057388e"
+      }
+    },
+    {
+      "endpoint": "https://api.github.com/users/FenyuHu/repos?per_page=100",
+      "snapshot_file_mtime_utc": "2026-11-17T19:52:36.278890+00:00",
+      "bytes": 10612,
+      "sha256": "5a5d473e9a83e992896726ba1f3443853a01fffca6d45bfcda706828a4d54a98",
+      "entry_count": 2,
+      "full_names": [
+        "FenyuHu/GraphAIR",
+        "FenyuHu/H-GCN-IJCAI19"
+      ]
+    },
+    {
+      "endpoint": "https://api.github.com/orgs/CRIPAC-DIG/repos?per_page=100",
+      "snapshot_file_mtime_utc": "2026-11-17T19:48:14.479254+00:00",
+      "bytes": 207252,
+      "sha256": "9656f784bf652de57f5921debd5e1749aef0581473d132f5f6bdccc8355bc085",
+      "entry_count": 39
+    },
+    {
+      "endpoint": "https://api.github.com/users/JeongminChae/repos?per_page=100",
+      "snapshot_file_mtime_utc": "2026-11-17T19:48:12.381327+00:00",
+      "bytes": 33676,
+      "sha256": "412d30f6ef61cf745c98010b427ff8e2a2c6248163c48922f4df29497e79ccf7",
+      "entry_count": 6,
+      "full_names": [
+        "JeongminChae/DS_HW",
+        "JeongminChae/ICASSP2025",
+        "JeongminChae/MKL_Active_Learning",
+        "JeongminChae/MKL_Online_Federated_Learning",
+        "JeongminChae/plugin-hello-world",
+        "JeongminChae/sage-summer-camp-2026"
+      ]
+    },
+    {
+      "endpoint": "https://api.github.com/users/cisert/repos?per_page=100",
+      "snapshot_file_mtime_utc": "2026-11-17T19:51:39.032614+00:00",
+      "bytes": 40786,
+      "sha256": "8b8aaf00e7b7025b7f43754d140a982426cb583109139e32cce7043aea1709cb",
+      "entry_count": 8,
+      "full_names": [
+        "cisert/a2md",
+        "cisert/bcpaff",
+        "cisert/delfta",
+        "cisert/gitignore",
+        "cisert/moleculekit",
+        "cisert/molgrad",
+        "cisert/psi4numpy",
+        "cisert/rescoss_logp_ml"
+      ]
+    },
+    {
+      "endpoint": "https://api.github.com/users/ounke/repos?per_page=100",
+      "snapshot_file_mtime_utc": "2026-11-17T19:48:12.428325+00:00",
+      "bytes": 15093,
+      "sha256": "6158bd1426e57b9c43c991cfc205fb701fc1187943cf3994289ca7072c1300aa",
+      "entry_count": 3,
+      "full_names": [
+        "OUnke/denspart",
+        "OUnke/grid",
+        "OUnke/SpookyNet"
+      ]
+    },
+    {
+      "endpoint": "https://api.github.com/users/raghurama123/repos?per_page=100",
+      "snapshot_file_mtime_utc": "2026-11-17T19:57:33.798590+00:00",
+      "bytes": 558473,
+      "sha256": "f6e5501962e8e75ba579a31d421f7c5ec6e69c11760d9d0033caea7adaedafbe",
+      "entry_count": 100
+    },
+    {
+      "endpoint": "https://api.github.com/users/raghurama123/repos?per_page=100&page=2",
+      "snapshot_file_mtime_utc": "2026-11-17T19:59:19.573837+00:00",
+      "bytes": 87431,
+      "sha256": "965ddd8974abfd49ef39ef25a7788c6f1c620e984bb470bb07875fb85a399ab1",
+      "entry_count": 16
+    },
+    {
+      "endpoint": "https://api.github.com/repos/cisert/delfta",
+      "snapshot_file_mtime_utc": "2026-11-17T19:52:38.113836+00:00",
+      "bytes": 16033,
+      "sha256": "9b9dc07dacdb7df1cf13562f9bb83673d11fa4b3c15bd804d2d793b04d0fddaf"
+    },
+    {
+      "endpoint": "https://api.github.com/repos/josejimenezluna/delfta",
+      "snapshot_file_mtime_utc": "2026-11-17T19:57:35.347549+00:00",
+      "bytes": 5634,
+      "sha256": "406d3cff61dde073c50c995c828f3e6a650910fa660e25e4d19d5d892b5be5b0"
+    }
+  ],
+  "qpma": {
+    "author_url_in_arxiv_v2": "https://github.com/JeongminChae/QPMA",
+    "authenticated_api_observation": "HTTP/2.0 404 Not Found",
+    "author_url_swh_response": {
+      "exception": "NotFoundExc",
+      "reason": "Origin with url https://github.com/JeongminChae/QPMA not found!"
+    },
+    "reason_for_absence": "Unknown. An exact-URL archive miss does not prove the implementation never existed."
+  },
+  "qmugs": {
+    "paper": "10.1038/s41597-022-01390-7",
+    "ids": [
+      "PMC9174255",
+      "9174255",
+      "9174255",
+      "35672335",
+      "10.1038/s41597-022-01390-7"
+    ],
+    "code_availability_named_versions": [
+      "Python 3.7.7",
+      "RDKit 2020.03.3",
+      "GFN2-xTB 6.3.1",
+      "Psi4 1.3.2",
+      "PyMol 2.3.5",
+      "ChemDraw 19.1.1.32",
+      "rclone WebDAV 1.54.0"
+    ],
+    "links_in_code_availability_section": [
+      "http://www.rdkit.org",
+      "https://rclone.org"
+    ],
+    "data_records_paper_statement": "100 wfns_xx.tar.gz volumes of about 50 GB apiece, NumPy .npy and tarball_assignment.csv; reported schema only. No records verified from that service in this check.",
+    "data_record": {
+      "doi": "10.3929/ethz-b-000482129",
+      "url": "http://hdl.handle.net/20.500.11850/482129",
+      "metadata_version": 37,
+      "rights": [
+        {
+          "rights": "Creative Commons Attribution Share Alike 3.0 Unported",
+          "rightsUri": "https://creativecommons.org/licenses/by-sa/3.0/legalcode",
+          "schemeUri": "https://spdx.org/licenses/",
+          "rightsIdentifier": "cc-by-sa-3.0",
+          "rightsIdentifierScheme": "SPDX"
+        },
+        {
+          "rights": "info:eu-repo/semantics/openAccess"
+        }
+      ],
+      "content_url": null
+    },
+    "workflow_origin": "no separate generator repository identified in the cited section or audited author repository list"
+  },
+  "phi_openreview": {
+    "url": "https://api2.openreview.net/notes?forum=auGY2UQfhSu",
+    "status": 403,
+    "class": "ChallengeRequiredError"
+  },
+  "delta_si": {
+    "article": 2167927,
+    "doi": "10.1021/acs.jctc.5b00099.s001",
+    "version": 1,
+    "license": {
+      "value": 10,
+      "name": "CC BY-NC 4.0",
+      "url": "https://creativecommons.org/licenses/by-nc/4.0/"
+    },
+    "file_count": 1,
+    "file_id": 3801826
+  },
+  "pinned_sources": [
+    {
+      "id": "dm_phisnet_history",
+      "catalog_ids": [
+        "dm_phisnet"
+      ],
+      "priority": "P0",
+      "repository_url": "https://github.com/zyyr17/dm-nn-so3-analytic",
+      "role": "historical_author_source",
+      "commit": "eb365d3e4d0e85ccf89740e5fad26970591c5b16",
+      "checkout_path": "_references/dm_phisnet_history",
+      "paper_version_status": "Prepublication author commit; author/paper relationship follows model and authorship, paper release equivalence unverified.",
+      "selection_reason": "Author history has a source-bearing October 2025 commit before its empty HEAD. Inspect exact available artifact without redistributing files.",
+      "tree": "85ace16af649d2ed6af3efb44c17f7c79df1f154",
+      "indexed_tracked_files": 190,
+      "submodule_count": 0,
+      "lfs_pointer_count": 0,
+      "acquisition_blockers": [],
+      "working_tree_clean": true,
+      "license_files": [],
+      "receipt": "acquisition/dm_phisnet_history-20261117T195137078095Z.json",
+      "inventory": "inventories/dm_phisnet_history.json.gz"
+    },
+    {
+      "id": "phisnet_casnet_fork",
+      "catalog_ids": [
+        "phisnet"
+      ],
+      "priority": "P0",
+      "repository_url": "https://github.com/marquetand/phisnet_fork",
+      "role": "later_adaptation",
+      "commit": "398f215554146069a386809a4bd3bed83eddf87a",
+      "checkout_path": "_references/phisnet_casnet_fork",
+      "paper_version_status": "Later CasNet derivative, not a verified copy of original paper release.",
+      "selection_reason": "Establish a second documented descendant of the original OpenReview method, apart from nablaDFT.",
+      "tree": "ccb97a20d003cd3b0e8d6eb478ccbfdc611e3061",
+      "indexed_tracked_files": 61,
+      "submodule_count": 0,
+      "lfs_pointer_count": 0,
+      "acquisition_blockers": [],
+      "working_tree_clean": true,
+      "license_files": [],
+      "receipt": "acquisition/phisnet_casnet_fork-20261117T195143638661Z.json",
+      "inventory": "inventories/phisnet_casnet_fork.json.gz"
+    },
+    {
+      "id": "delfta_v1",
+      "catalog_ids": [
+        "qmugs",
+        "delta_ml"
+      ],
+      "priority": "P1",
+      "repository_url": "https://github.com/josejimenezluna/delfta",
+      "role": "qmugs_authors_downstream_delta_learning",
+      "commit": "5635b514067b229227e27143cd87e0ad5057388e",
+      "checkout_path": "_references/delfta_v1",
+      "paper_version_status": "Authors designate v1.0.0 for their DelFTa paper 10.1039/D2CP00834C. Separate from the original 2015 Delta-ML and from QMugs generation.",
+      "selection_reason": "QMugs author collaboration releases a concrete GFN2 plus learned correction comparison trained on the dataset.",
+      "tree": "6729f5a7a5ec5cef335182c2bfafbd6c161d4a9f",
+      "indexed_tracked_files": 51,
+      "submodule_count": 0,
+      "lfs_pointer_count": 0,
+      "acquisition_blockers": [],
+      "working_tree_clean": true,
+      "license_files": [
+        "LICENSE"
+      ],
+      "receipt": "acquisition/delfta_v1-20261117T195617868913Z.json",
+      "inventory": "inventories/delfta_v1.json.gz"
+    }
+  ],
+  "source_access_limits": [
+    "No personal contact or requests for unpublished code. No challenge or paywall bypass. Absence from an enumerated location is not proof of absence elsewhere."
+  ]
+}

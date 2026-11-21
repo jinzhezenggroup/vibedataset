@@ -1,0 +1,105 @@
+{
+  "id": "qcmanybody",
+  "source": {
+    "id": "qcmanybody",
+    "catalog_ids": [],
+    "priority": "P0",
+    "repository_url": "https://github.com/MolSSI/QCManyBody",
+    "role": "release_source",
+    "commit": "90273ab21e4f824b286d55411666394c80cf2472",
+    "checkout_path": "_references/qcmanybody",
+    "paper_version_status": "current_release_v0.8.0_not_identified_as_2024_paper_pin",
+    "selection_reason": "Primary implementation of counterpoise-aware and multi-model many-body component planning and exact assembly at a fixed MBE target. Traced from the pinned QCFractal many-body service."
+  },
+  "started_at_utc": "2026-11-17T18:44:38.066928+00:00",
+  "status": "indexed_pending_review",
+  "commands": [
+    {
+      "argv": [
+        "git",
+        "init",
+        "--quiet"
+      ],
+      "cwd": "_references/qcmanybody",
+      "started_at_utc": "2026-11-17T18:44:38.067108+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.002312709009856917,
+      "ended_at_utc": "2026-11-17T18:44:38.069589+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "remote",
+        "add",
+        "origin",
+        "https://github.com/MolSSI/QCManyBody"
+      ],
+      "cwd": "_references/qcmanybody",
+      "started_at_utc": "2026-11-17T18:44:38.069752+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.002049771006568335,
+      "ended_at_utc": "2026-11-17T18:44:38.071965+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "protocol.file.allow=never",
+        "fetch",
+        "--depth=1",
+        "--no-tags",
+        "origin",
+        "90273ab21e4f824b286d55411666394c80cf2472"
+      ],
+      "cwd": "_references/qcmanybody",
+      "started_at_utc": "2026-11-17T18:44:38.072088+00:00",
+      "stdout": "",
+      "stderr": "\u6765\u81ea https://github.com/MolSSI/QCManyBody\n * branch            90273ab21e4f824b286d55411666394c80cf2472 -> FETCH_HEAD\n",
+      "returncode": 0,
+      "elapsed_seconds": 3.2381740909913788,
+      "ended_at_utc": "2026-11-17T18:44:41.310434+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "core.autocrlf=false",
+        "checkout",
+        "--detach",
+        "90273ab21e4f824b286d55411666394c80cf2472"
+      ],
+      "cwd": "_references/qcmanybody",
+      "started_at_utc": "2026-11-17T18:44:41.311128+00:00",
+      "stdout": "",
+      "stderr": "HEAD \u76ee\u524d\u4f4d\u4e8e 90273ab changelog for 0.8.0\n",
+      "returncode": 0,
+      "elapsed_seconds": 0.013938068994320929,
+      "ended_at_utc": "2026-11-17T18:44:41.325633+00:00"
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "/home/lhshen/vibedataset/handoff/gqcdataset_codex_goal/tools/inventory_sources.py",
+        "_references/qcmanybody",
+        "--recurse-submodules",
+        "--json",
+        "handoff/gqcdataset_codex_goal/research/inventories/qcmanybody.json"
+      ],
+      "cwd": ".",
+      "started_at_utc": "2026-11-17T18:44:41.326215+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.0863496100064367,
+      "ended_at_utc": "2026-11-17T18:44:41.413048+00:00"
+    }
+  ],
+  "receipt_path": "handoff/gqcdataset_codex_goal/research/acquisition/qcmanybody-20261117T184438066906Z.json",
+  "resolved_commit": "90273ab21e4f824b286d55411666394c80cf2472",
+  "inventory_path": "handoff/gqcdataset_codex_goal/research/inventories/qcmanybody.json",
+  "ended_at_utc": "2026-11-17T18:44:41.413508+00:00"
+}

@@ -1,0 +1,284 @@
+{
+  "identity": {
+    "python": "3.13.16",
+    "system": "Linux-6.8.0-138-generic-x86_64-with-glibc2.35",
+    "qcmanybody_pin": "90273ab21e4f824b286d55411666394c80cf2472",
+    "qcmanybody": "0.8.0",
+    "qcelemental": "0.51.4",
+    "pyscf": "2.14.0",
+    "numpy": "2.5.5",
+    "scipy": "1.18.1",
+    "method": "RHF",
+    "driver": "ground state total energy",
+    "unit": "hartree",
+    "coordinate_unit": "bohr",
+    "basis": {
+      "H": [
+        [
+          0,
+          [
+            3.42525091,
+            0.15432897
+          ],
+          [
+            0.62391373,
+            0.53532814
+          ],
+          [
+            0.1688554,
+            0.44463454
+          ]
+        ]
+      ],
+      "He": [
+        [
+          0,
+          [
+            6.36242139,
+            0.15432897
+          ],
+          [
+            1.158923,
+            0.53532814
+          ],
+          [
+            0.31364979,
+            0.44463454
+          ]
+        ]
+      ],
+      "O": [
+        [
+          0,
+          [
+            130.70932,
+            0.15432897
+          ],
+          [
+            23.808861,
+            0.53532814
+          ],
+          [
+            6.4436083,
+            0.44463454
+          ]
+        ],
+        [
+          0,
+          [
+            5.0331513,
+            -0.09996723
+          ],
+          [
+            1.1695961,
+            0.39951283
+          ],
+          [
+            0.380389,
+            0.70011547
+          ]
+        ],
+        [
+          1,
+          [
+            5.0331513,
+            0.15591627
+          ],
+          [
+            1.1695961,
+            0.60768372
+          ],
+          [
+            0.380389,
+            0.39195739
+          ]
+        ]
+      ]
+    },
+    "spherical": true,
+    "density_fitting": false,
+    "conv_tol": 1e-13,
+    "conv_tol_grad": 1e-09,
+    "max_cycle": 120,
+    "init_guess": "minao",
+    "threads": 1,
+    "libcgto_sha256": "337d956486a156f1aa7ca636ac5a91c6277058ffedb6db2efe714fee65f726e0",
+    "libcvhf_sha256": "5d7461e3976fd40fce7c9ba571e45b01830dd018d75927e389c32a6f4d09df0c"
+  },
+  "geometry": [
+    [
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      5.2,
+      0.0,
+      0.0
+    ],
+    [
+      5.2,
+      0.0,
+      1.4
+    ],
+    [
+      0.0,
+      5.8,
+      0.0
+    ],
+    [
+      0.0,
+      7.23,
+      1.09
+    ],
+    [
+      0.0,
+      4.38,
+      1.08
+    ]
+  ],
+  "fragments": [
+    [
+      0
+    ],
+    [
+      1,
+      2
+    ],
+    [
+      3,
+      4,
+      5
+    ]
+  ],
+  "input_symbols": [
+    "He",
+    "H",
+    "H",
+    "O",
+    "H",
+    "H"
+  ],
+  "fixed_target_tolerance_hartree": 1e-10,
+  "direct_target_reference": {
+    "cp": 0.0005945323647296163,
+    "nocp": 0.00045324103928123805
+  },
+  "direct_reference_solves": 7,
+  "stages": [
+    {
+      "stage": "all_orders_cold",
+      "requested": [
+        "cp",
+        "nocp"
+      ],
+      "supersystem_ie_only": false,
+      "entries": 13,
+      "new_solves": 13,
+      "archive_hits": 0,
+      "energies": {
+        "cp": 0.0005945323647296163,
+        "nocp": 0.00045324103928123805
+      },
+      "assembly_seconds": 0.0003669010038720444,
+      "lookup_seconds": 0.0005250029789749533,
+      "write_seconds": 0.0,
+      "elapsed_seconds": 0.26861321199976373,
+      "stored_bytes_after": 0,
+      "max_reference_error": 0.0
+    },
+    {
+      "stage": "joint_cold",
+      "requested": [
+        "cp",
+        "nocp"
+      ],
+      "supersystem_ie_only": true,
+      "entries": 7,
+      "new_solves": 7,
+      "archive_hits": 0,
+      "energies": {
+        "cp": 0.0005945323647438272,
+        "nocp": 0.00045324103928123805
+      },
+      "assembly_seconds": 0.0002621769963297993,
+      "lookup_seconds": 0.0002756640169536695,
+      "write_seconds": 0.0,
+      "elapsed_seconds": 0.12880566500825807,
+      "stored_bytes_after": 0,
+      "max_reference_error": 1.4210854715202004e-14
+    },
+    {
+      "stage": "round1",
+      "requested": [
+        "nocp"
+      ],
+      "supersystem_ie_only": true,
+      "entries": 4,
+      "new_solves": 4,
+      "archive_hits": 0,
+      "energies": {
+        "nocp": 0.00045324103928123805
+      },
+      "assembly_seconds": 0.0001889300037873909,
+      "lookup_seconds": 0.00025268598983529955,
+      "write_seconds": 0.00027768599102273583,
+      "elapsed_seconds": 0.0739800879964605,
+      "stored_bytes_after": 1214,
+      "max_reference_error": 0.0
+    },
+    {
+      "stage": "round2",
+      "requested": [
+        "cp"
+      ],
+      "supersystem_ie_only": true,
+      "entries": 4,
+      "new_solves": 3,
+      "archive_hits": 1,
+      "energies": {
+        "cp": 0.0005945323647438272
+      },
+      "assembly_seconds": 0.00019182299729436636,
+      "lookup_seconds": 0.000294138997560367,
+      "write_seconds": 0.00023115999647416174,
+      "elapsed_seconds": 0.05481583799701184,
+      "stored_bytes_after": 2577,
+      "max_reference_error": 1.4210854715202004e-14
+    },
+    {
+      "stage": "round3",
+      "requested": [
+        "cp",
+        "nocp"
+      ],
+      "supersystem_ie_only": true,
+      "entries": 7,
+      "new_solves": 0,
+      "archive_hits": 7,
+      "energies": {
+        "cp": 0.0005945323647438272,
+        "nocp": 0.00045324103928123805
+      },
+      "assembly_seconds": 0.00018879900744650513,
+      "lookup_seconds": 0.0003413720114622265,
+      "write_seconds": 0.0,
+      "elapsed_seconds": 0.0033488780027255416,
+      "stored_bytes_after": 2577,
+      "max_reference_error": 1.4210854715202004e-14
+    }
+  ],
+  "total_scf_calls": 34,
+  "expected_rejections": {
+    "omitted_required_cp_component": "[\"RHF/STO-3G\", [1], [1, 2, 3]]",
+    "missing_exception": "'[\"RHF/STO-3G\", [1], [1, 2, 3]]'",
+    "mislabeled_bare_as_cp_value": 0.00045324103928123805,
+    "absolute_error_hartree": 0.0001412913254483783,
+    "same_cp_local_labels_after_displacement": 4,
+    "matching_physical_keys": 0
+  },
+  "archive_file_count": 7,
+  "journal_sha256": "9aa3b17cd73dc6fd829d5afc08f1f2e1ee2ae09a5069725f4ab818054372774b",
+  "driver_sha256": "56106606a0457088239899536d6dd5aaaa9d2f4639ca8614e863042cc8995d59",
+  "elapsed_seconds_after_imports": 0.6865339430078166
+}

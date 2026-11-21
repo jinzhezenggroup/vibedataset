@@ -2,6 +2,9 @@
 
 日期：2026-11-18。本表记录当前交接时的真实缺口。缺少原始代码、访问失败、版本未锁定分别处理；任何一项都不能推出“前人没有实现”。
 
+此表保留交接发布时的记录；接管后的实际尝试、已解决项与剩余范围见
+[research/SOURCE_GAPS.md](../research/SOURCE_GAPS.md)，版本见 [sources.lock.json](../research/sources.lock.json)。
+
 ## 已识别的具体缺口
 
 | 条目 | 已核实的一手证据 | 当前缺口 | Codex 下一步 | 对结论的影响 |

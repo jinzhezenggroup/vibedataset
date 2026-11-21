@@ -1,0 +1,43 @@
+{
+  "initial_cli_commit": "eaa6def",
+  "final_cli_commit": "dbfde3e",
+  "verification_script_sha256": "f934a6dc9e4fea1722f3aa2ce02192016ec5d33031d0ffeaaf313ebcda51e788",
+  "initial_cli_sha256": "4e19b41480cd398dc7f630e3cd5041e4b7f10bcac6e4a7f1e1dc6ce11a8b93cb",
+  "final_cli_sha256": "28256794651db5eac6a49c9bb4f393f513ae1b53689a191c19e6860efbc33de8",
+  "final_processes": 9,
+  "result": "passed",
+  "final_tables": {
+    "labels": 5,
+    "vectors": 4,
+    "attempts": 9
+  },
+  "final_attempt_outcomes": {
+    "completed": 8,
+    "failed": 1
+  },
+  "source_batch": "bad-scalar-recovered.json from the eaa6def client suite",
+  "reopen_report_sha256": "97c209b505c14d2ce8cb3af05920d0779ad288ea4ddafe30b7be7e00f0c9f014",
+  "original_producer": "05cc591425b6472e929bfe69c5f7f45a",
+  "unchanged_target_identity": "a56c15bca8b4ff2dc0e009c74b7ca62735b10061d3c9e1087f3c4225e08b4add",
+  "published_value": -11.061447862372173,
+  "reopened_work": {
+    "id": "9d54d9b6e1c945e484c005e789dddf26",
+    "record_id": "qm9-000003",
+    "identity": "6c2d4d88cff0ce724c84236efa8186835f0ec706d1248ab493799b97ad1c3d4f",
+    "requested_lines": 1,
+    "distinct_targets": 1,
+    "scalar_hits": 1,
+    "scalar_rejections": 0,
+    "model_started": false,
+    "setup_jk": 0,
+    "round_jk": 0,
+    "rhs": 0,
+    "status": "completed",
+    "rejected_labels": [],
+    "lock_wait_seconds": 0.006915613994351588,
+    "rejected_history": [],
+    "validated_history_scalars": 0,
+    "historical_hits": 0,
+    "seconds": 0.007113593994290568
+  }
+}

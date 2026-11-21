@@ -1,0 +1,130 @@
+{
+  "path_n5": "n5:~/vibedataset/runs/e04a1e94dc84-qm9-20261117T193749Z",
+  "scheduler": {
+    "JobId": "2046",
+    "JobState": "FAILED",
+    "ExitCode": "1:0",
+    "Partition": "main",
+    "RunTime": "00:00:06",
+    "TimeLimit": "00:10:00",
+    "SubmitTime": "2026-11-18T03:37:53",
+    "StartTime": "2026-11-18T03:37:54",
+    "EndTime": "2026-11-18T03:38:00",
+    "NumCPUs": "4",
+    "MinMemoryNode": "16G",
+    "TresPerNode": "gres:gpu:5090:1",
+    "Restarts": "0"
+  },
+  "reason_for_nonzero": "The producer exited after all selected members because two failed scientific gates. Four qualified reference states are retained.",
+  "preflight": "PARTITION AVAIL GRES STATE\nmain* up gpu:5090:1 idle\nJOBID NAME STATE TIME\n",
+  "gpu_observation": "NVIDIA GeForce RTX 5090, 12.0, 570.86.16, 32607 MiB",
+  "gnu_time_seconds": {
+    "real": 5.46,
+    "user": 7.92,
+    "sys": 1.38
+  },
+  "verified_remote_files": {
+    "outputs/job-2046/index.json": {
+      "sha256": "53ec51ed838b2cc3db665909ea10e2ff38d2988dc55c0066a9acc806e8a7dc62",
+      "bytes": 21864
+    },
+    "outputs/job-2046/operations.jsonl": {
+      "sha256": "4863722b8032df72553cc0ef7e6680ccfee0bf7b6689216d6b184f195359b567",
+      "bytes": 12927
+    },
+    "outputs/job-2046/partial.json": {
+      "sha256": "20c7ba81031081d9dc3b129226f805386c23e1b3062df91370ca2d6a7125ec76",
+      "bytes": 18108
+    },
+    "outputs/job-2046/qm9-000001.json": {
+      "sha256": "30d9998b9102c93acb7a4e92b3690920b080b2e7d55043a67ca8350a20202f4e",
+      "bytes": 7025
+    },
+    "outputs/job-2046/qm9-000001.npz": {
+      "sha256": "0eb696523f5067f441022488d6380f0e145e6346c00c88bc72d3e4b2b22cb15f",
+      "bytes": 21584
+    },
+    "outputs/job-2046/qm9-000002.json": {
+      "sha256": "ba3df879fec63c9fa2b066018e85fcdc181061e653edebd362c55338088d70b4",
+      "bytes": 6298
+    },
+    "outputs/job-2046/qm9-000002.npz": {
+      "sha256": "30b76d00731401ad9a0947c90f9e4a4e9ad51b43e5d40ab01ac0ff76b1f6946c",
+      "bytes": 13482
+    },
+    "outputs/job-2046/qm9-000003.json": {
+      "sha256": "c0e5212e5f0def071ff6ec5dac88c0f9b893aa9c10107e73c514edba6e416e8f",
+      "bytes": 5646
+    },
+    "outputs/job-2046/qm9-000003.npz": {
+      "sha256": "08d0cec5d6ac38620732cb37e07955668a07576e5ca3fc424212db1e8094f4ce",
+      "bytes": 8115
+    },
+    "outputs/job-2046/qm9-000010.json": {
+      "sha256": "cadd1ce1ecda3b56a675e5b699a80a2e345238611ec363e212c5500bdf9a120a",
+      "bytes": 9352
+    },
+    "outputs/job-2046/qm9-000010.npz": {
+      "sha256": "29383a898c848ee5dc3875c10b330082e3f2128a0a4d4ec0487bcdb35493c9f7",
+      "bytes": 531309
+    },
+    "slurm-2046.err": {
+      "sha256": "8324cb730c65435f4094f607272370593dc5388dfd53f3e60abaef67c0dca3c4",
+      "bytes": 29
+    },
+    "slurm-2046.out": {
+      "sha256": "981626f7566c127b5ddf8a73eaef435029f1b2d00f9fda24308031b1fd948cb5",
+      "bytes": 1221
+    },
+    "SHA256SUMS": {
+      "sha256": "8c195c07fc503782e083207a3818d7f68b87896ca2298dedcfb816d7cc27a020",
+      "bytes": 1687
+    }
+  },
+  "operations_closed": 33,
+  "actual_total_counts": {
+    "gqc_systems": 6,
+    "gqc_iterations": 72,
+    "gqc_fock_builds": 77,
+    "reference_cycles": 362,
+    "reference_scf_attempts": 6,
+    "verified_references": 4,
+    "npz_bytes": 574490,
+    "metadata_bytes": 28321,
+    "raw_array_bytes": 961520
+  },
+  "checked_local_consumers": {
+    "package": "PySCF 2.14.0",
+    "helper_source_commit": "2791504cc238fe83d328fc1718080642b288222a",
+    "tests": {
+      "qm9-000003": {
+        "reference_identity": "06223ff4dd5e4188137226482258f37c4961bbc447709d03f72f987ef0bfe941",
+        "local_max_overlap_diff": 5.551115123125783e-17,
+        "local_max_eri_diff": 0.0
+      },
+      "qm9-000002": {
+        "reference_identity": "a5551d65b98a544cd0ec8d2deb3f07636b334147462f1040b1554df22ea31f4b",
+        "local_max_overlap_diff": 2.7755575615628914e-17,
+        "local_max_eri_diff": 0.0
+      },
+      "qm9-000001": {
+        "reference_identity": "325348cbb939cb15a39fa78c5e93b83e9d582a68c64492be96d06193a60c35e6",
+        "local_max_overlap_diff": 5.551115123125783e-17,
+        "local_max_eri_diff": 0.0
+      },
+      "qm9-000010": {
+        "reference_identity": "60dbe42b73d6706229d41f7d9e6eab39b6327b450e5cf2a004fd8953e66af355",
+        "local_max_overlap_diff": 5.551115123125783e-17,
+        "local_max_eri_diff": 0.0
+      }
+    },
+    "local_scf_solves": 0
+  },
+  "transfer_input_wall_seconds": 1.454237,
+  "staged_payload_bytes": 125632,
+  "source_acquisition": {
+    "primary_archive_download_seconds": 20.847755375987617,
+    "primary_archive_bytes": 86144227,
+    "scope": "Timed the official archive HTTP transfer through reading the bytes for validation. Companion and metadata HTTP times were not separately recorded."
+  }
+}

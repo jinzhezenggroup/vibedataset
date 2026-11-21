@@ -1,0 +1,122 @@
+{
+  "id": "halide",
+  "source": {
+    "id": "halide",
+    "catalog_ids": [
+      "halide"
+    ],
+    "priority": "P2",
+    "repository_url": "https://github.com/halide/Halide",
+    "role": "current",
+    "commit": null,
+    "checkout_path": "_references/halide",
+    "paper_version_status": "not_established",
+    "selection_reason": "\u7f16\u8bd1\u4e0e\u7a0b\u5e8f\u4e13\u95e8\u5316\u80cc\u666f"
+  },
+  "started_at_utc": "2026-11-17T17:57:31.543013+00:00",
+  "status": "indexed_pending_review",
+  "commands": [
+    {
+      "argv": [
+        "git",
+        "ls-remote",
+        "https://github.com/halide/Halide",
+        "HEAD"
+      ],
+      "cwd": ".",
+      "started_at_utc": "2026-11-17T17:57:31.543231+00:00",
+      "stdout": "ac9f247583a633bd64e4b828d9bdcd4ffd952ce8\tHEAD\n",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 2.8920563129941,
+      "ended_at_utc": "2026-11-17T17:57:34.435580+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "init",
+        "--quiet"
+      ],
+      "cwd": "_references/halide",
+      "started_at_utc": "2026-11-17T17:57:34.436043+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.0057714349968591705,
+      "ended_at_utc": "2026-11-17T17:57:34.444496+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "remote",
+        "add",
+        "origin",
+        "https://github.com/halide/Halide"
+      ],
+      "cwd": "_references/halide",
+      "started_at_utc": "2026-11-17T17:57:34.444946+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.00389049100340344,
+      "ended_at_utc": "2026-11-17T17:57:34.449287+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "protocol.file.allow=never",
+        "fetch",
+        "--depth=1",
+        "--no-tags",
+        "origin",
+        "ac9f247583a633bd64e4b828d9bdcd4ffd952ce8"
+      ],
+      "cwd": "_references/halide",
+      "started_at_utc": "2026-11-17T17:57:34.449716+00:00",
+      "stdout": "",
+      "stderr": "\u6765\u81ea https://github.com/halide/Halide\n * branch            ac9f247583a633bd64e4b828d9bdcd4ffd952ce8 -> FETCH_HEAD\n",
+      "returncode": 0,
+      "elapsed_seconds": 13.143261422999785,
+      "ended_at_utc": "2026-11-17T17:57:47.593475+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "core.autocrlf=false",
+        "checkout",
+        "--detach",
+        "ac9f247583a633bd64e4b828d9bdcd4ffd952ce8"
+      ],
+      "cwd": "_references/halide",
+      "started_at_utc": "2026-11-17T17:57:47.593920+00:00",
+      "stdout": "",
+      "stderr": "HEAD \u76ee\u524d\u4f4d\u4e8e ac9f247 Fix startup race in gaussian_blur app's thread pool (#9696)\n",
+      "returncode": 0,
+      "elapsed_seconds": 0.19533071300247684,
+      "ended_at_utc": "2026-11-17T17:57:47.789631+00:00"
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "/home/lhshen/vibedataset/handoff/gqcdataset_codex_goal/tools/inventory_sources.py",
+        "_references/halide",
+        "--recurse-submodules",
+        "--json",
+        "handoff/gqcdataset_codex_goal/research/inventories/halide.json"
+      ],
+      "cwd": ".",
+      "started_at_utc": "2026-11-17T17:57:47.790143+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.430835166000179,
+      "ended_at_utc": "2026-11-17T17:57:48.221387+00:00"
+    }
+  ],
+  "receipt_path": "handoff/gqcdataset_codex_goal/research/acquisition/halide-20261117T175731542987Z.json",
+  "resolved_commit": "ac9f247583a633bd64e4b828d9bdcd4ffd952ce8",
+  "inventory_path": "handoff/gqcdataset_codex_goal/research/inventories/halide.json",
+  "ended_at_utc": "2026-11-17T17:57:48.221674+00:00"
+}

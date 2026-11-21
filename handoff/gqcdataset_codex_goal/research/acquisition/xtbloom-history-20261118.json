@@ -1,0 +1,12 @@
+{
+  "command": "git -C _references/xtbloom fetch --unshallow --tags origin 16ec6bb04629b568b20e012e9b6409fb0ccff0f8",
+  "exit_status": 0,
+  "git_output": "\u6765\u81ea https://github.com/jinzhezenggroup/xtbloom\n * branch            16ec6bb04629b568b20e012e9b6409fb0ccff0f8 -> FETCH_HEAD\n * [\u65b0\u6807\u7b7e]          v0.0.0     -> v0.0.0\n * [\u65b0\u6807\u7b7e]          v0.1.0     -> v0.1.0\n * [\u65b0\u6807\u7b7e]          v0.1.1     -> v0.1.1\n * [\u65b0\u6807\u7b7e]          v0.2.0     -> v0.2.0\n * [\u65b0\u6807\u7b7e]          v0.2.1     -> v0.2.1\n * [\u65b0\u6807\u7b7e]          v0.2.2     -> v0.2.2\n * [\u65b0\u6807\u7b7e]          v0.2.3     -> v0.2.3\n",
+  "commit": "16ec6bb04629b568b20e012e9b6409fb0ccff0f8",
+  "tree": "da278b5ad02c91d6a2bdbdc99232a405d34a9855",
+  "is_shallow": "false",
+  "nearest_release": "v0.2.3",
+  "tag_commit": "2cbdf1db8661ccbd5cb7d3d4bfc868a848cbbff3",
+  "reachable_commit_count": 323,
+  "checked_at_utc": "2026-11-17T18:30:01.129331+00:00"
+}

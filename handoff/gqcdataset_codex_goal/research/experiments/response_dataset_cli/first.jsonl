@@ -1,0 +1,6 @@
+{"source": "https://api.figshare.com/v2/articles/1057646/versions/2", "record_id": 3, "field": "x", "observable": "q0"}
+{"source": "https://api.figshare.com/v2/articles/1057646/versions/2", "record_id": 3, "field": "x", "observable": "r2"}
+{"source": "https://api.figshare.com/v2/articles/1057646/versions/2", "record_id": 9, "field": "x", "observable": "q0"}
+{"source": "https://api.figshare.com/v2/articles/1057646/versions/2", "record_id": 3, "field": "x", "observable": "q0", "request_id": "a-second-caller"}
+{"source": "https://api.figshare.com/v2/articles/1057646/versions/2", "record_id": 3, "field": "z", "observable": "q0", "expected_problem_identity": "old-model"}
+{"source": "https://api.figshare.com/v2/articles/1057646/versions/2", "record_id": 133885, "field": "x", "observable": "r2"}

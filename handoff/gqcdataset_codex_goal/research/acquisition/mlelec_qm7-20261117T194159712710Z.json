@@ -1,0 +1,107 @@
+{
+  "id": "mlelec_qm7",
+  "source": {
+    "id": "mlelec_qm7",
+    "catalog_ids": [
+      "mlelec"
+    ],
+    "priority": "P1",
+    "repository_url": "https://github.com/curiosity54/mlelec",
+    "role": "archive_linked_branch",
+    "commit": "9c34bd9e1351770d3ac5b0887ecf0a98da317417",
+    "checkout_path": "_references/mlelec_qm7",
+    "paper_version_status": "Materials Cloud v1 explicitly links the qm7 branch. The observed tip predates the 2025-06-02 deposit; the deposit does not specify a git SHA.",
+    "selection_reason": "Resolve the archived branch separately from main and trace the property-supervised Hamiltonian model."
+  },
+  "started_at_utc": "2026-11-17T19:41:59.712730+00:00",
+  "status": "indexed_pending_review",
+  "commands": [
+    {
+      "argv": [
+        "git",
+        "init",
+        "--quiet"
+      ],
+      "cwd": "_references/mlelec_qm7",
+      "started_at_utc": "2026-11-17T19:41:59.712894+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.0025104380038101226,
+      "ended_at_utc": "2026-11-17T19:41:59.715565+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "remote",
+        "add",
+        "origin",
+        "https://github.com/curiosity54/mlelec"
+      ],
+      "cwd": "_references/mlelec_qm7",
+      "started_at_utc": "2026-11-17T19:41:59.715837+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.0023224739998113364,
+      "ended_at_utc": "2026-11-17T19:41:59.718392+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "protocol.file.allow=never",
+        "fetch",
+        "--depth=1",
+        "--no-tags",
+        "origin",
+        "9c34bd9e1351770d3ac5b0887ecf0a98da317417"
+      ],
+      "cwd": "_references/mlelec_qm7",
+      "started_at_utc": "2026-11-17T19:41:59.718630+00:00",
+      "stdout": "",
+      "stderr": "\u6765\u81ea https://github.com/curiosity54/mlelec\n * branch            9c34bd9e1351770d3ac5b0887ecf0a98da317417 -> FETCH_HEAD\n",
+      "returncode": 0,
+      "elapsed_seconds": 38.167226914010826,
+      "ended_at_utc": "2026-11-17T19:42:37.886036+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "core.autocrlf=false",
+        "checkout",
+        "--detach",
+        "9c34bd9e1351770d3ac5b0887ecf0a98da317417"
+      ],
+      "cwd": "_references/mlelec_qm7",
+      "started_at_utc": "2026-11-17T19:42:37.886304+00:00",
+      "stdout": "",
+      "stderr": "HEAD \u76ee\u524d\u4f4d\u4e8e 9c34bd9 small tweaks\n",
+      "returncode": 0,
+      "elapsed_seconds": 1.0164653419924434,
+      "ended_at_utc": "2026-11-17T19:42:38.902986+00:00"
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "/home/lhshen/vibedataset/handoff/gqcdataset_codex_goal/tools/inventory_sources.py",
+        "_references/mlelec_qm7",
+        "--recurse-submodules",
+        "--json",
+        "handoff/gqcdataset_codex_goal/research/inventories/mlelec_qm7.json"
+      ],
+      "cwd": ".",
+      "started_at_utc": "2026-11-17T19:42:38.903379+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.837369208005839,
+      "ended_at_utc": "2026-11-17T19:42:39.740951+00:00"
+    }
+  ],
+  "receipt_path": "handoff/gqcdataset_codex_goal/research/acquisition/mlelec_qm7-20261117T194159712710Z.json",
+  "resolved_commit": "9c34bd9e1351770d3ac5b0887ecf0a98da317417",
+  "inventory_path": "handoff/gqcdataset_codex_goal/research/inventories/mlelec_qm7.json",
+  "ended_at_utc": "2026-11-17T19:42:39.741376+00:00"
+}

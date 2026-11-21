@@ -1,0 +1,122 @@
+{
+  "id": "nabladft",
+  "source": {
+    "id": "nabladft",
+    "catalog_ids": [
+      "nabladft"
+    ],
+    "priority": "P1",
+    "repository_url": "https://github.com/AIRI-Institute/nablaDFT",
+    "role": "current",
+    "commit": null,
+    "checkout_path": "_references/nabladft",
+    "paper_version_status": "not_established",
+    "selection_reason": "\u7535\u5b50\u6001\u5b66\u4e60\u4e0e\u53ef\u5fae\u6df7\u5408\u8ba1\u7b97"
+  },
+  "started_at_utc": "2026-11-17T17:55:04.508963+00:00",
+  "status": "indexed_pending_review",
+  "commands": [
+    {
+      "argv": [
+        "git",
+        "ls-remote",
+        "https://github.com/AIRI-Institute/nablaDFT",
+        "HEAD"
+      ],
+      "cwd": ".",
+      "started_at_utc": "2026-11-17T17:55:04.509190+00:00",
+      "stdout": "67ca402809806e5dd55095e1f095ec9b2683ac41\tHEAD\n",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 1.818155430999468,
+      "ended_at_utc": "2026-11-17T17:55:06.327620+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "init",
+        "--quiet"
+      ],
+      "cwd": "_references/nabladft",
+      "started_at_utc": "2026-11-17T17:55:06.328340+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.006039939995389432,
+      "ended_at_utc": "2026-11-17T17:55:06.337392+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "remote",
+        "add",
+        "origin",
+        "https://github.com/AIRI-Institute/nablaDFT"
+      ],
+      "cwd": "_references/nabladft",
+      "started_at_utc": "2026-11-17T17:55:06.337869+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.0032756579894339666,
+      "ended_at_utc": "2026-11-17T17:55:06.341592+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "protocol.file.allow=never",
+        "fetch",
+        "--depth=1",
+        "--no-tags",
+        "origin",
+        "67ca402809806e5dd55095e1f095ec9b2683ac41"
+      ],
+      "cwd": "_references/nabladft",
+      "started_at_utc": "2026-11-17T17:55:06.342045+00:00",
+      "stdout": "",
+      "stderr": "\u6765\u81ea https://github.com/AIRI-Institute/nablaDFT\n * branch            67ca402809806e5dd55095e1f095ec9b2683ac41 -> FETCH_HEAD\n",
+      "returncode": 0,
+      "elapsed_seconds": 15.025071882992052,
+      "ended_at_utc": "2026-11-17T17:55:21.367612+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "core.autocrlf=false",
+        "checkout",
+        "--detach",
+        "67ca402809806e5dd55095e1f095ec9b2683ac41"
+      ],
+      "cwd": "_references/nabladft",
+      "started_at_utc": "2026-11-17T17:55:21.368517+00:00",
+      "stdout": "",
+      "stderr": "HEAD \u76ee\u524d\u4f4d\u4e8e 67ca402 Merge branch 'main' of github.com:AIRI-Institute/nablaDFT\n",
+      "returncode": 0,
+      "elapsed_seconds": 0.2208111009967979,
+      "ended_at_utc": "2026-11-17T17:55:21.589829+00:00"
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "/home/lhshen/vibedataset/handoff/gqcdataset_codex_goal/tools/inventory_sources.py",
+        "_references/nabladft",
+        "--recurse-submodules",
+        "--json",
+        "handoff/gqcdataset_codex_goal/research/inventories/nabladft.json"
+      ],
+      "cwd": ".",
+      "started_at_utc": "2026-11-17T17:55:21.590436+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.2577705730072921,
+      "ended_at_utc": "2026-11-17T17:55:21.848555+00:00"
+    }
+  ],
+  "receipt_path": "handoff/gqcdataset_codex_goal/research/acquisition/nabladft-20261117T175504508930Z.json",
+  "resolved_commit": "67ca402809806e5dd55095e1f095ec9b2683ac41",
+  "inventory_path": "handoff/gqcdataset_codex_goal/research/inventories/nabladft.json",
+  "ended_at_utc": "2026-11-17T17:55:21.849126+00:00"
+}

@@ -1,0 +1,94 @@
+{
+  "source_pin": "36a0035e180694c7ad4eb8f083d9f1d65ceb6f42",
+  "version": "2026.1.1",
+  "driver_sha256": "db3a1143a7aaba65e7962533c7610dbd8c6358ce400f69d4b49295acc0c2e753",
+  "A": [
+    [
+      1.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      1.5,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      2.0
+    ]
+  ],
+  "b": [
+    1.0,
+    2.0,
+    3.0
+  ],
+  "readouts": [
+    [
+      2.0,
+      1.0,
+      0.0
+    ],
+    [
+      0.0,
+      1.0,
+      1.0
+    ]
+  ],
+  "true_coercivity": 1.0,
+  "primal_basis": "e1",
+  "dual_bases": [
+    "e2",
+    "e3"
+  ],
+  "full_reference": [
+    3.333333333333333,
+    2.833333333333333
+  ],
+  "uncorrected": [
+    2.0,
+    0.0
+  ],
+  "default_vector_output_dual_construction": "AssertionError",
+  "cases": [
+    {
+      "assumed_coercivity": 1.0,
+      "corrected": [
+        3.333333333333333,
+        1.5
+      ],
+      "estimator": [
+        7.211102550927978,
+        3.6055512754639887
+      ],
+      "actual_errors": [
+        0.0,
+        1.333333333333333
+      ],
+      "covered": true,
+      "reduce_seconds": 0.00857899899710901,
+      "output_seconds": 0.004115764008020051
+    },
+    {
+      "assumed_coercivity": 1000.0,
+      "corrected": [
+        3.333333333333333,
+        1.5
+      ],
+      "estimator": [
+        0.007211102550927978,
+        0.0036055512754639887
+      ],
+      "actual_errors": [
+        0.0,
+        1.333333333333333
+      ],
+      "covered": false,
+      "reduce_seconds": 0.006047475995728746,
+      "output_seconds": 0.0008359729981748387
+    }
+  ],
+  "elapsed_seconds": 0.021271177000016905,
+  "scope": "Controlled three-dimensional Euclidean SPD model. No chemical error certificate."
+}

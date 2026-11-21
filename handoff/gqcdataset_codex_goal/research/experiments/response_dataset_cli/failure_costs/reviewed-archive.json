@@ -1,0 +1,53 @@
+{
+  "appearances": 128,
+  "failed": [
+    {
+      "counts": {
+        "cache_rejections": 0,
+        "cache_validation_actions": 0,
+        "jk_calls": 30,
+        "operator_actions": 30,
+        "requests": 1,
+        "rhs_columns": 1,
+        "solver_actions": 30
+      },
+      "evidence": [
+        "partial_response_blocks/cli/regressions.json.gz"
+      ],
+      "id": "ee9ac434f02d4e428880d05a3a8e0ab0",
+      "reason": "injected vector write failure",
+      "rhs": 1,
+      "round_jk": 30,
+      "setup_jk": 5,
+      "submitted_blocks": null
+    },
+    {
+      "counts": {
+        "cache_rejections": 0,
+        "cache_validation_actions": 0,
+        "jk_calls": 30,
+        "operator_actions": 30,
+        "requests": 1,
+        "rhs_columns": 1,
+        "solver_actions": 30
+      },
+      "evidence": [
+        "response_dataset_cli/client-results.json.gz",
+        "response_dataset_cli/verification.json"
+      ],
+      "id": "78c65077a6e64cb8927f1fccf7378131",
+      "reason": "injected vector write failure",
+      "rhs": 1,
+      "round_jk": 30,
+      "setup_jk": 5,
+      "submitted_blocks": null
+    }
+  ],
+  "review": "faf93dd4a95d9a12ee06bdcf85040ecb38d9107b",
+  "root": "handoff/gqcdataset_codex_goal/research/experiments",
+  "states": {
+    "completed": 117,
+    "failed": 2
+  },
+  "unique_attempts": 119
+}

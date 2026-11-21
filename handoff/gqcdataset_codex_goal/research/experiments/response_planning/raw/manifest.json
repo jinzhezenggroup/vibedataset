@@ -1,0 +1,107 @@
+{
+  "plan001-bound": {
+    "assets": {
+      "file": "plan001-bound-assets.tar.gz",
+      "members": 264,
+      "raw_bytes": 808960,
+      "raw_sha256": "84be93ace795e76b884bc0488f3ed4e9305b9f78b3c73c564f2cafa3abaddaf1",
+      "sha256": "939092286f4635948472a5bd77fae9233a842bdf1318c2453d06a2960186faf8"
+    },
+    "operations.jsonl": {
+      "file": "plan001-bound-operations.jsonl.gz",
+      "raw_bytes": 1128034,
+      "raw_sha256": "34a3194b24efb267405447864b04d8fe8503261a8b801bb9d78e72d7d26383cc",
+      "sha256": "7a667901e33950e905d32b99c1c48d8825f43fb50f0ef6b20f890c1f8159582f"
+    },
+    "summary.json": {
+      "file": "plan001-bound-summary.json.gz",
+      "raw_bytes": 129259,
+      "raw_sha256": "f5b959dae8b741d134d294bf59b90b20977c4c780bf3ae566564301e302c946c",
+      "sha256": "710fc6e65bb13baee3b8a5be9c08c3dc5cf0dfdac7aa63773225bb5940942f9f"
+    }
+  },
+  "plan001-first": {
+    "assets": {
+      "file": "plan001-first-assets.tar.gz",
+      "members": 264,
+      "raw_bytes": 808960,
+      "raw_sha256": "eebf1453c39e19781b2f1b7c71e6a4b544cfa632185f7d4836ab1c463775a4a0",
+      "sha256": "52707ce52a088e46708d3dab4c78da86e4f3aecb2e17b5d29e92cb0a446edfa9"
+    },
+    "operations.jsonl": {
+      "file": "plan001-first-operations.jsonl.gz",
+      "raw_bytes": 1127960,
+      "raw_sha256": "9180c8629d7ef4c3d90a679065adc4cdcbf43d6fb6cddafd8726e726e580ea04",
+      "sha256": "738b4c03d91dd8e2a0134179f032c7e532a86d32f7fb6eee43f763389abbc22d"
+    },
+    "summary.json": {
+      "file": "plan001-first-summary.json.gz",
+      "raw_bytes": 129266,
+      "raw_sha256": "ccef7f62b7dd35ab04ec210d4cdbe28f1a91763419f165b3e67b4362459052c5",
+      "sha256": "d52ec9addc689cf259f071d466e52a65b3205dc4ca7ba7f66973c997a6ec35a3"
+    }
+  },
+  "plan001-paired-remember": {
+    "assets": {
+      "file": "plan001-paired-remember-assets.tar.gz",
+      "members": 306,
+      "raw_bytes": 911360,
+      "raw_sha256": "0783b29df35db976811f43e2cffd5baa58fee3604aeabf36e886141669a1390d",
+      "sha256": "f09029f9816c75543cb11e806f6ea0ae034e033450e26c4292178143a0657ca5"
+    },
+    "operations.jsonl": {
+      "file": "plan001-paired-remember-operations.jsonl.gz",
+      "raw_bytes": 1139256,
+      "raw_sha256": "65b6155a7e06456f25f888a7aba94bfd3eefc981f4396bd2a3bb202d2b4a6ef6",
+      "sha256": "c20eef534c4b448dcc169246947d09419e1c63803fb540f1db269d6735396f14"
+    },
+    "summary.json": {
+      "file": "plan001-paired-remember-summary.json.gz",
+      "raw_bytes": 134374,
+      "raw_sha256": "d8b90282fa904bb933d5e7310ad76252b9acf7ff1478490c5a32b34fc0053a4c",
+      "sha256": "558a42ee5b347c54e5a094b74f5b10823cecae7812d7140325a13c92d48ffd9b"
+    }
+  },
+  "plan001-paired-retry": {
+    "assets": {
+      "file": "plan001-paired-retry-assets.tar.gz",
+      "members": 264,
+      "raw_bytes": 808960,
+      "raw_sha256": "84be93ace795e76b884bc0488f3ed4e9305b9f78b3c73c564f2cafa3abaddaf1",
+      "sha256": "939092286f4635948472a5bd77fae9233a842bdf1318c2453d06a2960186faf8"
+    },
+    "operations.jsonl": {
+      "file": "plan001-paired-retry-operations.jsonl.gz",
+      "raw_bytes": 1184903,
+      "raw_sha256": "f00a580107f529250f170e1cba59d3dbe7cdeaf8ec9cce3d653fda561033adc2",
+      "sha256": "5c86043c67e0656358c75e9eb3c9e6fedcbdfd5432f0dbcb3df65956da3ea2f0"
+    },
+    "summary.json": {
+      "file": "plan001-paired-retry-summary.json.gz",
+      "raw_bytes": 134347,
+      "raw_sha256": "a792c189d0edf36c1ed6286a705ae45862a7e9fc6655d43e4db5dd03fc1307ef",
+      "sha256": "0f83362b67eee005ef24013bb2e88ce8a4be882c5de328039623a5c0f8ba1e2b"
+    }
+  },
+  "plan002-first": {
+    "assets": {
+      "file": "plan002-first-assets.tar.gz",
+      "members": 44,
+      "raw_bytes": 81920,
+      "raw_sha256": "99256db38f6a6b8469d872f9d9edbb92011270db535726cfc928693cdfd46caf",
+      "sha256": "f089047f267f37f5a61c996ea55aa8795f2c6524cc5fb6dbc10943fe9866fb60"
+    },
+    "operations.jsonl": {
+      "file": "plan002-first-operations.jsonl.gz",
+      "raw_bytes": 12601,
+      "raw_sha256": "4bf2b8b308db981d5d26893cc1fa6d113ea9abd650cf0efcb48114df9aade92f",
+      "sha256": "94271cee6c24532f8263015bd8a73bca70612b057e4935740c93154395127e80"
+    },
+    "summary.json": {
+      "file": "plan002-first-summary.json.gz",
+      "raw_bytes": 170441,
+      "raw_sha256": "ecb69ebd5e5bd3087fa0bb06c03d8eb9f86b5168b40b96b5bcb9a95e907e15d6",
+      "sha256": "1d74b9f536d0e290be9e4803c0f0d632ca7612a81bb0b869d4368d3afaa84690"
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "checked_at_utc": "2026-11-17T17:50:22.168561+00:00",
+  "host": "node2",
+  "python": "3.11.17",
+  "generativeqc_version": "0.1.0",
+  "import_succeeded": true,
+  "declared_source_sha": "2bf3fd98da9c6cfba46ca83345e63e1d934e4780",
+  "declared_native_library_sha256": "67bc98a4549fe8854ed6ae65791c824024bd77a9e8e498c6891dea3b8de670c4",
+  "actual_native_library_sha256": "67bc98a4549fe8854ed6ae65791c824024bd77a9e8e498c6891dea3b8de670c4",
+  "library_hash_matches_declaration": true,
+  "openblas_directory_exists": true,
+  "scheduler": [
+    {
+      "command": [
+        "sinfo",
+        "-p",
+        "main",
+        "-o",
+        "%P %a %l %D %G %t"
+      ],
+      "returncode": 0,
+      "stdout": "PARTITION AVAIL TIMELIMIT NODES GRES STATE\nmain* up infinite 1 gpu:pro6000:4 idle\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "squeue",
+        "--me",
+        "-o",
+        "%i %P %j %T %M %D"
+      ],
+      "returncode": 0,
+      "stdout": "JOBID PARTITION NAME STATE TIME NODES\n",
+      "stderr": ""
+    }
+  ],
+  "qc_calls": 0,
+  "gpu_jobs_submitted": 0,
+  "scope": "Read-only import, file hash and scheduler observation; no numerical validation."
+}

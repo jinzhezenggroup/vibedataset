@@ -1,0 +1,66 @@
+{
+  "problem": "68a1d313efcd76ed8286f00bd3d58de757e4c6c05982fd639e4ce5a408ca1fd5",
+  "contract": "9ee1a6907505ace396f1bcb7967b6982b573d944e19bdcc01073feac0cf8b49b",
+  "rows": [
+    {
+      "field": "x",
+      "observable": "r2",
+      "target_identity": "a56c15bca8b4ff2dc0e009c74b7ca62735b10061d3c9e1087f3c4225e08b4add",
+      "qualified": true,
+      "value": -11.061447862372159,
+      "errors": {
+        "direct": 1.0658141036401503e-14,
+        "adjoint": 3.552713678800501e-15,
+        "cphf": 1.964650664376677e-12,
+        "0.0005": 4.3142498995507594e-07,
+        "0.0002": 7.036980420593864e-08
+      },
+      "reasons": []
+    },
+    {
+      "field": "y",
+      "observable": "q0",
+      "target_identity": "cd621dc5fb18ebb4ecbb418820f32efa91d74408c1a710446f73050bc3aa2713",
+      "qualified": true,
+      "value": 0.9190047162090161,
+      "errors": {
+        "direct": 1.3322676295501878e-15,
+        "adjoint": 4.440892098500626e-16,
+        "cphf": 2.8832491949515315e-13,
+        "0.0005": 1.8087723618886997e-07,
+        "0.0002": 2.894810025022565e-08
+      },
+      "reasons": []
+    },
+    {
+      "field": "z",
+      "observable": "q0",
+      "target_identity": "59e8cc27a726200c613363522a1cd2bc7ec6021e18387d2534a422608d7e3095",
+      "qualified": true,
+      "value": 0.01881678360335969,
+      "errors": {
+        "direct": 6.938893903907228e-17,
+        "adjoint": 1.3877787807814457e-17,
+        "cphf": 5.415806691999592e-15,
+        "0.0005": 2.629900637540761e-10,
+        "0.0002": 1.6786138451463373e-11
+      },
+      "reasons": []
+    },
+    {
+      "field": "z",
+      "observable": "r2",
+      "target_identity": "7fa93e1c82cf53f059b526672b5ad92ff2b54a6f397489f65bc5acb317df504e",
+      "qualified": true,
+      "value": 0.04104419181559879,
+      "errors": {
+        "direct": 7.28583859910259e-16,
+        "adjoint": 2.498001805406602e-16,
+        "cphf": 6.744604874597826e-15,
+        "0.0005": 1.4709430895543107e-10,
+        "0.0002": 5.185765705739698e-11
+      },
+      "reasons": []
+    }
+  ]
+}

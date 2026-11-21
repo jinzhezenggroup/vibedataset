@@ -1,0 +1,122 @@
+{
+  "id": "tblite",
+  "source": {
+    "id": "tblite",
+    "catalog_ids": [
+      "tblite"
+    ],
+    "priority": "P1",
+    "repository_url": "https://github.com/tblite/tblite",
+    "role": "current",
+    "commit": null,
+    "checkout_path": "_references/tblite",
+    "paper_version_status": "not_established",
+    "selection_reason": "\u91cf\u5316\u540e\u7aef\u4e0e\u5f3a\u57fa\u7ebf"
+  },
+  "started_at_utc": "2026-11-17T17:51:36.043293+00:00",
+  "status": "indexed_pending_review",
+  "commands": [
+    {
+      "argv": [
+        "git",
+        "ls-remote",
+        "https://github.com/tblite/tblite",
+        "HEAD"
+      ],
+      "cwd": ".",
+      "started_at_utc": "2026-11-17T17:51:36.043435+00:00",
+      "stdout": "c6f66b93f7b3ed5db77698021822eaedb8074ce6\tHEAD\n",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 1.888948727006209,
+      "ended_at_utc": "2026-11-17T17:51:37.932547+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "init",
+        "--quiet"
+      ],
+      "cwd": "_references/tblite",
+      "started_at_utc": "2026-11-17T17:51:37.933278+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.004910542993457057,
+      "ended_at_utc": "2026-11-17T17:51:37.940892+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "remote",
+        "add",
+        "origin",
+        "https://github.com/tblite/tblite"
+      ],
+      "cwd": "_references/tblite",
+      "started_at_utc": "2026-11-17T17:51:37.941393+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.0037302290002116933,
+      "ended_at_utc": "2026-11-17T17:51:37.945678+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "protocol.file.allow=never",
+        "fetch",
+        "--depth=1",
+        "--no-tags",
+        "origin",
+        "c6f66b93f7b3ed5db77698021822eaedb8074ce6"
+      ],
+      "cwd": "_references/tblite",
+      "started_at_utc": "2026-11-17T17:51:37.945999+00:00",
+      "stdout": "",
+      "stderr": "\u6765\u81ea https://github.com/tblite/tblite\n * branch            c6f66b93f7b3ed5db77698021822eaedb8074ce6 -> FETCH_HEAD\n",
+      "returncode": 0,
+      "elapsed_seconds": 4.386732498998754,
+      "ended_at_utc": "2026-11-17T17:51:42.333102+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "core.autocrlf=false",
+        "checkout",
+        "--detach",
+        "c6f66b93f7b3ed5db77698021822eaedb8074ce6"
+      ],
+      "cwd": "_references/tblite",
+      "started_at_utc": "2026-11-17T17:51:42.333694+00:00",
+      "stdout": "",
+      "stderr": "HEAD \u76ee\u524d\u4f4d\u4e8e c6f66b9 Fix atom-order dependence in ALPB/GBSA Born radii (#431)\n",
+      "returncode": 0,
+      "elapsed_seconds": 0.038611595999100246,
+      "ended_at_utc": "2026-11-17T17:51:42.372771+00:00"
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "/home/lhshen/vibedataset/handoff/gqcdataset_codex_goal/tools/inventory_sources.py",
+        "_references/tblite",
+        "--recurse-submodules",
+        "--json",
+        "handoff/gqcdataset_codex_goal/research/inventories/tblite.json"
+      ],
+      "cwd": ".",
+      "started_at_utc": "2026-11-17T17:51:42.373087+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.12489117099903524,
+      "ended_at_utc": "2026-11-17T17:51:42.498173+00:00"
+    }
+  ],
+  "receipt_path": "handoff/gqcdataset_codex_goal/research/acquisition/tblite-20261117T175136043273Z.json",
+  "resolved_commit": "c6f66b93f7b3ed5db77698021822eaedb8074ce6",
+  "inventory_path": "handoff/gqcdataset_codex_goal/research/inventories/tblite.json",
+  "ended_at_utc": "2026-11-17T17:51:42.498448+00:00"
+}

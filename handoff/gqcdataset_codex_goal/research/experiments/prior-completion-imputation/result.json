@@ -1,0 +1,35 @@
+{
+  "source_commit": "386217f233f5607a6c69e09c8bd9375fbde06444",
+  "checkpoint_sha256": "5c87f90555fca68a0d485b9befaf71e41647a67b0637e85579d28d6540ededfb",
+  "sample_sha256": "37d591e2a33dbeea64369b9336d1d8a3f7f33a1b7f1b258fee7686eb5650ebb6",
+  "driver_sha256": "486ff9114a94b61f2a7cb1b2b3870aafbe4d6459ab5d6a22a47094deb95b33fc",
+  "model_source_sha256": "04f6b09e8ad4359ce8cdd83ce5495c7afbdb6453a5d6f899900cbe068a5ec5e2",
+  "paper_checkpoint_member": "random_drop_prop2prop_zenodo/model_random_drop_8_cp_overall.pt",
+  "record": "10.5281/zenodo.17519032",
+  "backend": "cpu",
+  "torch": "2.2.0+cpu",
+  "python": "3.10.12",
+  "torch_threads": 1,
+  "seed": 0,
+  "selection": "first 32 data rows of first CSV member in the release. All 22 input slots masked.",
+  "frame_shape": [
+    32,
+    22
+  ],
+  "data_splits": {
+    "train": 32
+  },
+  "observed_target": "homo_lumo_gap",
+  "raw_min": 3.592591666456,
+  "raw_max": 4.145301263111,
+  "raw_column_units_lower_bound_on_max_absolute_error_of_any_common_prediction": 0.2763547983274999,
+  "all_missing_prediction_normalized_units": 24.197717666625977,
+  "one_observed_normalized_slot_prediction": 19.443153381347656,
+  "nonfinite_outputs_when_passing_raw_nan": 704,
+  "unique_predictions_all_missing": 1,
+  "scf_calls": 0,
+  "parameters": 21054998,
+  "model_initialization_and_parameter_load_seconds": 0.11178758401365485,
+  "three_forward_batch_seconds": 0.9186226989986608,
+  "scope": "No training or validation-set score. Raw gap range gives a mathematical lower bound for identical inputs under a common inverse scale. No original split scaler needed for this argument."
+}

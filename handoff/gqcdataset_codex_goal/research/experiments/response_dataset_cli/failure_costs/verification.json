@@ -1,0 +1,463 @@
+{
+  "batches_sha256": "3ca831a574f398c67060346c1b05c1b8ad4dbc8c3163401959995258e91af02f",
+  "cli_sha256": "11667c4f34525e93ff725208ddbc3312b1b9650da8ec6c2b841d2509796d5471",
+  "compiler": "c++ (Ubuntu 11.4.0-1ubuntu1~22.04.3) 11.4.0",
+  "controls": {
+    "combined_and_fallback": {
+      "before_rows": [
+        0,
+        0
+      ],
+      "failure": {
+        "cost_schema": "vibedataset.response_work.v2",
+        "cost_stages": [
+          {
+            "operations": {
+              "density_jvp_calls": 6,
+              "jk_calls": 5,
+              "response_operator_actions": 4
+            },
+            "phase": "model_setup",
+            "seconds": 0.4389083909918554,
+            "status": "completed"
+          },
+          {
+            "operations": {},
+            "phase": "decoder_setup",
+            "seconds": 1.7175727619905956,
+            "status": "completed"
+          },
+          {
+            "operations": {
+              "density_jvp_calls": 4,
+              "jk_calls": 4,
+              "response_operator_actions": 4,
+              "submitted_blocks": 1,
+              "submitted_rhs": 2
+            },
+            "phase": "combined_response",
+            "reason": "response solve failed after 1 iterations with true residual 1.102e+00: max_iterations",
+            "seconds": 0.012435224023647606,
+            "status": "failed"
+          },
+          {
+            "operations": {
+              "density_jvp_calls": 6,
+              "jk_calls": 6,
+              "response_operator_actions": 6,
+              "submitted_blocks": 1,
+              "submitted_rhs": 3
+            },
+            "phase": "ordinary_response",
+            "reason": "response solve failed after 1 iterations with true residual 7.575e-01: max_iterations",
+            "seconds": 0.006044865993317217,
+            "status": "failed"
+          }
+        ],
+        "counts": {
+          "cache_rejections": 0,
+          "cache_validation_actions": 0,
+          "density_jvp_calls": 10,
+          "jk_calls": 10,
+          "operator_actions": 10,
+          "requests": null,
+          "rhs_columns": 5,
+          "solver_actions": 10,
+          "submitted_blocks": 2
+        },
+        "distinct_targets": 3,
+        "failed_stage": "solve_and_assess",
+        "historical_hits": 0,
+        "id": "2a52fcda6a8746e8b09309f50dad69d0",
+        "identity": "6c2d4d88cff0ce724c84236efa8186835f0ec706d1248ab493799b97ad1c3d4f",
+        "lock_wait_seconds": 0.006149146007373929,
+        "model_started": true,
+        "native_kernel_attempts": [
+          {
+            "binary_sha256": "5ad2cdfb2cef339cb06e0b0e9a4a15cc33aad617e83a228def3e300253d3ce23",
+            "elapsed_seconds": 0.04171783200581558,
+            "source": "2215f904b3e4f0856f3c6c2826f6e0bc994f322a9327904703ae8593203ce68c"
+          },
+          {
+            "binary_sha256": "2c1d48ea23fb0e7349e0f49df567b3cce2df9d3e75f0dd17ecf85221796fd793",
+            "elapsed_seconds": 0.10349887900520116,
+            "source": "7ee92213a506aa9ed708d1d2f0550dc948b5aaa7cf7574544bc58c4230ef4d12"
+          },
+          {
+            "binary_sha256": "0f5bd32236819ffeeea68633f8cf007ceed69374cebd0a40bb0419e4c40110a4",
+            "elapsed_seconds": 0.03636567201465368,
+            "source": "caa60a48909653385008641a1385c9bcbef773b13bc9f9818d0777d72b801e8c"
+          },
+          {
+            "binary_sha256": "08f8ef0713e6c08a0bfa979cf81b506b67bac159ae9d9d93262fcaa7ccec2c34",
+            "elapsed_seconds": 0.032838940009241924,
+            "source": "2282a74d907e8d317f885d7506667efbade4a0c48bbe6aee341547e018a89680"
+          },
+          {
+            "binary_sha256": "bfcd29c570f79272831966662fbf317d15ebdade9015c33419510fc5398dad6f",
+            "elapsed_seconds": 0.05235742998775095,
+            "source": "3d7d3c5649aa2071e2a399b27c88547494528fd5218793ebb1d5b8331fcf9312"
+          }
+        ],
+        "native_kernel_sha256": [
+          "5ad2cdfb2cef339cb06e0b0e9a4a15cc33aad617e83a228def3e300253d3ce23",
+          "2c1d48ea23fb0e7349e0f49df567b3cce2df9d3e75f0dd17ecf85221796fd793",
+          "0f5bd32236819ffeeea68633f8cf007ceed69374cebd0a40bb0419e4c40110a4",
+          "08f8ef0713e6c08a0bfa979cf81b506b67bac159ae9d9d93262fcaa7ccec2c34",
+          "bfcd29c570f79272831966662fbf317d15ebdade9015c33419510fc5398dad6f"
+        ],
+        "reason": "response solve failed after 1 iterations with true residual 7.575e-01: max_iterations",
+        "record_id": "qm9-000003",
+        "rejected_history": [],
+        "rejected_labels": [],
+        "requested_lines": 3,
+        "rhs": 5,
+        "round_jk": 10,
+        "scalar_hits": 0,
+        "scalar_plan": "blocked",
+        "scalar_rejections": 0,
+        "seconds": 2.184443199017551,
+        "setup_compile_only_seconds": null,
+        "setup_jk": 5,
+        "setup_seconds": 0.4389083909918554,
+        "setup_status": "completed",
+        "solve_and_assess_seconds": 1.7372787109925412,
+        "status": "failed",
+        "validated_history_scalars": 2,
+        "vector_envelope_rejected": false
+      },
+      "history_costs": {
+        "bytes": 13643,
+        "eligible_rows": 0,
+        "excluded_catalog_records": [],
+        "expected_sha256": "278ab5d041cdbfd0d3325e49c4aefa5196e03dc185ab16bbc9bf0122dc31e66b",
+        "input_rows": 3,
+        "producer_failed_attempts": [
+          "2a52fcda6a8746e8b09309f50dad69d0"
+        ],
+        "producer_round_jk": 10,
+        "producer_setup_jk": 5,
+        "seconds": 0.0008758109761402011,
+        "sha256": "278ab5d041cdbfd0d3325e49c4aefa5196e03dc185ab16bbc9bf0122dc31e66b",
+        "status": "read"
+      },
+      "observations": [
+        [
+          "model_setup",
+          {
+            "jk_calls": 5,
+            "response_operator_actions": 4
+          }
+        ],
+        [
+          "combined_response",
+          {
+            "jk_calls": 4,
+            "response_operator_actions": 4,
+            "submitted_blocks": 1,
+            "submitted_rhs": 2
+          }
+        ],
+        [
+          "ordinary_response",
+          {
+            "jk_calls": 6,
+            "response_operator_actions": 6,
+            "submitted_blocks": 1,
+            "submitted_rhs": 3
+          }
+        ]
+      ],
+      "reopen": "04f24e36476f43289801df251bfe1967",
+      "retry": "b14386bf8d4d4a48ae1f8548fbf2d61e",
+      "rollback_equal": true
+    },
+    "constructor": {
+      "before_rows": [
+        0,
+        0
+      ],
+      "failure": {
+        "cost_schema": "vibedataset.response_work.v2",
+        "cost_stages": [
+          {
+            "operations": {
+              "jk_calls": 1
+            },
+            "phase": "model_setup",
+            "reason": "stored Fock fails physical AO contraction",
+            "seconds": 0.4736928920028731,
+            "status": "failed"
+          }
+        ],
+        "counts": {
+          "cache_rejections": 0,
+          "cache_validation_actions": 0,
+          "density_jvp_calls": 0,
+          "jk_calls": 0,
+          "operator_actions": 0,
+          "requests": 0,
+          "rhs_columns": 0,
+          "solver_actions": 0,
+          "submitted_blocks": 0
+        },
+        "distinct_targets": 1,
+        "failed_stage": "model_setup",
+        "historical_hits": 0,
+        "id": "97180b3a2d2241c59b8dbbbf83961899",
+        "identity": "6c2d4d88cff0ce724c84236efa8186835f0ec706d1248ab493799b97ad1c3d4f",
+        "lock_wait_seconds": 0.004875109996646643,
+        "model_started": true,
+        "native_kernel_attempts": [
+          {
+            "binary_sha256": "5ad2cdfb2cef339cb06e0b0e9a4a15cc33aad617e83a228def3e300253d3ce23",
+            "elapsed_seconds": 0.05896401102654636,
+            "source": "2215f904b3e4f0856f3c6c2826f6e0bc994f322a9327904703ae8593203ce68c"
+          },
+          {
+            "binary_sha256": "2c1d48ea23fb0e7349e0f49df567b3cce2df9d3e75f0dd17ecf85221796fd793",
+            "elapsed_seconds": 0.07628561698948033,
+            "source": "7ee92213a506aa9ed708d1d2f0550dc948b5aaa7cf7574544bc58c4230ef4d12"
+          },
+          {
+            "binary_sha256": "0f5bd32236819ffeeea68633f8cf007ceed69374cebd0a40bb0419e4c40110a4",
+            "elapsed_seconds": 0.04034942798898555,
+            "source": "caa60a48909653385008641a1385c9bcbef773b13bc9f9818d0777d72b801e8c"
+          },
+          {
+            "binary_sha256": "08f8ef0713e6c08a0bfa979cf81b506b67bac159ae9d9d93262fcaa7ccec2c34",
+            "elapsed_seconds": 0.0371775749954395,
+            "source": "2282a74d907e8d317f885d7506667efbade4a0c48bbe6aee341547e018a89680"
+          },
+          {
+            "binary_sha256": "bfcd29c570f79272831966662fbf317d15ebdade9015c33419510fc5398dad6f",
+            "elapsed_seconds": 0.06748455399065278,
+            "source": "3d7d3c5649aa2071e2a399b27c88547494528fd5218793ebb1d5b8331fcf9312"
+          }
+        ],
+        "native_kernel_sha256": [
+          "5ad2cdfb2cef339cb06e0b0e9a4a15cc33aad617e83a228def3e300253d3ce23",
+          "2c1d48ea23fb0e7349e0f49df567b3cce2df9d3e75f0dd17ecf85221796fd793",
+          "0f5bd32236819ffeeea68633f8cf007ceed69374cebd0a40bb0419e4c40110a4",
+          "08f8ef0713e6c08a0bfa979cf81b506b67bac159ae9d9d93262fcaa7ccec2c34",
+          "bfcd29c570f79272831966662fbf317d15ebdade9015c33419510fc5398dad6f"
+        ],
+        "reason": "stored Fock fails physical AO contraction",
+        "record_id": "qm9-000003",
+        "rejected_history": [],
+        "rejected_labels": [],
+        "requested_lines": 1,
+        "rhs": 0,
+        "round_jk": 0,
+        "scalar_hits": 0,
+        "scalar_rejections": 0,
+        "seconds": 0.4790127059968654,
+        "setup_compile_only_seconds": null,
+        "setup_jk": 1,
+        "setup_seconds": 0.4736928920028731,
+        "setup_status": "failed",
+        "status": "failed",
+        "validated_history_scalars": 0,
+        "vector_envelope_rejected": false
+      },
+      "history_costs": {
+        "bytes": 7726,
+        "eligible_rows": 0,
+        "excluded_catalog_records": [],
+        "expected_sha256": "6dfa6bcec0a74e0634f9d941b19bde6f2870833fbe4923b8d1428882b07822c9",
+        "input_rows": 1,
+        "producer_failed_attempts": [
+          "97180b3a2d2241c59b8dbbbf83961899"
+        ],
+        "producer_round_jk": 0,
+        "producer_setup_jk": 1,
+        "seconds": 0.0006499059963971376,
+        "sha256": "6dfa6bcec0a74e0634f9d941b19bde6f2870833fbe4923b8d1428882b07822c9",
+        "status": "read"
+      },
+      "observations": [
+        [
+          "model_setup",
+          {
+            "jk_calls": 1
+          }
+        ]
+      ],
+      "reopen": "9384dac6b5304253a9aab0e50329936b",
+      "retry": "85e55e12be544f6594d3e055f94becfa",
+      "rollback_equal": true
+    },
+    "ordinary": {
+      "before_rows": [
+        1,
+        1
+      ],
+      "failure": {
+        "chosen_fields": [
+          "y"
+        ],
+        "chosen_observables": [],
+        "cost_schema": "vibedataset.response_work.v2",
+        "cost_stages": [
+          {
+            "operations": {
+              "density_jvp_calls": 6,
+              "jk_calls": 5,
+              "response_operator_actions": 4
+            },
+            "phase": "model_setup",
+            "seconds": 0.48261240901774727,
+            "status": "completed"
+          },
+          {
+            "operations": {
+              "cache_validation_actions": 1,
+              "density_jvp_calls": 3,
+              "jk_calls": 3,
+              "response_operator_actions": 3,
+              "submitted_blocks": 1,
+              "submitted_rhs": 1
+            },
+            "phase": "ordinary_response",
+            "reason": "response solve failed after 1 iterations with true residual 7.224e-01: max_iterations",
+            "seconds": 0.0029836489993613213,
+            "status": "failed"
+          }
+        ],
+        "counts": {
+          "cache_rejections": 0,
+          "cache_validation_actions": 1,
+          "density_jvp_calls": 3,
+          "jk_calls": 3,
+          "operator_actions": 3,
+          "requests": null,
+          "rhs_columns": 1,
+          "solver_actions": 2,
+          "submitted_blocks": 1
+        },
+        "distinct_targets": 2,
+        "failed_stage": "solve_and_assess",
+        "historical_hits": 0,
+        "id": "e8fcc671490045b4becde50eeaf5367c",
+        "identity": "6c2d4d88cff0ce724c84236efa8186835f0ec706d1248ab493799b97ad1c3d4f",
+        "lock_wait_seconds": 0.008041193999815732,
+        "model_started": true,
+        "native_kernel_attempts": [
+          {
+            "binary_sha256": "5ad2cdfb2cef339cb06e0b0e9a4a15cc33aad617e83a228def3e300253d3ce23",
+            "elapsed_seconds": 0.061716377997072414,
+            "source": "2215f904b3e4f0856f3c6c2826f6e0bc994f322a9327904703ae8593203ce68c"
+          },
+          {
+            "binary_sha256": "2c1d48ea23fb0e7349e0f49df567b3cce2df9d3e75f0dd17ecf85221796fd793",
+            "elapsed_seconds": 0.0949424110003747,
+            "source": "7ee92213a506aa9ed708d1d2f0550dc948b5aaa7cf7574544bc58c4230ef4d12"
+          },
+          {
+            "binary_sha256": "0f5bd32236819ffeeea68633f8cf007ceed69374cebd0a40bb0419e4c40110a4",
+            "elapsed_seconds": 0.039782526990165934,
+            "source": "caa60a48909653385008641a1385c9bcbef773b13bc9f9818d0777d72b801e8c"
+          },
+          {
+            "binary_sha256": "08f8ef0713e6c08a0bfa979cf81b506b67bac159ae9d9d93262fcaa7ccec2c34",
+            "elapsed_seconds": 0.03182873799232766,
+            "source": "2282a74d907e8d317f885d7506667efbade4a0c48bbe6aee341547e018a89680"
+          },
+          {
+            "binary_sha256": "bfcd29c570f79272831966662fbf317d15ebdade9015c33419510fc5398dad6f",
+            "elapsed_seconds": 0.0502600779873319,
+            "source": "3d7d3c5649aa2071e2a399b27c88547494528fd5218793ebb1d5b8331fcf9312"
+          }
+        ],
+        "native_kernel_sha256": [
+          "5ad2cdfb2cef339cb06e0b0e9a4a15cc33aad617e83a228def3e300253d3ce23",
+          "2c1d48ea23fb0e7349e0f49df567b3cce2df9d3e75f0dd17ecf85221796fd793",
+          "0f5bd32236819ffeeea68633f8cf007ceed69374cebd0a40bb0419e4c40110a4",
+          "08f8ef0713e6c08a0bfa979cf81b506b67bac159ae9d9d93262fcaa7ccec2c34",
+          "bfcd29c570f79272831966662fbf317d15ebdade9015c33419510fc5398dad6f"
+        ],
+        "reason": "response solve failed after 1 iterations with true residual 7.224e-01: max_iterations",
+        "record_id": "qm9-000003",
+        "rejected_history": [],
+        "rejected_labels": [],
+        "requested_lines": 2,
+        "rhs": 1,
+        "round_jk": 3,
+        "scalar_hits": 0,
+        "scalar_plan": "ordinary",
+        "scalar_rejections": 0,
+        "seconds": 0.4944872370106168,
+        "setup_compile_only_seconds": null,
+        "setup_jk": 5,
+        "setup_seconds": 0.48261240901774727,
+        "setup_status": "completed",
+        "solve_and_assess_seconds": 0.0031789519998710603,
+        "status": "failed",
+        "validated_history_scalars": 0,
+        "vector_envelope_rejected": false
+      },
+      "history_costs": {
+        "bytes": 10621,
+        "eligible_rows": 0,
+        "excluded_catalog_records": [],
+        "expected_sha256": "6c73a14f858ac113c1a4fba3eac6987e7e53d555cceccc022393e5c83dca94d4",
+        "input_rows": 2,
+        "producer_failed_attempts": [
+          "e8fcc671490045b4becde50eeaf5367c"
+        ],
+        "producer_round_jk": 3,
+        "producer_setup_jk": 5,
+        "seconds": 0.00044766999781131744,
+        "sha256": "6c73a14f858ac113c1a4fba3eac6987e7e53d555cceccc022393e5c83dca94d4",
+        "status": "read"
+      },
+      "observations": [
+        [
+          "model_setup",
+          {
+            "jk_calls": 5,
+            "response_operator_actions": 4
+          }
+        ],
+        [
+          "ordinary_response",
+          {
+            "cache_validation_actions": 1,
+            "jk_calls": 3,
+            "response_operator_actions": 3,
+            "submitted_blocks": 1,
+            "submitted_rhs": 1
+          }
+        ]
+      ],
+      "reopen": "5e37e5cf8cd242f5a498c4dec7a56541",
+      "retry": "a7b6d262616141f68e27632411b01320",
+      "rollback_equal": true
+    }
+  },
+  "gqc_commit": "2791504cc238fe83d328fc1718080642b288222a",
+  "model_sha256": "2742f72eb2709fb4f62f4c747ba47991fcc492ad787cabe9c63dc90e103b32ba",
+  "python": "3.13.16",
+  "record_id": "qm9-000003",
+  "regression_sha256": "df0e2bf9002342758ef4a62252a8e504e85e02a32514d1ffc9f502d8bb4701e7",
+  "result": "passed",
+  "suite_seconds": 40.13145491798059,
+  "threads": {
+    "MKL_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1"
+  },
+  "totals": {
+    "rhs": 13,
+    "round_jk": 107,
+    "seconds": 14.127569312986452,
+    "setup_jk": 36
+  },
+  "unique_attempts": 11,
+  "versions": {
+    "h5py": "3.16.0",
+    "numpy": "2.5.5",
+    "pyscf": "2.14.0",
+    "scipy": "1.18.1"
+  }
+}

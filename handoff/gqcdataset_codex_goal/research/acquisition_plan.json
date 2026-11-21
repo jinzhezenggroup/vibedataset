@@ -1,0 +1,601 @@
+{
+  "schema_version": 1,
+  "scope": "Pinned source trees and distinct runtime/producer releases for the handoff, the GQC experiments, and implemented completion baselines. See SOURCE_INDEX.md for coverage and gaps.",
+  "inventory_directory": "handoff/gqcdataset_codex_goal/research/inventories",
+  "receipt_directory": "handoff/gqcdataset_codex_goal/research/acquisition",
+  "repositories": [
+    {
+      "id": "gqc",
+      "catalog_ids": [
+        "gqc"
+      ],
+      "priority": "P0",
+      "repository_url": "https://github.com/jinzhezenggroup/generativeqc",
+      "role": "current",
+      "commit": "2791504cc238fe83d328fc1718080642b288222a",
+      "checkout_path": "_references/gqc",
+      "paper_version_status": "not_established",
+      "selection_reason": "科学编译与工作基础"
+    },
+    {
+      "id": "gqc_runtime",
+      "catalog_ids": [
+        "gqc"
+      ],
+      "priority": "P0",
+      "repository_url": "https://github.com/jinzhezenggroup/generativeqc",
+      "role": "runtime_source",
+      "commit": "2bf3fd98da9c6cfba46ca83345e63e1d934e4780",
+      "checkout_path": "_references/gqc_runtime",
+      "paper_version_status": "not_claimed",
+      "selection_reason": "n2 existing native library declared source; distinct from current"
+    },
+    {
+      "id": "xtbloom",
+      "include_tag_history": true,
+      "catalog_ids": [
+        "xtbloom"
+      ],
+      "priority": "P0",
+      "repository_url": "https://github.com/jinzhezenggroup/xtbloom",
+      "role": "current",
+      "commit": "16ec6bb04629b568b20e012e9b6409fb0ccff0f8",
+      "checkout_path": "_references/xtbloom",
+      "paper_version_status": "not_established",
+      "selection_reason": "科学编译与工作基础"
+    },
+    {
+      "id": "pyscf",
+      "catalog_ids": [
+        "pyscf"
+      ],
+      "priority": "P0",
+      "repository_url": "https://github.com/pyscf/pyscf",
+      "role": "current",
+      "commit": "2cdf8dc82e679a6a8fc053ce04493d94ad4fc18a",
+      "checkout_path": "_references/pyscf",
+      "paper_version_status": "not_established",
+      "selection_reason": "量化后端与强基线"
+    },
+    {
+      "id": "pyscf_2_14",
+      "catalog_ids": [
+        "pyscf"
+      ],
+      "priority": "P0",
+      "repository_url": "https://github.com/pyscf/pyscf",
+      "role": "release_source",
+      "commit": "c63a953ba603a5ad8c1d65d88da72aaf05ede4d8",
+      "checkout_path": "_references/pyscf_2_14",
+      "paper_version_status": "not_claimed",
+      "selection_reason": "v2.14.0 release corresponding to the independent CP-001 reference. Kept separate from the 2.15 development snapshot."
+    },
+    {
+      "id": "libcint_6_1_3",
+      "catalog_ids": [],
+      "priority": "P0",
+      "repository_url": "https://github.com/sunqm/libcint",
+      "role": "default_build_dependency",
+      "commit": "c72d30662ba08048940c9000cc352a220c867712",
+      "checkout_path": "_references/libcint_6_1_3",
+      "paper_version_status": "not_claimed",
+      "selection_reason": "Default Gaussian integral provider specified in PySCF v2.14.0 CMake for the archive audit. The wheel binary is hashed separately."
+    },
+    {
+      "id": "pyscfad",
+      "catalog_ids": [
+        "pyscfad"
+      ],
+      "priority": "P0",
+      "repository_url": "https://github.com/fishjojo/pyscfad",
+      "role": "current",
+      "commit": "190fbb4670de4c989333a5eb49b401efd5395a3b",
+      "checkout_path": "_references/pyscfad",
+      "paper_version_status": "not_established",
+      "selection_reason": "量化后端与强基线"
+    },
+    {
+      "id": "psi4",
+      "catalog_ids": [
+        "psi4"
+      ],
+      "priority": "P0",
+      "repository_url": "https://github.com/psi4/psi4",
+      "role": "current",
+      "commit": "4a005192ac03d1777915f4449a22f51b3ba06971",
+      "checkout_path": "_references/psi4",
+      "paper_version_status": "not_established",
+      "selection_reason": "量化后端与强基线"
+    },
+    {
+      "id": "psi4_1_10",
+      "catalog_ids": [
+        "psi4"
+      ],
+      "priority": "P0",
+      "repository_url": "https://github.com/psi4/psi4",
+      "role": "release_source",
+      "commit": "f2492db10de56b30b188239bdc6b4cfbc4a23bd5",
+      "checkout_path": "_references/psi4_1_10",
+      "paper_version_status": "not_claimed",
+      "selection_reason": "Psi4 v1.10 release tag, the producer version in the QCFractal single-point wavefunction fixtures. Source-level export conventions can change between releases."
+    },
+    {
+      "id": "qcfractal",
+      "catalog_ids": [
+        "qcfractal"
+      ],
+      "priority": "P0",
+      "repository_url": "https://github.com/MolSSI/QCFractal",
+      "role": "current",
+      "commit": "4ec1ed623f82536076c069dd65a4eb132969d9ed",
+      "checkout_path": "_references/qcfractal",
+      "paper_version_status": "not_established",
+      "selection_reason": "档案、工作流与状态"
+    },
+    {
+      "id": "qcelemental",
+      "catalog_ids": [
+        "qcelemental"
+      ],
+      "priority": "P0",
+      "repository_url": "https://github.com/MolSSI/QCElemental",
+      "role": "current",
+      "commit": "90fda8fa100444da90b47c316a600130af3f1dc4",
+      "checkout_path": "_references/qcelemental",
+      "paper_version_status": "not_established",
+      "selection_reason": "档案、工作流与状态"
+    },
+    {
+      "id": "trexio",
+      "catalog_ids": [
+        "trexio"
+      ],
+      "priority": "P0",
+      "repository_url": "https://github.com/TREX-CoE/trexio",
+      "role": "current",
+      "commit": "663f6af01736344d843dc93d1fa010b35536655d",
+      "checkout_path": "_references/trexio",
+      "paper_version_status": "not_established",
+      "selection_reason": "档案、工作流与状态"
+    },
+    {
+      "id": "trexio_tools",
+      "catalog_ids": [
+        "trexio_tools"
+      ],
+      "priority": "P0",
+      "repository_url": "https://github.com/TREX-CoE/trexio_tools",
+      "role": "current",
+      "commit": "b07bf8d94cf4de9d93118ca023fff9dda5213450",
+      "checkout_path": "_references/trexio_tools",
+      "paper_version_status": "not_established",
+      "selection_reason": "档案、工作流与状态"
+    },
+    {
+      "id": "mlelec",
+      "catalog_ids": [
+        "mlelec"
+      ],
+      "priority": "P0",
+      "repository_url": "https://github.com/curiosity54/mlelec",
+      "role": "current",
+      "commit": "73da12b404ff13008d123767f702ca129716dccd",
+      "checkout_path": "_references/mlelec",
+      "paper_version_status": "not_established",
+      "selection_reason": "电子态学习与可微混合计算"
+    },
+    {
+      "id": "gpu4pyscf",
+      "catalog_ids": [
+        "gpu4pyscf"
+      ],
+      "priority": "P1",
+      "repository_url": "https://github.com/pyscf/gpu4pyscf",
+      "role": "current",
+      "commit": "5a717f899cb40d64a5799ef1df7e3626c505c3bd",
+      "checkout_path": "_references/gpu4pyscf",
+      "paper_version_status": "not_established",
+      "selection_reason": "量化后端与强基线"
+    },
+    {
+      "id": "qcdb",
+      "catalog_ids": [
+        "qcdb"
+      ],
+      "priority": "P1",
+      "repository_url": "https://github.com/qcdb/qcdb",
+      "role": "current",
+      "commit": "d9e156ef8b313ac0633211fc6b841f84a3ddde24",
+      "checkout_path": "_references/qcdb",
+      "paper_version_status": "not_established",
+      "selection_reason": "量化后端与强基线"
+    },
+    {
+      "id": "xtb",
+      "catalog_ids": [
+        "xtb"
+      ],
+      "priority": "P1",
+      "repository_url": "https://github.com/grimme-lab/xtb",
+      "role": "current",
+      "commit": "4b8c987066c7e9bd0c2b727ce026fb9a581c273a",
+      "checkout_path": "_references/xtb",
+      "paper_version_status": "not_established",
+      "selection_reason": "量化后端与强基线"
+    },
+    {
+      "id": "tblite",
+      "catalog_ids": [
+        "tblite"
+      ],
+      "priority": "P1",
+      "repository_url": "https://github.com/tblite/tblite",
+      "role": "current",
+      "commit": "c6f66b93f7b3ed5db77698021822eaedb8074ce6",
+      "checkout_path": "_references/tblite",
+      "paper_version_status": "not_established",
+      "selection_reason": "量化后端与强基线"
+    },
+    {
+      "id": "dxtb",
+      "catalog_ids": [
+        "dxtb"
+      ],
+      "priority": "P1",
+      "repository_url": "https://github.com/grimme-lab/dxtb",
+      "role": "current",
+      "commit": "6961f9ceba9ce813e78a5be1ed5e383b8eb7824b",
+      "checkout_path": "_references/dxtb",
+      "paper_version_status": "not_established",
+      "selection_reason": "量化后端与强基线"
+    },
+    {
+      "id": "qcengine",
+      "catalog_ids": [
+        "qcengine"
+      ],
+      "priority": "P1",
+      "repository_url": "https://github.com/MolSSI/QCEngine",
+      "role": "current",
+      "commit": "64982fd087b9b02a76507e2ad2cb75c6f4b4a7e9",
+      "checkout_path": "_references/qcengine",
+      "paper_version_status": "not_established",
+      "selection_reason": "档案、工作流与状态"
+    },
+    {
+      "id": "aiida",
+      "catalog_ids": [
+        "aiida"
+      ],
+      "priority": "P1",
+      "repository_url": "https://github.com/aiidateam/aiida-core",
+      "role": "current",
+      "commit": "31c1dcf5936359c7eaaebaeb335dabe141dfb40e",
+      "checkout_path": "_references/aiida",
+      "paper_version_status": "not_established",
+      "selection_reason": "档案、工作流与状态"
+    },
+    {
+      "id": "pyscf_forge",
+      "catalog_ids": [
+        "pyscf_forge"
+      ],
+      "priority": "P1",
+      "repository_url": "https://github.com/pyscf/pyscf-forge",
+      "role": "current",
+      "commit": "7e386107da6a463be73cfe67c3e01e087683b164",
+      "checkout_path": "_references/pyscf_forge",
+      "paper_version_status": "not_established",
+      "selection_reason": "档案、工作流与状态"
+    },
+    {
+      "id": "schnorb",
+      "catalog_ids": [
+        "schnorb"
+      ],
+      "priority": "P1",
+      "repository_url": "https://github.com/atomistic-machine-learning/SchNOrb",
+      "role": "current",
+      "commit": "38cb268ea431b46e3b2088dda48bcd1983462ff5",
+      "checkout_path": "_references/schnorb",
+      "paper_version_status": "not_established",
+      "selection_reason": "电子态学习与可微混合计算"
+    },
+    {
+      "id": "qhnet",
+      "catalog_ids": [
+        "qhnet",
+        "qh9"
+      ],
+      "priority": "P1",
+      "repository_url": "https://github.com/divelab/AIRS",
+      "role": "current",
+      "commit": "594e8bad8cd0b24a207c818e09b39ccc0aebcd4d",
+      "checkout_path": "_references/qhnet",
+      "paper_version_status": "not_established",
+      "selection_reason": "电子态学习与可微混合计算"
+    },
+    {
+      "id": "nabladft",
+      "catalog_ids": [
+        "nabladft"
+      ],
+      "priority": "P1",
+      "repository_url": "https://github.com/AIRI-Institute/nablaDFT",
+      "role": "current",
+      "commit": "67ca402809806e5dd55095e1f095ec9b2683ac41",
+      "checkout_path": "_references/nabladft",
+      "paper_version_status": "not_established",
+      "selection_reason": "电子态学习与可微混合计算"
+    },
+    {
+      "id": "ani1",
+      "catalog_ids": [
+        "ani1"
+      ],
+      "priority": "P1",
+      "repository_url": "https://github.com/isayev/ANI1_dataset",
+      "role": "current",
+      "commit": "62abf3b7deb00a5ee03b3749b32873a5654042cb",
+      "checkout_path": "_references/ani1",
+      "paper_version_status": "not_established",
+      "selection_reason": "多保真、主动采样与缺失标签"
+    },
+    {
+      "id": "ani1x_ccx",
+      "catalog_ids": [
+        "ani1x_ccx"
+      ],
+      "priority": "P1",
+      "repository_url": "https://github.com/aiqm/ANI1x_datasets",
+      "role": "current",
+      "commit": "c6b6d20b9915a4534204800b634fc1f8ee0a08bc",
+      "checkout_path": "_references/ani1x_ccx",
+      "paper_version_status": "not_established",
+      "selection_reason": "多保真、主动采样与缺失标签"
+    },
+    {
+      "id": "torchani",
+      "catalog_ids": [
+        "torchani"
+      ],
+      "priority": "P1",
+      "repository_url": "https://github.com/aiqm/torchani",
+      "role": "current",
+      "commit": "4f9c239eac706e010d3ca1f7c5b7c91abc9ac4c7",
+      "checkout_path": "_references/torchani",
+      "paper_version_status": "not_established",
+      "selection_reason": "多保真、主动采样与缺失标签"
+    },
+    {
+      "id": "qemfi",
+      "catalog_ids": [
+        "qemfi"
+      ],
+      "priority": "P1",
+      "repository_url": "https://github.com/SM4DA/QeMFi",
+      "role": "current",
+      "commit": "883eca5b12c96ca2248fddcc671fcd032696552a",
+      "checkout_path": "_references/qemfi",
+      "paper_version_status": "not_established",
+      "selection_reason": "多保真、主动采样与缺失标签"
+    },
+    {
+      "id": "multifidelity_gnn",
+      "catalog_ids": [
+        "multifidelity_gnn"
+      ],
+      "priority": "P1",
+      "repository_url": "https://github.com/davidbuterez/multi-fidelity-gnns-for-drug-discovery-and-quantum-mechanics",
+      "role": "current",
+      "commit": "84ee8a280557d7fbc2ebd1042468e21ce8ea16c6",
+      "checkout_path": "_references/multifidelity_gnn",
+      "paper_version_status": "not_established",
+      "selection_reason": "多保真、主动采样与缺失标签"
+    },
+    {
+      "id": "hvmc",
+      "catalog_ids": [
+        "hvmc"
+      ],
+      "priority": "P1",
+      "repository_url": "https://github.com/RateTheory/HVMC",
+      "role": "current",
+      "commit": "389bc8abad78d574ae971289226a27c620a0c351",
+      "checkout_path": "_references/hvmc",
+      "paper_version_status": "not_established",
+      "selection_reason": "结构化矩阵补全"
+    },
+    {
+      "id": "pvmc",
+      "catalog_ids": [
+        "pvmc"
+      ],
+      "priority": "P1",
+      "repository_url": "https://github.com/RateTheory/PVMC",
+      "role": "current",
+      "commit": "0d3340644047abc727896753f48650f8c5205a89",
+      "checkout_path": "_references/pvmc",
+      "paper_version_status": "not_established",
+      "selection_reason": "结构化矩阵补全"
+    },
+    {
+      "id": "vmc",
+      "catalog_ids": [
+        "vmc"
+      ],
+      "priority": "P1",
+      "repository_url": "https://github.com/gregongie/vmc",
+      "role": "current",
+      "commit": "e8ae5d1d8d306379c6ef11621cb3614078900f1d",
+      "checkout_path": "_references/vmc",
+      "paper_version_status": "not_established",
+      "selection_reason": "结构化矩阵补全"
+    },
+    {
+      "id": "halide",
+      "catalog_ids": [
+        "halide"
+      ],
+      "priority": "P2",
+      "repository_url": "https://github.com/halide/Halide",
+      "role": "current",
+      "commit": "ac9f247583a633bd64e4b828d9bdcd4ffd952ce8",
+      "checkout_path": "_references/halide",
+      "paper_version_status": "not_established",
+      "selection_reason": "编译与程序专门化背景"
+    },
+    {
+      "id": "mlir",
+      "catalog_ids": [
+        "mlir"
+      ],
+      "priority": "P2",
+      "repository_url": "https://github.com/llvm/llvm-project",
+      "role": "current",
+      "commit": "46b9e6906663004e06c1d5be382b84b378d68846",
+      "checkout_path": "_references/mlir",
+      "paper_version_status": "not_established",
+      "selection_reason": "编译与程序专门化背景"
+    },
+    {
+      "id": "equiv_dens_ml",
+      "catalog_ids": [],
+      "priority": "P1",
+      "repository_url": "https://github.com/MihailBogojeski/equiv_dens_ml",
+      "role": "current",
+      "commit": "f05a471b700ba519ed6f0f86343e1da8c288e412",
+      "checkout_path": "_references/equiv_dens_ml",
+      "paper_version_status": "not_established",
+      "selection_reason": "Followed PhiSNet author citation: density-learning, MD and property reuse; distinct from original PhiSNet and dm-PhiSNet",
+      "primary_url": "https://dft.uci.edu/pubs/BHVMBT26.pdf"
+    },
+    {
+      "id": "qcmanybody",
+      "catalog_ids": [],
+      "priority": "P0",
+      "repository_url": "https://github.com/MolSSI/QCManyBody",
+      "role": "release_source",
+      "commit": "90273ab21e4f824b286d55411666394c80cf2472",
+      "checkout_path": "_references/qcmanybody",
+      "paper_version_status": "current_release_v0.8.0_not_identified_as_2024_paper_pin",
+      "selection_reason": "Primary implementation of counterpoise-aware and multi-model many-body component planning and exact assembly at a fixed MBE target. Traced from the pinned QCFractal many-body service."
+    },
+    {
+      "id": "mol_prop_imputation",
+      "catalog_ids": [],
+      "priority": "P1",
+      "repository_url": "https://github.com/Savoie-Research-Group/mol_prop_imputation",
+      "role": "author_release",
+      "commit": "386217f233f5607a6c69e09c8bd9375fbde06444",
+      "checkout_path": "_references/mol_prop_imputation",
+      "paper_version_status": "v1.0.0-publication, explicitly identified as the frozen manuscript release by the authors",
+      "selection_reason": "Direct prior work on generalized molecular property imputation with observed labels as inputs. Statistical comparator to component reuse under fixed quantum targets."
+    },
+    {
+      "id": "mlelec_qm7",
+      "catalog_ids": [
+        "mlelec"
+      ],
+      "priority": "P1",
+      "repository_url": "https://github.com/curiosity54/mlelec",
+      "role": "archive_linked_branch",
+      "commit": "9c34bd9e1351770d3ac5b0887ecf0a98da317417",
+      "checkout_path": "_references/mlelec_qm7",
+      "paper_version_status": "Materials Cloud v1 explicitly links the qm7 branch. The observed tip predates the 2025-06-02 deposit; the deposit does not specify a git SHA.",
+      "selection_reason": "Resolve the archived branch separately from main and trace the property-supervised Hamiltonian model."
+    },
+    {
+      "id": "dm_phisnet_history",
+      "catalog_ids": [
+        "dm_phisnet"
+      ],
+      "priority": "P0",
+      "repository_url": "https://github.com/zyyr17/dm-nn-so3-analytic",
+      "role": "historical_author_source",
+      "commit": "eb365d3e4d0e85ccf89740e5fad26970591c5b16",
+      "checkout_path": "_references/dm_phisnet_history",
+      "paper_version_status": "Prepublication author commit; author/paper relationship follows model and authorship, paper release equivalence unverified.",
+      "selection_reason": "Author history has a source-bearing October 2025 commit before its empty HEAD. Inspect exact available artifact without redistributing files."
+    },
+    {
+      "id": "phisnet_casnet_fork",
+      "catalog_ids": [
+        "phisnet"
+      ],
+      "priority": "P0",
+      "repository_url": "https://github.com/marquetand/phisnet_fork",
+      "role": "later_adaptation",
+      "commit": "398f215554146069a386809a4bd3bed83eddf87a",
+      "checkout_path": "_references/phisnet_casnet_fork",
+      "paper_version_status": "Later CasNet derivative, not a verified copy of original paper release.",
+      "selection_reason": "Establish a second documented descendant of the original OpenReview method, apart from nablaDFT."
+    },
+    {
+      "id": "delfta_v1",
+      "catalog_ids": [
+        "qmugs",
+        "delta_ml"
+      ],
+      "priority": "P1",
+      "repository_url": "https://github.com/josejimenezluna/delfta",
+      "role": "qmugs_authors_downstream_delta_learning",
+      "commit": "5635b514067b229227e27143cd87e0ad5057388e",
+      "checkout_path": "_references/delfta_v1",
+      "paper_version_status": "Authors designate v1.0.0 for their DelFTa paper 10.1039/D2CP00834C. Separate from the original 2015 Delta-ML and from QMugs generation.",
+      "selection_reason": "QMugs author collaboration releases a concrete GFN2 plus learned correction comparison trained on the dataset."
+    },
+    {
+      "id": "openmdao_3_45_2",
+      "catalog_ids": [],
+      "priority": "P0",
+      "repository_url": "https://github.com/OpenMDAO/OpenMDAO",
+      "role": "release_source",
+      "commit": "64175aa55fb541355b2fb279a6bcfde01e17a878",
+      "checkout_path": "_references/openmdao_3_45_2",
+      "paper_version_status": "OpenMDAO 3.45.2 release, implementation of MNCO after Coleman & Verma 1998; original paper code not claimed",
+      "selection_reason": "Direct and substitution bidirectional coloring, compressed forward/adjoint products and structural-sparsity inference for total Jacobians. Strong comparator for GQC target-graph planning."
+    },
+    {
+      "id": "cppad_2026",
+      "catalog_ids": [],
+      "priority": "P0",
+      "repository_url": "https://github.com/coin-or/CppAD",
+      "role": "release_source",
+      "commit": "5d51b2aa6d6874c8d561da298a90b3721550d45d",
+      "checkout_path": "_references/cppad_2026",
+      "paper_version_status": "Release 20260000.0; older papers and ColPack implementation not identified with this pin.",
+      "selection_reason": "Sparse Jacobian drivers distinguish requested entries (subset) from complete structural support (pattern); concrete competitor to graph-based exact target completion."
+    },
+    {
+      "id": "pymor_2026_1",
+      "catalog_ids": [],
+      "priority": "P0",
+      "repository_url": "https://github.com/pymor/pymor",
+      "role": "release_source",
+      "commit": "36a0035e180694c7ad4eb8f083d9f1d65ceb6f42",
+      "checkout_path": "_references/pymor_2026_1",
+      "paper_version_status": "2026.1.1 release implementation of DWRCoerciveRBReductor, not claimed to be the original 2017 reference code.",
+      "selection_reason": "Dual-weighted residual output functional, paired primal/dual reduced bases, and qualified output error estimator for coercive linear systems. Direct prior on archived projected response and target precision."
+    }
+  ],
+  "release_archives": [
+    {
+      "id": "mlelec_materialscloud_v1",
+      "role": "paper_data_and_source_archive",
+      "repository_id": "mlelec_qm7",
+      "record_id": "4vezc-jtt98",
+      "metadata_url": "https://archive.materialscloud.org/api/records/4vezc-jtt98",
+      "doi": "10.24435/materialscloud:mg-8f",
+      "version": 1,
+      "filename": "dataset.tar.xz",
+      "archive_bytes": 1156517180,
+      "publisher_md5": "86a870be93068bd7e2bb5a2524524827",
+      "archive_sha256": "df6c0894e0063a9c99ad5f94c5989f982dc7186b5476a092b32a780ad9640dfb",
+      "paper_git_commit": null,
+      "inspection_path": "research/experiments/mlelec_archive/release.json",
+      "member_index_path": "research/experiments/mlelec_archive/members.json.gz"
+    }
+  ]
+}

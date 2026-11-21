@@ -1,0 +1,36 @@
+name: Research or validation task
+description: Track a scientific, reproducibility, or repository-process task.
+title: "[P?] "
+labels:
+  - research
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Keep the task falsifiable. Separate stored-state post-processing, target-protocol computation, response or derivative work, and statistical prediction.
+  - type: textarea
+    id: question
+    attributes:
+      label: Question or problem
+      description: What concrete question must be answered?
+    validations:
+      required: true
+  - type: textarea
+    id: inputs
+    attributes:
+      label: Inputs and dependencies
+      description: List source commits, data assets, environments, and prerequisite issues.
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance evidence
+      description: State commands, expected records, numerical gates, failure accounting, and remaining boundaries.
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Out of scope or competing explanations
+      description: Record alternatives and conditions that would change the route.

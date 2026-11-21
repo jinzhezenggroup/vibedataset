@@ -1,0 +1,122 @@
+{
+  "id": "pvmc",
+  "source": {
+    "id": "pvmc",
+    "catalog_ids": [
+      "pvmc"
+    ],
+    "priority": "P1",
+    "repository_url": "https://github.com/RateTheory/PVMC",
+    "role": "current",
+    "commit": null,
+    "checkout_path": "_references/pvmc",
+    "paper_version_status": "not_established",
+    "selection_reason": "\u7ed3\u6784\u5316\u77e9\u9635\u8865\u5168"
+  },
+  "started_at_utc": "2026-11-17T17:57:10.950099+00:00",
+  "status": "indexed_pending_review",
+  "commands": [
+    {
+      "argv": [
+        "git",
+        "ls-remote",
+        "https://github.com/RateTheory/PVMC",
+        "HEAD"
+      ],
+      "cwd": ".",
+      "started_at_utc": "2026-11-17T17:57:10.950238+00:00",
+      "stdout": "0d3340644047abc727896753f48650f8c5205a89\tHEAD\n",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 1.7288713919988368,
+      "ended_at_utc": "2026-11-17T17:57:12.679389+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "init",
+        "--quiet"
+      ],
+      "cwd": "_references/pvmc",
+      "started_at_utc": "2026-11-17T17:57:12.680096+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.005851509005879052,
+      "ended_at_utc": "2026-11-17T17:57:12.686391+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "remote",
+        "add",
+        "origin",
+        "https://github.com/RateTheory/PVMC"
+      ],
+      "cwd": "_references/pvmc",
+      "started_at_utc": "2026-11-17T17:57:12.686801+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.0034691920009208843,
+      "ended_at_utc": "2026-11-17T17:57:12.690607+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "protocol.file.allow=never",
+        "fetch",
+        "--depth=1",
+        "--no-tags",
+        "origin",
+        "0d3340644047abc727896753f48650f8c5205a89"
+      ],
+      "cwd": "_references/pvmc",
+      "started_at_utc": "2026-11-17T17:57:12.691034+00:00",
+      "stdout": "",
+      "stderr": "\u6765\u81ea https://github.com/RateTheory/PVMC\n * branch            0d3340644047abc727896753f48650f8c5205a89 -> FETCH_HEAD\n",
+      "returncode": 0,
+      "elapsed_seconds": 12.529669833005755,
+      "ended_at_utc": "2026-11-17T17:57:25.221075+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "core.autocrlf=false",
+        "checkout",
+        "--detach",
+        "0d3340644047abc727896753f48650f8c5205a89"
+      ],
+      "cwd": "_references/pvmc",
+      "started_at_utc": "2026-11-17T17:57:25.221383+00:00",
+      "stdout": "",
+      "stderr": "HEAD \u76ee\u524d\u4f4d\u4e8e 0d33406 Update calcFreeEnergy.py\n",
+      "returncode": 0,
+      "elapsed_seconds": 0.3054940679867286,
+      "ended_at_utc": "2026-11-17T17:57:25.529487+00:00"
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "/home/lhshen/vibedataset/handoff/gqcdataset_codex_goal/tools/inventory_sources.py",
+        "_references/pvmc",
+        "--recurse-submodules",
+        "--json",
+        "handoff/gqcdataset_codex_goal/research/inventories/pvmc.json"
+      ],
+      "cwd": ".",
+      "started_at_utc": "2026-11-17T17:57:25.529857+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.2749595369969029,
+      "ended_at_utc": "2026-11-17T17:57:25.806730+00:00"
+    }
+  ],
+  "receipt_path": "handoff/gqcdataset_codex_goal/research/acquisition/pvmc-20261117T175710950080Z.json",
+  "resolved_commit": "0d3340644047abc727896753f48650f8c5205a89",
+  "inventory_path": "handoff/gqcdataset_codex_goal/research/inventories/pvmc.json",
+  "ended_at_utc": "2026-11-17T17:57:25.807038+00:00"
+}

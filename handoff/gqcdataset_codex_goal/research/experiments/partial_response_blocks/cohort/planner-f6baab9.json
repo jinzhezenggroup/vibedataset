@@ -1,0 +1,16 @@
+{
+  "excluded_pilot_failures": 11,
+  "histories": 120,
+  "measured_planner_sha256": "fa356cabb02b7da0e601880c36967588aac386ee4eec7dff56798b977f9d1df6",
+  "measured_project_commit": "2c1f4078c9b86eb5e17156feb594c8f809066476",
+  "measured_strategies": 1200,
+  "persisted_assets": 1560,
+  "replanned_fields_observables_coefficients_operands_equal": true,
+  "replay_cover_sha256": "dff2100e1e901708e03c27ab13fcfed448c45a63f143e1bf8b2fcef9d300b117",
+  "replay_planner_sha256": "97c51446359abd01ba38276f1f3e5fce17733c23a4af38ebc97d89b48a1aa8b4",
+  "replayed_first_blocks": {
+    "blocked_support": 240,
+    "blocked_xyz": 240
+  },
+  "source_candidates": 17
+}

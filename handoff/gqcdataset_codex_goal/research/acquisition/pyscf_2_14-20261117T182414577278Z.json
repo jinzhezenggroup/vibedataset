@@ -1,0 +1,107 @@
+{
+  "id": "pyscf_2_14",
+  "source": {
+    "id": "pyscf_2_14",
+    "catalog_ids": [
+      "pyscf"
+    ],
+    "priority": "P0",
+    "repository_url": "https://github.com/pyscf/pyscf",
+    "role": "release_source",
+    "commit": "c63a953ba603a5ad8c1d65d88da72aaf05ede4d8",
+    "checkout_path": "_references/pyscf_2_14",
+    "paper_version_status": "not_claimed",
+    "selection_reason": "v2.14.0 release corresponding to the independent CP-001 reference. Kept separate from the 2.15 development snapshot."
+  },
+  "started_at_utc": "2026-11-17T18:24:14.577303+00:00",
+  "status": "indexed_pending_review",
+  "commands": [
+    {
+      "argv": [
+        "git",
+        "init",
+        "--quiet"
+      ],
+      "cwd": "_references/pyscf_2_14",
+      "started_at_utc": "2026-11-17T18:24:14.577480+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.003366053002537228,
+      "ended_at_utc": "2026-11-17T18:24:14.581013+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "remote",
+        "add",
+        "origin",
+        "https://github.com/pyscf/pyscf"
+      ],
+      "cwd": "_references/pyscf_2_14",
+      "started_at_utc": "2026-11-17T18:24:14.581174+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.001994370002648793,
+      "ended_at_utc": "2026-11-17T18:24:14.583400+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "protocol.file.allow=never",
+        "fetch",
+        "--depth=1",
+        "--no-tags",
+        "origin",
+        "c63a953ba603a5ad8c1d65d88da72aaf05ede4d8"
+      ],
+      "cwd": "_references/pyscf_2_14",
+      "started_at_utc": "2026-11-17T18:24:14.583542+00:00",
+      "stdout": "",
+      "stderr": "\u6765\u81ea https://github.com/pyscf/pyscf\n * branch            c63a953ba603a5ad8c1d65d88da72aaf05ede4d8 -> FETCH_HEAD\n",
+      "returncode": 0,
+      "elapsed_seconds": 6.573267140003736,
+      "ended_at_utc": "2026-11-17T18:24:21.156972+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "core.autocrlf=false",
+        "checkout",
+        "--detach",
+        "c63a953ba603a5ad8c1d65d88da72aaf05ede4d8"
+      ],
+      "cwd": "_references/pyscf_2_14",
+      "started_at_utc": "2026-11-17T18:24:21.157433+00:00",
+      "stdout": "",
+      "stderr": "HEAD \u76ee\u524d\u4f4d\u4e8e c63a953 Release 2.14.0 (#3297)\n",
+      "returncode": 0,
+      "elapsed_seconds": 0.22121871099807322,
+      "ended_at_utc": "2026-11-17T18:24:21.379023+00:00"
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "/home/lhshen/vibedataset/handoff/gqcdataset_codex_goal/tools/inventory_sources.py",
+        "_references/pyscf_2_14",
+        "--recurse-submodules",
+        "--json",
+        "handoff/gqcdataset_codex_goal/research/inventories/pyscf_2_14.json"
+      ],
+      "cwd": ".",
+      "started_at_utc": "2026-11-17T18:24:21.379342+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.3868086639995454,
+      "ended_at_utc": "2026-11-17T18:24:21.767427+00:00"
+    }
+  ],
+  "receipt_path": "handoff/gqcdataset_codex_goal/research/acquisition/pyscf_2_14-20261117T182414577278Z.json",
+  "resolved_commit": "c63a953ba603a5ad8c1d65d88da72aaf05ede4d8",
+  "inventory_path": "handoff/gqcdataset_codex_goal/research/inventories/pyscf_2_14.json",
+  "ended_at_utc": "2026-11-17T18:24:21.767872+00:00"
+}

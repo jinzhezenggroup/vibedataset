@@ -1,0 +1,858 @@
+{
+  "adjoint": {
+    "block": {
+      "residuals": {
+        "observables/q0": 1.1408912941972062e-13,
+        "observables/r2": 2.954487294766847e-13,
+        "observables/zz": 8.371901732006353e-14
+      },
+      "rhs_rank": 3,
+      "solver_actions": 30
+    },
+    "cache_checks": [],
+    "counts": {
+      "cache_rejections": 0,
+      "cache_validation_actions": 0,
+      "jk_calls": 30,
+      "operator_actions": 30,
+      "requests": 9,
+      "rhs_columns": 3,
+      "solver_actions": 30
+    },
+    "elapsed_seconds": 0.006695040996419266,
+    "new_fields": [],
+    "new_observables": [
+      "q0",
+      "r2",
+      "zz"
+    ],
+    "problem_identity": "627f21057aa23963bd7093d68becfe3ad912716d299eb5a33a2dd97404ea8d6e",
+    "results": [
+      {
+        "field": "x",
+        "observable": "q0",
+        "qualified": null,
+        "raw_value": -0.7346795808673366,
+        "reasons": [],
+        "status": "residual_verified",
+        "value": null,
+        "via": "adjoint"
+      },
+      {
+        "field": "x",
+        "observable": "r2",
+        "qualified": null,
+        "raw_value": -4.6663316327497055,
+        "reasons": [],
+        "status": "residual_verified",
+        "value": null,
+        "via": "adjoint"
+      },
+      {
+        "field": "x",
+        "observable": "zz",
+        "qualified": null,
+        "raw_value": 2.247728242827204,
+        "reasons": [],
+        "status": "residual_verified",
+        "value": null,
+        "via": "adjoint"
+      },
+      {
+        "field": "y",
+        "observable": "q0",
+        "qualified": null,
+        "raw_value": 0.49180734604071313,
+        "reasons": [],
+        "status": "residual_verified",
+        "value": null,
+        "via": "adjoint"
+      },
+      {
+        "field": "y",
+        "observable": "r2",
+        "qualified": null,
+        "raw_value": -16.99973121294788,
+        "reasons": [],
+        "status": "residual_verified",
+        "value": null,
+        "via": "adjoint"
+      },
+      {
+        "field": "y",
+        "observable": "zz",
+        "qualified": null,
+        "raw_value": -1.4973134924783293,
+        "reasons": [],
+        "status": "residual_verified",
+        "value": null,
+        "via": "adjoint"
+      },
+      {
+        "field": "z",
+        "observable": "q0",
+        "qualified": null,
+        "raw_value": 1.402244734099563,
+        "reasons": [],
+        "status": "residual_verified",
+        "value": null,
+        "via": "adjoint"
+      },
+      {
+        "field": "z",
+        "observable": "r2",
+        "qualified": null,
+        "raw_value": 9.208889937166074,
+        "reasons": [],
+        "status": "residual_verified",
+        "value": null,
+        "via": "adjoint"
+      },
+      {
+        "field": "z",
+        "observable": "zz",
+        "qualified": null,
+        "raw_value": 3.355397993320381,
+        "reasons": [],
+        "status": "residual_verified",
+        "value": null,
+        "via": "adjoint"
+      }
+    ]
+  },
+  "direct": {
+    "block": {
+      "residuals": {
+        "fields/x": 2.6905488412736657e-15,
+        "fields/y": 7.374925458675603e-15,
+        "fields/z": 2.5742657676200503e-15
+      },
+      "rhs_rank": 3,
+      "solver_actions": 30
+    },
+    "cache_checks": [],
+    "counts": {
+      "cache_rejections": 0,
+      "cache_validation_actions": 0,
+      "jk_calls": 30,
+      "operator_actions": 30,
+      "requests": 9,
+      "rhs_columns": 3,
+      "solver_actions": 30
+    },
+    "elapsed_seconds": 0.005150470999069512,
+    "new_fields": [
+      "x",
+      "y",
+      "z"
+    ],
+    "new_observables": [],
+    "problem_identity": "627f21057aa23963bd7093d68becfe3ad912716d299eb5a33a2dd97404ea8d6e",
+    "results": [
+      {
+        "field": "x",
+        "observable": "q0",
+        "qualified": null,
+        "raw_value": -0.734679580867334,
+        "reasons": [],
+        "status": "residual_verified",
+        "value": null,
+        "via": "direct"
+      },
+      {
+        "field": "x",
+        "observable": "r2",
+        "qualified": null,
+        "raw_value": -4.66633163274969,
+        "reasons": [],
+        "status": "residual_verified",
+        "value": null,
+        "via": "direct"
+      },
+      {
+        "field": "x",
+        "observable": "zz",
+        "qualified": null,
+        "raw_value": 2.247728242827209,
+        "reasons": [],
+        "status": "residual_verified",
+        "value": null,
+        "via": "direct"
+      },
+      {
+        "field": "y",
+        "observable": "q0",
+        "qualified": null,
+        "raw_value": 0.4918073460407186,
+        "reasons": [],
+        "status": "residual_verified",
+        "value": null,
+        "via": "direct"
+      },
+      {
+        "field": "y",
+        "observable": "r2",
+        "qualified": null,
+        "raw_value": -16.999731212947964,
+        "reasons": [],
+        "status": "residual_verified",
+        "value": null,
+        "via": "direct"
+      },
+      {
+        "field": "y",
+        "observable": "zz",
+        "qualified": null,
+        "raw_value": -1.4973134924783527,
+        "reasons": [],
+        "status": "residual_verified",
+        "value": null,
+        "via": "direct"
+      },
+      {
+        "field": "z",
+        "observable": "q0",
+        "qualified": null,
+        "raw_value": 1.4022447340995658,
+        "reasons": [],
+        "status": "residual_verified",
+        "value": null,
+        "via": "direct"
+      },
+      {
+        "field": "z",
+        "observable": "r2",
+        "qualified": null,
+        "raw_value": 9.208889937166097,
+        "reasons": [],
+        "status": "residual_verified",
+        "value": null,
+        "via": "direct"
+      },
+      {
+        "field": "z",
+        "observable": "zz",
+        "qualified": null,
+        "raw_value": 3.3553979933203917,
+        "reasons": [],
+        "status": "residual_verified",
+        "value": null,
+        "via": "direct"
+      }
+    ]
+  },
+  "field_ids": [
+    "x",
+    "y",
+    "z"
+  ],
+  "independent": {
+    "cphf": [
+      [
+        -0.7346795808670255,
+        -4.666331632748694,
+        2.247728242827324
+      ],
+      [
+        0.4918073460405501,
+        -16.99973121294861,
+        -1.4973134924783607
+      ],
+      [
+        1.4022447340998048,
+        9.208889937167209,
+        3.3553979933205538
+      ]
+    ],
+    "cphf_counts": {
+      "density_columns": 14,
+      "jk_calls": 5
+    },
+    "cphf_error": null,
+    "finite_fields": {
+      "0.0002": [
+        [
+          -0.7346795425600128,
+          -4.666331597764639,
+          2.247728203352839
+        ],
+        [
+          0.49180729301268045,
+          -16.999731453886113,
+          -1.4973134788687226
+        ],
+        [
+          1.4022447046935227,
+          9.208889953047361,
+          3.3553979431233394
+        ]
+      ],
+      "0.0005": [
+        [
+          -0.734679340522959,
+          -4.6663313873054335,
+          2.247728009280081
+        ],
+        [
+          0.4918070139012798,
+          -16.999732502192444,
+          -1.4973134146218925
+        ],
+        [
+          1.4022445507873016,
+          9.208889921339392,
+          3.355397697231588
+        ]
+      ]
+    },
+    "integral_errors": {
+      "eri": 2.220446049250313e-16,
+      "hcore": 8.881784197001252e-16,
+      "overlap": 2.7755575615628914e-17
+    },
+    "scf": [
+      {
+        "counts": {
+          "density_columns": 42,
+          "jk_calls": 42
+        },
+        "cycles": 40,
+        "energy_excluding_nuclear_field_coupling": -55.454741646952954,
+        "field_au": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "raw_observables": [
+          -0.4609676118139765,
+          60.74422699153608,
+          7.491820616323582
+        ],
+        "seconds": 0.03469335900445003,
+        "status": "completed"
+      },
+      {
+        "counts": {
+          "density_columns": 42,
+          "jk_calls": 42
+        },
+        "cycles": 40,
+        "energy_excluding_nuclear_field_coupling": -55.454779749898904,
+        "field_au": [
+          0.0005,
+          0.0,
+          0.0
+        ],
+        "raw_observables": [
+          -0.4613347670595136,
+          60.74189690757772,
+          7.492944665896427
+        ],
+        "seconds": 0.034501205998822115,
+        "status": "completed"
+      },
+      {
+        "counts": {
+          "density_columns": 42,
+          "jk_calls": 42
+        },
+        "cycles": 40,
+        "energy_excluding_nuclear_field_coupling": -55.45470467903725,
+        "field_au": [
+          -0.0005,
+          -0.0,
+          -0.0
+        ],
+        "raw_observables": [
+          -0.46060008771899064,
+          60.746563238965024,
+          7.490696937887147
+        ],
+        "seconds": 0.0345540050038835,
+        "status": "completed"
+      },
+      {
+        "counts": {
+          "density_columns": 42,
+          "jk_calls": 42
+        },
+        "cycles": 40,
+        "energy_excluding_nuclear_field_coupling": -55.44529642550256,
+        "field_au": [
+          0.0,
+          0.0005,
+          0.0
+        ],
+        "raw_observables": [
+          -0.46072150254959254,
+          60.735724986751,
+          7.491071995848762
+        ],
+        "seconds": 0.034539703992777504,
+        "status": "completed"
+      },
+      {
+        "counts": {
+          "density_columns": 42,
+          "jk_calls": 42
+        },
+        "cycles": 40,
+        "energy_excluding_nuclear_field_coupling": -55.464188113827674,
+        "field_au": [
+          -0.0,
+          -0.0005,
+          -0.0
+        ],
+        "raw_observables": [
+          -0.4612133095634938,
+          60.752724719253195,
+          7.492569309263384
+        ],
+        "seconds": 0.03517427200858947,
+        "status": "completed"
+      },
+      {
+        "counts": {
+          "density_columns": 51,
+          "jk_calls": 51
+        },
+        "cycles": 49,
+        "energy_excluding_nuclear_field_coupling": -55.45480819312266,
+        "field_au": [
+          0.0,
+          0.0,
+          0.0005
+        ],
+        "raw_observables": [
+          -0.4602664074985334,
+          60.74883289558244,
+          7.493498723944797
+        ],
+        "seconds": 0.037393667007563636,
+        "status": "completed"
+      },
+      {
+        "counts": {
+          "density_columns": 51,
+          "jk_calls": 51
+        },
+        "cycles": 49,
+        "energy_excluding_nuclear_field_coupling": -55.454675705894246,
+        "field_au": [
+          -0.0,
+          -0.0,
+          -0.0005
+        ],
+        "raw_observables": [
+          -0.4616686520493207,
+          60.7396240056611,
+          7.490143326247566
+        ],
+        "seconds": 0.036606822002795525,
+        "status": "completed"
+      },
+      {
+        "counts": {
+          "density_columns": 52,
+          "jk_calls": 52
+        },
+        "cycles": 50,
+        "energy_excluding_nuclear_field_coupling": -55.45475675196471,
+        "field_au": [
+          0.0002,
+          0.0,
+          0.0
+        ],
+        "raw_observables": [
+          -0.46111451821462524,
+          60.74329421829296,
+          7.492270191655774
+        ],
+        "seconds": 0.03811088600195944,
+        "status": "completed"
+      },
+      {
+        "counts": {
+          "density_columns": 53,
+          "jk_calls": 53
+        },
+        "cycles": 51,
+        "energy_excluding_nuclear_field_coupling": -55.454726723546116,
+        "field_au": [
+          -0.0002,
+          -0.0,
+          -0.0
+        ],
+        "raw_observables": [
+          -0.46082064639760123,
+          60.745160750932065,
+          7.491371100374433
+        ],
+        "seconds": 0.03890530500211753,
+        "status": "completed"
+      },
+      {
+        "counts": {
+          "density_columns": 54,
+          "jk_calls": 54
+        },
+        "cycles": 52,
+        "energy_excluding_nuclear_field_coupling": -55.45096340886849,
+        "field_au": [
+          0.0,
+          0.0002,
+          0.0
+        ],
+        "raw_observables": [
+          -0.46086921743427567,
+          60.7408267030783,
+          7.491521159425565
+        ],
+        "seconds": 0.0391217980068177,
+        "status": "completed"
+      },
+      {
+        "counts": {
+          "density_columns": 52,
+          "jk_calls": 52
+        },
+        "cycles": 50,
+        "energy_excluding_nuclear_field_coupling": -55.458520084305334,
+        "field_au": [
+          -0.0,
+          -0.0002,
+          -0.0
+        ],
+        "raw_observables": [
+          -0.46106594035148074,
+          60.74762659565985,
+          7.492120084817112
+        ],
+        "seconds": 0.037849423999432474,
+        "status": "completed"
+      },
+      {
+        "counts": {
+          "density_columns": 52,
+          "jk_calls": 52
+        },
+        "cycles": 50,
+        "energy_excluding_nuclear_field_coupling": -55.45476819278346,
+        "field_au": [
+          0.0,
+          0.0,
+          0.0002
+        ],
+        "raw_observables": [
+          -0.4606871497466445,
+          60.74606900297797,
+          7.492491761316301
+        ],
+        "seconds": 0.03767816399340518,
+        "status": "completed"
+      },
+      {
+        "counts": {
+          "density_columns": 51,
+          "jk_calls": 51
+        },
+        "cycles": 49,
+        "energy_excluding_nuclear_field_coupling": -55.45471519794026,
+        "field_au": [
+          -0.0,
+          -0.0,
+          -0.0002
+        ],
+        "raw_observables": [
+          -0.4612480476285219,
+          60.74238544699675,
+          7.491149602139052
+        ],
+        "seconds": 0.037298882991308346,
+        "status": "completed"
+      }
+    ],
+    "zero_field_density_error": 7.563394355258879e-15,
+    "zero_field_energy_error": 4.263256414560601e-14
+  },
+  "name": "qm9-000002",
+  "observable_ids": [
+    "q0",
+    "r2",
+    "zz"
+  ],
+  "operator_attestation": {
+    "api_sha256": "94ef7c05a55d85b1dcc8f7e9af9c66e51d02c6f95fd7de76bf5a96f6a4b32d8c",
+    "contract_identity": "6b5f8ee268639c319656ba8979435135d0e1f75e0f11055109d6c39f3e550308",
+    "endpoint_identities": {
+      "fields": {
+        "x": "7bb598ad03f06b4ce9ce2ec18cf8b124ae24c59d99fd8ee660aa7b583f10cc18",
+        "y": "77649639fcb68528a6c21d43656093873f6ce1d87efe726a9cf14cc2e743dac3",
+        "z": "7417aaa0b302e37c2d7feeb9362429ab54091d5e7429a5d820e241c69ac865d7"
+      },
+      "observables": {
+        "q0": "94c50752d48d2b7b0ba2c56eee3533f1a3ab795a9185dbb0ed38284a00094b36",
+        "r2": "d265e2359956d744a6707788109032115e25c53c22cddcf9361a78c361dc29de",
+        "zz": "5f49e72a2d1fcc54c024a6858838a496bb69289bcc06eb97a494d25309c5c1f3"
+      }
+    },
+    "extra_adjoint_counts": {
+      "cache_rejections": 0,
+      "cache_validation_actions": 0,
+      "jk_calls": 30,
+      "operator_actions": 30,
+      "requests": 9,
+      "rhs_columns": 3,
+      "solver_actions": 30
+    },
+    "extra_adjoint_seconds": 0.010778826006571762,
+    "extra_direct_counts": {
+      "cache_rejections": 0,
+      "cache_validation_actions": 0,
+      "jk_calls": 30,
+      "operator_actions": 30,
+      "requests": 9,
+      "rhs_columns": 3,
+      "solver_actions": 30
+    },
+    "extra_direct_seconds": 0.010848128003999591,
+    "extra_setup_counts": {
+      "density_jvp_calls": 6,
+      "jk_calls": 5,
+      "response_operator_actions": 4
+    },
+    "extra_setup_seconds": 0.11929968500044197,
+    "max_replay_differences": {
+      "adjoint": 0.0,
+      "direct": 0.0
+    },
+    "method": "Additional operator-identity attestation after the original oracle execution; reloaded native program hashes and all direct/adjoint values checked against the first execution.",
+    "source_sha256": "0cdd3f59be443657dace496e0b4aa04e280334f4c7e05f38f9df5e7caaed53f0"
+  },
+  "problem_identity": "627f21057aa23963bd7093d68becfe3ad912716d299eb5a33a2dd97404ea8d6e",
+  "reference_identity": "a5551d65b98a544cd0ec8d2deb3f07636b334147462f1040b1554df22ea31f4b",
+  "seconds": 2.692024012998445,
+  "setup": {
+    "basis_hash": "c9e289c09d2a577a9a578cc9c554ce853cef98c38e80a84d61f96941bd80f847",
+    "counts": {
+      "density_jvp_calls": 6,
+      "jk_calls": 5,
+      "response_operator_actions": 4
+    },
+    "dimension": 15,
+    "fock_error": 2.6645352591003757e-15,
+    "geometry_hash": "498569da6e84365fbf9cb03b0f0e60989c2246704327e8ffac311c78fdacfa6b",
+    "minimum_ov_gap": 0.9946041304263308,
+    "name": "qm9-000002",
+    "native_kernels": [
+      {
+        "binary_sha256": "3740d69ad94755c350302c14c850a052463a72d17ebe27bb6e613f3dab007841",
+        "elapsed_seconds": 0.4573060999973677,
+        "lowered": "d71eb60b2848222d9739408712aaf703fca50120f7a3fa75ed9497fe0748ec3c",
+        "resources": {
+          "input_count": 192,
+          "output_count": 64,
+          "required_bytes": 9856,
+          "scalar_work": 3728
+        },
+        "source": "a0c0abf5538ab18c70875016d926142dc01eb781fb68f43b1f1b9e988be282e6"
+      },
+      {
+        "binary_sha256": "4dbdf4ee23e26f2e58883f377a1025b2362afed5f2f34e6b8da6f2ea325e80d7",
+        "elapsed_seconds": 0.45201628099312074,
+        "lowered": "07266f0ebcbe86191cecb6d26fdc133c89cabc5eef84e1d3303e09c11787444d",
+        "resources": {
+          "input_count": 320,
+          "output_count": 15,
+          "required_bytes": 16080,
+          "scalar_work": 8286
+        },
+        "source": "958d5b80ef8fb831e6361ac08c2d35b1e557b5d00790a550aeb212064c64a1f9"
+      },
+      {
+        "binary_sha256": "7a39ad1d4fb3a950cd8a6af91c2d18ce6c6ed2a428be8653bc27afa05fecf55a",
+        "elapsed_seconds": 0.4157114050030941,
+        "lowered": "960a35f6bd95cf49bdd623e638457ced53ac84afcd0243efc7861cf49df0c10b",
+        "resources": {
+          "input_count": 4160,
+          "output_count": 64,
+          "required_bytes": 103424,
+          "scalar_work": 20672
+        },
+        "source": "3a5c3117e691652f89ad9cc49b4f2258b574277229804028831b9676e0f6a735"
+      },
+      {
+        "binary_sha256": "62b9727192b58684183394294e275239c8355bf9864c114fd4fe03410cc332dc",
+        "elapsed_seconds": 0.4061860810033977,
+        "lowered": "69d9bf0fea36582341fca52cfc10f3787d83431beb2137872f1fd8bbe83f3dbf",
+        "resources": {
+          "input_count": 128,
+          "output_count": 15,
+          "required_bytes": 3864,
+          "scalar_work": 752
+        },
+        "source": "f9404320f1f0712735c5b91f2576983adf455cf171cc357bc446dd719c59953e"
+      },
+      {
+        "binary_sha256": "4c6ec3cf6a99f829fca9c5c06dc55604e56eb40c39c77d604a9d846481f0faf6",
+        "elapsed_seconds": 0.41761232700082473,
+        "lowered": "5bc92122cf1813d3a50a7d60175b622c8ebb6becf8bb194f49a3e1470b9921af",
+        "resources": {
+          "input_count": 129,
+          "output_count": 15,
+          "required_bytes": 5936,
+          "scalar_work": 1137
+        },
+        "source": "d3d08eff93875c33ade95fd898b66505c6290299a980c6aefa0f5e852b848c71"
+      }
+    ],
+    "nbasis": 8,
+    "nocc": 5,
+    "problem_identity": "627f21057aa23963bd7093d68becfe3ad912716d299eb5a33a2dd97404ea8d6e",
+    "readout_dot_error": 3.1086244689504383e-15,
+    "reference_identity": "a5551d65b98a544cd0ec8d2deb3f07636b334147462f1040b1554df22ea31f4b",
+    "scaled_dot_errors": [
+      3.638019225129538e-16,
+      8.326672684688674e-17
+    ],
+    "seconds": 2.1951368250011,
+    "source": {
+      "array_file": "qm9-000002.npz",
+      "array_sha256": "30b76d00731401ad9a0947c90f9e4a4e9ad51b43e5d40ab01ac0ff76b1f6946c",
+      "metadata_file": "qm9-000002.json",
+      "metadata_sha256": "ba3df879fec63c9fa2b066018e85fcdc181061e653edebd362c55338088d70b4"
+    },
+    "vjp_errors": {
+      "q0": 1.3322676295501878e-15,
+      "r2": 5.329070518200751e-15,
+      "zz": 1.3322676295501878e-15
+    }
+  },
+  "source": {
+    "array_file": "qm9-000002.npz",
+    "array_sha256": "30b76d00731401ad9a0947c90f9e4a4e9ad51b43e5d40ab01ac0ff76b1f6946c",
+    "metadata_file": "qm9-000002.json",
+    "metadata_sha256": "ba3df879fec63c9fa2b066018e85fcdc181061e653edebd362c55338088d70b4"
+  },
+  "targets": {
+    "x": {
+      "q0": {
+        "adjoint": -0.7346795808673366,
+        "cphf": -0.7346795808670255,
+        "direct": -0.734679580867334,
+        "finite_fields": {
+          "0.0002": -0.7346795425600128,
+          "0.0005": -0.734679340522959
+        },
+        "qualified": true,
+        "reasons": [],
+        "value": -0.734679580867334
+      },
+      "r2": {
+        "adjoint": -4.6663316327497055,
+        "cphf": -4.666331632748694,
+        "direct": -4.66633163274969,
+        "finite_fields": {
+          "0.0002": -4.666331597764639,
+          "0.0005": -4.6663313873054335
+        },
+        "qualified": true,
+        "reasons": [],
+        "value": -4.66633163274969
+      },
+      "zz": {
+        "adjoint": 2.247728242827204,
+        "cphf": 2.247728242827324,
+        "direct": 2.247728242827209,
+        "finite_fields": {
+          "0.0002": 2.247728203352839,
+          "0.0005": 2.247728009280081
+        },
+        "qualified": true,
+        "reasons": [],
+        "value": 2.247728242827209
+      }
+    },
+    "y": {
+      "q0": {
+        "adjoint": 0.49180734604071313,
+        "cphf": 0.4918073460405501,
+        "direct": 0.4918073460407186,
+        "finite_fields": {
+          "0.0002": 0.49180729301268045,
+          "0.0005": 0.4918070139012798
+        },
+        "qualified": true,
+        "reasons": [],
+        "value": 0.4918073460407186
+      },
+      "r2": {
+        "adjoint": -16.99973121294788,
+        "cphf": -16.99973121294861,
+        "direct": -16.999731212947964,
+        "finite_fields": {
+          "0.0002": -16.999731453886113,
+          "0.0005": -16.999732502192444
+        },
+        "qualified": true,
+        "reasons": [],
+        "value": -16.999731212947964
+      },
+      "zz": {
+        "adjoint": -1.4973134924783293,
+        "cphf": -1.4973134924783607,
+        "direct": -1.4973134924783527,
+        "finite_fields": {
+          "0.0002": -1.4973134788687226,
+          "0.0005": -1.4973134146218925
+        },
+        "qualified": true,
+        "reasons": [],
+        "value": -1.4973134924783527
+      }
+    },
+    "z": {
+      "q0": {
+        "adjoint": 1.402244734099563,
+        "cphf": 1.4022447340998048,
+        "direct": 1.4022447340995658,
+        "finite_fields": {
+          "0.0002": 1.4022447046935227,
+          "0.0005": 1.4022445507873016
+        },
+        "qualified": true,
+        "reasons": [],
+        "value": 1.4022447340995658
+      },
+      "r2": {
+        "adjoint": 9.208889937166074,
+        "cphf": 9.208889937167209,
+        "direct": 9.208889937166097,
+        "finite_fields": {
+          "0.0002": 9.208889953047361,
+          "0.0005": 9.208889921339392
+        },
+        "qualified": true,
+        "reasons": [],
+        "value": 9.208889937166097
+      },
+      "zz": {
+        "adjoint": 3.355397993320381,
+        "cphf": 3.3553979933205538,
+        "direct": 3.3553979933203917,
+        "finite_fields": {
+          "0.0002": 3.3553979431233394,
+          "0.0005": 3.355397697231588
+        },
+        "qualified": true,
+        "reasons": [],
+        "value": 3.3553979933203917
+      }
+    }
+  },
+  "units_per_au_field": {
+    "q0": "e",
+    "r2": "bohr^2",
+    "zz": "bohr^2"
+  }
+}

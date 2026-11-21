@@ -1,0 +1,30 @@
+{
+  "source_commit": "2791504cc238fe83d328fc1718080642b288222a",
+  "test_file": "tests/python/test_accuracy_estimator.py",
+  "tests": 18,
+  "failures_or_errors": 0,
+  "skipped": 0,
+  "seconds": 0.815,
+  "cases": [
+    "test_empirical_prediction_never_becomes_a_certified_or_observed_pass",
+    "test_out_of_domain_inputs_are_rejected_even_for_tiny_residuals[changes0]",
+    "test_out_of_domain_inputs_are_rejected_even_for_tiny_residuals[changes1]",
+    "test_out_of_domain_inputs_are_rejected_even_for_tiny_residuals[changes2]",
+    "test_out_of_domain_inputs_are_rejected_even_for_tiny_residuals[changes3]",
+    "test_out_of_domain_inputs_are_rejected_even_for_tiny_residuals[changes4]",
+    "test_out_of_domain_inputs_are_rejected_even_for_tiny_residuals[changes5]",
+    "test_out_of_domain_inputs_are_rejected_even_for_tiny_residuals[changes6]",
+    "test_out_of_domain_inputs_are_rejected_even_for_tiny_residuals[changes7]",
+    "test_out_of_domain_inputs_are_rejected_even_for_tiny_residuals[changes8]",
+    "test_out_of_domain_inputs_are_rejected_even_for_tiny_residuals[changes9]",
+    "test_out_of_domain_inputs_are_rejected_even_for_tiny_residuals[changes10]",
+    "test_out_of_domain_inputs_are_rejected_even_for_tiny_residuals[changes11]",
+    "test_out_of_domain_inputs_are_rejected_even_for_tiny_residuals[changes12]",
+    "test_holdout_reports_failed_coverage_missed_tolerances_and_overconservatism",
+    "test_missing_separation_is_only_allowed_for_a_single_atom",
+    "test_training_rejects_single_family_duplicates_and_unsupported_observations",
+    "test_saved_model_cannot_change_domain_or_evidence_kind_without_detection"
+  ],
+  "stdout": "..................                                                       [100%]\n18 passed in 0.81s\n",
+  "scope": "Upstream synthetic calibration-domain and evidence-kind tests. No molecular calibration campaign."
+}

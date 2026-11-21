@@ -1,0 +1,125 @@
+{
+  "api_sha256": "1756a57cabda51408d6338687d702384e03afa46eba28cb30ebc37a7c0e14a15",
+  "cxx": "c++ (Ubuntu 11.4.0-1ubuntu1~22.04.3) 11.4.0",
+  "driver_sha256": "452db1b68b4689587fdb3a63fd76a18e1dbb06961950c0a4145829cd62ddd483",
+  "gqc": "2791504cc238fe83d328fc1718080642b288222a",
+  "index_sha256": "8d8be8ac1007e4530bbeb0fe8470115b761cfcf7a0597afd2adc89fd549d4dbc",
+  "job": "2047",
+  "numpy": "2.5.5",
+  "project_commit": "152c1e44ba2420e1abfa6079e19a8c25ba606319",
+  "pyscf": "2.14.0",
+  "pyscf_modules": {
+    "pyscf.scf.cphf": "e39e3a06fc33e23307a8558d2410bc1137e08ef9c27d48b4ce95fd20a22a63e3",
+    "pyscf.scf.hf": "34ea1a9057da3a2d5aa37fe51d4e7305580bcb8e0118a5f17ba95ba5bb36c22f"
+  },
+  "pyscf_source": "c63a953ba603a5ad8c1d65d88da72aaf05ede4d8",
+  "python": "3.13.16",
+  "strata": [
+    {
+      "input_status": "failed",
+      "name": "qm9-000006",
+      "reason": "failed gates: external_stability",
+      "status": "not_run",
+      "stratum": "1-2/O"
+    },
+    {
+      "input_status": "verified",
+      "name": "qm9-000008",
+      "oracle": "oracles/qm9-000008.json",
+      "qualified": 0,
+      "sha256": "2ba405affe0ce6ff60b6010ea1aa23396323654351e549c7d0232b78bfdbe758",
+      "status": "completed",
+      "stratum": "1-2/O",
+      "targets": 9
+    },
+    {
+      "input_status": "verified",
+      "name": "qm9-000005",
+      "oracle": "oracles/qm9-000005.json",
+      "qualified": 4,
+      "sha256": "fdf9813896c6e138141d8237ee5584fa2fc64c352604dcad23599637288b9775",
+      "status": "completed",
+      "stratum": "1-2/N",
+      "targets": 9
+    },
+    {
+      "input_status": "failed",
+      "name": "qm9-000004",
+      "reason": "failed gates: external_stability",
+      "status": "not_run",
+      "stratum": "1-2/CH"
+    },
+    {
+      "input_status": "verified",
+      "name": "qm9-000007",
+      "oracle": "oracles/qm9-000007.json",
+      "qualified": 0,
+      "sha256": "dc6d979fbd513762a23b698ac432a6bcbee5fad85298f9a0225ffefdc6823568",
+      "status": "completed",
+      "stratum": "1-2/CH",
+      "targets": 9
+    },
+    {
+      "input_status": "failed",
+      "name": "qm9-000012",
+      "reason": "failed gates: external_stability",
+      "status": "not_run",
+      "stratum": "3/O"
+    },
+    {
+      "input_status": "verified",
+      "name": "qm9-000014",
+      "oracle": "oracles/qm9-000014.json",
+      "qualified": 0,
+      "sha256": "85ecf60ea8581943181ead092f35f00075b111fb6360d60331bd118b0ebb9bd0",
+      "status": "completed",
+      "stratum": "3/O",
+      "targets": 9
+    },
+    {
+      "input_status": "verified",
+      "name": "qm9-000015",
+      "oracle": "oracles/qm9-000015.json",
+      "qualified": 1,
+      "sha256": "cecf7e455482d1e50cc63ba7cfd3ab8ee5859e5418786834c426a9c4fd962931",
+      "status": "completed",
+      "stratum": "3/O",
+      "targets": 9
+    },
+    {
+      "input_status": "verified",
+      "name": "qm9-000017",
+      "oracle": "oracles/qm9-000017.json",
+      "qualified": 3,
+      "sha256": "e2cff15a9039a6b015c93af9dd180ae4437c38d83e247cc65f707decdbd39ac9",
+      "status": "completed",
+      "stratum": "3/O",
+      "targets": 9
+    },
+    {
+      "input_status": "verified",
+      "name": "qm9-000013",
+      "oracle": "oracles/qm9-000013.json",
+      "qualified": 0,
+      "sha256": "3dd36d57c3de9a50de6a4a610d11a26835064a2f090b2fa955f3f52173fe2e37",
+      "status": "completed",
+      "stratum": "3/CH",
+      "targets": 9
+    },
+    {
+      "input_status": "verified",
+      "name": "qm9-000016",
+      "oracle": "oracles/qm9-000016.json",
+      "qualified": 1,
+      "sha256": "ce347fd71572032db26bc77f0e37e4b0f27481c05c02d9a2c72fe54f6bc6584d",
+      "status": "completed",
+      "stratum": "3/CH",
+      "targets": 9
+    }
+  ],
+  "threads": {
+    "MKL_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1"
+  }
+}

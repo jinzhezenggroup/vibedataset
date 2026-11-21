@@ -1,0 +1,176 @@
+{
+  "doi": "10.24435/materialscloud:mg-8f",
+  "version": 1,
+  "archive_url": "https://archive.materialscloud.org/api/records/4vezc-jtt98/files/dataset.tar.xz/content",
+  "publication_date": "2025-06-02",
+  "rights": [
+    {
+      "id": "cc-by-4.0",
+      "title": {
+        "en": "Creative Commons Attribution 4.0 International"
+      },
+      "description": {
+        "en": "The Creative Commons Attribution license allows re-distribution and re-use of a licensed work on the condition that the creator is appropriately credited."
+      },
+      "icon": "cc-by-icon",
+      "props": {
+        "url": "https://creativecommons.org/licenses/by/4.0/legalcode",
+        "scheme": "spdx"
+      }
+    }
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://pubs.acs.org/doi/full/10.1021/acs.jctc.5c00522",
+      "scheme": "url",
+      "relation_type": {
+        "id": "issupplementto",
+        "title": {
+          "en": "Is supplement to"
+        }
+      },
+      "resource_type": {
+        "id": "publication-article",
+        "title": {
+          "en": "Journal article"
+        }
+      }
+    },
+    {
+      "identifier": "https://github.com/curiosity54/mlelec/tree/qm7",
+      "scheme": "url",
+      "relation_type": {
+        "id": "issupplementto",
+        "title": {
+          "en": "Is supplement to"
+        }
+      },
+      "resource_type": {
+        "id": "software",
+        "title": {
+          "de": "Software",
+          "en": "Software"
+        }
+      }
+    }
+  ],
+  "creators": [
+    "Suman, Divya",
+    "Nigam, Jigyasa",
+    "Saade, Sandra",
+    "Pegolo, Paolo",
+    "Tuerk, Hanna",
+    "Zhang, Xing",
+    "Kin-Lic Chan, Garnet",
+    "Ceriotti, Michele"
+  ],
+  "archive_bytes": 1156517180,
+  "md5": "86a870be93068bd7e2bb5a2524524827",
+  "sha256": "df6c0894e0063a9c99ad5f94c5989f982dc7186b5476a092b32a780ad9640dfb",
+  "paper_branch_commit": "9c34bd9e1351770d3ac5b0887ecf0a98da317417",
+  "paper_branch_tree": "0b700a99488022a81bff992b6813d5d9af466245",
+  "regular_files": 915,
+  "directories": 267,
+  "total_file_bytes": 2254974706,
+  "member_index_uncompressed_sha256": "46c8319e89370b22b946afdd5e54cb117a2822230acb5a11204bb70177d4f2fb",
+  "member_index_gzip_sha256": "f869791bf2952fbc97b9448b7a97f8dfad0b43f6e25d8262ebbaa1e90612439a",
+  "source_members": [
+    {
+      "name": "dataset/paper_figures_tables/3_compare_models.ipynb",
+      "bytes": 889603,
+      "type": "0",
+      "sha256": "f83e86d4c1cd14239384e363d749aea8eb11de9e2607c6a163f5deee25ddef03",
+      "git_blob": "9e425e6bccde6ebd28a403a32f39cf20e2f820d7",
+      "identical_in_qm7": []
+    },
+    {
+      "name": "dataset/paper_figures_tables/5_hamiltonian_difference.ipynb",
+      "bytes": 32435,
+      "type": "0",
+      "sha256": "4fb2349d6348e017314f46c9bd600b47a64e2ba72e63cb875472a0181a57025b",
+      "git_blob": "71af79e5fe7339b13621ea6031f09f55aef273b8",
+      "identical_in_qm7": []
+    },
+    {
+      "name": "dataset/paper_figures_tables/4_H_decay.ipynb",
+      "bytes": 2608616,
+      "type": "0",
+      "sha256": "464c19fade46ef2981ae8629663d060bce42da34b70b60f645c2185efdb93644",
+      "git_blob": "9d1b0f88593a12620a3e3564ddd6c567858fcae0",
+      "identical_in_qm7": []
+    },
+    {
+      "name": "dataset/paper_figures_tables/6_extrapolation.ipynb",
+      "bytes": 82520,
+      "type": "0",
+      "sha256": "a7cc66eca768c67feaeb24d651d875f8f60ddb5aedb94a7161bb9ddb8a785cb0",
+      "git_blob": "b82ef15b68bfb9306cee1686dd5155248b7d9c01",
+      "identical_in_qm7": []
+    },
+    {
+      "name": "dataset/paper_figures_tables/utils.py",
+      "bytes": 6992,
+      "type": "0",
+      "sha256": "64065b541919ce0cf697508d5623186811726eb0695bbde20ede01c7aed93faa",
+      "git_blob": "c11643e2a7a943c1a6d53c750f5d7d08a53793f6",
+      "identical_in_qm7": []
+    },
+    {
+      "name": "dataset/paper_figures_tables/SI_tables.ipynb",
+      "bytes": 61249,
+      "type": "0",
+      "sha256": "2c988d4c2d3bd01655dee1f305c2547d08fd3ab0c7876970c046a5c8099bdacd",
+      "git_blob": "12ec6ebe63781919726b6175edd2179ecde775c7",
+      "identical_in_qm7": []
+    },
+    {
+      "name": "dataset/paper_figures_tables/7_graphene_bands.ipynb",
+      "bytes": 88119,
+      "type": "0",
+      "sha256": "c9c5b976422d871e541c75138ccda131def44a86c2d3ba7cad5b9d494faa9358",
+      "git_blob": "e9e2607ab7e1b3bf78172a5f46b1700a40822eac",
+      "identical_in_qm7": []
+    },
+    {
+      "name": "dataset/data/qm9/reference/def2-tzvp/basis.yaml",
+      "bytes": 31103,
+      "type": "0",
+      "sha256": "8ffbb83253d4278c9fa36b5bc6dd479475aaf63ac36eb11e82e7e606e9c3f558",
+      "git_blob": "14fce346d12c907e5130be5ea18360479e25333d",
+      "identical_in_qm7": []
+    },
+    {
+      "name": "dataset/data/qm9/reference/sto-3g/basis.yaml",
+      "bytes": 5207,
+      "type": "0",
+      "sha256": "d7244fbea5cb9dd8bc0123e0239046caa4e0e8e9b70a2d3ba9928f8730ed2861",
+      "git_blob": "b5eb8b89cfff60f042917351721cd30b570020c9",
+      "identical_in_qm7": []
+    },
+    {
+      "name": "dataset/scripts/environment.yml",
+      "bytes": 644,
+      "type": "0",
+      "sha256": "9bc594149ee09d4645af157db2372b5bb2289fee72596933a4577049cf79fa36",
+      "git_blob": "28c563b0418a0d5b49dc3ffc901ae33250064279",
+      "identical_in_qm7": []
+    },
+    {
+      "name": "dataset/scripts/pyscf_ref_calc.py",
+      "bytes": 2589,
+      "type": "0",
+      "sha256": "279e3be8d4cb240f0c75ce3cd39ac622a01614dfd8b068bbec7f98d956e69649",
+      "git_blob": "b674eefe0c45e40427fbfe75e551d1fe8905e1c9",
+      "identical_in_qm7": []
+    },
+    {
+      "name": "dataset/scripts/model_train.py",
+      "bytes": 10168,
+      "type": "0",
+      "sha256": "7bad514f871f561dc76be0f605994220399b8b3577a6a700eb058176520cffd5",
+      "git_blob": "6eb32c2ff469663145e630ed5f768b11116aab40",
+      "identical_in_qm7": []
+    }
+  ],
+  "elapsed_seconds": 66.2781093060039
+}

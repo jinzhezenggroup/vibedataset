@@ -1,0 +1,107 @@
+{
+  "id": "dm_phisnet_history",
+  "source": {
+    "id": "dm_phisnet_history",
+    "catalog_ids": [
+      "dm_phisnet"
+    ],
+    "priority": "P0",
+    "repository_url": "https://github.com/zyyr17/dm-nn-so3-analytic",
+    "role": "historical_author_source",
+    "commit": "eb365d3e4d0e85ccf89740e5fad26970591c5b16",
+    "checkout_path": "_references/dm_phisnet_history",
+    "paper_version_status": "Prepublication author commit; author/paper relationship follows model and authorship, paper release equivalence unverified.",
+    "selection_reason": "Author history has a source-bearing October 2025 commit before its empty HEAD. Inspect exact available artifact without redistributing files."
+  },
+  "started_at_utc": "2026-11-17T19:51:37.078147+00:00",
+  "status": "indexed_pending_review",
+  "commands": [
+    {
+      "argv": [
+        "git",
+        "init",
+        "--quiet"
+      ],
+      "cwd": "_references/dm_phisnet_history",
+      "started_at_utc": "2026-11-17T19:51:37.078614+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.006389444999513216,
+      "ended_at_utc": "2026-11-17T19:51:37.085413+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "remote",
+        "add",
+        "origin",
+        "https://github.com/zyyr17/dm-nn-so3-analytic"
+      ],
+      "cwd": "_references/dm_phisnet_history",
+      "started_at_utc": "2026-11-17T19:51:37.086034+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.0034970220003742725,
+      "ended_at_utc": "2026-11-17T19:51:37.090155+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "protocol.file.allow=never",
+        "fetch",
+        "--depth=1",
+        "--no-tags",
+        "origin",
+        "eb365d3e4d0e85ccf89740e5fad26970591c5b16"
+      ],
+      "cwd": "_references/dm_phisnet_history",
+      "started_at_utc": "2026-11-17T19:51:37.090684+00:00",
+      "stdout": "",
+      "stderr": "\u6765\u81ea https://github.com/zyyr17/dm-nn-so3-analytic\n * branch            eb365d3e4d0e85ccf89740e5fad26970591c5b16 -> FETCH_HEAD\n",
+      "returncode": 0,
+      "elapsed_seconds": 6.254361061000964,
+      "ended_at_utc": "2026-11-17T19:51:43.345572+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "core.autocrlf=false",
+        "checkout",
+        "--detach",
+        "eb365d3e4d0e85ccf89740e5fad26970591c5b16"
+      ],
+      "cwd": "_references/dm_phisnet_history",
+      "started_at_utc": "2026-11-17T19:51:43.346165+00:00",
+      "stdout": "",
+      "stderr": "HEAD \u76ee\u524d\u4f4d\u4e8e eb365d3 Add project code and data generators\n",
+      "returncode": 0,
+      "elapsed_seconds": 0.12721607300045434,
+      "ended_at_utc": "2026-11-17T19:51:43.473892+00:00"
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "/home/lhshen/vibedataset/handoff/gqcdataset_codex_goal/tools/inventory_sources.py",
+        "_references/dm_phisnet_history",
+        "--recurse-submodules",
+        "--json",
+        "handoff/gqcdataset_codex_goal/research/inventories/dm_phisnet_history.json"
+      ],
+      "cwd": ".",
+      "started_at_utc": "2026-11-17T19:51:43.474194+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.15997941499517765,
+      "ended_at_utc": "2026-11-17T19:51:43.635465+00:00"
+    }
+  ],
+  "receipt_path": "handoff/gqcdataset_codex_goal/research/acquisition/dm_phisnet_history-20261117T195137078095Z.json",
+  "resolved_commit": "eb365d3e4d0e85ccf89740e5fad26970591c5b16",
+  "inventory_path": "handoff/gqcdataset_codex_goal/research/inventories/dm_phisnet_history.json",
+  "ended_at_utc": "2026-11-17T19:51:43.635769+00:00"
+}

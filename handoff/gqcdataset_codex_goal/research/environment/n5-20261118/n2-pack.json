@@ -1,0 +1,11 @@
+{
+  "filename": "generativeqc-0.1.0-py3-none-linux_x86_64.whl",
+  "sha256": "2f98bb4c1b25706841cf0ae68b8c61b14cc212604dd728001f1b4cc065cbedeb",
+  "compressed_bytes": 866727670,
+  "record_verified_files": 1560,
+  "payload_bytes": 1488678884,
+  "gqc_source_declaration": "2bf3fd98da9c6cfba46ca83345e63e1d934e4780",
+  "libgenerativeqc_sha256": "67bc98a4549fe8854ed6ae65791c824024bd77a9e8e498c6891dea3b8de670c4",
+  "slurm_job_id": "5383",
+  "elapsed_seconds": 62.074445020989515
+}

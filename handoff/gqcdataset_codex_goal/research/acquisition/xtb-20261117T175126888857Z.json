@@ -1,0 +1,122 @@
+{
+  "id": "xtb",
+  "source": {
+    "id": "xtb",
+    "catalog_ids": [
+      "xtb"
+    ],
+    "priority": "P1",
+    "repository_url": "https://github.com/grimme-lab/xtb",
+    "role": "current",
+    "commit": null,
+    "checkout_path": "_references/xtb",
+    "paper_version_status": "not_established",
+    "selection_reason": "\u91cf\u5316\u540e\u7aef\u4e0e\u5f3a\u57fa\u7ebf"
+  },
+  "started_at_utc": "2026-11-17T17:51:26.888884+00:00",
+  "status": "indexed_pending_review",
+  "commands": [
+    {
+      "argv": [
+        "git",
+        "ls-remote",
+        "https://github.com/grimme-lab/xtb",
+        "HEAD"
+      ],
+      "cwd": ".",
+      "started_at_utc": "2026-11-17T17:51:26.889005+00:00",
+      "stdout": "4b8c987066c7e9bd0c2b727ce026fb9a581c273a\tHEAD\n",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 2.552127487011603,
+      "ended_at_utc": "2026-11-17T17:51:29.441264+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "init",
+        "--quiet"
+      ],
+      "cwd": "_references/xtb",
+      "started_at_utc": "2026-11-17T17:51:29.441991+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.006693743998766877,
+      "ended_at_utc": "2026-11-17T17:51:29.451528+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "remote",
+        "add",
+        "origin",
+        "https://github.com/grimme-lab/xtb"
+      ],
+      "cwd": "_references/xtb",
+      "started_at_utc": "2026-11-17T17:51:29.452427+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.004043606008053757,
+      "ended_at_utc": "2026-11-17T17:51:29.457118+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "protocol.file.allow=never",
+        "fetch",
+        "--depth=1",
+        "--no-tags",
+        "origin",
+        "4b8c987066c7e9bd0c2b727ce026fb9a581c273a"
+      ],
+      "cwd": "_references/xtb",
+      "started_at_utc": "2026-11-17T17:51:29.457821+00:00",
+      "stdout": "",
+      "stderr": "\u6765\u81ea https://github.com/grimme-lab/xtb\n * branch            4b8c987066c7e9bd0c2b727ce026fb9a581c273a -> FETCH_HEAD\n",
+      "returncode": 0,
+      "elapsed_seconds": 6.385753291004221,
+      "ended_at_utc": "2026-11-17T17:51:35.844231+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "core.autocrlf=false",
+        "checkout",
+        "--detach",
+        "4b8c987066c7e9bd0c2b727ce026fb9a581c273a"
+      ],
+      "cwd": "_references/xtb",
+      "started_at_utc": "2026-11-17T17:51:35.844846+00:00",
+      "stdout": "",
+      "stderr": "HEAD \u76ee\u524d\u4f4d\u4e8e 4b8c987 Bump version to 6.8.0 (#1462)\n",
+      "returncode": 0,
+      "elapsed_seconds": 0.055360330996336415,
+      "ended_at_utc": "2026-11-17T17:51:35.900701+00:00"
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "/home/lhshen/vibedataset/handoff/gqcdataset_codex_goal/tools/inventory_sources.py",
+        "_references/xtb",
+        "--recurse-submodules",
+        "--json",
+        "handoff/gqcdataset_codex_goal/research/inventories/xtb.json"
+      ],
+      "cwd": ".",
+      "started_at_utc": "2026-11-17T17:51:35.901155+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.13889373699203134,
+      "ended_at_utc": "2026-11-17T17:51:36.040284+00:00"
+    }
+  ],
+  "receipt_path": "handoff/gqcdataset_codex_goal/research/acquisition/xtb-20261117T175126888857Z.json",
+  "resolved_commit": "4b8c987066c7e9bd0c2b727ce026fb9a581c273a",
+  "inventory_path": "handoff/gqcdataset_codex_goal/research/inventories/xtb.json",
+  "ended_at_utc": "2026-11-17T17:51:36.040623+00:00"
+}

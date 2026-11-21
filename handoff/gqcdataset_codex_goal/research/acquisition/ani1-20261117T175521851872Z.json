@@ -1,0 +1,122 @@
+{
+  "id": "ani1",
+  "source": {
+    "id": "ani1",
+    "catalog_ids": [
+      "ani1"
+    ],
+    "priority": "P1",
+    "repository_url": "https://github.com/isayev/ANI1_dataset",
+    "role": "current",
+    "commit": null,
+    "checkout_path": "_references/ani1",
+    "paper_version_status": "not_established",
+    "selection_reason": "\u591a\u4fdd\u771f\u3001\u4e3b\u52a8\u91c7\u6837\u4e0e\u7f3a\u5931\u6807\u7b7e"
+  },
+  "started_at_utc": "2026-11-17T17:55:21.851919+00:00",
+  "status": "indexed_pending_review",
+  "commands": [
+    {
+      "argv": [
+        "git",
+        "ls-remote",
+        "https://github.com/isayev/ANI1_dataset",
+        "HEAD"
+      ],
+      "cwd": ".",
+      "started_at_utc": "2026-11-17T17:55:21.852167+00:00",
+      "stdout": "62abf3b7deb00a5ee03b3749b32873a5654042cb\tHEAD\n",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 1.690084433008451,
+      "ended_at_utc": "2026-11-17T17:55:23.542572+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "init",
+        "--quiet"
+      ],
+      "cwd": "_references/ani1",
+      "started_at_utc": "2026-11-17T17:55:23.543271+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.005475333004142158,
+      "ended_at_utc": "2026-11-17T17:55:23.549213+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "remote",
+        "add",
+        "origin",
+        "https://github.com/isayev/ANI1_dataset"
+      ],
+      "cwd": "_references/ani1",
+      "started_at_utc": "2026-11-17T17:55:23.549614+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.0031624940020265058,
+      "ended_at_utc": "2026-11-17T17:55:23.553203+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "protocol.file.allow=never",
+        "fetch",
+        "--depth=1",
+        "--no-tags",
+        "origin",
+        "62abf3b7deb00a5ee03b3749b32873a5654042cb"
+      ],
+      "cwd": "_references/ani1",
+      "started_at_utc": "2026-11-17T17:55:23.553596+00:00",
+      "stdout": "",
+      "stderr": "\u6765\u81ea https://github.com/isayev/ANI1_dataset\n * branch            62abf3b7deb00a5ee03b3749b32873a5654042cb -> FETCH_HEAD\n",
+      "returncode": 0,
+      "elapsed_seconds": 3.8608386819978477,
+      "ended_at_utc": "2026-11-17T17:55:27.414855+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "core.autocrlf=false",
+        "checkout",
+        "--detach",
+        "62abf3b7deb00a5ee03b3749b32873a5654042cb"
+      ],
+      "cwd": "_references/ani1",
+      "started_at_utc": "2026-11-17T17:55:27.415257+00:00",
+      "stdout": "",
+      "stderr": "HEAD \u76ee\u524d\u4f4d\u4e8e 62abf3b Merge pull request #11 from collvey/master\n",
+      "returncode": 0,
+      "elapsed_seconds": 0.019391296009416692,
+      "ended_at_utc": "2026-11-17T17:55:27.437337+00:00"
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "/home/lhshen/vibedataset/handoff/gqcdataset_codex_goal/tools/inventory_sources.py",
+        "_references/ani1",
+        "--recurse-submodules",
+        "--json",
+        "handoff/gqcdataset_codex_goal/research/inventories/ani1.json"
+      ],
+      "cwd": ".",
+      "started_at_utc": "2026-11-17T17:55:27.437662+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.08820631199341733,
+      "ended_at_utc": "2026-11-17T17:55:27.526069+00:00"
+    }
+  ],
+  "receipt_path": "handoff/gqcdataset_codex_goal/research/acquisition/ani1-20261117T175521851872Z.json",
+  "resolved_commit": "62abf3b7deb00a5ee03b3749b32873a5654042cb",
+  "inventory_path": "handoff/gqcdataset_codex_goal/research/inventories/ani1.json",
+  "ended_at_utc": "2026-11-17T17:55:27.526478+00:00"
+}

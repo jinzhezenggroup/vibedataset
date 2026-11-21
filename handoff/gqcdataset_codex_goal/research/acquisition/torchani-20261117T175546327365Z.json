@@ -1,0 +1,122 @@
+{
+  "id": "torchani",
+  "source": {
+    "id": "torchani",
+    "catalog_ids": [
+      "torchani"
+    ],
+    "priority": "P1",
+    "repository_url": "https://github.com/aiqm/torchani",
+    "role": "current",
+    "commit": null,
+    "checkout_path": "_references/torchani",
+    "paper_version_status": "not_established",
+    "selection_reason": "\u591a\u4fdd\u771f\u3001\u4e3b\u52a8\u91c7\u6837\u4e0e\u7f3a\u5931\u6807\u7b7e"
+  },
+  "started_at_utc": "2026-11-17T17:55:46.327384+00:00",
+  "status": "indexed_pending_review",
+  "commands": [
+    {
+      "argv": [
+        "git",
+        "ls-remote",
+        "https://github.com/aiqm/torchani",
+        "HEAD"
+      ],
+      "cwd": ".",
+      "started_at_utc": "2026-11-17T17:55:46.327515+00:00",
+      "stdout": "4f9c239eac706e010d3ca1f7c5b7c91abc9ac4c7\tHEAD\n",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 2.140657764990465,
+      "ended_at_utc": "2026-11-17T17:55:48.468337+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "init",
+        "--quiet"
+      ],
+      "cwd": "_references/torchani",
+      "started_at_utc": "2026-11-17T17:55:48.468955+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.005578992000664584,
+      "ended_at_utc": "2026-11-17T17:55:48.477295+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "remote",
+        "add",
+        "origin",
+        "https://github.com/aiqm/torchani"
+      ],
+      "cwd": "_references/torchani",
+      "started_at_utc": "2026-11-17T17:55:48.477855+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.003799237994826399,
+      "ended_at_utc": "2026-11-17T17:55:48.482226+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "protocol.file.allow=never",
+        "fetch",
+        "--depth=1",
+        "--no-tags",
+        "origin",
+        "4f9c239eac706e010d3ca1f7c5b7c91abc9ac4c7"
+      ],
+      "cwd": "_references/torchani",
+      "started_at_utc": "2026-11-17T17:55:48.482732+00:00",
+      "stdout": "",
+      "stderr": "\u6765\u81ea https://github.com/aiqm/torchani\n * branch            4f9c239eac706e010d3ca1f7c5b7c91abc9ac4c7 -> FETCH_HEAD\n",
+      "returncode": 0,
+      "elapsed_seconds": 5.397925077006221,
+      "ended_at_utc": "2026-11-17T17:55:53.881040+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "core.autocrlf=false",
+        "checkout",
+        "--detach",
+        "4f9c239eac706e010d3ca1f7c5b7c91abc9ac4c7"
+      ],
+      "cwd": "_references/torchani",
+      "started_at_utc": "2026-11-17T17:55:53.881571+00:00",
+      "stdout": "",
+      "stderr": "HEAD \u76ee\u524d\u4f4d\u4e8e 4f9c239 Remove unneeded nograd (#704)\n",
+      "returncode": 0,
+      "elapsed_seconds": 0.11784291701042093,
+      "ended_at_utc": "2026-11-17T17:55:53.999846+00:00"
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "/home/lhshen/vibedataset/handoff/gqcdataset_codex_goal/tools/inventory_sources.py",
+        "_references/torchani",
+        "--recurse-submodules",
+        "--json",
+        "handoff/gqcdataset_codex_goal/research/inventories/torchani.json"
+      ],
+      "cwd": ".",
+      "started_at_utc": "2026-11-17T17:55:54.000147+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.28152556098939385,
+      "ended_at_utc": "2026-11-17T17:55:54.283256+00:00"
+    }
+  ],
+  "receipt_path": "handoff/gqcdataset_codex_goal/research/acquisition/torchani-20261117T175546327365Z.json",
+  "resolved_commit": "4f9c239eac706e010d3ca1f7c5b7c91abc9ac4c7",
+  "inventory_path": "handoff/gqcdataset_codex_goal/research/inventories/torchani.json",
+  "ended_at_utc": "2026-11-17T17:55:54.283640+00:00"
+}

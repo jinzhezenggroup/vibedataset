@@ -1,0 +1,105 @@
+{
+  "id": "pymor_2026_1",
+  "source": {
+    "id": "pymor_2026_1",
+    "catalog_ids": [],
+    "priority": "P0",
+    "repository_url": "https://github.com/pymor/pymor",
+    "role": "release_source",
+    "commit": "36a0035e180694c7ad4eb8f083d9f1d65ceb6f42",
+    "checkout_path": "_references/pymor_2026_1",
+    "paper_version_status": "2026.1.1 release implementation of DWRCoerciveRBReductor, not claimed to be the original 2017 reference code.",
+    "selection_reason": "Dual-weighted residual output functional, paired primal/dual reduced bases, and qualified output error estimator for coercive linear systems. Direct prior on archived projected response and target precision."
+  },
+  "started_at_utc": "2026-11-17T19:46:24.773453+00:00",
+  "status": "indexed_pending_review",
+  "commands": [
+    {
+      "argv": [
+        "git",
+        "init",
+        "--quiet"
+      ],
+      "cwd": "_references/pymor_2026_1",
+      "started_at_utc": "2026-11-17T19:46:24.773624+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.003669177007395774,
+      "ended_at_utc": "2026-11-17T19:46:24.777450+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "remote",
+        "add",
+        "origin",
+        "https://github.com/pymor/pymor"
+      ],
+      "cwd": "_references/pymor_2026_1",
+      "started_at_utc": "2026-11-17T19:46:24.777616+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.0022088539990363643,
+      "ended_at_utc": "2026-11-17T19:46:24.779962+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "protocol.file.allow=never",
+        "fetch",
+        "--depth=1",
+        "--no-tags",
+        "origin",
+        "36a0035e180694c7ad4eb8f083d9f1d65ceb6f42"
+      ],
+      "cwd": "_references/pymor_2026_1",
+      "started_at_utc": "2026-11-17T19:46:24.780176+00:00",
+      "stdout": "",
+      "stderr": "\u6765\u81ea https://github.com/pymor/pymor\n * branch            36a0035e180694c7ad4eb8f083d9f1d65ceb6f42 -> FETCH_HEAD\n",
+      "returncode": 0,
+      "elapsed_seconds": 3.926871118004783,
+      "ended_at_utc": "2026-11-17T19:46:28.707226+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "core.autocrlf=false",
+        "checkout",
+        "--detach",
+        "36a0035e180694c7ad4eb8f083d9f1d65ceb6f42"
+      ],
+      "cwd": "_references/pymor_2026_1",
+      "started_at_utc": "2026-11-17T19:46:28.707940+00:00",
+      "stdout": "",
+      "stderr": "HEAD \u76ee\u524d\u4f4d\u4e8e 36a0035 bumped version to 2026.1.1\n",
+      "returncode": 0,
+      "elapsed_seconds": 0.03803259199776221,
+      "ended_at_utc": "2026-11-17T19:46:28.746537+00:00"
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "/home/lhshen/vibedataset/handoff/gqcdataset_codex_goal/tools/inventory_sources.py",
+        "_references/pymor_2026_1",
+        "--recurse-submodules",
+        "--json",
+        "handoff/gqcdataset_codex_goal/research/inventories/pymor_2026_1.json"
+      ],
+      "cwd": ".",
+      "started_at_utc": "2026-11-17T19:46:28.746871+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.10087255400139838,
+      "ended_at_utc": "2026-11-17T19:46:28.847927+00:00"
+    }
+  ],
+  "receipt_path": "handoff/gqcdataset_codex_goal/research/acquisition/pymor_2026_1-20261117T194624773433Z.json",
+  "resolved_commit": "36a0035e180694c7ad4eb8f083d9f1d65ceb6f42",
+  "inventory_path": "handoff/gqcdataset_codex_goal/research/inventories/pymor_2026_1.json",
+  "ended_at_utc": "2026-11-17T19:46:28.848215+00:00"
+}

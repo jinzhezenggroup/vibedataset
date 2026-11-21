@@ -1,0 +1,26 @@
+default_language_version:
+  python: python3
+
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: trailing-whitespace
+        exclude: ^handoff/gqcdataset_codex_goal/research/experiments/.*\.(jsonl|csv)$
+      - id: end-of-file-fixer
+        exclude: ^(?:handoff/gqcdataset_codex_goal/research/experiments/.*\.(jsonl|csv)|handoff/gqcdataset_codex_goal/sources/(?:CATALOG\.md|CODE_GAPS\.md|catalog\.json))$
+      - id: check-yaml
+      - id: check-json
+      - id: check-merge-conflict
+      - id: check-symlinks
+      - id: check-added-large-files
+        args: [--maxkb=2048]
+
+  - repo: local
+    hooks:
+      - id: compile-python-scripts
+        name: Compile project Python scripts
+        entry: python3 -m compileall -q scripts handoff/gqcdataset_codex_goal/tools
+        language: system
+        pass_filenames: false
+        always_run: true

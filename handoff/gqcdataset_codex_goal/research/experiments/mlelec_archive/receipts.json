@@ -1,0 +1,100 @@
+{
+  "record_id": "4vezc-jtt98",
+  "version": 1,
+  "record_url": "https://archive.materialscloud.org/api/records/4vezc-jtt98",
+  "record_updated_utc": "2025-11-03T18:14:31.938218+00:00",
+  "released": "2025-06-02",
+  "content_doi": "10.24435/materialscloud:mg-8f",
+  "text_attachments": [
+    {
+      "name": "README.md",
+      "url": "https://archive.materialscloud.org/api/records/4vezc-jtt98/files/README.md/content",
+      "bytes": 5895,
+      "publisher_checksum": "md5:6950ed956e59102be34dce9718396e36",
+      "sha256": "85a494e89b46967d479f4f477c970f20706e37d3a3d4bd67cd89060a6d94d1f3",
+      "fetch_seconds_this_audit": null
+    },
+    {
+      "name": "files_description.md",
+      "url": "https://archive.materialscloud.org/api/records/4vezc-jtt98/files/files_description.md/content",
+      "bytes": 360,
+      "publisher_checksum": "md5:ded5ba950be6c7671b745e6dbd17c474",
+      "sha256": "6117c775f269b2e25246d9b9b75378943cf1a6ac90fe766258f0cdc4bb0cc306",
+      "fetch_seconds_this_audit": 3.67329131301085
+    }
+  ],
+  "transfer": {
+    "url": "https://archive.materialscloud.org/api/records/4vezc-jtt98/files/dataset.tar.xz/content",
+    "bytes": 1156517180,
+    "publisher_md5": "86a870be93068bd7e2bb5a2524524827",
+    "sha256": "df6c0894e0063a9c99ad5f94c5989f982dc7186b5476a092b32a780ad9640dfb",
+    "elapsed_s": 369.81087937600387
+  },
+  "source_acquisition_receipt": "research/acquisition/mlelec_qm7-20261117T194159712710Z.json",
+  "attempts": [
+    {
+      "attempt": 1,
+      "result": "NumPy int64 metadata could not be serialized after the last operation. The next run uses a native scalar encoder and writes each case immediately.",
+      "first_utc": "2026-11-17T20:09:59.414547+00:00",
+      "completed_operations": 28,
+      "last_cpu_operation": "qm7/selfconsistent_0.0002_2_1",
+      "operation_elapsed_s_sum": 15.593121408979641,
+      "cold_source_rks": 2,
+      "cold_relaxed_field_rks": 24,
+      "three_rhs_cpks": 2,
+      "field_scf_cycles": 156,
+      "source_scf_cycles_by_molecule": {
+        "water": 7,
+        "qm7": 6
+      },
+      "coupled_kernel_invocations_by_molecule": {
+        "water": {
+          "solve": 7,
+          "validation": 1
+        },
+        "qm7": {
+          "solve": 6,
+          "validation": 1
+        }
+      },
+      "training_updates": 0,
+      "raw_journal_sha256": "9b4bc205c768607f028963fec55a89b118be467cb9cf7ef0ef69ac3f3d94f299",
+      "compressed_journal": "attempt-1.jsonl.gz",
+      "compressed_sha256": "2339d8ed6de45ea77b272825aac10d9ece4e000f3e7d438b14d50968cf83cf6b",
+      "original_process_stderr_stdout_sha256": "c1654e40337d34c9df4a90915de7190505f14050c7cf6be048f754dc8e518cc3",
+      "exception": "TypeError: Object of type int64 is not JSON serializable"
+    },
+    {
+      "attempt": 2,
+      "result": "All preset physical and numerical checks passed in each case.",
+      "first_utc": "2026-11-17T20:29:48.959814+00:00",
+      "completed_operations": 28,
+      "last_cpu_operation": "qm7/selfconsistent_0.0002_2_1",
+      "operation_elapsed_s_sum": 15.875837511965074,
+      "cold_source_rks": 2,
+      "cold_relaxed_field_rks": 24,
+      "three_rhs_cpks": 2,
+      "field_scf_cycles": 156,
+      "source_scf_cycles_by_molecule": {
+        "water": 7,
+        "qm7": 6
+      },
+      "coupled_kernel_invocations_by_molecule": {
+        "water": {
+          "solve": 7,
+          "validation": 1
+        },
+        "qm7": {
+          "solve": 6,
+          "validation": 1
+        }
+      },
+      "training_updates": 0,
+      "raw_journal_sha256": "b27ef9f611395d7170473cf8445f14458535de51ac23e51f6f938bd122c00745",
+      "compressed_journal": "attempt-2.jsonl.gz",
+      "compressed_sha256": "b94c30f23a897cc6cdcd91fb9672b2509b2cc277872eff845a61d5cf965dcb10",
+      "original_process_stderr_stdout_sha256": "0caa944588a4db3b05b2dae984c2a428115d660fa8c03c8f1c190f2449f50951",
+      "exception": null
+    }
+  ]
+}

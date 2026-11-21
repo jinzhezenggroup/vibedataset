@@ -1,0 +1,254 @@
+{
+  "source_manifest_sha256": "8ac6ab86881d0668d5b686ede84fadadd454a531af4d0938da85b8ef00cad725",
+  "driver_sha256": "67f42caaf5869e7a81b0b9ce8f0d8d830b380c129bfedcb7456293927bcc5326",
+  "project_commit": "6ab9a0ae6a474ec20077df93c55aa3543ebb426b",
+  "job": "2045",
+  "python": "3.13.12",
+  "packages": {
+    "generativeqc": "0.1.0",
+    "pyscf": "2.14.0",
+    "numpy": "2.4.6",
+    "scipy": "1.18.1",
+    "scipy-openblas32": "0.3.34.0.0"
+  },
+  "n_rows": 13,
+  "n_unique": 5,
+  "label_status": {
+    "verified": 13
+  },
+  "source_failures": 2,
+  "stages": {
+    "per_row_cold": {
+      "execute_calls_started": 13,
+      "requested_physical_systems": 13,
+      "systems_with_valid_result": 13,
+      "iterations": 120,
+      "fock_builds": 131
+    },
+    "dictionary": {
+      "execute_calls_started": 5,
+      "requested_physical_systems": 5,
+      "systems_with_valid_result": 5,
+      "iterations": 47,
+      "fock_builds": 50
+    },
+    "unique_batch": {
+      "execute_calls_started": 1,
+      "requested_physical_systems": 5,
+      "systems_with_valid_result": 5,
+      "iterations": 47,
+      "fock_builds": 50
+    }
+  },
+  "dictionary": {
+    "f374a87671beb6f3f954cbc47ad569fdafb9d7bc3deb502400e334f9da05c09f": {
+      "stage_status": "valid",
+      "status_code": 0,
+      "status_message": "success",
+      "iterations": 8,
+      "fock_builds": 9,
+      "converged": true,
+      "executed_backend": "cuda",
+      "warm_start_used": false,
+      "warm_start_fallback": false,
+      "restart_origin": "cold",
+      "basis_identity": "cb4d7486a207478c98cb858e1d8b905335b17cef25cb44ae82333b9b6604505e",
+      "energy_hartree": -74.96302316266413
+    },
+    "a23b0f8f715abc31dd491976d0acfbb2cf3e32c7444f999c629ecc8057ccdb92": {
+      "stage_status": "valid",
+      "status_code": 0,
+      "status_message": "success",
+      "iterations": 11,
+      "fock_builds": 12,
+      "converged": true,
+      "executed_backend": "cuda",
+      "warm_start_used": false,
+      "warm_start_fallback": false,
+      "restart_origin": "cold",
+      "basis_identity": "cb4d7486a207478c98cb858e1d8b905335b17cef25cb44ae82333b9b6604505e",
+      "energy_hartree": -227.8906034850509
+    },
+    "2962ca0d2e7e17935d1762e29d95671e260682c4e9f4433561a2e8d56fe62fa3": {
+      "stage_status": "valid",
+      "status_code": 0,
+      "status_message": "success",
+      "iterations": 14,
+      "fock_builds": 14,
+      "converged": true,
+      "executed_backend": "cuda",
+      "warm_start_used": false,
+      "warm_start_fallback": false,
+      "restart_origin": "cold",
+      "basis_identity": "cb4d7486a207478c98cb858e1d8b905335b17cef25cb44ae82333b9b6604505e",
+      "energy_hartree": -175.75070650021064
+    },
+    "8058d443ddc2ae410e7da6a79990e095667c42e6ecb726a716a487af4af636fb": {
+      "stage_status": "valid",
+      "status_code": 0,
+      "status_message": "success",
+      "iterations": 2,
+      "fock_builds": 2,
+      "converged": true,
+      "executed_backend": "cuda",
+      "warm_start_used": false,
+      "warm_start_fallback": false,
+      "restart_origin": "cold",
+      "basis_identity": "cb4d7486a207478c98cb858e1d8b905335b17cef25cb44ae82333b9b6604505e",
+      "energy_hartree": -1.1167143251757699
+    },
+    "e3138ae06f46f97a0582bba6290dbb943e16d46f52631c8a8388d7620e9b4816": {
+      "stage_status": "valid",
+      "status_code": 0,
+      "status_message": "success",
+      "iterations": 12,
+      "fock_builds": 13,
+      "converged": true,
+      "executed_backend": "cuda",
+      "warm_start_used": false,
+      "warm_start_fallback": false,
+      "restart_origin": "cold",
+      "basis_identity": "cb4d7486a207478c98cb858e1d8b905335b17cef25cb44ae82333b9b6604505e",
+      "energy_hartree": -148.74899484906297
+    }
+  },
+  "unique_batch": {
+    "f374a87671beb6f3f954cbc47ad569fdafb9d7bc3deb502400e334f9da05c09f": {
+      "stage_status": "valid",
+      "status_code": 0,
+      "status_message": "success",
+      "iterations": 8,
+      "fock_builds": 9,
+      "converged": true,
+      "executed_backend": "cuda",
+      "warm_start_used": false,
+      "warm_start_fallback": false,
+      "restart_origin": "cold",
+      "basis_identity": "cb4d7486a207478c98cb858e1d8b905335b17cef25cb44ae82333b9b6604505e",
+      "energy_hartree": -74.96302316266413
+    },
+    "a23b0f8f715abc31dd491976d0acfbb2cf3e32c7444f999c629ecc8057ccdb92": {
+      "stage_status": "valid",
+      "status_code": 0,
+      "status_message": "success",
+      "iterations": 11,
+      "fock_builds": 12,
+      "converged": true,
+      "executed_backend": "cuda",
+      "warm_start_used": false,
+      "warm_start_fallback": false,
+      "restart_origin": "cold",
+      "basis_identity": "cb4d7486a207478c98cb858e1d8b905335b17cef25cb44ae82333b9b6604505e",
+      "energy_hartree": -227.89060348505083
+    },
+    "2962ca0d2e7e17935d1762e29d95671e260682c4e9f4433561a2e8d56fe62fa3": {
+      "stage_status": "valid",
+      "status_code": 0,
+      "status_message": "success",
+      "iterations": 14,
+      "fock_builds": 14,
+      "converged": true,
+      "executed_backend": "cuda",
+      "warm_start_used": false,
+      "warm_start_fallback": false,
+      "restart_origin": "cold",
+      "basis_identity": "cb4d7486a207478c98cb858e1d8b905335b17cef25cb44ae82333b9b6604505e",
+      "energy_hartree": -175.75070650021047
+    },
+    "8058d443ddc2ae410e7da6a79990e095667c42e6ecb726a716a487af4af636fb": {
+      "stage_status": "valid",
+      "status_code": 0,
+      "status_message": "success",
+      "iterations": 2,
+      "fock_builds": 2,
+      "converged": true,
+      "executed_backend": "cuda",
+      "warm_start_used": false,
+      "warm_start_fallback": false,
+      "restart_origin": "cold",
+      "basis_identity": "cb4d7486a207478c98cb858e1d8b905335b17cef25cb44ae82333b9b6604505e",
+      "energy_hartree": -1.1167143251757699
+    },
+    "e3138ae06f46f97a0582bba6290dbb943e16d46f52631c8a8388d7620e9b4816": {
+      "stage_status": "valid",
+      "status_code": 0,
+      "status_message": "success",
+      "iterations": 12,
+      "fock_builds": 13,
+      "converged": true,
+      "executed_backend": "cuda",
+      "warm_start_used": false,
+      "warm_start_fallback": false,
+      "restart_origin": "cold",
+      "basis_identity": "cb4d7486a207478c98cb858e1d8b905335b17cef25cb44ae82333b9b6604505e",
+      "energy_hartree": -148.74899484906297
+    }
+  },
+  "references": {
+    "f374a87671beb6f3f954cbc47ad569fdafb9d7bc3deb502400e334f9da05c09f": {
+      "stage_status": "valid",
+      "n_ao": 7,
+      "electrons": 10,
+      "cycles": 8,
+      "converged": true,
+      "energy_hartree": -74.96302316266393
+    },
+    "a23b0f8f715abc31dd491976d0acfbb2cf3e32c7444f999c629ecc8057ccdb92": {
+      "stage_status": "valid",
+      "n_ao": 36,
+      "electrons": 42,
+      "cycles": 9,
+      "converged": true,
+      "energy_hartree": -227.89060348505106
+    },
+    "2962ca0d2e7e17935d1762e29d95671e260682c4e9f4433561a2e8d56fe62fa3": {
+      "stage_status": "valid",
+      "n_ao": 20,
+      "electrons": 26,
+      "cycles": 12,
+      "converged": true,
+      "energy_hartree": -175.75070650020874
+    },
+    "8058d443ddc2ae410e7da6a79990e095667c42e6ecb726a716a487af4af636fb": {
+      "stage_status": "valid",
+      "n_ao": 2,
+      "electrons": 2,
+      "cycles": 2,
+      "converged": true,
+      "energy_hartree": -1.1167143251757508
+    },
+    "e3138ae06f46f97a0582bba6290dbb943e16d46f52631c8a8388d7620e9b4816": {
+      "stage_status": "valid",
+      "n_ao": 12,
+      "electrons": 18,
+      "cycles": 12,
+      "converged": true,
+      "energy_hartree": -148.74899484906294
+    }
+  },
+  "comparison": {
+    "same_protocol_hartree": 2e-09,
+    "independent_reference_hartree": 2e-08,
+    "pyscf_conv_tol": 1e-12,
+    "pyscf_conv_tol_grad": 1e-08,
+    "max_cycle": 150
+  },
+  "attempts": {
+    "native_library_load": 1,
+    "gqc_prepare": 19,
+    "gqc_execute": 19,
+    "pyscf_scf": 5
+  },
+  "times": {
+    "input_read_decode_seconds": 0.006714014336466789,
+    "identity_and_runtime_attestation_seconds": 1.15924131590873,
+    "per_row_cold_seconds": 1.867265508044511,
+    "dictionary_seconds": 0.3869679123163223,
+    "unique_batch_seconds": 0.3549305978231132,
+    "pyscf_reference_seconds": 0.24346383288502693,
+    "total_seconds_through_label_write": 4.019367510918528
+  },
+  "labels_sha256": "2c0ebd79c94db26e1b89d6c958c7bf0c322902ec0619999b793e814543205b70",
+  "source_compressed_bytes": 73992,
+  "scope": "Fixed ordered inputs. Wall clocks are single-run measurements; solver work is counted per physical item."
+}

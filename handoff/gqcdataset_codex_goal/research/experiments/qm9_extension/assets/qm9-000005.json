@@ -1,0 +1,299 @@
+{
+  "schema": "vibedataset.qm9_rhf_reference",
+  "version": 1,
+  "inputs": {
+    "name": "qm9-000005",
+    "method": "rhf",
+    "atomic_numbers": [
+      6,
+      7,
+      1
+    ],
+    "coordinates": [
+      [
+        -0.025178581249301616,
+        2.1400500470674744,
+        0.015639158167597277
+      ],
+      [
+        0.004366631163229672,
+        -0.036204482553788275,
+        0.003644772413212524
+      ],
+      [
+        -0.052539486824379394,
+        4.155411931945563,
+        0.02674678729238482
+      ]
+    ],
+    "charge": 0,
+    "multiplicity": 1,
+    "basis_representation": "real_spherical",
+    "shells": [
+      {
+        "atom_index": 0,
+        "angular_momentum": 0,
+        "primitives": [
+          [
+            71.61683735,
+            0.1543289673
+          ],
+          [
+            13.04509632,
+            0.5353281423
+          ],
+          [
+            3.53051216,
+            0.4446345422
+          ]
+        ]
+      },
+      {
+        "atom_index": 0,
+        "angular_momentum": 0,
+        "primitives": [
+          [
+            2.941249355,
+            -0.09996722919
+          ],
+          [
+            0.6834830964,
+            0.3995128261
+          ],
+          [
+            0.2222899159,
+            0.7001154689
+          ]
+        ]
+      },
+      {
+        "atom_index": 0,
+        "angular_momentum": 1,
+        "primitives": [
+          [
+            2.941249355,
+            0.155916275
+          ],
+          [
+            0.6834830964,
+            0.6076837186
+          ],
+          [
+            0.2222899159,
+            0.3919573931
+          ]
+        ]
+      },
+      {
+        "atom_index": 1,
+        "angular_momentum": 0,
+        "primitives": [
+          [
+            99.10616896,
+            0.1543289673
+          ],
+          [
+            18.05231239,
+            0.5353281423
+          ],
+          [
+            4.885660238,
+            0.4446345422
+          ]
+        ]
+      },
+      {
+        "atom_index": 1,
+        "angular_momentum": 0,
+        "primitives": [
+          [
+            3.780455879,
+            -0.09996722919
+          ],
+          [
+            0.8784966449,
+            0.3995128261
+          ],
+          [
+            0.2857143744,
+            0.7001154689
+          ]
+        ]
+      },
+      {
+        "atom_index": 1,
+        "angular_momentum": 1,
+        "primitives": [
+          [
+            3.780455879,
+            0.155916275
+          ],
+          [
+            0.8784966449,
+            0.6076837186
+          ],
+          [
+            0.2857143744,
+            0.3919573931
+          ]
+        ]
+      },
+      {
+        "atom_index": 2,
+        "angular_momentum": 0,
+        "primitives": [
+          [
+            3.425250914,
+            0.1543289673
+          ],
+          [
+            0.6239137298,
+            0.5353281423
+          ],
+          [
+            0.168855404,
+            0.4446345422
+          ]
+        ]
+      }
+    ],
+    "scf_settings": {
+      "energy_tolerance": 1e-13,
+      "gradient_tolerance": 1e-11,
+      "direct_scf_tol": 1e-14,
+      "max_iterations": 100
+    },
+    "cc_settings": null
+  },
+  "auxiliary_shells": [],
+  "records": {
+    "conventional": {
+      "hf_energy": -91.67519431812218,
+      "electron_count": 14,
+      "scf_residual": 1.9808599205362043e-12
+    }
+  },
+  "array_hash": "32cb8935f095aaa912bc7c6c886e3ad188425ba6d2b31611cf6ca6f6d3b99b6b",
+  "source_qm9": {
+    "qm9_id": 5,
+    "name": "qm9-000005",
+    "member": "dsgdb9nsd_000005.xyz",
+    "member_sha256": "ca02de71aa57ed315bff88753130cdb5023917f8be61f249a8bc634f3062a4e1",
+    "member_bytes": 386,
+    "symbols": [
+      "C",
+      "N",
+      "H"
+    ],
+    "coordinates_angstrom": [
+      [
+        -0.0133239314,
+        1.1324657151,
+        0.0082758861
+      ],
+      [
+        0.0023107217,
+        -0.0191585871,
+        0.0019287305
+      ],
+      [
+        -0.0278026991,
+        2.1989492963,
+        0.0141537903
+      ]
+    ],
+    "coordinates_bohr": [
+      [
+        -0.025178581249301616,
+        2.1400500470674744,
+        0.015639158167597277
+      ],
+      [
+        0.004366631163229672,
+        -0.036204482553788275,
+        0.003644772413212524
+      ],
+      [
+        -0.052539486824379394,
+        4.155411931945563,
+        0.02674678729238482
+      ]
+    ],
+    "source_geometry_disagreement_flag": false,
+    "n_heavy": 2
+  },
+  "versions": {
+    "pyscf": "2.14.0",
+    "numpy": "2.4.6",
+    "gqc_fixture_helper_commit": "2791504cc238fe83d328fc1718080642b288222a"
+  },
+  "state_producer": "CPU PySCF RHF with explicit GQC STO-3G parameters; unit-overlap AO convention",
+  "ao_basis_convention": "real spherical; libcint p=x,y,z; unit self-overlap; chemist-order AO ERIs in float64",
+  "units": {
+    "coordinates": "Bohr",
+    "orbital_energies": "Hartree",
+    "hf_energy": "Hartree",
+    "ao_eri": "Hartree"
+  },
+  "ao_labels": [
+    "0 C0 1s    ",
+    "0 C0 2s    ",
+    "0 C0 2px   ",
+    "0 C0 2py   ",
+    "0 C0 2pz   ",
+    "1 N1 1s    ",
+    "1 N1 2s    ",
+    "1 N1 2px   ",
+    "1 N1 2py   ",
+    "1 N1 2pz   ",
+    "2 H2 1s    "
+  ],
+  "libcint_to_unit_ao": [
+    1.0000000000000002,
+    1.0000000000000002,
+    1.0000000000000002,
+    1.0000000000000002,
+    1.0000000000000002,
+    1.0,
+    1.0,
+    0.9999999999999998,
+    0.9999999999999998,
+    0.9999999999999998,
+    1.0000000000000002
+  ],
+  "diagnostics": {
+    "scf_cycles": 35,
+    "pyscf_energy_hartree": -91.67519431812218,
+    "n_ao": 11,
+    "scf_converged": true,
+    "electron_count": 14,
+    "pyscf_local_stability": {
+      "internal": true,
+      "external": true
+    },
+    "ortho": 2.0095036745715333e-14,
+    "trace_error": 1.7763568394002505e-15,
+    "scf_residual": 1.9808599205362043e-12,
+    "physical_fock_error": 5.329070518200751e-15,
+    "gap_hartree": 0.7925249070356815,
+    "min_overlap_eigenvalue": 0.15207358073067387,
+    "independent_energy_error": 2.7000623958883807e-13,
+    "gates": {
+      "internal_stability": true,
+      "external_stability": true,
+      "metric": true,
+      "trace": true,
+      "residual": true,
+      "physical_fock": true,
+      "gap": true,
+      "independent_energy": true
+    }
+  },
+  "reference_identity": "4acb037a7f93042a9bfc109f646fbed5f7a5477dc75348c7fd2025a2b7b00c4f",
+  "reference_diagnostics": {
+    "orthogonality": 2.0095036745715333e-14,
+    "canonicality": 3.6273206660553114e-12,
+    "eigen_residual": 3.6202152386977104e-12,
+    "overlap_min_eigenvalue": 0.15207358073067387
+  }
+}

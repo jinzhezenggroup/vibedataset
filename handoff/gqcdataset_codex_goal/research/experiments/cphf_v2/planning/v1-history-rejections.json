@@ -1,0 +1,30 @@
+{
+  "qm9-000001": {
+    "reason": "scalar payload or scientific identity mismatch",
+    "v1_entries": 6,
+    "v1_identity": "f1a9d989e262315a62e016295ec018645ab345b1ecb2e8495f93b1766fe80043",
+    "v1_sha256": "418c5a5421494233dd4f28f7a862738e8596437c44192ade2e3b961efb0de1c1",
+    "v2_identity": "a4a4ae4bbdfc9293df53782dd7f14d8a14198b1dbb26636f5a9aa663c63a4b55"
+  },
+  "qm9-000002": {
+    "reason": "scalar payload or scientific identity mismatch",
+    "v1_entries": 6,
+    "v1_identity": "4ee4fe6d7ae05a36f931a33505fe312be5829d5a8f408e88216e345987b60f32",
+    "v1_sha256": "0c42a1068bdf26cb06f52825b86955943baf1d51d42b806f3f46b859f5f42381",
+    "v2_identity": "33b6433ba6a452fcb14fbabfe7d651296eb10c83fd76fdfc7c3bb217eb9e2c6b"
+  },
+  "qm9-000003": {
+    "reason": "scalar payload or scientific identity mismatch",
+    "v1_entries": 6,
+    "v1_identity": "cde3f797daa964a2405b72b3182321abd0c407e9c71d233ae05e54e3f2fa7204",
+    "v1_sha256": "838c6745f9cdb94b6d53170cb730edf80b5e7ac2af3a7c7e17a786f7f65506ea",
+    "v2_identity": "9679e203845d8c9113441b99662089ed4af0136dd85c7452d09ee51d75d4ef02"
+  },
+  "qm9-000010": {
+    "reason": "scalar payload or scientific identity mismatch",
+    "v1_entries": 1,
+    "v1_identity": "caebcd4f41af94686accc32733c2db0fbc403a20f6e177e4ecbb33f897b8cd8a",
+    "v1_sha256": "062b62d77e15d11f4f327684c270f0e3cf5969feb9b7c5bec799a96f04898836",
+    "v2_identity": "fdcff8f13d871ce31ab7eb0d45372093b37b811a6df83686b59283a27382b32e"
+  }
+}

@@ -1,0 +1,410 @@
+{
+  "pin": "64175aa55fb541355b2fb279a6bcfde01e17a878",
+  "program": "OpenMDAO",
+  "version": "3.45.2",
+  "python": "3.13.16",
+  "numpy": "2.5.5",
+  "driver_sha256": "ccec86a7697f9323d558c710d0a4e6dad836b07c5b7c89156f217c4238e6dbaa",
+  "tolerance": 1e-12,
+  "cases": [
+    {
+      "case": "structurally_diagonal",
+      "requests": 6,
+      "physical_nonzeros": 6,
+      "declared_coloring_pattern": 6,
+      "prior_known_nonzeros": 0,
+      "eligible_unit_cover": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "unit_solve_count": 6,
+      "unit_max_error": 7.105427357601002e-15,
+      "coloring": [
+        {
+          "direct": true,
+          "seed_indices": {
+            "fwd": [
+              [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5
+              ]
+            ],
+            "rev": []
+          },
+          "seed_count": 1,
+          "subtractions": 0,
+          "max_requested_error": 7.105427357601002e-15
+        },
+        {
+          "direct": false,
+          "seed_indices": {
+            "fwd": [
+              [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5
+              ]
+            ],
+            "rev": []
+          },
+          "seed_count": 1,
+          "subtractions": 0,
+          "max_requested_error": 7.105427357601002e-15
+        }
+      ]
+    },
+    {
+      "case": "structurally_arrow",
+      "requests": 16,
+      "physical_nonzeros": 16,
+      "declared_coloring_pattern": 16,
+      "prior_known_nonzeros": 0,
+      "eligible_unit_cover": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "unit_solve_count": 6,
+      "unit_max_error": 7.105427357601002e-15,
+      "coloring": [
+        {
+          "direct": true,
+          "seed_indices": {
+            "fwd": [
+              [
+                5
+              ]
+            ],
+            "rev": [
+              [
+                0,
+                1,
+                2,
+                3
+              ],
+              [
+                4
+              ],
+              [
+                5
+              ]
+            ]
+          },
+          "seed_count": 4,
+          "subtractions": 0,
+          "max_requested_error": 7.105427357601002e-15
+        },
+        {
+          "direct": false,
+          "seed_indices": {
+            "fwd": [
+              [
+                5
+              ]
+            ],
+            "rev": [
+              [
+                0,
+                1,
+                2,
+                3,
+                4
+              ],
+              [
+                5
+              ]
+            ]
+          },
+          "seed_count": 3,
+          "subtractions": 1,
+          "max_requested_error": 7.105427357601002e-15
+        }
+      ]
+    },
+    {
+      "case": "dense_conservative_structure_diagonal_request",
+      "requests": 6,
+      "physical_nonzeros": 36,
+      "declared_coloring_pattern": 36,
+      "prior_known_nonzeros": 0,
+      "eligible_unit_cover": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "unit_solve_count": 6,
+      "unit_max_error": 7.105427357601002e-15,
+      "coloring": [
+        {
+          "direct": true,
+          "seed_indices": {
+            "fwd": [
+              [
+                0
+              ],
+              [
+                1
+              ],
+              [
+                2
+              ],
+              [
+                3
+              ],
+              [
+                4
+              ],
+              [
+                5
+              ]
+            ],
+            "rev": []
+          },
+          "seed_count": 6,
+          "subtractions": 0,
+          "max_requested_error": 0.0
+        },
+        {
+          "direct": false,
+          "seed_indices": {
+            "fwd": [
+              [
+                0
+              ],
+              [
+                1
+              ],
+              [
+                2
+              ],
+              [
+                3
+              ],
+              [
+                4
+              ],
+              [
+                5
+              ]
+            ],
+            "rev": []
+          },
+          "seed_count": 6,
+          "subtractions": 0,
+          "max_requested_error": 0.0
+        }
+      ]
+    },
+    {
+      "case": "dense_diagonal_mislabeled_as_support",
+      "requests": 6,
+      "physical_nonzeros": 36,
+      "declared_coloring_pattern": 6,
+      "prior_known_nonzeros": 0,
+      "eligible_unit_cover": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "unit_solve_count": 6,
+      "unit_max_error": 7.105427357601002e-15,
+      "coloring": [
+        {
+          "direct": true,
+          "seed_indices": {
+            "fwd": [
+              [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5
+              ]
+            ],
+            "rev": []
+          },
+          "seed_count": 1,
+          "subtractions": 0,
+          "max_requested_error": 165.0
+        },
+        {
+          "direct": false,
+          "seed_indices": {
+            "fwd": [
+              [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5
+              ]
+            ],
+            "rev": []
+          },
+          "seed_count": 1,
+          "subtractions": 0,
+          "max_requested_error": 165.0
+        }
+      ]
+    },
+    {
+      "case": "dense_known_offdiagonals_subtracted",
+      "requests": 6,
+      "physical_nonzeros": 36,
+      "declared_coloring_pattern": 6,
+      "prior_known_nonzeros": 30,
+      "eligible_unit_cover": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "unit_solve_count": 6,
+      "unit_max_error": 7.105427357601002e-15,
+      "coloring": [
+        {
+          "direct": true,
+          "seed_indices": {
+            "fwd": [
+              [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5
+              ]
+            ],
+            "rev": []
+          },
+          "seed_count": 1,
+          "subtractions": 0,
+          "max_requested_error": 3.552713678800501e-15
+        },
+        {
+          "direct": false,
+          "seed_indices": {
+            "fwd": [
+              [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5
+              ]
+            ],
+            "rev": []
+          },
+          "seed_count": 1,
+          "subtractions": 0,
+          "max_requested_error": 3.552713678800501e-15
+        }
+      ]
+    },
+    {
+      "case": "dense_full_row_plus_column",
+      "requests": 11,
+      "physical_nonzeros": 36,
+      "declared_coloring_pattern": 36,
+      "prior_known_nonzeros": 0,
+      "eligible_unit_cover": [
+        5,
+        11
+      ],
+      "unit_solve_count": 2,
+      "unit_max_error": 7.105427357601002e-15,
+      "coloring": [
+        {
+          "direct": true,
+          "seed_indices": {
+            "fwd": [
+              [
+                0
+              ],
+              [
+                1
+              ],
+              [
+                2
+              ],
+              [
+                3
+              ],
+              [
+                4
+              ],
+              [
+                5
+              ]
+            ],
+            "rev": []
+          },
+          "seed_count": 6,
+          "subtractions": 0,
+          "max_requested_error": 3.552713678800501e-15
+        },
+        {
+          "direct": false,
+          "seed_indices": {
+            "fwd": [
+              [
+                0
+              ],
+              [
+                1
+              ],
+              [
+                2
+              ],
+              [
+                3
+              ],
+              [
+                4
+              ],
+              [
+                5
+              ]
+            ],
+            "rev": []
+          },
+          "seed_count": 6,
+          "subtractions": 0,
+          "max_requested_error": 3.552713678800501e-15
+        }
+      ]
+    }
+  ],
+  "symmetric_cross": {
+    "unit_graph_cost": 2,
+    "solves_using_reciprocity": 1,
+    "max_error": 7.815970093361102e-14
+  },
+  "elapsed_seconds": 0.045338918003835715,
+  "qc_calls": 0
+}

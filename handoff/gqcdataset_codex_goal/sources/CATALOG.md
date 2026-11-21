@@ -2,6 +2,10 @@
 
 日期：2026-11-18。此目录依据当前可见讨论重建，并核实公开入口；不是下载失败 ZIP 的逐字副本。
 
+**历史入口快照：** 下文“本轮”及 `catalog.json` 的 not_acquired/空 pin 表示交接发布时的状态。
+后续真实接管状态以 [来源锁](../research/sources.lock.json)、[快照索引](../research/SOURCE_INDEX.md)
+和 [STATUS](../research/STATUS.md) 为准。同一项目可有多个版本，不把运行源码和当前源码压成一个 pin。
+
 ## 本轮完成到哪里
 
 共 38 个研究／软件条目、31 个不同的可访问仓库入口；完整源码树获取 **0**，完整源码审计 **0**。仓库入口核实使用 GitHub 元数据；论文对应关系使用官方论文、作者仓库及正式归档。所有条目的 `source_status` 都是 `not_acquired`，所有 `pinned_commit` 都为空。详见可机读的 [catalog.json](catalog.json)。

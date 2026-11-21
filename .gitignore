@@ -5,3 +5,5 @@ __pycache__/
 *.py[cod]
 .pytest_cache/
 .work/
+# Raw inventories are reproducible working files; compact lossless copies are tracked.
+handoff/gqcdataset_codex_goal/research/inventories/*.json

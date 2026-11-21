@@ -1,0 +1,105 @@
+{
+  "id": "cppad_2026",
+  "source": {
+    "id": "cppad_2026",
+    "catalog_ids": [],
+    "priority": "P0",
+    "repository_url": "https://github.com/coin-or/CppAD",
+    "role": "release_source",
+    "commit": "5d51b2aa6d6874c8d561da298a90b3721550d45d",
+    "checkout_path": "_references/cppad_2026",
+    "paper_version_status": "Release 20260000.0; older papers and ColPack implementation not identified with this pin.",
+    "selection_reason": "Sparse Jacobian drivers distinguish requested entries (subset) from complete structural support (pattern); concrete competitor to graph-based exact target completion."
+  },
+  "started_at_utc": "2026-11-17T19:33:55.135114+00:00",
+  "status": "indexed_pending_review",
+  "commands": [
+    {
+      "argv": [
+        "git",
+        "init",
+        "--quiet"
+      ],
+      "cwd": "_references/cppad_2026",
+      "started_at_utc": "2026-11-17T19:33:55.135272+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.0035672350059030578,
+      "ended_at_utc": "2026-11-17T19:33:55.139002+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "remote",
+        "add",
+        "origin",
+        "https://github.com/coin-or/CppAD"
+      ],
+      "cwd": "_references/cppad_2026",
+      "started_at_utc": "2026-11-17T19:33:55.139179+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.002471676009008661,
+      "ended_at_utc": "2026-11-17T19:33:55.141814+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "protocol.file.allow=never",
+        "fetch",
+        "--depth=1",
+        "--no-tags",
+        "origin",
+        "5d51b2aa6d6874c8d561da298a90b3721550d45d"
+      ],
+      "cwd": "_references/cppad_2026",
+      "started_at_utc": "2026-11-17T19:33:55.142000+00:00",
+      "stdout": "",
+      "stderr": "\u6765\u81ea https://github.com/coin-or/CppAD\n * branch            5d51b2aa6d6874c8d561da298a90b3721550d45d -> FETCH_HEAD\n",
+      "returncode": 0,
+      "elapsed_seconds": 3.886808373994427,
+      "ended_at_utc": "2026-11-17T19:33:59.028990+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "core.autocrlf=false",
+        "checkout",
+        "--detach",
+        "5d51b2aa6d6874c8d561da298a90b3721550d45d"
+      ],
+      "cwd": "_references/cppad_2026",
+      "started_at_utc": "2026-11-17T19:33:59.029681+00:00",
+      "stdout": "",
+      "stderr": "HEAD \u76ee\u524d\u4f4d\u4e8e 5d51b2a stable/2026: Require cmake >= 3.10 (to avoid warnings on some systems).\n",
+      "returncode": 0,
+      "elapsed_seconds": 0.06535237999923993,
+      "ended_at_utc": "2026-11-17T19:33:59.095633+00:00"
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "/home/lhshen/vibedataset/handoff/gqcdataset_codex_goal/tools/inventory_sources.py",
+        "_references/cppad_2026",
+        "--recurse-submodules",
+        "--json",
+        "handoff/gqcdataset_codex_goal/research/inventories/cppad_2026.json"
+      ],
+      "cwd": ".",
+      "started_at_utc": "2026-11-17T19:33:59.095946+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.17330969400063623,
+      "ended_at_utc": "2026-11-17T19:33:59.269466+00:00"
+    }
+  ],
+  "receipt_path": "handoff/gqcdataset_codex_goal/research/acquisition/cppad_2026-20261117T193355135095Z.json",
+  "resolved_commit": "5d51b2aa6d6874c8d561da298a90b3721550d45d",
+  "inventory_path": "handoff/gqcdataset_codex_goal/research/inventories/cppad_2026.json",
+  "ended_at_utc": "2026-11-17T19:33:59.269812+00:00"
+}

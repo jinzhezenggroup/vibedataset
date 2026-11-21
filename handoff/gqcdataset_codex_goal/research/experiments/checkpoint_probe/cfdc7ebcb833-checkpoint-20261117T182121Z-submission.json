@@ -1,0 +1,65 @@
+{
+  "run_id": "cfdc7ebcb833-checkpoint-20261117T182121Z",
+  "project_commit": "cfdc7ebcb83360d28db4a4c35b571794c0a34a7f",
+  "remote_directory": "~/vibedataset/runs/cfdc7ebcb833-checkpoint-20261117T182121Z",
+  "previous_job": 5381,
+  "reason": "Attest the CDLL actually loaded by the Slurm process. Same scientific protocol and per-job budget as 5381.",
+  "commands": [
+    {
+      "argv": [
+        "ssh",
+        "-o",
+        "BatchMode=yes",
+        "n2",
+        "sinfo -p main -o \"%P %a %D %G %t\" && squeue --me -o \"%i %P %j %T %M\""
+      ],
+      "started_at_utc": "2026-11-17T18:21:21.782654+00:00",
+      "elapsed_seconds": 1.2767730360064888,
+      "returncode": 0,
+      "stdout": "PARTITION AVAIL NODES GRES STATE\nmain* up 1 gpu:pro6000:4 idle\nJOBID PARTITION NAME STATE TIME\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "ssh",
+        "n2",
+        "mkdir vibedataset/runs/cfdc7ebcb833-checkpoint-20261117T182121Z"
+      ],
+      "started_at_utc": "2026-11-17T18:21:23.059814+00:00",
+      "elapsed_seconds": 1.216560587999993,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "scp",
+        "-r",
+        ".work/cfdc7ebcb833-checkpoint-20261117T182121Z/scripts",
+        ".work/cfdc7ebcb833-checkpoint-20261117T182121Z/configs",
+        ".work/cfdc7ebcb833-checkpoint-20261117T182121Z/PROJECT_COMMIT",
+        ".work/cfdc7ebcb833-checkpoint-20261117T182121Z/SHA256SUMS",
+        "n2:vibedataset/runs/cfdc7ebcb833-checkpoint-20261117T182121Z/"
+      ],
+      "started_at_utc": "2026-11-17T18:21:24.276761+00:00",
+      "elapsed_seconds": 2.284747130004689,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "ssh",
+        "n2",
+        "cd vibedataset/runs/cfdc7ebcb833-checkpoint-20261117T182121Z && sbatch --parsable --job-name=vibedataset-cp001 --output=slurm-%j.out --error=slurm-%j.err scripts/run_checkpoint_probe.slurm"
+      ],
+      "started_at_utc": "2026-11-17T18:21:26.561837+00:00",
+      "elapsed_seconds": 1.209076229002676,
+      "returncode": 0,
+      "stdout": "5382\n",
+      "stderr": ""
+    }
+  ],
+  "status": "submitted",
+  "slurm_job_id": "5382"
+}

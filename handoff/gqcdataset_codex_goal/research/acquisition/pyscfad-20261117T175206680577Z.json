@@ -1,0 +1,122 @@
+{
+  "id": "pyscfad",
+  "source": {
+    "id": "pyscfad",
+    "catalog_ids": [
+      "pyscfad"
+    ],
+    "priority": "P0",
+    "repository_url": "https://github.com/fishjojo/pyscfad",
+    "role": "current",
+    "commit": null,
+    "checkout_path": "_references/pyscfad",
+    "paper_version_status": "not_established",
+    "selection_reason": "\u91cf\u5316\u540e\u7aef\u4e0e\u5f3a\u57fa\u7ebf"
+  },
+  "started_at_utc": "2026-11-17T17:52:06.680594+00:00",
+  "status": "indexed_pending_review",
+  "commands": [
+    {
+      "argv": [
+        "git",
+        "ls-remote",
+        "https://github.com/fishjojo/pyscfad",
+        "HEAD"
+      ],
+      "cwd": ".",
+      "started_at_utc": "2026-11-17T17:52:06.680711+00:00",
+      "stdout": "190fbb4670de4c989333a5eb49b401efd5395a3b\tHEAD\n",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 1.695521750007174,
+      "ended_at_utc": "2026-11-17T17:52:08.376462+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "init",
+        "--quiet"
+      ],
+      "cwd": "_references/pyscfad",
+      "started_at_utc": "2026-11-17T17:52:08.377134+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.005372639003326185,
+      "ended_at_utc": "2026-11-17T17:52:08.385134+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "remote",
+        "add",
+        "origin",
+        "https://github.com/fishjojo/pyscfad"
+      ],
+      "cwd": "_references/pyscfad",
+      "started_at_utc": "2026-11-17T17:52:08.385568+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.0036194689891999587,
+      "ended_at_utc": "2026-11-17T17:52:08.389761+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "protocol.file.allow=never",
+        "fetch",
+        "--depth=1",
+        "--no-tags",
+        "origin",
+        "190fbb4670de4c989333a5eb49b401efd5395a3b"
+      ],
+      "cwd": "_references/pyscfad",
+      "started_at_utc": "2026-11-17T17:52:08.390278+00:00",
+      "stdout": "",
+      "stderr": "\u6765\u81ea https://github.com/fishjojo/pyscfad\n * branch            190fbb4670de4c989333a5eb49b401efd5395a3b -> FETCH_HEAD\n",
+      "returncode": 0,
+      "elapsed_seconds": 3.9315933429897996,
+      "ended_at_utc": "2026-11-17T17:52:12.322694+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "core.autocrlf=false",
+        "checkout",
+        "--detach",
+        "190fbb4670de4c989333a5eb49b401efd5395a3b"
+      ],
+      "cwd": "_references/pyscfad",
+      "started_at_utc": "2026-11-17T17:52:12.323349+00:00",
+      "stdout": "",
+      "stderr": "HEAD \u76ee\u524d\u4f4d\u4e8e 190fbb4 reduce legacy df and dfmp2 memory footprint (#180)\n",
+      "returncode": 0,
+      "elapsed_seconds": 0.050919301007525064,
+      "ended_at_utc": "2026-11-17T17:52:12.374790+00:00"
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "/home/lhshen/vibedataset/handoff/gqcdataset_codex_goal/tools/inventory_sources.py",
+        "_references/pyscfad",
+        "--recurse-submodules",
+        "--json",
+        "handoff/gqcdataset_codex_goal/research/inventories/pyscfad.json"
+      ],
+      "cwd": ".",
+      "started_at_utc": "2026-11-17T17:52:12.375186+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.13696037800400518,
+      "ended_at_utc": "2026-11-17T17:52:12.512355+00:00"
+    }
+  ],
+  "receipt_path": "handoff/gqcdataset_codex_goal/research/acquisition/pyscfad-20261117T175206680577Z.json",
+  "resolved_commit": "190fbb4670de4c989333a5eb49b401efd5395a3b",
+  "inventory_path": "handoff/gqcdataset_codex_goal/research/inventories/pyscfad.json",
+  "ended_at_utc": "2026-11-17T17:52:12.512683+00:00"
+}

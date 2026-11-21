@@ -1,0 +1,101 @@
+{
+  "api_sha256": "1ecb770cbd7fe5cbbaf6fd68119fb2cf9a6122f226d18cae6538634fe1b9adbe",
+  "cphf_reference_sha256": "2859138f7649a30bcbdcf9ef2768c9e450aa4cdf9f320202263d0e97137a3044",
+  "cxx": "c++ (Ubuntu 11.4.0-1ubuntu1~22.04.3) 11.4.0",
+  "driver_sha256": "9b8613cdde8cc8155977997cbbeaee687a40bb21a690c37b6f815467f9b7a9ec",
+  "gqc": "2791504cc238fe83d328fc1718080642b288222a",
+  "h5py": "3.16.0",
+  "index_sha256": "53ec51ed838b2cc3db665909ea10e2ff38d2988dc55c0066a9acc806e8a7dc62",
+  "job": "2046",
+  "numpy": "2.5.5",
+  "project_commit": "6b6c49ef67e8baf54bfcb0acec45845c547a6cb4",
+  "pyscf": "2.14.0",
+  "pyscf_binaries": {
+    "deps/lib/libcint.so": "950bb0a297507369dce95b9013ef2c5b64b0fa36a0018c303c98e95efce7db7e",
+    "libcgto.so": "337d956486a156f1aa7ca636ac5a91c6277058ffedb6db2efe714fee65f726e0"
+  },
+  "pyscf_modules": {
+    "pyscf.lib.linalg_helper": "9dcd5d4582c3695818e05fa72217c7764f87d5491ed29acb7b64d2725ee130e0",
+    "pyscf.scf.cphf": "e39e3a06fc33e23307a8558d2410bc1137e08ef9c27d48b4ce95fd20a22a63e3",
+    "pyscf.scf.hf": "34ea1a9057da3a2d5aa37fe51d4e7305580bcb8e0118a5f17ba95ba5bb36c22f"
+  },
+  "pyscf_source": "c63a953ba603a5ad8c1d65d88da72aaf05ede4d8",
+  "python": "3.13.16",
+  "schema": "vibedataset.cphf_reference.v2",
+  "scipy": "1.18.1",
+  "strata": [
+    {
+      "input_status": "empty_stratum",
+      "name": null,
+      "reason": "empty_stratum",
+      "status": "not_run",
+      "stratum": "1-2/F"
+    },
+    {
+      "input_status": "verified",
+      "name": "qm9-000003",
+      "oracle": "oracles/qm9-000003.json",
+      "qualified": 9,
+      "sha256": "c83438dd281035c988b5899fab8e5522a0abed68beda6a270af11d8802f58022",
+      "status": "completed",
+      "stratum": "1-2/O",
+      "targets": 9
+    },
+    {
+      "input_status": "verified",
+      "name": "qm9-000002",
+      "oracle": "oracles/qm9-000002.json",
+      "qualified": 9,
+      "sha256": "0ae771803cb0fbdcc3c9760c4c6c02f5ecca9c0ce2d8cc3894f6ce54562ed9a1",
+      "status": "completed",
+      "stratum": "1-2/N",
+      "targets": 9
+    },
+    {
+      "input_status": "verified",
+      "name": "qm9-000001",
+      "oracle": "oracles/qm9-000001.json",
+      "qualified": 9,
+      "sha256": "8a63c76087e0de6dfacd2c7c904b5c60063360aa29c534cc2bd45f46b3aa453b",
+      "status": "completed",
+      "stratum": "1-2/CH",
+      "targets": 9
+    },
+    {
+      "input_status": "empty_stratum",
+      "name": null,
+      "reason": "empty_stratum",
+      "status": "not_run",
+      "stratum": "3/F"
+    },
+    {
+      "input_status": "failed",
+      "name": "qm9-000011",
+      "reason": "PySCF reference SCF failed",
+      "status": "not_run",
+      "stratum": "3/O"
+    },
+    {
+      "input_status": "verified",
+      "name": "qm9-000010",
+      "oracle": "oracles/qm9-000010.json",
+      "qualified": 9,
+      "sha256": "7dc6a284a786af15130066606ce7bd11ef3807ceff9ede79e03c0d0ef78644dc",
+      "status": "completed",
+      "stratum": "3/N",
+      "targets": 9
+    },
+    {
+      "input_status": "failed",
+      "name": "qm9-000009",
+      "reason": "failed gates: external_stability",
+      "status": "not_run",
+      "stratum": "3/CH"
+    }
+  ],
+  "threads": {
+    "MKL_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1"
+  }
+}

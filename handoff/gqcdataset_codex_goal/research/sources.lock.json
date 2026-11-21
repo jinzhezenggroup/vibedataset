@@ -1,0 +1,3647 @@
+{
+  "schema_version": 1,
+  "notice": "Git snapshot counts include initialized submodules. Formal release archives have separate file/member hashes. Reading, execution, paper-version attribution, and external runtime closure are independent.",
+  "repositories": [
+    {
+      "id": "gqc",
+      "catalog_ids": [
+        "gqc"
+      ],
+      "priority": "P0",
+      "repository_url": "https://github.com/jinzhezenggroup/generativeqc",
+      "role": "current",
+      "commit": "2791504cc238fe83d328fc1718080642b288222a",
+      "checkout_path": "_references/gqc",
+      "paper_version_status": "not_established",
+      "selection_reason": "科学编译与工作基础",
+      "acquisition_receipts": [
+        "research/acquisition/gqc-20261117T175019783558Z.json"
+      ],
+      "tree": "6ba1d4b5ac7ca54b4fc87af58bd7db3472fd6fc6",
+      "retrieved_at_utc": "2026-11-17T17:51:01.175556+00:00",
+      "checkout_kind": "full-tree",
+      "history_scope": "shallow",
+      "license": {
+        "paths": [
+          "LICENSE",
+          "LICENSES/pyscf-NOTICE.txt",
+          "LICENSES/xtbloom-CUDA_MKL_LINKING_EXCEPTION.txt",
+          "THIRD_PARTY_NOTICES.md",
+          "cmake/3rdparty/implib/LICENSE.txt",
+          "src/dft/dispersion/d4.NOTICE",
+          "src/xtb/native/CUDA_MKL_LINKING_EXCEPTION",
+          "src/xtb/native/LICENSE",
+          "src/xtb/native/LICENSES/eigen/COPYING.APACHE",
+          "src/xtb/native/LICENSES/eigen/COPYING.BSD",
+          "src/xtb/native/LICENSES/eigen/COPYING.MINPACK",
+          "src/xtb/native/LICENSES/eigen/COPYING.MPL2",
+          "src/xtb/native/LICENSES/eigen/COPYING.README",
+          "src/xtb/native/THIRD_PARTY_NOTICES.md",
+          "tools/generativeqc_cc/LICENSE.pyscf",
+          "tools/generativeqc_cc/NOTICE",
+          "upstream/libxc-fulltree/7.0.0/COPYING",
+          "upstream/libxc/7.0.0/COPYING"
+        ],
+        "interpretation": "License files located; no redistribution or legal interpretation claimed."
+      },
+      "inventory_path": "research/inventories/gqc.json.gz",
+      "inventory_sha256": "34c843d2c14026f50ebe2cff37394cf5cbf1abb45348e368bee53e56b246b19f",
+      "inventory_uncompressed_sha256": "cb08c04b3ca699a37d1d5a4a5cc7286bb8826dbfd79170fdd7debd0d5ee45857",
+      "submodules": [],
+      "lfs": {
+        "pointer_count": 0,
+        "unhydrated_count": 0
+      },
+      "acquisition_status": "acquired",
+      "acquisition_scope": "Complete pinned tracked trees including initialized submodules; not all build dependencies, paper supplements, datasets or weights.",
+      "reviewer_record": {
+        "root_tree_reviewed": true,
+        "reviewer": "Codex",
+        "reviewed_at_utc": "2026-11-17T17:58:14.475299+00:00",
+        "review_scope": "Reviewed inventory integrity, full root path scope, license locations and submodule/LFS status; not source comprehension or dependency closure.",
+        "known_gaps": [
+          "Current source differs from n2 runtime-source pin; no matching current native binary was built or tested."
+        ],
+        "commit": "2791504cc238fe83d328fc1718080642b288222a"
+      },
+      "file_count": 15690,
+      "top_level_directories": [
+        ".agents",
+        ".github",
+        "LICENSES",
+        "assets",
+        "benchmarks",
+        "cmake",
+        "data",
+        "docs",
+        "examples",
+        "include",
+        "manifests",
+        "python",
+        "rule-tests",
+        "rules",
+        "src",
+        "tests",
+        "tools",
+        "upstream"
+      ],
+      "build_and_dependency_metadata": [
+        "CMakeLists.txt",
+        "CMakePresets.json",
+        "pyproject.toml"
+      ],
+      "reviewed_integrity_notices": [],
+      "known_gaps": [
+        "Current source differs from n2 runtime-source pin; no matching current native binary was built or tested."
+      ],
+      "external_dependency_closure": "pending; see SOURCE_GAPS.md",
+      "evidence_status": {
+        "indexed": true,
+        "files_read": 7,
+        "behavior_traced": 16,
+        "executed": 16
+      }
+    },
+    {
+      "id": "gqc_runtime",
+      "catalog_ids": [
+        "gqc"
+      ],
+      "priority": "P0",
+      "repository_url": "https://github.com/jinzhezenggroup/generativeqc",
+      "role": "runtime_source",
+      "commit": "2bf3fd98da9c6cfba46ca83345e63e1d934e4780",
+      "checkout_path": "_references/gqc_runtime",
+      "paper_version_status": "not_claimed",
+      "selection_reason": "n2 existing native library declared source; distinct from current",
+      "acquisition_receipts": [
+        "research/acquisition/gqc_runtime-20261117T175101318411Z.json"
+      ],
+      "tree": "821043dbf462b814d298f36f815c3f78a3e321fb",
+      "retrieved_at_utc": "2026-11-17T17:51:41.039233+00:00",
+      "checkout_kind": "full-tree",
+      "history_scope": "shallow",
+      "license": {
+        "paths": [
+          "LICENSE",
+          "LICENSES/pyscf-NOTICE.txt",
+          "LICENSES/xtbloom-CUDA_MKL_LINKING_EXCEPTION.txt",
+          "THIRD_PARTY_NOTICES.md",
+          "cmake/3rdparty/implib/LICENSE.txt",
+          "src/dft/dispersion/d4.NOTICE",
+          "src/xtb/native/CUDA_MKL_LINKING_EXCEPTION",
+          "src/xtb/native/LICENSE",
+          "src/xtb/native/LICENSES/eigen/COPYING.APACHE",
+          "src/xtb/native/LICENSES/eigen/COPYING.BSD",
+          "src/xtb/native/LICENSES/eigen/COPYING.MINPACK",
+          "src/xtb/native/LICENSES/eigen/COPYING.MPL2",
+          "src/xtb/native/LICENSES/eigen/COPYING.README",
+          "src/xtb/native/THIRD_PARTY_NOTICES.md",
+          "tools/generativeqc_cc/LICENSE.pyscf",
+          "tools/generativeqc_cc/NOTICE",
+          "upstream/libxc-fulltree/7.0.0/COPYING",
+          "upstream/libxc/7.0.0/COPYING"
+        ],
+        "interpretation": "License files located; no redistribution or legal interpretation claimed."
+      },
+      "inventory_path": "research/inventories/gqc_runtime.json.gz",
+      "inventory_sha256": "afc0258351e04ea41a116bbc535aa9e3b6a471789b238c2c3ea52a4fdab228b7",
+      "inventory_uncompressed_sha256": "1cec2ff449a7d2d0c23fc142e47eaaff62513ac8bbf3ec44faaa5e6693e2b661",
+      "submodules": [],
+      "lfs": {
+        "pointer_count": 0,
+        "unhydrated_count": 0
+      },
+      "acquisition_status": "acquired",
+      "acquisition_scope": "Complete pinned tracked trees including initialized submodules; not all build dependencies, paper supplements, datasets or weights.",
+      "reviewer_record": {
+        "root_tree_reviewed": true,
+        "reviewer": "Codex",
+        "reviewed_at_utc": "2026-11-17T17:58:14.475299+00:00",
+        "review_scope": "Reviewed inventory integrity, full root path scope, license locations and submodule/LFS status; not source comprehension or dependency closure.",
+        "known_gaps": [
+          "runtime.env declares this source; matching native hash is observed, but no reproducible-build attestation independently proves exact source-to-binary correspondence."
+        ],
+        "commit": "2bf3fd98da9c6cfba46ca83345e63e1d934e4780"
+      },
+      "file_count": 15106,
+      "top_level_directories": [
+        ".agents",
+        ".github",
+        "LICENSES",
+        "assets",
+        "benchmarks",
+        "cmake",
+        "data",
+        "docs",
+        "examples",
+        "include",
+        "manifests",
+        "python",
+        "rule-tests",
+        "rules",
+        "src",
+        "tests",
+        "tools",
+        "upstream"
+      ],
+      "build_and_dependency_metadata": [
+        "CMakeLists.txt",
+        "CMakePresets.json",
+        "pyproject.toml"
+      ],
+      "reviewed_integrity_notices": [],
+      "known_gaps": [
+        "runtime.env declares this source; matching native hash is observed, but no reproducible-build attestation independently proves exact source-to-binary correspondence."
+      ],
+      "external_dependency_closure": "pending; see SOURCE_GAPS.md",
+      "evidence_status": {
+        "indexed": true,
+        "files_read": 2,
+        "behavior_traced": 9,
+        "executed": 2
+      }
+    },
+    {
+      "id": "xtbloom",
+      "include_tag_history": true,
+      "catalog_ids": [
+        "xtbloom"
+      ],
+      "priority": "P0",
+      "repository_url": "https://github.com/jinzhezenggroup/xtbloom",
+      "role": "current",
+      "commit": "16ec6bb04629b568b20e012e9b6409fb0ccff0f8",
+      "checkout_path": "_references/xtbloom",
+      "paper_version_status": "not_established",
+      "selection_reason": "科学编译与工作基础",
+      "acquisition_receipts": [
+        "research/acquisition/xtbloom-20261117T175141178503Z.json"
+      ],
+      "tree": "da278b5ad02c91d6a2bdbdc99232a405d34a9855",
+      "retrieved_at_utc": "2026-11-17T17:51:54.152893+00:00",
+      "checkout_kind": "full-tree",
+      "history_scope": "full",
+      "license": {
+        "paths": [
+          "CUDA_MKL_LINKING_EXCEPTION",
+          "LICENSE",
+          "LICENSES/eigen/COPYING.APACHE",
+          "LICENSES/eigen/COPYING.BSD",
+          "LICENSES/eigen/COPYING.MINPACK",
+          "LICENSES/eigen/COPYING.MPL2",
+          "LICENSES/eigen/COPYING.README",
+          "THIRD_PARTY_NOTICES.md",
+          "data/parameters/d4.NOTICE"
+        ],
+        "interpretation": "License files located; no redistribution or legal interpretation claimed."
+      },
+      "inventory_path": "research/inventories/xtbloom.json.gz",
+      "inventory_sha256": "06f967622ebab5c5574c5628a818e991f92cb5e624c91546c5cbb7b7bca1d6b4",
+      "inventory_uncompressed_sha256": "7e9cbf37855fc456b433763262c1f738329567f5eba3b99b51374e9cfdbf7e10",
+      "submodules": [],
+      "lfs": {
+        "pointer_count": 0,
+        "unhydrated_count": 0
+      },
+      "acquisition_status": "acquired",
+      "acquisition_scope": "Complete pinned tracked trees including initialized submodules; not all build dependencies, paper supplements, datasets or weights.",
+      "reviewer_record": {
+        "root_tree_reviewed": true,
+        "reviewer": "Codex",
+        "reviewed_at_utc": "2026-11-17T17:58:14.475299+00:00",
+        "review_scope": "Reviewed inventory integrity, full root path scope, license locations and submodule/LFS status; not source comprehension or dependency closure.",
+        "known_gaps": [
+          "Native CPU route built and tested after fetching history/tags. CUDA path at this pin not run by the local CPU audit; see research/audits/xtbloom.md."
+        ],
+        "commit": "16ec6bb04629b568b20e012e9b6409fb0ccff0f8",
+        "additional_evidence": "research/acquisition/xtbloom-history-20261118.json"
+      },
+      "file_count": 1480,
+      "top_level_directories": [
+        ".agents",
+        ".github",
+        "LICENSES",
+        "benchmarks",
+        "cmake",
+        "data",
+        "docs",
+        "include",
+        "python",
+        "skills",
+        "src",
+        "tests",
+        "tools",
+        "web"
+      ],
+      "build_and_dependency_metadata": [
+        "CMakeLists.txt",
+        "pyproject.toml",
+        "uv.lock"
+      ],
+      "reviewed_integrity_notices": [],
+      "known_gaps": [
+        "Native CPU route built and tested after fetching history/tags. CUDA path at this pin not run by the local CPU audit; see research/audits/xtbloom.md."
+      ],
+      "external_dependency_closure": "pending; see SOURCE_GAPS.md",
+      "evidence_status": {
+        "indexed": true,
+        "files_read": 0,
+        "behavior_traced": 4,
+        "executed": 3
+      }
+    },
+    {
+      "id": "pyscf",
+      "catalog_ids": [
+        "pyscf"
+      ],
+      "priority": "P0",
+      "repository_url": "https://github.com/pyscf/pyscf",
+      "role": "current",
+      "commit": "2cdf8dc82e679a6a8fc053ce04493d94ad4fc18a",
+      "checkout_path": "_references/pyscf",
+      "paper_version_status": "not_established",
+      "selection_reason": "量化后端与强基线",
+      "acquisition_receipts": [
+        "research/acquisition/pyscf-20261117T175154169667Z.json"
+      ],
+      "tree": "954bc517ddfe055ca73e8fc92d472571f9f155f2",
+      "retrieved_at_utc": "2026-11-17T17:52:06.654324+00:00",
+      "checkout_kind": "full-tree",
+      "history_scope": "shallow",
+      "license": {
+        "paths": [
+          "LICENSE",
+          "NOTICE"
+        ],
+        "interpretation": "License files located; no redistribution or legal interpretation claimed."
+      },
+      "inventory_path": "research/inventories/pyscf.json.gz",
+      "inventory_sha256": "0bedfd9f31440446005beff5b8af025667a6ce5ba568bf428bf3b972b8e2860e",
+      "inventory_uncompressed_sha256": "5e9925603c3694cab43bbd525ea96f7fda1b59570250703bf8a965f63a853609",
+      "submodules": [],
+      "lfs": {
+        "pointer_count": 0,
+        "unhydrated_count": 0
+      },
+      "acquisition_status": "acquired",
+      "acquisition_scope": "Complete pinned tracked trees including initialized submodules; not all build dependencies, paper supplements, datasets or weights.",
+      "reviewer_record": {
+        "root_tree_reviewed": true,
+        "reviewer": "Codex",
+        "reviewed_at_utc": "2026-11-17T17:58:14.475299+00:00",
+        "review_scope": "Reviewed inventory integrity, full root path scope, license locations and submodule/LFS status; not source comprehension or dependency closure.",
+        "known_gaps": [],
+        "commit": "2cdf8dc82e679a6a8fc053ce04493d94ad4fc18a"
+      },
+      "file_count": 2357,
+      "top_level_directories": [
+        ".github",
+        "agent-recipes",
+        "conda",
+        "doc_legacy",
+        "docker",
+        "examples",
+        "pyscf",
+        "tools"
+      ],
+      "build_and_dependency_metadata": [
+        "pyproject.toml",
+        "setup.py"
+      ],
+      "reviewed_integrity_notices": [],
+      "known_gaps": [],
+      "external_dependency_closure": "pending; see SOURCE_GAPS.md",
+      "evidence_status": {
+        "indexed": true,
+        "files_read": 0,
+        "behavior_traced": 0,
+        "executed": 0
+      }
+    },
+    {
+      "id": "pyscf_2_14",
+      "catalog_ids": [
+        "pyscf"
+      ],
+      "priority": "P0",
+      "repository_url": "https://github.com/pyscf/pyscf",
+      "role": "release_source",
+      "commit": "c63a953ba603a5ad8c1d65d88da72aaf05ede4d8",
+      "checkout_path": "_references/pyscf_2_14",
+      "paper_version_status": "not_claimed",
+      "selection_reason": "v2.14.0 release corresponding to the independent CP-001 reference. Kept separate from the 2.15 development snapshot.",
+      "acquisition_receipts": [
+        "research/acquisition/pyscf_2_14-20261117T182414577278Z.json"
+      ],
+      "tree": "7b08a26aeaf78d02d24822cd32e070597b3f571c",
+      "retrieved_at_utc": "2026-11-17T18:24:21.744515+00:00",
+      "checkout_kind": "full-tree",
+      "history_scope": "shallow",
+      "license": {
+        "paths": [
+          "LICENSE",
+          "NOTICE"
+        ],
+        "interpretation": "Apache-2.0, LICENSE and NOTICE."
+      },
+      "inventory_path": "research/inventories/pyscf_2_14.json.gz",
+      "inventory_sha256": "68e7708990043476bf0a1ee799237b443b0da5cd90f7f0b63337b4ff6fc24aa6",
+      "inventory_uncompressed_sha256": "a21043ecb0dc2996862a9b3516704fcf952d58fa01f1ed0b115d76facffd4aa4",
+      "submodules": [],
+      "lfs": {
+        "pointer_count": 0,
+        "unhydrated_count": 0
+      },
+      "acquisition_status": "acquired",
+      "acquisition_scope": "Complete pinned tracked trees including initialized submodules; not all build dependencies, paper supplements, datasets or weights.",
+      "reviewer_record": {
+        "root_tree_reviewed": true,
+        "reviewer": "Codex",
+        "reviewed_at_utc": "2026-11-17T19:04:18.677023+00:00",
+        "review_scope": "Checked pinned full tree, inventory, clean checkout, license location, no submodules or recognized LFS pointers.",
+        "commit": "c63a953ba603a5ad8c1d65d88da72aaf05ede4d8",
+        "license_note": "Apache-2.0, LICENSE and NOTICE.",
+        "known_gaps": [
+          "Official reference v2.14.0; the originally installed n2 binary was not built from this checkout."
+        ]
+      },
+      "file_count": 2295,
+      "top_level_directories": [
+        ".github",
+        "conda",
+        "doc_legacy",
+        "docker",
+        "examples",
+        "pyscf",
+        "tools"
+      ],
+      "build_and_dependency_metadata": [
+        "pyproject.toml",
+        "setup.py"
+      ],
+      "reviewed_integrity_notices": [],
+      "known_gaps": [
+        "Official reference v2.14.0; the originally installed n2 binary was not built from this checkout."
+      ],
+      "external_dependency_closure": "pending; see SOURCE_GAPS.md",
+      "evidence_status": {
+        "indexed": true,
+        "files_read": 2,
+        "behavior_traced": 9,
+        "executed": 10
+      }
+    },
+    {
+      "id": "libcint_6_1_3",
+      "catalog_ids": [],
+      "priority": "P0",
+      "repository_url": "https://github.com/sunqm/libcint",
+      "role": "default_build_dependency",
+      "commit": "c72d30662ba08048940c9000cc352a220c867712",
+      "checkout_path": "_references/libcint_6_1_3",
+      "paper_version_status": "not_claimed",
+      "selection_reason": "Default Gaussian integral provider specified in PySCF v2.14.0 CMake for the archive audit. The wheel binary is hashed separately.",
+      "acquisition_receipts": [
+        "research/acquisition/libcint_6_1_3-20261117T184828627065Z.json"
+      ],
+      "tree": "ebae3ee7934629961d64e344f7fce9ec7e6d04a7",
+      "retrieved_at_utc": "2026-11-17T18:48:59.973773+00:00",
+      "checkout_kind": "full-tree",
+      "history_scope": "shallow",
+      "license": {
+        "paths": [
+          "LICENSE"
+        ],
+        "interpretation": "Apache-2.0, LICENSE."
+      },
+      "inventory_path": "research/inventories/libcint_6_1_3.json.gz",
+      "inventory_sha256": "e54a943b235075b5af1ec59c813625d2fbeb588ac3e55905c83fe3f561571532",
+      "inventory_uncompressed_sha256": "61bc82fedb8b725523f51b36e8584300d3c0c1ac10dfa08ba4662172bed4be37",
+      "submodules": [],
+      "lfs": {
+        "pointer_count": 0,
+        "unhydrated_count": 0
+      },
+      "acquisition_status": "acquired",
+      "acquisition_scope": "Complete pinned tracked trees including initialized submodules; not all build dependencies, paper supplements, datasets or weights.",
+      "reviewer_record": {
+        "root_tree_reviewed": true,
+        "reviewer": "Codex",
+        "reviewed_at_utc": "2026-11-17T19:04:18.677023+00:00",
+        "review_scope": "Checked pinned full tree, inventory, clean checkout, license location, no submodules or recognized LFS pointers.",
+        "commit": "c72d30662ba08048940c9000cc352a220c867712",
+        "license_note": "Apache-2.0, LICENSE.",
+        "known_gaps": [
+          "Default dependency specified by PySCF 2.14.0. No source-to-wheel attestation."
+        ]
+      },
+      "file_count": 133,
+      "top_level_directories": [
+        ".github",
+        "cmake",
+        "doc",
+        "examples",
+        "include",
+        "scripts",
+        "src",
+        "testsuite"
+      ],
+      "build_and_dependency_metadata": [
+        "CMakeLists.txt"
+      ],
+      "reviewed_integrity_notices": [],
+      "known_gaps": [
+        "Default dependency specified by PySCF 2.14.0. No source-to-wheel attestation."
+      ],
+      "external_dependency_closure": "pending; see SOURCE_GAPS.md",
+      "evidence_status": {
+        "indexed": true,
+        "files_read": 0,
+        "behavior_traced": 0,
+        "executed": 0
+      }
+    },
+    {
+      "id": "pyscfad",
+      "catalog_ids": [
+        "pyscfad"
+      ],
+      "priority": "P0",
+      "repository_url": "https://github.com/fishjojo/pyscfad",
+      "role": "current",
+      "commit": "190fbb4670de4c989333a5eb49b401efd5395a3b",
+      "checkout_path": "_references/pyscfad",
+      "paper_version_status": "not_established",
+      "selection_reason": "量化后端与强基线",
+      "acquisition_receipts": [
+        "research/acquisition/pyscfad-20261117T175206680577Z.json"
+      ],
+      "tree": "581c9fa13ba67fdcd4b360b00c4063e35a0223b4",
+      "retrieved_at_utc": "2026-11-17T17:52:12.503365+00:00",
+      "checkout_kind": "full-tree",
+      "history_scope": "shallow",
+      "license": {
+        "paths": [
+          "LICENSE",
+          "pyscfadlib/LICENSE"
+        ],
+        "interpretation": "License files located; no redistribution or legal interpretation claimed."
+      },
+      "inventory_path": "research/inventories/pyscfad.json.gz",
+      "inventory_sha256": "b461cb7246b707baf5fd87f7f0f5ae1dbf9b3627b76ab20f0464dad0b6c01250",
+      "inventory_uncompressed_sha256": "e9bea1c6a68e90a812687d54039e3bf7e712448507c119d4b72afd4ab8e1b706",
+      "submodules": [],
+      "lfs": {
+        "pointer_count": 0,
+        "unhydrated_count": 0
+      },
+      "acquisition_status": "acquired",
+      "acquisition_scope": "Complete pinned tracked trees including initialized submodules; not all build dependencies, paper supplements, datasets or weights.",
+      "reviewer_record": {
+        "root_tree_reviewed": true,
+        "reviewer": "Codex",
+        "reviewed_at_utc": "2026-11-17T17:58:14.475299+00:00",
+        "review_scope": "Reviewed inventory integrity, full root path scope, license locations and submodule/LFS status; not source comprehension or dependency closure.",
+        "known_gaps": [],
+        "commit": "190fbb4670de4c989333a5eb49b401efd5395a3b"
+      },
+      "file_count": 516,
+      "top_level_directories": [
+        ".claude",
+        ".github",
+        "doc",
+        "examples",
+        "pyscfad",
+        "pyscfadlib",
+        "scripts",
+        "tests"
+      ],
+      "build_and_dependency_metadata": [
+        "pyproject.toml"
+      ],
+      "reviewed_integrity_notices": [],
+      "known_gaps": [],
+      "external_dependency_closure": "pending; see SOURCE_GAPS.md",
+      "evidence_status": {
+        "indexed": true,
+        "files_read": 0,
+        "behavior_traced": 2,
+        "executed": 0
+      }
+    },
+    {
+      "id": "psi4",
+      "catalog_ids": [
+        "psi4"
+      ],
+      "priority": "P0",
+      "repository_url": "https://github.com/psi4/psi4",
+      "role": "current",
+      "commit": "4a005192ac03d1777915f4449a22f51b3ba06971",
+      "checkout_path": "_references/psi4",
+      "paper_version_status": "not_established",
+      "selection_reason": "量化后端与强基线",
+      "acquisition_receipts": [
+        "research/acquisition/psi4-20261117T175212515361Z.json"
+      ],
+      "tree": "e8ece8526996ebb53f155e386e4dab5ca3b67e11",
+      "retrieved_at_utc": "2026-11-17T17:52:40.311430+00:00",
+      "checkout_kind": "full-tree",
+      "history_scope": "shallow",
+      "license": {
+        "paths": [
+          "COPYING",
+          "COPYING.LESSER",
+          "cmake/math/LICENSE"
+        ],
+        "interpretation": "License files located; no redistribution or legal interpretation claimed."
+      },
+      "inventory_path": "research/inventories/psi4.json.gz",
+      "inventory_sha256": "49b42227963580490742fbcd152bf1906327d646f141bbd493890bfdca3eb53b",
+      "inventory_uncompressed_sha256": "faeee746350eb2dfbbbfe633c98879f579e9bba89173cd97d366f5d7d1e80832",
+      "submodules": [],
+      "lfs": {
+        "pointer_count": 0,
+        "unhydrated_count": 0
+      },
+      "acquisition_status": "acquired",
+      "acquisition_scope": "Complete pinned tracked trees including initialized submodules; not all build dependencies, paper supplements, datasets or weights.",
+      "reviewer_record": {
+        "root_tree_reviewed": true,
+        "reviewer": "Codex",
+        "reviewed_at_utc": "2026-11-17T17:58:14.475299+00:00",
+        "review_scope": "Reviewed inventory integrity, full root path scope, license locations and submodule/LFS status; not source comprehension or dependency closure.",
+        "known_gaps": [],
+        "commit": "4a005192ac03d1777915f4449a22f51b3ba06971"
+      },
+      "file_count": 9858,
+      "top_level_directories": [
+        ".azure-pipelines",
+        ".github",
+        "cdash",
+        "cmake",
+        "conda",
+        "devtools",
+        "doc",
+        "external",
+        "media",
+        "psi4",
+        "samples",
+        "tests"
+      ],
+      "build_and_dependency_metadata": [
+        "CMakeLists.txt",
+        "CTestConfig.cmake",
+        "environment.yml"
+      ],
+      "reviewed_integrity_notices": [],
+      "known_gaps": [],
+      "external_dependency_closure": "pending; see SOURCE_GAPS.md",
+      "evidence_status": {
+        "indexed": true,
+        "files_read": 0,
+        "behavior_traced": 0,
+        "executed": 0
+      }
+    },
+    {
+      "id": "psi4_1_10",
+      "catalog_ids": [
+        "psi4"
+      ],
+      "priority": "P0",
+      "repository_url": "https://github.com/psi4/psi4",
+      "role": "release_source",
+      "commit": "f2492db10de56b30b188239bdc6b4cfbc4a23bd5",
+      "checkout_path": "_references/psi4_1_10",
+      "paper_version_status": "not_claimed",
+      "selection_reason": "Psi4 v1.10 release tag, the producer version in the QCFractal single-point wavefunction fixtures. Source-level export conventions can change between releases.",
+      "acquisition_receipts": [
+        "research/acquisition/psi4_1_10-20261117T183039074255Z.json"
+      ],
+      "tree": "66c131f4323499bb19db8cc8cecbfb5597c74adb",
+      "retrieved_at_utc": "2026-11-17T18:31:00.500056+00:00",
+      "checkout_kind": "full-tree",
+      "history_scope": "shallow",
+      "license": {
+        "paths": [
+          "COPYING",
+          "COPYING.LESSER",
+          "cmake/math/LICENSE"
+        ],
+        "interpretation": "LGPL-3.0 / GPL text in COPYING.LESSER and COPYING; see individual sources."
+      },
+      "inventory_path": "research/inventories/psi4_1_10.json.gz",
+      "inventory_sha256": "50d529dd97633e50fa8d518633a45d0798d84b214e968944290d2cb9eaff1efd",
+      "inventory_uncompressed_sha256": "2a75496e2cba0ec50aafd8e7aa2b9a5ea0aecabfbbd69b7252dcd3def7c32f66",
+      "submodules": [],
+      "lfs": {
+        "pointer_count": 0,
+        "unhydrated_count": 0
+      },
+      "acquisition_status": "acquired",
+      "acquisition_scope": "Complete pinned tracked trees including initialized submodules; not all build dependencies, paper supplements, datasets or weights.",
+      "reviewer_record": {
+        "root_tree_reviewed": true,
+        "reviewer": "Codex",
+        "reviewed_at_utc": "2026-11-17T19:04:18.677023+00:00",
+        "review_scope": "Checked pinned full tree, inventory, clean checkout, license location, no submodules or recognized LFS pointers.",
+        "commit": "f2492db10de56b30b188239bdc6b4cfbc4a23bd5",
+        "license_note": "LGPL-3.0 / GPL text in COPYING.LESSER and COPYING; see individual sources.",
+        "known_gaps": [
+          "Matches the producer release declared in fixtures. Original build packages and linked libraries not reconstructed."
+        ]
+      },
+      "file_count": 9707,
+      "top_level_directories": [
+        ".azure-pipelines",
+        ".github",
+        "cdash",
+        "cmake",
+        "conda",
+        "devtools",
+        "doc",
+        "external",
+        "fsapt",
+        "media",
+        "psi4",
+        "samples",
+        "tests"
+      ],
+      "build_and_dependency_metadata": [
+        "CMakeLists.txt",
+        "CTestConfig.cmake",
+        "environment.yml"
+      ],
+      "reviewed_integrity_notices": [],
+      "known_gaps": [
+        "Matches the producer release declared in fixtures. Original build packages and linked libraries not reconstructed."
+      ],
+      "external_dependency_closure": "pending; see SOURCE_GAPS.md",
+      "evidence_status": {
+        "indexed": true,
+        "files_read": 3,
+        "behavior_traced": 12,
+        "executed": 0
+      }
+    },
+    {
+      "id": "qcfractal",
+      "catalog_ids": [
+        "qcfractal"
+      ],
+      "priority": "P0",
+      "repository_url": "https://github.com/MolSSI/QCFractal",
+      "role": "current",
+      "commit": "4ec1ed623f82536076c069dd65a4eb132969d9ed",
+      "checkout_path": "_references/qcfractal",
+      "paper_version_status": "not_established",
+      "selection_reason": "档案、工作流与状态",
+      "acquisition_receipts": [
+        "research/acquisition/qcfractal-20261117T175240401835Z.json"
+      ],
+      "tree": "618f821c0659d6c246085fc80dc9a09c519cba8e",
+      "retrieved_at_utc": "2026-11-17T17:52:52.142443+00:00",
+      "checkout_kind": "full-tree",
+      "history_scope": "shallow",
+      "license": {
+        "paths": [
+          "LICENSE",
+          "qcarchivetesting/LICENSE",
+          "qcfractal/LICENSE",
+          "qcfractalcompute/LICENSE",
+          "qcportal/LICENSE"
+        ],
+        "interpretation": "License files located; no redistribution or legal interpretation claimed."
+      },
+      "inventory_path": "research/inventories/qcfractal.json.gz",
+      "inventory_sha256": "5f4133be2ab765146e7d2bf3104d5baf4cbf0301a51fc21f9fdbd2e3c00b52fa",
+      "inventory_uncompressed_sha256": "f23ec7d854213e3f00106ad1961f4ac2a68cb09b24310e2496b32a68711b4a2f",
+      "submodules": [],
+      "lfs": {
+        "pointer_count": 0,
+        "unhydrated_count": 0
+      },
+      "acquisition_status": "acquired",
+      "acquisition_scope": "Complete pinned tracked trees including initialized submodules; not all build dependencies, paper supplements, datasets or weights.",
+      "reviewer_record": {
+        "root_tree_reviewed": true,
+        "reviewer": "Codex",
+        "reviewed_at_utc": "2026-11-17T17:58:14.475299+00:00",
+        "review_scope": "Reviewed inventory integrity, full root path scope, license locations and submodule/LFS status; not source comprehension or dependency closure.",
+        "known_gaps": [],
+        "commit": "4ec1ed623f82536076c069dd65a4eb132969d9ed"
+      },
+      "file_count": 980,
+      "top_level_directories": [
+        ".github",
+        "conda-build",
+        "docker",
+        "docs",
+        "qcarchivetesting",
+        "qcfractal",
+        "qcfractalcompute",
+        "qcportal",
+        "qcwebportal",
+        "server_admin"
+      ],
+      "build_and_dependency_metadata": [
+        "pyproject.toml"
+      ],
+      "reviewed_integrity_notices": [],
+      "known_gaps": [],
+      "external_dependency_closure": "pending; see SOURCE_GAPS.md",
+      "evidence_status": {
+        "indexed": true,
+        "files_read": 1,
+        "behavior_traced": 3,
+        "executed": 0
+      }
+    },
+    {
+      "id": "qcelemental",
+      "catalog_ids": [
+        "qcelemental"
+      ],
+      "priority": "P0",
+      "repository_url": "https://github.com/MolSSI/QCElemental",
+      "role": "current",
+      "commit": "90fda8fa100444da90b47c316a600130af3f1dc4",
+      "checkout_path": "_references/qcelemental",
+      "paper_version_status": "not_established",
+      "selection_reason": "档案、工作流与状态",
+      "acquisition_receipts": [
+        "research/acquisition/qcelemental-20261117T175252157492Z.json"
+      ],
+      "tree": "9aee5d3bdfdd7b53d51019b7b971e0e8572356f4",
+      "retrieved_at_utc": "2026-11-17T17:53:01.346785+00:00",
+      "checkout_kind": "full-tree",
+      "history_scope": "shallow",
+      "license": {
+        "paths": [
+          "LICENSE"
+        ],
+        "interpretation": "License files located; no redistribution or legal interpretation claimed."
+      },
+      "inventory_path": "research/inventories/qcelemental.json.gz",
+      "inventory_sha256": "8fb15acbea6a3bc6cc74beeaaa41ced9ea97dff25478df7dc01e5a47cf400adf",
+      "inventory_uncompressed_sha256": "f9ed88933c93c7dbe6f900cae12463e24b38347863d5e6816d622abe4d17bea8",
+      "submodules": [],
+      "lfs": {
+        "pointer_count": 0,
+        "unhydrated_count": 0
+      },
+      "acquisition_status": "acquired",
+      "acquisition_scope": "Complete pinned tracked trees including initialized submodules; not all build dependencies, paper supplements, datasets or weights.",
+      "reviewer_record": {
+        "root_tree_reviewed": true,
+        "reviewer": "Codex",
+        "reviewed_at_utc": "2026-11-17T17:58:14.475299+00:00",
+        "review_scope": "Reviewed inventory integrity, full root path scope, license locations and submodule/LFS status; not source comprehension or dependency closure.",
+        "known_gaps": [],
+        "commit": "90fda8fa100444da90b47c316a600130af3f1dc4"
+      },
+      "file_count": 177,
+      "top_level_directories": [
+        ".github",
+        "devtools",
+        "docs",
+        "qcelemental",
+        "raw_data",
+        "scripts"
+      ],
+      "build_and_dependency_metadata": [
+        "pyproject.toml",
+        "setup.cfg"
+      ],
+      "reviewed_integrity_notices": [],
+      "known_gaps": [],
+      "external_dependency_closure": "pending; see SOURCE_GAPS.md",
+      "evidence_status": {
+        "indexed": true,
+        "files_read": 0,
+        "behavior_traced": 1,
+        "executed": 0
+      }
+    },
+    {
+      "id": "trexio",
+      "catalog_ids": [
+        "trexio"
+      ],
+      "priority": "P0",
+      "repository_url": "https://github.com/TREX-CoE/trexio",
+      "role": "current",
+      "commit": "663f6af01736344d843dc93d1fa010b35536655d",
+      "checkout_path": "_references/trexio",
+      "paper_version_status": "not_established",
+      "selection_reason": "档案、工作流与状态",
+      "acquisition_receipts": [
+        "research/acquisition/trexio-20261117T175301353885Z.json"
+      ],
+      "tree": "2b8459f13684f3a16e17547e071ffd61b92febc1",
+      "retrieved_at_utc": "2026-11-17T17:54:10.801883+00:00",
+      "checkout_kind": "full-tree",
+      "history_scope": "shallow",
+      "license": {
+        "paths": [
+          "COPYING",
+          "LICENSE",
+          "tools/debian/copyright"
+        ],
+        "interpretation": "License files located; no redistribution or legal interpretation claimed."
+      },
+      "inventory_path": "research/inventories/trexio.json.gz",
+      "inventory_sha256": "eda66351700bda93d90ad8428bc5efa51834657526af2809580efc7fa451872a",
+      "inventory_uncompressed_sha256": "def84e59746045d4874ea459cf479d9c5eb14c0e0167011922f09ab612215a47",
+      "submodules": [
+        {
+          "path": "docs/org-html-themes",
+          "mode": "160000",
+          "git_type": "commit",
+          "commit_object_id": "20f84182239a537f4c6b533eb65daa2d342428dd",
+          "commit_size": null,
+          "initialized": true,
+          "matches_pin": true,
+          "checked_out_commit": "20f84182239a537f4c6b533eb65daa2d342428dd"
+        },
+        {
+          "path": "python/examples",
+          "mode": "160000",
+          "git_type": "commit",
+          "commit_object_id": "ad5c60aa6a7bca802c5918cef2aeb4debfa9f134",
+          "commit_size": null,
+          "initialized": true,
+          "matches_pin": true,
+          "checked_out_commit": "ad5c60aa6a7bca802c5918cef2aeb4debfa9f134"
+        }
+      ],
+      "lfs": {
+        "pointer_count": 0,
+        "unhydrated_count": 0
+      },
+      "acquisition_status": "acquired",
+      "acquisition_scope": "Complete pinned tracked trees including initialized submodules; not all build dependencies, paper supplements, datasets or weights.",
+      "reviewer_record": {
+        "root_tree_reviewed": true,
+        "reviewer": "Codex",
+        "reviewed_at_utc": "2026-11-17T17:58:14.475299+00:00",
+        "review_scope": "Reviewed inventory integrity, full root path scope, license locations and submodule/LFS status; not source comprehension or dependency closure.",
+        "known_gaps": [],
+        "commit": "663f6af01736344d843dc93d1fa010b35536655d"
+      },
+      "file_count": 226,
+      "top_level_directories": [
+        ".github",
+        "cmake",
+        "docker",
+        "docs",
+        "include",
+        "lib",
+        "m4",
+        "pkgconfig",
+        "python",
+        "src",
+        "tests",
+        "tools"
+      ],
+      "build_and_dependency_metadata": [
+        "CMakeLists.txt",
+        "Makefile.am",
+        "flake.lock"
+      ],
+      "reviewed_integrity_notices": [],
+      "known_gaps": [],
+      "external_dependency_closure": "pending; see SOURCE_GAPS.md",
+      "evidence_status": {
+        "indexed": true,
+        "files_read": 0,
+        "behavior_traced": 0,
+        "executed": 0
+      }
+    },
+    {
+      "id": "trexio_tools",
+      "catalog_ids": [
+        "trexio_tools"
+      ],
+      "priority": "P0",
+      "repository_url": "https://github.com/TREX-CoE/trexio_tools",
+      "role": "current",
+      "commit": "b07bf8d94cf4de9d93118ca023fff9dda5213450",
+      "checkout_path": "_references/trexio_tools",
+      "paper_version_status": "not_established",
+      "selection_reason": "档案、工作流与状态",
+      "acquisition_receipts": [
+        "research/acquisition/trexio_tools-20261117T175308600344Z.json"
+      ],
+      "tree": "cf55ad8a4e21f2b5268347d68cfb25ffd55b1bc8",
+      "retrieved_at_utc": "2026-11-17T17:53:16.508318+00:00",
+      "checkout_kind": "full-tree",
+      "history_scope": "shallow",
+      "license": {
+        "paths": [
+          "LICENSE"
+        ],
+        "interpretation": "License files located; no redistribution or legal interpretation claimed."
+      },
+      "inventory_path": "research/inventories/trexio_tools.json.gz",
+      "inventory_sha256": "eaf3488823092b01d044af8366cc48ca6ded5b02c71f8e0d545ef086a01c4a6b",
+      "inventory_uncompressed_sha256": "e28d6e4f0e21e5499836e0a1db0bb868c86c5d591647e81b70bb5d250f991081",
+      "submodules": [],
+      "lfs": {
+        "pointer_count": 0,
+        "unhydrated_count": 0
+      },
+      "acquisition_status": "acquired",
+      "acquisition_scope": "Complete pinned tracked trees including initialized submodules; not all build dependencies, paper supplements, datasets or weights.",
+      "reviewer_record": {
+        "root_tree_reviewed": true,
+        "reviewer": "Codex",
+        "reviewed_at_utc": "2026-11-17T17:58:14.475299+00:00",
+        "review_scope": "Reviewed inventory integrity, full root path scope, license locations and submodule/LFS status; not source comprehension or dependency closure.",
+        "known_gaps": [],
+        "commit": "b07bf8d94cf4de9d93118ca023fff9dda5213450"
+      },
+      "file_count": 50,
+      "top_level_directories": [
+        ".github",
+        "data",
+        "examples",
+        "src",
+        "utilities"
+      ],
+      "build_and_dependency_metadata": [
+        "pyproject.toml",
+        "requirements.txt",
+        "setup.cfg"
+      ],
+      "reviewed_integrity_notices": [],
+      "known_gaps": [],
+      "external_dependency_closure": "pending; see SOURCE_GAPS.md",
+      "evidence_status": {
+        "indexed": true,
+        "files_read": 1,
+        "behavior_traced": 0,
+        "executed": 0
+      }
+    },
+    {
+      "id": "mlelec",
+      "catalog_ids": [
+        "mlelec"
+      ],
+      "priority": "P0",
+      "repository_url": "https://github.com/curiosity54/mlelec",
+      "role": "current",
+      "commit": "73da12b404ff13008d123767f702ca129716dccd",
+      "checkout_path": "_references/mlelec",
+      "paper_version_status": "not_established",
+      "selection_reason": "电子态学习与可微混合计算",
+      "acquisition_receipts": [
+        "research/acquisition/mlelec-20261117T175316516586Z.json"
+      ],
+      "tree": "b67bfbedbfe9a41dae9dd47e7ec77de0fbe06016",
+      "retrieved_at_utc": "2026-11-17T17:54:21.706583+00:00",
+      "checkout_kind": "full-tree",
+      "history_scope": "shallow",
+      "license": {
+        "paths": [],
+        "interpretation": "No LICENSE/COPYING file in pinned tree; pyproject.toml contains license TODO. Redistribution/modification permission unresolved."
+      },
+      "inventory_path": "research/inventories/mlelec.json.gz",
+      "inventory_sha256": "b6c6a5bf7c113522930a03022fc0597ac6ed481f76dc9f24b734850ce5b1d46b",
+      "inventory_uncompressed_sha256": "7bf8c0264fd895318cddd299a4d7aff208fe9389686be6feecc55ecc77c71721",
+      "submodules": [],
+      "lfs": {
+        "pointer_count": 0,
+        "unhydrated_count": 0
+      },
+      "acquisition_status": "acquired",
+      "acquisition_scope": "Complete pinned tracked trees including initialized submodules; not all build dependencies, paper supplements, datasets or weights.",
+      "reviewer_record": {
+        "root_tree_reviewed": true,
+        "reviewer": "Codex",
+        "reviewed_at_utc": "2026-11-17T20:40:32.597587+00:00",
+        "review_scope": "Root-tree integrity stayed fixed. The Materials Cloud release explicitly identifies the distinct qm7 branch. Its deposit does not state an exact Git commit.",
+        "known_gaps": [
+          "The Materials Cloud v1 deposit links the separate qm7 branch but states no exact paper Git commit. This selected default branch has distinct content and provenance.",
+          "No explicit license found in this Git tree; see pyproject.toml. The archive CC BY 4.0 record is separately scoped."
+        ],
+        "license_note": "No LICENSE/COPYING file in pinned tree; pyproject.toml contains license TODO. Redistribution/modification permission unresolved.",
+        "commit": "73da12b404ff13008d123767f702ca129716dccd",
+        "prior_root_reviews": [
+          {
+            "root_tree_reviewed": true,
+            "reviewer": "Codex",
+            "reviewed_at_utc": "2026-11-17T17:58:14.475299+00:00",
+            "review_scope": "Reviewed inventory integrity, full root path scope, license locations and submodule/LFS status; not source comprehension or dependency closure.",
+            "known_gaps": [
+              "Paper branch/commit not established; current default branch is not asserted to reproduce Suman 2025.",
+              "No explicit license located; see pyproject.toml."
+            ],
+            "license_note": "No LICENSE/COPYING file in pinned tree; pyproject.toml contains license TODO. Redistribution/modification permission unresolved.",
+            "commit": "73da12b404ff13008d123767f702ca129716dccd"
+          }
+        ]
+      },
+      "file_count": 419,
+      "top_level_directories": [
+        ".ipynb_checkpoints",
+        ".tox",
+        "examples",
+        "notebooks",
+        "src",
+        "tests"
+      ],
+      "build_and_dependency_metadata": [
+        "pyproject.toml",
+        "requirements.txt",
+        "setup.py"
+      ],
+      "reviewed_integrity_notices": [],
+      "known_gaps": [
+        "The Materials Cloud v1 deposit links the separate qm7 branch but states no exact paper Git commit. This selected default branch has distinct content and provenance.",
+        "No explicit license found in this Git tree; see pyproject.toml. The archive CC BY 4.0 record is separately scoped."
+      ],
+      "external_dependency_closure": "pending; see SOURCE_GAPS.md",
+      "evidence_status": {
+        "indexed": true,
+        "files_read": 0,
+        "behavior_traced": 0,
+        "executed": 0
+      }
+    },
+    {
+      "id": "gpu4pyscf",
+      "catalog_ids": [
+        "gpu4pyscf"
+      ],
+      "priority": "P1",
+      "repository_url": "https://github.com/pyscf/gpu4pyscf",
+      "role": "current",
+      "commit": "5a717f899cb40d64a5799ef1df7e3626c505c3bd",
+      "checkout_path": "_references/gpu4pyscf",
+      "paper_version_status": "not_established",
+      "selection_reason": "量化后端与强基线",
+      "acquisition_receipts": [
+        "research/acquisition/gpu4pyscf-20261117T175107128315Z.json"
+      ],
+      "tree": "3294a795850626efec9f27e29a1ba97ff418d805",
+      "retrieved_at_utc": "2026-11-17T17:51:19.004176+00:00",
+      "checkout_kind": "full-tree",
+      "history_scope": "shallow",
+      "license": {
+        "paths": [
+          "LICENSE"
+        ],
+        "interpretation": "License files located; no redistribution or legal interpretation claimed."
+      },
+      "inventory_path": "research/inventories/gpu4pyscf.json.gz",
+      "inventory_sha256": "e85818b36cc60c05826f666b1ebcf9b2925cb7d9421ce8c8839c1fe8003c8588",
+      "inventory_uncompressed_sha256": "a89e60cd1012635854a8d2d80f9bfbed0702e093b5528cdbefa9e907a2eedcb7",
+      "submodules": [],
+      "lfs": {
+        "pointer_count": 0,
+        "unhydrated_count": 0
+      },
+      "acquisition_status": "acquired",
+      "acquisition_scope": "Complete pinned tracked trees including initialized submodules; not all build dependencies, paper supplements, datasets or weights.",
+      "reviewer_record": {
+        "root_tree_reviewed": true,
+        "reviewer": "Codex",
+        "reviewed_at_utc": "2026-11-17T17:58:14.475299+00:00",
+        "review_scope": "Reviewed inventory integrity, full root path scope, license locations and submodule/LFS status; not source comprehension or dependency closure.",
+        "known_gaps": [],
+        "commit": "5a717f899cb40d64a5799ef1df7e3626c505c3bd"
+      },
+      "file_count": 1031,
+      "top_level_directories": [
+        ".github",
+        ".vscode",
+        "benchmarks",
+        "builder",
+        "dockerfiles",
+        "examples",
+        "gpu4pyscf"
+      ],
+      "build_and_dependency_metadata": [
+        "requirements.txt",
+        "setup.py"
+      ],
+      "reviewed_integrity_notices": [],
+      "known_gaps": [],
+      "external_dependency_closure": "pending; see SOURCE_GAPS.md",
+      "evidence_status": {
+        "indexed": true,
+        "files_read": 0,
+        "behavior_traced": 0,
+        "executed": 0
+      }
+    },
+    {
+      "id": "qcdb",
+      "catalog_ids": [
+        "qcdb"
+      ],
+      "priority": "P1",
+      "repository_url": "https://github.com/qcdb/qcdb",
+      "role": "current",
+      "commit": "d9e156ef8b313ac0633211fc6b841f84a3ddde24",
+      "checkout_path": "_references/qcdb",
+      "paper_version_status": "not_established",
+      "selection_reason": "量化后端与强基线",
+      "acquisition_receipts": [
+        "research/acquisition/qcdb-20261117T175119020764Z.json"
+      ],
+      "tree": "1b71ebc456be1be5fea78d54be615cb2b4dd461d",
+      "retrieved_at_utc": "2026-11-17T17:51:26.872879+00:00",
+      "checkout_kind": "full-tree",
+      "history_scope": "shallow",
+      "license": {
+        "paths": [
+          "LICENSE"
+        ],
+        "interpretation": "License files located; no redistribution or legal interpretation claimed."
+      },
+      "inventory_path": "research/inventories/qcdb.json.gz",
+      "inventory_sha256": "c743fb387e0e2f31b556f4a9ed6fe83cf37962c71cc80ef197ff6725369b613d",
+      "inventory_uncompressed_sha256": "02cdbfe33e1fdf94292ab3862d52812a11d2cd91cb61fdc128c4dcec3b4bee8c",
+      "submodules": [],
+      "lfs": {
+        "pointer_count": 0,
+        "unhydrated_count": 0
+      },
+      "acquisition_status": "acquired",
+      "acquisition_scope": "Complete pinned tracked trees including initialized submodules; not all build dependencies, paper supplements, datasets or weights.",
+      "reviewer_record": {
+        "root_tree_reviewed": true,
+        "reviewer": "Codex",
+        "reviewed_at_utc": "2026-11-17T17:58:14.475299+00:00",
+        "review_scope": "Reviewed inventory integrity, full root path scope, license locations and submodule/LFS status; not source comprehension or dependency closure.",
+        "known_gaps": [],
+        "commit": "d9e156ef8b313ac0633211fc6b841f84a3ddde24"
+      },
+      "file_count": 950,
+      "top_level_directories": [
+        ".github",
+        "devtools",
+        "docs",
+        "media",
+        "old_tests",
+        "qcdb"
+      ],
+      "build_and_dependency_metadata": [
+        "Makefile",
+        "pyproject.toml",
+        "setup.cfg",
+        "setup.py"
+      ],
+      "reviewed_integrity_notices": [],
+      "known_gaps": [],
+      "external_dependency_closure": "pending; see SOURCE_GAPS.md",
+      "evidence_status": {
+        "indexed": true,
+        "files_read": 0,
+        "behavior_traced": 1,
+        "executed": 0
+      }
+    },
+    {
+      "id": "xtb",
+      "catalog_ids": [
+        "xtb"
+      ],
+      "priority": "P1",
+      "repository_url": "https://github.com/grimme-lab/xtb",
+      "role": "current",
+      "commit": "4b8c987066c7e9bd0c2b727ce026fb9a581c273a",
+      "checkout_path": "_references/xtb",
+      "paper_version_status": "not_established",
+      "selection_reason": "量化后端与强基线",
+      "acquisition_receipts": [
+        "research/acquisition/xtb-20261117T175126888857Z.json"
+      ],
+      "tree": "73b2243231b9abfd80c466ef08d5398ba24a560c",
+      "retrieved_at_utc": "2026-11-17T17:53:49.836946+00:00",
+      "checkout_kind": "full-tree",
+      "history_scope": "shallow",
+      "license": {
+        "paths": [
+          "COPYING",
+          "COPYING.LESSER",
+          "src/solv/ddcosmo/LICENSE"
+        ],
+        "interpretation": "License files located; no redistribution or legal interpretation claimed."
+      },
+      "inventory_path": "research/inventories/xtb.json.gz",
+      "inventory_sha256": "aeef477d73ee1b57e19e8b8da2ec4e2e6a717362a48efe440875be8b51d2991b",
+      "inventory_uncompressed_sha256": "5edb7d9215fc7aafc7406fce7dbd0221cbbf47dd60866bcfe2d88d399f7a84ff",
+      "submodules": [
+        {
+          "path": "assets/aur/xtb-git",
+          "mode": "160000",
+          "git_type": "commit",
+          "commit_object_id": "4c3d1a9078ff0e37a3c5ca1388e23394ce26bd8c",
+          "commit_size": null,
+          "initialized": true,
+          "matches_pin": true,
+          "checked_out_commit": "4c3d1a9078ff0e37a3c5ca1388e23394ce26bd8c"
+        }
+      ],
+      "lfs": {
+        "pointer_count": 0,
+        "unhydrated_count": 0
+      },
+      "acquisition_status": "acquired",
+      "acquisition_scope": "Complete pinned tracked trees including initialized submodules; not all build dependencies, paper supplements, datasets or weights.",
+      "reviewer_record": {
+        "root_tree_reviewed": true,
+        "reviewer": "Codex",
+        "reviewed_at_utc": "2026-11-17T17:58:14.475299+00:00",
+        "review_scope": "Reviewed inventory integrity, full root path scope, license locations and submodule/LFS status; not source comprehension or dependency closure.",
+        "known_gaps": [],
+        "commit": "4b8c987066c7e9bd0c2b727ce026fb9a581c273a"
+      },
+      "file_count": 579,
+      "top_level_directories": [
+        ".github",
+        "assets",
+        "cmake",
+        "include",
+        "man",
+        "meson",
+        "python",
+        "scripts",
+        "src",
+        "subprojects",
+        "symmetry",
+        "test"
+      ],
+      "build_and_dependency_metadata": [
+        "CMakeLists.txt",
+        "meson.build",
+        "meson_options.txt"
+      ],
+      "reviewed_integrity_notices": [],
+      "known_gaps": [],
+      "external_dependency_closure": "pending; see SOURCE_GAPS.md",
+      "evidence_status": {
+        "indexed": true,
+        "files_read": 0,
+        "behavior_traced": 0,
+        "executed": 0
+      }
+    },
+    {
+      "id": "tblite",
+      "catalog_ids": [
+        "tblite"
+      ],
+      "priority": "P1",
+      "repository_url": "https://github.com/tblite/tblite",
+      "role": "current",
+      "commit": "c6f66b93f7b3ed5db77698021822eaedb8074ce6",
+      "checkout_path": "_references/tblite",
+      "paper_version_status": "not_established",
+      "selection_reason": "量化后端与强基线",
+      "acquisition_receipts": [
+        "research/acquisition/tblite-20261117T175136043273Z.json"
+      ],
+      "tree": "61e3571943aebc36a88ed8172f9cd97a08ff802f",
+      "retrieved_at_utc": "2026-11-17T17:51:42.488420+00:00",
+      "checkout_kind": "full-tree",
+      "history_scope": "shallow",
+      "license": {
+        "paths": [
+          "COPYING",
+          "COPYING.LESSER"
+        ],
+        "interpretation": "License files located; no redistribution or legal interpretation claimed."
+      },
+      "inventory_path": "research/inventories/tblite.json.gz",
+      "inventory_sha256": "5bf1fd70e381edb5219d0d69f115f4437cb1b1c09f26d231f4f95988d5363a85",
+      "inventory_uncompressed_sha256": "77f98b114e1406b466491e89f4acbcc378fd4b956f310f1c795ce481d18dad28",
+      "submodules": [],
+      "lfs": {
+        "pointer_count": 0,
+        "unhydrated_count": 0
+      },
+      "acquisition_status": "acquired",
+      "acquisition_scope": "Complete pinned tracked trees including initialized submodules; not all build dependencies, paper supplements, datasets or weights.",
+      "reviewer_record": {
+        "root_tree_reviewed": true,
+        "reviewer": "Codex",
+        "reviewed_at_utc": "2026-11-17T17:58:14.475299+00:00",
+        "review_scope": "Reviewed inventory integrity, full root path scope, license locations and submodule/LFS status; not source comprehension or dependency closure.",
+        "known_gaps": [],
+        "commit": "c6f66b93f7b3ed5db77698021822eaedb8074ce6"
+      },
+      "file_count": 712,
+      "top_level_directories": [
+        ".github",
+        "app",
+        "assets",
+        "config",
+        "doc",
+        "include",
+        "man",
+        "python",
+        "src",
+        "subprojects",
+        "test"
+      ],
+      "build_and_dependency_metadata": [
+        "CMakeLists.txt",
+        "meson.build",
+        "meson_options.txt"
+      ],
+      "reviewed_integrity_notices": [],
+      "known_gaps": [],
+      "external_dependency_closure": "pending; see SOURCE_GAPS.md",
+      "evidence_status": {
+        "indexed": true,
+        "files_read": 0,
+        "behavior_traced": 0,
+        "executed": 0
+      }
+    },
+    {
+      "id": "dxtb",
+      "catalog_ids": [
+        "dxtb"
+      ],
+      "priority": "P1",
+      "repository_url": "https://github.com/grimme-lab/dxtb",
+      "role": "current",
+      "commit": "6961f9ceba9ce813e78a5be1ed5e383b8eb7824b",
+      "checkout_path": "_references/dxtb",
+      "paper_version_status": "not_established",
+      "selection_reason": "量化后端与强基线",
+      "acquisition_receipts": [
+        "research/acquisition/dxtb-20261117T175142501142Z.json"
+      ],
+      "tree": "b138b9858e277798ed710c8f2c7f4d26750f4f5c",
+      "retrieved_at_utc": "2026-11-17T17:51:49.769251+00:00",
+      "checkout_kind": "full-tree",
+      "history_scope": "shallow",
+      "license": {
+        "paths": [
+          "LICENSE",
+          "docs/source/05_about/license.rst"
+        ],
+        "interpretation": "License files located; no redistribution or legal interpretation claimed."
+      },
+      "inventory_path": "research/inventories/dxtb.json.gz",
+      "inventory_sha256": "1fd7837d0915c9ea1c674a2e6d81a19ef1628b04b301cd40e9f2629dd1a14943",
+      "inventory_uncompressed_sha256": "5678986f5f1e6f586026759415f1930524d3bc165f7b847280f9f3757b7a7db8",
+      "submodules": [],
+      "lfs": {
+        "pointer_count": 0,
+        "unhydrated_count": 0
+      },
+      "acquisition_status": "acquired",
+      "acquisition_scope": "Complete pinned tracked trees including initialized submodules; not all build dependencies, paper supplements, datasets or weights.",
+      "reviewer_record": {
+        "root_tree_reviewed": true,
+        "reviewer": "Codex",
+        "reviewed_at_utc": "2026-11-17T17:58:14.475299+00:00",
+        "review_scope": "Reviewed inventory integrity, full root path scope, license locations and submodule/LFS status; not source comprehension or dependency closure.",
+        "known_gaps": [],
+        "commit": "6961f9ceba9ce813e78a5be1ed5e383b8eb7824b"
+      },
+      "file_count": 847,
+      "top_level_directories": [
+        ".github",
+        ".vscode",
+        "assets",
+        "bin",
+        "docs",
+        "examples",
+        "src",
+        "test"
+      ],
+      "build_and_dependency_metadata": [
+        "environment.yaml",
+        "pyproject.toml",
+        "setup.cfg",
+        "setup.py"
+      ],
+      "reviewed_integrity_notices": [],
+      "known_gaps": [],
+      "external_dependency_closure": "pending; see SOURCE_GAPS.md",
+      "evidence_status": {
+        "indexed": true,
+        "files_read": 0,
+        "behavior_traced": 0,
+        "executed": 0
+      }
+    },
+    {
+      "id": "qcengine",
+      "catalog_ids": [
+        "qcengine"
+      ],
+      "priority": "P1",
+      "repository_url": "https://github.com/MolSSI/QCEngine",
+      "role": "current",
+      "commit": "64982fd087b9b02a76507e2ad2cb75c6f4b4a7e9",
+      "checkout_path": "_references/qcengine",
+      "paper_version_status": "not_established",
+      "selection_reason": "档案、工作流与状态",
+      "acquisition_receipts": [
+        "research/acquisition/qcengine-20261117T175149783578Z.json"
+      ],
+      "tree": "1aa3924b662c50e81f91c73fc3c5ec9148238520",
+      "retrieved_at_utc": "2026-11-17T17:51:55.210756+00:00",
+      "checkout_kind": "full-tree",
+      "history_scope": "shallow",
+      "license": {
+        "paths": [
+          "LICENSE"
+        ],
+        "interpretation": "License files located; no redistribution or legal interpretation claimed."
+      },
+      "inventory_path": "research/inventories/qcengine.json.gz",
+      "inventory_sha256": "115c2a86c4a499592d709edeedf3f4b9334314306b16550fe502abbeca68c82b",
+      "inventory_uncompressed_sha256": "7b6e0410af32f42a195111821be31892970dfa0608a2f5e2f83731775fb87504",
+      "submodules": [],
+      "lfs": {
+        "pointer_count": 0,
+        "unhydrated_count": 0
+      },
+      "acquisition_status": "acquired",
+      "acquisition_scope": "Complete pinned tracked trees including initialized submodules; not all build dependencies, paper supplements, datasets or weights.",
+      "reviewer_record": {
+        "root_tree_reviewed": true,
+        "reviewer": "Codex",
+        "reviewed_at_utc": "2026-11-17T17:58:14.475299+00:00",
+        "review_scope": "Reviewed inventory integrity, full root path scope, license locations and submodule/LFS status; not source comprehension or dependency closure.",
+        "known_gaps": [],
+        "commit": "64982fd087b9b02a76507e2ad2cb75c6f4b4a7e9"
+      },
+      "file_count": 178,
+      "top_level_directories": [
+        ".github",
+        "devtools",
+        "docs",
+        "examples",
+        "qcengine"
+      ],
+      "build_and_dependency_metadata": [
+        "Makefile",
+        "pyproject.toml",
+        "setup.cfg"
+      ],
+      "reviewed_integrity_notices": [],
+      "known_gaps": [],
+      "external_dependency_closure": "pending; see SOURCE_GAPS.md",
+      "evidence_status": {
+        "indexed": true,
+        "files_read": 0,
+        "behavior_traced": 0,
+        "executed": 0
+      }
+    },
+    {
+      "id": "aiida",
+      "catalog_ids": [
+        "aiida"
+      ],
+      "priority": "P1",
+      "repository_url": "https://github.com/aiidateam/aiida-core",
+      "role": "current",
+      "commit": "31c1dcf5936359c7eaaebaeb335dabe141dfb40e",
+      "checkout_path": "_references/aiida",
+      "paper_version_status": "not_established",
+      "selection_reason": "档案、工作流与状态",
+      "acquisition_receipts": [
+        "research/acquisition/aiida-20261117T175155219022Z.json"
+      ],
+      "tree": "770dc7ec7ad95443888fa2082f3b55dda9a6be96",
+      "retrieved_at_utc": "2026-11-17T17:52:09.251088+00:00",
+      "checkout_kind": "full-tree",
+      "history_scope": "shallow",
+      "license": {
+        "paths": [
+          "LICENSE.txt"
+        ],
+        "interpretation": "License files located; no redistribution or legal interpretation claimed."
+      },
+      "inventory_path": "research/inventories/aiida.json.gz",
+      "inventory_sha256": "2c4f1efc8d7f22f17236fa297b10abb3dc931fa2f85cce3da2405d91b6169fe1",
+      "inventory_uncompressed_sha256": "51eaf038c6db9f1ede81449166b4a14a0a826f2273d1dd6ba634515e5d38d918",
+      "submodules": [],
+      "lfs": {
+        "pointer_count": 0,
+        "unhydrated_count": 0
+      },
+      "acquisition_status": "acquired",
+      "acquisition_scope": "Complete pinned tracked trees including initialized submodules; not all build dependencies, paper supplements, datasets or weights.",
+      "reviewer_record": {
+        "root_tree_reviewed": true,
+        "reviewer": "Codex",
+        "reviewed_at_utc": "2026-11-17T17:58:14.475299+00:00",
+        "review_scope": "Reviewed inventory integrity, full root path scope, license locations and submodule/LFS status; not source comprehension or dependency closure.",
+        "known_gaps": [],
+        "commit": "31c1dcf5936359c7eaaebaeb335dabe141dfb40e"
+      },
+      "file_count": 1870,
+      "top_level_directories": [
+        ".agents",
+        ".claude",
+        ".devcontainer",
+        ".docker",
+        ".github",
+        ".molecule",
+        "docs",
+        "src",
+        "tests",
+        "utils"
+      ],
+      "build_and_dependency_metadata": [
+        "environment.yml",
+        "pyproject.toml",
+        "uv.lock"
+      ],
+      "reviewed_integrity_notices": [],
+      "known_gaps": [],
+      "external_dependency_closure": "pending; see SOURCE_GAPS.md",
+      "evidence_status": {
+        "indexed": true,
+        "files_read": 0,
+        "behavior_traced": 0,
+        "executed": 0
+      }
+    },
+    {
+      "id": "pyscf_forge",
+      "catalog_ids": [
+        "pyscf_forge"
+      ],
+      "priority": "P1",
+      "repository_url": "https://github.com/pyscf/pyscf-forge",
+      "role": "current",
+      "commit": "7e386107da6a463be73cfe67c3e01e087683b164",
+      "checkout_path": "_references/pyscf_forge",
+      "paper_version_status": "not_established",
+      "selection_reason": "档案、工作流与状态",
+      "acquisition_receipts": [
+        "research/acquisition/pyscf_forge-20261117T175209273601Z.json"
+      ],
+      "tree": "78c048968c27614cf964e73c8ba38b38d3dcda3f",
+      "retrieved_at_utc": "2026-11-17T17:52:19.889221+00:00",
+      "checkout_kind": "full-tree",
+      "history_scope": "shallow",
+      "license": {
+        "paths": [
+          "LICENSE",
+          "NOTICE"
+        ],
+        "interpretation": "License files located; no redistribution or legal interpretation claimed."
+      },
+      "inventory_path": "research/inventories/pyscf_forge.json.gz",
+      "inventory_sha256": "1c01bd8202534f991ba579372cfd16e940be71f707348a2846022c4573caf736",
+      "inventory_uncompressed_sha256": "5f8efc6731c4f9aba074776cf2bbd22a4ef1def5f3037203060738fb0bf84b99",
+      "submodules": [],
+      "lfs": {
+        "pointer_count": 0,
+        "unhydrated_count": 0
+      },
+      "acquisition_status": "acquired",
+      "acquisition_scope": "Complete pinned tracked trees including initialized submodules; not all build dependencies, paper supplements, datasets or weights.",
+      "reviewer_record": {
+        "root_tree_reviewed": true,
+        "reviewer": "Codex",
+        "reviewed_at_utc": "2026-11-17T17:58:14.475299+00:00",
+        "review_scope": "Reviewed inventory integrity, full root path scope, license locations and submodule/LFS status; not source comprehension or dependency closure.",
+        "known_gaps": [],
+        "commit": "7e386107da6a463be73cfe67c3e01e087683b164"
+      },
+      "file_count": 469,
+      "top_level_directories": [
+        ".github",
+        "agent-recipes",
+        "examples",
+        "pyscf"
+      ],
+      "build_and_dependency_metadata": [
+        "pyproject.toml",
+        "setup.py"
+      ],
+      "reviewed_integrity_notices": [],
+      "known_gaps": [],
+      "external_dependency_closure": "pending; see SOURCE_GAPS.md",
+      "evidence_status": {
+        "indexed": true,
+        "files_read": 0,
+        "behavior_traced": 0,
+        "executed": 0
+      }
+    },
+    {
+      "id": "schnorb",
+      "catalog_ids": [
+        "schnorb"
+      ],
+      "priority": "P1",
+      "repository_url": "https://github.com/atomistic-machine-learning/SchNOrb",
+      "role": "current",
+      "commit": "38cb268ea431b46e3b2088dda48bcd1983462ff5",
+      "checkout_path": "_references/schnorb",
+      "paper_version_status": "not_established",
+      "selection_reason": "电子态学习与可微混合计算",
+      "acquisition_receipts": [
+        "research/acquisition/schnorb-20261117T175219900516Z.json"
+      ],
+      "tree": "1db97ad45a94f3551e0d7eca6b720b4ba26392ca",
+      "retrieved_at_utc": "2026-11-17T17:52:35.736790+00:00",
+      "checkout_kind": "full-tree",
+      "history_scope": "shallow",
+      "license": {
+        "paths": [
+          "LICENSE"
+        ],
+        "interpretation": "License files located; no redistribution or legal interpretation claimed."
+      },
+      "inventory_path": "research/inventories/schnorb.json.gz",
+      "inventory_sha256": "cf361e7c8defa5b7754564d0b5ff5ef2d773263513505bb23b359301a85f5928",
+      "inventory_uncompressed_sha256": "479e4890bdbb24b7dd3f80bea432e3341c83df6ffe844f00542a348b47434b1f",
+      "submodules": [],
+      "lfs": {
+        "pointer_count": 0,
+        "unhydrated_count": 0
+      },
+      "acquisition_status": "acquired",
+      "acquisition_scope": "Complete pinned tracked trees including initialized submodules; not all build dependencies, paper supplements, datasets or weights.",
+      "reviewer_record": {
+        "root_tree_reviewed": true,
+        "reviewer": "Codex",
+        "reviewed_at_utc": "2026-11-17T17:58:14.475299+00:00",
+        "review_scope": "Reviewed inventory integrity, full root path scope, license locations and submodule/LFS status; not source comprehension or dependency closure.",
+        "known_gaps": [],
+        "commit": "38cb268ea431b46e3b2088dda48bcd1983462ff5"
+      },
+      "file_count": 14,
+      "top_level_directories": [
+        "example_data",
+        "src"
+      ],
+      "build_and_dependency_metadata": [
+        "setup.py"
+      ],
+      "reviewed_integrity_notices": [],
+      "known_gaps": [],
+      "external_dependency_closure": "pending; see SOURCE_GAPS.md",
+      "evidence_status": {
+        "indexed": true,
+        "files_read": 0,
+        "behavior_traced": 0,
+        "executed": 0
+      }
+    },
+    {
+      "id": "qhnet",
+      "catalog_ids": [
+        "qhnet",
+        "qh9"
+      ],
+      "priority": "P1",
+      "repository_url": "https://github.com/divelab/AIRS",
+      "role": "current",
+      "commit": "594e8bad8cd0b24a207c818e09b39ccc0aebcd4d",
+      "checkout_path": "_references/qhnet",
+      "paper_version_status": "not_established",
+      "selection_reason": "电子态学习与可微混合计算",
+      "acquisition_receipts": [
+        "research/acquisition/qhnet-20261117T175235744706Z.json"
+      ],
+      "tree": "edeadf2cd2fed92b9d5ac6c00d36bcf7c4865dcd",
+      "retrieved_at_utc": "2026-11-17T17:55:04.466004+00:00",
+      "checkout_kind": "full-tree",
+      "history_scope": "shallow",
+      "license": {
+        "paths": [
+          "LICENSE",
+          "OpenBio/ATGC_Gen/LICENSE",
+          "OpenDFT/OrbFlow/LICENSE",
+          "OpenDFT/QHBench/QH9/LICENSE",
+          "OpenMat/HIENet/LICENSE",
+          "OpenMat/Mat2Seq/LICENSE",
+          "OpenMat/PotNet/LICENSE",
+          "OpenPDE/G-FNO/LICENSE",
+          "OpenPDE/G-FNO/cu11.8/LICENSE",
+          "OpenPDE/SineNet/pdearena/LICENSE",
+          "OpenProt/LatentDiff/LatentDiff/ProteinMPNN/LICENSE",
+          "OpenProt/LatentDiff/LatentDiff/ProteinMPNN/training/LICENSE"
+        ],
+        "interpretation": "License files located; no redistribution or legal interpretation claimed."
+      },
+      "inventory_path": "research/inventories/qhnet.json.gz",
+      "inventory_sha256": "8b7f24db690777ba0e8f035444631e0e32e8903a6c286ccdbc1748df75ee95ce",
+      "inventory_uncompressed_sha256": "8595604c67db13d8770ad05d0177a1566d54a1f6131afc7d6e12d1c24fcdf9ff",
+      "submodules": [],
+      "lfs": {
+        "pointer_count": 0,
+        "unhydrated_count": 0
+      },
+      "acquisition_status": "acquired",
+      "acquisition_scope": "Complete pinned tracked trees including initialized submodules; not all build dependencies, paper supplements, datasets or weights.",
+      "reviewer_record": {
+        "root_tree_reviewed": true,
+        "reviewer": "Codex",
+        "reviewed_at_utc": "2026-11-17T17:59:08.919219+00:00",
+        "review_scope": "Reviewed complete root index scope, integrity blockers, submodule/LFS states and license locations; not source comprehension or external dependency closure.",
+        "known_gaps": [
+          "AIRS complete monorepo acquired; QHNet and QH9 share this pin. Their paper versions and individual dependencies remain unaudited."
+        ],
+        "commit": "594e8bad8cd0b24a207c818e09b39ccc0aebcd4d"
+      },
+      "file_count": 1641,
+      "top_level_directories": [
+        "OpenBio",
+        "OpenDFT",
+        "OpenMI",
+        "OpenMat",
+        "OpenMol",
+        "OpenODE",
+        "OpenPDE",
+        "OpenProt",
+        "OpenQM",
+        "Overview",
+        "figures"
+      ],
+      "build_and_dependency_metadata": [],
+      "reviewed_integrity_notices": [],
+      "known_gaps": [
+        "AIRS complete monorepo acquired; QHNet and QH9 share this pin. Their paper versions and individual dependencies remain unaudited."
+      ],
+      "external_dependency_closure": "pending; see SOURCE_GAPS.md",
+      "evidence_status": {
+        "indexed": true,
+        "files_read": 0,
+        "behavior_traced": 0,
+        "executed": 0
+      }
+    },
+    {
+      "id": "nabladft",
+      "catalog_ids": [
+        "nabladft"
+      ],
+      "priority": "P1",
+      "repository_url": "https://github.com/AIRI-Institute/nablaDFT",
+      "role": "current",
+      "commit": "67ca402809806e5dd55095e1f095ec9b2683ac41",
+      "checkout_path": "_references/nabladft",
+      "paper_version_status": "not_established",
+      "selection_reason": "电子态学习与可微混合计算",
+      "acquisition_receipts": [
+        "research/acquisition/nabladft-20261117T175504508930Z.json"
+      ],
+      "tree": "032187e0b0050ad67485bb9408fe99df3d941e57",
+      "retrieved_at_utc": "2026-11-17T17:55:21.841232+00:00",
+      "checkout_kind": "full-tree",
+      "history_scope": "shallow",
+      "license": {
+        "paths": [
+          "LICENSE"
+        ],
+        "interpretation": "License files located; no redistribution or legal interpretation claimed."
+      },
+      "inventory_path": "research/inventories/nabladft.json.gz",
+      "inventory_sha256": "4b1fcd943d115b59a24329ddf80a18b5fa95a4bb2d973d7c6940b33906575ba6",
+      "inventory_uncompressed_sha256": "75d4a705d2d9926f8a083a118a213e1b0c5b07b43830aa1b5df692877b2cf199",
+      "submodules": [],
+      "lfs": {
+        "pointer_count": 0,
+        "unhydrated_count": 0
+      },
+      "acquisition_status": "acquired",
+      "acquisition_scope": "Complete pinned tracked trees including initialized submodules; not all build dependencies, paper supplements, datasets or weights.",
+      "reviewer_record": {
+        "root_tree_reviewed": true,
+        "reviewer": "Codex",
+        "reviewed_at_utc": "2026-11-17T17:59:08.919219+00:00",
+        "review_scope": "Reviewed complete root index scope, integrity blockers, submodule/LFS states and license locations; not source comprehension or external dependency closure.",
+        "known_gaps": [],
+        "commit": "67ca402809806e5dd55095e1f095ec9b2683ac41"
+      },
+      "file_count": 229,
+      "top_level_directories": [
+        "config",
+        "examples",
+        "images",
+        "nablaDFT",
+        "requirements",
+        "tests"
+      ],
+      "build_and_dependency_metadata": [
+        "pyproject.toml",
+        "setup.py"
+      ],
+      "reviewed_integrity_notices": [],
+      "known_gaps": [],
+      "external_dependency_closure": "pending; see SOURCE_GAPS.md",
+      "evidence_status": {
+        "indexed": true,
+        "files_read": 0,
+        "behavior_traced": 0,
+        "executed": 0
+      }
+    },
+    {
+      "id": "ani1",
+      "catalog_ids": [
+        "ani1"
+      ],
+      "priority": "P1",
+      "repository_url": "https://github.com/isayev/ANI1_dataset",
+      "role": "current",
+      "commit": "62abf3b7deb00a5ee03b3749b32873a5654042cb",
+      "checkout_path": "_references/ani1",
+      "paper_version_status": "not_established",
+      "selection_reason": "多保真、主动采样与缺失标签",
+      "acquisition_receipts": [
+        "research/acquisition/ani1-20261117T175521851872Z.json"
+      ],
+      "tree": "e5478ee8ad35416d70ca4a25b5401f9da4ac3ed6",
+      "retrieved_at_utc": "2026-11-17T17:55:27.519828+00:00",
+      "checkout_kind": "full-tree",
+      "history_scope": "shallow",
+      "license": {
+        "paths": [
+          "LICENSE"
+        ],
+        "interpretation": "License files located; no redistribution or legal interpretation claimed."
+      },
+      "inventory_path": "research/inventories/ani1.json.gz",
+      "inventory_sha256": "d5e845c6d25bb1b810b66b1983480db6ebae62ef44971b99e72103ec3fe29419",
+      "inventory_uncompressed_sha256": "c947a72ef881099b9d973ade4b57af04ba8ef2a03d4ddbda25d76f09ec1b0ea3",
+      "submodules": [],
+      "lfs": {
+        "pointer_count": 0,
+        "unhydrated_count": 0
+      },
+      "acquisition_status": "acquired",
+      "acquisition_scope": "Complete pinned tracked trees including initialized submodules; not all build dependencies, paper supplements, datasets or weights.",
+      "reviewer_record": {
+        "root_tree_reviewed": true,
+        "reviewer": "Codex",
+        "reviewed_at_utc": "2026-11-17T17:59:08.919219+00:00",
+        "review_scope": "Reviewed complete root index scope, integrity blockers, submodule/LFS states and license locations; not source comprehension or external dependency closure.",
+        "known_gaps": [],
+        "commit": "62abf3b7deb00a5ee03b3749b32873a5654042cb"
+      },
+      "file_count": 6,
+      "top_level_directories": [
+        "benchmark",
+        "readers"
+      ],
+      "build_and_dependency_metadata": [],
+      "reviewed_integrity_notices": [],
+      "known_gaps": [],
+      "external_dependency_closure": "pending; see SOURCE_GAPS.md",
+      "evidence_status": {
+        "indexed": true,
+        "files_read": 0,
+        "behavior_traced": 0,
+        "executed": 0
+      }
+    },
+    {
+      "id": "ani1x_ccx",
+      "catalog_ids": [
+        "ani1x_ccx"
+      ],
+      "priority": "P1",
+      "repository_url": "https://github.com/aiqm/ANI1x_datasets",
+      "role": "current",
+      "commit": "c6b6d20b9915a4534204800b634fc1f8ee0a08bc",
+      "checkout_path": "_references/ani1x_ccx",
+      "paper_version_status": "not_established",
+      "selection_reason": "多保真、主动采样与缺失标签",
+      "acquisition_receipts": [
+        "research/acquisition/ani1x_ccx-20261117T175527526703Z.json"
+      ],
+      "tree": "384ce1edfa08f6bf616e51a11cadaf909ca00df7",
+      "retrieved_at_utc": "2026-11-17T17:55:46.319623+00:00",
+      "checkout_kind": "full-tree",
+      "history_scope": "shallow",
+      "license": {
+        "paths": [
+          "LICENSE"
+        ],
+        "interpretation": "License files located; no redistribution or legal interpretation claimed."
+      },
+      "inventory_path": "research/inventories/ani1x_ccx.json.gz",
+      "inventory_sha256": "a64d50f6541ae42d2248fbbcb713809e5f363acf9eb182d69454224c67ec9313",
+      "inventory_uncompressed_sha256": "5b8ee94bb1f0bf6b2b79ada89fe639c0c5695887bdad53d84ed35fad5a941012",
+      "submodules": [],
+      "lfs": {
+        "pointer_count": 0,
+        "unhydrated_count": 0
+      },
+      "acquisition_status": "acquired",
+      "acquisition_scope": "Complete pinned tracked trees including initialized submodules; not all build dependencies, paper supplements, datasets or weights.",
+      "reviewer_record": {
+        "root_tree_reviewed": true,
+        "reviewer": "Codex",
+        "reviewed_at_utc": "2026-11-17T17:59:08.919219+00:00",
+        "review_scope": "Reviewed complete root index scope, integrity blockers, submodule/LFS states and license locations; not source comprehension or external dependency closure.",
+        "known_gaps": [
+          "Pinned README identifies data-access scripts; actual FigShare dataset and original training pipeline not acquired."
+        ],
+        "commit": "c6b6d20b9915a4534204800b634fc1f8ee0a08bc"
+      },
+      "file_count": 12,
+      "top_level_directories": [
+        "data_embedding"
+      ],
+      "build_and_dependency_metadata": [],
+      "reviewed_integrity_notices": [],
+      "known_gaps": [
+        "Pinned README identifies data-access scripts; actual FigShare dataset and original training pipeline not acquired."
+      ],
+      "external_dependency_closure": "pending; see SOURCE_GAPS.md",
+      "evidence_status": {
+        "indexed": true,
+        "files_read": 1,
+        "behavior_traced": 1,
+        "executed": 0
+      }
+    },
+    {
+      "id": "torchani",
+      "catalog_ids": [
+        "torchani"
+      ],
+      "priority": "P1",
+      "repository_url": "https://github.com/aiqm/torchani",
+      "role": "current",
+      "commit": "4f9c239eac706e010d3ca1f7c5b7c91abc9ac4c7",
+      "checkout_path": "_references/torchani",
+      "paper_version_status": "not_established",
+      "selection_reason": "多保真、主动采样与缺失标签",
+      "acquisition_receipts": [
+        "research/acquisition/torchani-20261117T175546327365Z.json"
+      ],
+      "tree": "3079152e62000fe2552d3ed2925a4bfac70413f3",
+      "retrieved_at_utc": "2026-11-17T17:55:54.259213+00:00",
+      "checkout_kind": "full-tree",
+      "history_scope": "shallow",
+      "license": {
+        "paths": [
+          "LICENSE"
+        ],
+        "interpretation": "License files located; no redistribution or legal interpretation claimed."
+      },
+      "inventory_path": "research/inventories/torchani.json.gz",
+      "inventory_sha256": "ea05da04a5737744e68ef51ffc2188bdf32773d2af7712b40b05bc1de2dacd90",
+      "inventory_uncompressed_sha256": "adcf1ef07aa8aaefdb5afb0136c9828e04c798dda498de5737d575704041bfd0",
+      "submodules": [],
+      "lfs": {
+        "pointer_count": 0,
+        "unhydrated_count": 0
+      },
+      "acquisition_status": "acquired",
+      "acquisition_scope": "Complete pinned tracked trees including initialized submodules; not all build dependencies, paper supplements, datasets or weights.",
+      "reviewer_record": {
+        "root_tree_reviewed": true,
+        "reviewer": "Codex",
+        "reviewed_at_utc": "2026-11-17T17:59:08.919219+00:00",
+        "review_scope": "Reviewed complete root index scope, integrity blockers, submodule/LFS states and license locations; not source comprehension or external dependency closure.",
+        "known_gaps": [],
+        "commit": "4f9c239eac706e010d3ca1f7c5b7c91abc9ac4c7"
+      },
+      "file_count": 2299,
+      "top_level_directories": [
+        ".github",
+        "dev-data",
+        "docs",
+        "examples",
+        "recipe",
+        "tests",
+        "tools",
+        "torchani"
+      ],
+      "build_and_dependency_metadata": [
+        "dev_requirements.txt",
+        "environment.yaml",
+        "pyproject.toml",
+        "setup.py"
+      ],
+      "reviewed_integrity_notices": [],
+      "known_gaps": [],
+      "external_dependency_closure": "pending; see SOURCE_GAPS.md",
+      "evidence_status": {
+        "indexed": true,
+        "files_read": 0,
+        "behavior_traced": 0,
+        "executed": 0
+      }
+    },
+    {
+      "id": "qemfi",
+      "catalog_ids": [
+        "qemfi"
+      ],
+      "priority": "P1",
+      "repository_url": "https://github.com/SM4DA/QeMFi",
+      "role": "current",
+      "commit": "883eca5b12c96ca2248fddcc671fcd032696552a",
+      "checkout_path": "_references/qemfi",
+      "paper_version_status": "not_established",
+      "selection_reason": "多保真、主动采样与缺失标签",
+      "acquisition_receipts": [
+        "research/acquisition/qemfi-20261117T175554286271Z.json"
+      ],
+      "tree": "12f61b7a04fc6dedf1de88c6b7174e197142dd0b",
+      "retrieved_at_utc": "2026-11-17T17:55:58.849452+00:00",
+      "checkout_kind": "full-tree",
+      "history_scope": "shallow",
+      "license": {
+        "paths": [
+          "LICENSE"
+        ],
+        "interpretation": "License files located; no redistribution or legal interpretation claimed."
+      },
+      "inventory_path": "research/inventories/qemfi.json.gz",
+      "inventory_sha256": "925885b5f82ec257b3536a598d7cbbaf4a1c90b544000356af60b65778627571",
+      "inventory_uncompressed_sha256": "27b5110b97dba91b4874f5ea9844bac3e5854ea80d0d41f1fd5bf651813355d8",
+      "submodules": [],
+      "lfs": {
+        "pointer_count": 0,
+        "unhydrated_count": 0
+      },
+      "acquisition_status": "acquired",
+      "acquisition_scope": "Complete pinned tracked trees including initialized submodules; not all build dependencies, paper supplements, datasets or weights.",
+      "reviewer_record": {
+        "root_tree_reviewed": true,
+        "reviewer": "Codex",
+        "reviewed_at_utc": "2026-11-17T17:59:08.919219+00:00",
+        "review_scope": "Reviewed complete root index scope, integrity blockers, submodule/LFS states and license locations; not source comprehension or external dependency closure.",
+        "known_gaps": [],
+        "commit": "883eca5b12c96ca2248fddcc671fcd032696552a"
+      },
+      "file_count": 24,
+      "top_level_directories": [
+        "MFML",
+        "ORCA"
+      ],
+      "build_and_dependency_metadata": [
+        "requirements.txt"
+      ],
+      "reviewed_integrity_notices": [],
+      "known_gaps": [],
+      "external_dependency_closure": "pending; see SOURCE_GAPS.md",
+      "evidence_status": {
+        "indexed": true,
+        "files_read": 0,
+        "behavior_traced": 0,
+        "executed": 0
+      }
+    },
+    {
+      "id": "multifidelity_gnn",
+      "catalog_ids": [
+        "multifidelity_gnn"
+      ],
+      "priority": "P1",
+      "repository_url": "https://github.com/davidbuterez/multi-fidelity-gnns-for-drug-discovery-and-quantum-mechanics",
+      "role": "current",
+      "commit": "84ee8a280557d7fbc2ebd1042468e21ce8ea16c6",
+      "checkout_path": "_references/multifidelity_gnn",
+      "paper_version_status": "not_established",
+      "selection_reason": "多保真、主动采样与缺失标签",
+      "acquisition_receipts": [
+        "research/acquisition/multifidelity_gnn-20261117T175558861231Z.json"
+      ],
+      "tree": "aa25bf3ccc19bc98746edc506e253326de411279",
+      "retrieved_at_utc": "2026-11-17T17:56:51.486139+00:00",
+      "checkout_kind": "full-tree",
+      "history_scope": "shallow",
+      "license": {
+        "paths": [
+          "LICENSE"
+        ],
+        "interpretation": "License files located; no redistribution or legal interpretation claimed."
+      },
+      "inventory_path": "research/inventories/multifidelity_gnn.json.gz",
+      "inventory_sha256": "531852689e98a2991cc7150cce4bd79391d45c0d6cf7d48b907b740d255b97bd",
+      "inventory_uncompressed_sha256": "7030d3bd33fa54d2e3634bd1c26227704e3ee0b0a2d3f6cd3468d823edfac1bd",
+      "submodules": [],
+      "lfs": {
+        "pointer_count": 0,
+        "unhydrated_count": 0
+      },
+      "acquisition_status": "acquired",
+      "acquisition_scope": "Complete pinned tracked trees including initialized submodules; not all build dependencies, paper supplements, datasets or weights.",
+      "reviewer_record": {
+        "root_tree_reviewed": true,
+        "reviewer": "Codex",
+        "reviewed_at_utc": "2026-11-17T17:59:08.919219+00:00",
+        "review_scope": "Reviewed complete root index scope, integrity blockers, submodule/LFS states and license locations; not source comprehension or external dependency closure.",
+        "known_gaps": [],
+        "commit": "84ee8a280557d7fbc2ebd1042468e21ce8ea16c6"
+      },
+      "file_count": 44,
+      "top_level_directories": [
+        "3D_UMAP_data",
+        "assemble_QMugs",
+        "example_data",
+        "mfse",
+        "multifidelity_gnn",
+        "schnet_multiple_fidelities"
+      ],
+      "build_and_dependency_metadata": [],
+      "reviewed_integrity_notices": [],
+      "known_gaps": [],
+      "external_dependency_closure": "pending; see SOURCE_GAPS.md",
+      "evidence_status": {
+        "indexed": true,
+        "files_read": 0,
+        "behavior_traced": 0,
+        "executed": 0
+      }
+    },
+    {
+      "id": "hvmc",
+      "catalog_ids": [
+        "hvmc"
+      ],
+      "priority": "P1",
+      "repository_url": "https://github.com/RateTheory/HVMC",
+      "role": "current",
+      "commit": "389bc8abad78d574ae971289226a27c620a0c351",
+      "checkout_path": "_references/hvmc",
+      "paper_version_status": "not_established",
+      "selection_reason": "结构化矩阵补全",
+      "acquisition_receipts": [
+        "research/acquisition/hvmc-20261117T175651494393Z.json"
+      ],
+      "tree": "b0739b32d995d9da8c189c60d188215dfe082a89",
+      "retrieved_at_utc": "2026-11-17T17:57:10.941969+00:00",
+      "checkout_kind": "full-tree",
+      "history_scope": "shallow",
+      "license": {
+        "paths": [
+          "LICENSE"
+        ],
+        "interpretation": "License files located; no redistribution or legal interpretation claimed."
+      },
+      "inventory_path": "research/inventories/hvmc.json.gz",
+      "inventory_sha256": "06852be75c4ff43a6c5497c4502d46b6bde7860d4a6a555e8ff0987018666edb",
+      "inventory_uncompressed_sha256": "8b5263bf2bc7aeb373611613481586afd87c8f46424ed6027ba83984d8768043",
+      "submodules": [],
+      "lfs": {
+        "pointer_count": 0,
+        "unhydrated_count": 0
+      },
+      "acquisition_status": "acquired",
+      "acquisition_scope": "Complete pinned tracked trees including initialized submodules; not all build dependencies, paper supplements, datasets or weights.",
+      "reviewer_record": {
+        "root_tree_reviewed": true,
+        "reviewer": "Codex",
+        "reviewed_at_utc": "2026-11-17T17:59:08.919219+00:00",
+        "review_scope": "Reviewed complete root index scope, integrity blockers, submodule/LFS states and license locations; not source comprehension or external dependency closure.",
+        "known_gaps": [],
+        "commit": "389bc8abad78d574ae971289226a27c620a0c351"
+      },
+      "file_count": 44,
+      "top_level_directories": [
+        "Examples",
+        "Systems"
+      ],
+      "build_and_dependency_metadata": [],
+      "reviewed_integrity_notices": [],
+      "known_gaps": [],
+      "external_dependency_closure": "pending; see SOURCE_GAPS.md",
+      "evidence_status": {
+        "indexed": true,
+        "files_read": 0,
+        "behavior_traced": 0,
+        "executed": 0
+      }
+    },
+    {
+      "id": "pvmc",
+      "catalog_ids": [
+        "pvmc"
+      ],
+      "priority": "P1",
+      "repository_url": "https://github.com/RateTheory/PVMC",
+      "role": "current",
+      "commit": "0d3340644047abc727896753f48650f8c5205a89",
+      "checkout_path": "_references/pvmc",
+      "paper_version_status": "not_established",
+      "selection_reason": "结构化矩阵补全",
+      "acquisition_receipts": [
+        "research/acquisition/pvmc-20261117T175710950080Z.json"
+      ],
+      "tree": "8fa3b3d11150ac332e11ac1a599aec0755f5b23e",
+      "retrieved_at_utc": "2026-11-17T17:57:25.802057+00:00",
+      "checkout_kind": "full-tree",
+      "history_scope": "shallow",
+      "license": {
+        "paths": [
+          "LICENSE"
+        ],
+        "interpretation": "License files located; no redistribution or legal interpretation claimed."
+      },
+      "inventory_path": "research/inventories/pvmc.json.gz",
+      "inventory_sha256": "13aa7ab027b2e60fc8d01c1c1a345708a300c89ace7741a239846a0c99c0dc38",
+      "inventory_uncompressed_sha256": "e43418cdb5a8d564ae7d9b6a85abe29556088f80c78ef1aaa68314f30d5dc8b8",
+      "submodules": [],
+      "lfs": {
+        "pointer_count": 0,
+        "unhydrated_count": 0
+      },
+      "acquisition_status": "acquired",
+      "acquisition_scope": "Complete pinned tracked trees including initialized submodules; not all build dependencies, paper supplements, datasets or weights.",
+      "reviewer_record": {
+        "root_tree_reviewed": true,
+        "reviewer": "Codex",
+        "reviewed_at_utc": "2026-11-17T17:59:08.919219+00:00",
+        "review_scope": "Reviewed complete root index scope, integrity blockers, submodule/LFS states and license locations; not source comprehension or external dependency closure.",
+        "known_gaps": [],
+        "commit": "0d3340644047abc727896753f48650f8c5205a89"
+      },
+      "file_count": 48,
+      "top_level_directories": [
+        "MatrixMATs",
+        "MatrixPKLs",
+        "ResultMATs"
+      ],
+      "build_and_dependency_metadata": [],
+      "reviewed_integrity_notices": [],
+      "known_gaps": [],
+      "external_dependency_closure": "pending; see SOURCE_GAPS.md",
+      "evidence_status": {
+        "indexed": true,
+        "files_read": 0,
+        "behavior_traced": 0,
+        "executed": 0
+      }
+    },
+    {
+      "id": "vmc",
+      "catalog_ids": [
+        "vmc"
+      ],
+      "priority": "P1",
+      "repository_url": "https://github.com/gregongie/vmc",
+      "role": "current",
+      "commit": "e8ae5d1d8d306379c6ef11621cb3614078900f1d",
+      "checkout_path": "_references/vmc",
+      "paper_version_status": "not_established",
+      "selection_reason": "结构化矩阵补全",
+      "acquisition_receipts": [
+        "research/acquisition/vmc-20261117T175725807262Z.json"
+      ],
+      "tree": "1051e7a78243c9343ad651dbb3efc1326aa37737",
+      "retrieved_at_utc": "2026-11-17T17:57:31.535988+00:00",
+      "checkout_kind": "full-tree",
+      "history_scope": "shallow",
+      "license": {
+        "paths": [
+          "LICENSE"
+        ],
+        "interpretation": "License files located; no redistribution or legal interpretation claimed."
+      },
+      "inventory_path": "research/inventories/vmc.json.gz",
+      "inventory_sha256": "d56afc278aa2dd347d9eed70fe8353a9fead5b2b8cab686a0b534e80a0003a0d",
+      "inventory_uncompressed_sha256": "6ce429b86bbbc7f2855e3ff425de338dcb54bacb5dd2a92a7e3b70561a6501a9",
+      "submodules": [],
+      "lfs": {
+        "pointer_count": 0,
+        "unhydrated_count": 0
+      },
+      "acquisition_status": "acquired",
+      "acquisition_scope": "Complete pinned tracked trees including initialized submodules; not all build dependencies, paper supplements, datasets or weights.",
+      "reviewer_record": {
+        "root_tree_reviewed": true,
+        "reviewer": "Codex",
+        "reviewed_at_utc": "2026-11-17T17:59:08.919219+00:00",
+        "review_scope": "Reviewed complete root index scope, integrity blockers, submodule/LFS states and license locations; not source comprehension or external dependency closure.",
+        "known_gaps": [],
+        "commit": "e8ae5d1d8d306379c6ef11621cb3614078900f1d"
+      },
+      "file_count": 15,
+      "top_level_directories": [
+        "data"
+      ],
+      "build_and_dependency_metadata": [],
+      "reviewed_integrity_notices": [],
+      "known_gaps": [],
+      "external_dependency_closure": "pending; see SOURCE_GAPS.md",
+      "evidence_status": {
+        "indexed": true,
+        "files_read": 0,
+        "behavior_traced": 0,
+        "executed": 0
+      }
+    },
+    {
+      "id": "halide",
+      "catalog_ids": [
+        "halide"
+      ],
+      "priority": "P2",
+      "repository_url": "https://github.com/halide/Halide",
+      "role": "current",
+      "commit": "ac9f247583a633bd64e4b828d9bdcd4ffd952ce8",
+      "checkout_path": "_references/halide",
+      "paper_version_status": "not_established",
+      "selection_reason": "编译与程序专门化背景",
+      "acquisition_receipts": [
+        "research/acquisition/halide-20261117T175731542987Z.json"
+      ],
+      "tree": "cf8fea2239d2f425f38d33f1907914dd9e71ca87",
+      "retrieved_at_utc": "2026-11-17T17:57:48.193210+00:00",
+      "checkout_kind": "full-tree",
+      "history_scope": "shallow",
+      "license": {
+        "paths": [
+          "LICENSE.txt",
+          "dependencies/spirv/LICENSE",
+          "dependencies/vulkan/LICENSE.md"
+        ],
+        "interpretation": "License files located; no redistribution or legal interpretation claimed."
+      },
+      "inventory_path": "research/inventories/halide.json.gz",
+      "inventory_sha256": "76ed1e85ba17f2f9819832ca756faeacb9e5d44e4f40fccba0d218b9bf74ed93",
+      "inventory_uncompressed_sha256": "0baa653eb427136b166462690bb85c7bb4d0247906565f165b0cf2f654a5d6a9",
+      "submodules": [],
+      "lfs": {
+        "pointer_count": 0,
+        "unhydrated_count": 0
+      },
+      "acquisition_status": "acquired",
+      "acquisition_scope": "Complete pinned tracked trees including initialized submodules; not all build dependencies, paper supplements, datasets or weights.",
+      "reviewer_record": {
+        "root_tree_reviewed": true,
+        "reviewer": "Codex",
+        "reviewed_at_utc": "2026-11-17T17:59:08.919219+00:00",
+        "review_scope": "Reviewed complete root index scope, integrity blockers, submodule/LFS states and license locations; not source comprehension or external dependency closure.",
+        "known_gaps": [],
+        "commit": "ac9f247583a633bd64e4b828d9bdcd4ffd952ce8"
+      },
+      "file_count": 2745,
+      "top_level_directories": [
+        ".claude",
+        ".devcontainer",
+        ".github",
+        "apps",
+        "cmake",
+        "dependencies",
+        "doc",
+        "packaging",
+        "python_bindings",
+        "src",
+        "test",
+        "tools",
+        "tutorial",
+        "util"
+      ],
+      "build_and_dependency_metadata": [
+        "CMakeLists.txt",
+        "CMakePresets.json",
+        "Makefile",
+        "pyproject.toml",
+        "uv.lock"
+      ],
+      "reviewed_integrity_notices": [],
+      "known_gaps": [],
+      "external_dependency_closure": "pending; see SOURCE_GAPS.md",
+      "evidence_status": {
+        "indexed": true,
+        "files_read": 0,
+        "behavior_traced": 0,
+        "executed": 0
+      }
+    },
+    {
+      "id": "mlir",
+      "catalog_ids": [
+        "mlir"
+      ],
+      "priority": "P2",
+      "repository_url": "https://github.com/llvm/llvm-project",
+      "role": "current",
+      "commit": "46b9e6906663004e06c1d5be382b84b378d68846",
+      "checkout_path": "_references/mlir",
+      "paper_version_status": "not_established",
+      "selection_reason": "编译与程序专门化背景",
+      "acquisition_receipts": [
+        "research/acquisition/mlir-20261117T175748222533Z.json"
+      ],
+      "tree": "d2edc4e506a7cf153b1ac8fca8a0244317df583d",
+      "retrieved_at_utc": "2026-11-17T18:00:25.633009+00:00",
+      "checkout_kind": "full-tree",
+      "history_scope": "shallow",
+      "license": {
+        "paths": [
+          "LICENSE.TXT",
+          "bolt/LICENSE.TXT",
+          "clang-tools-extra/LICENSE.TXT",
+          "clang-tools-extra/clang-tidy/cert/LICENSE.TXT",
+          "clang/LICENSE.TXT",
+          "compiler-rt/LICENSE.TXT",
+          "cross-project-tests/debuginfo-tests/dexter/LICENSE.txt",
+          "flang-rt/LICENSE.TXT",
+          "flang/LICENSE.TXT",
+          "flang/test/Semantics/OpenMP/copying.f90",
+          "libc/LICENSE.TXT",
+          "libclc/LICENSE.TXT",
+          "libcxx/LICENSE.TXT",
+          "libcxxabi/LICENSE.TXT",
+          "libsycl/LICENSE.txt",
+          "libunwind/LICENSE.TXT",
+          "lld/LICENSE.TXT",
+          "lldb/LICENSE.TXT",
+          "lldb/source/Plugins/Highlighter/TreeSitter/Rust/tree-sitter-rust/LICENSE",
+          "lldb/source/Plugins/Highlighter/TreeSitter/Swift/tree-sitter-swift/LICENSE",
+          "lldb/tools/lldb-dap/extension/LICENSE.TXT",
+          "llvm/LICENSE.TXT",
+          "llvm/include/llvm/Support/LICENSE.TXT",
+          "llvm/lib/Support/BLAKE3/LICENSE",
+          "llvm/lib/Support/COPYRIGHT.regex",
+          "llvm/test/YAMLParser/LICENSE.txt",
+          "llvm/tools/llvm-ir2vec/Bindings/python/LICENSE.TXT",
+          "llvm/utils/lit/LICENSE.TXT",
+          "mlir/LICENSE.TXT",
+          "openmp/LICENSE.TXT",
+          "openmp/runtime/src/thirdparty/ittnotify/LICENSE.txt",
+          "orc-rt/LICENSE.TXT",
+          "polly/LICENSE.TXT",
+          "polly/lib/External/isl/LICENSE",
+          "polly/lib/External/isl/imath/LICENSE",
+          "third-party/benchmark/LICENSE",
+          "third-party/boost-math/LICENSE",
+          "third-party/unittest/googlemock/LICENSE.txt",
+          "third-party/unittest/googletest/LICENSE.TXT"
+        ],
+        "interpretation": "License files located; no redistribution or legal interpretation claimed."
+      },
+      "inventory_path": "research/inventories/mlir.json.gz",
+      "inventory_sha256": "a4ddaf7261cb9e24f8e99edafb27456dd56bb4c40f70eeeaaa7a52daf9823d66",
+      "inventory_uncompressed_sha256": "8632d1a9620bddb418b0e6f6f67e4ea08e5e212ff28f4c1cf2be18e824a7a77b",
+      "submodules": [],
+      "lfs": {
+        "pointer_count": 0,
+        "unhydrated_count": 0
+      },
+      "acquisition_status": "acquired",
+      "acquisition_scope": "Complete pinned tracked trees including initialized submodules; not all build dependencies, paper supplements, datasets or weights.",
+      "reviewer_record": {
+        "commit": "46b9e6906663004e06c1d5be382b84b378d68846",
+        "root_tree_reviewed": true,
+        "reviewer": "Codex",
+        "reviewed_at_utc": "2026-11-17T18:01:51.147116+00:00",
+        "review_scope": "Complete LLVM monorepo including MLIR; six inventory byte mismatches individually verified as tracked Git eol=crlf conversions. No file was rewritten or excluded.",
+        "known_gaps": [
+          "No semantic code audit, build or LLVM tests executed."
+        ],
+        "reviewed_checkout_conversions": {
+          "lld/test/wasm/Inputs/libstub.so": {
+            "kind": "git_eol_crlf",
+            "commit_object_id": "70f6648c60eeea02540b18e0d6accc54c5b677bb",
+            "worktree_sha256": "eae6cb0a6f701dce4879d42074e3d4cc90c5ef7b972278527857f79abc195830",
+            "verified_lf_to_crlf": true,
+            "git_attribute": "lld/test/wasm/Inputs/libstub.so: eol: crlf",
+            "scope": "Only checkout line-ending expansion; source bytes not edited."
+          },
+          "llvm/test/MC/AsmParser/preserve-comments-crlf.s": {
+            "kind": "git_eol_crlf",
+            "commit_object_id": "27c5b2e070719e34eaba9eadc007ed1ed54376a0",
+            "worktree_sha256": "1d21c1e5dc6bc57809bbac59bdcdfd1c7b99c1531ffdc700ee1ad02cc02d5d7b",
+            "verified_lf_to_crlf": true,
+            "git_attribute": "llvm/test/MC/AsmParser/preserve-comments-crlf.s: eol: crlf",
+            "scope": "Only checkout line-ending expansion; source bytes not edited."
+          },
+          "llvm/test/tools/llvm-mca/X86/directives-handle-crlf.s": {
+            "kind": "git_eol_crlf",
+            "commit_object_id": "db797a75c2617e4152cd8d06a45a8d69a1c91270",
+            "worktree_sha256": "61d867b1992032a4ae53890210fd3ee4e1ed68f40e982616d784412d1c017044",
+            "verified_lf_to_crlf": true,
+            "git_attribute": "llvm/test/tools/llvm-mca/X86/directives-handle-crlf.s: eol: crlf",
+            "scope": "Only checkout line-ending expansion; source bytes not edited."
+          },
+          "llvm/test/tools/split-file/Inputs/basic-aa.crlf": {
+            "kind": "git_eol_crlf",
+            "commit_object_id": "0b9ddeb2fc12a1405569a5269f37d4c41f4b4654",
+            "worktree_sha256": "c0f4c51937b2bd9b8582d7a66a41d98991e7df263cb0582925e3702c4f239e1e",
+            "verified_lf_to_crlf": true,
+            "git_attribute": "llvm/test/tools/split-file/Inputs/basic-aa.crlf: eol: crlf",
+            "scope": "Only checkout line-ending expansion; source bytes not edited."
+          },
+          "llvm/test/tools/split-file/Inputs/basic-bb.crlf": {
+            "kind": "git_eol_crlf",
+            "commit_object_id": "b6c3c808ec62fd7b693e657312037160695bbfda",
+            "worktree_sha256": "71049ad75863b7c2bb17720bcfc11945b9cbfed2507e8e3e2571fb06f6058c65",
+            "verified_lf_to_crlf": true,
+            "git_attribute": "llvm/test/tools/split-file/Inputs/basic-bb.crlf: eol: crlf",
+            "scope": "Only checkout line-ending expansion; source bytes not edited."
+          },
+          "llvm/test/tools/split-file/basic.crlf.test": {
+            "kind": "git_eol_crlf",
+            "commit_object_id": "f01074a87963028ea5fe008ea6452c06b8dd644b",
+            "worktree_sha256": "e239166284fa9beea9834cd772966f75fcc28215da442980bfc392dc693972b7",
+            "verified_lf_to_crlf": true,
+            "git_attribute": "llvm/test/tools/split-file/basic.crlf.test: eol: crlf",
+            "scope": "Only checkout line-ending expansion; source bytes not edited."
+          }
+        }
+      },
+      "file_count": 191342,
+      "top_level_directories": [
+        ".ci",
+        ".github",
+        "bolt",
+        "clang",
+        "clang-tools-extra",
+        "cmake",
+        "compiler-rt",
+        "cross-project-tests",
+        "flang",
+        "flang-rt",
+        "libc",
+        "libclc",
+        "libcxx",
+        "libcxxabi",
+        "libsycl",
+        "libunwind",
+        "lld",
+        "lldb",
+        "llvm",
+        "llvm-libgcc",
+        "mlir",
+        "offload",
+        "openmp",
+        "orc-rt",
+        "polly",
+        "runtimes",
+        "third-party",
+        "utils"
+      ],
+      "build_and_dependency_metadata": [
+        "pyproject.toml"
+      ],
+      "reviewed_integrity_notices": [
+        {
+          "path": "lld/test/wasm/Inputs/libstub.so",
+          "reason": "worktree differs from pinned blob (including possible checkout filters)"
+        },
+        {
+          "path": "llvm/test/MC/AsmParser/preserve-comments-crlf.s",
+          "reason": "worktree differs from pinned blob (including possible checkout filters)"
+        },
+        {
+          "path": "llvm/test/tools/llvm-mca/X86/directives-handle-crlf.s",
+          "reason": "worktree differs from pinned blob (including possible checkout filters)"
+        },
+        {
+          "path": "llvm/test/tools/split-file/Inputs/basic-aa.crlf",
+          "reason": "worktree differs from pinned blob (including possible checkout filters)"
+        },
+        {
+          "path": "llvm/test/tools/split-file/Inputs/basic-bb.crlf",
+          "reason": "worktree differs from pinned blob (including possible checkout filters)"
+        },
+        {
+          "path": "llvm/test/tools/split-file/basic.crlf.test",
+          "reason": "worktree differs from pinned blob (including possible checkout filters)"
+        }
+      ],
+      "known_gaps": [
+        "No semantic code audit, build or LLVM tests executed."
+      ],
+      "external_dependency_closure": "pending; see SOURCE_GAPS.md",
+      "evidence_status": {
+        "indexed": true,
+        "files_read": 0,
+        "behavior_traced": 0,
+        "executed": 0
+      }
+    },
+    {
+      "id": "equiv_dens_ml",
+      "catalog_ids": [],
+      "priority": "P1",
+      "repository_url": "https://github.com/MihailBogojeski/equiv_dens_ml",
+      "role": "current",
+      "commit": "f05a471b700ba519ed6f0f86343e1da8c288e412",
+      "checkout_path": "_references/equiv_dens_ml",
+      "paper_version_status": "not_established",
+      "selection_reason": "Followed PhiSNet author citation: density-learning, MD and property reuse; distinct from original PhiSNet and dm-PhiSNet",
+      "primary_url": "https://dft.uci.edu/pubs/BHVMBT26.pdf",
+      "acquisition_receipts": [
+        "research/acquisition/equiv_dens_ml-20261117T175430653655Z.json"
+      ],
+      "tree": "9b8edffdf0b71ae6f23face6a0cc758c3dec1757",
+      "retrieved_at_utc": "2026-11-17T17:54:49.358126+00:00",
+      "checkout_kind": "full-tree",
+      "history_scope": "shallow",
+      "license": {
+        "paths": [
+          "LICENSE"
+        ],
+        "interpretation": "License files located; no redistribution or legal interpretation claimed."
+      },
+      "inventory_path": "research/inventories/equiv_dens_ml.json.gz",
+      "inventory_sha256": "4733b8a2ea864177796016f3e49646f55dab0c62af81c8a3df9b97a0ce6f563d",
+      "inventory_uncompressed_sha256": "d7f4ff8fafa35bfff8837a9a30f8d48a74a580dc3c1983d68e7629eb7f2d429b",
+      "submodules": [],
+      "lfs": {
+        "pointer_count": 0,
+        "unhydrated_count": 0
+      },
+      "acquisition_status": "acquired",
+      "acquisition_scope": "Complete pinned tracked trees including initialized submodules; not all build dependencies, paper supplements, datasets or weights.",
+      "reviewer_record": {
+        "root_tree_reviewed": true,
+        "reviewer": "Codex",
+        "reviewed_at_utc": "2026-11-17T17:58:14.475299+00:00",
+        "review_scope": "Reviewed inventory integrity, full root path scope, license locations and submodule/LFS status; not source comprehension or dependency closure.",
+        "known_gaps": [],
+        "commit": "f05a471b700ba519ed6f0f86343e1da8c288e412"
+      },
+      "file_count": 354,
+      "top_level_directories": [
+        ".github",
+        "args",
+        "benchmarks",
+        "config",
+        "datasets",
+        "docs",
+        "experiments_scripts",
+        "horton",
+        "notebooks",
+        "pseudo_potentials",
+        "scripts",
+        "server_client_ex",
+        "src",
+        "tests"
+      ],
+      "build_and_dependency_metadata": [
+        "pyproject.toml",
+        "requirements.txt",
+        "setup.py"
+      ],
+      "reviewed_integrity_notices": [],
+      "known_gaps": [],
+      "external_dependency_closure": "pending; see SOURCE_GAPS.md",
+      "evidence_status": {
+        "indexed": true,
+        "files_read": 0,
+        "behavior_traced": 0,
+        "executed": 0
+      }
+    },
+    {
+      "id": "qcmanybody",
+      "catalog_ids": [],
+      "priority": "P0",
+      "repository_url": "https://github.com/MolSSI/QCManyBody",
+      "role": "release_source",
+      "commit": "90273ab21e4f824b286d55411666394c80cf2472",
+      "checkout_path": "_references/qcmanybody",
+      "paper_version_status": "current_release_v0.8.0_not_identified_as_2024_paper_pin",
+      "selection_reason": "Primary implementation of counterpoise-aware and multi-model many-body component planning and exact assembly at a fixed MBE target. Traced from the pinned QCFractal many-body service.",
+      "acquisition_receipts": [
+        "research/acquisition/qcmanybody-20261117T184438066906Z.json"
+      ],
+      "tree": "d37c3ea2e9050f0efaf55d327ec4fc4d08eeca09",
+      "retrieved_at_utc": "2026-11-17T18:44:41.404439+00:00",
+      "checkout_kind": "full-tree",
+      "history_scope": "shallow",
+      "license": {
+        "paths": [
+          "LICENSE"
+        ],
+        "interpretation": "BSD-3-Clause, LICENSE and CITATION.cff"
+      },
+      "inventory_path": "research/inventories/qcmanybody.json.gz",
+      "inventory_sha256": "a0dcbc094468841c66edf1ed09d166973700c4ecb8700b7460f73ad05d6ae19f",
+      "inventory_uncompressed_sha256": "2c2bf6fe120f7a26fc9c2839b5c782a6e9007c41cb2f947e96e731175de7a5fb",
+      "submodules": [],
+      "lfs": {
+        "pointer_count": 0,
+        "unhydrated_count": 0
+      },
+      "acquisition_status": "acquired",
+      "acquisition_scope": "Complete pinned tracked trees including initialized submodules; not all build dependencies, paper supplements, datasets or weights.",
+      "reviewer_record": {
+        "root_tree_reviewed": true,
+        "reviewer": "Codex",
+        "reviewed_at_utc": "2026-11-17T18:58:33.226689+00:00",
+        "commit": "90273ab21e4f824b286d55411666394c80cf2472",
+        "review_scope": "Checked all indexed tracked blobs, submodules, LFS, clean checkout and official version, with LICENSE at the root.",
+        "license_note": "BSD-3-Clause, LICENSE and CITATION.cff",
+        "known_gaps": [
+          "The modern release identifies the JCP 2024 paper; the exact paper-experiment commit is unconfirmed."
+        ]
+      },
+      "file_count": 108,
+      "top_level_directories": [
+        ".github",
+        ".vscode",
+        "docs",
+        "qcmanybody"
+      ],
+      "build_and_dependency_metadata": [
+        "pyproject.toml"
+      ],
+      "reviewed_integrity_notices": [],
+      "known_gaps": [
+        "The modern release identifies the JCP 2024 paper; the exact paper-experiment commit is unconfirmed."
+      ],
+      "external_dependency_closure": "pending; see SOURCE_GAPS.md",
+      "evidence_status": {
+        "indexed": true,
+        "files_read": 2,
+        "behavior_traced": 5,
+        "executed": 5
+      }
+    },
+    {
+      "id": "mol_prop_imputation",
+      "catalog_ids": [],
+      "priority": "P1",
+      "repository_url": "https://github.com/Savoie-Research-Group/mol_prop_imputation",
+      "role": "author_release",
+      "commit": "386217f233f5607a6c69e09c8bd9375fbde06444",
+      "checkout_path": "_references/mol_prop_imputation",
+      "paper_version_status": "v1.0.0-publication, explicitly identified as the frozen manuscript release by the authors",
+      "selection_reason": "Direct prior work on generalized molecular property imputation with observed labels as inputs. Statistical comparator to component reuse under fixed quantum targets.",
+      "acquisition_receipts": [
+        "research/acquisition/mol_prop_imputation-20261117T184551036095Z.json"
+      ],
+      "tree": "e92b75bcab32e42100a1ca20558f3673def3ccc3",
+      "retrieved_at_utc": "2026-11-17T18:45:52.945553+00:00",
+      "checkout_kind": "full-tree",
+      "history_scope": "shallow",
+      "license": {
+        "paths": [
+          "LICENSE"
+        ],
+        "interpretation": "MIT, LICENSE. External Zenodo data/weights under CC-BY-4.0."
+      },
+      "inventory_path": "research/inventories/mol_prop_imputation.json.gz",
+      "inventory_sha256": "6f1ac1e9c4969f9be6edfa75930c09abf759c6233a4eb7e9f86fbc616f4189af",
+      "inventory_uncompressed_sha256": "d1311933424562f96065e92864876b7c93c92ef050f97c31b2a70cef0a4864cd",
+      "submodules": [],
+      "lfs": {
+        "pointer_count": 0,
+        "unhydrated_count": 0
+      },
+      "acquisition_status": "acquired",
+      "acquisition_scope": "Complete pinned tracked trees including initialized submodules; not all build dependencies, paper supplements, datasets or weights.",
+      "reviewer_record": {
+        "root_tree_reviewed": true,
+        "reviewer": "Codex",
+        "reviewed_at_utc": "2026-11-17T18:58:33.226689+00:00",
+        "commit": "386217f233f5607a6c69e09c8bd9375fbde06444",
+        "review_scope": "Checked all indexed tracked blobs, submodules, LFS, clean checkout and official version, with LICENSE at the root.",
+        "license_note": "MIT, LICENSE. External Zenodo data/weights under CC-BY-4.0.",
+        "known_gaps": [
+          "Original training not rerun; one author checkpoint and a 32-row data slice inspected, other external releases/recipes are outside this audit."
+        ]
+      },
+      "file_count": 43,
+      "top_level_directories": [
+        "case_studies",
+        "random_drop_all2prop",
+        "random_drop_prop2prop",
+        "remove_x",
+        "struct_prop_comp"
+      ],
+      "build_and_dependency_metadata": [],
+      "reviewed_integrity_notices": [],
+      "known_gaps": [
+        "Original training not rerun; one author checkpoint and a 32-row data slice inspected, other external releases/recipes are outside this audit."
+      ],
+      "external_dependency_closure": "pending; see SOURCE_GAPS.md",
+      "evidence_status": {
+        "indexed": true,
+        "files_read": 2,
+        "behavior_traced": 3,
+        "executed": 1
+      }
+    },
+    {
+      "id": "mlelec_qm7",
+      "catalog_ids": [
+        "mlelec"
+      ],
+      "priority": "P1",
+      "repository_url": "https://github.com/curiosity54/mlelec",
+      "role": "archive_linked_branch",
+      "commit": "9c34bd9e1351770d3ac5b0887ecf0a98da317417",
+      "checkout_path": "_references/mlelec_qm7",
+      "paper_version_status": "Materials Cloud v1 explicitly links the qm7 branch. The observed tip predates the 2025-06-02 deposit; the deposit does not specify a git SHA.",
+      "selection_reason": "Resolve the archived branch separately from main and trace the property-supervised Hamiltonian model.",
+      "acquisition_receipts": [
+        "research/acquisition/mlelec_qm7-20261117T194159712710Z.json"
+      ],
+      "tree": "0b700a99488022a81bff992b6813d5d9af466245",
+      "retrieved_at_utc": "2026-11-17T19:42:39.735316+00:00",
+      "checkout_kind": "full-tree",
+      "history_scope": "shallow",
+      "license": {
+        "paths": [],
+        "interpretation": "No LICENSE/COPYING in tracked tree. pyproject.toml:8 is a commented license TODO. CC-BY-4.0 is recorded for the separately deposited materials."
+      },
+      "inventory_path": "research/inventories/mlelec_qm7.json.gz",
+      "inventory_sha256": "70c066c97352f8f6e71b841435f4ba4a1d6f7965401ab53554a70607f34c207d",
+      "inventory_uncompressed_sha256": "6c845d9bd2633ee17004e72ea749b1fd8759312a8f51c4c4fe5455731ca463b8",
+      "submodules": [],
+      "lfs": {
+        "pointer_count": 0,
+        "unhydrated_count": 0
+      },
+      "acquisition_status": "acquired",
+      "acquisition_scope": "Complete pinned tracked trees including initialized submodules; not all build dependencies, paper supplements, datasets or weights.",
+      "reviewer_record": {
+        "root_tree_reviewed": true,
+        "reviewer": "Codex",
+        "reviewed_at_utc": "2026-11-17T20:39:11.243084+00:00",
+        "commit": "9c34bd9e1351770d3ac5b0887ecf0a98da317417",
+        "review_scope": "Verified all 129 tracked files in the complete selected qm7 tree against inventory, no missing files, LFS or submodules; traced molecular Hamiltonian model, training losses and property derivatives; compared archive and branch Git blobs file-wise.",
+        "license_note": "No LICENSE/COPYING in tracked tree. pyproject.toml:8 is a commented license TODO. CC-BY-4.0 is recorded for the separately deposited materials.",
+        "known_gaps": [
+          "Materials Cloud links a branch and does not identify the exact training Git SHA; separate archive driver and environment are locked by content.",
+          "Model weights and ML training were not executed. Only molecular reference generator was executed from the release."
+        ]
+      },
+      "file_count": 129,
+      "top_level_directories": [
+        "examples",
+        "src",
+        "tutorials"
+      ],
+      "build_and_dependency_metadata": [
+        "pyproject.toml",
+        "setup.py"
+      ],
+      "reviewed_integrity_notices": [],
+      "known_gaps": [
+        "Materials Cloud links a branch and does not identify the exact training Git SHA; separate archive driver and environment are locked by content.",
+        "Model weights and ML training were not executed. Only molecular reference generator was executed from the release."
+      ],
+      "external_dependency_closure": "pending; see SOURCE_GAPS.md",
+      "evidence_status": {
+        "indexed": true,
+        "files_read": 1,
+        "behavior_traced": 9,
+        "executed": 0
+      }
+    },
+    {
+      "id": "dm_phisnet_history",
+      "catalog_ids": [
+        "dm_phisnet"
+      ],
+      "priority": "P0",
+      "repository_url": "https://github.com/zyyr17/dm-nn-so3-analytic",
+      "role": "historical_author_source",
+      "commit": "eb365d3e4d0e85ccf89740e5fad26970591c5b16",
+      "checkout_path": "_references/dm_phisnet_history",
+      "paper_version_status": "Prepublication author commit; author/paper relationship follows model and authorship, paper release equivalence unverified.",
+      "selection_reason": "Author history has a source-bearing October 2025 commit before its empty HEAD. Inspect exact available artifact without redistributing files.",
+      "acquisition_receipts": [
+        "research/acquisition/dm_phisnet_history-20261117T195137078095Z.json"
+      ],
+      "tree": "85ace16af649d2ed6af3efb44c17f7c79df1f154",
+      "retrieved_at_utc": "2026-11-17T19:51:43.629224+00:00",
+      "checkout_kind": "full-tree",
+      "history_scope": "shallow",
+      "license": {
+        "paths": [],
+        "interpretation": "No tracked LICENSE or COPYING located; checkout for inspection only. No redistribution or reuse authorization established."
+      },
+      "inventory_path": "research/inventories/dm_phisnet_history.json.gz",
+      "inventory_sha256": "ab6e6d2e8d79beae3360e729c425426295af9cc9b72d06dc40d22f139aad1476",
+      "inventory_uncompressed_sha256": "4383b1854e1e0a88840b86caf077f60cb7c948a597d2b7faee2f873afa6a3862",
+      "submodules": [],
+      "lfs": {
+        "pointer_count": 0,
+        "unhydrated_count": 0
+      },
+      "acquisition_status": "acquired",
+      "acquisition_scope": "Complete pinned tracked trees including initialized submodules; not all build dependencies, paper supplements, datasets or weights.",
+      "reviewer_record": {
+        "root_tree_reviewed": true,
+        "reviewer": "Codex",
+        "reviewed_at_utc": "2026-11-17T20:01:28.566293+00:00",
+        "commit": "eb365d3e4d0e85ccf89740e5fad26970591c5b16",
+        "review_scope": "Full tracked-file inventory, clean checkout, root tree and submodule/LFS declarations. Reading and execution accounted separately.",
+        "license_note": "No tracked LICENSE or COPYING located; checkout for inspection only. No redistribution or reuse authorization established.",
+        "known_gaps": [
+          "The accessible author's October 2025 commit precedes arXiv v1 and the 2026 journal article. Exact paper revision and weights are unconfirmed.",
+          "Named nitrate database and trained checkpoint in source/base_model/args.txt absent from this tree."
+        ]
+      },
+      "file_count": 190,
+      "top_level_directories": [
+        "source"
+      ],
+      "build_and_dependency_metadata": [],
+      "reviewed_integrity_notices": [],
+      "known_gaps": [
+        "The accessible author's October 2025 commit precedes arXiv v1 and the 2026 journal article. Exact paper revision and weights are unconfirmed.",
+        "Named nitrate database and trained checkpoint in source/base_model/args.txt absent from this tree."
+      ],
+      "external_dependency_closure": "pending; see SOURCE_GAPS.md",
+      "evidence_status": {
+        "indexed": true,
+        "files_read": 1,
+        "behavior_traced": 3,
+        "executed": 0
+      }
+    },
+    {
+      "id": "phisnet_casnet_fork",
+      "catalog_ids": [
+        "phisnet"
+      ],
+      "priority": "P0",
+      "repository_url": "https://github.com/marquetand/phisnet_fork",
+      "role": "later_adaptation",
+      "commit": "398f215554146069a386809a4bd3bed83eddf87a",
+      "checkout_path": "_references/phisnet_casnet_fork",
+      "paper_version_status": "Later CasNet derivative, not a verified copy of original paper release.",
+      "selection_reason": "Establish a second documented descendant of the original OpenReview method, apart from nablaDFT.",
+      "acquisition_receipts": [
+        "research/acquisition/phisnet_casnet_fork-20261117T195143638661Z.json"
+      ],
+      "tree": "ccb97a20d003cd3b0e8d6eb478ccbfdc611e3061",
+      "retrieved_at_utc": "2026-11-17T19:51:46.382394+00:00",
+      "checkout_kind": "full-tree",
+      "history_scope": "shallow",
+      "license": {
+        "paths": [],
+        "interpretation": "No tracked LICENSE or COPYING located; do not infer licensing from ancestry."
+      },
+      "inventory_path": "research/inventories/phisnet_casnet_fork.json.gz",
+      "inventory_sha256": "bb550a29e13dd620b815beeebc4c3bba167a9a8726a1617a52409dc9111f13b1",
+      "inventory_uncompressed_sha256": "26dd8efae29864d658bd197eee1968a282e891011e47d5fc3d1f2ef92236d09e",
+      "submodules": [],
+      "lfs": {
+        "pointer_count": 0,
+        "unhydrated_count": 0
+      },
+      "acquisition_status": "acquired",
+      "acquisition_scope": "Complete pinned tracked trees including initialized submodules; not all build dependencies, paper supplements, datasets or weights.",
+      "reviewer_record": {
+        "root_tree_reviewed": true,
+        "reviewer": "Codex",
+        "reviewed_at_utc": "2026-11-17T20:01:28.566293+00:00",
+        "commit": "398f215554146069a386809a4bd3bed83eddf87a",
+        "review_scope": "Full tracked-file inventory, clean checkout, root tree and submodule/LFS declarations. Reading and execution accounted separately.",
+        "license_note": "No tracked LICENSE or COPYING located; do not infer licensing from ancestry.",
+        "known_gaps": [
+          "Explicit CasNet continuation; original 2021 release byte identity unresolved."
+        ]
+      },
+      "file_count": 61,
+      "top_level_directories": [
+        "configurations",
+        "nn",
+        "training",
+        "utils"
+      ],
+      "build_and_dependency_metadata": [],
+      "reviewed_integrity_notices": [],
+      "known_gaps": [
+        "Explicit CasNet continuation; original 2021 release byte identity unresolved."
+      ],
+      "external_dependency_closure": "pending; see SOURCE_GAPS.md",
+      "evidence_status": {
+        "indexed": true,
+        "files_read": 0,
+        "behavior_traced": 0,
+        "executed": 0
+      }
+    },
+    {
+      "id": "delfta_v1",
+      "catalog_ids": [
+        "qmugs",
+        "delta_ml"
+      ],
+      "priority": "P1",
+      "repository_url": "https://github.com/josejimenezluna/delfta",
+      "role": "qmugs_authors_downstream_delta_learning",
+      "commit": "5635b514067b229227e27143cd87e0ad5057388e",
+      "checkout_path": "_references/delfta_v1",
+      "paper_version_status": "Authors designate v1.0.0 for their DelFTa paper 10.1039/D2CP00834C. Separate from the original 2015 Delta-ML and from QMugs generation.",
+      "selection_reason": "QMugs author collaboration releases a concrete GFN2 plus learned correction comparison trained on the dataset.",
+      "acquisition_receipts": [
+        "research/acquisition/delfta_v1-20261117T195617868913Z.json"
+      ],
+      "tree": "6729f5a7a5ec5cef335182c2bfafbd6c161d4a9f",
+      "retrieved_at_utc": "2026-11-17T19:56:20.691091+00:00",
+      "checkout_kind": "full-tree",
+      "history_scope": "shallow",
+      "license": {
+        "paths": [
+          "LICENSE"
+        ],
+        "interpretation": "AGPL-3.0, tracked root LICENSE; external data and weights separate."
+      },
+      "inventory_path": "research/inventories/delfta_v1.json.gz",
+      "inventory_sha256": "f5f2877d47698acdd14de4285f0f1c6479826452a363743188fa93e996f8dec8",
+      "inventory_uncompressed_sha256": "2cc1e03b67cfe1fe369c59bc183f6edd006101d06aa95147512fbbedb3d59d7e",
+      "submodules": [],
+      "lfs": {
+        "pointer_count": 0,
+        "unhydrated_count": 0
+      },
+      "acquisition_status": "acquired",
+      "acquisition_scope": "Complete pinned tracked trees including initialized submodules; not all build dependencies, paper supplements, datasets or weights.",
+      "reviewer_record": {
+        "root_tree_reviewed": true,
+        "reviewer": "Codex",
+        "reviewed_at_utc": "2026-11-17T20:01:28.566293+00:00",
+        "commit": "5635b514067b229227e27143cd87e0ad5057388e",
+        "review_scope": "Full tracked-file inventory, clean checkout, root tree and submodule/LFS declarations. Reading and execution accounted separately.",
+        "license_note": "AGPL-3.0, tracked root LICENSE; external data and weights separate.",
+        "known_gaps": [
+          "Weights, normalizers, and additional training/test data are external (delfta/download.py). The DelFTa paper is distinct from QMugs generation and the 2015 Delta-ML experiment."
+        ]
+      },
+      "file_count": 51,
+      "top_level_directories": [
+        ".github",
+        "conda-recipe",
+        "delfta",
+        "docs",
+        "tests",
+        "tutorials",
+        "utils"
+      ],
+      "build_and_dependency_metadata": [
+        "Makefile",
+        "environment.yml",
+        "environment_osx.yml",
+        "setup.py"
+      ],
+      "reviewed_integrity_notices": [],
+      "known_gaps": [
+        "Weights, normalizers, and additional training/test data are external (delfta/download.py). The DelFTa paper is distinct from QMugs generation and the 2015 Delta-ML experiment."
+      ],
+      "external_dependency_closure": "pending; see SOURCE_GAPS.md",
+      "evidence_status": {
+        "indexed": true,
+        "files_read": 0,
+        "behavior_traced": 1,
+        "executed": 0
+      }
+    },
+    {
+      "id": "openmdao_3_45_2",
+      "catalog_ids": [],
+      "priority": "P0",
+      "repository_url": "https://github.com/OpenMDAO/OpenMDAO",
+      "role": "release_source",
+      "commit": "64175aa55fb541355b2fb279a6bcfde01e17a878",
+      "checkout_path": "_references/openmdao_3_45_2",
+      "paper_version_status": "OpenMDAO 3.45.2 release, implementation of MNCO after Coleman & Verma 1998; original paper code not claimed",
+      "selection_reason": "Direct and substitution bidirectional coloring, compressed forward/adjoint products and structural-sparsity inference for total Jacobians. Strong comparator for GQC target-graph planning.",
+      "acquisition_receipts": [
+        "research/acquisition/openmdao_3_45_2-20261117T193201569420Z.json"
+      ],
+      "tree": "f960aa4407816969c2c2f1baea949c0975f0fd1b",
+      "retrieved_at_utc": "2026-11-17T19:32:07.952437+00:00",
+      "checkout_kind": "full-tree",
+      "history_scope": "shallow",
+      "license": {
+        "paths": [
+          "LICENSE.txt"
+        ],
+        "interpretation": "Apache-2.0, LICENSE.txt"
+      },
+      "inventory_path": "research/inventories/openmdao_3_45_2.json.gz",
+      "inventory_sha256": "0825abb07035194acb743c12c56f405c969cd463f7a184ee39ccd3e0b4b68018",
+      "inventory_uncompressed_sha256": "9f0d633aad6ae00302c1bdbd39e4eae7362dab191a24d65424014f33ae422a9d",
+      "submodules": [],
+      "lfs": {
+        "pointer_count": 0,
+        "unhydrated_count": 0
+      },
+      "acquisition_status": "acquired",
+      "acquisition_scope": "Complete pinned tracked trees including initialized submodules; not all build dependencies, paper supplements, datasets or weights.",
+      "reviewer_record": {
+        "root_tree_reviewed": true,
+        "reviewer": "Codex",
+        "reviewed_at_utc": "2026-11-17T19:55:04.928176+00:00",
+        "commit": "64175aa55fb541355b2fb279a6bcfde01e17a878",
+        "review_scope": "All tracked blobs examined for clean/present, integrity blockers, recursive gitlinks and LFS; selected behavior read and executed separately.",
+        "license_note": "Apache-2.0, LICENSE.txt",
+        "known_gaps": [
+          "Release implementation; no claim to have recovered the original mathematical paper source. Optional backends and transitive dependencies outside exercised paths remain separate."
+        ]
+      },
+      "file_count": 1239,
+      "top_level_directories": [
+        ".github",
+        "benchmark",
+        "openmdao",
+        "roadmaps"
+      ],
+      "build_and_dependency_metadata": [
+        "pixi.lock",
+        "pyproject.toml"
+      ],
+      "reviewed_integrity_notices": [],
+      "known_gaps": [
+        "Release implementation; no claim to have recovered the original mathematical paper source. Optional backends and transitive dependencies outside exercised paths remain separate."
+      ],
+      "external_dependency_closure": "pending; see SOURCE_GAPS.md",
+      "evidence_status": {
+        "indexed": true,
+        "files_read": 0,
+        "behavior_traced": 4,
+        "executed": 4
+      }
+    },
+    {
+      "id": "cppad_2026",
+      "catalog_ids": [],
+      "priority": "P0",
+      "repository_url": "https://github.com/coin-or/CppAD",
+      "role": "release_source",
+      "commit": "5d51b2aa6d6874c8d561da298a90b3721550d45d",
+      "checkout_path": "_references/cppad_2026",
+      "paper_version_status": "Release 20260000.0; older papers and ColPack implementation not identified with this pin.",
+      "selection_reason": "Sparse Jacobian drivers distinguish requested entries (subset) from complete structural support (pattern); concrete competitor to graph-based exact target completion.",
+      "acquisition_receipts": [
+        "research/acquisition/cppad_2026-20261117T193355135095Z.json"
+      ],
+      "tree": "7ea43540586ac79fc720d1a89599fb1c33e93607",
+      "retrieved_at_utc": "2026-11-17T19:33:59.252708+00:00",
+      "checkout_kind": "full-tree",
+      "history_scope": "shallow",
+      "license": {
+        "paths": [
+          "COPYING",
+          "appendix/license.xrst"
+        ],
+        "interpretation": "Root COPYING: EPL-2.0 with permitted secondary GPL-2.0-or-later under stated conditions"
+      },
+      "inventory_path": "research/inventories/cppad_2026.json.gz",
+      "inventory_sha256": "7de12f700da0237ec05967845c87821702954c1aa12828882a03fe1c05e154c7",
+      "inventory_uncompressed_sha256": "4d9bfb2cdc5a6ca3d49891e5d0e40b9b8a9eae66b6d7ec803bb618bb6a776bbd",
+      "submodules": [],
+      "lfs": {
+        "pointer_count": 0,
+        "unhydrated_count": 0
+      },
+      "acquisition_status": "acquired",
+      "acquisition_scope": "Complete pinned tracked trees including initialized submodules; not all build dependencies, paper supplements, datasets or weights.",
+      "reviewer_record": {
+        "root_tree_reviewed": true,
+        "reviewer": "Codex",
+        "reviewed_at_utc": "2026-11-17T19:55:04.928176+00:00",
+        "commit": "5d51b2aa6d6874c8d561da298a90b3721550d45d",
+        "review_scope": "All tracked blobs examined for clean/present, integrity blockers, recursive gitlinks and LFS; selected behavior read and executed separately.",
+        "license_note": "Root COPYING: EPL-2.0 with permitted secondary GPL-2.0-or-later under stated conditions",
+        "known_gaps": [
+          "Release implementation; no claim to have recovered the original mathematical paper source. Optional backends and transitive dependencies outside exercised paths remain separate."
+        ]
+      },
+      "file_count": 1473,
+      "top_level_directories": [
+        ".circleci",
+        ".github",
+        "appendix",
+        "bin",
+        "bug",
+        "cmake",
+        "cppad_ipopt",
+        "cppad_lib",
+        "example",
+        "include",
+        "introduction",
+        "pkgconfig",
+        "speed",
+        "test_more",
+        "val_graph",
+        "xrst"
+      ],
+      "build_and_dependency_metadata": [
+        "CMakeLists.txt"
+      ],
+      "reviewed_integrity_notices": [],
+      "known_gaps": [
+        "Release implementation; no claim to have recovered the original mathematical paper source. Optional backends and transitive dependencies outside exercised paths remain separate."
+      ],
+      "external_dependency_closure": "pending; see SOURCE_GAPS.md",
+      "evidence_status": {
+        "indexed": true,
+        "files_read": 1,
+        "behavior_traced": 4,
+        "executed": 4
+      }
+    },
+    {
+      "id": "pymor_2026_1",
+      "catalog_ids": [],
+      "priority": "P0",
+      "repository_url": "https://github.com/pymor/pymor",
+      "role": "release_source",
+      "commit": "36a0035e180694c7ad4eb8f083d9f1d65ceb6f42",
+      "checkout_path": "_references/pymor_2026_1",
+      "paper_version_status": "2026.1.1 release implementation of DWRCoerciveRBReductor, not claimed to be the original 2017 reference code.",
+      "selection_reason": "Dual-weighted residual output functional, paired primal/dual reduced bases, and qualified output error estimator for coercive linear systems. Direct prior on archived projected response and target precision.",
+      "acquisition_receipts": [
+        "research/acquisition/pymor_2026_1-20261117T194624773433Z.json"
+      ],
+      "tree": "120ef6675e0599010ea6e32366e31542f30b3b7b",
+      "retrieved_at_utc": "2026-11-17T19:46:28.839213+00:00",
+      "checkout_kind": "full-tree",
+      "history_scope": "shallow",
+      "license": {
+        "paths": [
+          "LICENSE.txt",
+          "LICENSES_bundled.txt"
+        ],
+        "interpretation": "BSD-2-Clause, LICENSE.txt; bundled components have additional terms in LICENSES_bundled.txt"
+      },
+      "inventory_path": "research/inventories/pymor_2026_1.json.gz",
+      "inventory_sha256": "4ae5f0dd2bdb08e7a38fe72677bed838c5e41f546dca5642ef29b3689285511a",
+      "inventory_uncompressed_sha256": "3f2d1398b84da9f0c2dd712988912ad9c6d16d3028828a8529752c31b5dff7db",
+      "submodules": [],
+      "lfs": {
+        "pointer_count": 0,
+        "unhydrated_count": 0
+      },
+      "acquisition_status": "acquired",
+      "acquisition_scope": "Complete pinned tracked trees including initialized submodules; not all build dependencies, paper supplements, datasets or weights.",
+      "reviewer_record": {
+        "root_tree_reviewed": true,
+        "reviewer": "Codex",
+        "reviewed_at_utc": "2026-11-17T19:55:04.928176+00:00",
+        "commit": "36a0035e180694c7ad4eb8f083d9f1d65ceb6f42",
+        "review_scope": "All tracked blobs examined for clean/present, integrity blockers, recursive gitlinks and LFS; selected behavior read and executed separately.",
+        "license_note": "BSD-2-Clause, LICENSE.txt; bundled components have additional terms in LICENSES_bundled.txt",
+        "known_gaps": [
+          "Release implementation; no claim to have recovered the original mathematical paper source. Optional backends and transitive dependencies outside exercised paths remain separate."
+        ]
+      },
+      "file_count": 518,
+      "top_level_directories": [
+        ".ci",
+        ".github",
+        "benchmarks",
+        "docker",
+        "docs",
+        "logo",
+        "src"
+      ],
+      "build_and_dependency_metadata": [
+        "Makefile",
+        "conda-linux-64.lock",
+        "conda-lock.yml",
+        "conda-osx-64.lock",
+        "conda-win-64.lock",
+        "pyproject.toml",
+        "requirements-ci-current.txt",
+        "requirements-ci-fenics-pins.in",
+        "requirements-ci-fenics.txt",
+        "requirements-ci-fenicsx.txt",
+        "requirements-ci-oldest-pins.in",
+        "requirements-ci-oldest.txt"
+      ],
+      "reviewed_integrity_notices": [],
+      "known_gaps": [
+        "Release implementation; no claim to have recovered the original mathematical paper source. Optional backends and transitive dependencies outside exercised paths remain separate."
+      ],
+      "external_dependency_closure": "pending; see SOURCE_GAPS.md",
+      "evidence_status": {
+        "indexed": true,
+        "files_read": 0,
+        "behavior_traced": 3,
+        "executed": 3
+      }
+    }
+  ],
+  "generated_at_utc": "2026-11-18T04:10:14.516000+00:00",
+  "catalog_origin_results": [
+    {
+      "id": "phisnet",
+      "primary_urls": [
+        "https://papers.nips.cc/paper/2021/hash/78f1893678afbeaa90b1fa01b9cfb860-Abstract.html",
+        "https://openreview.net/forum?id=auGY2UQfhSu"
+      ],
+      "acquisition_status": "blocked_source_location",
+      "commit": null,
+      "evidence": "research/audits/intake-originals.md",
+      "acquisition_evidence": "research/acquisition/originals-evidence-20261118.json",
+      "paper_commit": null,
+      "reason": "NeurIPS supplied a 14-page supplement PDF. The arXiv source holds manuscript/figures and OpenReview returned an access challenge. Two separately acquired adaptations do not establish the original release.",
+      "next_step": "Inspect the submission attachment and original software version if the normal OpenReview route becomes available.",
+      "other_repository_ids": [
+        "nabladft",
+        "phisnet_casnet_fork"
+      ]
+    },
+    {
+      "id": "dm_phisnet",
+      "primary_urls": [
+        "https://arxiv.org/abs/2604.27256",
+        "https://arxiv.org/html/2604.27256v1",
+        "https://doi.org/10.1002/chem.71739"
+      ],
+      "acquisition_status": "author_history_acquired_paper_revision_unverified",
+      "commit": "eb365d3e4d0e85ccf89740e5fad26970591c5b16",
+      "evidence": "research/audits/intake-originals.md",
+      "acquisition_evidence": "research/acquisition/originals-evidence-20261118.json",
+      "paper_commit": null,
+      "reason": "The first author’s repository has an empty observed default-branch tip. Its nonempty parent contains the network, analytic layer, generators, evaluation and environment. Neither the preprint nor publisher binds that Git commit to the paper.",
+      "next_step": "Check publisher SI and author-declared model weights/training assets when accessible; verify the exact version and licensing before attribution or redistribution.",
+      "historical_author_repository": "dm_phisnet_history"
+    },
+    {
+      "id": "im_gnn",
+      "primary_urls": [
+        "https://www.mi-research.net/en/article/doi/10.1007/s11633-023-1443-7"
+      ],
+      "acquisition_status": "blocked_source_location",
+      "commit": null,
+      "evidence": "research/audits/intake-originals.md",
+      "acquisition_evidence": "research/acquisition/originals-evidence-20261118.json",
+      "paper_commit": null,
+      "reason": "The 15-page publisher PDF describes method and settings. The checked author/lab repositories and hyperlinks did not identify the original code or a software deposit.",
+      "next_step": "Recheck the publisher supplement and author/lab project listings for a new citable release."
+    },
+    {
+      "id": "qpma",
+      "primary_urls": [
+        "https://arxiv.org/abs/2212.05469",
+        "https://arxiv.org/html/2212.05469v2",
+        "https://github.com/JeongminChae/QPMA"
+      ],
+      "acquisition_status": "blocked_source_location",
+      "commit": null,
+      "evidence": "research/audits/intake-originals.md",
+      "acquisition_evidence": "research/acquisition/originals-evidence-20261118.json",
+      "paper_commit": null,
+      "reason": "GitHub and Software Heritage both returned exact-origin 404 for the implementation URL named in the paper. Migration/access/deletion is undetermined.",
+      "next_step": "Check a publisher supplement or an independently published author migration or archive identifier."
+    },
+    {
+      "id": "qmugs",
+      "primary_urls": [
+        "https://www.nature.com/articles/s41597-022-01390-7",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC9174255/"
+      ],
+      "acquisition_status": "blocked_source_location",
+      "commit": null,
+      "evidence": "research/audits/intake-originals.md",
+      "acquisition_evidence": "research/acquisition/originals-evidence-20261118.json",
+      "paper_commit": null,
+      "reason": "Publisher JATS lists software versions, and ETH metadata identifies the data DOI and CC BY-SA 3.0. No version of the data generator was linked. The landing and storage API attempts returned 403/429. The original wavefunction members remain uninspected.",
+      "next_step": "Recheck ETH README, assignment table and an actual wavefunction tar member, then any versioned generating workflow. The acquired DelFTa paper release is a downstream consumer.",
+      "other_repository_ids": [
+        "delfta_v1"
+      ]
+    },
+    {
+      "id": "delta_ml",
+      "primary_urls": [
+        "https://arxiv.org/abs/1503.04987",
+        "https://doi.org/10.1021/acs.jctc.5b00099"
+      ],
+      "acquisition_status": "blocked_source_location",
+      "commit": null,
+      "evidence": "research/audits/intake-originals.md",
+      "acquisition_evidence": "research/acquisition/originals-evidence-20261118.json",
+      "paper_commit": null,
+      "reason": "ACS Figshare distributes a checksummed single three-page SI PDF with no embedded attachment, including the CV pseudocode. The author data links returned 404 or failed the TLS handshake. The 2015 training and evaluation code remains unlocated.",
+      "next_step": "Recheck the original research group releases and official dataset URLs for a citable historical workflow.",
+      "other_repository_ids": [
+        "delfta_v1"
+      ]
+    }
+  ],
+  "unresolved_catalog_entries": [
+    {
+      "id": "phisnet",
+      "primary_urls": [
+        "https://papers.nips.cc/paper/2021/hash/78f1893678afbeaa90b1fa01b9cfb860-Abstract.html",
+        "https://openreview.net/forum?id=auGY2UQfhSu"
+      ],
+      "acquisition_status": "blocked_source_location",
+      "commit": null,
+      "evidence": "research/audits/intake-originals.md",
+      "acquisition_evidence": "research/acquisition/originals-evidence-20261118.json",
+      "paper_commit": null,
+      "reason": "NeurIPS supplied a 14-page supplement PDF. The arXiv source holds manuscript/figures and OpenReview returned an access challenge. Two separately acquired adaptations do not establish the original release.",
+      "next_step": "Inspect the submission attachment and original software version if the normal OpenReview route becomes available.",
+      "other_repository_ids": [
+        "nabladft",
+        "phisnet_casnet_fork"
+      ]
+    },
+    {
+      "id": "im_gnn",
+      "primary_urls": [
+        "https://www.mi-research.net/en/article/doi/10.1007/s11633-023-1443-7"
+      ],
+      "acquisition_status": "blocked_source_location",
+      "commit": null,
+      "evidence": "research/audits/intake-originals.md",
+      "acquisition_evidence": "research/acquisition/originals-evidence-20261118.json",
+      "paper_commit": null,
+      "reason": "The 15-page publisher PDF describes method and settings. The checked author/lab repositories and hyperlinks did not identify the original code or a software deposit.",
+      "next_step": "Recheck the publisher supplement and author/lab project listings for a new citable release."
+    },
+    {
+      "id": "qpma",
+      "primary_urls": [
+        "https://arxiv.org/abs/2212.05469",
+        "https://arxiv.org/html/2212.05469v2",
+        "https://github.com/JeongminChae/QPMA"
+      ],
+      "acquisition_status": "blocked_source_location",
+      "commit": null,
+      "evidence": "research/audits/intake-originals.md",
+      "acquisition_evidence": "research/acquisition/originals-evidence-20261118.json",
+      "paper_commit": null,
+      "reason": "GitHub and Software Heritage both returned exact-origin 404 for the implementation URL named in the paper. Migration/access/deletion is undetermined.",
+      "next_step": "Check a publisher supplement or an independently published author migration or archive identifier."
+    },
+    {
+      "id": "qmugs",
+      "primary_urls": [
+        "https://www.nature.com/articles/s41597-022-01390-7",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC9174255/"
+      ],
+      "acquisition_status": "blocked_source_location",
+      "commit": null,
+      "evidence": "research/audits/intake-originals.md",
+      "acquisition_evidence": "research/acquisition/originals-evidence-20261118.json",
+      "paper_commit": null,
+      "reason": "Publisher JATS lists software versions, and ETH metadata identifies the data DOI and CC BY-SA 3.0. No version of the data generator was linked. The landing and storage API attempts returned 403/429. The original wavefunction members remain uninspected.",
+      "next_step": "Recheck ETH README, assignment table and an actual wavefunction tar member, then any versioned generating workflow. The acquired DelFTa paper release is a downstream consumer.",
+      "other_repository_ids": [
+        "delfta_v1"
+      ]
+    },
+    {
+      "id": "delta_ml",
+      "primary_urls": [
+        "https://arxiv.org/abs/1503.04987",
+        "https://doi.org/10.1021/acs.jctc.5b00099"
+      ],
+      "acquisition_status": "blocked_source_location",
+      "commit": null,
+      "evidence": "research/audits/intake-originals.md",
+      "acquisition_evidence": "research/acquisition/originals-evidence-20261118.json",
+      "paper_commit": null,
+      "reason": "ACS Figshare distributes a checksummed single three-page SI PDF with no embedded attachment, including the CV pseudocode. The author data links returned 404 or failed the TLS handshake. The 2015 training and evaluation code remains unlocated.",
+      "next_step": "Recheck the original research group releases and official dataset URLs for a citable historical workflow.",
+      "other_repository_ids": [
+        "delfta_v1"
+      ]
+    }
+  ],
+  "release_archives": [
+    {
+      "id": "mlelec_materialscloud_v1",
+      "role": "paper_data_and_source_archive",
+      "repository_id": "mlelec_qm7",
+      "record_id": "4vezc-jtt98",
+      "metadata_url": "https://archive.materialscloud.org/api/records/4vezc-jtt98",
+      "doi": "10.24435/materialscloud:mg-8f",
+      "version": 1,
+      "filename": "dataset.tar.xz",
+      "archive_bytes": 1156517180,
+      "publisher_md5": "86a870be93068bd7e2bb5a2524524827",
+      "archive_sha256": "df6c0894e0063a9c99ad5f94c5989f982dc7186b5476a092b32a780ad9640dfb",
+      "paper_git_commit": null,
+      "inspection_path": "research/experiments/mlelec_archive/release.json",
+      "member_index_path": "research/experiments/mlelec_archive/members.json.gz",
+      "archive_url": "https://archive.materialscloud.org/api/records/4vezc-jtt98/files/dataset.tar.xz/content",
+      "rights": [
+        {
+          "id": "cc-by-4.0",
+          "title": {
+            "en": "Creative Commons Attribution 4.0 International"
+          },
+          "description": {
+            "en": "The Creative Commons Attribution license allows re-distribution and re-use of a licensed work on the condition that the creator is appropriately credited."
+          },
+          "icon": "cc-by-icon",
+          "props": {
+            "url": "https://creativecommons.org/licenses/by/4.0/legalcode",
+            "scheme": "spdx"
+          }
+        }
+      ],
+      "publication_date": "2025-06-02",
+      "related_identifiers": [
+        {
+          "identifier": "https://pubs.acs.org/doi/full/10.1021/acs.jctc.5c00522",
+          "scheme": "url",
+          "relation_type": {
+            "id": "issupplementto",
+            "title": {
+              "en": "Is supplement to"
+            }
+          },
+          "resource_type": {
+            "id": "publication-article",
+            "title": {
+              "en": "Journal article"
+            }
+          }
+        },
+        {
+          "identifier": "https://github.com/curiosity54/mlelec/tree/qm7",
+          "scheme": "url",
+          "relation_type": {
+            "id": "issupplementto",
+            "title": {
+              "en": "Is supplement to"
+            }
+          },
+          "resource_type": {
+            "id": "software",
+            "title": {
+              "de": "Software",
+              "en": "Software"
+            }
+          }
+        }
+      ],
+      "selected_branch_commit": "9c34bd9e1351770d3ac5b0887ecf0a98da317417",
+      "selected_branch_tree": "0b700a99488022a81bff992b6813d5d9af466245",
+      "inspection_sha256": "965a20d06f25c923bf8b4ea01bd4292c807f8c788839c8d016e5b01239d7675a",
+      "index_sha256": "f869791bf2952fbc97b9448b7a97f8dfad0b43f6e25d8262ebbaa1e90612439a",
+      "index_uncompressed_sha256": "46c8319e89370b22b946afdd5e54cb117a2822230acb5a11204bb70177d4f2fb",
+      "regular_files": 915,
+      "directories": 267,
+      "total_file_bytes": 2254974706,
+      "source_like_members": 12,
+      "reviewer_record": "research/intake_review.json",
+      "evidence_status": {
+        "read": 3,
+        "behavior_traced": 2,
+        "executed": 1
+      }
+    }
+  ],
+  "summary": {
+    "repositories_indexed": 45,
+    "files_indexed": 268259,
+    "files_read": 24,
+    "behavior_traced": 90,
+    "executed": 48
+  }
+}

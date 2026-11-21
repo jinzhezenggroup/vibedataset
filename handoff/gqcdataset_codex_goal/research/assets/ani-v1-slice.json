@@ -1,0 +1,368 @@
+{
+  "record": "https://api.figshare.com/v2/articles/10047041/versions/1",
+  "doi": "10.6084/m9.figshare.10047041.v1",
+  "release_file": "ani1x-release.h5",
+  "file_id": 18112775,
+  "license": {
+    "value": 2,
+    "name": "CC0",
+    "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+  },
+  "size": 5590846027,
+  "publisher_md5": "98090dd6679106da861f52bed825ffb7",
+  "full_file_digest_verified": false,
+  "root_group_count": 3114,
+  "group_indices": [
+    0,
+    1557,
+    3113
+  ],
+  "fields_in_order": [
+    "coordinates",
+    "wb97x_dz.energy",
+    "wb97x_dz.forces",
+    "ccsd(t)_cbs.energy"
+  ],
+  "groups": [
+    {
+      "group": "/C10H10",
+      "row_interval": [
+        0,
+        256
+      ],
+      "rows_in_group": 392,
+      "atomic_numbers": [
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "keys_on_disk": [
+        "atomic_numbers",
+        "ccsd(t)_cbs.energy",
+        "coordinates",
+        "hf_dz.energy",
+        "hf_qz.energy",
+        "hf_tz.energy",
+        "mp2_dz.corr_energy",
+        "mp2_qz.corr_energy",
+        "mp2_tz.corr_energy",
+        "npno_ccsd(t)_dz.corr_energy",
+        "npno_ccsd(t)_tz.corr_energy",
+        "tpno_ccsd(t)_dz.corr_energy",
+        "wb97x_dz.cm5_charges",
+        "wb97x_dz.dipole",
+        "wb97x_dz.energy",
+        "wb97x_dz.forces",
+        "wb97x_dz.hirshfeld_charges",
+        "wb97x_dz.quadrupole",
+        "wb97x_tz.dipole",
+        "wb97x_tz.energy",
+        "wb97x_tz.forces",
+        "wb97x_tz.mbis_charges",
+        "wb97x_tz.mbis_dipoles",
+        "wb97x_tz.mbis_octupoles",
+        "wb97x_tz.mbis_quadrupoles",
+        "wb97x_tz.mbis_volumes"
+      ],
+      "fields": {
+        "coordinates": {
+          "shape_on_disk": [
+            392,
+            20,
+            3
+          ],
+          "dtype": "<f4",
+          "slice_sha256_c_order": "06838bd407c4ce73ae1436ca7428da137b9d4761f07d38f77cd65b4eaab9650e",
+          "finite_rows": 256,
+          "all_nan_rows": 0
+        },
+        "wb97x_dz.energy": {
+          "shape_on_disk": [
+            392
+          ],
+          "dtype": "<f8",
+          "slice_sha256_c_order": "40e20cd40db2bbe40e69628a6bb96b99a60a4d4533b9fbd07edb5059a73b4eac",
+          "finite_rows": 256,
+          "all_nan_rows": 0
+        },
+        "wb97x_dz.forces": {
+          "shape_on_disk": [
+            392,
+            20,
+            3
+          ],
+          "dtype": "<f4",
+          "slice_sha256_c_order": "6fc0b7923f0bf45b03972a498363b6c78a7171f8eac7d4c2ea9682d68234b94c",
+          "finite_rows": 256,
+          "all_nan_rows": 0
+        },
+        "ccsd(t)_cbs.energy": {
+          "shape_on_disk": [
+            392
+          ],
+          "dtype": "<f8",
+          "slice_sha256_c_order": "1655d2dc91ab8a50d84159d9f7736f635ffb851fbfab404063e36bf564d9281c",
+          "finite_rows": 28,
+          "all_nan_rows": 228
+        }
+      },
+      "finite_patterns_in_field_order": [
+        {
+          "present": [
+            true,
+            true,
+            true,
+            false
+          ],
+          "rows": 228
+        },
+        {
+          "present": [
+            true,
+            true,
+            true,
+            true
+          ],
+          "rows": 28
+        }
+      ]
+    },
+    {
+      "group": "/C4H5N7O1",
+      "row_interval": [
+        0,
+        18
+      ],
+      "rows_in_group": 18,
+      "atomic_numbers": [
+        6,
+        6,
+        6,
+        6,
+        1,
+        1,
+        1,
+        1,
+        1,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        8
+      ],
+      "keys_on_disk": [
+        "atomic_numbers",
+        "ccsd(t)_cbs.energy",
+        "coordinates",
+        "hf_dz.energy",
+        "hf_qz.energy",
+        "hf_tz.energy",
+        "mp2_dz.corr_energy",
+        "mp2_qz.corr_energy",
+        "mp2_tz.corr_energy",
+        "npno_ccsd(t)_dz.corr_energy",
+        "npno_ccsd(t)_tz.corr_energy",
+        "tpno_ccsd(t)_dz.corr_energy",
+        "wb97x_dz.cm5_charges",
+        "wb97x_dz.dipole",
+        "wb97x_dz.energy",
+        "wb97x_dz.forces",
+        "wb97x_dz.hirshfeld_charges",
+        "wb97x_dz.quadrupole",
+        "wb97x_tz.dipole",
+        "wb97x_tz.energy",
+        "wb97x_tz.forces",
+        "wb97x_tz.mbis_charges",
+        "wb97x_tz.mbis_dipoles",
+        "wb97x_tz.mbis_octupoles",
+        "wb97x_tz.mbis_quadrupoles",
+        "wb97x_tz.mbis_volumes"
+      ],
+      "fields": {
+        "coordinates": {
+          "shape_on_disk": [
+            18,
+            17,
+            3
+          ],
+          "dtype": "<f4",
+          "slice_sha256_c_order": "278f2e792ec586a860f2e9684585e0910c1bf0c1563f13455a1520188880e6ef",
+          "finite_rows": 18,
+          "all_nan_rows": 0
+        },
+        "wb97x_dz.energy": {
+          "shape_on_disk": [
+            18
+          ],
+          "dtype": "<f8",
+          "slice_sha256_c_order": "98b44d48e54d371f91bbc00640e02a9c3093b3b2a5601d7d50bb88d1f5373905",
+          "finite_rows": 18,
+          "all_nan_rows": 0
+        },
+        "wb97x_dz.forces": {
+          "shape_on_disk": [
+            18,
+            17,
+            3
+          ],
+          "dtype": "<f4",
+          "slice_sha256_c_order": "a75b5c1071cbb76911ff3c7ab6ff44067532832d496fa096242b1dcd084e6e8e",
+          "finite_rows": 18,
+          "all_nan_rows": 0
+        },
+        "ccsd(t)_cbs.energy": {
+          "shape_on_disk": [
+            18
+          ],
+          "dtype": "<f8",
+          "slice_sha256_c_order": "fdd8a593e7c672b6af6254490f47f4032aa7a81b4e3321dedbfe3a6711dc5ce0",
+          "finite_rows": 6,
+          "all_nan_rows": 12
+        }
+      },
+      "finite_patterns_in_field_order": [
+        {
+          "present": [
+            true,
+            true,
+            true,
+            false
+          ],
+          "rows": 12
+        },
+        {
+          "present": [
+            true,
+            true,
+            true,
+            true
+          ],
+          "rows": 6
+        }
+      ]
+    },
+    {
+      "group": "/O4",
+      "row_interval": [
+        0,
+        83
+      ],
+      "rows_in_group": 83,
+      "atomic_numbers": [
+        8,
+        8,
+        8,
+        8
+      ],
+      "keys_on_disk": [
+        "atomic_numbers",
+        "ccsd(t)_cbs.energy",
+        "coordinates",
+        "hf_dz.energy",
+        "hf_qz.energy",
+        "hf_tz.energy",
+        "mp2_dz.corr_energy",
+        "mp2_qz.corr_energy",
+        "mp2_tz.corr_energy",
+        "npno_ccsd(t)_dz.corr_energy",
+        "npno_ccsd(t)_tz.corr_energy",
+        "tpno_ccsd(t)_dz.corr_energy",
+        "wb97x_dz.cm5_charges",
+        "wb97x_dz.dipole",
+        "wb97x_dz.energy",
+        "wb97x_dz.forces",
+        "wb97x_dz.hirshfeld_charges",
+        "wb97x_dz.quadrupole",
+        "wb97x_tz.dipole",
+        "wb97x_tz.energy",
+        "wb97x_tz.forces",
+        "wb97x_tz.mbis_charges",
+        "wb97x_tz.mbis_dipoles",
+        "wb97x_tz.mbis_octupoles",
+        "wb97x_tz.mbis_quadrupoles",
+        "wb97x_tz.mbis_volumes"
+      ],
+      "fields": {
+        "coordinates": {
+          "shape_on_disk": [
+            83,
+            4,
+            3
+          ],
+          "dtype": "<f4",
+          "slice_sha256_c_order": "f6828a891bf6f4443402135a20ac44f5d8c7b9bd4171d5a4895793abd2760800",
+          "finite_rows": 83,
+          "all_nan_rows": 0
+        },
+        "wb97x_dz.energy": {
+          "shape_on_disk": [
+            83
+          ],
+          "dtype": "<f8",
+          "slice_sha256_c_order": "ba91533b0b24eb5d62821ec5b118858b1dc967648575fc9b8cfa7412699afcdd",
+          "finite_rows": 83,
+          "all_nan_rows": 0
+        },
+        "wb97x_dz.forces": {
+          "shape_on_disk": [
+            83,
+            4,
+            3
+          ],
+          "dtype": "<f4",
+          "slice_sha256_c_order": "d9f513d40d5f3c340d870cc8fdc3085038182858ae79ae405e45ef55354d55c3",
+          "finite_rows": 83,
+          "all_nan_rows": 0
+        },
+        "ccsd(t)_cbs.energy": {
+          "shape_on_disk": [
+            83
+          ],
+          "dtype": "<f8",
+          "slice_sha256_c_order": "003d2e047f42bd0a85ce79fa5c5abeb5092636aa0e20a25587d7a7a019225c2c",
+          "finite_rows": 0,
+          "all_nan_rows": 83
+        }
+      },
+      "finite_patterns_in_field_order": [
+        {
+          "present": [
+            true,
+            true,
+            true,
+            false
+          ],
+          "rows": 83
+        }
+      ]
+    }
+  ],
+  "block_cache_requested_bytes": 148373504,
+  "block_cache_misses": 566,
+  "elapsed_seconds": 663.6427275229944,
+  "versions": {
+    "fsspec": "2026.9.0",
+    "h5py": "3.16.0",
+    "numpy": "2.5.5"
+  }
+}

@@ -1,0 +1,122 @@
+{
+  "id": "qcdb",
+  "source": {
+    "id": "qcdb",
+    "catalog_ids": [
+      "qcdb"
+    ],
+    "priority": "P1",
+    "repository_url": "https://github.com/qcdb/qcdb",
+    "role": "current",
+    "commit": null,
+    "checkout_path": "_references/qcdb",
+    "paper_version_status": "not_established",
+    "selection_reason": "\u91cf\u5316\u540e\u7aef\u4e0e\u5f3a\u57fa\u7ebf"
+  },
+  "started_at_utc": "2026-11-17T17:51:19.020800+00:00",
+  "status": "indexed_pending_review",
+  "commands": [
+    {
+      "argv": [
+        "git",
+        "ls-remote",
+        "https://github.com/qcdb/qcdb",
+        "HEAD"
+      ],
+      "cwd": ".",
+      "started_at_utc": "2026-11-17T17:51:19.021054+00:00",
+      "stdout": "d9e156ef8b313ac0633211fc6b841f84a3ddde24\tHEAD\n",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 1.6196592479973333,
+      "ended_at_utc": "2026-11-17T17:51:20.641080+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "init",
+        "--quiet"
+      ],
+      "cwd": "_references/qcdb",
+      "started_at_utc": "2026-11-17T17:51:20.641622+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.005958829991868697,
+      "ended_at_utc": "2026-11-17T17:51:20.650461+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "remote",
+        "add",
+        "origin",
+        "https://github.com/qcdb/qcdb"
+      ],
+      "cwd": "_references/qcdb",
+      "started_at_utc": "2026-11-17T17:51:20.651120+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.00358739000512287,
+      "ended_at_utc": "2026-11-17T17:51:20.655369+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "protocol.file.allow=never",
+        "fetch",
+        "--depth=1",
+        "--no-tags",
+        "origin",
+        "d9e156ef8b313ac0633211fc6b841f84a3ddde24"
+      ],
+      "cwd": "_references/qcdb",
+      "started_at_utc": "2026-11-17T17:51:20.655814+00:00",
+      "stdout": "",
+      "stderr": "\u6765\u81ea https://github.com/qcdb/qcdb\n * branch            d9e156ef8b313ac0633211fc6b841f84a3ddde24 -> FETCH_HEAD\n",
+      "returncode": 0,
+      "elapsed_seconds": 5.83635726000648,
+      "ended_at_utc": "2026-11-17T17:51:26.492562+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "core.autocrlf=false",
+        "checkout",
+        "--detach",
+        "d9e156ef8b313ac0633211fc6b841f84a3ddde24"
+      ],
+      "cwd": "_references/qcdb",
+      "started_at_utc": "2026-11-17T17:51:26.493144+00:00",
+      "stdout": "",
+      "stderr": "HEAD \u76ee\u524d\u4f4d\u4e8e d9e156e skip longest tests (#56)\n",
+      "returncode": 0,
+      "elapsed_seconds": 0.11074765499506611,
+      "ended_at_utc": "2026-11-17T17:51:26.604420+00:00"
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "/home/lhshen/vibedataset/handoff/gqcdataset_codex_goal/tools/inventory_sources.py",
+        "_references/qcdb",
+        "--recurse-submodules",
+        "--json",
+        "handoff/gqcdataset_codex_goal/research/inventories/qcdb.json"
+      ],
+      "cwd": ".",
+      "started_at_utc": "2026-11-17T17:51:26.604774+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.27974299401103053,
+      "ended_at_utc": "2026-11-17T17:51:26.885626+00:00"
+    }
+  ],
+  "receipt_path": "handoff/gqcdataset_codex_goal/research/acquisition/qcdb-20261117T175119020764Z.json",
+  "resolved_commit": "d9e156ef8b313ac0633211fc6b841f84a3ddde24",
+  "inventory_path": "handoff/gqcdataset_codex_goal/research/inventories/qcdb.json",
+  "ended_at_utc": "2026-11-17T17:51:26.886141+00:00"
+}

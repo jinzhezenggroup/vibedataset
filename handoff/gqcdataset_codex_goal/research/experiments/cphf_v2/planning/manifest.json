@@ -1,0 +1,77 @@
+{
+  "extension-diagnostic-assets.tar.gz": {
+    "bytes": 3748,
+    "raw_sha256": "1ad6be32e27f0fee028f528443f3c6cc6d447942c615a8662e463f9a658f5fa6",
+    "sha256": "cf593c367e6cc708033eb37b1b371c5687d77b512aa8be9647c5e25b6ad4a3a1"
+  },
+  "extension-diagnostic-events.jsonl.gz": {
+    "bytes": 226,
+    "raw_sha256": "5defbd3b1f6b6fc9459f906b1598f537ff6e6637519faa1db03a0a1f2066373a",
+    "sha256": "a3bf0a51f99bd3ebeee0c270c8daa269791295e3760cf5eb18223ba525c5873e"
+  },
+  "extension-diagnostic-summary.json.gz": {
+    "bytes": 21413,
+    "raw_sha256": "5dc732532e745fb73d76bdf191ed6a14af70b6d1a42211ca267d324f51e9438a",
+    "sha256": "20eb7b01abba1e8c7d04d0f583a0486fc7704bf104f8df8af922c0dc88f3504a"
+  },
+  "extension-scalar-assets.tar.gz": {
+    "bytes": 31556,
+    "raw_sha256": "58766adda39490adfab97a982d25bf644de95ad3adb1927a3db14a252391a402",
+    "sha256": "33b5f8cb3531bd302a2fb25808dab6b0b9cc384b1e12a0846552e34ccd531dcb"
+  },
+  "extension-scalar-events.jsonl.gz": {
+    "bytes": 1935,
+    "raw_sha256": "37aa2ada0c501c25b8a7dc501fe30af586e46ebaba12bc133572112450d03a3a",
+    "sha256": "bdbfcca6916e8ed0f2739a19791af4b0b608787f7211235e493683dc8ebf871e"
+  },
+  "extension-scalar-summary.json.gz": {
+    "bytes": 33120,
+    "raw_sha256": "a11744d7dd10254c05ec7333d14f1f1e16a7753f1b009629d2aab2aba94dd3f8",
+    "sha256": "d52e423ae3c4b23959c2a50e98211bdaedd695e5ba9f5e641b312689b329260e"
+  },
+  "seed-remember-assets.tar.gz": {
+    "bytes": 56515,
+    "raw_sha256": "31e5807dd9d5e1e0463fc2fe3d71129b64b59a59449055a97357d35865fad12b",
+    "sha256": "104bee9734145bbc0b54ed2a5b1efb045f5c2c27f4e543c642a0de7acc68f1ea"
+  },
+  "seed-remember-events.jsonl.gz": {
+    "bytes": 84472,
+    "raw_sha256": "780c00710aa2af3540007c285924658e7d59d9fa4a8f7e21667cb4b6b040d919",
+    "sha256": "454b18aee9275186bb490180a7f1336a7e2d2cb5ce3ba3660bc6243f11d8ed49"
+  },
+  "seed-remember-summary.json.gz": {
+    "bytes": 12912,
+    "raw_sha256": "c684b285de10bc16218b96e565a162643d8a7c9c66ef0dd27660c88e5e305014",
+    "sha256": "5f186b3f9a06340027e2af38112078fd0facee3f3a98ba6268dba267b4c9b64f"
+  },
+  "seed-retry-assets.tar.gz": {
+    "bytes": 56515,
+    "raw_sha256": "31e5807dd9d5e1e0463fc2fe3d71129b64b59a59449055a97357d35865fad12b",
+    "sha256": "104bee9734145bbc0b54ed2a5b1efb045f5c2c27f4e543c642a0de7acc68f1ea"
+  },
+  "seed-retry-events.jsonl.gz": {
+    "bytes": 84444,
+    "raw_sha256": "7a1336779849c6657ad03ef9e20ecad32dd5bf8fabd2dc78bbf0a286f809daf7",
+    "sha256": "fa4c2a55518b8fd1ba7132caea0cf2e9ffbe7b829b3a776f2280ec82fc2e6e28"
+  },
+  "seed-retry-summary.json.gz": {
+    "bytes": 12981,
+    "raw_sha256": "c0f0b1ec0a757ec98ca5478014efd22eb1043bec216230aa2cdaa2d0ee506575",
+    "sha256": "fa18559d34dee7ea0294dd168c835e33c8c581950f8634323a89ca3b55826757"
+  },
+  "seed-scalar-assets.tar.gz": {
+    "bytes": 9054,
+    "raw_sha256": "7337cfaf546372180a75cbbc3f99bcf7ead8cd825c8565cd870abce1bf69492c",
+    "sha256": "2a64aff8d79237c6ae0d0664821fbfaa5a0d12734a62bebb95a93e25bcfef0cd"
+  },
+  "seed-scalar-events.jsonl.gz": {
+    "bytes": 1156,
+    "raw_sha256": "56157c143fd5dd2ea1d8ec3b90c0c0545d3199829823ac360d85d5c4ffaa3fab",
+    "sha256": "586767501ed6a51e111e9a7e757b10231648e9a65a9d9cc527cbac923df84de6"
+  },
+  "seed-scalar-summary.json.gz": {
+    "bytes": 18163,
+    "raw_sha256": "2a126fde00f7da43533487518b3a2abaaf3914ab15ea5387797bcdebb3b74f32",
+    "sha256": "1d66cdd9642cad5b542cf3a9a6be2c159df8ea329a49ab0f0bdacc2db3d6b3fd"
+  }
+}

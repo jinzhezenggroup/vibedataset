@@ -1,0 +1,1727 @@
+{
+  "schema": "vibedataset.plan004.n5.v1",
+  "status": "passed",
+  "attempts": [
+    {
+      "output": {
+        "name": "qm9-000003",
+        "source": {
+          "metadata_file": "qm9-000003.json",
+          "metadata_sha256": "c0e5212e5f0def071ff6ec5dac88c0f9b893aa9c10107e73c514edba6e416e8f",
+          "array_file": "qm9-000003.npz",
+          "array_sha256": "08d0cec5d6ac38620732cb37e07955668a07576e5ca3fc424212db1e8094f4ce"
+        },
+        "problem_identity": "68a1d313efcd76ed8286f00bd3d58de757e4c6c05982fd639e4ce5a408ca1fd5",
+        "reference_identity": "06223ff4dd5e4188137226482258f37c4961bbc447709d03f72f987ef0bfe941",
+        "geometry_hash": "6a7fb4c0d61917a47ac7e9daba776b68bf4ac26ae764031b2e34506c261354ad",
+        "contract_identity": "9ee1a6907505ace396f1bcb7967b6982b573d944e19bdcc01073feac0cf8b49b",
+        "endpoint_identities": {
+          "fields": {
+            "x": "368050c09a853f7f1af2281fa016835a61e9c3842addb9d316a5f34ed3bf62f1",
+            "y": "46a13a91e5e3caf8fab903ac6936ab6818f99cae48f323a035ea14f45b7f786f",
+            "z": "8d6079617bd28f122fe4060e265ce42ea4f5e7b9d03a2003445ae95502fcc280"
+          },
+          "observables": {
+            "q0": "f2955166efa6a518937440496d1065d5ad6007946ba45bc79e599ab5beb7632b",
+            "r2": "6e611062487509050977581d4df3a676d0c829654a704e33a37975d1ed0e3baf",
+            "zz": "1f507985b529e728776862db8bbd24eca914016a8ef6f9e563ded6ac0e55a743"
+          }
+        },
+        "basis_hash": "15721216c85b7a4f6e765f507d17248ed2aba27d378383a6cac1e127d94f8869",
+        "dimension": 10,
+        "nbasis": 7,
+        "nocc": 5,
+        "fock_error": 4.6074255521944e-15,
+        "vjp_errors": {
+          "q0": 4.647817236868291e-16,
+          "r2": 1.7763568394002505e-15,
+          "zz": 3.6197783594323074e-16
+        },
+        "scaled_dot_errors": [
+          3.4139796101167527e-16,
+          2.533326850237405e-16
+        ],
+        "readout_dot_error": 2.6645352591003757e-15,
+        "minimum_ov_gap": 0.9937597739724868,
+        "counts": {
+          "jk_calls": 5,
+          "response_operator_actions": 4,
+          "density_jvp_calls": 6
+        },
+        "native_kernels": [
+          {
+            "source": "2215f904b3e4f0856f3c6c2826f6e0bc994f322a9327904703ae8593203ce68c",
+            "lowered": "0c58c46cf39806f7f9163f9471a3de8891de70346c6cd7f771c3122801d9a037",
+            "binary_sha256": "5ad2cdfb2cef339cb06e0b0e9a4a15cc33aad617e83a228def3e300253d3ce23",
+            "resources": {
+              "input_count": 147,
+              "output_count": 49,
+              "required_bytes": 7616,
+              "scalar_work": 2667
+            },
+            "elapsed_seconds": 0.5089376759715378
+          },
+          {
+            "source": "7ee92213a506aa9ed708d1d2f0550dc948b5aaa7cf7574544bc58c4230ef4d12",
+            "lowered": "0101d433d1d29a0b8907ceb0e8e0bc2b4f031c44de4f6f938f7afb6e36941c31",
+            "binary_sha256": "2c1d48ea23fb0e7349e0f49df567b3cce2df9d3e75f0dd17ecf85221796fd793",
+            "resources": {
+              "input_count": 245,
+              "output_count": 10,
+              "required_bytes": 12240,
+              "scalar_work": 5655
+            },
+            "elapsed_seconds": 0.5541431149467826
+          },
+          {
+            "source": "caa60a48909653385008641a1385c9bcbef773b13bc9f9818d0777d72b801e8c",
+            "lowered": "9ab0375b5479d6b2fc193137534be870eec8d346bfa594ebcc4d96c348ab74f4",
+            "binary_sha256": "0f5bd32236819ffeeea68633f8cf007ceed69374cebd0a40bb0419e4c40110a4",
+            "resources": {
+              "input_count": 2450,
+              "output_count": 49,
+              "required_bytes": 61544,
+              "scalar_work": 12152
+            },
+            "elapsed_seconds": 0.49888841388747096
+          },
+          {
+            "source": "2282a74d907e8d317f885d7506667efbade4a0c48bbe6aee341547e018a89680",
+            "lowered": "8344bcf27af725fe5ad358293450f22e89ce3e8d5c859a920568c83fc3b84bed",
+            "binary_sha256": "08f8ef0713e6c08a0bfa979cf81b506b67bac159ae9d9d93262fcaa7ccec2c34",
+            "resources": {
+              "input_count": 98,
+              "output_count": 10,
+              "required_bytes": 2864,
+              "scalar_work": 434
+            },
+            "elapsed_seconds": 0.5072700129821897
+          },
+          {
+            "source": "3d7d3c5649aa2071e2a399b27c88547494528fd5218793ebb1d5b8331fcf9312",
+            "lowered": "d1721810a5943fc10aaf0514d959ff75432dcbb1b860e01eeba018fbf04c3dc6",
+            "binary_sha256": "bfcd29c570f79272831966662fbf317d15ebdade9015c33419510fc5398dad6f",
+            "resources": {
+              "input_count": 99,
+              "output_count": 10,
+              "required_bytes": 4456,
+              "scalar_work": 729
+            },
+            "elapsed_seconds": 0.5268809753470123
+          }
+        ],
+        "seconds": 2.661821939982474
+      },
+      "status": "completed",
+      "stage": "shared_setup",
+      "seconds": 2.6627880102023482,
+      "counts": {
+        "jk_calls": 5,
+        "response_operator_actions": 4,
+        "density_jvp_calls": 6
+      },
+      "action_sites": [
+        "outside_block",
+        "outside_block",
+        "outside_block",
+        "outside_block"
+      ]
+    },
+    {
+      "output": {
+        "raw": {
+          "problem_identity": "68a1d313efcd76ed8286f00bd3d58de757e4c6c05982fd639e4ce5a408ca1fd5",
+          "results": [
+            {
+              "field": "x",
+              "observable": "r2",
+              "raw_value": -11.061447862372159,
+              "target_identity": "a56c15bca8b4ff2dc0e009c74b7ca62735b10061d3c9e1087f3c4225e08b4add",
+              "qualified": true,
+              "value": -11.061447862372159,
+              "status": "qualified",
+              "reasons": [],
+              "errors": {
+                "direct": 1.0658141036401503e-14,
+                "adjoint": 3.552713678800501e-15,
+                "cphf": 1.964650664376677e-12,
+                "0.0005": 4.3142498995507594e-07,
+                "0.0002": 7.036980420593864e-08
+              },
+              "via": "adjoint"
+            },
+            {
+              "field": "y",
+              "observable": "q0",
+              "raw_value": 0.9190047162090161,
+              "target_identity": "cd621dc5fb18ebb4ecbb418820f32efa91d74408c1a710446f73050bc3aa2713",
+              "qualified": true,
+              "value": 0.9190047162090161,
+              "status": "qualified",
+              "reasons": [],
+              "errors": {
+                "direct": 1.3322676295501878e-15,
+                "adjoint": 4.440892098500626e-16,
+                "cphf": 2.8832491949515315e-13,
+                "0.0005": 1.8087723618886997e-07,
+                "0.0002": 2.894810025022565e-08
+              },
+              "via": "adjoint"
+            },
+            {
+              "field": "z",
+              "observable": "q0",
+              "raw_value": 0.01881678360335969,
+              "target_identity": "59e8cc27a726200c613363522a1cd2bc7ec6021e18387d2534a422608d7e3095",
+              "qualified": true,
+              "value": 0.01881678360335969,
+              "status": "qualified",
+              "reasons": [],
+              "errors": {
+                "direct": 6.938893903907228e-17,
+                "adjoint": 1.3877787807814457e-17,
+                "cphf": 5.415806691999592e-15,
+                "0.0005": 2.629900637540761e-10,
+                "0.0002": 1.6786138451463373e-11
+              },
+              "via": "adjoint"
+            },
+            {
+              "field": "z",
+              "observable": "r2",
+              "raw_value": 0.04104419181559879,
+              "target_identity": "7fa93e1c82cf53f059b526672b5ad92ff2b54a6f397489f65bc5acb317df504e",
+              "qualified": true,
+              "value": 0.04104419181559879,
+              "status": "qualified",
+              "reasons": [],
+              "errors": {
+                "direct": 7.28583859910259e-16,
+                "adjoint": 2.498001805406602e-16,
+                "cphf": 6.744604874597826e-15,
+                "0.0005": 1.4709430895543107e-10,
+                "0.0002": 5.185765705739698e-11
+              },
+              "via": "adjoint"
+            }
+          ],
+          "counts": {
+            "jk_calls": 19,
+            "operator_actions": 19,
+            "rhs_columns": 2,
+            "cache_validation_actions": 0,
+            "solver_actions": 19,
+            "cache_rejections": 0,
+            "requests": 4
+          },
+          "block": {
+            "rhs_rank": 2,
+            "residuals": {
+              "observables/q0": 6.70945105177588e-15,
+              "observables/r2": 7.82483738802654e-14
+            },
+            "solver_actions": 19
+          },
+          "new_fields": [],
+          "new_observables": [
+            "q0",
+            "r2"
+          ],
+          "cache_checks": [],
+          "elapsed_seconds": 0.010507630184292793
+        },
+        "history_sha256": "4242061792848697d85f81a0e63610cc7eef1fe58d0df729d6a46f2d616c890d",
+        "history_bytes": 2040,
+        "vectors_sha256": "1971b68d95721b1214afb803c7cd71819564d31670446d0417f71d8c2e6c1b2b",
+        "vector_bytes": 1756
+      },
+      "status": "completed",
+      "stage": "four_scalar_producer",
+      "seconds": 0.01121507491916418,
+      "counts": {
+        "jk_calls": 19,
+        "response_operator_actions": 19,
+        "density_jvp_calls": 19
+      },
+      "action_sites": [
+        "extension",
+        "extension",
+        "true_residual",
+        "true_residual",
+        "extension",
+        "extension",
+        "true_residual",
+        "true_residual",
+        "extension",
+        "extension",
+        "true_residual",
+        "true_residual",
+        "extension",
+        "extension",
+        "true_residual",
+        "true_residual",
+        "extension",
+        "true_residual",
+        "true_residual"
+      ]
+    },
+    {
+      "output": {
+        "1": {
+          "binary_sha256": "b8d302f6ff6a31321f499f2a6069f73bdf7d5971045fee2f6140c883d1413282",
+          "lowered": "3c3add73ccff0ce3dd8460e2c6593e89ee69d270720798f9e450c05e9f6c74bb"
+        },
+        "2": {
+          "binary_sha256": "f1ff3c50fb90a22f9fea8f875665901fd53e6dd2bbacd4c97d515c0b19fb34c6",
+          "lowered": "f97e4090226d35a39be2970eff71f164497c3ed5da7f8d4c9725b8604bf49563"
+        }
+      },
+      "status": "completed",
+      "stage": "shared_decoders",
+      "seconds": 0.9693282367661595,
+      "counts": {},
+      "action_sites": []
+    },
+    {
+      "output": {
+        "panels": [
+          {
+            "columns": [
+              "x",
+              "y",
+              "z"
+            ],
+            "rhs_sha256": [
+              "ac62149f2a908d013c9eabab00002590260d04e569b5ad988dec412e5a2c9df6",
+              "14cb0d510bb153dd1e46f8b74c998a2397775ce986e318afa422f9db6a8713c8",
+              "c10e4ce3dc8644193a5d91f963a21b3a6f7bdcd468781731515ac143fcc47ee3"
+            ],
+            "initial_rank": 3,
+            "rank_deficient": false,
+            "actions": 22,
+            "extensions": 10,
+            "residual_checks": 12,
+            "action_runs": [
+              [
+                "extension",
+                3
+              ],
+              [
+                "true_residual",
+                3
+              ],
+              [
+                "extension",
+                3
+              ],
+              [
+                "true_residual",
+                3
+              ],
+              [
+                "extension",
+                3
+              ],
+              [
+                "true_residual",
+                3
+              ],
+              [
+                "extension",
+                1
+              ],
+              [
+                "true_residual",
+                3
+              ]
+            ],
+            "true_residuals": [
+              3.15041523192785e-14,
+              2.0461061828163152e-14,
+              4.830560585825128e-16
+            ],
+            "reasons": [
+              "converged",
+              "converged",
+              "converged"
+            ],
+            "solution_sha256": [
+              "d5313f40aa1e6f53743dedde3a04aeb6e0b46d47b700cf8548989bd050f03957",
+              "892fe73179498fbc1ad21d922677e8a9209929d43cad88b08e76198a1869fedd",
+              "97015fb17cb0c0e308119d155cf12fb816c248929ed006f1b4aab067e12fdb3c"
+            ],
+            "wall_seconds": 0.015232427045702934,
+            "operator_seconds": 0.0087579395622015,
+            "orthogonalization_seconds": 0.0037389383651316166,
+            "workspace_bytes": 33168
+          }
+        ],
+        "rows": [
+          {
+            "field": "x",
+            "observable": "q0",
+            "raw_value": -1.4578410872805858,
+            "target_identity": "b135407ee58882782986c91120d641c68557240d6722ca29bd1e78b362d0359f",
+            "qualified": true,
+            "value": -1.4578410872805858,
+            "status": "qualified",
+            "reasons": [],
+            "errors": {
+              "direct": 1.7763568394002505e-15,
+              "adjoint": 2.6645352591003757e-15,
+              "cphf": 4.4075854077618715e-13,
+              "0.0005": 7.345107744249901e-08,
+              "0.0002": 1.1759980766967715e-08
+            },
+            "operand_edges": [],
+            "hand": -1.4578410872805858
+          },
+          {
+            "field": "y",
+            "observable": "r2",
+            "raw_value": -11.973886268843485,
+            "target_identity": "1da950d0c742f279e10e5881cfb1267f4e14f6538a41c1307b8fe2c45c391d40",
+            "qualified": true,
+            "value": -11.973886268843485,
+            "status": "qualified",
+            "reasons": [],
+            "errors": {
+              "direct": 1.7763568394002505e-15,
+              "adjoint": 3.552713678800501e-15,
+              "cphf": 2.2861712523081223e-12,
+              "0.0005": 6.6957154487568e-08,
+              "0.0002": 1.386895398525212e-08
+            },
+            "operand_edges": [],
+            "hand": -11.973886268843485
+          },
+          {
+            "field": "z",
+            "observable": "zz",
+            "raw_value": 0.005750967189915643,
+            "target_identity": "feb5f0547155d169c17952435c73c031ee976061350305cf0ad4ebb2aac1b99d",
+            "qualified": true,
+            "value": 0.005750967189915643,
+            "status": "qualified",
+            "reasons": [],
+            "errors": {
+              "direct": 9.540979117872439e-18,
+              "adjoint": 1.0408340855860843e-17,
+              "cphf": 6.2987809412717866e-15,
+              "0.0005": 4.5242122027888687e-10,
+              "0.0002": 2.7427846452376947e-11
+            },
+            "operand_edges": [],
+            "hand": 0.005750967189915643
+          }
+        ],
+        "rhs": 3,
+        "jk": 22,
+        "qualified": 3
+      },
+      "status": "completed",
+      "stage": "ordinary_xyz",
+      "seconds": 0.016007541213184595,
+      "counts": {
+        "jk_calls": 22,
+        "response_operator_actions": 22,
+        "density_jvp_calls": 22
+      },
+      "action_sites": [
+        "extension",
+        "extension",
+        "extension",
+        "true_residual",
+        "true_residual",
+        "true_residual",
+        "extension",
+        "extension",
+        "extension",
+        "true_residual",
+        "true_residual",
+        "true_residual",
+        "extension",
+        "extension",
+        "extension",
+        "true_residual",
+        "true_residual",
+        "true_residual",
+        "extension",
+        "true_residual",
+        "true_residual",
+        "true_residual"
+      ]
+    },
+    {
+      "output": {
+        "panels": [
+          {
+            "columns": [
+              "xyz"
+            ],
+            "rhs_sha256": [
+              "f4136566c2ab4626d2f5efc42eede7aa6f815c5cc59e514cfd46bc4f8ebd1349"
+            ],
+            "initial_rank": 1,
+            "rank_deficient": false,
+            "actions": 18,
+            "extensions": 9,
+            "residual_checks": 9,
+            "action_runs": [
+              [
+                "extension",
+                1
+              ],
+              [
+                "true_residual",
+                1
+              ],
+              [
+                "extension",
+                1
+              ],
+              [
+                "true_residual",
+                1
+              ],
+              [
+                "extension",
+                1
+              ],
+              [
+                "true_residual",
+                1
+              ],
+              [
+                "extension",
+                1
+              ],
+              [
+                "true_residual",
+                1
+              ],
+              [
+                "extension",
+                1
+              ],
+              [
+                "true_residual",
+                1
+              ],
+              [
+                "extension",
+                1
+              ],
+              [
+                "true_residual",
+                1
+              ],
+              [
+                "extension",
+                1
+              ],
+              [
+                "true_residual",
+                1
+              ],
+              [
+                "extension",
+                1
+              ],
+              [
+                "true_residual",
+                1
+              ],
+              [
+                "extension",
+                1
+              ],
+              [
+                "true_residual",
+                1
+              ]
+            ],
+            "true_residuals": [
+              9.725997308347469e-15
+            ],
+            "reasons": [
+              "converged"
+            ],
+            "solution_sha256": [
+              "d5ed0f9a538ada4afe637508a59ea9f066898ab4a810080547f9168ae65710fc"
+            ],
+            "wall_seconds": 0.012269794940948486,
+            "operator_seconds": 0.006959865801036358,
+            "orthogonalization_seconds": 0.003234543837606907,
+            "workspace_bytes": 28144
+          },
+          {
+            "columns": [
+              "z"
+            ],
+            "rhs_sha256": [
+              "c10e4ce3dc8644193a5d91f963a21b3a6f7bdcd468781731515ac143fcc47ee3"
+            ],
+            "initial_rank": 1,
+            "rank_deficient": false,
+            "actions": 18,
+            "extensions": 9,
+            "residual_checks": 9,
+            "action_runs": [
+              [
+                "extension",
+                1
+              ],
+              [
+                "true_residual",
+                1
+              ],
+              [
+                "extension",
+                1
+              ],
+              [
+                "true_residual",
+                1
+              ],
+              [
+                "extension",
+                1
+              ],
+              [
+                "true_residual",
+                1
+              ],
+              [
+                "extension",
+                1
+              ],
+              [
+                "true_residual",
+                1
+              ],
+              [
+                "extension",
+                1
+              ],
+              [
+                "true_residual",
+                1
+              ],
+              [
+                "extension",
+                1
+              ],
+              [
+                "true_residual",
+                1
+              ],
+              [
+                "extension",
+                1
+              ],
+              [
+                "true_residual",
+                1
+              ],
+              [
+                "extension",
+                1
+              ],
+              [
+                "true_residual",
+                1
+              ],
+              [
+                "extension",
+                1
+              ],
+              [
+                "true_residual",
+                1
+              ]
+            ],
+            "true_residuals": [
+              1.1943534602840131e-15
+            ],
+            "reasons": [
+              "converged"
+            ],
+            "solution_sha256": [
+              "6101d9c398fa376cbcebd29d95483b9394712bf29d72a214ff2616e1626f667a"
+            ],
+            "wall_seconds": 0.012392257805913687,
+            "operator_seconds": 0.007088792975991964,
+            "orthogonalization_seconds": 0.003202803898602724,
+            "workspace_bytes": 28144
+          }
+        ],
+        "rows": [
+          {
+            "field": "x",
+            "observable": "q0",
+            "raw_value": -1.457841087280586,
+            "target_identity": "b135407ee58882782986c91120d641c68557240d6722ca29bd1e78b362d0359f",
+            "qualified": true,
+            "value": -1.457841087280586,
+            "status": "qualified",
+            "reasons": [],
+            "errors": {
+              "direct": 1.9984014443252818e-15,
+              "adjoint": 2.886579864025407e-15,
+              "cphf": 4.409805853811122e-13,
+              "0.0005": 7.345107766454362e-08,
+              "0.0002": 1.175998098901232e-08
+            },
+            "operand_edges": [
+              [
+                "y",
+                "q0"
+              ],
+              [
+                "z",
+                "q0"
+              ]
+            ],
+            "hand": -1.457841087280586
+          },
+          {
+            "field": "y",
+            "observable": "r2",
+            "raw_value": -11.973886268843488,
+            "target_identity": "1da950d0c742f279e10e5881cfb1267f4e14f6538a41c1307b8fe2c45c391d40",
+            "qualified": true,
+            "value": -11.973886268843488,
+            "status": "qualified",
+            "reasons": [],
+            "errors": {
+              "direct": 5.329070518200751e-15,
+              "adjoint": 0.0,
+              "cphf": 2.289723965986923e-12,
+              "0.0005": 6.695715804028168e-08,
+              "0.0002": 1.3868957537965798e-08
+            },
+            "operand_edges": [
+              [
+                "x",
+                "r2"
+              ],
+              [
+                "z",
+                "r2"
+              ]
+            ],
+            "hand": -11.973886268843488
+          },
+          {
+            "field": "z",
+            "observable": "zz",
+            "raw_value": 0.005750967189915633,
+            "target_identity": "feb5f0547155d169c17952435c73c031ee976061350305cf0ad4ebb2aac1b99d",
+            "qualified": true,
+            "value": 0.005750967189915633,
+            "status": "qualified",
+            "reasons": [],
+            "errors": {
+              "direct": 8.673617379884035e-19,
+              "adjoint": 0.0,
+              "cphf": 6.288372600415926e-15,
+              "0.0005": 4.52421209870546e-10,
+              "0.0002": 2.742783604403609e-11
+            },
+            "operand_edges": [],
+            "hand": 0.005750967189915633
+          }
+        ],
+        "rhs": 2,
+        "jk": 36,
+        "qualified": 3
+      },
+      "status": "completed",
+      "stage": "separate_xyz_z",
+      "seconds": 0.02567846979945898,
+      "counts": {
+        "jk_calls": 36,
+        "response_operator_actions": 36,
+        "density_jvp_calls": 36
+      },
+      "action_sites": [
+        "extension",
+        "true_residual",
+        "extension",
+        "true_residual",
+        "extension",
+        "true_residual",
+        "extension",
+        "true_residual",
+        "extension",
+        "true_residual",
+        "extension",
+        "true_residual",
+        "extension",
+        "true_residual",
+        "extension",
+        "true_residual",
+        "extension",
+        "true_residual",
+        "extension",
+        "true_residual",
+        "extension",
+        "true_residual",
+        "extension",
+        "true_residual",
+        "extension",
+        "true_residual",
+        "extension",
+        "true_residual",
+        "extension",
+        "true_residual",
+        "extension",
+        "true_residual",
+        "extension",
+        "true_residual",
+        "extension",
+        "true_residual"
+      ]
+    },
+    {
+      "output": {
+        "panels": [
+          {
+            "columns": [
+              "xyz",
+              "z"
+            ],
+            "rhs_sha256": [
+              "f4136566c2ab4626d2f5efc42eede7aa6f815c5cc59e514cfd46bc4f8ebd1349",
+              "c10e4ce3dc8644193a5d91f963a21b3a6f7bdcd468781731515ac143fcc47ee3"
+            ],
+            "initial_rank": 2,
+            "rank_deficient": false,
+            "actions": 20,
+            "extensions": 10,
+            "residual_checks": 10,
+            "action_runs": [
+              [
+                "extension",
+                2
+              ],
+              [
+                "true_residual",
+                2
+              ],
+              [
+                "extension",
+                2
+              ],
+              [
+                "true_residual",
+                2
+              ],
+              [
+                "extension",
+                2
+              ],
+              [
+                "true_residual",
+                2
+              ],
+              [
+                "extension",
+                2
+              ],
+              [
+                "true_residual",
+                2
+              ],
+              [
+                "extension",
+                2
+              ],
+              [
+                "true_residual",
+                2
+              ]
+            ],
+            "true_residuals": [
+              8.449473403799488e-15,
+              6.316801006028234e-16
+            ],
+            "reasons": [
+              "converged",
+              "converged"
+            ],
+            "solution_sha256": [
+              "4727d089b44f1359ddaa928f27bcedab3f845204295355e01e7153eb6ed652aa",
+              "729c8e9ef6603bf2139864024928527537cc1793ceb34a65ecda28742762ba2e"
+            ],
+            "wall_seconds": 0.011031041853129864,
+            "operator_seconds": 0.0064486111514270306,
+            "orthogonalization_seconds": 0.002844966948032379,
+            "workspace_bytes": 30656
+          }
+        ],
+        "rows": [
+          {
+            "field": "x",
+            "observable": "q0",
+            "raw_value": -1.4578410872805831,
+            "target_identity": "b135407ee58882782986c91120d641c68557240d6722ca29bd1e78b362d0359f",
+            "qualified": true,
+            "value": -1.4578410872805831,
+            "status": "qualified",
+            "reasons": [],
+            "errors": {
+              "direct": 8.881784197001252e-16,
+              "adjoint": 0.0,
+              "cphf": 4.3809400551708677e-13,
+              "0.0005": 7.345107477796375e-08,
+              "0.0002": 1.1759978102432456e-08
+            },
+            "operand_edges": [
+              [
+                "y",
+                "q0"
+              ],
+              [
+                "z",
+                "q0"
+              ]
+            ],
+            "hand": -1.4578410872805831
+          },
+          {
+            "field": "y",
+            "observable": "r2",
+            "raw_value": -11.973886268843502,
+            "target_identity": "1da950d0c742f279e10e5881cfb1267f4e14f6538a41c1307b8fe2c45c391d40",
+            "qualified": true,
+            "value": -11.973886268843502,
+            "status": "qualified",
+            "reasons": [],
+            "errors": {
+              "direct": 1.9539925233402755e-14,
+              "adjoint": 1.4210854715202004e-14,
+              "cphf": 2.303934820702125e-12,
+              "0.0005": 6.69571722511364e-08,
+              "0.0002": 1.3868971748820513e-08
+            },
+            "operand_edges": [
+              [
+                "x",
+                "r2"
+              ],
+              [
+                "z",
+                "r2"
+              ]
+            ],
+            "hand": -11.973886268843502
+          },
+          {
+            "field": "z",
+            "observable": "zz",
+            "raw_value": 0.0057509671899156085,
+            "target_identity": "feb5f0547155d169c17952435c73c031ee976061350305cf0ad4ebb2aac1b99d",
+            "qualified": true,
+            "value": 0.0057509671899156085,
+            "status": "qualified",
+            "reasons": [],
+            "errors": {
+              "direct": 2.5153490401663703e-17,
+              "adjoint": 2.42861286636753e-17,
+              "cphf": 6.2640864717522504e-15,
+              "0.0005": 4.5242118558441735e-10,
+              "0.0002": 2.7427811757907428e-11
+            },
+            "operand_edges": [],
+            "hand": 0.0057509671899156085
+          }
+        ],
+        "rhs": 2,
+        "jk": 20,
+        "qualified": 3
+      },
+      "status": "completed",
+      "stage": "joint_xyz_z",
+      "seconds": 0.01182572403922677,
+      "counts": {
+        "jk_calls": 20,
+        "response_operator_actions": 20,
+        "density_jvp_calls": 20
+      },
+      "action_sites": [
+        "extension",
+        "extension",
+        "true_residual",
+        "true_residual",
+        "extension",
+        "extension",
+        "true_residual",
+        "true_residual",
+        "extension",
+        "extension",
+        "true_residual",
+        "true_residual",
+        "extension",
+        "extension",
+        "true_residual",
+        "true_residual",
+        "extension",
+        "extension",
+        "true_residual",
+        "true_residual"
+      ]
+    },
+    {
+      "output": {
+        "panels": [
+          {
+            "columns": [
+              "xy",
+              "z"
+            ],
+            "rhs_sha256": [
+              "9445d3a0d780707a38274d538839079cdf7c1b503cfcae2ac3ea4905572afe45",
+              "c10e4ce3dc8644193a5d91f963a21b3a6f7bdcd468781731515ac143fcc47ee3"
+            ],
+            "initial_rank": 2,
+            "rank_deficient": false,
+            "actions": 20,
+            "extensions": 10,
+            "residual_checks": 10,
+            "action_runs": [
+              [
+                "extension",
+                2
+              ],
+              [
+                "true_residual",
+                2
+              ],
+              [
+                "extension",
+                2
+              ],
+              [
+                "true_residual",
+                2
+              ],
+              [
+                "extension",
+                2
+              ],
+              [
+                "true_residual",
+                2
+              ],
+              [
+                "extension",
+                2
+              ],
+              [
+                "true_residual",
+                2
+              ],
+              [
+                "extension",
+                2
+              ],
+              [
+                "true_residual",
+                2
+              ]
+            ],
+            "true_residuals": [
+              9.707023389934337e-15,
+              1.4913228493904632e-15
+            ],
+            "reasons": [
+              "converged",
+              "converged"
+            ],
+            "solution_sha256": [
+              "674deccbc1f520791d7213a750d3c81ce8e7c5426e4c385d321b3e84f8cc2af2",
+              "46afbe6fc30c1d472ca4e2864ee4be452ba314bd5d1c6bdc81b35dc1650de67d"
+            ],
+            "wall_seconds": 0.009985890705138445,
+            "operator_seconds": 0.006011060439050198,
+            "orthogonalization_seconds": 0.0024297526106238365,
+            "workspace_bytes": 30656
+          }
+        ],
+        "rows": [
+          {
+            "field": "x",
+            "observable": "q0",
+            "raw_value": -1.457841087280584,
+            "target_identity": "b135407ee58882782986c91120d641c68557240d6722ca29bd1e78b362d0359f",
+            "qualified": true,
+            "value": -1.457841087280584,
+            "status": "qualified",
+            "reasons": [],
+            "errors": {
+              "direct": 0.0,
+              "adjoint": 8.881784197001252e-16,
+              "cphf": 4.389821839367869e-13,
+              "0.0005": 7.345107566614217e-08,
+              "0.0002": 1.1759978990610875e-08
+            },
+            "operand_edges": [
+              [
+                "y",
+                "q0"
+              ]
+            ],
+            "hand": -1.457841087280584
+          },
+          {
+            "field": "y",
+            "observable": "r2",
+            "raw_value": -11.973886268843497,
+            "target_identity": "1da950d0c742f279e10e5881cfb1267f4e14f6538a41c1307b8fe2c45c391d40",
+            "qualified": true,
+            "value": -11.973886268843497,
+            "status": "qualified",
+            "reasons": [],
+            "errors": {
+              "direct": 1.4210854715202004e-14,
+              "adjoint": 8.881784197001252e-15,
+              "cphf": 2.298605750183924e-12,
+              "0.0005": 6.695716692206588e-08,
+              "0.0002": 1.3868966419749995e-08
+            },
+            "operand_edges": [
+              [
+                "x",
+                "r2"
+              ]
+            ],
+            "hand": -11.973886268843497
+          },
+          {
+            "field": "z",
+            "observable": "zz",
+            "raw_value": 0.005750967189915789,
+            "target_identity": "feb5f0547155d169c17952435c73c031ee976061350305cf0ad4ebb2aac1b99d",
+            "qualified": true,
+            "value": 0.005750967189915789,
+            "status": "qualified",
+            "reasons": [],
+            "errors": {
+              "direct": 1.5525775109992423e-16,
+              "adjoint": 1.5612511283791264e-16,
+              "cphf": 6.444497713253838e-15,
+              "0.0005": 4.5242136599565885e-10,
+              "0.0002": 2.742799216914893e-11
+            },
+            "operand_edges": [],
+            "hand": 0.005750967189915789
+          }
+        ],
+        "rhs": 2,
+        "jk": 20,
+        "qualified": 3
+      },
+      "status": "completed",
+      "stage": "joint_xy_z",
+      "seconds": 0.01062950398772955,
+      "counts": {
+        "jk_calls": 20,
+        "response_operator_actions": 20,
+        "density_jvp_calls": 20
+      },
+      "action_sites": [
+        "extension",
+        "extension",
+        "true_residual",
+        "true_residual",
+        "extension",
+        "extension",
+        "true_residual",
+        "true_residual",
+        "extension",
+        "extension",
+        "true_residual",
+        "true_residual",
+        "extension",
+        "extension",
+        "true_residual",
+        "true_residual",
+        "extension",
+        "extension",
+        "true_residual",
+        "true_residual"
+      ]
+    },
+    {
+      "output": {
+        "panels": [
+          {
+            "columns": [
+              "xy",
+              "c_zz"
+            ],
+            "rhs_sha256": [
+              "9445d3a0d780707a38274d538839079cdf7c1b503cfcae2ac3ea4905572afe45",
+              "657b1cb9219c6283e564218154d01607df5402233d11a8c3938e63cac0e56e27"
+            ],
+            "initial_rank": 2,
+            "rank_deficient": false,
+            "actions": 20,
+            "extensions": 10,
+            "residual_checks": 10,
+            "action_runs": [
+              [
+                "extension",
+                2
+              ],
+              [
+                "true_residual",
+                2
+              ],
+              [
+                "extension",
+                2
+              ],
+              [
+                "true_residual",
+                2
+              ],
+              [
+                "extension",
+                2
+              ],
+              [
+                "true_residual",
+                2
+              ],
+              [
+                "extension",
+                2
+              ],
+              [
+                "true_residual",
+                2
+              ],
+              [
+                "extension",
+                2
+              ],
+              [
+                "true_residual",
+                2
+              ]
+            ],
+            "true_residuals": [
+              9.831998376689514e-15,
+              4.4731300040073675e-14
+            ],
+            "reasons": [
+              "converged",
+              "converged"
+            ],
+            "solution_sha256": [
+              "623f00210f86ee6c593df7c01ddd8af3af24c4d5eb022d990de63287af1274c8",
+              "b72f00058335f0403ff1587c55a9a25877176f6b26dc22614f04822668420d8a"
+            ],
+            "wall_seconds": 0.008344948757439852,
+            "operator_seconds": 0.004845348186790943,
+            "orthogonalization_seconds": 0.0021927175112068653,
+            "workspace_bytes": 30656
+          }
+        ],
+        "rows": [
+          {
+            "field": "x",
+            "observable": "q0",
+            "raw_value": -1.4578410872805843,
+            "target_identity": "b135407ee58882782986c91120d641c68557240d6722ca29bd1e78b362d0359f",
+            "qualified": true,
+            "value": -1.4578410872805843,
+            "status": "qualified",
+            "reasons": [],
+            "errors": {
+              "direct": 2.220446049250313e-16,
+              "adjoint": 1.1102230246251565e-15,
+              "cphf": 4.3920422854171193e-13,
+              "0.0005": 7.345107588818678e-08,
+              "0.0002": 1.175997921265548e-08
+            },
+            "operand_edges": [
+              [
+                "y",
+                "q0"
+              ]
+            ],
+            "hand": -1.4578410872805843
+          },
+          {
+            "field": "y",
+            "observable": "r2",
+            "raw_value": -11.973886268843511,
+            "target_identity": "1da950d0c742f279e10e5881cfb1267f4e14f6538a41c1307b8fe2c45c391d40",
+            "qualified": true,
+            "value": -11.973886268843511,
+            "status": "qualified",
+            "reasons": [],
+            "errors": {
+              "direct": 2.842170943040401e-14,
+              "adjoint": 2.3092638912203256e-14,
+              "cphf": 2.312816604899126e-12,
+              "0.0005": 6.69571811329206e-08,
+              "0.0002": 1.386898063060471e-08
+            },
+            "operand_edges": [
+              [
+                "x",
+                "r2"
+              ]
+            ],
+            "hand": -11.973886268843511
+          },
+          {
+            "field": "z",
+            "observable": "zz",
+            "raw_value": 0.005750967189915631,
+            "target_identity": "feb5f0547155d169c17952435c73c031ee976061350305cf0ad4ebb2aac1b99d",
+            "qualified": true,
+            "value": 0.005750967189915631,
+            "status": "qualified",
+            "reasons": [],
+            "errors": {
+              "direct": 2.6020852139652106e-18,
+              "adjoint": 1.734723475976807e-18,
+              "cphf": 6.286637876939949e-15,
+              "0.0005": 4.5242120813582254e-10,
+              "0.0002": 2.7427834309312615e-11
+            },
+            "operand_edges": [],
+            "hand": 0.005750967189915631
+          }
+        ],
+        "rhs": 2,
+        "jk": 20,
+        "qualified": 3
+      },
+      "status": "completed",
+      "stage": "joint_xy_adjoint_zz",
+      "seconds": 0.008857900742441416,
+      "counts": {
+        "jk_calls": 20,
+        "response_operator_actions": 20,
+        "density_jvp_calls": 20
+      },
+      "action_sites": [
+        "extension",
+        "extension",
+        "true_residual",
+        "true_residual",
+        "extension",
+        "extension",
+        "true_residual",
+        "true_residual",
+        "extension",
+        "extension",
+        "true_residual",
+        "true_residual",
+        "extension",
+        "extension",
+        "true_residual",
+        "true_residual",
+        "extension",
+        "extension",
+        "true_residual",
+        "true_residual"
+      ]
+    },
+    {
+      "output": {
+        "panels": [
+          {
+            "columns": [
+              "xyz",
+              "c_zz"
+            ],
+            "rhs_sha256": [
+              "f4136566c2ab4626d2f5efc42eede7aa6f815c5cc59e514cfd46bc4f8ebd1349",
+              "657b1cb9219c6283e564218154d01607df5402233d11a8c3938e63cac0e56e27"
+            ],
+            "initial_rank": 2,
+            "rank_deficient": false,
+            "actions": 20,
+            "extensions": 10,
+            "residual_checks": 10,
+            "action_runs": [
+              [
+                "extension",
+                2
+              ],
+              [
+                "true_residual",
+                2
+              ],
+              [
+                "extension",
+                2
+              ],
+              [
+                "true_residual",
+                2
+              ],
+              [
+                "extension",
+                2
+              ],
+              [
+                "true_residual",
+                2
+              ],
+              [
+                "extension",
+                2
+              ],
+              [
+                "true_residual",
+                2
+              ],
+              [
+                "extension",
+                2
+              ],
+              [
+                "true_residual",
+                2
+              ]
+            ],
+            "true_residuals": [
+              8.555643812854707e-15,
+              4.630228007958208e-14
+            ],
+            "reasons": [
+              "converged",
+              "converged"
+            ],
+            "solution_sha256": [
+              "d48562ac048977d3ed8c31749b8d1fb9cbbd79525b1908eed8dd6d46105b1499",
+              "feeb4041191d5104fe410e44e34b618c2c1dec791ece2df1eb0f349c4c2694dd"
+            ],
+            "wall_seconds": 0.0058293817564845085,
+            "operator_seconds": 0.0033715874888002872,
+            "orthogonalization_seconds": 0.0015057316049933434,
+            "workspace_bytes": 30656
+          }
+        ],
+        "rows": [
+          {
+            "field": "x",
+            "observable": "q0",
+            "raw_value": -1.4578410872805834,
+            "target_identity": "b135407ee58882782986c91120d641c68557240d6722ca29bd1e78b362d0359f",
+            "qualified": true,
+            "value": -1.4578410872805834,
+            "status": "qualified",
+            "reasons": [],
+            "errors": {
+              "direct": 6.661338147750939e-16,
+              "adjoint": 2.220446049250313e-16,
+              "cphf": 4.383160501220118e-13,
+              "0.0005": 7.345107500000836e-08,
+              "0.0002": 1.175997832447706e-08
+            },
+            "operand_edges": [
+              [
+                "y",
+                "q0"
+              ],
+              [
+                "z",
+                "q0"
+              ]
+            ],
+            "hand": -1.4578410872805834
+          },
+          {
+            "field": "y",
+            "observable": "r2",
+            "raw_value": -11.973886268843481,
+            "target_identity": "1da950d0c742f279e10e5881cfb1267f4e14f6538a41c1307b8fe2c45c391d40",
+            "qualified": true,
+            "value": -11.973886268843481,
+            "status": "qualified",
+            "reasons": [],
+            "errors": {
+              "direct": 1.7763568394002505e-15,
+              "adjoint": 7.105427357601002e-15,
+              "cphf": 2.282618538629322e-12,
+              "0.0005": 6.695715093485433e-08,
+              "0.0002": 1.386895043253844e-08
+            },
+            "operand_edges": [
+              [
+                "x",
+                "r2"
+              ],
+              [
+                "z",
+                "r2"
+              ]
+            ],
+            "hand": -11.973886268843481
+          },
+          {
+            "field": "z",
+            "observable": "zz",
+            "raw_value": 0.0057509671899156145,
+            "target_identity": "feb5f0547155d169c17952435c73c031ee976061350305cf0ad4ebb2aac1b99d",
+            "qualified": true,
+            "value": 0.0057509671899156145,
+            "status": "qualified",
+            "reasons": [],
+            "errors": {
+              "direct": 1.9081958235744878e-17,
+              "adjoint": 1.8214596497756474e-17,
+              "cphf": 6.270158003918169e-15,
+              "0.0005": 4.524211916559495e-10,
+              "0.0002": 2.7427817829439594e-11
+            },
+            "operand_edges": [],
+            "hand": 0.0057509671899156145
+          }
+        ],
+        "rhs": 2,
+        "jk": 20,
+        "qualified": 3
+      },
+      "status": "completed",
+      "stage": "joint_xyz_adjoint_zz",
+      "seconds": 0.006233836058527231,
+      "counts": {
+        "jk_calls": 20,
+        "response_operator_actions": 20,
+        "density_jvp_calls": 20
+      },
+      "action_sites": [
+        "extension",
+        "extension",
+        "true_residual",
+        "true_residual",
+        "extension",
+        "extension",
+        "true_residual",
+        "true_residual",
+        "extension",
+        "extension",
+        "true_residual",
+        "true_residual",
+        "extension",
+        "extension",
+        "true_residual",
+        "true_residual",
+        "extension",
+        "extension",
+        "true_residual",
+        "true_residual"
+      ]
+    },
+    {
+      "output": {
+        "problem_identity": "68a1d313efcd76ed8286f00bd3d58de757e4c6c05982fd639e4ce5a408ca1fd5",
+        "results": [
+          {
+            "field": "x",
+            "observable": "q0",
+            "raw_value": -1.4578410872805847,
+            "target_identity": "b135407ee58882782986c91120d641c68557240d6722ca29bd1e78b362d0359f",
+            "qualified": true,
+            "value": -1.4578410872805847,
+            "status": "qualified",
+            "reasons": [],
+            "errors": {
+              "direct": 6.661338147750939e-16,
+              "adjoint": 1.5543122344752192e-15,
+              "cphf": 4.39648317751562e-13,
+              "0.0005": 7.345107633227599e-08,
+              "0.0002": 1.175997965674469e-08
+            },
+            "via": "adjoint"
+          },
+          {
+            "field": "y",
+            "observable": "r2",
+            "raw_value": -11.97388626884351,
+            "target_identity": "1da950d0c742f279e10e5881cfb1267f4e14f6538a41c1307b8fe2c45c391d40",
+            "qualified": true,
+            "value": -11.97388626884351,
+            "status": "qualified",
+            "reasons": [],
+            "errors": {
+              "direct": 2.6645352591003757e-14,
+              "adjoint": 2.1316282072803006e-14,
+              "cphf": 2.311040248059726e-12,
+              "0.0005": 6.695717935656376e-08,
+              "0.0002": 1.3868978854247871e-08
+            },
+            "via": "adjoint"
+          },
+          {
+            "field": "z",
+            "observable": "zz",
+            "raw_value": 0.005750967189915633,
+            "target_identity": "feb5f0547155d169c17952435c73c031ee976061350305cf0ad4ebb2aac1b99d",
+            "qualified": true,
+            "value": 0.005750967189915633,
+            "status": "qualified",
+            "reasons": [],
+            "errors": {
+              "direct": 8.673617379884035e-19,
+              "adjoint": 0.0,
+              "cphf": 6.288372600415926e-15,
+              "0.0005": 4.52421209870546e-10,
+              "0.0002": 2.742783604403609e-11
+            },
+            "via": "direct"
+          }
+        ],
+        "counts": {
+          "jk_calls": 20,
+          "operator_actions": 20,
+          "rhs_columns": 1,
+          "cache_validation_actions": 2,
+          "solver_actions": 18,
+          "cache_rejections": 0,
+          "requests": 3
+        },
+        "block": {
+          "rhs_rank": 1,
+          "residuals": {
+            "fields/z": 1.1943534602840131e-15
+          },
+          "solver_actions": 18
+        },
+        "new_fields": [
+          "z"
+        ],
+        "new_observables": [],
+        "cache_checks": [
+          {
+            "group": "observables",
+            "id": "q0",
+            "decision": "accepted",
+            "true_residual": 6.709451051775879e-15
+          },
+          {
+            "group": "observables",
+            "id": "r2",
+            "decision": "accepted",
+            "true_residual": 7.82483738802654e-14
+          }
+        ],
+        "elapsed_seconds": 0.005971494130790234
+      },
+      "status": "completed",
+      "stage": "kept_historical_adjoint_vectors",
+      "seconds": 0.006118775811046362,
+      "counts": {
+        "jk_calls": 20,
+        "response_operator_actions": 20,
+        "density_jvp_calls": 20
+      },
+      "action_sites": [
+        "outside_block",
+        "outside_block",
+        "extension",
+        "true_residual",
+        "extension",
+        "true_residual",
+        "extension",
+        "true_residual",
+        "extension",
+        "true_residual",
+        "extension",
+        "true_residual",
+        "extension",
+        "true_residual",
+        "extension",
+        "true_residual",
+        "extension",
+        "true_residual",
+        "extension",
+        "true_residual"
+      ]
+    }
+  ],
+  "record": "qm9-000003",
+  "gqc_commit": "2791504cc238fe83d328fc1718080642b288222a",
+  "gqc_tree": "6ba1d4b5ac7ca54b4fc87af58bd7db3472fd6fc6",
+  "gqc_solver_blob": "439f94dec3b09da511c856ccb0502f6847d6fb7d",
+  "helper_commit": "dbfde3ec34e9338c4fc6a0801c1251cf3cb22b6a",
+  "helpers_sha256": {
+    "gqc_dual_response.py": "1756a57cabda51408d6338687d702384e03afa46eba28cb30ebc37a7c0e14a15",
+    "gqc_residual_plan.py": "f8d98989b4cd1ed0f7de1827733454474579df0a0735604c6639756643f3fc19",
+    "probe_gqc_residual.py": "6959858631769158358d17f80a159112e646d10dc59cd4b473f4929496ec9df7"
+  },
+  "inputs_sha256": {
+    "qm9-000003.json": "c0e5212e5f0def071ff6ec5dac88c0f9b893aa9c10107e73c514edba6e416e8f",
+    "qm9-000003.npz": "08d0cec5d6ac38620732cb37e07955668a07576e5ca3fc424212db1e8094f4ce",
+    "oracle.json": "e5b1d3a8d5c39b1cf530b966d2a6c1f0787a18c4015ccd682425104cc7f3cb6e"
+  },
+  "driver_sha256": "cd20b6d741a7a4de0b60e6d46b39614ff04e40a32130d7c867594c998c0b3497",
+  "environment": {
+    "python": "3.13.12 | packaged by Anaconda, Inc. | (main, Feb 24 2026, 16:13:31) [GCC 14.3.0]",
+    "numpy": "2.4.6",
+    "pyscf": "2.14.0",
+    "scipy": "1.18.1",
+    "host": "node5",
+    "cxx": "c++ (Ubuntu 11.4.0-1ubuntu1~22.04.3) 11.4.0",
+    "sccache": "sccache 0.16.0",
+    "sccache_sha256": "8cc465f71f6f6c85d9df34503fda47f0d23480796501605e0502c88004546149",
+    "threads": {
+      "OMP_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1"
+    },
+    "slurm_job": "2048",
+    "slurm_cpus": "1",
+    "slurm_gpus": null,
+    "cuda_visible": ""
+  },
+  "differences_from_direct": {
+    "ordinary_xyz": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "separate_xyz_z": [
+      2.220446049250313e-16,
+      3.552713678800501e-15,
+      1.0408340855860843e-17
+    ],
+    "joint_xyz_z": [
+      2.6645352591003757e-15,
+      1.7763568394002505e-14,
+      3.469446951953614e-17
+    ],
+    "joint_xy_z": [
+      1.7763568394002505e-15,
+      1.2434497875801753e-14,
+      1.457167719820518e-16
+    ],
+    "joint_xy_adjoint_zz": [
+      1.5543122344752192e-15,
+      2.6645352591003757e-14,
+      1.214306433183765e-17
+    ],
+    "joint_xyz_adjoint_zz": [
+      2.4424906541753444e-15,
+      3.552713678800501e-15,
+      2.862293735361732e-17
+    ]
+  },
+  "all_counts": {
+    "jk_calls": 182,
+    "response_operator_actions": 181,
+    "density_jvp_calls": 183
+  },
+  "seconds": 3.7711185589432716
+}

@@ -1,0 +1,122 @@
+{
+  "id": "aiida",
+  "source": {
+    "id": "aiida",
+    "catalog_ids": [
+      "aiida"
+    ],
+    "priority": "P1",
+    "repository_url": "https://github.com/aiidateam/aiida-core",
+    "role": "current",
+    "commit": null,
+    "checkout_path": "_references/aiida",
+    "paper_version_status": "not_established",
+    "selection_reason": "\u6863\u6848\u3001\u5de5\u4f5c\u6d41\u4e0e\u72b6\u6001"
+  },
+  "started_at_utc": "2026-11-17T17:51:55.219042+00:00",
+  "status": "indexed_pending_review",
+  "commands": [
+    {
+      "argv": [
+        "git",
+        "ls-remote",
+        "https://github.com/aiidateam/aiida-core",
+        "HEAD"
+      ],
+      "cwd": ".",
+      "started_at_utc": "2026-11-17T17:51:55.219171+00:00",
+      "stdout": "31c1dcf5936359c7eaaebaeb335dabe141dfb40e\tHEAD\n6c2acd73012be1495c4a7c167256744559870500\trefs/remotes/origin/HEAD\n",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 3.1888679380062968,
+      "ended_at_utc": "2026-11-17T17:51:58.408191+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "init",
+        "--quiet"
+      ],
+      "cwd": "_references/aiida",
+      "started_at_utc": "2026-11-17T17:51:58.408869+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.006876917992485687,
+      "ended_at_utc": "2026-11-17T17:51:58.439970+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "remote",
+        "add",
+        "origin",
+        "https://github.com/aiidateam/aiida-core"
+      ],
+      "cwd": "_references/aiida",
+      "started_at_utc": "2026-11-17T17:51:58.440599+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.004077435994986445,
+      "ended_at_utc": "2026-11-17T17:51:58.445209+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "protocol.file.allow=never",
+        "fetch",
+        "--depth=1",
+        "--no-tags",
+        "origin",
+        "31c1dcf5936359c7eaaebaeb335dabe141dfb40e"
+      ],
+      "cwd": "_references/aiida",
+      "started_at_utc": "2026-11-17T17:51:58.445764+00:00",
+      "stdout": "",
+      "stderr": "\u6765\u81ea https://github.com/aiidateam/aiida-core\n * branch            31c1dcf5936359c7eaaebaeb335dabe141dfb40e -> FETCH_HEAD\n",
+      "returncode": 0,
+      "elapsed_seconds": 10.422817480997765,
+      "ended_at_utc": "2026-11-17T17:52:08.869044+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "core.autocrlf=false",
+        "checkout",
+        "--detach",
+        "31c1dcf5936359c7eaaebaeb335dabe141dfb40e"
+      ],
+      "cwd": "_references/aiida",
+      "started_at_utc": "2026-11-17T17:52:08.869626+00:00",
+      "stdout": "",
+      "stderr": "HEAD \u76ee\u524d\u4f4d\u4e8e 31c1dcf \ud83d\udcda `graphs`: Document declared task failures (#7777)\n",
+      "returncode": 0,
+      "elapsed_seconds": 0.15863089299818967,
+      "ended_at_utc": "2026-11-17T17:52:09.028730+00:00"
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "/home/lhshen/vibedataset/handoff/gqcdataset_codex_goal/tools/inventory_sources.py",
+        "_references/aiida",
+        "--recurse-submodules",
+        "--json",
+        "handoff/gqcdataset_codex_goal/research/inventories/aiida.json"
+      ],
+      "cwd": ".",
+      "started_at_utc": "2026-11-17T17:52:09.029105+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.24130318200332113,
+      "ended_at_utc": "2026-11-17T17:52:09.270677+00:00"
+    }
+  ],
+  "receipt_path": "handoff/gqcdataset_codex_goal/research/acquisition/aiida-20261117T175155219022Z.json",
+  "resolved_commit": "31c1dcf5936359c7eaaebaeb335dabe141dfb40e",
+  "inventory_path": "handoff/gqcdataset_codex_goal/research/inventories/aiida.json",
+  "ended_at_utc": "2026-11-17T17:52:09.271065+00:00"
+}

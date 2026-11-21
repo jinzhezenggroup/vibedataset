@@ -1,0 +1,52 @@
+{
+  "project_commit": "3cf40026265f389cafd33044f0cdf9de2e595931",
+  "driver_sha256": "0ab67f882e1db78f13edaf03c92f940ac4f10ec71589d8e6a1d595ea9e293dfe",
+  "report_sha256": "1127f719ef0cb1e9c1cbc96dcf74d3165daa0b1833623d5906c9c9cbe1f1f9ac",
+  "events": [
+    {
+      "utc": "2026-11-17T18:53:10.308204+00:00",
+      "event": "case_started",
+      "molecule": "water"
+    },
+    {
+      "utc": "2026-11-17T18:53:10.335684+00:00",
+      "event": "compile_started",
+      "program": "2215f904b3e4f0856f3c6c2826f6e0bc994f322a9327904703ae8593203ce68c"
+    },
+    {
+      "utc": "2026-11-17T18:53:10.354832+00:00",
+      "event": "case_finished",
+      "molecule": "water",
+      "passed": false
+    },
+    {
+      "utc": "2026-11-17T18:53:10.355032+00:00",
+      "event": "case_started",
+      "molecule": "lih"
+    },
+    {
+      "utc": "2026-11-17T18:53:10.372321+00:00",
+      "event": "compile_started",
+      "program": "af2dc984edd07cb6e1d0ae8946fd6c34a8e2792519d0d4648f17e0483eb8ae1d"
+    },
+    {
+      "utc": "2026-11-17T18:53:10.386585+00:00",
+      "event": "case_finished",
+      "molecule": "lih",
+      "passed": false
+    }
+  ],
+  "failures": [
+    {
+      "molecule": "water",
+      "error": "no usable compiler cache launcher found; install sccache with `python -m pip install sccache` or install ccache"
+    },
+    {
+      "molecule": "lih",
+      "error": "no usable compiler cache launcher found; install sccache with `python -m pip install sccache` or install ccache"
+    }
+  ],
+  "raw_directory": ".work/gqc_residual_first",
+  "repair": "Isolated uv environment with sccache==0.16.0 placed on PATH. Same C++/scientific code and protocol on retry.",
+  "scope": "Both runs read the molecular snapshot, built its PySCF molecule/dipole integrals and attempted CPU compilation. Neither reached a response or SCF solve."
+}

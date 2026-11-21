@@ -1,0 +1,1098 @@
+{
+  "source_commit": "4ec1ed623f82536076c069dd65a4eb132969d9ed",
+  "selection": "All sp_* and error_* single-point fixtures in qcarchivetesting/qcarchivetesting/qcschema_v1_data",
+  "record_count": 13,
+  "records": [
+    {
+      "path": "qcarchivetesting/qcarchivetesting/qcschema_v1_data/error_psi4_water_energy_1.json.xz",
+      "compressed_bytes": 3212,
+      "compressed_sha256": "d852cc5e4839535a9fc52bc30ff141e2efab1918709ffdf3450d75d0f6422ce3",
+      "molecule": "H2O",
+      "input_geometry": {
+        "symbols": [
+          "O",
+          "H",
+          "H"
+        ],
+        "geometry": [
+          0.0,
+          0.0,
+          0.22166487,
+          0.0,
+          1.43090062,
+          -0.8866595,
+          0.0,
+          -1.43090062,
+          -0.8866595
+        ],
+        "molecular_charge": 0.0,
+        "molecular_multiplicity": 1
+      },
+      "input_geometry_sha256": "e06fa318960a416257a017e4d3a2259f3a5cfa117f6745a83eaa8653e74e1f87",
+      "output_geometry_matches_input": null,
+      "driver": "energy",
+      "model": {
+        "method": "b3lyp",
+        "basis": "made_up_basis"
+      },
+      "keywords": {},
+      "requested_protocols": {},
+      "success": false,
+      "error_type": "unknown_error",
+      "failure_evidence": "basis_not_found",
+      "program": {
+        "creator": null,
+        "version": null,
+        "qcengine_version": null
+      },
+      "populated_properties": [],
+      "counts": {},
+      "basis_sha256_json": null,
+      "has_explicit_centers": false,
+      "restricted": null,
+      "wavefunction_aliases": {},
+      "wavefunction_arrays": {}
+    },
+    {
+      "path": "qcarchivetesting/qcarchivetesting/qcschema_v1_data/error_psi4_water_energy_2.json.xz",
+      "compressed_bytes": 4800,
+      "compressed_sha256": "b97d2c0dbfd79164a377e69eb0b13f5e11c084c84b2e37851189961eb0a45e98",
+      "molecule": "H2O",
+      "input_geometry": {
+        "symbols": [
+          "O",
+          "H",
+          "H"
+        ],
+        "geometry": [
+          0.0,
+          0.0,
+          0.22166487,
+          0.0,
+          1.43090062,
+          -0.8866595,
+          0.0,
+          -1.43090062,
+          -0.8866595
+        ],
+        "molecular_charge": 0.0,
+        "molecular_multiplicity": 1
+      },
+      "input_geometry_sha256": "e06fa318960a416257a017e4d3a2259f3a5cfa117f6745a83eaa8653e74e1f87",
+      "output_geometry_matches_input": null,
+      "driver": "energy",
+      "model": {
+        "method": "b3lyp",
+        "basis": "sto-3g"
+      },
+      "keywords": {
+        "maxiter": 1
+      },
+      "requested_protocols": {},
+      "success": false,
+      "error_type": "unknown_error",
+      "failure_evidence": "scf_nonconvergence",
+      "program": {
+        "creator": null,
+        "version": null,
+        "qcengine_version": null
+      },
+      "populated_properties": [],
+      "counts": {},
+      "basis_sha256_json": null,
+      "has_explicit_centers": false,
+      "restricted": null,
+      "wavefunction_aliases": {},
+      "wavefunction_arrays": {}
+    },
+    {
+      "path": "qcarchivetesting/qcarchivetesting/qcschema_v1_data/sp_psi4_benzene_energy_1.json.xz",
+      "compressed_bytes": 6292,
+      "compressed_sha256": "f1d23c766fc2d7ff9cd6c7f9b0fac0ca7f009f36aa082edac560e2ad48e00ad8",
+      "molecule": "C6H6",
+      "input_geometry": {
+        "symbols": [
+          "C",
+          "C",
+          "C",
+          "C",
+          "C",
+          "C",
+          "H",
+          "H",
+          "H",
+          "H",
+          "H",
+          "H"
+        ],
+        "geometry": [
+          0.0,
+          2.6399474,
+          0.0,
+          2.28619067,
+          1.3199737,
+          0.0,
+          2.28619067,
+          -1.3199737,
+          0.0,
+          0.0,
+          -2.6399474,
+          0.0,
+          -2.28619067,
+          -1.3199737,
+          0.0,
+          -2.28619067,
+          1.3199737,
+          0.0,
+          0.0,
+          4.68841052,
+          0.0,
+          4.06026555,
+          2.34420526,
+          0.0,
+          4.06026555,
+          -2.34420526,
+          0.0,
+          0.0,
+          -4.68841052,
+          0.0,
+          -4.06026555,
+          -2.34420526,
+          0.0,
+          -4.06026555,
+          2.34420526,
+          0.0
+        ],
+        "molecular_charge": 0.0,
+        "molecular_multiplicity": 1
+      },
+      "input_geometry_sha256": "d9cecf4fd0639a9b4341f3b39b2164975be2add81dc43dce9b39ce3aaeb59210",
+      "output_geometry_matches_input": false,
+      "driver": "energy",
+      "model": {
+        "method": "b3lyp",
+        "basis": "6-31g"
+      },
+      "keywords": {},
+      "requested_protocols": {},
+      "success": true,
+      "error_type": null,
+      "failure_evidence": null,
+      "program": {
+        "creator": "Psi4",
+        "version": "1.10",
+        "qcengine_version": "v0.34.0"
+      },
+      "populated_properties": [
+        "calcinfo_nalpha",
+        "calcinfo_natom",
+        "calcinfo_nbasis",
+        "calcinfo_nbeta",
+        "calcinfo_nmo",
+        "nuclear_repulsion_energy",
+        "return_energy",
+        "scf_dipole_moment",
+        "scf_iterations",
+        "scf_one_electron_energy",
+        "scf_total_energy",
+        "scf_two_electron_energy",
+        "scf_xc_energy"
+      ],
+      "counts": {
+        "calcinfo_nbasis": 66,
+        "calcinfo_nmo": 66,
+        "calcinfo_nalpha": 21,
+        "calcinfo_nbeta": 21,
+        "calcinfo_natom": 12
+      },
+      "basis_sha256_json": null,
+      "has_explicit_centers": false,
+      "restricted": null,
+      "wavefunction_aliases": {},
+      "wavefunction_arrays": {}
+    },
+    {
+      "path": "qcarchivetesting/qcarchivetesting/qcschema_v1_data/sp_psi4_benzene_energy_2.json.xz",
+      "compressed_bytes": 6300,
+      "compressed_sha256": "a89c5155bc8d31b0cde2a9fd7bcf7abeec3501d7bf364bc4c193eb06315300a1",
+      "molecule": "C6H6",
+      "input_geometry": {
+        "symbols": [
+          "C",
+          "C",
+          "C",
+          "C",
+          "C",
+          "C",
+          "H",
+          "H",
+          "H",
+          "H",
+          "H",
+          "H"
+        ],
+        "geometry": [
+          0.0,
+          2.6399474,
+          0.0,
+          2.28619067,
+          1.3199737,
+          0.0,
+          2.28619067,
+          -1.3199737,
+          0.0,
+          0.0,
+          -2.6399474,
+          0.0,
+          -2.28619067,
+          -1.3199737,
+          0.0,
+          -2.28619067,
+          1.3199737,
+          0.0,
+          0.0,
+          4.68841052,
+          0.0,
+          4.06026555,
+          2.34420526,
+          0.0,
+          4.06026555,
+          -2.34420526,
+          0.0,
+          0.0,
+          -4.68841052,
+          0.0,
+          -4.06026555,
+          -2.34420526,
+          0.0,
+          -4.06026555,
+          2.34420526,
+          0.0
+        ],
+        "molecular_charge": 0.0,
+        "molecular_multiplicity": 1
+      },
+      "input_geometry_sha256": "d9cecf4fd0639a9b4341f3b39b2164975be2add81dc43dce9b39ce3aaeb59210",
+      "output_geometry_matches_input": false,
+      "driver": "energy",
+      "model": {
+        "method": "b3lyp",
+        "basis": "6-31g"
+      },
+      "keywords": {
+        "maxiter": 100
+      },
+      "requested_protocols": {},
+      "success": true,
+      "error_type": null,
+      "failure_evidence": null,
+      "program": {
+        "creator": "Psi4",
+        "version": "1.10",
+        "qcengine_version": "v0.34.0"
+      },
+      "populated_properties": [
+        "calcinfo_nalpha",
+        "calcinfo_natom",
+        "calcinfo_nbasis",
+        "calcinfo_nbeta",
+        "calcinfo_nmo",
+        "nuclear_repulsion_energy",
+        "return_energy",
+        "scf_dipole_moment",
+        "scf_iterations",
+        "scf_one_electron_energy",
+        "scf_total_energy",
+        "scf_two_electron_energy",
+        "scf_xc_energy"
+      ],
+      "counts": {
+        "calcinfo_nbasis": 66,
+        "calcinfo_nmo": 66,
+        "calcinfo_nalpha": 21,
+        "calcinfo_nbeta": 21,
+        "calcinfo_natom": 12
+      },
+      "basis_sha256_json": null,
+      "has_explicit_centers": false,
+      "restricted": null,
+      "wavefunction_aliases": {},
+      "wavefunction_arrays": {}
+    },
+    {
+      "path": "qcarchivetesting/qcarchivetesting/qcschema_v1_data/sp_psi4_benzene_energy_3.json.xz",
+      "compressed_bytes": 6300,
+      "compressed_sha256": "2377bf8f8fc780a846a96187d47d649983de12a3b0cd1c3373e043b5d16a43c1",
+      "molecule": "C6H6",
+      "input_geometry": {
+        "symbols": [
+          "C",
+          "C",
+          "C",
+          "C",
+          "C",
+          "C",
+          "H",
+          "H",
+          "H",
+          "H",
+          "H",
+          "H"
+        ],
+        "geometry": [
+          0.0,
+          2.6399474,
+          0.0,
+          2.28619067,
+          1.3199737,
+          0.0,
+          2.28619067,
+          -1.3199737,
+          0.0,
+          0.0,
+          -2.6399474,
+          0.0,
+          -2.28619067,
+          -1.3199737,
+          0.0,
+          -2.28619067,
+          1.3199737,
+          0.0,
+          0.0,
+          4.68841052,
+          0.0,
+          4.06026555,
+          2.34420526,
+          0.0,
+          4.06026555,
+          -2.34420526,
+          0.0,
+          0.0,
+          -4.68841052,
+          0.0,
+          -4.06026555,
+          -2.34420526,
+          0.0,
+          -4.06026555,
+          2.34420526,
+          0.0
+        ],
+        "molecular_charge": 0.0,
+        "molecular_multiplicity": 1
+      },
+      "input_geometry_sha256": "d9cecf4fd0639a9b4341f3b39b2164975be2add81dc43dce9b39ce3aaeb59210",
+      "output_geometry_matches_input": false,
+      "driver": "energy",
+      "model": {
+        "method": "b3lyp",
+        "basis": "6-31g"
+      },
+      "keywords": {
+        "e_convergence": 1e-06
+      },
+      "requested_protocols": {},
+      "success": true,
+      "error_type": null,
+      "failure_evidence": null,
+      "program": {
+        "creator": "Psi4",
+        "version": "1.10",
+        "qcengine_version": "v0.34.0"
+      },
+      "populated_properties": [
+        "calcinfo_nalpha",
+        "calcinfo_natom",
+        "calcinfo_nbasis",
+        "calcinfo_nbeta",
+        "calcinfo_nmo",
+        "nuclear_repulsion_energy",
+        "return_energy",
+        "scf_dipole_moment",
+        "scf_iterations",
+        "scf_one_electron_energy",
+        "scf_total_energy",
+        "scf_two_electron_energy",
+        "scf_xc_energy"
+      ],
+      "counts": {
+        "calcinfo_nbasis": 66,
+        "calcinfo_nmo": 66,
+        "calcinfo_nalpha": 21,
+        "calcinfo_nbeta": 21,
+        "calcinfo_natom": 12
+      },
+      "basis_sha256_json": null,
+      "has_explicit_centers": false,
+      "restricted": null,
+      "wavefunction_aliases": {},
+      "wavefunction_arrays": {}
+    },
+    {
+      "path": "qcarchivetesting/qcarchivetesting/qcschema_v1_data/sp_psi4_fluoroethane_wfn.json.xz",
+      "compressed_bytes": 9228,
+      "compressed_sha256": "6deb072f36ba1fb106ef888029d5d9e7409e6e0a5c23fdcc0c604dc2832fa143",
+      "molecule": "C2FH5",
+      "input_geometry": {
+        "symbols": [
+          "C",
+          "C",
+          "F",
+          "H",
+          "H",
+          "H",
+          "H",
+          "H"
+        ],
+        "geometry": [
+          0.0,
+          1.05390026,
+          0.0,
+          2.13501258,
+          -0.82505443,
+          0.0,
+          -2.31170197,
+          -0.22487741,
+          0.0,
+          -0.01266117,
+          2.25822272,
+          1.68261214,
+          -0.01266117,
+          2.25822272,
+          -1.68261214,
+          3.93913411,
+          0.17290994,
+          0.0,
+          2.04071524,
+          -2.01898339,
+          1.67580913,
+          2.04071524,
+          -2.01898339,
+          -1.67580913
+        ],
+        "molecular_charge": 0.0,
+        "molecular_multiplicity": 1
+      },
+      "input_geometry_sha256": "d193208ddb3608d24b8edb2d38fa77617ba08106dc792c96ffaf8a665090c14d",
+      "output_geometry_matches_input": false,
+      "driver": "energy",
+      "model": {
+        "method": "b3lyp",
+        "basis": "sto-3g"
+      },
+      "keywords": {},
+      "requested_protocols": {
+        "wavefunction": "orbitals_and_eigenvalues"
+      },
+      "success": true,
+      "error_type": null,
+      "failure_evidence": null,
+      "program": {
+        "creator": "Psi4",
+        "version": "1.10",
+        "qcengine_version": "v0.34.0"
+      },
+      "populated_properties": [
+        "calcinfo_nalpha",
+        "calcinfo_natom",
+        "calcinfo_nbasis",
+        "calcinfo_nbeta",
+        "calcinfo_nmo",
+        "nuclear_repulsion_energy",
+        "return_energy",
+        "scf_dipole_moment",
+        "scf_iterations",
+        "scf_one_electron_energy",
+        "scf_total_energy",
+        "scf_two_electron_energy",
+        "scf_xc_energy"
+      ],
+      "counts": {
+        "calcinfo_nbasis": 20,
+        "calcinfo_nmo": 20,
+        "calcinfo_nalpha": 13,
+        "calcinfo_nbeta": 13,
+        "calcinfo_natom": 8
+      },
+      "basis_sha256_json": "28b87d746a8c01dc2072c64422e84817f19065926562cb250eb33c90dea0b6a3",
+      "has_explicit_centers": true,
+      "restricted": true,
+      "wavefunction_aliases": {
+        "orbitals_a": "scf_orbitals_a",
+        "eigenvalues_a": "scf_eigenvalues_a"
+      },
+      "wavefunction_arrays": {
+        "scf_orbitals_a": {
+          "stored_length": 400,
+          "sha256_json": "3949e7527149b69e278fcc04f37e8eae62cf30ec12170b9e2985190875d3da87",
+          "all_finite": true
+        },
+        "scf_eigenvalues_a": {
+          "stored_length": 20,
+          "sha256_json": "d187949d85f9f312e579842cee0c4e069a491b85ea34992a298fdb9a25e172e2",
+          "all_finite": true
+        }
+      }
+    },
+    {
+      "path": "qcarchivetesting/qcarchivetesting/qcschema_v1_data/sp_psi4_h2_b3lyp_nativefiles.json.xz",
+      "compressed_bytes": 6248,
+      "compressed_sha256": "e8dd80de3375028bacbfae1e3839439e895ce5524c5ecb937d0cae1167a580fe",
+      "molecule": "H2",
+      "input_geometry": {
+        "symbols": [
+          "H",
+          "H"
+        ],
+        "geometry": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.4
+        ],
+        "molecular_charge": 0.0,
+        "molecular_multiplicity": 1
+      },
+      "input_geometry_sha256": "bf01185456d3639bbf67a20cf61e145695b26915b728945209db1c04b5318840",
+      "output_geometry_matches_input": true,
+      "driver": "gradient",
+      "model": {
+        "method": "b3lyp",
+        "basis": "sto-3g"
+      },
+      "keywords": {
+        "gradient_write": true
+      },
+      "requested_protocols": {
+        "wavefunction": "all",
+        "native_files": "all"
+      },
+      "success": true,
+      "error_type": null,
+      "failure_evidence": null,
+      "program": {
+        "creator": "Psi4",
+        "version": "1.10",
+        "qcengine_version": "v0.34.0"
+      },
+      "populated_properties": [
+        "calcinfo_nalpha",
+        "calcinfo_natom",
+        "calcinfo_nbasis",
+        "calcinfo_nbeta",
+        "calcinfo_nmo",
+        "nuclear_repulsion_energy",
+        "return_energy",
+        "return_gradient",
+        "scf_dipole_moment",
+        "scf_iterations",
+        "scf_one_electron_energy",
+        "scf_total_energy",
+        "scf_total_gradient",
+        "scf_two_electron_energy",
+        "scf_xc_energy"
+      ],
+      "counts": {
+        "calcinfo_nbasis": 2,
+        "calcinfo_nmo": 2,
+        "calcinfo_nalpha": 1,
+        "calcinfo_nbeta": 1,
+        "calcinfo_natom": 2
+      },
+      "basis_sha256_json": "573b5f9264720d7ee0b84f58388987d4a08d3a1353a52f97498d809cb6ed12ea",
+      "has_explicit_centers": true,
+      "restricted": true,
+      "wavefunction_aliases": {
+        "orbitals_a": "scf_orbitals_a",
+        "density_a": "scf_density_a",
+        "fock_a": "scf_fock_a",
+        "eigenvalues_a": "scf_eigenvalues_a",
+        "occupations_a": "scf_occupations_a"
+      },
+      "wavefunction_arrays": {
+        "scf_orbitals_a": {
+          "stored_length": 4,
+          "sha256_json": "f86fade2c072d03039a8945b2a74c8a877d6ff2615ca9f6cc31d4e4a473455e4",
+          "all_finite": true
+        },
+        "scf_density_a": {
+          "stored_length": 4,
+          "sha256_json": "e942bf759c0ec3f3560ea4957e5562289ad4e2521d088e340b68e234725174b7",
+          "all_finite": true
+        },
+        "scf_fock_a": {
+          "stored_length": 4,
+          "sha256_json": "8f55bec039371798f0d9b39f5a11fb546e1d18856c893065b2645a10fa843073",
+          "all_finite": true
+        },
+        "scf_eigenvalues_a": {
+          "stored_length": 2,
+          "sha256_json": "87c0fcfa3d052c07035fec08a42b42517815371a6f486506b4c3874c31a4380a",
+          "all_finite": true
+        },
+        "scf_occupations_a": {
+          "stored_length": 2,
+          "sha256_json": "7467a8ae07d88dd0bd7b8a528b0aece36e11f49563ca8b1092409bb1a67e5344",
+          "all_finite": true
+        }
+      }
+    },
+    {
+      "path": "qcarchivetesting/qcarchivetesting/qcschema_v1_data/sp_psi4_peroxide_energy_wfn.json.xz",
+      "compressed_bytes": 8204,
+      "compressed_sha256": "370d0dc1eb7c77037634c6f04f7502abdce0f1fc23efad2a1a5dc5448c48b339",
+      "molecule": "H2O2",
+      "input_geometry": {
+        "symbols": [
+          "O",
+          "O",
+          "H",
+          "H"
+        ],
+        "geometry": [
+          0.0,
+          1.39367302,
+          -0.09977754,
+          0.0,
+          -1.39367302,
+          -0.09977754,
+          1.5476857,
+          1.54390624,
+          0.79746442,
+          -1.5476857,
+          -1.54390624,
+          0.79746442
+        ],
+        "molecular_charge": 0.0,
+        "molecular_multiplicity": 1
+      },
+      "input_geometry_sha256": "4b915ce9dfb5b7172428ec857554232a641b655f6979fe5e19aa893caa16c4ab",
+      "output_geometry_matches_input": false,
+      "driver": "energy",
+      "model": {
+        "method": "b3lyp",
+        "basis": "sto-3g"
+      },
+      "keywords": {},
+      "requested_protocols": {
+        "wavefunction": "all"
+      },
+      "success": true,
+      "error_type": null,
+      "failure_evidence": null,
+      "program": {
+        "creator": "Psi4",
+        "version": "1.10",
+        "qcengine_version": "v0.34.0"
+      },
+      "populated_properties": [
+        "calcinfo_nalpha",
+        "calcinfo_natom",
+        "calcinfo_nbasis",
+        "calcinfo_nbeta",
+        "calcinfo_nmo",
+        "nuclear_repulsion_energy",
+        "return_energy",
+        "scf_dipole_moment",
+        "scf_iterations",
+        "scf_one_electron_energy",
+        "scf_total_energy",
+        "scf_two_electron_energy",
+        "scf_xc_energy"
+      ],
+      "counts": {
+        "calcinfo_nbasis": 12,
+        "calcinfo_nmo": 12,
+        "calcinfo_nalpha": 9,
+        "calcinfo_nbeta": 9,
+        "calcinfo_natom": 4
+      },
+      "basis_sha256_json": "0651fe56f8cb26798483448e5d14f246c3df5591a92d1e28759ea361231005ce",
+      "has_explicit_centers": true,
+      "restricted": true,
+      "wavefunction_aliases": {
+        "orbitals_a": "scf_orbitals_a",
+        "density_a": "scf_density_a",
+        "fock_a": "scf_fock_a",
+        "eigenvalues_a": "scf_eigenvalues_a",
+        "occupations_a": "scf_occupations_a"
+      },
+      "wavefunction_arrays": {
+        "scf_orbitals_a": {
+          "stored_length": 144,
+          "sha256_json": "bcba6f4660fb97110ca7b1b5edfce38a97fd38b52c2ea5d62bc5a5ed0b94b3f0",
+          "all_finite": true
+        },
+        "scf_density_a": {
+          "stored_length": 144,
+          "sha256_json": "1afcbc03001b760889d355788aa26b43e3ac3cb953463ddc7b00210fd3933bef",
+          "all_finite": true
+        },
+        "scf_fock_a": {
+          "stored_length": 144,
+          "sha256_json": "29b60a299abd1d8e9910bf9d5e81f5fba6bb0bef2a62ba5f35070216bf66fd0c",
+          "all_finite": true
+        },
+        "scf_eigenvalues_a": {
+          "stored_length": 12,
+          "sha256_json": "9638d42fa1bee1e4ec5ef4114caed27449a83ad0e0a543a18e7f9e4ddf325b4d",
+          "all_finite": true
+        },
+        "scf_occupations_a": {
+          "stored_length": 12,
+          "sha256_json": "275acfdfb860ec7fca0aacb4721b786056eb9269cd89661afa90ec00d7696ead",
+          "all_finite": true
+        }
+      }
+    },
+    {
+      "path": "qcarchivetesting/qcarchivetesting/qcschema_v1_data/sp_psi4_water_energy.json.xz",
+      "compressed_bytes": 5524,
+      "compressed_sha256": "edf0fb632e686c79f8ef3b3d1310abefc0f898bb5234cb1d30b309762d1af9ab",
+      "molecule": "H2O",
+      "input_geometry": {
+        "symbols": [
+          "O",
+          "H",
+          "H"
+        ],
+        "geometry": [
+          0.0,
+          0.0,
+          0.22166487,
+          0.0,
+          1.43090062,
+          -0.8866595,
+          0.0,
+          -1.43090062,
+          -0.8866595
+        ],
+        "molecular_charge": 0.0,
+        "molecular_multiplicity": 1
+      },
+      "input_geometry_sha256": "e06fa318960a416257a017e4d3a2259f3a5cfa117f6745a83eaa8653e74e1f87",
+      "output_geometry_matches_input": false,
+      "driver": "energy",
+      "model": {
+        "method": "b3lyp",
+        "basis": "sto-3g"
+      },
+      "keywords": {},
+      "requested_protocols": {},
+      "success": true,
+      "error_type": null,
+      "failure_evidence": null,
+      "program": {
+        "creator": "Psi4",
+        "version": "1.10",
+        "qcengine_version": "v0.34.0"
+      },
+      "populated_properties": [
+        "calcinfo_nalpha",
+        "calcinfo_natom",
+        "calcinfo_nbasis",
+        "calcinfo_nbeta",
+        "calcinfo_nmo",
+        "nuclear_repulsion_energy",
+        "return_energy",
+        "scf_dipole_moment",
+        "scf_iterations",
+        "scf_one_electron_energy",
+        "scf_total_energy",
+        "scf_two_electron_energy",
+        "scf_xc_energy"
+      ],
+      "counts": {
+        "calcinfo_nbasis": 7,
+        "calcinfo_nmo": 7,
+        "calcinfo_nalpha": 5,
+        "calcinfo_nbeta": 5,
+        "calcinfo_natom": 3
+      },
+      "basis_sha256_json": null,
+      "has_explicit_centers": false,
+      "restricted": null,
+      "wavefunction_aliases": {},
+      "wavefunction_arrays": {}
+    },
+    {
+      "path": "qcarchivetesting/qcarchivetesting/qcschema_v1_data/sp_psi4_water_gradient.json.xz",
+      "compressed_bytes": 5928,
+      "compressed_sha256": "83da9c3c51db17cca02685069099bf484b3b756e15229511f5922d64e8f27d54",
+      "molecule": "H2O",
+      "input_geometry": {
+        "symbols": [
+          "O",
+          "H",
+          "H"
+        ],
+        "geometry": [
+          0.0,
+          0.0,
+          0.22166487,
+          0.0,
+          1.43090062,
+          -0.8866595,
+          0.0,
+          -1.43090062,
+          -0.8866595
+        ],
+        "molecular_charge": 0.0,
+        "molecular_multiplicity": 1
+      },
+      "input_geometry_sha256": "e06fa318960a416257a017e4d3a2259f3a5cfa117f6745a83eaa8653e74e1f87",
+      "output_geometry_matches_input": false,
+      "driver": "gradient",
+      "model": {
+        "method": "b3lyp",
+        "basis": "sto-3g"
+      },
+      "keywords": {},
+      "requested_protocols": {},
+      "success": true,
+      "error_type": null,
+      "failure_evidence": null,
+      "program": {
+        "creator": "Psi4",
+        "version": "1.10",
+        "qcengine_version": "v0.34.0"
+      },
+      "populated_properties": [
+        "calcinfo_nalpha",
+        "calcinfo_natom",
+        "calcinfo_nbasis",
+        "calcinfo_nbeta",
+        "calcinfo_nmo",
+        "nuclear_repulsion_energy",
+        "return_energy",
+        "return_gradient",
+        "scf_dipole_moment",
+        "scf_iterations",
+        "scf_one_electron_energy",
+        "scf_total_energy",
+        "scf_total_gradient",
+        "scf_two_electron_energy",
+        "scf_xc_energy"
+      ],
+      "counts": {
+        "calcinfo_nbasis": 7,
+        "calcinfo_nmo": 7,
+        "calcinfo_nalpha": 5,
+        "calcinfo_nbeta": 5,
+        "calcinfo_natom": 3
+      },
+      "basis_sha256_json": null,
+      "has_explicit_centers": false,
+      "restricted": null,
+      "wavefunction_aliases": {},
+      "wavefunction_arrays": {}
+    },
+    {
+      "path": "qcarchivetesting/qcarchivetesting/qcschema_v1_data/sp_psi4_water_hessian.json.xz",
+      "compressed_bytes": 10340,
+      "compressed_sha256": "d752f8456cb7f49ed38896d81f289c54861605beda38fc301f0dbe87701dc519",
+      "molecule": "H2O",
+      "input_geometry": {
+        "symbols": [
+          "O",
+          "H",
+          "H"
+        ],
+        "geometry": [
+          0.0,
+          0.0,
+          0.22166487,
+          0.0,
+          1.43090062,
+          -0.8866595,
+          0.0,
+          -1.43090062,
+          -0.8866595
+        ],
+        "molecular_charge": 0.0,
+        "molecular_multiplicity": 1
+      },
+      "input_geometry_sha256": "e06fa318960a416257a017e4d3a2259f3a5cfa117f6745a83eaa8653e74e1f87",
+      "output_geometry_matches_input": false,
+      "driver": "hessian",
+      "model": {
+        "method": "b3lyp",
+        "basis": "sto-3g"
+      },
+      "keywords": {},
+      "requested_protocols": {},
+      "success": true,
+      "error_type": null,
+      "failure_evidence": null,
+      "program": {
+        "creator": "Psi4",
+        "version": "1.10",
+        "qcengine_version": "v0.34.0"
+      },
+      "populated_properties": [
+        "calcinfo_nalpha",
+        "calcinfo_natom",
+        "calcinfo_nbasis",
+        "calcinfo_nbeta",
+        "calcinfo_nmo",
+        "nuclear_repulsion_energy",
+        "return_energy",
+        "return_gradient",
+        "return_hessian"
+      ],
+      "counts": {
+        "calcinfo_nbasis": 7,
+        "calcinfo_nmo": 7,
+        "calcinfo_nalpha": 5,
+        "calcinfo_nbeta": 5,
+        "calcinfo_natom": 3
+      },
+      "basis_sha256_json": null,
+      "has_explicit_centers": false,
+      "restricted": null,
+      "wavefunction_aliases": {},
+      "wavefunction_arrays": {}
+    },
+    {
+      "path": "qcarchivetesting/qcarchivetesting/qcschema_v1_data/sp_rdkit_benzene_energy.json.xz",
+      "compressed_bytes": 864,
+      "compressed_sha256": "1e03c193fbabb76a1c7130051a1a29ddecd0fa052c5af29cc2e15d628750f00c",
+      "molecule": "C6H6",
+      "input_geometry": {
+        "symbols": [
+          "C",
+          "C",
+          "C",
+          "C",
+          "C",
+          "C",
+          "H",
+          "H",
+          "H",
+          "H",
+          "H",
+          "H"
+        ],
+        "geometry": [
+          0.0,
+          2.6399474,
+          0.0,
+          2.28619067,
+          1.3199737,
+          0.0,
+          2.28619067,
+          -1.3199737,
+          0.0,
+          0.0,
+          -2.6399474,
+          0.0,
+          -2.28619067,
+          -1.3199737,
+          0.0,
+          -2.28619067,
+          1.3199737,
+          0.0,
+          0.0,
+          4.68841052,
+          0.0,
+          4.06026555,
+          2.34420526,
+          0.0,
+          4.06026555,
+          -2.34420526,
+          0.0,
+          0.0,
+          -4.68841052,
+          0.0,
+          -4.06026555,
+          -2.34420526,
+          0.0,
+          -4.06026555,
+          2.34420526,
+          0.0
+        ],
+        "molecular_charge": 0.0,
+        "molecular_multiplicity": 1
+      },
+      "input_geometry_sha256": "d9cecf4fd0639a9b4341f3b39b2164975be2add81dc43dce9b39ce3aaeb59210",
+      "output_geometry_matches_input": true,
+      "driver": "energy",
+      "model": {
+        "method": "uff",
+        "basis": ""
+      },
+      "keywords": {},
+      "requested_protocols": {},
+      "success": true,
+      "error_type": null,
+      "failure_evidence": null,
+      "program": {
+        "creator": "rdkit",
+        "version": "2025.09.4",
+        "qcengine_version": "v0.34.0"
+      },
+      "populated_properties": [
+        "return_energy"
+      ],
+      "counts": {},
+      "basis_sha256_json": null,
+      "has_explicit_centers": false,
+      "restricted": null,
+      "wavefunction_aliases": {},
+      "wavefunction_arrays": {}
+    },
+    {
+      "path": "qcarchivetesting/qcarchivetesting/qcschema_v1_data/sp_rdkit_water_energy.json.xz",
+      "compressed_bytes": 752,
+      "compressed_sha256": "df4701bb7605b1c0d0a360e75a29506dbd50b7e4653d770e5bd452c6cca4d414",
+      "molecule": "H2O",
+      "input_geometry": {
+        "symbols": [
+          "O",
+          "H",
+          "H"
+        ],
+        "geometry": [
+          0.0,
+          0.0,
+          0.22166487,
+          0.0,
+          1.43090062,
+          -0.8866595,
+          0.0,
+          -1.43090062,
+          -0.8866595
+        ],
+        "molecular_charge": 0.0,
+        "molecular_multiplicity": 1
+      },
+      "input_geometry_sha256": "e06fa318960a416257a017e4d3a2259f3a5cfa117f6745a83eaa8653e74e1f87",
+      "output_geometry_matches_input": true,
+      "driver": "energy",
+      "model": {
+        "method": "uff",
+        "basis": ""
+      },
+      "keywords": {},
+      "requested_protocols": {},
+      "success": true,
+      "error_type": null,
+      "failure_evidence": null,
+      "program": {
+        "creator": "rdkit",
+        "version": "2025.09.4",
+        "qcengine_version": "v0.34.0"
+      },
+      "populated_properties": [
+        "return_energy"
+      ],
+      "counts": {},
+      "basis_sha256_json": null,
+      "has_explicit_centers": false,
+      "restricted": null,
+      "wavefunction_aliases": {},
+      "wavefunction_arrays": {}
+    }
+  ]
+}

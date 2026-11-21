@@ -1,0 +1,6 @@
+population,policy,selected_molecules,missing_targets,qualified,first_jk,second_jk,second_rhs,cumulative_jk,first_seconds,second_seconds,history_scalar_bytes,history_vector_bytes,second_read_bytes,second_label_bytes
+all_sources,eager_table,11,33,3,1000,956,21,1956,1.2737791890103836,1.2406905860407278,2680,0,2680,2044
+all_sources,keep_vectors,11,33,3,1000,24,0,1024,1.2721914539724821,0.04082268997444771,2364,74222,76586,2044
+all_sources,legacy_decode,11,33,3,1000,1000,24,2000,1.2840049069927773,1.2763139169983333,2364,0,2364,2044
+all_sources,legacy_recompute,11,33,3,1000,1000,24,2000,1.2841218869871227,1.2484443350404035,2364,0,2364,2044
+all_sources,remove_history,11,33,3,1000,1000,24,2000,1.269230284000514,1.251282323995838,2364,0,2364,2044

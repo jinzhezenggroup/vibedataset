@@ -1,0 +1,51 @@
+{
+  "checked_at_utc": "2026-11-18T04:18:59.804342+00:00",
+  "result": "passed",
+  "coverage_counts": {
+    "indexed": 268259,
+    "read": 24,
+    "behavior_traced": 90,
+    "executed": 48
+  },
+  "reviewer_observations": 129,
+  "reviewed_paths": 121,
+  "unique_claims": 30,
+  "catalog_original_source_locations_blocked": 5,
+  "release_archives": {
+    "mlelec_materialscloud_v1": {
+      "indexed_members": 1182,
+      "bytes_and_members_rechecked": true
+    }
+  },
+  "source_review_sha256": "e6e7ad8c465158817311cebb026501da9d981da6b4e9db9f5840219a707afaf4",
+  "claims_sha256": "7600779462293ea60096bd8062ba0021ed68ac5db75ff4e0a4cdb0ce3e7f08d8",
+  "source_lock_sha256": "8a7b5270fb33af37fa322e35c2dc6474f27cf3152b6bb6a1fb9fa507b6d4bc06",
+  "source_coverage_sha256": "481378b9ef9725f4be7aa660860fd6a8cc0bfece74da1e35b76b14d75ee5e83a",
+  "checks": [
+    "inventory gzip and SHA256 round-trip",
+    "lock vs checkout commit/tree and clean state",
+    "git ls-tree path/mode/object equality for roots and initialized submodule commits",
+    "no duplicate or missing paths",
+    "reviewed CRLF conversions verified against pinned blobs and Git attributes",
+    "each dated evidence path and aggregated file flag matches its blob-bound observations",
+    "all claim source paths and snapshot IDs resolve",
+    "catalog origin evidence and formal release archive inventories verified"
+  ],
+  "scope": "Ledger consistency only; no third-party behavior or numerical validation.",
+  "compressed_only_replay": {
+    "result": "identical",
+    "repository_commit": "da6742b94aab54683c7acc91b125c1b1e6af6041",
+    "git_inventories": 45,
+    "release_member_inventories": 1,
+    "local_uncompressed_inventories": 0,
+    "replay_validated_at_utc": "2026-11-18T04:17:32.745371+00:00",
+    "scope": "Separate checkout and compressed-only ledger rebuild, sharing verified third-party checkouts."
+  },
+  "prior_evidence": {
+    "commit": "faf93dd4a95d9a12ee06bdcf85040ecb38d9107b",
+    "root_reviews": 45,
+    "file_observations": 125,
+    "claims": 29,
+    "result": "preserved"
+  }
+}

@@ -1,0 +1,122 @@
+{
+  "id": "gqc",
+  "source": {
+    "id": "gqc",
+    "catalog_ids": [
+      "gqc"
+    ],
+    "priority": "P0",
+    "repository_url": "https://github.com/jinzhezenggroup/generativeqc",
+    "role": "current",
+    "commit": null,
+    "checkout_path": "_references/gqc",
+    "paper_version_status": "not_established",
+    "selection_reason": "\u79d1\u5b66\u7f16\u8bd1\u4e0e\u5de5\u4f5c\u57fa\u7840"
+  },
+  "started_at_utc": "2026-11-17T17:50:19.783585+00:00",
+  "status": "indexed_pending_review",
+  "commands": [
+    {
+      "argv": [
+        "git",
+        "ls-remote",
+        "https://github.com/jinzhezenggroup/generativeqc",
+        "HEAD"
+      ],
+      "cwd": ".",
+      "started_at_utc": "2026-11-17T17:50:19.783951+00:00",
+      "stdout": "2791504cc238fe83d328fc1718080642b288222a\tHEAD\n",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 2.489925077999942,
+      "ended_at_utc": "2026-11-17T17:50:22.274026+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "init",
+        "--quiet"
+      ],
+      "cwd": "_references/gqc",
+      "started_at_utc": "2026-11-17T17:50:22.274876+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.006104145999415778,
+      "ended_at_utc": "2026-11-17T17:50:22.283528+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "remote",
+        "add",
+        "origin",
+        "https://github.com/jinzhezenggroup/generativeqc"
+      ],
+      "cwd": "_references/gqc",
+      "started_at_utc": "2026-11-17T17:50:22.283871+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.0039407720032613724,
+      "ended_at_utc": "2026-11-17T17:50:22.288135+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "protocol.file.allow=never",
+        "fetch",
+        "--depth=1",
+        "--no-tags",
+        "origin",
+        "2791504cc238fe83d328fc1718080642b288222a"
+      ],
+      "cwd": "_references/gqc",
+      "started_at_utc": "2026-11-17T17:50:22.288643+00:00",
+      "stdout": "",
+      "stderr": "\u6765\u81ea https://github.com/jinzhezenggroup/generativeqc\n * branch              2791504cc238fe83d328fc1718080642b288222a -> FETCH_HEAD\n",
+      "returncode": 0,
+      "elapsed_seconds": 36.77666044200305,
+      "ended_at_utc": "2026-11-17T17:50:59.065715+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "core.autocrlf=false",
+        "checkout",
+        "--detach",
+        "2791504cc238fe83d328fc1718080642b288222a"
+      ],
+      "cwd": "_references/gqc",
+      "started_at_utc": "2026-11-17T17:50:59.066057+00:00",
+      "stdout": "",
+      "stderr": "HEAD \u76ee\u524d\u4f4d\u4e8e 2791504c bench: publish the measured three-process cold collector (#3110)\n",
+      "returncode": 0,
+      "elapsed_seconds": 0.7700856260053115,
+      "ended_at_utc": "2026-11-17T17:50:59.836391+00:00"
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "/home/lhshen/vibedataset/handoff/gqcdataset_codex_goal/tools/inventory_sources.py",
+        "_references/gqc",
+        "--recurse-submodules",
+        "--json",
+        "handoff/gqcdataset_codex_goal/research/inventories/gqc.json"
+      ],
+      "cwd": ".",
+      "started_at_utc": "2026-11-17T17:50:59.836720+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 1.4782042459992226,
+      "ended_at_utc": "2026-11-17T17:51:01.315211+00:00"
+    }
+  ],
+  "receipt_path": "handoff/gqcdataset_codex_goal/research/acquisition/gqc-20261117T175019783558Z.json",
+  "resolved_commit": "2791504cc238fe83d328fc1718080642b288222a",
+  "inventory_path": "handoff/gqcdataset_codex_goal/research/inventories/gqc.json",
+  "ended_at_utc": "2026-11-17T17:51:01.315590+00:00"
+}

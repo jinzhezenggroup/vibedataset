@@ -1,0 +1,122 @@
+{
+  "id": "qemfi",
+  "source": {
+    "id": "qemfi",
+    "catalog_ids": [
+      "qemfi"
+    ],
+    "priority": "P1",
+    "repository_url": "https://github.com/SM4DA/QeMFi",
+    "role": "current",
+    "commit": null,
+    "checkout_path": "_references/qemfi",
+    "paper_version_status": "not_established",
+    "selection_reason": "\u591a\u4fdd\u771f\u3001\u4e3b\u52a8\u91c7\u6837\u4e0e\u7f3a\u5931\u6807\u7b7e"
+  },
+  "started_at_utc": "2026-11-17T17:55:54.286289+00:00",
+  "status": "indexed_pending_review",
+  "commands": [
+    {
+      "argv": [
+        "git",
+        "ls-remote",
+        "https://github.com/SM4DA/QeMFi",
+        "HEAD"
+      ],
+      "cwd": ".",
+      "started_at_utc": "2026-11-17T17:55:54.286412+00:00",
+      "stdout": "883eca5b12c96ca2248fddcc671fcd032696552a\tHEAD\n",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 1.5720198769995477,
+      "ended_at_utc": "2026-11-17T17:55:55.858586+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "init",
+        "--quiet"
+      ],
+      "cwd": "_references/qemfi",
+      "started_at_utc": "2026-11-17T17:55:55.859214+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.006027866998920217,
+      "ended_at_utc": "2026-11-17T17:55:55.867983+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "remote",
+        "add",
+        "origin",
+        "https://github.com/SM4DA/QeMFi"
+      ],
+      "cwd": "_references/qemfi",
+      "started_at_utc": "2026-11-17T17:55:55.868441+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.003697614010889083,
+      "ended_at_utc": "2026-11-17T17:55:55.872510+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "protocol.file.allow=never",
+        "fetch",
+        "--depth=1",
+        "--no-tags",
+        "origin",
+        "883eca5b12c96ca2248fddcc671fcd032696552a"
+      ],
+      "cwd": "_references/qemfi",
+      "started_at_utc": "2026-11-17T17:55:55.872897+00:00",
+      "stdout": "",
+      "stderr": "\u6765\u81ea https://github.com/SM4DA/QeMFi\n * branch            883eca5b12c96ca2248fddcc671fcd032696552a -> FETCH_HEAD\n",
+      "returncode": 0,
+      "elapsed_seconds": 2.8600310900073964,
+      "ended_at_utc": "2026-11-17T17:55:58.733328+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "core.autocrlf=false",
+        "checkout",
+        "--detach",
+        "883eca5b12c96ca2248fddcc671fcd032696552a"
+      ],
+      "cwd": "_references/qemfi",
+      "started_at_utc": "2026-11-17T17:55:58.733838+00:00",
+      "stdout": "",
+      "stderr": "HEAD \u76ee\u524d\u4f4d\u4e8e 883eca5 Update README.md with paper URL\n",
+      "returncode": 0,
+      "elapsed_seconds": 0.016792331996839494,
+      "ended_at_utc": "2026-11-17T17:55:58.774669+00:00"
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "/home/lhshen/vibedataset/handoff/gqcdataset_codex_goal/tools/inventory_sources.py",
+        "_references/qemfi",
+        "--recurse-submodules",
+        "--json",
+        "handoff/gqcdataset_codex_goal/research/inventories/qemfi.json"
+      ],
+      "cwd": ".",
+      "started_at_utc": "2026-11-17T17:55:58.775201+00:00",
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "elapsed_seconds": 0.08396345299843233,
+      "ended_at_utc": "2026-11-17T17:55:58.859552+00:00"
+    }
+  ],
+  "receipt_path": "handoff/gqcdataset_codex_goal/research/acquisition/qemfi-20261117T175554286271Z.json",
+  "resolved_commit": "883eca5b12c96ca2248fddcc671fcd032696552a",
+  "inventory_path": "handoff/gqcdataset_codex_goal/research/inventories/qemfi.json",
+  "ended_at_utc": "2026-11-17T17:55:58.860087+00:00"
+}

@@ -1,0 +1,59 @@
+{
+  "status": "passed",
+  "job": "2044",
+  "source_job": "n2/5382",
+  "checkpoint_sha256": "d94f0e89321e55c82f68b070569219e3f59b08c360a472b9b16772ec9143bd0c",
+  "protocol_sha256": "2ec7b69c3ae8bbff8b80905d7feb9887fcf2b5fe91b040b80959296da5468a42",
+  "driver_sha256": "f487d5da5e2a149876d25effc08422581b11d16934452cd208bdb4925eab6ee9",
+  "loaded_library_sha256": "67bc98a4549fe8854ed6ae65791c824024bd77a9e8e498c6891dea3b8de670c4",
+  "native_source_identity": "bda7f76be67202a57eb1001cfbe29bd4d4d844a85c144b1854a264a96ffdb208",
+  "source_declaration": "2bf3fd98da9c6cfba46ca83345e63e1d934e4780",
+  "compatibility": "exact_restart",
+  "before_execute": "executed",
+  "after_execute": "executed",
+  "output": {
+    "energy": -1.1167143251757699,
+    "forces": [
+      [
+        -0.0,
+        -0.0,
+        0.02845405716251727
+      ],
+      [
+        -0.0,
+        -0.0,
+        -0.028454057162517157
+      ]
+    ],
+    "iterations": 2,
+    "fock_builds": 3,
+    "converged": true,
+    "executed_backend": "cuda",
+    "restart_origin": "persistent_restart",
+    "warm_start_fallback": false
+  },
+  "checks": {
+    "n2_cold": {
+      "energy_difference_eh": 0.0,
+      "max_force_difference_eh_per_bohr": 9.71445146547012e-17,
+      "passed": true
+    },
+    "n5_cold": {
+      "energy_difference_eh": 0.0,
+      "max_force_difference_eh_per_bohr": 9.71445146547012e-17,
+      "passed": true
+    },
+    "n5_pyscf": {
+      "energy_difference_eh": 1.1321876769443406e-10,
+      "max_force_difference_eh_per_bohr": 1.271438829220095e-09,
+      "passed": true
+    }
+  },
+  "operations": {
+    "native_library_load": 1,
+    "prepare": 1,
+    "checkpoint_load": 1,
+    "gqc_solve": 1
+  },
+  "elapsed_seconds": 1.8039579377509654
+}
