@@ -23,6 +23,8 @@
 
 新增 #31–#33 已完成。四臂 GPU4PySCF/GQC 归因、固定版本源码算法矩阵和带成本/覆盖/风险的目标相关 planner 均有独立复核。结果限定为 17 个 RHF/STO-3G 小分子和预登记请求轨迹。[四臂实验与 planner](handoff/gqcdataset_codex_goal/research/experiments/attribution_4arm/README.md) · [源码审计](handoff/gqcdataset_codex_goal/research/audits/SOURCE_AUDIT_32.md) · [算法矩阵](handoff/gqcdataset_codex_goal/research/audits/ALGORITHM_MATRIX.md)
 
+#34–#42 的总控阶段已建立 10× claim gate、端到端 benchmark contract、GPU4PySCF/PySCF 覆盖台账、profiling baseline、PreparedPropertyBatch/asset compiler 控制、Hessian/CPKS micro controls 以及 partial release package。当前 10× 假设在已测 workload 上为 falsified-partial，1000-row 协议一致资产、完整 upstream suite、CUPTI/Nsight、第二 GPU 和 IR/Raman/GPU Hessian 仍标为未取得或未运行。[后续状态](handoff/gqcdataset_codex_goal/research/STATUS.md)
+
 ## 材料入口
 
 | 材料 | 作用 |

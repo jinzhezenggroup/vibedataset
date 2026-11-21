@@ -1,0 +1,56 @@
+{
+  "schema": "vibedataset.benchmark_contract.v1",
+  "manifest_sha256": "e08193beba0fd3b15d3b6c2ecf531b3b38c6cb8fef3da0ee95d19cd78858a635",
+  "micro_workload_count": 3,
+  "middle_queue_count": 306,
+  "target_scale": 1000,
+  "target_scale_status": "blocked-unavailable",
+  "blocked_reason": "No additional protocol-consistent, openly licensed 1000-row response request asset was acquired. The contract keeps the 102-row controlled queue and records the target as unmet.",
+  "timing_fields": [
+    "prepare",
+    "environment_startup",
+    "data_read",
+    "compile_jit",
+    "warmup",
+    "h2d",
+    "scf_fock",
+    "cp_hf_gmres",
+    "property_readout",
+    "physical_residual",
+    "independent_scorer",
+    "serialization",
+    "retry",
+    "fallback"
+  ],
+  "main_metric": "end_to_end_wall_seconds",
+  "secondary_metrics": [
+    "throughput",
+    "geometric_mean_speedup",
+    "median",
+    "p95",
+    "gpu_hours",
+    "operator_rows",
+    "rhs_columns",
+    "host_device_bytes",
+    "device_memory_bytes",
+    "coverage",
+    "failure_rate"
+  ],
+  "protocol": {
+    "method": "RHF",
+    "basis": "sto-3g",
+    "precision": "FP64",
+    "origin": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "unit": "Bohr",
+    "conv_tol": 1e-10,
+    "response_tol": 1e-08,
+    "seed": 20261122
+  },
+  "cold_warm_separation": true,
+  "oracle_process_separate": true,
+  "claims_10x_status": "hypothesis-only"
+}

@@ -59,3 +59,17 @@
 | #31 四臂核心方法归因 | A–D 在同一封存 manifest 上各有 51 条请求级记录。官方/patch 后端与 native/GQC 编排分别运行。独立官方 GPU4PySCF 进程重算 204 条目标和 AO 密度，四臂 51/51 通过。[原始记录与评分](experiments/attribution_4arm/README.md) | GQC 资产规划把 RHS/operator rows 降到约 0.83 倍几何均值，但本轮缓存 patch 没有端到端收益，D 相对 C 更慢。结论限定为 17 个 RHF/STO-3G 小分子和三条受控轨迹。 |
 | #32 固定源码与算法矩阵 | 10 个固定 checkout、37 条关键符号/测试观察、提交和许可证由 `scripts/check_source_audit_32.py` 复核。行为边界和 #31 A–D 映射见 [SOURCE_AUDIT_32](audits/SOURCE_AUDIT_32.md) 与 [ALGORITHM_MATRIX](audits/ALGORITHM_MATRIX.md) | 五个外部路线仍是参照或强基线。它们的输出不被当作同一 CPHF 科学标签。 |
 | #33 目标相关增量响应 planner | 预登记三类请求分布、三个未来概率和五种候选策略，生成 564 个决策、765 个 in-domain 候选，含 111 个几何/方法/状态 OOD 控制和 100 个外部几何 inventory 案例。独立 replay 通过。[四臂 planner](experiments/attribution_4arm/README.md) | 外部 inventory 只支持协议拒绝计数，没有响应标签。planner 输出 cost–coverage–risk frontier，不能替代响应级独立评分。自然生产请求分布和更大体系仍未测量。 |
+
+## 2026-11-22 总控后续 issues #34–#42
+
+| Issue | 当前状态 | 证据与未满足门槛 |
+|---|---|---|
+| #34 10× claim gate | 已形成 falsified/partial 结论 | `performance/attribution_profile.json` 显示官方后端 GQC 相对 native 约 1.09×，paired CI 下限未超过 1。10× 主张被拒绝，见决策 `0006`。 |
+| #35 benchmark contract | 已冻结合同，规模目标阻塞 | 3 个微型控制、306 条中型受控请求、完整 timing schema 和 source_kind ledger 已有。自然请求流为 0，1000 条协议一致资产未取得。 |
+| #36 GPU4PySCF/PySCF 审计 | 项目 baseline 已完成，完整上游复现部分阻塞 | 固定 2 个源码 commit、18 行覆盖和 n2 官方 baseline 已提交。完整上游 suite、v1.9.0/v1.9.2 release tag、CUPTI/Nsight 仍未知。 |
+| #37 profiling | 阶段 baseline 已完成 | A–D 成本与 paired CI、未知字段清单已归档。GPU event、occupancy、FLOPs、峰值内存和能耗尚未采集。 |
+| #38 PreparedPropertyBatch | planner/producer 边界已实现 | 同协议 bucket、单条失败隔离和 workspace fallback 已有 CPU 控制。真正跨样本 resident GPU runtime 尚未宣称。 |
+| #39 response asset compiler | identity planner 和证书边界已实现 | 17 direct、2 refine、1 reject 的无 oracle 计划和独立 replay 已有。GPU 资产编译与独立质量 scorer 仍需扩展。 |
+| #40 Hessian/CPKS | CPU micro controls 已完成 | H₂O/NH₃/LiH RHF 与带电 UHF 4/4 CPU controls 通过。IR/Raman、GPU Hessian、VeloxChem 和 FD 交叉检查未运行。 |
+| #41 scale/ablation | partial-falsified | 17 几何、51 请求完成。1000-row 资产、第二 GPU 和十项 profiling/消融仍阻塞，10× gate 不成立。 |
+| #42 release/claim gate | 可复现 partial 发布包已形成 | `research/release` 提供 9 个 artifact SHA、12 条 claims 和 6 个 unknowns。未知项未被隐藏，不能作为最终 Nature claim。 |

@@ -1,0 +1,19 @@
+{
+  "schema": "vibedataset.benchmark.source_kind.v1",
+  "counts": {
+    "controlled-request": 306,
+    "natural-request": 0,
+    "negative-control": 3,
+    "not-exported": 0,
+    "quality-insufficient": 0,
+    "compute-failed": 0
+  },
+  "definitions": {
+    "controlled-request": "sealed request generated from the 4-arm manifest",
+    "natural-request": "observed production request with source receipt, none available in this release",
+    "negative-control": "wrong protocol, near-singular or state mismatch",
+    "not-exported": "computed state without a released property value",
+    "quality-insufficient": "computed value failing independent quality gate",
+    "compute-failed": "failed SCF/response attempt retained in denominator"
+  }
+}
