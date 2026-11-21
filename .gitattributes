@@ -1,0 +1,7 @@
+# Keep large provenance tables visible as generated review data.
+handoff/gqcdataset_codex_goal/research/source_coverage.csv linguist-generated=true
+handoff/gqcdataset_codex_goal/research/inventories/*.json.gz linguist-generated=true binary
+handoff/gqcdataset_codex_goal/research/experiments/**/*.json.gz linguist-generated=true binary
+handoff/gqcdataset_codex_goal/research/experiments/**/*.npz linguist-generated=true binary
+downloads/*.zip binary
+*.pdf binary
