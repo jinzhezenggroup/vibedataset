@@ -25,6 +25,12 @@ GQC 原生响应。
 不变换算符时改变偶极并必须拒绝。Psi4/QCSchema 的实际 p 轴转换和占据证据
 另由 `experiments/archive_dipole_protocol.md` 固定，不以度量本身猜测轴。
 
+另用锁定的 Psi4 1.10 源码提交 `f2492db10de56b30b188239bdc6b4cfbc4a23bd5`
+运行同一几何的 RHF/STO-3G、RHF/6-31G*、B3LYP/6-31G* 和 H₂⁺ UHF 目标。
+运行包固定为 `python=3.13, psi4==1.10, einsums==1.1.2, libxc-c==7.0.0`，
+显式设定 `puream=true`、`scf_type=pk`、Bohr 几何和零原点。Psi4 与 PySCF
+的四项最大能量差为 `5.24×10⁻⁸ Eh`，最大偶极差为 `1.82×10⁻⁸ au`。
+
 ## 分类规则
 
 - `direct_reuse` 要求几何、原子序、电子数、自旋、方法、基组、状态分支、

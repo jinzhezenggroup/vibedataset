@@ -32,6 +32,16 @@ SCF 失败，失败控制由未知 AO 排列、状态不匹配和冻结响应语
 失败仍保留为响应范围反例。Psi4/QCSchema 存档偶极实验只在已绑定生产者轴序、
 占据和单位时接受，未知 p 轴和缺占据证据都会拒绝。
 
+## Psi4 独立路径
+
+在锁定的 Psi4 1.10 源码提交 `f2492db10de56b30b188239bdc6b4cfbc4a23bd5` 和
+隔离包环境 `python=3.13, psi4==1.10, einsums==1.1.2, libxc-c==7.0.0` 中，
+重新计算了水的 RHF/STO-3G、RHF/6-31G*、B3LYP/6-31G* 以及 H₂⁺ UHF/STO-3G。
+Psi4 使用 `scf_type=pk`、`puream=true`、同一 Bohr 几何和原点。四个目标与
+PySCF 结果的最大能量差为 `5.24×10⁻⁸ Eh`，最大偶极差为 `1.82×10⁻⁸ au`。
+`puream=true` 是必要的表示约定，未显式对齐球谐/笛卡尔 AO 时，6-31G* 的
+基函数数目和能量会发生可见差异。[Psi4 逐项结果](psi4_result.json) · [运行器](psi4_compare.py)
+
 ## 结论
 
 资产可迁移性必须按目标相关科学身份判断。相同协议的状态可直接复用，方法和
@@ -49,6 +59,10 @@ OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 \
 python3 handoff/gqcdataset_codex_goal/research/experiments/cross_protocol/verify.py
 ```
 
-Psi4 和 GQC 的完整源码固定、运行证据和限制见各自的 prior-art 审计。当前环境
-没有安装 Psi4，本实验使用已归档的 Psi4/QCSchema 证据作为表示对照，并使用
-PySCF 重新完成协议矩阵数值验证。
+Psi4 和 GQC 的完整源码固定、运行证据和限制见各自的 prior-art 审计。Psi4 新
+路径补充了跨后端数值对照，但没有改变迁移分类结论。跨方法、基组、状态和响应
+语义仍需按科学身份重新验收。
+
+响应级迁移的独立盲验另见 [#27 response migration](response_migration/README.md)。
+同协议序列化响应资产在独立进程中接受，改基组/方法重新求解，开放壳层和低间隙
+目标分别拒绝重算或返回 `evidence_unavailable`。

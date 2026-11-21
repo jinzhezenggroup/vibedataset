@@ -19,6 +19,8 @@
 
 后续研究已完成。有限多混合场搜索与手写公式逐项等价，目标证书保留离散 SVD 入口但不升级为普适严格界，跨方法/基组/状态资产按科学身份分类并在不匹配时拒绝或重算。[#17 信息充分性](handoff/gqcdataset_codex_goal/research/experiments/information_sufficiency/README.md) · [#19 误差证书](handoff/gqcdataset_codex_goal/research/experiments/error_certificates/README.md) · [#18 跨协议边界](handoff/gqcdataset_codex_goal/research/experiments/cross_protocol/README.md)
 
+复评后新增 #25–#27。独立手写基线与四列二值候选已运行，算子级证书已加入全空间探针，响应资产迁移已完成独立序列化重开和目标 CPHF 评分。[#25](handoff/gqcdataset_codex_goal/research/experiments/information_sufficiency/issue25/README.md) · [#26](handoff/gqcdataset_codex_goal/research/experiments/error_certificates/operator_probe/README.md) · [#27](handoff/gqcdataset_codex_goal/research/experiments/cross_protocol/response_migration/README.md)
+
 ## 材料入口
 
 | 材料 | 作用 |

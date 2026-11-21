@@ -19,6 +19,7 @@ import time
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[4]
 sys.path.insert(0, str(ROOT / 'scripts'))
+sys.path.insert(0, str(ROOT / 'handoff/gqcdataset_codex_goal/research/experiments/information_sufficiency'))
 from complete_response_dataset import AttemptMeter, UNITS
 from gqc_dual_response import DualResponseModel, GATE, GQC_PIN, response_work, solve_many
 from probe_gqc_residual import array_hash, check, file_hash, git, json_hash
@@ -30,6 +31,7 @@ import pyscf
 import scipy
 
 from plans import ALL, FIELDS, HISTORIES, MIXED, OBS, SCENARIOS, STRATEGIES, compile_plan, ordinary, plan_cover, spec
+from independent_hand_plans import plan as independent_hand_plan
 
 Q_COMMIT = '18f1a095a7444ed8d3b23ba873b5cadfc54daebc'
 Q_SHA = '6a09f3bc81d47180f7667ea2d986fd62c6acfa80db52e3062f8517fae2c15ee6'
@@ -262,7 +264,12 @@ def serve(ctx, scenario, method, assets, directory, identity, trace):
             selector = 'vectors' if method.startswith('vectors') else method
             t = clock()
             count = compile_plan.cache_info().hits
-            plan = compile_plan(selector, requests, known, stored)
+            if selector == 'hand_field_independent':
+                plan = independent_hand_plan(requests, known, 'field')
+            elif selector == 'hand_adjoint_independent':
+                plan = independent_hand_plan(requests, known, 'observable')
+            else:
+                plan = compile_plan(selector, requests, known, stored)
             trace['planning_seconds'] = clock() - t
             trace['plan_cache_hit'] = compile_plan.cache_info().hits != count
             use_old = any(c.startswith('H:') for _, _, terms in plan[1] for c, _, _ in terms)
@@ -271,7 +278,7 @@ def serve(ctx, scenario, method, assets, directory, identity, trace):
                 verify_scalar(f, o, r)
             vectors = read(method) if set(plan[0]).intersection(stored) else {}
             result, _ = evaluate(model, quality, stability, plan, hist, vectors, trace, decoders,
-                                 compiled=method in ('single', 'two', 'multi'), dense=method == 'dense')
+                                 compiled=method in ('single', 'two', 'multi', 'multi4'), dense=method == 'dense')
     except (ValueError, ArithmeticError, RuntimeError, OSError, KeyError) as error:
         trace['fallback'].append(dict(reason=str(error), phase='candidate', submitted=dict(model.counts)))
         result, _ = evaluate(model, quality, stability, ordinary(requests, 'field'), {}, {}, trace, decoders)
@@ -362,7 +369,8 @@ def main():
     parser.add_argument('--out', type=Path, required=True)
     parser.add_argument('--cpu', type=int, default=0)
     parser.add_argument('--split', choices=('all', 'development', 'holdout'), default='all')
-    parser.add_argument('--methods', nargs='+', choices=tuple(STRATEGIES) + ('multi',), default=None)
+    parser.add_argument('--methods', nargs='+', choices=tuple(STRATEGIES) +
+                        ('multi', 'multi4', 'hand_field_independent', 'hand_adjoint_independent'), default=None)
     parser.add_argument('--scenarios', nargs='+', choices=tuple(SCENARIOS), default=None)
     parser.add_argument('--repetitions', type=int, default=4)
     args = parser.parse_args()

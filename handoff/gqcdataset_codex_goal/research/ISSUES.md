@@ -43,6 +43,14 @@
 
 执行顺序为 #17 → #19 → #18。#20、#21、#22、#23 为重复或已折叠入口，不再作为独立科研主线。最终路线决定见 [0005](decisions/0005-information-certificates-and-migration-boundaries.md)。
 
+## 新增科研 issues（按复评顺序）
+
+| Issue | 状态 | 产物与验收 |
+|---|---|---|
+| [#25 独立手写基线与搜索完备性](https://github.com/jinzhezenggroup/vibedataset/issues/25) | 已完成 | 独立手写 field/adjoint、15 个四列候选、三场景和完整成本，并由 PR #29 的科学 CI 重放。[实验入口](experiments/information_sufficiency/issue25/README.md) |
+| [#26 算子级误差证书](https://github.com/jinzhezenggroup/vibedataset/issues/26) | 已完成 | 全空间基向量、固定随机探针、RHS、近奇异和非对称控制，并由独立评分器和科学 CI 重放。[实验入口](experiments/error_certificates/operator_probe/README.md) |
+| [#27 响应资产迁移盲验](https://github.com/jinzhezenggroup/vibedataset/issues/27) | 已完成 | 序列化 direct reuse、跨基组/方法精修、开放壳层/低间隙拒绝和独立评分，并由科学 CI 重放。[实验入口](experiments/cross_protocol/response_migration/README.md) |
+
 ## 首轮研究证据
 
 基础审计、真实资产评价、路线选择及首个分子实现分别见 [工作基础](FOUNDATION_CAPABILITIES.md)、[资产与评价](DATASET_ASSETS.md)、[比较与决定](ROUTE_COMPARISON.md) 和 [三轮实验](experiments/gqc_residual_multiround/README.md)。首轮之后，#2 完成可得来源锁和证据化缺口，#4 补齐响应、着色与正式发布源码的对照，#8 交付 17 个候选的多轮成本与外推实证。两份 PDF 已核验，用户已取消原 ZIP 要求，#9 随之验收。[当前状态](STATUS.md) · [外推数据](experiments/qm9_extension/README.md)
