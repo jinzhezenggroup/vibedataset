@@ -57,11 +57,11 @@ def build_ood_cases(manifest: dict) -> list[dict]:
         xyz = item["coordinates_bohr"]
         centroid = [sum(row[index] for row in xyz) / len(xyz) for index in range(3)]
         stretched = [
-            [centroid[index] + 1.15 * (coord[index] - centroid[index]) for index in range(3)]
+            [round(centroid[index] + 1.15 * (coord[index] - centroid[index]), 12) for index in range(3)]
             for coord in xyz
         ]
         compressed = [
-            [centroid[index] + 0.85 * (coord[index] - centroid[index]) for index in range(3)]
+            [round(centroid[index] + 0.85 * (coord[index] - centroid[index]), 12) for index in range(3)]
             for coord in xyz
         ]
         cases.append({"molecule": item["name"], "case": "geometry-stretched-1.15", "coordinates_bohr": stretched, "target_protocol": manifest["protocol"], "disposition": "refine-required", "risk": 0.02})
