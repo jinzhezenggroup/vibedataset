@@ -991,7 +991,6 @@
   "finite_planning": {
     "cross-three": {
       "candidate_count": 14,
-      "planning_seconds": 0.007998399999905814,
       "selected": {
         "columns": [
           "xy",
@@ -1101,7 +1100,6 @@
     },
     "cycle-one": {
       "candidate_count": 14,
-      "planning_seconds": 0.0026706730000114476,
       "selected": {
         "columns": [
           "x"
@@ -1149,7 +1147,6 @@
     },
     "cycle-three": {
       "candidate_count": 14,
-      "planning_seconds": 0.002783922999697097,
       "selected": {
         "columns": [
           "xy",

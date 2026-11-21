@@ -12,7 +12,6 @@ import hashlib
 import json
 from pathlib import Path
 from statistics import median
-import time
 
 from finite_plans import HISTORIES, MIXED, SCENARIOS, compile_plan, score
 
@@ -43,7 +42,6 @@ def plan_terms(plan):
 
 
 def finite_candidates(requests, known):
-    start = time.perf_counter()
     choices = []
     for size in range(1, min(3, len(MIXED)) + 1):
         # The planner's finite universe is C(4,1)+C(4,2)+C(4,3)=14.
@@ -54,7 +52,6 @@ def finite_candidates(requests, known):
         "candidate_count": len(choices),
         "selected": {"columns": selected[0], "score": score(selected), "terms": plan_terms(selected)[0]},
         "two": {"columns": two[0], "score": score(two), "terms": plan_terms(two)[0]},
-        "planning_seconds": time.perf_counter() - start,
     }
 
 
