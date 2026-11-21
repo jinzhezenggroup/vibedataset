@@ -5,6 +5,7 @@ import gzip
 import hashlib
 import itertools
 import json
+import argparse
 from pathlib import Path
 from statistics import median
 import sys
@@ -90,6 +91,14 @@ def old_costs():
 
 
 def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument(
+        "--result",
+        type=Path,
+        default=HERE / "issue25_result.json",
+        help="where to write the deterministic replay result",
+    )
+    args = parser.parse_args()
     manifest = json.loads((NEW / "manifest.json").read_bytes())
     for name, receipt in manifest.items():
         data = (NEW / name).read_bytes()
@@ -202,7 +211,8 @@ def main():
         raise AssertionError("independent hand plan comparison")
     if any(not data["selected_plan_equal_to_multi3"] for data in candidate_summary.values()):
         raise AssertionError("four-column plan differs from three-column selected plan")
-    (HERE / "issue25_result.json").write_text(json.dumps(result, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    args.result.parent.mkdir(parents=True, exist_ok=True)
+    args.result.write_text(json.dumps(result, indent=2, sort_keys=True) + "\n", encoding="utf-8")
     print(json.dumps({
         "candidate_count": candidate_count,
         "future_records_per_method": expected_records,
