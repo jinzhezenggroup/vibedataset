@@ -1,0 +1,28 @@
+s.......                                                                 [100%]
+=============================== warnings summary ===============================
+miniconda3/envs/xtbflow-qc/lib/python3.11/site-packages/gpu4pyscf/lib/cutensor.py:154
+  /home/lhshen/miniconda3/envs/xtbflow-qc/lib/python3.11/site-packages/gpu4pyscf/lib/cutensor.py:154: UserWarning: using cupy as the tensor contraction engine.
+    warnings.warn(f'using {contract_engine} as the tensor contraction engine.')
+
+vibedataset/runs/gpu-upstream-tests-20261122/test_polarizability.py:171
+  /home/lhshen/vibedataset/runs/gpu-upstream-tests-20261122/test_polarizability.py:171: PytestUnknownMarkWarning: Unknown pytest.mark.slow - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.slow
+
+vibedataset/runs/gpu-upstream-tests-20261122/test_polarizability.py:181
+  /home/lhshen/vibedataset/runs/gpu-upstream-tests-20261122/test_polarizability.py:181: PytestUnknownMarkWarning: Unknown pytest.mark.slow - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.slow
+
+vibedataset/runs/gpu-upstream-tests-20261122/test_polarizability.py:192
+  /home/lhshen/vibedataset/runs/gpu-upstream-tests-20261122/test_polarizability.py:192: PytestUnknownMarkWarning: Unknown pytest.mark.slow - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.slow
+
+vibedataset/runs/gpu-upstream-tests-20261122/test_polarizability.py:233
+  /home/lhshen/vibedataset/runs/gpu-upstream-tests-20261122/test_polarizability.py:233: PytestUnknownMarkWarning: Unknown pytest.mark.slow - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.slow
+
+vibedataset/runs/gpu-upstream-tests-20261122/test_polarizability.py:252
+  /home/lhshen/vibedataset/runs/gpu-upstream-tests-20261122/test_polarizability.py:252: PytestUnknownMarkWarning: Unknown pytest.mark.slow - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.slow
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+7 passed, 1 skipped, 6 warnings in 88.28s (0:01:28)
