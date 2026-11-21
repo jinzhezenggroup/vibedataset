@@ -28,6 +28,7 @@
 | [研究路线与验收](handoff/gqcdataset_codex_goal/docs/ROADMAP_AND_ACCEPTANCE.md) | 可并行任务、阶段依赖和证据门槛 |
 | [科学验证框架](handoff/gqcdataset_codex_goal/docs/VALIDATION_FRAMEWORK.md) | 状态/标签语义、响应、质量证据、强基线与全成本 |
 | [材料来源与恢复边界](handoff/gqcdataset_codex_goal/PROVENANCE.md) | 本次重建来源、缺件和后续核对方法 |
+| [开发资源清单](docs/DEVELOPMENT_RESOURCES.md) | GitHub 账号、CI、集群和后续资源边界 |
 | [下载重建版 ZIP](https://github.com/jinzhezenggroup/vibedataset/raw/refs/heads/main/downloads/gqcdataset_codex_goal_20261118_rebuilt.zip) | 初次重建的文字与工具快照；单独提供后来取得的两份历史 PDF |
 | [ZIP SHA-256](https://github.com/jinzhezenggroup/vibedataset/blob/main/downloads/gqcdataset_codex_goal_20261118_rebuilt.zip.sha256) | 下载完整性校验 |
 
