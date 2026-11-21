@@ -1,0 +1,48 @@
+{
+  "schema": "vibedataset.gpu_spectroscopy_controls.v1",
+  "gpu4pyscf_source_commit": "5a717f899cb40d64a5799ef1df7e3626c505c3bd",
+  "protocol": {
+    "method": "RHF",
+    "basis": "sto-3g",
+    "precision": "FP64"
+  },
+  "scf_converged": true,
+  "ir_frequency_cm1": [
+    -1980.5709293344948,
+    8725.433182214907,
+    10338.10339824656
+  ],
+  "ir_intensity_km_mol": [
+    66.36120514186202,
+    17.685901446377546,
+    13.136868511785833
+  ],
+  "raman_frequency_cm1": {
+    "real": [
+      0.0,
+      8725.4331822149,
+      10338.103398246554
+    ],
+    "imag": [
+      1980.5709293344958,
+      0.0,
+      0.0
+    ]
+  },
+  "raman_activity": [
+    4.312169215035973,
+    9.636943338662713,
+    7.13186071758165
+  ],
+  "raman_depolarization": [
+    0.6219198842150931,
+    0.2959475779525103,
+    0.32155548089877223
+  ],
+  "seconds": 18.30282808607444,
+  "limitations": [
+    "single H2O control",
+    "no VeloxChem/Psi4 cross-check",
+    "no batch sharing"
+  ]
+}
