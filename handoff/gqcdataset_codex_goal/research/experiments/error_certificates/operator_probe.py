@@ -26,6 +26,13 @@ def digest(value):
     return hashlib.sha256(value).hexdigest()
 
 
+def numerically_equal(left, right, *, atol=1e-12, rtol=1e-10):
+    """Compare floating-point probe summaries across BLAS implementations."""
+    return bool(np.allclose(np.asarray(left, dtype=np.float64),
+                            np.asarray(right, dtype=np.float64),
+                            atol=atol, rtol=rtol))
+
+
 def source_paths():
     return SOURCE_DIR / (SOURCE_NAME + ".json"), SOURCE_DIR / (SOURCE_NAME + ".npz")
 
@@ -179,9 +186,10 @@ def score(sealed, out):
         "source_identity": data["protocol"] == fresh["protocol"],
         "assembled_matrix": bool(np.max(np.abs(np.asarray(data["assembled_matrix"]) - np.asarray(fresh["assembled_matrix"]))) <= 1e-14),
         "native_basis_matrix": bool(np.max(np.abs(np.asarray(data["native_basis_matrix"]) - np.asarray(fresh["native_basis_matrix"]))) <= 1e-14),
-        "random_errors": bool(data["probes"]["random_errors"] == fresh["probes"]["random_errors"]),
-        "rhs_errors": bool(data["probes"]["rhs_errors"] == fresh["probes"]["rhs_errors"]),
-        "near_singular_error": bool(data["probes"]["near_singular_error"] == fresh["probes"]["near_singular_error"]),
+        "random_errors": numerically_equal(data["probes"]["random_errors"], fresh["probes"]["random_errors"]),
+        "rhs_errors": numerically_equal(data["probes"]["rhs_errors"], fresh["probes"]["rhs_errors"]),
+        "near_singular_error": numerically_equal(data["probes"]["near_singular_error"],
+                                                  fresh["probes"]["near_singular_error"]),
     }
     result = {
         "checks": checks,
