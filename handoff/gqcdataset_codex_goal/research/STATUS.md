@@ -43,3 +43,11 @@
 | #17 目标相关信息充分性 | 已完成。有限多混合场与手写双场完全等价，保留水/氨反例和 32 条留出重放。 | [information_sufficiency](experiments/information_sufficiency/README.md)，提交 `ec23b99` |
 | #19 目标导向误差证书 | 已完成。残差/对偶误接受控制、SVD 覆盖、严格界非覆盖、稠密回退和全成本已汇总。 | [error_certificates](experiments/error_certificates/README.md)，提交 `bc6e2a2` |
 | #18 跨协议资产边界 | 已完成。方法、基组、开放壳层、AO 表示和冻结/弛豫响应分类与独立 PySCF 重算已完成。 | [cross_protocol](experiments/cross_protocol/README.md)，提交 `7fb7d2e` |
+
+## 复评后科研 issues（2026-11-21）
+
+| Issue | 当前证据 | 剩余验收 |
+|---|---|---|
+| #25 独立手写基线与搜索完备性 | 独立手写 field/adjoint 已运行 96 条记录，四列候选 15 个，`multi4` 选择与三列搜索相同，全部输出通过。[结果](experiments/information_sufficiency/issue25/README.md) | 提交独立分析、冻结结果并关闭 issue |
+| #26 算子级误差证书 | 10 维全空间基向量、4 个随机探针、6 个 RHS 和最小奇异方向已由生产器/独立评分器复核。近奇异与非对称控制均降级。[结果](experiments/error_certificates/operator_probe/README.md) | 接入结果汇总、冻结结果并关闭 issue |
+| #27 响应资产迁移盲验 | 序列化 RHF/STO-3G `direct_reuse`、跨基组初猜、DFT 精修、开放壳层拒绝和低间隙证据不可得均已独立评分。[结果](experiments/cross_protocol/response_migration/README.md) | 接入结果汇总、冻结结果并关闭 issue |

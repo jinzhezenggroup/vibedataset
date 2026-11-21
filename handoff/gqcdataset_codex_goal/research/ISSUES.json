@@ -196,6 +196,36 @@
       "status": "completed",
       "evidence": "experiments/error_certificates/README.md",
       "commit": "bc6e2a2"
+    },
+    {
+      "key": "independent_hand_baseline",
+      "number": 25,
+      "url": "https://github.com/jinzhezenggroup/vibedataset/issues/25",
+      "title": "[研究 P1] 为自动规划的否定结论补齐独立手写基线与搜索完备性",
+      "depends_on": [17],
+      "nonblocking": false,
+      "status": "in_progress",
+      "evidence": "experiments/information_sufficiency/issue25/README.md"
+    },
+    {
+      "key": "operator_certificate",
+      "number": 26,
+      "url": "https://github.com/jinzhezenggroup/vibedataset/issues/26",
+      "title": "[研究 P1] 将离散误差证书的矩阵一致性扩展为算子级盲验",
+      "depends_on": [19],
+      "nonblocking": false,
+      "status": "in_progress",
+      "evidence": "experiments/error_certificates/operator_probe/README.md"
+    },
+    {
+      "key": "response_asset_migration",
+      "number": 27,
+      "url": "https://github.com/jinzhezenggroup/vibedataset/issues/27",
+      "title": "[研究 P2] 以响应级盲验验证跨方法、基组和状态迁移边界",
+      "depends_on": [18, 26],
+      "nonblocking": false,
+      "status": "in_progress",
+      "evidence": "experiments/cross_protocol/response_migration/README.md"
     }
   ]
 }

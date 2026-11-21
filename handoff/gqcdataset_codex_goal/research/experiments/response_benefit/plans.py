@@ -134,6 +134,24 @@ def multi(requests, known):
     return best
 
 
+def multi4(requests, known):
+    """Search every nonempty subset of the four registered mixed fields."""
+    best = single(requests, known)
+    for size in range(1, min(4, len(MIXED)) + 1):
+        for cols in combinations(MIXED, size):
+            outputs = []
+            for f, o in requests:
+                terms = decode_for(f, o, cols, known)
+                if terms is None:
+                    break
+                outputs.append((f, o, terms))
+            else:
+                proposal = make(outputs)
+                if score(proposal) < score(best):
+                    best = proposal
+    return best
+
+
 def hand(requests, known, orientation):
     if len(requests) == 1:
         return ordinary(requests, orientation)
@@ -156,6 +174,8 @@ def compile_plan(method, requests, known, stored):
         return two(requests, known)
     if method == 'multi':
         return multi(requests, known)
+    if method == 'multi4':
+        return multi4(requests, known)
     if method.startswith('hand_'):
         return hand(requests, known, method.split('_')[1])
     if method == 'vectors':

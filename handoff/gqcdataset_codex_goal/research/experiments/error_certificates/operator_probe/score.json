@@ -1,0 +1,206 @@
+{
+  "checks": {
+    "assembled_matrix": true,
+    "native_basis_matrix": true,
+    "near_singular_error": true,
+    "random_errors": true,
+    "rhs_errors": true,
+    "source_identity": true
+  },
+  "controls": {
+    "near_singular": {
+      "candidate": [
+        0.0,
+        0.0
+      ],
+      "certificate_decision": "evidence_unavailable",
+      "matrix": [
+        [
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          1e-12
+        ]
+      ],
+      "residual_norm": 1e-12,
+      "residual_only_decision": "accepted",
+      "rhs": [
+        0.0,
+        1e-12
+      ],
+      "true_target_error": 1.0
+    },
+    "nonsymmetric_assembly": {
+      "certificate_decision": "evidence_unavailable",
+      "max_difference_from_native": 1.000000000234733e-06,
+      "perturbation": [
+        [
+          0.0,
+          1e-06,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ]
+    }
+  },
+  "operator_consistency": {
+    "assembled_skew_frobenius": 2.4892938498881478e-15,
+    "basis_probe_count": 10,
+    "max_basis_abs_error": 7.216449660063518e-16,
+    "max_basis_relative_error": 3.5769908969331464e-17,
+    "max_random_error": 2.7808261205446897e-15,
+    "max_rhs_error": 9.473631707695104e-16,
+    "near_singular_error": 3.3320237030206336e-16,
+    "random_probe_count": 4,
+    "rhs_probe_count": 6,
+    "status": "accepted"
+  },
+  "producer_cost": {
+    "matrix_bytes": 800,
+    "probe_counts": {
+      "density_jvp_calls": 21,
+      "jk_calls": 21,
+      "response_operator_actions": 21
+    },
+    "seconds": 0.002059776000351121,
+    "setup_counts": {
+      "density_jvp_calls": 27,
+      "jk_calls": 26,
+      "response_operator_actions": 25
+    },
+    "stored_probe_bytes": 880
+  },
+  "scorer_cost": {
+    "matrix_bytes": 800,
+    "probe_counts": {
+      "density_jvp_calls": 21,
+      "jk_calls": 21,
+      "response_operator_actions": 21
+    },
+    "seconds": 0.0024220020004577236,
+    "setup_counts": {
+      "density_jvp_calls": 27,
+      "jk_calls": 26,
+      "response_operator_actions": 25
+    },
+    "stored_probe_bytes": 880
+  },
+  "sealed_sha256": "dcecb08b5c0abb3be0338b2365b3667afd53b996f4deab90061ee5f5b61e7f4d",
+  "target_labels_read": false
+}
