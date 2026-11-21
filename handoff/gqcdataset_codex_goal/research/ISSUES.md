@@ -47,9 +47,9 @@
 
 | Issue | 状态 | 产物与验收 |
 |---|---|---|
-| [#25 独立手写基线与搜索完备性](https://github.com/jinzhezenggroup/vibedataset/issues/25) | 进行中 | 独立手写 field/adjoint、15 个四列候选、三场景和完整成本。[实验入口](experiments/information_sufficiency/issue25/README.md) |
-| [#26 算子级误差证书](https://github.com/jinzhezenggroup/vibedataset/issues/26) | 进行中 | 全空间基向量、固定随机探针、RHS、近奇异和非对称控制。[实验入口](experiments/error_certificates/operator_probe/README.md) |
-| [#27 响应资产迁移盲验](https://github.com/jinzhezenggroup/vibedataset/issues/27) | 进行中 | 序列化 direct reuse、跨基组/方法精修、开放壳层/低间隙拒绝和独立评分。[实验入口](experiments/cross_protocol/response_migration/README.md) |
+| [#25 独立手写基线与搜索完备性](https://github.com/jinzhezenggroup/vibedataset/issues/25) | 已完成 | 独立手写 field/adjoint、15 个四列候选、三场景和完整成本，并由 PR #29 的科学 CI 重放。[实验入口](experiments/information_sufficiency/issue25/README.md) |
+| [#26 算子级误差证书](https://github.com/jinzhezenggroup/vibedataset/issues/26) | 已完成 | 全空间基向量、固定随机探针、RHS、近奇异和非对称控制，并由独立评分器和科学 CI 重放。[实验入口](experiments/error_certificates/operator_probe/README.md) |
+| [#27 响应资产迁移盲验](https://github.com/jinzhezenggroup/vibedataset/issues/27) | 已完成 | 序列化 direct reuse、跨基组/方法精修、开放壳层/低间隙拒绝和独立评分，并由科学 CI 重放。[实验入口](experiments/cross_protocol/response_migration/README.md) |
 
 ## 首轮研究证据
 

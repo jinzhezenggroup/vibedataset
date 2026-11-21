@@ -116,4 +116,5 @@ n5 的 RTX 5090 为 13 条 QCFractal 源记录补齐了同协议 RHF/STO-3G 总�
 序列化的水 RHF/STO-3G `x/q0` 响应在独立进程重开后接受，向量差为
 `5.06×10⁻¹⁴`。RHF/6-31G* 归为初猜，B3LYP/6-31G* 归为精修，H₂⁺ UHF
 归为拒绝重算，10 Bohr 拉伸 H₂ 归为证据不可得。目标响应均由独立 PySCF CPHF
-重算并保留残差和 SCF 成本。[响应迁移](experiments/cross_protocol/response_migration/README.md)
+重算并保留残差和 SCF 成本。Psi4 1.10 通过隔离环境完成四项目标级交叉后端复算。
+以上三个实验由 PR #29 的科学 CI run `44922545190` 独立重放。[响应迁移](experiments/cross_protocol/response_migration/README.md)

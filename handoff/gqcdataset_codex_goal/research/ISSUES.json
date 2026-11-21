@@ -204,8 +204,9 @@
       "title": "[研究 P1] 为自动规划的否定结论补齐独立手写基线与搜索完备性",
       "depends_on": [17],
       "nonblocking": false,
-      "status": "in_progress",
-      "evidence": "experiments/information_sufficiency/issue25/README.md"
+      "status": "completed",
+      "evidence": "experiments/information_sufficiency/issue25/README.md",
+      "commit": "906e923"
     },
     {
       "key": "operator_certificate",
@@ -214,8 +215,9 @@
       "title": "[研究 P1] 将离散误差证书的矩阵一致性扩展为算子级盲验",
       "depends_on": [19],
       "nonblocking": false,
-      "status": "in_progress",
-      "evidence": "experiments/error_certificates/operator_probe/README.md"
+      "status": "completed",
+      "evidence": "experiments/error_certificates/operator_probe/README.md",
+      "commit": "906e923"
     },
     {
       "key": "response_asset_migration",
@@ -224,8 +226,9 @@
       "title": "[研究 P2] 以响应级盲验验证跨方法、基组和状态迁移边界",
       "depends_on": [18, 26],
       "nonblocking": false,
-      "status": "in_progress",
-      "evidence": "experiments/cross_protocol/response_migration/README.md"
+      "status": "completed",
+      "evidence": "experiments/cross_protocol/response_migration/README.md",
+      "commit": "906e923"
     }
   ]
 }
