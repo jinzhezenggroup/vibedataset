@@ -145,6 +145,7 @@ def prepare_science(run):
     run.receipt['threads'] = threads
     run.command('cxx', ['c++', '--version'])
     run.command('sccache', ['sccache', '--version'])
+    run.command('sccache-start', ['sccache', '--start-server'])
     plan = read(HANDOFF / 'research/acquisition_plan.json')
     selected = [s for s in plan['repositories'] if s['id'] in ('gqc', 'pyscf_2_14')]
     require({s['id'] for s in selected} == {'gqc', 'pyscf_2_14'}, 'missing scientific source lock')
@@ -238,6 +239,20 @@ def science(run):
     run.python('blind-production', SCRIPTS / 'run_blind_target_quality.py', '--split', 'seed', '--smoke', '--out', blind)
     run.python('independent-output-score', SCRIPTS / 'score_target_quality.py', '--sealed', blind / 'sealed',
                '--out', run.out / 'blind-score.json', '--check-controls')
+    # Independent follow-up research checks. These read only sealed source assets
+    # and fixed evidence, then write reports under the CI output directory.
+    issue25 = EXP / 'information_sufficiency' / 'analyze_issue25.py'
+    issue25_result = run.out / 'issue25-result.json'
+    run.python('issue25-independent-hand-and-multi4', issue25, '--result', issue25_result)
+    require(issue25_result.read_bytes() ==
+            (EXP / 'information_sufficiency' / 'issue25' / 'issue25_result.json').read_bytes(),
+            'issue25 deterministic replay differs from the sealed result')
+    operator = EXP / 'error_certificates' / 'operator_probe.py'
+    run.python('issue26-operator-probe', operator, 'score',
+               '--sealed', EXP / 'error_certificates' / 'operator_probe' / 'sealed.json',
+               '--out', run.out / 'operator-probe')
+    run.python('issue27-response-migration', EXP / 'cross_protocol' / 'response_migration' / 'verify.py')
+    run.python('cross-protocol-psi4-pyscf', EXP / 'cross_protocol' / 'verify.py')
 
 
 def main():

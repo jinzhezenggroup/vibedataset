@@ -28,6 +28,8 @@ jobs:
             label: Archived response data and planner algebra
           - tier: science
             label: Molecular response on CPU
+          - tier: attribution
+            label: Four-arm attribution and target-response planner archive
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
         with:
@@ -41,7 +43,12 @@ jobs:
         run: |
           python -m pip install --only-binary=:all: -r configs/response-science-requirements.txt
       - name: Run response checks
-        run: python scripts/check_response_ci.py "${{ matrix.tier }}" --out "$RUNNER_TEMP/response"
+        run: |
+          if [ "${{ matrix.tier }}" = attribution ]; then
+            python scripts/check_attribution_ci.py --out "$RUNNER_TEMP/response"
+          else
+            python scripts/check_response_ci.py "${{ matrix.tier }}" --out "$RUNNER_TEMP/response"
+          fi
       - name: Keep reports and command logs
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4

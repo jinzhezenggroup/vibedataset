@@ -1,6 +1,6 @@
 # gqcdataset 当前状态
 
-更新于 2026-11-21。PR #10 与 PR #16 的证据已合并到研究分支 `codex/issues-17-19-20261121`，并按 #17 → #19 → #18 完成下一阶段判别实验。[PR #10](https://github.com/jinzhezenggroup/vibedataset/pull/10) · [PR #16](https://github.com/jinzhezenggroup/vibedataset/pull/16) · [结果与全成本](RESULTS.md)
+更新于 2026-11-22。PR #10 已进入 `main`，PR #24 汇总了 #17–#19，PR #29 承载复评后的 #25–#27。PR #29 的远程科学验证 run `44922545190` 全部通过。[PR #24](https://github.com/jinzhezenggroup/vibedataset/pull/24) · [PR #29](https://github.com/jinzhezenggroup/vibedataset/pull/29) · [结果与全成本](RESULTS.md)
 
 | 本轮产物 | 已核验的结果 |
 |---|---|
@@ -42,4 +42,20 @@
 |---|---|---|
 | #17 目标相关信息充分性 | 已完成。有限多混合场与手写双场完全等价，保留水/氨反例和 32 条留出重放。 | [information_sufficiency](experiments/information_sufficiency/README.md)，提交 `ec23b99` |
 | #19 目标导向误差证书 | 已完成。残差/对偶误接受控制、SVD 覆盖、严格界非覆盖、稠密回退和全成本已汇总。 | [error_certificates](experiments/error_certificates/README.md)，提交 `bc6e2a2` |
-| #18 跨协议资产边界 | 已完成。方法、基组、开放壳层、AO 表示和冻结/弛豫响应分类与独立 PySCF 重算已完成。 | [cross_protocol](experiments/cross_protocol/README.md)，提交 `7fb7d2e` |
+| #18 跨协议资产边界 | 已完成。方法、基组、开放壳层、AO 表示和冻结/弛豫响应分类与独立 PySCF 重算已完成，Psi4 目标级交叉对照也已重放。 | [cross_protocol](experiments/cross_protocol/README.md)，提交 `906e923` |
+
+## 复评后科研 issues（2026-11-21）
+
+| Issue | 当前证据 | 剩余验收 |
+|---|---|---|
+| #25 独立手写基线与搜索完备性 | 独立手写 field/adjoint 已运行 96 条记录，四列候选 15 个，`multi4` 选择与三列搜索相同，全部输出通过。CI 已重放。[结果](experiments/information_sufficiency/issue25/README.md) | 已完成，提交 `906e923` |
+| #26 算子级误差证书 | 10 维全空间基向量、4 个随机探针、6 个 RHS 和最小奇异方向已由生产器/独立评分器复核。近奇异与非对称控制均降级。CI 已重放。[结果](experiments/error_certificates/operator_probe/README.md) | 已完成，提交 `906e923` |
+| #27 响应资产迁移盲验 | 序列化 RHF/STO-3G `direct_reuse`、跨基组初猜、DFT 精修、开放壳层拒绝和低间隙证据不可得均已独立评分。CI 已重放。[结果](experiments/cross_protocol/response_migration/README.md) | 已完成，提交 `906e923` |
+
+## 2026-11-22 新增研究 issues
+
+| Issue | 已完成证据 | 限制与结论 |
+|---|---|---|
+| #31 四臂核心方法归因 | A–D 在同一封存 manifest 上各有 51 条请求级记录。官方/patch 后端与 native/GQC 编排分别运行。独立官方 GPU4PySCF 进程重算 204 条目标和 AO 密度，四臂 51/51 通过。[原始记录与评分](experiments/attribution_4arm/README.md) | GQC 资产规划把 RHS/operator rows 降到约 0.83 倍几何均值，但本轮缓存 patch 没有端到端收益，D 相对 C 更慢。结论限定为 17 个 RHF/STO-3G 小分子和三条受控轨迹。 |
+| #32 固定源码与算法矩阵 | 10 个固定 checkout、37 条关键符号/测试观察、提交和许可证由 `scripts/check_source_audit_32.py` 复核。行为边界和 #31 A–D 映射见 [SOURCE_AUDIT_32](audits/SOURCE_AUDIT_32.md) 与 [ALGORITHM_MATRIX](audits/ALGORITHM_MATRIX.md) | 五个外部路线仍是参照或强基线。它们的输出不被当作同一 CPHF 科学标签。 |
+| #33 目标相关增量响应 planner | 预登记三类请求分布、三个未来概率和五种候选策略，生成 564 个决策、765 个 in-domain 候选，含 111 个几何/方法/状态 OOD 控制和 100 个外部几何 inventory 案例。独立 replay 通过。[四臂 planner](experiments/attribution_4arm/README.md) | 外部 inventory 只支持协议拒绝计数，没有响应标签。planner 输出 cost–coverage–risk frontier，不能替代响应级独立评分。自然生产请求分布和更大体系仍未测量。 |

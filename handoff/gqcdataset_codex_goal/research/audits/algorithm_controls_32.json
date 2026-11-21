@@ -1,0 +1,90 @@
+{
+  "schema": "vibedataset.algorithm_controls_32.v1",
+  "controls": {
+    "exact_identity": {
+      "same_protocol": "accepted",
+      "wrong_basis": "reject"
+    },
+    "dwr": {
+      "matrix_diagonal": [
+        2.0,
+        3.0
+      ],
+      "residual": [
+        0.19999999999999996,
+        0.0
+      ],
+      "dual": [
+        0.5,
+        0.3333333333333333
+      ],
+      "goal_error_estimate": 0.09999999999999998,
+      "status": "estimated-on-fixed-discrete-problem"
+    },
+    "matrix_completion": {
+      "observed_diagonal": [
+        1.0,
+        1.0
+      ],
+      "compatible_off_diagonals": [
+        1.0,
+        -1.0
+      ],
+      "status": "evidence-unavailable"
+    },
+    "multifidelity": {
+      "low": [
+        1.0,
+        2.0
+      ],
+      "high": [
+        1.1,
+        2.2
+      ],
+      "difference": [
+        0.10000000000000009,
+        0.20000000000000018
+      ],
+      "status": "statistical-difference-only"
+    },
+    "coloring": {
+      "supports": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3
+        ]
+      ],
+      "colors": [
+        0,
+        1,
+        0
+      ],
+      "status": "sparsity-only"
+    },
+    "sparse_ad": {
+      "function": [
+        "x0*x2",
+        "x1"
+      ],
+      "jacobian_nonzero_pattern": [
+        [
+          0,
+          2
+        ],
+        [
+          1
+        ]
+      ],
+      "forward_columns": 2,
+      "reverse_rows": 2,
+      "status": "derivative-pattern-only"
+    }
+  }
+}

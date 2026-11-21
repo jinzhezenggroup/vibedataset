@@ -1,0 +1,83 @@
+{
+  "schema": "vibedataset.attribution_4arm.negative_controls.v1",
+  "manifest_sha256": "e08193beba0fd3b15d3b6c2ecf531b3b38c6cb8fef3da0ee95d19cd78858a635",
+  "controls": [
+    {
+      "id": "wrong-basis-reuse",
+      "source_protocol": {
+        "method": "RHF",
+        "basis": "sto-3g",
+        "basis_representation": "real_spherical",
+        "unit": "Bohr",
+        "precision": "FP64",
+        "origin": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "conv_tol": 1e-10,
+        "max_cycle": 100,
+        "response_tol": 1e-08,
+        "response_max_cycle": 50,
+        "device": "cuda",
+        "seed": 20261122
+      },
+      "target_protocol": {
+        "method": "RHF",
+        "basis": "6-31g*",
+        "basis_representation": "real_spherical",
+        "unit": "Bohr",
+        "precision": "FP64",
+        "origin": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "conv_tol": 1e-10,
+        "max_cycle": 100,
+        "response_tol": 1e-08,
+        "response_max_cycle": 50,
+        "device": "cuda",
+        "seed": 20261122
+      },
+      "status": "reject-and-recompute",
+      "reason": "protocol_identity_mismatch",
+      "mismatches": [
+        "basis"
+      ]
+    },
+    {
+      "id": "near-singular-residual",
+      "matrix": [
+        [
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          1e-12
+        ]
+      ],
+      "rhs": [
+        1.0,
+        1.0
+      ],
+      "residual": [
+        0.0,
+        1e-08
+      ],
+      "condition_number": 1000000000000.0,
+      "strict_residual_bound": 10000.0,
+      "tolerance": 1e-06,
+      "status": "reject-and-recompute",
+      "reason": "residual_bound_exceeds_target_tolerance"
+    },
+    {
+      "id": "multiplicity-mismatch",
+      "source_multiplicity": 1,
+      "target_multiplicity": 3,
+      "status": "reject-and-recompute",
+      "reason": "state_identity_mismatch"
+    }
+  ]
+}

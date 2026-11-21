@@ -1,0 +1,7 @@
+{
+  "status": "passed",
+  "decisions": 564,
+  "candidates": 765,
+  "ood_decisions": 411,
+  "external_inventory_cases": 100
+}

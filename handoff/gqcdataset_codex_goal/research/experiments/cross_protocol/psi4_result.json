@@ -1,0 +1,101 @@
+{
+  "maximum_dipole_difference": 1.8249624700317213e-08,
+  "maximum_energy_difference": 5.238931066742225e-08,
+  "protocol": {
+    "einsums": "1.1.2",
+    "geometry_units": "Bohr",
+    "libxc": "7.0.0",
+    "method_backend": "Psi4 SCF with scf_type=pk, puream=true, core guess, one thread",
+    "numpy": "2.5.5",
+    "origin_bohr": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "package_specs": [
+      "python=3.13",
+      "psi4==1.10",
+      "einsums==1.1.2",
+      "libxc-c==7.0.0"
+    ],
+    "psi4_source_commit": "f2492db10de56b30b188239bdc6b4cfbc4a23bd5",
+    "psi4_version": "1.10",
+    "pyscf_result_sha256": "2f0bfc5ed108c74a0b3fb6f56932145cbbc9977a961ab1e07eefc14464ca2ac2",
+    "python": "3.13.18",
+    "recorded_utc": "2026-11-21T15:22:34.511843+00:00"
+  },
+  "results": {
+    "h2plus_uhf_sto3g": {
+      "basis": "sto-3g",
+      "charge": 1,
+      "converged": true,
+      "dipole_au": [
+        0.0,
+        0.0,
+        0.6999999999999998
+      ],
+      "energy_hartree": -0.5385113475501122,
+      "method": "scf",
+      "multiplicity": 2,
+      "name": "h2plus_uhf_sto3g",
+      "pyscf_dipole_difference": 7.771561172376096e-16,
+      "pyscf_energy_difference": 8.992806499463768e-15,
+      "scf_iterations": 2,
+      "seconds": 0.0599048700005369
+    },
+    "water_b3lyp_631g_star": {
+      "basis": "6-31g*",
+      "charge": 0,
+      "converged": true,
+      "dipole_au": [
+        1.8035665787812987e-17,
+        -3.3306690738754696e-15,
+        0.8152166437716017
+      ],
+      "energy_hartree": -76.40681542645463,
+      "method": "b3lyp",
+      "multiplicity": 1,
+      "name": "water_b3lyp_631g_star",
+      "pyscf_dipole_difference": 1.8249624700317213e-08,
+      "pyscf_energy_difference": 5.238931066742225e-08,
+      "scf_iterations": 12,
+      "seconds": 0.6763458510004057
+    },
+    "water_rhf_631g_star": {
+      "basis": "6-31g*",
+      "charge": 0,
+      "converged": true,
+      "dipole_au": [
+        -1.8738841405537211e-16,
+        8.326672684688674e-15,
+        0.8725610171361526
+      ],
+      "energy_hartree": -76.00910376515178,
+      "method": "scf",
+      "multiplicity": 1,
+      "name": "water_rhf_631g_star",
+      "pyscf_dipole_difference": 2.3754698208477976e-09,
+      "pyscf_energy_difference": 2.842170943040401e-14,
+      "scf_iterations": 14,
+      "seconds": 0.11305318499944406
+    },
+    "water_rhf_sto3g": {
+      "basis": "sto-3g",
+      "charge": 0,
+      "converged": true,
+      "dipole_au": [
+        1.5680261808583557e-16,
+        3.885780586188048e-16,
+        0.6783804835860923
+      ],
+      "energy_hartree": -74.96301837607479,
+      "method": "scf",
+      "multiplicity": 1,
+      "name": "water_rhf_sto3g",
+      "pyscf_dipole_difference": 1.870985588681151e-10,
+      "pyscf_energy_difference": 2.1316282072803006e-13,
+      "scf_iterations": 9,
+      "seconds": 0.26209909899989725
+    }
+  }
+}

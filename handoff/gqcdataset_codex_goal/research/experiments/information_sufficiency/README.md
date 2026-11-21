@@ -64,3 +64,10 @@ python3 handoff/gqcdataset_codex_goal/research/experiments/response_benefit/veri
 新重放资产的 `manifest.json` 绑定了 `assets.tar.gz`、事件日志、质量代码和
 运行协议的散列。完整的源实验仍保留在 `response_benefit/evidence/`，便于核对
 旧 `two` 结果的独立验收。
+
+## Issue #25 后续复评
+
+独立手写模块在 8 个留出构型、四次重复和三个场景上运行了 96 条记录。field
+手写和 adjoint 手写分别为 9,344 和 9,176 次后轮 J/K，`multi4` 为 8,592 次，
+全部 96 条输出通过，没有回退。四个混合场的 15 个非空子集已纳入枚举，三个
+场景的 `multi4` 选择均与三列搜索相同。[独立结果](issue25/README.md) · [分析器](analyze_issue25.py)

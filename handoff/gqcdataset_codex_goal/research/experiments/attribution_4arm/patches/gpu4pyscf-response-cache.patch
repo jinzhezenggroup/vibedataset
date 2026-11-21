@@ -1,0 +1,66 @@
+--- /dev/null
++++ b/gpu4pyscf/lib/response_cache.py
+@@ -0,0 +1,40 @@
++"""Opt-in exact operator-image cache for the attribution experiment."""
++from __future__ import annotations
++import hashlib
++import cupy
++
++class ResponseOperatorCache:
++    """Bounded exact-image cache with counters for one SCF reference."""
++    def __init__(self, max_entries: int = 4096):
++        self.max_entries = int(max_entries)
++        self._values = {}
++        self.calls = self.hits = self.misses = 0
++
++    @staticmethod
++    def _key(row):
++        host = cupy.asnumpy(row)
++        return (str(host.dtype), tuple(host.shape), hashlib.sha256(host.tobytes()).hexdigest())
++
++    def wrap(self, fn):
++        """Return an ``fvind``-compatible function."""
++        def cached(value):
++            array = cupy.asarray(value)
++            if array.ndim < 2:
++                return fn(array)
++            original_shape = array.shape
++            rows = array.reshape(array.shape[0], -1)
++            outputs = []
++            for row in rows:
++                self.calls += 1
++                key = self._key(row)
++                if key in self._values:
++                    self.hits += 1
++                    outputs.append(self._values[key])
++                    continue
++                self.misses += 1
++                result = cupy.asarray(fn(row.reshape((1,) + original_shape[1:])))[0]
++                if len(self._values) < self.max_entries:
++                    self._values[key] = result.copy()
++                outputs.append(result)
++            return cupy.stack(outputs).reshape(original_shape)
++        return cached
+--- a/gpu4pyscf/scf/cphf.py
++++ b/gpu4pyscf/scf/cphf.py
+@@ -31 +31 @@
+-          level_shift=0, mo10=None):
++          level_shift=0, mo10=None, backend_cache=None):
+@@ -46 +46 @@
+-                          level_shift=level_shift, mo10=mo10)
++                          level_shift=level_shift, mo10=mo10, backend_cache=backend_cache)
+@@ -50 +50 @@
+-                            level_shift=level_shift, mo10=mo10)
++                            level_shift=level_shift, mo10=mo10, backend_cache=backend_cache)
+@@ -56 +56 @@
+-               level_shift=0, mo10=None):
++               level_shift=0, mo10=None, backend_cache=None):
+@@ -59,0 +60,2 @@
++    if backend_cache is not None:
++        fvind = backend_cache.wrap(fvind)
+@@ -85 +87 @@
+-                verbose=logger.WARN, level_shift=0, mo10=None):
++                verbose=logger.WARN, level_shift=0, mo10=None, backend_cache=None):
+@@ -100,0 +103,2 @@
++    if backend_cache is not None:
++        fvind = backend_cache.wrap(fvind)
