@@ -1,0 +1,68 @@
+{
+  "schema": "vibedataset.research_release.v1",
+  "git_head": "64bf5a81eb0488b8643f7db517ea3e5c0e6020c0",
+  "artifacts": [
+    {
+      "path": "README.md",
+      "sha256": "87b61a754ed3c0a3c05c5e4611a564242d8a212df31f7350cafb05d5933a0c62"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/research/experiments/attribution_4arm/manifest.json",
+      "sha256": "0bcde0fd77fc73e441fd3583596425d28175ff519c0650168b7729cfe10301e8"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/research/experiments/attribution_4arm/score.json",
+      "sha256": "4429031a8d2af63237794e0111231bf0f8c373bccdcdddc49a5322088a7effbe"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/research/experiments/attribution_4arm/summary.json",
+      "sha256": "8d326dce9350c6f12b1a99ab8f47d19258f262f9ec3ad5a2568de9e1d988bad8"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/research/performance/benchmark_contract.json",
+      "sha256": "91137007c2befc82546705baf28ea47d02301c824d55f5343b34f1e656272f23"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/research/performance/attribution_profile.json",
+      "sha256": "23726b0d93df39bcf4e43bee916ebed43575a50f24c0ee6f4cbad66046edf582"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/research/performance/scale_ablation_plan.json",
+      "sha256": "526ad5c1c1b8b608273f757a0de428a9a458ee737dae9fbc912be725c0a2cebd"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/research/audits/SOURCE_AUDIT_32.md",
+      "sha256": "12a5cd5d3a1134403de5e5411a80c7f74ca02d2a4713abf50279bb45d9534c49"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/research/audits/ALGORITHM_MATRIX.md",
+      "sha256": "d5071635742e0e2fbe4cd5db24e8950d4cad6455bef90138ac9507f464fb538a"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/research/experiments/prepared_property_batch/README.md",
+      "sha256": "a8c8da9ca8bec06512fb70a42bb5a7af7df2178e53314e54f4c558153d7d28dd"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/research/experiments/response_asset_compiler/plan.json",
+      "sha256": "934425fbab5d2bfd977314a1934cf79b3640f9094b69d5de644c23a13007148d"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/research/experiments/hessian_cphf/results.json",
+      "sha256": "fa6d50ba2ce0a9b1007c259f2a54ccc2d072a99bfde419404c90809175c4664a"
+    }
+  ],
+  "commands": [
+    "python3 scripts/check_source_audit_32.py",
+    "python3 scripts/check_attribution_ci.py --out .work/attribution-ci",
+    "python3 scripts/check_response_ci.py archive --out .work/response-archive",
+    "python3 scripts/check_benchmark_contract.py --contract handoff/gqcdataset_codex_goal/research/performance/benchmark_contract.json --manifest handoff/gqcdataset_codex_goal/research/experiments/attribution_4arm/manifest.json --out .work/benchmark-contract"
+  ],
+  "unknowns": [
+    "full upstream GPU4PySCF benchmark suite",
+    "CUPTI/Nsight traces",
+    "energy and peak-memory telemetry",
+    "1000-row protocol-consistent request asset",
+    "A100/H100 comparison",
+    "VeloxChem cross-check"
+  ]
+}

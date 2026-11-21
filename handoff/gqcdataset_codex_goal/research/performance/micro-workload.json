@@ -1,0 +1,101 @@
+{
+  "schema": "vibedataset.benchmark.micro.v1",
+  "rows": [
+    {
+      "id": "h2o-rhf-sto3g",
+      "source_kind": "controlled-request",
+      "status": "measured",
+      "name": "qm9-000003",
+      "protocol": "RHF/STO-3G",
+      "geometry_hash": "155c4aab59444fbed488a4ec095c0fd2a3473d4e7f6c382907ac4e39895dae29",
+      "atomic_numbers": [
+        8,
+        1,
+        1
+      ],
+      "coordinates_bohr": [
+        [
+          -0.06493192524554577,
+          1.8472820647962227,
+          0.014364927558064096
+        ],
+        [
+          0.1223909324996838,
+          0.038875821702327534,
+          0.002900038150511557
+        ],
+        [
+          1.647445044378153,
+          2.45814139006534,
+          0.0013098326717759087
+        ]
+      ],
+      "charge": 0,
+      "multiplicity": 1,
+      "basis_representation": "real_spherical"
+    },
+    {
+      "id": "nh3-rhf-sto3g",
+      "source_kind": "controlled-request",
+      "status": "measured",
+      "name": "qm9-000002",
+      "protocol": "RHF/STO-3G",
+      "geometry_hash": "4bd2e3010b4e7d78a3096176e13ba7108dde7ab162ee1054f31c654a4fcf53a3",
+      "atomic_numbers": [
+        7,
+        1,
+        1,
+        1
+      ],
+      "coordinates_bohr": [
+        [
+          -0.07639417092624995,
+          1.935283175464868,
+          0.11822844693791654
+        ],
+        [
+          0.03261188037661613,
+          0.023707004083929797,
+          -0.051735333147251365
+        ],
+        [
+          1.7305910897736436,
+          2.567656291323291,
+          -0.054344286767238355
+        ],
+        [
+          -0.9831824292134318,
+          2.5389077573982566,
+          -1.4655631354127978
+        ]
+      ],
+      "charge": 0,
+      "multiplicity": 1,
+      "basis_representation": "real_spherical"
+    },
+    {
+      "id": "lih-rhf-sto3g",
+      "source_kind": "control-only",
+      "status": "not_run",
+      "atomic_numbers": [
+        3,
+        1
+      ],
+      "coordinates_bohr": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          3.015,
+          0,
+          0
+        ]
+      ],
+      "charge": 0,
+      "multiplicity": 1,
+      "protocol": "RHF/STO-3G"
+    }
+  ]
+}

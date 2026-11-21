@@ -34,6 +34,7 @@ def main():
     summary = read(EXP / "summary.json")
     negative = read(EXP / "negative-controls.json")
     expansion = read(EXP / "expansion.json")
+    benchmark = ROOT / "handoff/gqcdataset_codex_goal/research/performance"
     require(len(manifest["molecules"]) == 17, "four-arm molecule denominator")
     require(manifest["manifest_sha256"] == score["manifest_sha256"] == summary["negative_controls"]["manifest_sha256"], "manifest binding")
     for arm in ("A", "B", "C", "D"):
@@ -51,6 +52,11 @@ def main():
     require(len(expansion_rows) == 12, "expansion denominator")
     require(sum(row["status"] == "direct-reference" for row in expansion_rows) == 4, "larger-basis direct control")
     require(sum(row["status"] == "reject-and-recompute" for row in expansion_rows) == 8, "DFT/open-shell rejection controls")
+    subprocess.check_call([sys.executable, str(SCRIPTS / "check_benchmark_contract.py"), "--contract", str(benchmark / "benchmark_contract.json"), "--manifest", str(EXP / "manifest.json"), "--out", str(args.out / "benchmark-contract.json")], cwd=ROOT)
+    subprocess.check_call([sys.executable, str(SCRIPTS / "check_attribution_profile.py"), "--profile", str(benchmark / "attribution_profile.json"), "--out", str(args.out / "profiling.json")], cwd=ROOT)
+    subprocess.check_call([sys.executable, str(SCRIPTS / "check_research_release.py"), "--release", str(ROOT / "handoff/gqcdataset_codex_goal/research/release"), "--root", str(ROOT), "--out", str(args.out / "release.json")], cwd=ROOT)
+    subprocess.check_call([sys.executable, str(SCRIPTS / "check_prepared_property_batch.py"), "--out", str(args.out / "prepared-property-batch.json")], cwd=ROOT)
+    subprocess.check_call([sys.executable, str(SCRIPTS / "verify_response_asset_compiler.py"), "--plan", str(ROOT / "handoff/gqcdataset_codex_goal/research/experiments/response_asset_compiler/plan.json"), "--out", str(args.out / "response-asset-compiler.json")], cwd=ROOT)
     with tempfile.TemporaryDirectory(dir=args.out) as temp:
         temp_path = Path(temp)
         generated_controls = temp_path / "algorithm-controls.json"

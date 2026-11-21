@@ -1,0 +1,13 @@
+claim_id,claim,status,evidence,condition,unknown
+34,10x end-to-end GQC over official GPU4PySCF,falsified-partial,performance/attribution_profile.json,17 RHF/STO-3G geometries and 51 requests,larger protocol-consistent workload and second GPU
+31,request-level GQC asset planning reduces operator work,supported-in-domain,experiments/attribution_4arm/score.json,204/204 independent rows accepted,
+32,fixed-source behavior boundary,supported,audits/SOURCE_AUDIT_32.md,10 sources and 37 observations,
+33,cost-coverage-risk planner replay,supported-as-planner,experiments/attribution_4arm/planner.json,"564 decisions, no oracle",
+35,frozen end-to-end benchmark contract,supported-with-scale-blocker,performance/benchmark_contract.json,"306 controlled requests, natural flow 0",
+36,GPU4PySCF/PySCF complete audit and upstream benchmark,partial,audits/gpu4pyscf.md,"project baseline run, upstream full suite unavailable",
+37,phase profiling baseline,partial,performance/attribution_profile.json,unknown CUPTI/Nsight fields remain explicit,
+38,cross-sample resident runtime,planner-only,experiments/prepared_property_batch/README.md,GPU implementation not claimed,
+39,response asset compiler and certificate dispositions,planner-only,experiments/response_asset_compiler/plan.json,independent scorer remains required,
+40,Hessian/CPKS main load,CPU-control,experiments/hessian_cphf/results.json,IR/Raman/GPU cross-check unavailable,
+41,"scale, ablation and amortization",partial-falsified,performance/scale_ablation_plan.json,"17 measured, 1000 target blocked",
+42,reproducible release and claim gate,partial,release/release_manifest.json,unknown costs and unavailable upstream assets listed,

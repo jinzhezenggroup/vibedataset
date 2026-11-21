@@ -1,0 +1,95 @@
+{
+  "schema": "vibedataset.scale_ablation_plan.v1",
+  "contract_sha256": "e08193beba0fd3b15d3b6c2ecf531b3b38c6cb8fef3da0ee95d19cd78858a635",
+  "completed_scale": {
+    "molecules": 17,
+    "request_rows": 51,
+    "target_scale": 1000,
+    "status": "partial-falsified"
+  },
+  "strata": [
+    {
+      "n_heavy": 1,
+      "request_rows": 9,
+      "status": "measured",
+      "gqc_response_seconds": 5.880178020102903,
+      "molecule_seconds": 31.914222551160492
+    },
+    {
+      "n_heavy": 2,
+      "request_rows": 15,
+      "status": "measured",
+      "gqc_response_seconds": 20.179065658943728,
+      "molecule_seconds": 99.6491130614886
+    },
+    {
+      "n_heavy": 3,
+      "request_rows": 27,
+      "status": "measured",
+      "gqc_response_seconds": 50.64686256181449,
+      "molecule_seconds": 235.90750311978627
+    }
+  ],
+  "devices": {
+    "n2": "NVIDIA RTX PRO 6000 Blackwell, measured",
+    "n5": "NVIDIA RTX 5090, energy assets measured in prior handoff",
+    "A100_H100": "not_available"
+  },
+  "ablations": [
+    {
+      "name": "shape_bucket",
+      "status": "not_run",
+      "reason": "requires #37 phase profile"
+    },
+    {
+      "name": "gpu_residency",
+      "status": "not_run",
+      "reason": "requires new GPU runtime implementation"
+    },
+    {
+      "name": "async_streams",
+      "status": "not_run",
+      "reason": "requires CUPTI event ledger"
+    },
+    {
+      "name": "fused_jk",
+      "status": "not_run",
+      "reason": "requires physical-equivalence patch and independent scorer"
+    },
+    {
+      "name": "multi_rhs",
+      "status": "not_run",
+      "reason": "official baseline already present in #31"
+    },
+    {
+      "name": "adjoint",
+      "status": "not_run",
+      "reason": "not part of current GPU4PySCF A-D contract"
+    },
+    {
+      "name": "asset_planner",
+      "status": "not_run",
+      "reason": "measured in #31/#33"
+    },
+    {
+      "name": "compile_cache",
+      "status": "not_run",
+      "reason": "patch cache negative result measured in #31"
+    },
+    {
+      "name": "mixed_precision",
+      "status": "not_run",
+      "reason": "FP64 contract has priority"
+    },
+    {
+      "name": "batch_size",
+      "status": "not_run",
+      "reason": "only 17-geometry cohort available"
+    }
+  ],
+  "claim_gate": {
+    "ten_x": "not_supported",
+    "reason": "C vs A endpoint geometric mean speedup about 1.09x and CI crosses 1",
+    "next_required": "obtain protocol-consistent 1000-row asset and at least one second GPU before broad claim"
+  }
+}

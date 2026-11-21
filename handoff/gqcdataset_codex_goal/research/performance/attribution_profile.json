@@ -1,0 +1,487 @@
+{
+  "schema": "vibedataset.attribution_profile.v1",
+  "manifest_sha256": "e08193beba0fd3b15d3b6c2ecf531b3b38c6cb8fef3da0ee95d19cd78858a635",
+  "arms": {
+    "A": {
+      "rows": 51,
+      "timing": {
+        "prepare": null,
+        "environment_startup": null,
+        "data_read": null,
+        "compile_jit": null,
+        "warmup": null,
+        "h2d_observed_bytes": 176928.0,
+        "d2h_observed_bytes": 52752.0,
+        "scf_fock_proxy_cycles": 399.0,
+        "cp_hf_gmres_response_seconds": 113.4033084291732,
+        "physical_residual_seconds": null,
+        "property_readout_seconds": null,
+        "independent_scorer": null,
+        "serialization": null,
+        "retry": null,
+        "fallback": null,
+        "end_to_end_molecule_seconds": 408.1627780923154,
+        "kernel_launches": null,
+        "occupancy": null,
+        "flops": null,
+        "peak_device_memory_bytes": null,
+        "peak_host_memory_bytes": null,
+        "energy_joules": null
+      },
+      "cost_totals": {
+        "rhs_columns": 102.0,
+        "operator_rows": 677.0,
+        "quality_operator_rows": 102.0,
+        "response_seconds": 113.4033084291732,
+        "host_to_device_bytes": 176928.0,
+        "device_to_host_bytes": 52752.0,
+        "scf_cycles": 399.0,
+        "molecule_seconds": 408.1627780923154
+      },
+      "cold_warm_split": "not separately recorded in this run",
+      "unknown_fields": [
+        "prepare",
+        "environment_startup",
+        "data_read",
+        "compile_jit",
+        "warmup",
+        "physical_residual_seconds",
+        "property_readout_seconds",
+        "independent_scorer",
+        "serialization",
+        "retry",
+        "fallback",
+        "kernel_launches",
+        "occupancy",
+        "flops",
+        "peak_device_memory_bytes",
+        "peak_host_memory_bytes",
+        "energy_joules"
+      ]
+    },
+    "B": {
+      "rows": 51,
+      "timing": {
+        "prepare": null,
+        "environment_startup": null,
+        "data_read": null,
+        "compile_jit": null,
+        "warmup": null,
+        "h2d_observed_bytes": 176928.0,
+        "d2h_observed_bytes": 52752.0,
+        "scf_fock_proxy_cycles": 399.0,
+        "cp_hf_gmres_response_seconds": 201.6032680484932,
+        "physical_residual_seconds": null,
+        "property_readout_seconds": null,
+        "independent_scorer": null,
+        "serialization": null,
+        "retry": null,
+        "fallback": null,
+        "end_to_end_molecule_seconds": 558.7106378129683,
+        "kernel_launches": null,
+        "occupancy": null,
+        "flops": null,
+        "peak_device_memory_bytes": null,
+        "peak_host_memory_bytes": null,
+        "energy_joules": null
+      },
+      "cost_totals": {
+        "rhs_columns": 102.0,
+        "operator_rows": 643.0,
+        "quality_operator_rows": 102.0,
+        "response_seconds": 201.6032680484932,
+        "host_to_device_bytes": 176928.0,
+        "device_to_host_bytes": 52752.0,
+        "scf_cycles": 399.0,
+        "molecule_seconds": 558.7106378129683
+      },
+      "cold_warm_split": "not separately recorded in this run",
+      "unknown_fields": [
+        "prepare",
+        "environment_startup",
+        "data_read",
+        "compile_jit",
+        "warmup",
+        "physical_residual_seconds",
+        "property_readout_seconds",
+        "independent_scorer",
+        "serialization",
+        "retry",
+        "fallback",
+        "kernel_launches",
+        "occupancy",
+        "flops",
+        "peak_device_memory_bytes",
+        "peak_host_memory_bytes",
+        "energy_joules"
+      ]
+    },
+    "C": {
+      "rows": 51,
+      "timing": {
+        "prepare": null,
+        "environment_startup": null,
+        "data_read": null,
+        "compile_jit": null,
+        "warmup": null,
+        "h2d_observed_bytes": 109160.0,
+        "d2h_observed_bytes": 26376.0,
+        "scf_fock_proxy_cycles": 399.0,
+        "cp_hf_gmres_response_seconds": 76.70610624086112,
+        "physical_residual_seconds": null,
+        "property_readout_seconds": null,
+        "independent_scorer": null,
+        "serialization": null,
+        "retry": null,
+        "fallback": null,
+        "end_to_end_molecule_seconds": 367.47083873243537,
+        "kernel_launches": null,
+        "occupancy": null,
+        "flops": null,
+        "peak_device_memory_bytes": null,
+        "peak_host_memory_bytes": null,
+        "energy_joules": null
+      },
+      "cost_totals": {
+        "rhs_columns": 51.0,
+        "operator_rows": 352.0,
+        "quality_operator_rows": 51.0,
+        "response_seconds": 76.70610624086112,
+        "host_to_device_bytes": 109160.0,
+        "device_to_host_bytes": 26376.0,
+        "scf_cycles": 399.0,
+        "molecule_seconds": 367.47083873243537
+      },
+      "cold_warm_split": "not separately recorded in this run",
+      "unknown_fields": [
+        "prepare",
+        "environment_startup",
+        "data_read",
+        "compile_jit",
+        "warmup",
+        "physical_residual_seconds",
+        "property_readout_seconds",
+        "independent_scorer",
+        "serialization",
+        "retry",
+        "fallback",
+        "kernel_launches",
+        "occupancy",
+        "flops",
+        "peak_device_memory_bytes",
+        "peak_host_memory_bytes",
+        "energy_joules"
+      ]
+    },
+    "D": {
+      "rows": 51,
+      "timing": {
+        "prepare": null,
+        "environment_startup": null,
+        "data_read": null,
+        "compile_jit": null,
+        "warmup": null,
+        "h2d_observed_bytes": 109160.0,
+        "d2h_observed_bytes": 26376.0,
+        "scf_fock_proxy_cycles": 399.0,
+        "cp_hf_gmres_response_seconds": 108.11772464378737,
+        "physical_residual_seconds": null,
+        "property_readout_seconds": null,
+        "independent_scorer": null,
+        "serialization": null,
+        "retry": null,
+        "fallback": null,
+        "end_to_end_molecule_seconds": 428.8927343467949,
+        "kernel_launches": null,
+        "occupancy": null,
+        "flops": null,
+        "peak_device_memory_bytes": null,
+        "peak_host_memory_bytes": null,
+        "energy_joules": null
+      },
+      "cost_totals": {
+        "rhs_columns": 51.0,
+        "operator_rows": 352.0,
+        "quality_operator_rows": 51.0,
+        "response_seconds": 108.11772464378737,
+        "host_to_device_bytes": 109160.0,
+        "device_to_host_bytes": 26376.0,
+        "scf_cycles": 399.0,
+        "molecule_seconds": 428.8927343467949
+      },
+      "cold_warm_split": "not separately recorded in this run",
+      "unknown_fields": [
+        "prepare",
+        "environment_startup",
+        "data_read",
+        "compile_jit",
+        "warmup",
+        "physical_residual_seconds",
+        "property_readout_seconds",
+        "independent_scorer",
+        "serialization",
+        "retry",
+        "fallback",
+        "kernel_launches",
+        "occupancy",
+        "flops",
+        "peak_device_memory_bytes",
+        "peak_host_memory_bytes",
+        "energy_joules"
+      ]
+    }
+  },
+  "paired_effects": {
+    "gqc_minus_native_official": {
+      "rhs_columns": {
+        "paired_median_difference": -1,
+        "paired_bootstrap_95ci": [
+          -1.0,
+          -1.0
+        ],
+        "geometric_mean_ratio": 0.8164965809277259
+      },
+      "operator_rows": {
+        "paired_median_difference": -6,
+        "paired_bootstrap_95ci": [
+          -7.0,
+          -4.0
+        ],
+        "geometric_mean_ratio": 0.8329256269904439
+      },
+      "quality_operator_rows": {
+        "paired_median_difference": -1,
+        "paired_bootstrap_95ci": [
+          -1.0,
+          -1.0
+        ],
+        "geometric_mean_ratio": 0.8164965809277259
+      },
+      "response_seconds": {
+        "paired_median_difference": 0.0022501159692183137,
+        "paired_bootstrap_95ci": [
+          -0.3958404139848426,
+          0.004391609923914075
+        ],
+        "geometric_mean_ratio": 0.9958501387566486
+      },
+      "molecule_seconds": {
+        "paired_median_difference": 0.007934756926260889,
+        "paired_bootstrap_95ci": [
+          -0.3412109339842573,
+          0.012464457075111568
+        ],
+        "geometric_mean_ratio": 0.9145095473849261
+      },
+      "host_to_device_bytes": {
+        "paired_median_difference": -576,
+        "paired_bootstrap_95ci": [
+          -832.0,
+          -120.0
+        ],
+        "geometric_mean_ratio": 0.9343081730079276
+      },
+      "device_to_host_bytes": {
+        "paired_median_difference": -320,
+        "paired_bootstrap_95ci": [
+          -616.0,
+          -120.0
+        ],
+        "geometric_mean_ratio": 0.8164965809277259
+      }
+    },
+    "modified_minus_official_native": {
+      "rhs_columns": {
+        "paired_median_difference": 0,
+        "paired_bootstrap_95ci": [
+          0.0,
+          0.0
+        ],
+        "geometric_mean_ratio": 1.0
+      },
+      "operator_rows": {
+        "paired_median_difference": -1,
+        "paired_bootstrap_95ci": [
+          -1.0,
+          -1.0
+        ],
+        "geometric_mean_ratio": 0.9543573806483825
+      },
+      "quality_operator_rows": {
+        "paired_median_difference": 0,
+        "paired_bootstrap_95ci": [
+          0.0,
+          0.0
+        ],
+        "geometric_mean_ratio": 1.0
+      },
+      "response_seconds": {
+        "paired_median_difference": 1.3529084569308907,
+        "paired_bootstrap_95ci": [
+          0.4329292089678347,
+          2.1428520150948316
+        ],
+        "geometric_mean_ratio": 1.649000338344865
+      },
+      "molecule_seconds": {
+        "paired_median_difference": 2.511433755978942,
+        "paired_bootstrap_95ci": [
+          0.7743288410129026,
+          3.6484911859733984
+        ],
+        "geometric_mean_ratio": 1.2833701655230063
+      },
+      "host_to_device_bytes": {
+        "paired_median_difference": 0,
+        "paired_bootstrap_95ci": [
+          0.0,
+          0.0
+        ],
+        "geometric_mean_ratio": 1.0
+      },
+      "device_to_host_bytes": {
+        "paired_median_difference": 0,
+        "paired_bootstrap_95ci": [
+          0.0,
+          0.0
+        ],
+        "geometric_mean_ratio": 1.0
+      }
+    },
+    "modified_minus_official_gqc": {
+      "rhs_columns": {
+        "paired_median_difference": 0,
+        "paired_bootstrap_95ci": [
+          0.0,
+          0.0
+        ],
+        "geometric_mean_ratio": 1.0
+      },
+      "operator_rows": {
+        "paired_median_difference": 0,
+        "paired_bootstrap_95ci": [
+          0.0,
+          0.0
+        ],
+        "geometric_mean_ratio": 1.0
+      },
+      "quality_operator_rows": {
+        "paired_median_difference": 0,
+        "paired_bootstrap_95ci": [
+          0.0,
+          0.0
+        ],
+        "geometric_mean_ratio": 1.0
+      },
+      "response_seconds": {
+        "paired_median_difference": 0.0,
+        "paired_bootstrap_95ci": [
+          0.0,
+          0.0
+        ],
+        "geometric_mean_ratio": 1.364406100291584
+      },
+      "molecule_seconds": {
+        "paired_median_difference": 1.085915385861881,
+        "paired_bootstrap_95ci": [
+          0.42164309101644903,
+          1.481433346052654
+        ],
+        "geometric_mean_ratio": 1.1408740579034085
+      },
+      "host_to_device_bytes": {
+        "paired_median_difference": 0,
+        "paired_bootstrap_95ci": [
+          0.0,
+          0.0
+        ],
+        "geometric_mean_ratio": 1.0
+      },
+      "device_to_host_bytes": {
+        "paired_median_difference": 0,
+        "paired_bootstrap_95ci": [
+          0.0,
+          0.0
+        ],
+        "geometric_mean_ratio": 1.0
+      }
+    },
+    "interaction_(D-B)-(C-A)": {
+      "rhs_columns": {
+        "paired_median_difference": 0,
+        "paired_bootstrap_95ci": [
+          0.0,
+          0.0
+        ]
+      },
+      "operator_rows": {
+        "paired_median_difference": 1,
+        "paired_bootstrap_95ci": [
+          1.0,
+          1.0
+        ]
+      },
+      "quality_operator_rows": {
+        "paired_median_difference": 0,
+        "paired_bootstrap_95ci": [
+          0.0,
+          0.0
+        ]
+      },
+      "response_seconds": {
+        "paired_median_difference": -0.9036198309622705,
+        "paired_bootstrap_95ci": [
+          -1.358766132965684,
+          -0.3241138509474695
+        ]
+      },
+      "molecule_seconds": {
+        "paired_median_difference": -1.2538715719711035,
+        "paired_bootstrap_95ci": [
+          -2.374135388992727,
+          -0.3526942189782858
+        ]
+      },
+      "host_to_device_bytes": {
+        "paired_median_difference": 0,
+        "paired_bootstrap_95ci": [
+          0.0,
+          0.0
+        ]
+      },
+      "device_to_host_bytes": {
+        "paired_median_difference": 0,
+        "paired_bootstrap_95ci": [
+          0.0,
+          0.0
+        ]
+      }
+    }
+  },
+  "claim_gate": {
+    "ten_x_hypothesis": "not supported by this run",
+    "official_vs_gqc_speedup_geometric_mean": 1.0934822964500885,
+    "quality_gate": "all 204 scored rows accepted",
+    "ci_lower_bound_gt_one": false,
+    "reason": "GQC planner reduced operator rows but did not establish 10x end-to-end speedup"
+  },
+  "unknowns": [
+    "compile_jit",
+    "data_read",
+    "energy_joules",
+    "environment_startup",
+    "fallback",
+    "flops",
+    "independent_scorer",
+    "kernel_launches",
+    "occupancy",
+    "peak_device_memory_bytes",
+    "peak_host_memory_bytes",
+    "physical_residual_seconds",
+    "prepare",
+    "property_readout_seconds",
+    "retry",
+    "serialization",
+    "warmup"
+  ]
+}

@@ -1,0 +1,103 @@
+{
+  "schema": "vibedataset.hessian_cphf_controls.v1",
+  "protocol": {
+    "basis": "sto-3g",
+    "precision": "FP64",
+    "scf_tol": 1e-10,
+    "response_semantics": "relaxed_hessian"
+  },
+  "rows": [
+    {
+      "name": "h2o",
+      "method": "RHF",
+      "charge": 0,
+      "spin": 0,
+      "atoms": 3,
+      "scf_converged": true,
+      "energy_hartree": -74.63485187692038,
+      "status": "accepted",
+      "gradient_linf": 0.9911863044030604,
+      "hessian_shape": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "hessian_sha256": "32e25b63bd097a759ad1047108da40eff0486488c3af43c6218406830f18c3b0",
+      "negative_eigenvalues": 5,
+      "minimum_hessian_eigenvalue": -5.286256854091986,
+      "seconds": 0.7114522299998498
+    },
+    {
+      "name": "nh3",
+      "method": "RHF",
+      "charge": 0,
+      "spin": 0,
+      "atoms": 4,
+      "scf_converged": true,
+      "energy_hartree": -55.4275375670602,
+      "status": "accepted",
+      "gradient_linf": 0.07202009094529727,
+      "hessian_shape": [
+        4,
+        4,
+        3,
+        3
+      ],
+      "hessian_sha256": "e3163f59fc3d4efa0c96fea3b84b6d91f91b9c69922a058a2a7672e1aafa7f02",
+      "negative_eigenvalues": 6,
+      "minimum_hessian_eigenvalue": -1.6086938983675405,
+      "seconds": 0.26477021299797343
+    },
+    {
+      "name": "lih",
+      "method": "RHF",
+      "charge": 0,
+      "spin": 0,
+      "atoms": 2,
+      "scf_converged": true,
+      "energy_hartree": -7.862009272120227,
+      "status": "accepted",
+      "gradient_linf": 0.016489925196931543,
+      "hessian_shape": [
+        2,
+        2,
+        3,
+        3
+      ],
+      "hessian_sha256": "8982215bf7c65c9cae4dec10a6fd2437b25909a75bc92df0f6129e1e573efe9b",
+      "negative_eigenvalues": 2,
+      "minimum_hessian_eigenvalue": -0.11350176704039992,
+      "seconds": 0.31120319299952826
+    },
+    {
+      "name": "lih-open-shell",
+      "method": "UHF",
+      "charge": 1,
+      "spin": 1,
+      "atoms": 2,
+      "scf_converged": true,
+      "energy_hartree": -7.613701085216997,
+      "status": "accepted",
+      "gradient_linf": 0.0291753327998861,
+      "hessian_shape": [
+        2,
+        2,
+        3,
+        3
+      ],
+      "hessian_sha256": "a1d8aa5eb429ed5270ce560a88c3a081a99d72f56f39d4c6594a98ec4930b1bc",
+      "negative_eigenvalues": 3,
+      "minimum_hessian_eigenvalue": -0.08485470662473482,
+      "seconds": 0.6243565840013616
+    }
+  ],
+  "independent_gpu4pyscf_crosscheck": "not_run",
+  "veloxchem_crosscheck": "not_available",
+  "finite_difference_hessian": "not_run",
+  "limitations": [
+    "CPU PySCF Hessian/CPKS controls only",
+    "IR/Raman readouts not computed",
+    "GPU4PySCF DFT/UKS Hessian support remains a separate boundary"
+  ]
+}

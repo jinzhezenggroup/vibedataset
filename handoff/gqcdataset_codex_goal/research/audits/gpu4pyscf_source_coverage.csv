@@ -1,0 +1,19 @@
+source,path,commit,acquired,indexed,human_read,behavior_traced,executed,test_or_receipt,boundary
+GPU4PySCF,gpu4pyscf/scf/cphf.py,5a717f899cb40d64a5799ef1df7e3626c505c3bd,true,true,true,true,true,attribution_4arm/raw/raw-A.jsonl,official CPHF entry and 2-D RHS
+GPU4PySCF,gpu4pyscf/scf/ucphf.py,5a717f899cb40d64a5799ef1df7e3626c505c3bd,true,true,true,true,false,gpu4pyscf_source_audit,open-shell source audit only
+GPU4PySCF,gpu4pyscf/lib/cupy_helper.py,5a717f899cb40d64a5799ef1df7e3626c505c3bd,true,true,true,true,true,attribution_4arm/raw/raw-A.jsonl,krylov/stable QR
+GPU4PySCF,gpu4pyscf/properties/polarizability.py,5a717f899cb40d64a5799ef1df7e3626c505c3bd,true,true,true,true,true,attribution_4arm/score.json,independent AO response map
+GPU4PySCF,gpu4pyscf/scf/hf.py,5a717f899cb40d64a5799ef1df7e3626c505c3bd,true,true,true,true,true,attribution_4arm/runs/run-A.json,SCF response provider
+GPU4PySCF,gpu4pyscf/lib/cusolver.py,5a717f899cb40d64a5799ef1df7e3626c505c3bd,true,true,true,true,false,gpu4pyscf_source_audit,library loading path
+GPU4PySCF,gpu4pyscf/lib/cutensor.py,5a717f899cb40d64a5799ef1df7e3626c505c3bd,true,true,true,true,true,attribution_4arm/runs/run-A.json,contraction backend
+GPU4PySCF,gpu4pyscf/properties/tests/test_polarizability.py,5a717f899cb40d64a5799ef1df7e3626c505c3bd,true,true,true,false,false,source inventory,upstream test source acquired
+PySCF,pyscf/scf/cphf.py,c63a953ba603a5ad8c1d65d88da72aaf05ede4d8,true,true,true,true,false,source_audit_32,CPU reference path
+PySCF,pyscf/scf/ucphf.py,c63a953ba603a5ad8c1d65d88da72aaf05ede4d8,true,true,true,true,false,source_audit_32,CPU open-shell path
+PySCF,pyscf/lib/linalg_helper.py,c63a953ba603a5ad8c1d65d88da72aaf05ede4d8,true,true,true,true,false,source_audit_32,CPU Krylov helper
+PySCF,pyscf/scf/hf.py,c63a953ba603a5ad8c1d65d88da72aaf05ede4d8,true,true,true,true,false,source_audit_32,CPU SCF reference
+PySCF,pyscf/grad/rhf.py,c63a953ba603a5ad8c1d65d88da72aaf05ede4d8,true,true,true,true,false,source_audit_32,gradient source
+PySCF,pyscf/hessian/rhf.py,c63a953ba603a5ad8c1d65d88da72aaf05ede4d8,true,true,true,true,false,source_audit_32,Hessian source
+PySCF,pyscf/grad/test/test_rhf.py,c63a953ba603a5ad8c1d65d88da72aaf05ede4d8,true,true,true,false,false,source inventory,upstream test source acquired
+PySCF,pyscf/hessian/test/test_rhf.py,c63a953ba603a5ad8c1d65d88da72aaf05ede4d8,true,true,true,false,false,source inventory,upstream test source acquired
+PySCF,pyscf/grad/test/test_uhf.py,c63a953ba603a5ad8c1d65d88da72aaf05ede4d8,true,true,true,false,false,source inventory,upstream UHF test source acquired
+PySCF,pyscf/hessian/test/test_uhf.py,c63a953ba603a5ad8c1d65d88da72aaf05ede4d8,true,true,true,false,false,source inventory,upstream UHF test source acquired
