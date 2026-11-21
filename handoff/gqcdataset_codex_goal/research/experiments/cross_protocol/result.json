@@ -1,0 +1,480 @@
+{
+  "classification_matrix": [
+    {
+      "classification": "direct_reuse",
+      "evidence": {
+        "dipole_difference": 0.0,
+        "energy_difference": 0.0
+      },
+      "reason": "same geometry, electrons, spin, method, basis, operator, origin and units",
+      "source": "water_rhf_sto3g",
+      "target": "water_rhf_sto3g"
+    },
+    {
+      "classification": "initial_guess_only",
+      "evidence": {
+        "cold": {
+          "basis": "6-31g*",
+          "charge": 0,
+          "converged": true,
+          "cycles": 11,
+          "density_finite": true,
+          "density_trace": 9.999999999999998,
+          "dipole_au": [
+            1.5934812062466856e-17,
+            1.2073675392798577e-15,
+            0.8725610195116225
+          ],
+          "energy_hartree": -76.00910376515175,
+          "geometry_bohr": "O 0.000000 0.000000 0.000000; H 0.000000 -1.432336 1.107153; H 0.000000 1.432336 1.107153",
+          "initial_kind": "cold",
+          "method": "rhf",
+          "mo_gap_hartree": 0.7120444670659412,
+          "multiplicity": 1,
+          "name": "water_rhf_631g_star",
+          "nao": 18,
+          "nelectron": 10,
+          "nmo": 18,
+          "seconds": 0.033781810000164114,
+          "spin": 0
+        },
+        "projected": {
+          "basis": "6-31g*",
+          "charge": 0,
+          "converged": true,
+          "cycles": 11,
+          "density_finite": true,
+          "density_trace": 10.000000000000002,
+          "dipole_au": [
+            1.2943591780489647e-16,
+            2.373101715136272e-15,
+            0.8725610156137558
+          ],
+          "energy_hartree": -76.00910376515158,
+          "geometry_bohr": "O 0.000000 0.000000 0.000000; H 0.000000 -1.432336 1.107153; H 0.000000 1.432336 1.107153",
+          "initial_kind": "projected RHF/STO-3G density",
+          "method": "rhf",
+          "mo_gap_hartree": 0.7120444667004868,
+          "multiplicity": 1,
+          "name": "water_rhf_631g_star_projected",
+          "nao": 18,
+          "nelectron": 10,
+          "nmo": 18,
+          "seconds": 0.022664959000394447,
+          "spin": 0
+        }
+      },
+      "reason": "basis changed; projected density converged to a new target state",
+      "source": "water_rhf_sto3g",
+      "target": "water_rhf_631g_star"
+    },
+    {
+      "classification": "refine_required",
+      "evidence": {
+        "b3lyp": {
+          "basis": "6-31g*",
+          "charge": 0,
+          "converged": true,
+          "cycles": 8,
+          "density_finite": true,
+          "density_trace": 9.999999999999998,
+          "dipole_au": [
+            4.1526172308185784e-16,
+            -1.2490009027033011e-15,
+            0.8152166266419478
+          ],
+          "energy_hartree": -76.40681537406532,
+          "geometry_bohr": "O 0.000000 0.000000 0.000000; H 0.000000 -1.432336 1.107153; H 0.000000 1.432336 1.107153",
+          "initial_kind": "RHF/6-31G* density",
+          "method": "b3lyp",
+          "mo_gap_hartree": 0.3591315016053307,
+          "multiplicity": 1,
+          "name": "water_b3lyp_631g_star_seeded",
+          "nao": 18,
+          "nelectron": 10,
+          "nmo": 18,
+          "seconds": 0.2496590269997796,
+          "spin": 0
+        },
+        "rhf": {
+          "basis": "6-31g*",
+          "charge": 0,
+          "converged": true,
+          "cycles": 11,
+          "density_finite": true,
+          "density_trace": 9.999999999999998,
+          "dipole_au": [
+            1.5934812062466856e-17,
+            1.2073675392798577e-15,
+            0.8725610195116225
+          ],
+          "energy_hartree": -76.00910376515175,
+          "geometry_bohr": "O 0.000000 0.000000 0.000000; H 0.000000 -1.432336 1.107153; H 0.000000 1.432336 1.107153",
+          "initial_kind": "cold",
+          "method": "rhf",
+          "mo_gap_hartree": 0.7120444670659412,
+          "multiplicity": 1,
+          "name": "water_rhf_631g_star",
+          "nao": 18,
+          "nelectron": 10,
+          "nmo": 18,
+          "seconds": 0.033781810000164114,
+          "spin": 0
+        }
+      },
+      "reason": "exchange-correlation method changed; seeded state was only an initial guess",
+      "source": "water_rhf_631g_star",
+      "target": "water_b3lyp_631g_star"
+    },
+    {
+      "classification": "reject_and_recompute",
+      "evidence": {
+        "source_multiplicity": 1,
+        "source_nelectron": 10,
+        "target_multiplicity": 2,
+        "target_nelectron": 1
+      },
+      "reason": "geometry, electron count and multiplicity changed",
+      "source": "water_rhf_sto3g",
+      "target": "h2plus_uhf_sto3g"
+    },
+    {
+      "classification": "reject_and_recompute",
+      "evidence": {
+        "basis": "sto-3g",
+        "field_step_au": 0.001,
+        "frozen_density_derivative": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "frozen_vs_relaxed_max_abs": 0.04204104869084445,
+        "geometry": "O 0.000000 0.000000 0.000000; H 0.000000 -1.432336 1.107153; H 0.000000 1.432336 1.107153",
+        "method": "rhf",
+        "relaxed_dipole_derivative": [
+          0.04204104869084445,
+          -4.6351811278100286e-12,
+          1.2323475573339238e-10
+        ],
+        "relaxed_runs_converged": true
+      },
+      "reason": "a frozen-state derivative cannot be used as a relaxed external-field response",
+      "source": "water_rhf_sto3g_frozen_density",
+      "target": "water_rhf_sto3g_relaxed_response"
+    },
+    {
+      "classification": "reject",
+      "evidence": {
+        "ao_dimension": 7,
+        "direct_dipole": [
+          -2.686637270994635e-16,
+          7.382983113757291e-15,
+          1.5359255162268093
+        ],
+        "known_permutation_roundtrip_difference": 0.0,
+        "original_idempotency_error": 3.552713678800501e-15,
+        "unknown_permutation": [
+          6,
+          5,
+          4,
+          3,
+          2,
+          1,
+          0
+        ],
+        "unknown_permutation_dipole_difference": 2.697923096473147
+      },
+      "reason": "AO permutation is not identified by the asset contract",
+      "source": "water_rhf_sto3g_unknown_ao_order",
+      "target": "water_rhf_sto3g_dipole"
+    }
+  ],
+  "controls": {
+    "basis_change_energy_difference": 1.0460853890771773,
+    "method_change_energy_difference": 0.3977116089135677,
+    "near_degenerate": {
+      "classification": "requires fresh stability evidence",
+      "mo_gap_hartree": 0.5358264039343856,
+      "system": "h2_stretched_rhf_sto3g"
+    },
+    "representation": {
+      "ao_dimension": 7,
+      "direct_dipole": [
+        -2.686637270994635e-16,
+        7.382983113757291e-15,
+        1.5359255162268093
+      ],
+      "known_permutation_roundtrip_difference": 0.0,
+      "original_idempotency_error": 3.552713678800501e-15,
+      "unknown_permutation": [
+        6,
+        5,
+        4,
+        3,
+        2,
+        1,
+        0
+      ],
+      "unknown_permutation_dipole_difference": 2.697923096473147
+    },
+    "response": {
+      "basis": "sto-3g",
+      "field_step_au": 0.001,
+      "frozen_density_derivative": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "frozen_vs_relaxed_max_abs": 0.04204104869084445,
+      "geometry": "O 0.000000 0.000000 0.000000; H 0.000000 -1.432336 1.107153; H 0.000000 1.432336 1.107153",
+      "method": "rhf",
+      "relaxed_dipole_derivative": [
+        0.04204104869084445,
+        -4.6351811278100286e-12,
+        1.2323475573339238e-10
+      ],
+      "relaxed_runs_converged": true
+    },
+    "same_geometry_method_basis_energy_difference": 0.0
+  },
+  "cost": {
+    "complete_target_scf_count": 7,
+    "complete_target_seconds": 0.6399057970006652,
+    "fallback_target_recomputations": {
+      "h2plus_uhf_sto3g": {
+        "scf_cycles": 0,
+        "seconds": 0.0018936040000880894
+      },
+      "water_b3lyp_631g_star_seeded": {
+        "scf_cycles": 8,
+        "seconds": 0.2496590269997796
+      },
+      "water_rhf_631g_star_projected": {
+        "scf_cycles": 11,
+        "seconds": 0.022664959000394447
+      }
+    },
+    "preflight_rejects_without_target_solve": {
+      "state_mismatch": {
+        "jk_calls": 0,
+        "reason": "source asset not admitted"
+      },
+      "unknown_ao_order": {
+        "jk_calls": 0,
+        "reason": "identity unavailable"
+      }
+    },
+    "response_relaxed_scf_count": 2,
+    "total_wall_seconds": 0.8095699890000105
+  },
+  "evidence_sources": {
+    "existing_gqc_pin": "2791504cc238fe83d328fc1718080642b288222a",
+    "existing_gqc_response_control": "experiments/gqc_residual_response/report.json",
+    "existing_psi4_ao_control": "experiments/archive_dipole_protocol.md"
+  },
+  "identity_dimensions": {
+    "atom_numbers": "symbols in the molecular geometry",
+    "charge_and_spin": "electron count and multiplicity",
+    "geometry": "atom order and Bohr coordinates",
+    "method_and_basis": "SCF method and contracted basis",
+    "quality": "convergence, gap/stability and residual evidence",
+    "representation": "AO order, normalization and MO occupation",
+    "response_semantics": "frozen density versus relaxed field response",
+    "units_and_origin": "explicit Bohr and origin metadata"
+  },
+  "protocol": {
+    "driver_sha256": "3dbd006cef7ec752aaca8917b435feb7a1770cc0c7cb572caea9933177dd8f87",
+    "geometry_units": "Bohr",
+    "origin_bohr": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "pyscf": "2.14.0",
+    "python": "3.13.16",
+    "scf_tolerance": 1e-10,
+    "target_response_step_au": 0.001,
+    "threads": {
+      "MKL_NUM_THREADS": "1",
+      "OMP_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1"
+    }
+  },
+  "states": {
+    "h2_stretched_rhf_sto3g": {
+      "basis": "sto-3g",
+      "charge": 0,
+      "converged": true,
+      "cycles": 2,
+      "density_finite": true,
+      "density_trace": 1.9999999999999993,
+      "dipole_au": [
+        0.0,
+        0.0,
+        8.881784197001252e-16
+      ],
+      "energy_hartree": -0.8852750001110465,
+      "geometry_bohr": "H 0.000000 0.000000 0.000000; H 0.000000 0.000000 3.000000",
+      "initial_kind": "cold",
+      "method": "rhf",
+      "mo_gap_hartree": 0.5358264039343856,
+      "multiplicity": 1,
+      "name": "h2_stretched_rhf_sto3g",
+      "nao": 2,
+      "nelectron": 2,
+      "nmo": 2,
+      "seconds": 0.010185171000102855,
+      "spin": 0
+    },
+    "h2plus_uhf_sto3g": {
+      "basis": "sto-3g",
+      "charge": 1,
+      "converged": true,
+      "cycles": 0,
+      "density_finite": true,
+      "density_trace": 0.9999999999999998,
+      "dipole_au": [
+        0.0,
+        0.0,
+        0.7000000000000006
+      ],
+      "energy_hartree": -0.5385113475501032,
+      "geometry_bohr": "H 0.000000 0.000000 0.000000; H 0.000000 0.000000 1.400000",
+      "initial_kind": "cold",
+      "method": "uhf",
+      "mo_gap_hartree": 0.4756022993742512,
+      "multiplicity": 2,
+      "name": "h2plus_uhf_sto3g",
+      "nao": 2,
+      "nelectron": 1,
+      "nmo": 2,
+      "seconds": 0.0018936040000880894,
+      "spin": 1
+    },
+    "water_b3lyp_631g_star": {
+      "basis": "6-31g*",
+      "charge": 0,
+      "converged": true,
+      "cycles": 9,
+      "density_finite": true,
+      "density_trace": 9.999999999999998,
+      "dipole_au": [
+        -9.410378538693124e-17,
+        2.0122792321330962e-15,
+        0.815216625521977
+      ],
+      "energy_hartree": -76.40681537406532,
+      "geometry_bohr": "O 0.000000 0.000000 0.000000; H 0.000000 -1.432336 1.107153; H 0.000000 1.432336 1.107153",
+      "initial_kind": "cold",
+      "method": "b3lyp",
+      "mo_gap_hartree": 0.3591315013974641,
+      "multiplicity": 1,
+      "name": "water_b3lyp_631g_star",
+      "nao": 18,
+      "nelectron": 10,
+      "nmo": 18,
+      "seconds": 0.29514756699973077,
+      "spin": 0
+    },
+    "water_b3lyp_631g_star_seeded": {
+      "basis": "6-31g*",
+      "charge": 0,
+      "converged": true,
+      "cycles": 8,
+      "density_finite": true,
+      "density_trace": 9.999999999999998,
+      "dipole_au": [
+        4.1526172308185784e-16,
+        -1.2490009027033011e-15,
+        0.8152166266419478
+      ],
+      "energy_hartree": -76.40681537406532,
+      "geometry_bohr": "O 0.000000 0.000000 0.000000; H 0.000000 -1.432336 1.107153; H 0.000000 1.432336 1.107153",
+      "initial_kind": "RHF/6-31G* density",
+      "method": "b3lyp",
+      "mo_gap_hartree": 0.3591315016053307,
+      "multiplicity": 1,
+      "name": "water_b3lyp_631g_star_seeded",
+      "nao": 18,
+      "nelectron": 10,
+      "nmo": 18,
+      "seconds": 0.2496590269997796,
+      "spin": 0
+    },
+    "water_rhf_631g_star": {
+      "basis": "6-31g*",
+      "charge": 0,
+      "converged": true,
+      "cycles": 11,
+      "density_finite": true,
+      "density_trace": 9.999999999999998,
+      "dipole_au": [
+        1.5934812062466856e-17,
+        1.2073675392798577e-15,
+        0.8725610195116225
+      ],
+      "energy_hartree": -76.00910376515175,
+      "geometry_bohr": "O 0.000000 0.000000 0.000000; H 0.000000 -1.432336 1.107153; H 0.000000 1.432336 1.107153",
+      "initial_kind": "cold",
+      "method": "rhf",
+      "mo_gap_hartree": 0.7120444670659412,
+      "multiplicity": 1,
+      "name": "water_rhf_631g_star",
+      "nao": 18,
+      "nelectron": 10,
+      "nmo": 18,
+      "seconds": 0.033781810000164114,
+      "spin": 0
+    },
+    "water_rhf_631g_star_projected": {
+      "basis": "6-31g*",
+      "charge": 0,
+      "converged": true,
+      "cycles": 11,
+      "density_finite": true,
+      "density_trace": 10.000000000000002,
+      "dipole_au": [
+        1.2943591780489647e-16,
+        2.373101715136272e-15,
+        0.8725610156137558
+      ],
+      "energy_hartree": -76.00910376515158,
+      "geometry_bohr": "O 0.000000 0.000000 0.000000; H 0.000000 -1.432336 1.107153; H 0.000000 1.432336 1.107153",
+      "initial_kind": "projected RHF/STO-3G density",
+      "method": "rhf",
+      "mo_gap_hartree": 0.7120444667004868,
+      "multiplicity": 1,
+      "name": "water_rhf_631g_star_projected",
+      "nao": 18,
+      "nelectron": 10,
+      "nmo": 18,
+      "seconds": 0.022664959000394447,
+      "spin": 0
+    },
+    "water_rhf_sto3g": {
+      "basis": "sto-3g",
+      "charge": 0,
+      "converged": true,
+      "cycles": 7,
+      "density_finite": true,
+      "density_trace": 10.000000000000002,
+      "dipole_au": [
+        2.686637270994634e-16,
+        -7.216449660063518e-15,
+        0.6783804837731908
+      ],
+      "energy_hartree": -74.96301837607457,
+      "geometry_bohr": "O 0.000000 0.000000 0.000000; H 0.000000 -1.432336 1.107153; H 0.000000 1.432336 1.107153",
+      "initial_kind": "cold",
+      "method": "rhf",
+      "mo_gap_hartree": 0.9958779376115638,
+      "multiplicity": 1,
+      "name": "water_rhf_sto3g",
+      "nao": 7,
+      "nelectron": 10,
+      "nmo": 7,
+      "seconds": 0.026573659000405314,
+      "spin": 0
+    }
+  }
+}
