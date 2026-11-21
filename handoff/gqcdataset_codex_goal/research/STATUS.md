@@ -70,6 +70,6 @@
 | #37 profiling | 阶段 baseline 已完成 | A–D 成本与 paired CI、未知字段清单已归档。GPU event、occupancy、FLOPs、峰值内存和能耗尚未采集。 |
 | #38 PreparedPropertyBatch | planner/producer 边界已实现 | 同协议 bucket、单条失败隔离和 workspace fallback 已有 CPU 控制。真正跨样本 resident GPU runtime 尚未宣称。 |
 | #39 response asset compiler | identity planner 和证书边界已实现 | 17 direct、2 refine、1 reject 的无 oracle 计划和独立 replay 已有。GPU 资产编译与独立质量 scorer 仍需扩展。 |
-| #40 Hessian/CPKS | CPU micro controls 已完成 | H₂O/NH₃/LiH RHF 与带电 UHF 4/4 CPU controls 通过。IR/Raman、GPU Hessian、VeloxChem 和 FD 交叉检查未运行。 |
+| #40 Hessian/CPKS | CPU/GPU micro controls 已完成 | H₂O/NH₃/LiH RHF、H₂O/RKS(B3LYP) GPU Hessian、带电 UHF CPU control 和 H₂O/RHF GPU IR/Raman 均有 receipt。VeloxChem、FD 交叉检查和多样本共享仍未运行。 |
 | #41 scale/ablation | partial-falsified | 17 几何、51 请求完成。1000-row 资产、第二 GPU 和十项 profiling/消融仍阻塞，10× gate 不成立。 |
 | #42 release/claim gate | 可复现 partial 发布包已形成 | `research/release` 提供 9 个 artifact SHA、12 条 claims 和 6 个 unknowns。未知项未被隐藏，不能作为最终 Nature claim。 |
