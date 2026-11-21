@@ -1,0 +1,63 @@
+{
+  "schema": "vibedataset.gpu_hessian_controls.v1",
+  "python": "3.11.17 (main, Oct  1 2026, 20:17:42) [GCC 14.3.0]",
+  "gpu4pyscf_source_commit": "5a717f899cb40d64a5799ef1df7e3626c505c3bd",
+  "rows": [
+    {
+      "name": "h2o-rhf",
+      "method": "RHF",
+      "xc": null,
+      "scf_converged": true,
+      "energy_hartree": -74.63485187691977,
+      "scf_hessian_status": "accepted",
+      "hessian_shape": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "hessian_max": 3.8360681355546506,
+      "hessian_sha256": "93aca49235a33c4bd16e89f9edb5bb30414eefabdf796cba2d2f4b13e3bcf424",
+      "seconds": 2.603113893070258
+    },
+    {
+      "name": "nh3-rhf",
+      "method": "RHF",
+      "xc": null,
+      "scf_converged": true,
+      "energy_hartree": -55.427537567059034,
+      "scf_hessian_status": "accepted",
+      "hessian_shape": [
+        4,
+        4,
+        3,
+        3
+      ],
+      "hessian_max": 1.4003605571427227,
+      "hessian_sha256": "4a7ad95d4f8b27e103423ea3453cceadec2bf7cba10f7658fd47dac0db352375",
+      "seconds": 3.894444976001978
+    },
+    {
+      "name": "h2o-rks",
+      "method": "RKS",
+      "xc": "b3lyp",
+      "scf_converged": true,
+      "energy_hartree": -74.96464130147413,
+      "scf_hessian_status": "accepted",
+      "hessian_shape": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "hessian_max": 3.7906215390587654,
+      "hessian_sha256": "7a21af08cbb2ccd9d65acc0052aa0475a2e617e94268cbd88744b2adc2b1b5cf",
+      "seconds": 2.3847461519762874
+    }
+  ],
+  "limitations": [
+    "no IR/Raman",
+    "no VeloxChem cross-check",
+    "no finite-difference GPU Hessian"
+  ]
+}
