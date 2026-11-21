@@ -1,0 +1,81 @@
+{
+  "blind_seconds": 201.83616029800032,
+  "candidates": 17,
+  "cold_model_seconds": 35.152024564071326,
+  "counts": {
+    "future": 1728,
+    "history": 240,
+    "quality_setup": 12,
+    "reference_unavailable": 5,
+    "setup": 24
+  },
+  "decoder_first_load_seconds": 11.64976254987414,
+  "decoder_first_loads": 24,
+  "dense_rhs": 480,
+  "failures": 0,
+  "gqc_jk": 94508,
+  "independent_differences_over_numerical_estimate": 124,
+  "matrix_bytes_per_molecule": [
+    800,
+    135200
+  ],
+  "measured_molecules": 12,
+  "methods": 12,
+  "native_quality_checks": 1056,
+  "native_rhs": 2304,
+  "observed_fallbacks": 0,
+  "persisted_files": 2160,
+  "readout_calibration": {
+    "q0": {
+      "maximum_difference_lower": 6.921050807514988e-13,
+      "maximum_difference_upper": 2.2987185261884668e-12,
+      "maximum_nominal_difference": 1.1299849944634843e-12,
+      "maximum_online_estimate": 9.007387611079586e-11,
+      "maximum_reference_estimate": 1.2577844263606098e-12,
+      "nominal_excess": 44,
+      "trials": 1728,
+      "two_estimates_disjoint": 44,
+      "unique_disjoint": 1,
+      "unique_nominal_excess": 1,
+      "unique_targets": 12,
+      "unit": "e / au_field"
+    },
+    "r2": {
+      "maximum_difference_lower": 2.133893767880744e-12,
+      "maximum_difference_upper": 2.0839875087464212e-11,
+      "maximum_nominal_difference": 9.604761430637154e-12,
+      "maximum_online_estimate": 3.9252020313207665e-10,
+      "maximum_reference_estimate": 1.659131807722706e-11,
+      "nominal_excess": 80,
+      "trials": 1152,
+      "two_estimates_disjoint": 80,
+      "unique_disjoint": 1,
+      "unique_nominal_excess": 1,
+      "unique_targets": 12,
+      "unit": "bohr^2 / au_field"
+    },
+    "zz": {
+      "maximum_difference_lower": 2.2627123204629583e-12,
+      "maximum_difference_upper": 9.459982293473068e-12,
+      "maximum_nominal_difference": 5.6843418860808015e-12,
+      "maximum_online_estimate": 2.1678061532023752e-10,
+      "maximum_reference_estimate": 6.208993611809863e-12,
+      "nominal_excess": 0,
+      "trials": 1152,
+      "two_estimates_disjoint": 0,
+      "unique_disjoint": 0,
+      "unique_nominal_excess": 0,
+      "unique_targets": 12,
+      "unit": "bohr^2 / au_field"
+    }
+  },
+  "reopened_model_seconds": 1.7571051960403565,
+  "repetitions": 4,
+  "stability_seconds": 0.03152447703178041,
+  "statuses": {
+    "passed": 4032,
+    "reference_unavailable": 1680
+  },
+  "uncached_structural_planning_seconds": 0.00791240404942073,
+  "warmups": 1
+}

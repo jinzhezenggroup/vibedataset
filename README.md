@@ -9,11 +9,15 @@
 3. 打开 [任务与依赖导航](handoff/gqcdataset_codex_goal/research/ISSUES.md) 及 [当前研究状态](handoff/gqcdataset_codex_goal/research/STATUS.md)。
 4. 获取完整可用源码并固定版本，再依据实现和测试证据推进路线比较、实现与科学验证。
 
-研究总目标和审查后的任务顺序见 [Goal #1](https://github.com/jinzhezenggroup/vibedataset/issues/1#issuecomment-6968146709)。PR #10 的本轮修订覆盖 #11–#13，下一阶段的质量证据和真实资产收益分别由 #14、#15 跟踪。[任务导航](handoff/gqcdataset_codex_goal/research/ISSUES.md)
+研究总目标和审查后的任务顺序见 [Goal #1](https://github.com/jinzhezenggroup/vibedataset/issues/1#issuecomment-6968146709)。PR #10 覆盖 #11–#13 的修订，PR #16 的盲验与资产证据已作为 #17–#19 的历史输入。当前科研顺序为 #17 → #19 → #18。[任务导航](handoff/gqcdataset_codex_goal/research/ISSUES.md)
 
 ## 已执行的补全工作
 
 项目用有来源的历史标量或响应向量补全相同协议下的分子响应。17 个 QM9 候选对应 153 个唯一目标。用独立 AO 方程逐项验收后，108 项可发布，45 项保留缺基态的原因。在十个受控请求掩码上，普通块、已验收标量扣除、保留方向向量的后轮成本分别为 12,370、10,371、7,102 次 J/K。独立验收、历史生产与失败费用均可追溯。[v2 数据与精度](handoff/gqcdataset_codex_goal/research/experiments/cphf_v2/README.md) · [全部 153 项](handoff/gqcdataset_codex_goal/research/experiments/cphf_v2/response-labels.jsonl) · [命令行用法](handoff/gqcdataset_codex_goal/research/experiments/response_dataset_cli/README.md) · [研究结果与成本](handoff/gqcdataset_codex_goal/research/RESULTS.md)
+
+在没有完整真值的补全入口中，程序用原生物理残差、读出算符和历史误差估计作决定，另一个进程再开封独立参照。11 个留出构型的 33 个请求有 24 项接受、9 项缺态。循环历史的三个新增目标可用两混合场恢复，留出集与手写路径同为 824 次后轮 J/K。质量验收已付过小型稠密矩阵时，直接解所需列更便宜。实际核查的外部资产没有提供兼容的旧标量和自然请求。两种资产场景及停止扩大范围的决定均已登记。[盲验 CLI](handoff/gqcdataset_codex_goal/research/experiments/target_quality/README.md) · [强基线与预算](handoff/gqcdataset_codex_goal/research/experiments/response_benefit/README.md) · [独立研究 PR](https://github.com/jinzhezenggroup/vibedataset/pull/16)
+
+后续研究已完成。有限多混合场搜索与手写公式逐项等价，目标证书保留离散 SVD 入口但不升级为普适严格界，跨方法/基组/状态资产按科学身份分类并在不匹配时拒绝或重算。[#17 信息充分性](handoff/gqcdataset_codex_goal/research/experiments/information_sufficiency/README.md) · [#19 误差证书](handoff/gqcdataset_codex_goal/research/experiments/error_certificates/README.md) · [#18 跨协议边界](handoff/gqcdataset_codex_goal/research/experiments/cross_protocol/README.md)
 
 ## 材料入口
 
@@ -26,6 +30,7 @@
 | [研究路线与验收](handoff/gqcdataset_codex_goal/docs/ROADMAP_AND_ACCEPTANCE.md) | 可并行任务、阶段依赖和证据门槛 |
 | [科学验证框架](handoff/gqcdataset_codex_goal/docs/VALIDATION_FRAMEWORK.md) | 状态/标签语义、响应、质量证据、强基线与全成本 |
 | [材料来源与恢复边界](handoff/gqcdataset_codex_goal/PROVENANCE.md) | 本次重建来源、缺件和后续核对方法 |
+| [开发资源清单](docs/DEVELOPMENT_RESOURCES.md) | GitHub 账号、CI、集群和后续资源边界 |
 | [下载重建版 ZIP](https://github.com/jinzhezenggroup/vibedataset/raw/refs/heads/main/downloads/gqcdataset_codex_goal_20261118_rebuilt.zip) | 初次重建的文字与工具快照；单独提供后来取得的两份历史 PDF |
 | [ZIP SHA-256](https://github.com/jinzhezenggroup/vibedataset/blob/main/downloads/gqcdataset_codex_goal_20261118_rebuilt.zip.sha256) | 下载完整性校验 |
 
@@ -60,3 +65,5 @@ python3.13 -m venv .work/response-science-env
 ```
 
 科学回归会按仓库版本锁获取缺少的 GQC 与 PySCF 源码树，并为浅克隆取得旧 CLI 的固定提交。它实算直接／伴随响应、组合块和独立 CPHF，按冻结资格核对每个可计算目标、跳过的输入与退出码。CLI 测试覆盖历史来源、版本隔离、损坏的缓存、求解失败与 SQLite 回滚。每个 PR 的两项检查分别保存原始 JSON、JSONL 和命令日志。[工作流](.github/workflows/response.yml) · [CPU 依赖](configs/response-science-requirements.txt)
+
+后续研究的归档层另从原始封存包重算 #14 两个分组的评分与成本，逐项核对 #15 的归档、强基线与请求概率区间。科学层在无目标表的来源目录中执行水分子盲生产和独立评分，并验证双场恒等式、历史误差传播和失效输入。

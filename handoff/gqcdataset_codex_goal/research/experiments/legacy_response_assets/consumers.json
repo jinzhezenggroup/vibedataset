@@ -1,0 +1,66 @@
+{
+  "msgpack": "1.1.2",
+  "numpy": "1.26.4",
+  "python": "3.10.12 (main, Aug 31 2026, 10:18:17) [GCC 11.4.0]",
+  "qcarchive_ground_state": {
+    "alpha_coefficients": 25281,
+    "alpha_eigenvalues": 159,
+    "basis": "6-31G*",
+    "basis_keys": [
+      "atom_map",
+      "center_data",
+      "name"
+    ],
+    "decompressed_bytes": 231718,
+    "decompressed_sha256": "f534b0a552d102c320c62c2d95f1f4211e63775cc09917b9e5246c9fcc7d3810",
+    "keys": [
+      "basis",
+      "eigenvalues_a",
+      "orbitals_a",
+      "restricted",
+      "scf_eigenvalues_a",
+      "scf_orbitals_a"
+    ],
+    "message_bytes": 207087,
+    "record_id": 96510996,
+    "restricted": true,
+    "seconds": 0.005887096020160243,
+    "sha256": "f51e29d3000dd835ff58c5fea5c17f709a62ae3debfccfea95200c20be9bf0b9"
+  },
+  "scipy": "1.13.1",
+  "source": {
+    "commit": "c7e355fd22eb0b66c2135f21601c5ea0709ac6c2",
+    "tree": "7591714551d82c8eb29153c0fe14ce8e0d79c3fa"
+  },
+  "water_consumer": [
+    {
+      "absolute_rounding_difference": 2.8874319999983022e-06,
+      "angle_degree": 105,
+      "difference_OH_angstrom": 0.0,
+      "formatted_O_p10_20": -0.40444,
+      "logical_input_bytes": 906192,
+      "mean_OH_angstrom": 0.96,
+      "method": "hf_avtz",
+      "opened_npy_files": 63,
+      "output_sha256": "3d0ff7d705c62d66d0f1a43d1825ab7530e7aaf3b6c6727fedc3027cc0fdb9cb",
+      "raw_O_p10_20": -0.404442887432,
+      "returned_text_bytes": 1553,
+      "seconds": 0.022068088001105934
+    },
+    {
+      "absolute_rounding_difference": 3.5442500001536814e-07,
+      "angle_degree": 105,
+      "difference_OH_angstrom": 0.0,
+      "formatted_O_p10_20": -0.31455,
+      "logical_input_bytes": 906192,
+      "mean_OH_angstrom": 0.96,
+      "method": "dft_avtz",
+      "opened_npy_files": 63,
+      "output_sha256": "7d7ed70c1ce9ff159534124520b3b8086218e62d6da04e1b8d03715cc3ece431",
+      "raw_O_p10_20": -0.314550354425,
+      "returned_text_bytes": 1549,
+      "seconds": 0.021112475980771706
+    }
+  ],
+  "zstd": "*** zstd command line interface 64-bits v1.4.8, by Yann Collet ***"
+}

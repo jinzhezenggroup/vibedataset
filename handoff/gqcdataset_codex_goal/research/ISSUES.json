@@ -3,7 +3,7 @@
   "prepared_on": "2026-11-18",
   "repository": "jinzhezenggroup/vibedataset",
   "goal_issue": 1,
-  "notice": "Phase 1 issues 1–9 are historical. PR 10 follow-up acceptance and next-stage work are tracked in 11–15.",
+  "notice": "Phase 1 issues 1–9 and PR 10/16 follow-up issues 11–15 are historical. Current research issues run in order 17 → 19 → 18.",
   "issues": [
     {
       "key": "goal",
@@ -103,7 +103,9 @@
       "depends_on": [
         7
       ],
-      "nonblocking": false
+      "nonblocking": false,
+      "review_pr": 10,
+      "evidence": "experiments/cphf_v2/README.md"
     },
     {
       "key": "failure_costs",
@@ -113,7 +115,9 @@
       "depends_on": [
         7
       ],
-      "nonblocking": false
+      "nonblocking": false,
+      "review_pr": 10,
+      "evidence": "experiments/response_dataset_cli/failure_costs/verification.json"
     },
     {
       "key": "response_ci",
@@ -124,7 +128,9 @@
         11,
         12
       ],
-      "nonblocking": false
+      "nonblocking": false,
+      "review_pr": 10,
+      "evidence": "experiments/response_ci/README.md"
     },
     {
       "key": "missing_target_evidence",
@@ -134,7 +140,9 @@
       "depends_on": [
         11
       ],
-      "nonblocking": true
+      "nonblocking": true,
+      "review_pr": 16,
+      "evidence": "experiments/target_quality/README.md"
     },
     {
       "key": "asset_and_request_benefit",
@@ -145,7 +153,49 @@
         11,
         12
       ],
-      "nonblocking": true
+      "nonblocking": true,
+      "review_pr": 16,
+      "evidence": "experiments/response_benefit/README.md"
+    },
+    {
+      "key": "information_sufficiency",
+      "number": 17,
+      "url": "https://github.com/jinzhezenggroup/vibedataset/issues/17",
+      "title": "[研究 P1] 证明目标相关信息充分性是否超出手写线性叠加",
+      "depends_on": [
+        15
+      ],
+      "nonblocking": false,
+      "status": "completed",
+      "evidence": "experiments/information_sufficiency/README.md",
+      "commit": "ec23b99"
+    },
+    {
+      "key": "asset_migration_boundaries",
+      "number": 18,
+      "url": "https://github.com/jinzhezenggroup/vibedataset/issues/18",
+      "title": "[研究 P1] 建立跨方法、基组和状态的资产可迁移边界",
+      "depends_on": [
+        17,
+        19
+      ],
+      "nonblocking": false,
+      "status": "completed",
+      "evidence": "experiments/cross_protocol/README.md",
+      "commit": "7fb7d2e"
+    },
+    {
+      "key": "target_error_certificates",
+      "number": 19,
+      "url": "https://github.com/jinzhezenggroup/vibedataset/issues/19",
+      "title": "[研究 P1] 泛化目标导向误差证书并量化证书成本",
+      "depends_on": [
+        17
+      ],
+      "nonblocking": false,
+      "status": "completed",
+      "evidence": "experiments/error_certificates/README.md",
+      "commit": "bc6e2a2"
     }
   ]
 }

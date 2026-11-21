@@ -1,0 +1,22 @@
+{
+  "assets.tar.gz": {
+    "bytes": 643831,
+    "sha256": "966eb44f060cf0221d2c855645b46806b7955821ff794f2e070982d226351f87"
+  },
+  "events.jsonl.gz": {
+    "bytes": 685764,
+    "sha256": "3f8832dbea7a663ee214ea83a827f05ae638cbcba57b6a89244c21ade5c9a0f9"
+  },
+  "finished.json": {
+    "bytes": 126,
+    "sha256": "b4aa459a197fc00412eaa3057ed16a5cff90bcc71bef3b0691bd2ce424bf3c2b"
+  },
+  "protocol.json": {
+    "bytes": 1090,
+    "sha256": "a3e6d991cbccb45e2157673f85ebe116250bd35060831b35951e5a64b2443038"
+  },
+  "quality.py.gz": {
+    "bytes": 3033,
+    "sha256": "001cf2654eede407b1d75f3fa3fd958bd3a8dfa28e2e25d3fc8f531ed7a0f032"
+  }
+}

@@ -1,0 +1,334 @@
+{
+  "started_utc": "2026-11-18T04:38:05.960960+00:00",
+  "requests": [
+    {
+      "file": "datasets.json",
+      "url": "https://api.qcarchive.molssi.org/api/v1/datasets",
+      "method": "GET",
+      "body": null,
+      "bytes": 135529,
+      "seconds": 1.8273901300271973
+    },
+    {
+      "file": "information.json",
+      "url": "https://api.qcarchive.molssi.org/api/v1/information",
+      "method": "GET",
+      "body": null,
+      "bytes": 630,
+      "seconds": 1.365664592012763
+    },
+    {
+      "file": "ds347.json",
+      "url": "https://api.qcarchive.molssi.org/api/v1/datasets/347",
+      "method": "GET",
+      "body": null,
+      "bytes": 3035,
+      "seconds": 1.0336235419963486
+    },
+    {
+      "file": "hfsto.json",
+      "url": "https://api.qcarchive.molssi.org/api/v1/records/singlepoint/query",
+      "method": "POST",
+      "body": {
+        "method": [
+          "hf",
+          "rhf",
+          "scf"
+        ],
+        "basis": [
+          "sto-3g"
+        ],
+        "status": [
+          "complete"
+        ],
+        "limit": 6
+      },
+      "bytes": 66,
+      "seconds": 2.791812999988906
+    },
+    {
+      "file": "hfprops.json",
+      "url": "https://api.qcarchive.molssi.org/api/v1/records/singlepoint/query",
+      "method": "POST",
+      "body": {
+        "driver": [
+          "properties"
+        ],
+        "method": [
+          "hf",
+          "rhf",
+          "scf"
+        ],
+        "basis": [
+          "sto-3g"
+        ],
+        "status": [
+          "complete"
+        ],
+        "limit": 6
+      },
+      "bytes": 2,
+      "seconds": 28.428737409005407
+    },
+    {
+      "file": "selected347.json",
+      "url": "https://api.qcarchive.molssi.org/api/v1/records/singlepoint/query",
+      "method": "POST",
+      "body": {
+        "dataset_id": [
+          347
+        ],
+        "status": [
+          "complete"
+        ],
+        "limit": 3
+      },
+      "bytes": 30,
+      "seconds": 6.214260647975607
+    },
+    {
+      "file": "ds-membership.json",
+      "url": "https://api.qcarchive.molssi.org/api/v1/datasets/queryrecords",
+      "method": "POST",
+      "body": {
+        "record_id": [
+          148574276,
+          148574277,
+          148574278,
+          148574279,
+          148574280,
+          148574281,
+          96510994,
+          96510995,
+          96510996
+        ]
+      },
+      "bytes": 591,
+      "seconds": 1.3125334699871019
+    },
+    {
+      "file": "record-148574276.json",
+      "url": "https://api.qcarchive.molssi.org/api/v1/records/singlepoint/148574276",
+      "method": "GET",
+      "body": null,
+      "bytes": 1418220,
+      "seconds": 4.390409699990414
+    },
+    {
+      "file": "wave-148574276.json",
+      "url": "https://api.qcarchive.molssi.org/api/v1/records/singlepoint/148574276/wavefunction",
+      "method": "GET",
+      "body": null,
+      "bytes": 4,
+      "seconds": 2.5302513200149406
+    },
+    {
+      "file": "record-148574277.json",
+      "url": "https://api.qcarchive.molssi.org/api/v1/records/singlepoint/148574277",
+      "method": "GET",
+      "body": null,
+      "bytes": 1418827,
+      "seconds": 10.304693746002158
+    },
+    {
+      "file": "wave-148574277.json",
+      "url": "https://api.qcarchive.molssi.org/api/v1/records/singlepoint/148574277/wavefunction",
+      "method": "GET",
+      "body": null,
+      "bytes": 4,
+      "seconds": 0.9586944970069453
+    },
+    {
+      "file": "record-148574278.json",
+      "url": "https://api.qcarchive.molssi.org/api/v1/records/singlepoint/148574278",
+      "method": "GET",
+      "body": null,
+      "bytes": 1418308,
+      "seconds": 8.922058219992323
+    },
+    {
+      "file": "wave-148574278.json",
+      "url": "https://api.qcarchive.molssi.org/api/v1/records/singlepoint/148574278/wavefunction",
+      "method": "GET",
+      "body": null,
+      "bytes": 4,
+      "seconds": 0.9001104279886931
+    },
+    {
+      "file": "record-148574279.json",
+      "url": "https://api.qcarchive.molssi.org/api/v1/records/singlepoint/148574279",
+      "method": "GET",
+      "body": null,
+      "bytes": 1418541,
+      "seconds": 17.084813227993436
+    },
+    {
+      "file": "wave-148574279.json",
+      "url": "https://api.qcarchive.molssi.org/api/v1/records/singlepoint/148574279/wavefunction",
+      "method": "GET",
+      "body": null,
+      "bytes": 4,
+      "seconds": 0.9029210139997303
+    },
+    {
+      "file": "record-148574280.json",
+      "url": "https://api.qcarchive.molssi.org/api/v1/records/singlepoint/148574280",
+      "method": "GET",
+      "body": null,
+      "bytes": 1418380,
+      "seconds": 5.221272259979742
+    },
+    {
+      "file": "wave-148574280.json",
+      "url": "https://api.qcarchive.molssi.org/api/v1/records/singlepoint/148574280/wavefunction",
+      "method": "GET",
+      "body": null,
+      "bytes": 4,
+      "seconds": 1.402346546004992
+    },
+    {
+      "file": "record-148574281.json",
+      "url": "https://api.qcarchive.molssi.org/api/v1/records/singlepoint/148574281",
+      "method": "GET",
+      "body": null,
+      "bytes": 1418565,
+      "seconds": 3.2137259889859706
+    },
+    {
+      "file": "wave-148574281.json",
+      "url": "https://api.qcarchive.molssi.org/api/v1/records/singlepoint/148574281/wavefunction",
+      "method": "GET",
+      "body": null,
+      "bytes": 4,
+      "seconds": 1.8798502669960726
+    },
+    {
+      "file": "record-96510994.json",
+      "url": "https://api.qcarchive.molssi.org/api/v1/records/singlepoint/96510994",
+      "method": "GET",
+      "body": null,
+      "bytes": 21579,
+      "seconds": 2.331960141978925
+    },
+    {
+      "file": "wave-96510994.json",
+      "url": "https://api.qcarchive.molssi.org/api/v1/records/singlepoint/96510994/wavefunction",
+      "method": "GET",
+      "body": null,
+      "bytes": 28,
+      "seconds": 1.243554671003949
+    },
+    {
+      "file": "record-96510995.json",
+      "url": "https://api.qcarchive.molssi.org/api/v1/records/singlepoint/96510995",
+      "method": "GET",
+      "body": null,
+      "bytes": 25602,
+      "seconds": 1.6852169359917752
+    },
+    {
+      "file": "wave-96510995.json",
+      "url": "https://api.qcarchive.molssi.org/api/v1/records/singlepoint/96510995/wavefunction",
+      "method": "GET",
+      "body": null,
+      "bytes": 28,
+      "seconds": 0.9760783029778395
+    },
+    {
+      "file": "record-96510996.json",
+      "url": "https://api.qcarchive.molssi.org/api/v1/records/singlepoint/96510996",
+      "method": "GET",
+      "body": null,
+      "bytes": 21625,
+      "seconds": 2.8914264280174393
+    },
+    {
+      "file": "wave-96510996.json",
+      "url": "https://api.qcarchive.molssi.org/api/v1/records/singlepoint/96510996/wavefunction",
+      "method": "GET",
+      "body": null,
+      "bytes": 28,
+      "seconds": 0.9535009640094358
+    },
+    {
+      "file": "wfn-96510996.msgpack",
+      "url": "https://api.qcarchive.molssi.org/api/v1/records/singlepoint/96510996/wavefunction/data",
+      "method": "GET",
+      "body": null,
+      "bytes": 207087,
+      "seconds": 3.4613065239973366
+    },
+    {
+      "file": "molecule-90002695.json",
+      "url": "https://api.qcarchive.molssi.org/api/v1/molecules/90002695",
+      "method": "GET",
+      "body": null,
+      "bytes": 1874,
+      "seconds": 1.1327609970176127
+    },
+    {
+      "file": "molecule-90002764.json",
+      "url": "https://api.qcarchive.molssi.org/api/v1/molecules/90002764",
+      "method": "GET",
+      "body": null,
+      "bytes": 1900,
+      "seconds": 0.8960655440168921
+    },
+    {
+      "file": "molecule-90002767.json",
+      "url": "https://api.qcarchive.molssi.org/api/v1/molecules/90002767",
+      "method": "GET",
+      "body": null,
+      "bytes": 2015,
+      "seconds": 0.9243066369963344
+    },
+    {
+      "file": "molecule-131039892.json",
+      "url": "https://api.qcarchive.molssi.org/api/v1/molecules/131039892",
+      "method": "GET",
+      "body": null,
+      "bytes": 12589,
+      "seconds": 0.9337795310129877
+    },
+    {
+      "file": "molecule-131039897.json",
+      "url": "https://api.qcarchive.molssi.org/api/v1/molecules/131039897",
+      "method": "GET",
+      "body": null,
+      "bytes": 12607,
+      "seconds": 0.8963840880023781
+    },
+    {
+      "file": "molecule-131039898.json",
+      "url": "https://api.qcarchive.molssi.org/api/v1/molecules/131039898",
+      "method": "GET",
+      "body": null,
+      "bytes": 12587,
+      "seconds": 1.5465389099845197
+    },
+    {
+      "file": "molecule-131039914.json",
+      "url": "https://api.qcarchive.molssi.org/api/v1/molecules/131039914",
+      "method": "GET",
+      "body": null,
+      "bytes": 12598,
+      "seconds": 1.8925749350164551
+    },
+    {
+      "file": "molecule-131039915.json",
+      "url": "https://api.qcarchive.molssi.org/api/v1/molecules/131039915",
+      "method": "GET",
+      "body": null,
+      "bytes": 12617,
+      "seconds": 1.3599972059892025
+    },
+    {
+      "file": "molecule-131039927.json",
+      "url": "https://api.qcarchive.molssi.org/api/v1/molecules/131039927",
+      "method": "GET",
+      "body": null,
+      "bytes": 12625,
+      "seconds": 3.795663914992474
+    }
+  ]
+}
