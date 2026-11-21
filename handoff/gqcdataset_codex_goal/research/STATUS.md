@@ -1,6 +1,6 @@
 # gqcdataset 当前状态
 
-更新于 2026-11-18。PR #10 的独立参照、失败账本和自动检查已具备复评证据。后续盲验与资产研究位于分支 `codex/response-quality-benefit-20261118`，通过单独 PR 接续。[PR #10](https://github.com/jinzhezenggroup/vibedataset/pull/10) · [PR #16](https://github.com/jinzhezenggroup/vibedataset/pull/16) · [结果与全成本](RESULTS.md)
+更新于 2026-11-21。PR #10 与 PR #16 的证据已合并到研究分支 `codex/issues-17-19-20261121`，并按 #17 → #19 → #18 完成下一阶段判别实验。[PR #10](https://github.com/jinzhezenggroup/vibedataset/pull/10) · [PR #16](https://github.com/jinzhezenggroup/vibedataset/pull/16) · [结果与全成本](RESULTS.md)
 
 | 本轮产物 | 已核验的结果 |
 |---|---|
@@ -34,4 +34,12 @@
 | #14 | 科学入口、精修/拒绝、近奇异反例、独立盲验、受控的严格离散界与密集强基线已实测。[生产与评分](experiments/target_quality/README.md) · [精确矩阵界](experiments/represented_matrix_bound/README.md) |
 | #15 | 完成资产、单／双场、最强手写和留存／预取的同质量比较，记录预算与停止条件。[实测](experiments/response_benefit/README.md) · [研究决定](decisions/0004-blind-evidence-and-asset-budgets.md) |
 
-这些数字来自受控三轴与三读出、固定的小分子协议。生产请求的自然到达分布、更大体系和不同物理算符的净收益尚未测量。数值差异供用户向 GQC 反馈，后续可以复用本轮协议、资产和输入输出。
+这些数字来自受控三轴与三读出、固定的小分子协议。生产请求的自然到达分布、更大体系和不同物理算符的净收益尚未测量。当前科研 issues 的验收产物已经齐备，后续扩大范围仍需新的协议一致资产、请求流和独立质量证据。数值差异供用户向 GQC 反馈，后续可以复用本轮协议、资产和输入输出。
+
+## 当前科研 issues（2026-11-21）
+
+| Issue | 状态 | 证据 |
+|---|---|---|
+| #17 目标相关信息充分性 | 已完成。有限多混合场与手写双场完全等价，保留水/氨反例和 32 条留出重放。 | [information_sufficiency](experiments/information_sufficiency/README.md)，提交 `ec23b99` |
+| #19 目标导向误差证书 | 已完成。残差/对偶误接受控制、SVD 覆盖、严格界非覆盖、稠密回退和全成本已汇总。 | [error_certificates](experiments/error_certificates/README.md)，提交 `bc6e2a2` |
+| #18 跨协议资产边界 | 已完成。方法、基组、开放壳层、AO 表示和冻结/弛豫响应分类与独立 PySCF 重算已完成。 | [cross_protocol](experiments/cross_protocol/README.md)，提交 `7fb7d2e` |

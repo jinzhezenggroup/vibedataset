@@ -1,6 +1,6 @@
 # Codex 任务导航
 
-创建日期：2026-11-18（Asia/Shanghai）。初轮为 #1–#9。PR #10 的修订和自动检查对应 #11–#13，PR #16 的独立研究证据对应 #14、#15。
+创建日期：2026-11-18（Asia/Shanghai）。初轮为 #1–#9。PR #10 的修订和自动检查对应 #11–#13，PR #16 的独立研究证据已折叠为当前科研 issues #17–#19 的输入和历史验收。
 
 | Issue | 工作与产物 | 依赖 |
 |---|---|---|
@@ -32,6 +32,16 @@
 每项 issue 已包含任务、输入、产物和可勾选验收条件。完成时附提交、固定版本代码证据、命令/原始结果、限制、失败和下一步。不能执行的部分说明真实阻塞；附件可通过取得原件并核对，或由用户明确取消原件要求来验收。
 
 请以 [STATUS.md](STATUS.md) 和后续 issue 更新为准。创建这些 issues 不表示 Codex 已启动，也不表示源码获取、实验或科研结论已经完成。
+
+## 当前科研 issues（按执行顺序）
+
+| Issue | 状态 | 产物与验收 |
+|---|---|---|
+| [#17 目标相关信息充分性](https://github.com/jinzhezenggroup/vibedataset/issues/17) | 已完成 | 有限 14 候选多混合场、手写/双场/普通/向量/稠密比较，8 个有态留出构型的 32 次重放，水/氨反例和负结论。[实验](experiments/information_sufficiency/README.md) |
+| [#19 目标导向误差证书](https://github.com/jinzhezenggroup/vibedataset/issues/19) | 已完成 | 残差、近似对偶、SVD、严格离散界、直接/稠密回退的覆盖、误接受、证据不可得、精修和成本汇总。[实验](experiments/error_certificates/README.md) |
+| [#18 跨方法、基组和状态边界](https://github.com/jinzhezenggroup/vibedataset/issues/18) | 已完成 | RHF/基组/DFT/开放壳层/表示/冻结与弛豫响应矩阵，直接复用、初猜、精修、拒绝和重算分类。[实验](experiments/cross_protocol/README.md) |
+
+执行顺序为 #17 → #19 → #18。#20、#21、#22、#23 为重复或已折叠入口，不再作为独立科研主线。最终路线决定见 [0005](decisions/0005-information-certificates-and-migration-boundaries.md)。
 
 ## 首轮研究证据
 
