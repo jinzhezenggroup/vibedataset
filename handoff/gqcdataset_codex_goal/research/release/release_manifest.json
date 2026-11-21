@@ -1,6 +1,6 @@
 {
   "schema": "vibedataset.research_release.v1",
-  "git_head": "ae1ed706c88067062ec5a89bbfb66e79ce208b93",
+  "git_head": "608f3facca644ef8519da67ec03d87078ee8eed0",
   "artifacts": [
     {
       "path": "README.md",
@@ -57,6 +57,14 @@
     {
       "path": "handoff/gqcdataset_codex_goal/research/experiments/hessian_cphf/gpu-spectroscopy.json",
       "sha256": "9d79f89dc75c73bed0dfcf56c80b814888201a647f4c5d9350722521bd5fc8a2"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/baseline.json",
+      "sha256": "2b3ded93970330760fe2192db86d111b25b2a1ddc8937101bfb87f158fdc9d51"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/upstream-polarizability-pytest.log",
+      "sha256": "6e1f2e4012605d3bcdd51bcafe044ac26d93b9c5300fc1349067f5475c385968"
     }
   ],
   "commands": [

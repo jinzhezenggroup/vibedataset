@@ -13,7 +13,7 @@
   "threads": {"OMP_NUM_THREADS": "4", "OPENBLAS_NUM_THREADS": "4", "MKL_NUM_THREADS": "4"},
   "official_release_tags": {"v1.9.0": "unavailable-in-pinned-checkout", "v1.9.2": "unavailable-in-pinned-checkout"},
   "paper_version_lock": "not established",
-  "official_upstream_benchmark_suite": "not replayed as a complete upstream suite",
+  "official_upstream_benchmark_suite": "partial: properties/tests/test_polarizability.py, 7 passed and 1 skipped",
   "project_official_baseline": "attribution_4arm/runs/run-A.json and raw/raw-A.jsonl",
   "unknowns": ["driver package build flags", "CUPTI/Nsight traces", "power and energy", "full upstream benchmark suite"]
 }
