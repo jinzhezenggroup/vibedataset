@@ -54,3 +54,13 @@
 ## 首轮研究证据
 
 基础审计、真实资产评价、路线选择及首个分子实现分别见 [工作基础](FOUNDATION_CAPABILITIES.md)、[资产与评价](DATASET_ASSETS.md)、[比较与决定](ROUTE_COMPARISON.md) 和 [三轮实验](experiments/gqc_residual_multiround/README.md)。首轮之后，#2 完成可得来源锁和证据化缺口，#4 补齐响应、着色与正式发布源码的对照，#8 交付 17 个候选的多轮成本与外推实证。两份 PDF 已核验，用户已取消原 ZIP 要求，#9 随之验收。[当前状态](STATUS.md) · [外推数据](experiments/qm9_extension/README.md)
+
+## 新增 issues #31–#33 的验收
+
+| Issue | 状态 | 产物与复核 |
+|---|---|---|
+| #31 四臂核心方法归因 | 已完成 | 同一 manifest 的 A–D 原始 JSON、官方独立 scorer、AO 密度和目标误差、成本及主效应/交互项。[实验](experiments/attribution_4arm/README.md) |
+| #32 固定源码与算法矩阵 | 已完成 | 10 个固定来源、37 条符号/测试行为观察和机器复核器。[源码审计](audits/SOURCE_AUDIT_32.md) · [算法矩阵](audits/ALGORITHM_MATRIX.md) |
+| #33 目标相关增量响应 planner | 已完成 | 三类请求分布、未来概率、五种策略、OOD 边界、564 个决策、765 个 in-domain 候选、100 个外部几何 inventory 案例和独立 replay。[实验](experiments/attribution_4arm/README.md) |
+
+#31 的缓存 patch 是最小后端因素，不构成新的物理求解器。#33 的 planner 结论限定为当前 17 个小分子和预登记请求模型。自然生产请求、较大体系和新的物性仍需要新的协议一致资产及独立质量证据。

@@ -1,0 +1,292 @@
+{
+  "schema": "vibedataset.attribution_4arm.expansion.v1",
+  "manifest_sha256": "e08193beba0fd3b15d3b6c2ecf531b3b38c6cb8fef3da0ee95d19cd78858a635",
+  "driver_sha256": "43e53459edf8f0b9f0fd77991f6f2e4d9793367437a25854f94ab10ae9309e0c",
+  "python": "3.11.17 (main, Oct  1 2026, 20:17:42) [GCC 14.3.0]",
+  "platform": "Linux-6.8.0-149-generic-x86_64-with-glibc2.35",
+  "cuda_name": "b'NVIDIA RTX PRO 6000 Blackwell Workstation Edition'",
+  "rows": [
+    {
+      "case": "rhf-6-31g-star",
+      "molecule": "qm9-000001",
+      "method": "RHF",
+      "basis": "6-31g*",
+      "multiplicity": 1,
+      "charge": 0,
+      "status": "direct-reference",
+      "energy_hartree": -40.19465516486669,
+      "polarizability": [
+        [
+          12.345125324993747,
+          -0.00016019277761958328,
+          3.667257259037937e-05
+        ],
+        [
+          -0.00016019277761958328,
+          12.34501172496929,
+          7.076431032021491e-05
+        ],
+        [
+          3.667257259037937e-05,
+          7.076431032021491e-05,
+          12.344936686713925
+        ]
+      ],
+      "error": null,
+      "seconds": 7.037515791947953,
+      "input_manifest_sha256": "e08193beba0fd3b15d3b6c2ecf531b3b38c6cb8fef3da0ee95d19cd78858a635",
+      "arm": "A",
+      "orchestration": "native-ordinary",
+      "backend": "gpu4pyscf-official",
+      "asset_disposition": "same-protocol-direct"
+    },
+    {
+      "case": "rhf-6-31g-star",
+      "molecule": "qm9-000001",
+      "method": "RHF",
+      "basis": "6-31g*",
+      "multiplicity": 1,
+      "charge": 0,
+      "status": "direct-reference",
+      "energy_hartree": -40.19465516486669,
+      "polarizability": [
+        [
+          12.345125324993747,
+          -0.00016019277761958328,
+          3.667257259037937e-05
+        ],
+        [
+          -0.00016019277761958328,
+          12.34501172496929,
+          7.076431032021491e-05
+        ],
+        [
+          3.667257259037937e-05,
+          7.076431032021491e-05,
+          12.344936686713925
+        ]
+      ],
+      "error": null,
+      "seconds": 7.037515791947953,
+      "input_manifest_sha256": "e08193beba0fd3b15d3b6c2ecf531b3b38c6cb8fef3da0ee95d19cd78858a635",
+      "arm": "B",
+      "orchestration": "native-ordinary",
+      "backend": "gpu4pyscf-patched",
+      "asset_disposition": "same-protocol-direct"
+    },
+    {
+      "case": "rhf-6-31g-star",
+      "molecule": "qm9-000001",
+      "method": "RHF",
+      "basis": "6-31g*",
+      "multiplicity": 1,
+      "charge": 0,
+      "status": "direct-reference",
+      "energy_hartree": -40.19465516486669,
+      "polarizability": [
+        [
+          12.345125324993747,
+          -0.00016019277761958328,
+          3.667257259037937e-05
+        ],
+        [
+          -0.00016019277761958328,
+          12.34501172496929,
+          7.076431032021491e-05
+        ],
+        [
+          3.667257259037937e-05,
+          7.076431032021491e-05,
+          12.344936686713925
+        ]
+      ],
+      "error": null,
+      "seconds": 7.037515791947953,
+      "input_manifest_sha256": "e08193beba0fd3b15d3b6c2ecf531b3b38c6cb8fef3da0ee95d19cd78858a635",
+      "arm": "C",
+      "orchestration": "gqc-planner-refine-or-reject",
+      "backend": "gpu4pyscf-official",
+      "asset_disposition": "refine-required"
+    },
+    {
+      "case": "rhf-6-31g-star",
+      "molecule": "qm9-000001",
+      "method": "RHF",
+      "basis": "6-31g*",
+      "multiplicity": 1,
+      "charge": 0,
+      "status": "direct-reference",
+      "energy_hartree": -40.19465516486669,
+      "polarizability": [
+        [
+          12.345125324993747,
+          -0.00016019277761958328,
+          3.667257259037937e-05
+        ],
+        [
+          -0.00016019277761958328,
+          12.34501172496929,
+          7.076431032021491e-05
+        ],
+        [
+          3.667257259037937e-05,
+          7.076431032021491e-05,
+          12.344936686713925
+        ]
+      ],
+      "error": null,
+      "seconds": 7.037515791947953,
+      "input_manifest_sha256": "e08193beba0fd3b15d3b6c2ecf531b3b38c6cb8fef3da0ee95d19cd78858a635",
+      "arm": "D",
+      "orchestration": "gqc-planner-refine-or-reject",
+      "backend": "gpu4pyscf-patched",
+      "asset_disposition": "refine-required"
+    },
+    {
+      "case": "b3lyp-sto-3g",
+      "molecule": "qm9-000001",
+      "method": "B3LYP",
+      "basis": "sto-3g",
+      "multiplicity": 1,
+      "charge": 0,
+      "status": "reject-and-recompute",
+      "energy_hartree": -40.03884909339892,
+      "polarizability": null,
+      "error": "GPU4PySCF polarizability entry is restricted-RHF only",
+      "seconds": 1.954289156012237,
+      "input_manifest_sha256": "e08193beba0fd3b15d3b6c2ecf531b3b38c6cb8fef3da0ee95d19cd78858a635",
+      "arm": "A",
+      "orchestration": "native-ordinary",
+      "backend": "gpu4pyscf-official",
+      "asset_disposition": "reject-and-recompute"
+    },
+    {
+      "case": "b3lyp-sto-3g",
+      "molecule": "qm9-000001",
+      "method": "B3LYP",
+      "basis": "sto-3g",
+      "multiplicity": 1,
+      "charge": 0,
+      "status": "reject-and-recompute",
+      "energy_hartree": -40.03884909339892,
+      "polarizability": null,
+      "error": "GPU4PySCF polarizability entry is restricted-RHF only",
+      "seconds": 1.954289156012237,
+      "input_manifest_sha256": "e08193beba0fd3b15d3b6c2ecf531b3b38c6cb8fef3da0ee95d19cd78858a635",
+      "arm": "B",
+      "orchestration": "native-ordinary",
+      "backend": "gpu4pyscf-patched",
+      "asset_disposition": "reject-and-recompute"
+    },
+    {
+      "case": "b3lyp-sto-3g",
+      "molecule": "qm9-000001",
+      "method": "B3LYP",
+      "basis": "sto-3g",
+      "multiplicity": 1,
+      "charge": 0,
+      "status": "reject-and-recompute",
+      "energy_hartree": -40.03884909339892,
+      "polarizability": null,
+      "error": "GPU4PySCF polarizability entry is restricted-RHF only",
+      "seconds": 1.954289156012237,
+      "input_manifest_sha256": "e08193beba0fd3b15d3b6c2ecf531b3b38c6cb8fef3da0ee95d19cd78858a635",
+      "arm": "C",
+      "orchestration": "gqc-planner-refine-or-reject",
+      "backend": "gpu4pyscf-official",
+      "asset_disposition": "reject-and-recompute"
+    },
+    {
+      "case": "b3lyp-sto-3g",
+      "molecule": "qm9-000001",
+      "method": "B3LYP",
+      "basis": "sto-3g",
+      "multiplicity": 1,
+      "charge": 0,
+      "status": "reject-and-recompute",
+      "energy_hartree": -40.03884909339892,
+      "polarizability": null,
+      "error": "GPU4PySCF polarizability entry is restricted-RHF only",
+      "seconds": 1.954289156012237,
+      "input_manifest_sha256": "e08193beba0fd3b15d3b6c2ecf531b3b38c6cb8fef3da0ee95d19cd78858a635",
+      "arm": "D",
+      "orchestration": "gqc-planner-refine-or-reject",
+      "backend": "gpu4pyscf-patched",
+      "asset_disposition": "reject-and-recompute"
+    },
+    {
+      "case": "uhf-sto-3g-doublet",
+      "molecule": "qm9-000005",
+      "method": "UHF",
+      "basis": "sto-3g",
+      "multiplicity": 2,
+      "charge": 1,
+      "status": "reject-and-recompute",
+      "energy_hartree": -91.24970389324616,
+      "polarizability": null,
+      "error": "GPU4PySCF polarizability entry is restricted-RHF only",
+      "seconds": 3.4775325839873403,
+      "input_manifest_sha256": "e08193beba0fd3b15d3b6c2ecf531b3b38c6cb8fef3da0ee95d19cd78858a635",
+      "arm": "A",
+      "orchestration": "native-ordinary",
+      "backend": "gpu4pyscf-official",
+      "asset_disposition": "reject-and-recompute"
+    },
+    {
+      "case": "uhf-sto-3g-doublet",
+      "molecule": "qm9-000005",
+      "method": "UHF",
+      "basis": "sto-3g",
+      "multiplicity": 2,
+      "charge": 1,
+      "status": "reject-and-recompute",
+      "energy_hartree": -91.24970389324616,
+      "polarizability": null,
+      "error": "GPU4PySCF polarizability entry is restricted-RHF only",
+      "seconds": 3.4775325839873403,
+      "input_manifest_sha256": "e08193beba0fd3b15d3b6c2ecf531b3b38c6cb8fef3da0ee95d19cd78858a635",
+      "arm": "B",
+      "orchestration": "native-ordinary",
+      "backend": "gpu4pyscf-patched",
+      "asset_disposition": "reject-and-recompute"
+    },
+    {
+      "case": "uhf-sto-3g-doublet",
+      "molecule": "qm9-000005",
+      "method": "UHF",
+      "basis": "sto-3g",
+      "multiplicity": 2,
+      "charge": 1,
+      "status": "reject-and-recompute",
+      "energy_hartree": -91.24970389324616,
+      "polarizability": null,
+      "error": "GPU4PySCF polarizability entry is restricted-RHF only",
+      "seconds": 3.4775325839873403,
+      "input_manifest_sha256": "e08193beba0fd3b15d3b6c2ecf531b3b38c6cb8fef3da0ee95d19cd78858a635",
+      "arm": "C",
+      "orchestration": "gqc-planner-refine-or-reject",
+      "backend": "gpu4pyscf-official",
+      "asset_disposition": "reject-and-recompute"
+    },
+    {
+      "case": "uhf-sto-3g-doublet",
+      "molecule": "qm9-000005",
+      "method": "UHF",
+      "basis": "sto-3g",
+      "multiplicity": 2,
+      "charge": 1,
+      "status": "reject-and-recompute",
+      "energy_hartree": -91.24970389324616,
+      "polarizability": null,
+      "error": "GPU4PySCF polarizability entry is restricted-RHF only",
+      "seconds": 3.4775325839873403,
+      "input_manifest_sha256": "e08193beba0fd3b15d3b6c2ecf531b3b38c6cb8fef3da0ee95d19cd78858a635",
+      "arm": "D",
+      "orchestration": "gqc-planner-refine-or-reject",
+      "backend": "gpu4pyscf-patched",
+      "asset_disposition": "reject-and-recompute"
+    }
+  ],
+  "oracle_loaded": false,
+  "scorer_loaded": false
+}

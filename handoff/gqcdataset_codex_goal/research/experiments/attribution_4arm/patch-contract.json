@@ -1,0 +1,6 @@
+{
+  "status": "passed",
+  "source_sha256": "1010af1ff5cb62e424223e6c65bad9344e7a6e37bf6882ff574efddb9e2839de",
+  "patched_sha256": "e945d59c4b19a5b183af2e4651caf2bb9276dc807079b8c060bb6490854a4d6a",
+  "patch_sha256": "dad0f28af59dc9dca2fc3c0c78f73920ae4f5593bc2d50408fc02153293679d5"
+}

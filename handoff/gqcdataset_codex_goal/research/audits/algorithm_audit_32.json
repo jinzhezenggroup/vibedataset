@@ -1,0 +1,430 @@
+{
+  "schema": "vibedataset.algorithm_audit.v1",
+  "sources": [
+    {
+      "id": "gqc",
+      "url": "https://github.com/jinzhezenggroup/generativeqc",
+      "commit": "2791504cc238fe83d328fc1718080642b288222a",
+      "checkout": "_references/gqc",
+      "license": "LICENSE; THIRD_PARTY_NOTICES.md",
+      "submodules": 0,
+      "lfs": 0
+    },
+    {
+      "id": "gpu4pyscf",
+      "url": "https://github.com/pyscf/gpu4pyscf",
+      "commit": "5a717f899cb40d64a5799ef1df7e3626c505c3bd",
+      "checkout": "_references/gpu4pyscf",
+      "license": "LICENSE",
+      "submodules": 0,
+      "lfs": 0
+    },
+    {
+      "id": "pyscfad",
+      "url": "https://github.com/fishjojo/pyscfad",
+      "commit": "190fbb4670de4c989333a5eb49b401efd5395a3b",
+      "checkout": "_references/pyscfad",
+      "license": "pyscfadlib/LICENSE",
+      "submodules": 0,
+      "lfs": 0
+    },
+    {
+      "id": "pvmc",
+      "url": "https://github.com/RateTheory/PVMC",
+      "commit": "0d3340644047abc727896753f48650f8c5205a89",
+      "checkout": "_references/pvmc",
+      "license": "LICENSE",
+      "submodules": 0,
+      "lfs": 0
+    },
+    {
+      "id": "hvmc",
+      "url": "https://github.com/RateTheory/HVMC",
+      "commit": "389bc8abad78d574ae971289226a27c620a0c351",
+      "checkout": "_references/hvmc",
+      "license": "LICENSE",
+      "submodules": 0,
+      "lfs": 0
+    },
+    {
+      "id": "pymor",
+      "url": "https://github.com/pymor/pymor",
+      "commit": "36a0035e180694c7ad4eb8f083d9f1d65ceb6f42",
+      "checkout": "_references/pymor_2026_1",
+      "license": "LICENSE.txt",
+      "submodules": 0,
+      "lfs": 0
+    },
+    {
+      "id": "qemfi",
+      "url": "https://github.com/SM4DA/QeMFi",
+      "commit": "883eca5b12c96ca2248fddcc671fcd032696552a",
+      "checkout": "_references/qemfi",
+      "license": "LICENSE",
+      "submodules": 0,
+      "lfs": 0
+    },
+    {
+      "id": "openmdao",
+      "url": "https://github.com/OpenMDAO/OpenMDAO",
+      "commit": "64175aa55fb541355b2fb279a6bcfde01e17a878",
+      "checkout": "_references/openmdao_3_45_2",
+      "license": "LICENSE.txt",
+      "submodules": 0,
+      "lfs": 0
+    },
+    {
+      "id": "cppad",
+      "url": "https://github.com/coin-or/CppAD",
+      "commit": "5d51b2aa6d6874c8d561da298a90b3721550d45d",
+      "checkout": "_references/cppad_2026",
+      "license": "COPYING",
+      "submodules": 0,
+      "lfs": 0
+    },
+    {
+      "id": "multifidelity_gnn",
+      "url": "https://github.com/davidbuterez/multi-fidelity-gnns-for-drug-discovery-and-quantum-mechanics",
+      "commit": "84ee8a280557d7fbc2ebd1042468e21ce8ea16c6",
+      "checkout": "_references/multifidelity_gnn",
+      "license": "LICENSE",
+      "submodules": 0,
+      "lfs": 0
+    }
+  ],
+  "observations": [
+    {
+      "id": "gqc-linear-problem",
+      "source": "gqc",
+      "path": "src/response/linear_problem.hpp",
+      "symbol": "class LinearResponseProblem",
+      "behavior": "Defines the operator and dimension identity for a response equation.",
+      "test": "tests/python/test_response_problem.py",
+      "test_claim": "Executable response-problem admission tests."
+    },
+    {
+      "id": "gqc-solve-plan",
+      "source": "gqc",
+      "path": "src/response/solve.hpp",
+      "symbol": "class ResponsePlan",
+      "behavior": "Stores GMRES options and response solve request metadata.",
+      "test": "tests/python/test_response_operator.py",
+      "test_claim": "Operator setup and response shape checks."
+    },
+    {
+      "id": "gqc-batch-plan",
+      "source": "gqc",
+      "path": "src/response/solve.hpp",
+      "symbol": "struct ResponseBatchPlan",
+      "behavior": "Represents a prepared batch and its workspace accounting.",
+      "test": "tests/python/test_response_block_resident_cuda.py",
+      "test_claim": "Batch/resident response path exercised."
+    },
+    {
+      "id": "gqc-gmres-options",
+      "source": "gqc",
+      "path": "src/response/native_gmres.hpp",
+      "symbol": "struct GmresOptions",
+      "behavior": "Controls restart, true-residual cadence and reorthogonalization.",
+      "test": "tests/python/test_response_krylov.py",
+      "test_claim": "Krylov residual and failure cases."
+    },
+    {
+      "id": "gqc-gmres-solve",
+      "source": "gqc",
+      "path": "src/response/native_gmres.cpp",
+      "symbol": "solve_gmres",
+      "behavior": "Performs matrix-free GMRES and accepts only a true residual.",
+      "test": "tests/native/test_native_gmres.cpp",
+      "test_claim": "Native convergence and refusal tests."
+    },
+    {
+      "id": "gqc-resident-backend",
+      "source": "gqc",
+      "path": "src/response/resident_krylov.hpp",
+      "symbol": "class ResidentResponseBackend",
+      "behavior": "Keeps response workspace resident across actions and charges capacity.",
+      "test": "tests/python/test_response_block_resident_cuda.py",
+      "test_claim": "Resident path and workspace failures."
+    },
+    {
+      "id": "gqc-recycle-space",
+      "source": "gqc",
+      "path": "src/response/recycle.hpp",
+      "symbol": "class ResponseRecycleSpace",
+      "behavior": "Publishes same-operator solved directions with generation and capacity checks.",
+      "test": "tests/native/test_response_recycle_sdk.cpp",
+      "test_claim": "Stale generation and dimension rejection."
+    },
+    {
+      "id": "gqc-cuda-cpks-cache",
+      "source": "gqc",
+      "path": "src/response/cuda_cpks.hpp",
+      "symbol": "class CudaCpksOperatorCache",
+      "behavior": "Caches exact CPKS operator images only under source/operator identity.",
+      "test": "tests/native/test_rhf_frame_recycle.cpp",
+      "test_claim": "Same-operator response recycle."
+    },
+    {
+      "id": "gqc-identity",
+      "source": "gqc",
+      "path": "src/hf/rhf_frame_identity.hpp",
+      "symbol": "class RHFFrameIdentity",
+      "behavior": "Binds geometry, reference and operator identity before reuse.",
+      "test": "tests/python/test_geometry_response_reuse_cuda.py",
+      "test_claim": "Wrong geometry/reference rejection."
+    },
+    {
+      "id": "gqc-python-native",
+      "source": "gqc",
+      "path": "python/generativeqc/_response_native.py",
+      "symbol": "def solve_sequence",
+      "behavior": "Python entry point selects native sequence and records diagnostics.",
+      "test": "tests/python/test_response_production_owner.py",
+      "test_claim": "Production owner and receipts."
+    },
+    {
+      "id": "gqc-failure",
+      "source": "gqc",
+      "path": "src/response/resident_gmres.cpp",
+      "symbol": "solve_gmres_resident",
+      "behavior": "Terminal failure preserves residual/work counters for fallback.",
+      "test": "tests/python/test_resident_gmres_failures.py",
+      "test_claim": "Failure and cleanup controls."
+    },
+    {
+      "id": "gpu-cphf-entry",
+      "source": "gpu4pyscf",
+      "path": "gpu4pyscf/scf/cphf.py",
+      "symbol": "def solve(",
+      "behavior": "Dispatches restricted CPHF with 2-D RHS and optional mo10 initial guess.",
+      "test": "gpu4pyscf/properties/tests/test_polarizability.py",
+      "test_claim": "Three-field polarizability regression."
+    },
+    {
+      "id": "gpu-cphf-batch",
+      "source": "gpu4pyscf",
+      "path": "gpu4pyscf/scf/cphf.py",
+      "symbol": "def solve_nos1",
+      "behavior": "Shapes h1 as (nset,nvir,nocc) and sends all RHS through one Krylov call.",
+      "test": "gpu4pyscf/properties/tests/test_polarizability.py",
+      "test_claim": "Multi-direction polarizability path."
+    },
+    {
+      "id": "gpu-cphf-mo10",
+      "source": "gpu4pyscf",
+      "path": "gpu4pyscf/scf/cphf.py",
+      "symbol": "x0 = mo10.reshape",
+      "behavior": "Uses caller-provided first-order orbitals as the initial Krylov guess.",
+      "test": "gpu4pyscf/scf/cphf.py",
+      "test_claim": "Source-level executable branch; GPU run in issue31."
+    },
+    {
+      "id": "gpu-krylov",
+      "source": "gpu4pyscf",
+      "path": "gpu4pyscf/lib/cupy_helper.py",
+      "symbol": "def krylov",
+      "behavior": "Shared Krylov subspace, stable QR and callback, with explicit convergence failure.",
+      "test": "gpu4pyscf/lib/cupy_helper.py",
+      "test_claim": "Pinned source plus issue31 GPU run."
+    },
+    {
+      "id": "gpu-stable-qr",
+      "source": "gpu4pyscf",
+      "path": "gpu4pyscf/lib/cupy_helper.py",
+      "symbol": "def _stable_qr",
+      "behavior": "Drops linearly dependent trial vectors under lindep.",
+      "test": "gpu4pyscf/lib/cupy_helper.py",
+      "test_claim": "Pinned source branch exercised by CPHF."
+    },
+    {
+      "id": "gpu-polarizability-vind",
+      "source": "gpu4pyscf",
+      "path": "gpu4pyscf/properties/polarizability.py",
+      "symbol": "def gen_vind",
+      "behavior": "Builds the AO induced-potential map from orbital rotations.",
+      "test": "gpu4pyscf/properties/tests/test_polarizability.py",
+      "test_claim": "Independent scorer uses this map."
+    },
+    {
+      "id": "gpu-jk-response",
+      "source": "gpu4pyscf",
+      "path": "gpu4pyscf/scf/hf.py",
+      "symbol": "gen_response",
+      "behavior": "Returns the SCF response potential provider used by CPHF.",
+      "test": "gpu4pyscf/scf/hf.py",
+      "test_claim": "Pinned source and GPU response run."
+    },
+    {
+      "id": "pyscfad-implicit",
+      "source": "pyscfad",
+      "path": "pyscfad/implicit_diff.py",
+      "symbol": "custom_root",
+      "behavior": "Wraps an implicit root and its derivative rule.",
+      "test": "tests/test_scf.py",
+      "test_claim": "SCF differentiation tests."
+    },
+    {
+      "id": "pyscfad-linear-solve",
+      "source": "pyscfad",
+      "path": "pyscfad/_src/scipy/sparse/linalg.py",
+      "symbol": "def gmres",
+      "behavior": "AD-compatible sparse linear solve primitive.",
+      "test": "tests/test_backend.py",
+      "test_claim": "Backend and derivative checks."
+    },
+    {
+      "id": "pvmc-sampling",
+      "source": "pvmc",
+      "path": "ZCT.py",
+      "symbol": "def zct",
+      "behavior": "Samples matrix/coordinate observations under a prescribed mask and density.",
+      "test": "README.md",
+      "test_claim": "Author workflow example, not a CPHF solver."
+    },
+    {
+      "id": "pvmc-analysis",
+      "source": "pvmc",
+      "path": "AnalyzeResults.py",
+      "symbol": "def get_eigenvalue_matrix",
+      "behavior": "Aggregates sampled matrix reconstruction results after the run.",
+      "test": "README.md",
+      "test_claim": "Post-processing example."
+    },
+    {
+      "id": "hvmc-vmc",
+      "source": "hvmc",
+      "path": "vmc.py",
+      "symbol": "def vmc",
+      "behavior": "Runs variational Monte Carlo and stores sampled configurations.",
+      "test": "Examples/README",
+      "test_claim": "Example workflow."
+    },
+    {
+      "id": "hvmc-zct",
+      "source": "hvmc",
+      "path": "ZCT.py",
+      "symbol": "def zct",
+      "behavior": "Uses observed row/coordinate sampling for matrix completion experiments.",
+      "test": "Examples/ResultsZCT/README",
+      "test_claim": "Stored result protocol."
+    },
+    {
+      "id": "pymor-dwr",
+      "source": "pymor",
+      "path": "src/pymor/reductors/dwr.py",
+      "symbol": "def estimate_error",
+      "behavior": "Computes dual-weighted residual error estimates for a reduced model.",
+      "test": "src/pymordemos/output_error_estimation_with_dwr.py",
+      "test_claim": "DWR tests and demo."
+    },
+    {
+      "id": "pymor-residual",
+      "source": "pymor",
+      "path": "src/pymor/reductors/residual.py",
+      "symbol": "class ResidualReductor",
+      "behavior": "Builds residual operators and norms for model reduction.",
+      "test": "src/pymortests/algorithms/krylov.py",
+      "test_claim": "Residual reductor tests."
+    },
+    {
+      "id": "pymor-krylov",
+      "source": "pymor",
+      "path": "src/pymor/algorithms/krylov.py",
+      "symbol": "def rational_arnoldi",
+      "behavior": "Constructs a Krylov basis for operator reduction.",
+      "test": "src/pymortests/algorithms/krylov.py",
+      "test_claim": "Krylov algorithm tests."
+    },
+    {
+      "id": "qemfi-model",
+      "source": "qemfi",
+      "path": "MFML/Model_MFML.py",
+      "symbol": "class ModelMFML",
+      "behavior": "Fits low/high-fidelity data through a multi-fidelity statistical model.",
+      "test": "MFML/LearningCurves.py",
+      "test_claim": "Learning-curve evaluation."
+    },
+    {
+      "id": "qemfi-cost",
+      "source": "qemfi",
+      "path": "MFML/TimeLC_plots.py",
+      "symbol": "def plot_function",
+      "behavior": "Plots fidelity learning curves against measured computational time.",
+      "test": "MFML/TimeLC_plots.py",
+      "test_claim": "Cost/accuracy visualization."
+    },
+    {
+      "id": "openmdao-coloring",
+      "source": "openmdao",
+      "path": "openmdao/utils/coloring.py",
+      "symbol": "class Coloring",
+      "behavior": "Stores graph coloring and sparsity information for derivative solves.",
+      "test": "openmdao/core/tests/test_coloring.py",
+      "test_claim": "Coloring tests."
+    },
+    {
+      "id": "openmdao-approx",
+      "source": "openmdao",
+      "path": "openmdao/approximation_schemes/approximation_scheme.py",
+      "symbol": "class ApproximationScheme",
+      "behavior": "Schedules finite-difference or complex-step derivative approximations.",
+      "test": "openmdao/core/tests/test_approx_derivs.py",
+      "test_claim": "Approximation tests."
+    },
+    {
+      "id": "openmdao-jacobian",
+      "source": "openmdao",
+      "path": "openmdao/jacobians/jacobian.py",
+      "symbol": "class Jacobian",
+      "behavior": "Owns assembled/approximated Jacobian subjacobians and derivative products.",
+      "test": "openmdao/jacobians/tests/test_jacobian.py",
+      "test_claim": "Jacobian tests."
+    },
+    {
+      "id": "cppad-forward-sparse",
+      "source": "cppad",
+      "path": "include/cppad/core/for_sparse_jac.hpp",
+      "symbol": "ForSparseJac",
+      "behavior": "Propagates forward-mode Jacobian sparsity through an AD tape.",
+      "test": "test_more/general/sparse_jacobian.cpp",
+      "test_claim": "Sparse Jacobian executable tests."
+    },
+    {
+      "id": "cppad-reverse-sparse",
+      "source": "cppad",
+      "path": "include/cppad/core/rev_sparse_jac.hpp",
+      "symbol": "RevSparseJac",
+      "behavior": "Propagates reverse-mode Jacobian sparsity.",
+      "test": "test_more/general/rev_sparse_jac.cpp",
+      "test_claim": "Reverse sparse tests."
+    },
+    {
+      "id": "cppad-checkpoint",
+      "source": "cppad",
+      "path": "include/cppad/core/chkpoint_one/chkpoint_one.hpp",
+      "symbol": "class checkpoint",
+      "behavior": "Encapsulates a function as an AD checkpoint with sparse derivative support.",
+      "test": "test_more/general/chkpoint_one.cpp",
+      "test_claim": "Checkpoint tests."
+    },
+    {
+      "id": "mfgnn-low",
+      "source": "multifidelity_gnn",
+      "path": "multifidelity_gnn/train/train_low_fidelity.py",
+      "symbol": "def main",
+      "behavior": "Trains a low-fidelity graph model before high-fidelity transfer.",
+      "test": "README.md",
+      "test_claim": "Training workflow."
+    },
+    {
+      "id": "mfgnn-finetune",
+      "source": "multifidelity_gnn",
+      "path": "multifidelity_gnn/train/train_fine_tune_high_fidelity.py",
+      "symbol": "def main",
+      "behavior": "Transfers a low-fidelity model to high-fidelity labels.",
+      "test": "README.md",
+      "test_claim": "Fine-tuning workflow."
+    }
+  ]
+}

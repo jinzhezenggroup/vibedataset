@@ -1,0 +1,30 @@
+{
+  "schema": "vibedataset.attribution_4arm.raw.v1",
+  "arm": "D",
+  "backend": "gpu4pyscf-patched",
+  "orchestration": "gqc-planner-assets",
+  "manifest": "/home/lhshen/vibedataset/runs/attribution-4arm-test/manifest/manifest.json",
+  "manifest_sha256": "e08193beba0fd3b15d3b6c2ecf531b3b38c6cb8fef3da0ee95d19cd78858a635",
+  "driver_sha256": "02ec199cf94750226eb12e2efc6e014207aad24bff93cdf2b6b2c65e731c1934",
+  "source_commit": "3c8aea9",
+  "gpu4pyscf_source_commit": "5a717f899cb40d64a5799ef1df7e3626c505c3bd",
+  "patch_sha256": "b30481ecb3d337e6c032167b927d2a227dc412e2bccf5dd8e1e193ed1ee51d4d",
+  "python": "3.11.17 (main, Oct  1 2026, 20:17:42) [GCC 14.3.0]",
+  "platform": "Linux-6.8.0-149-generic-x86_64-with-glibc2.35",
+  "pid": 1737798,
+  "device": {
+    "cuda_device": 0,
+    "cuda_name": "NVIDIA RTX PRO 6000 Blackwell Workstation Edition",
+    "cuda_total_bytes": 101973491712,
+    "cuda_free_bytes_at_start": 100013768704,
+    "cupy_version": "14.2.0"
+  },
+  "record_count": 51,
+  "elapsed_seconds": 168.0904590669088,
+  "cold_start_seconds": null,
+  "blind": true,
+  "oracle_loaded": false,
+  "scorer_loaded": false,
+  "patch_sha256_replayable": "dad0f28af59dc9dca2fc3c0c78f73920ae4f5593bc2d50408fc02153293679d5",
+  "patched_source_sha256": "e945d59c4b19a5b183af2e4651caf2bb9276dc807079b8c060bb6490854a4d6a"
+}

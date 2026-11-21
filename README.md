@@ -21,6 +21,8 @@
 
 复评后新增 #25–#27。独立手写基线与四列二值候选已运行，算子级证书已加入全空间探针，响应资产迁移已完成独立序列化重开和目标 CPHF 评分。[#25](handoff/gqcdataset_codex_goal/research/experiments/information_sufficiency/issue25/README.md) · [#26](handoff/gqcdataset_codex_goal/research/experiments/error_certificates/operator_probe/README.md) · [#27](handoff/gqcdataset_codex_goal/research/experiments/cross_protocol/response_migration/README.md)
 
+新增 #31–#33 已完成。四臂 GPU4PySCF/GQC 归因、固定版本源码算法矩阵和带成本/覆盖/风险的目标相关 planner 均有独立复核。结果限定为 17 个 RHF/STO-3G 小分子和预登记请求轨迹。[四臂实验与 planner](handoff/gqcdataset_codex_goal/research/experiments/attribution_4arm/README.md) · [源码审计](handoff/gqcdataset_codex_goal/research/audits/SOURCE_AUDIT_32.md) · [算法矩阵](handoff/gqcdataset_codex_goal/research/audits/ALGORITHM_MATRIX.md)
+
 ## 材料入口
 
 | 材料 | 作用 |
@@ -54,6 +56,12 @@
 
 ```bash
 python3 scripts/check_response_ci.py archive --out .work/response-archive-01
+```
+
+新增研究归档检查可以在不安装科学依赖的 Python 环境中重放四臂记录、独立评分摘要和 planner 选择。
+
+```bash
+python3 scripts/check_attribution_ci.py --out .work/attribution-ci
 ```
 
 归档检查仅用 Python 标准库，核对两套规划器的全部已登记组合、两批 v1 标签的逐字节重建、v2 的 153 项资格迁移表和独立复核费用，以及 17 个分子的两版规划成本与操作记录。它还在临时副本中故意破坏一份归档，要求重放因校验和错误而失败。

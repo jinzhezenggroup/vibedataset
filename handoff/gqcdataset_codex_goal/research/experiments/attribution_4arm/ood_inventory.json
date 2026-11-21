@@ -1,0 +1,813 @@
+{
+  "schema": "vibedataset.target_response_ood_inventory.v1",
+  "source": {
+    "repository": "QHNet/AIRS",
+    "commit": "594e8bad8cd0b24a207c818e09b39ccc0aebcd4d",
+    "root": "_references/qhnet/OpenMol/PACE/dataset/rmd17",
+    "selection": "lexicographically first 100 tracked XYZ files under RMD17"
+  },
+  "count": 100,
+  "rows": [
+    {
+      "case_id": "qhnet-ood-000",
+      "source_relpath": "_references/qhnet/OpenMol/PACE/dataset/rmd17/xyz_data/aspirin/test_01.xyz",
+      "source_sha256": "9ca2d55f2679c386fe9ec3c56dc98d2cf807d1e2a77b0cd7f94b985fa1d40b96",
+      "first_frame_atom_count": 21,
+      "protocol_status": "external-geometry-only",
+      "disposition": "reject-and-recompute"
+    },
+    {
+      "case_id": "qhnet-ood-001",
+      "source_relpath": "_references/qhnet/OpenMol/PACE/dataset/rmd17/xyz_data/aspirin/test_02.xyz",
+      "source_sha256": "45e1c4308d8d506edf41061f8ec4e4ba0d3bf871896367dda1d6855395b5caf5",
+      "first_frame_atom_count": 21,
+      "protocol_status": "external-geometry-only",
+      "disposition": "reject-and-recompute"
+    },
+    {
+      "case_id": "qhnet-ood-002",
+      "source_relpath": "_references/qhnet/OpenMol/PACE/dataset/rmd17/xyz_data/aspirin/test_03.xyz",
+      "source_sha256": "d88ec1c6ee903615e6b5420b661eac1fb250502a82460bb2b236048c0b89de72",
+      "first_frame_atom_count": 21,
+      "protocol_status": "external-geometry-only",
+      "disposition": "reject-and-recompute"
+    },
+    {
+      "case_id": "qhnet-ood-003",
+      "source_relpath": "_references/qhnet/OpenMol/PACE/dataset/rmd17/xyz_data/aspirin/test_04.xyz",
+      "source_sha256": "c026d44f1d7fa84e935faad143c028b514f3c0887430817dc68dfcd20806e602",
+      "first_frame_atom_count": 21,
+      "protocol_status": "external-geometry-only",
+      "disposition": "reject-and-recompute"
+    },
+    {
+      "case_id": "qhnet-ood-004",
+      "source_relpath": "_references/qhnet/OpenMol/PACE/dataset/rmd17/xyz_data/aspirin/test_05.xyz",
+      "source_sha256": "1f077ed590e5637be9f6f4971c924a3cb296f930fafe254f5792b449784d260d",
+      "first_frame_atom_count": 21,
+      "protocol_status": "external-geometry-only",
+      "disposition": "reject-and-recompute"
+    },
+    {
+      "case_id": "qhnet-ood-005",
+      "source_relpath": "_references/qhnet/OpenMol/PACE/dataset/rmd17/xyz_data/aspirin/train_01.xyz",
+      "source_sha256": "36e3b9551c3984a752da58d3b0525b1aee4334bbe9d149e8b938702548329922",
+      "first_frame_atom_count": 21,
+      "protocol_status": "external-geometry-only",
+      "disposition": "reject-and-recompute"
+    },
+    {
+      "case_id": "qhnet-ood-006",
+      "source_relpath": "_references/qhnet/OpenMol/PACE/dataset/rmd17/xyz_data/aspirin/train_02.xyz",
+      "source_sha256": "d41e1c5c99ba7f817c9bb03d1a56f9b06981eb634cc10d7cc3f95399252dc248",
+      "first_frame_atom_count": 21,
+      "protocol_status": "external-geometry-only",
+      "disposition": "reject-and-recompute"
+    },
+    {
+      "case_id": "qhnet-ood-007",
+      "source_relpath": "_references/qhnet/OpenMol/PACE/dataset/rmd17/xyz_data/aspirin/train_03.xyz",
+      "source_sha256": "cee25ab695c4989e1c3b17996877f9a62b542b721db641db4fff77bb5c4c2165",
+      "first_frame_atom_count": 21,
+      "protocol_status": "external-geometry-only",
+      "disposition": "reject-and-recompute"
+    },
+    {
+      "case_id": "qhnet-ood-008",
+      "source_relpath": "_references/qhnet/OpenMol/PACE/dataset/rmd17/xyz_data/aspirin/train_04.xyz",
+      "source_sha256": "111eb97642487c95c2a8a0a0ac32065bc24aa880611b8b25c486ea9325ef340f",
+      "first_frame_atom_count": 21,
+      "protocol_status": "external-geometry-only",
+      "disposition": "reject-and-recompute"
+    },
+    {
+      "case_id": "qhnet-ood-009",
+      "source_relpath": "_references/qhnet/OpenMol/PACE/dataset/rmd17/xyz_data/aspirin/train_05.xyz",
+      "source_sha256": "ceb055b0994646d749903e37ed6b0abe5b08fc962e330594e08aec362ef481d3",
+      "first_frame_atom_count": 21,
+      "protocol_status": "external-geometry-only",
+      "disposition": "reject-and-recompute"
+    },
+    {
+      "case_id": "qhnet-ood-010",
+      "source_relpath": "_references/qhnet/OpenMol/PACE/dataset/rmd17/xyz_data/azobenzene/test_01.xyz",
+      "source_sha256": "c82869ce37c8c619ca60aa505d5828a0521c2139eee92429e4aafbfb67437e1c",
+      "first_frame_atom_count": 24,
+      "protocol_status": "external-geometry-only",
+      "disposition": "reject-and-recompute"
+    },
+    {
+      "case_id": "qhnet-ood-011",
+      "source_relpath": "_references/qhnet/OpenMol/PACE/dataset/rmd17/xyz_data/azobenzene/test_02.xyz",
+      "source_sha256": "4f921b6a4ccddca3fa06d3220c511b18ba4e34abfd2a1522e9325702df7244ff",
+      "first_frame_atom_count": 24,
+      "protocol_status": "external-geometry-only",
+      "disposition": "reject-and-recompute"
+    },
+    {
+      "case_id": "qhnet-ood-012",
+      "source_relpath": "_references/qhnet/OpenMol/PACE/dataset/rmd17/xyz_data/azobenzene/test_03.xyz",
+      "source_sha256": "b366cc1d9a9abab9a9f78c6cd13520fc8fea7d64249fa4ca05ecb39d71919e3a",
+      "first_frame_atom_count": 24,
+      "protocol_status": "external-geometry-only",
+      "disposition": "reject-and-recompute"
+    },
+    {
+      "case_id": "qhnet-ood-013",
+      "source_relpath": "_references/qhnet/OpenMol/PACE/dataset/rmd17/xyz_data/azobenzene/test_04.xyz",
+      "source_sha256": "85b9b588bb027c012974e6958864d680bb90747ddaa113609e5c9dc8328dd72d",
+      "first_frame_atom_count": 24,
+      "protocol_status": "external-geometry-only",
+      "disposition": "reject-and-recompute"
+    },
+    {
+      "case_id": "qhnet-ood-014",
+      "source_relpath": "_references/qhnet/OpenMol/PACE/dataset/rmd17/xyz_data/azobenzene/test_05.xyz",
+      "source_sha256": "cfcabb855f7ca21c63aaf9ffe6177315b8eaf52e12a8954b5ebdea46ba316998",
+      "first_frame_atom_count": 24,
+      "protocol_status": "external-geometry-only",
+      "disposition": "reject-and-recompute"
+    },
+    {
+      "case_id": "qhnet-ood-015",
+      "source_relpath": "_references/qhnet/OpenMol/PACE/dataset/rmd17/xyz_data/azobenzene/train_01.xyz",
+      "source_sha256": "fe4a691c92470cea5ddceac31008c1f5ebda8789869c0c5d27f1105cd39201b4",
+      "first_frame_atom_count": 24,
+      "protocol_status": "external-geometry-only",
+      "disposition": "reject-and-recompute"
+    },
+    {
+      "case_id": "qhnet-ood-016",
+      "source_relpath": "_references/qhnet/OpenMol/PACE/dataset/rmd17/xyz_data/azobenzene/train_02.xyz",
+      "source_sha256": "719da2d79c48279c4f504743a4fff5f2c5fc1736582eda2adb876828ae959afe",
+      "first_frame_atom_count": 24,
+      "protocol_status": "external-geometry-only",
+      "disposition": "reject-and-recompute"
+    },
+    {
+      "case_id": "qhnet-ood-017",
+      "source_relpath": "_references/qhnet/OpenMol/PACE/dataset/rmd17/xyz_data/azobenzene/train_03.xyz",
+      "source_sha256": "32d7586cf753c379297d06e12339d03c7bafa1f7ecb050d5c308d60bed72311b",
+      "first_frame_atom_count": 24,
+      "protocol_status": "external-geometry-only",
+      "disposition": "reject-and-recompute"
+    },
+    {
+      "case_id": "qhnet-ood-018",
+      "source_relpath": "_references/qhnet/OpenMol/PACE/dataset/rmd17/xyz_data/azobenzene/train_04.xyz",
+      "source_sha256": "d0c3d77cb08f1d88695b719873f3152ca0c7e0f504896145458380d930e803a2",
+      "first_frame_atom_count": 24,
+      "protocol_status": "external-geometry-only",
+      "disposition": "reject-and-recompute"
+    },
+    {
+      "case_id": "qhnet-ood-019",
+      "source_relpath": "_references/qhnet/OpenMol/PACE/dataset/rmd17/xyz_data/azobenzene/train_05.xyz",
+      "source_sha256": "4d9f62ff5fc6a73a5b0a8681a9309db3d54a164a5f7448a5418f7ae2cc169bcc",
+      "first_frame_atom_count": 24,
+      "protocol_status": "external-geometry-only",
+      "disposition": "reject-and-recompute"
+    },
+    {
+      "case_id": "qhnet-ood-020",
+      "source_relpath": "_references/qhnet/OpenMol/PACE/dataset/rmd17/xyz_data/benzene/test_01.xyz",
+      "source_sha256": "a14e21461bb88c1a3531d678c3e80393789934ba6b27b77a4e69619422189971",
+      "first_frame_atom_count": 12,
+      "protocol_status": "external-geometry-only",
+      "disposition": "reject-and-recompute"
+    },
+    {
+      "case_id": "qhnet-ood-021",
+      "source_relpath": "_references/qhnet/OpenMol/PACE/dataset/rmd17/xyz_data/benzene/test_02.xyz",
+      "source_sha256": "dfd7c2a50ac07ed67e123dfc008527d8f72b94fe1b56a0b9455b7af45f9e981a",
+      "first_frame_atom_count": 12,
+      "protocol_status": "external-geometry-only",
+      "disposition": "reject-and-recompute"
+    },
+    {
+      "case_id": "qhnet-ood-022",
+      "source_relpath": "_references/qhnet/OpenMol/PACE/dataset/rmd17/xyz_data/benzene/test_03.xyz",
+      "source_sha256": "ccc2c43a53e0b27b7245a2c5cced00d133056cfdf0d58a9461e51d4b7bdc381e",
+      "first_frame_atom_count": 12,
+      "protocol_status": "external-geometry-only",
+      "disposition": "reject-and-recompute"
+    },
+    {
+      "case_id": "qhnet-ood-023",
+      "source_relpath": "_references/qhnet/OpenMol/PACE/dataset/rmd17/xyz_data/benzene/test_04.xyz",
+      "source_sha256": "66e9bddf4ecf9c305adf5ed0813198b386de766b8ffc5511e196f9014e2a2f35",
+      "first_frame_atom_count": 12,
+      "protocol_status": "external-geometry-only",
+      "disposition": "reject-and-recompute"
+    },
+    {
+      "case_id": "qhnet-ood-024",
+      "source_relpath": "_references/qhnet/OpenMol/PACE/dataset/rmd17/xyz_data/benzene/test_05.xyz",
+      "source_sha256": "af1ddc4e57993e9e5ed74c58de1eb68aa71681e2674d29de61a0357ddf7de40e",
+      "first_frame_atom_count": 12,
+      "protocol_status": "external-geometry-only",
+      "disposition": "reject-and-recompute"
+    },
+    {
+      "case_id": "qhnet-ood-025",
+      "source_relpath": "_references/qhnet/OpenMol/PACE/dataset/rmd17/xyz_data/benzene/train_01.xyz",
+      "source_sha256": "3e6899cc234567a09500d183c619238b2ae34c9f09b2d4cfb0db631457246f46",
+      "first_frame_atom_count": 12,
+      "protocol_status": "external-geometry-only",
+      "disposition": "reject-and-recompute"
+    },
+    {
+      "case_id": "qhnet-ood-026",
+      "source_relpath": "_references/qhnet/OpenMol/PACE/dataset/rmd17/xyz_data/benzene/train_02.xyz",
+      "source_sha256": "d98155482b1854edfcf6639792224b4d5b79e8679638b75fcd8fcd9118e94fb1",
+      "first_frame_atom_count": 12,
+      "protocol_status": "external-geometry-only",
+      "disposition": "reject-and-recompute"
+    },
+    {
+      "case_id": "qhnet-ood-027",
+      "source_relpath": "_references/qhnet/OpenMol/PACE/dataset/rmd17/xyz_data/benzene/train_03.xyz",
+      "source_sha256": "cf1daa4360c337a3aeb8888d8bb1906e167d8f432a1771bffbfd9aa730d01fba",
+      "first_frame_atom_count": 12,
+      "protocol_status": "external-geometry-only",
+      "disposition": "reject-and-recompute"
+    },
+    {
+      "case_id": "qhnet-ood-028",
+      "source_relpath": "_references/qhnet/OpenMol/PACE/dataset/rmd17/xyz_data/benzene/train_04.xyz",
+      "source_sha256": "adb62b6ded2703c76e26b2351eb6d1abb4278e1493acef364477bc79313941b3",
+      "first_frame_atom_count": 12,
+      "protocol_status": "external-geometry-only",
+      "disposition": "reject-and-recompute"
+    },
+    {
+      "case_id": "qhnet-ood-029",
+      "source_relpath": "_references/qhnet/OpenMol/PACE/dataset/rmd17/xyz_data/benzene/train_05.xyz",
+      "source_sha256": "41198a9e33cd7c6d40cb715df38c65009011b88f66a2178d6c388b64db759610",
+      "first_frame_atom_count": 12,
+      "protocol_status": "external-geometry-only",
+      "disposition": "reject-and-recompute"
+    },
+    {
+      "case_id": "qhnet-ood-030",
+      "source_relpath": "_references/qhnet/OpenMol/PACE/dataset/rmd17/xyz_data/ethanol/test_01.xyz",
+      "source_sha256": "f892fe960821e5b9eaa275ea9959aa4a752a7d51e0a632fb1e410f67b1d43683",
+      "first_frame_atom_count": 9,
+      "protocol_status": "external-geometry-only",
+      "disposition": "reject-and-recompute"
+    },
+    {
+      "case_id": "qhnet-ood-031",
+      "source_relpath": "_references/qhnet/OpenMol/PACE/dataset/rmd17/xyz_data/ethanol/test_02.xyz",
+      "source_sha256": "4bcc52fd24cbef60c5d457e316178661906263a197d4e47d4059d01906731648",
+      "first_frame_atom_count": 9,
+      "protocol_status": "external-geometry-only",
+      "disposition": "reject-and-recompute"
+    },
+    {
+      "case_id": "qhnet-ood-032",
+      "source_relpath": "_references/qhnet/OpenMol/PACE/dataset/rmd17/xyz_data/ethanol/test_03.xyz",
+      "source_sha256": "8ad85ef150bbddaa88813e6376d4e2218b43e6bbc036bceb377da23c852b8ee0",
+      "first_frame_atom_count": 9,
+      "protocol_status": "external-geometry-only",
+      "disposition": "reject-and-recompute"
+    },
+    {
+      "case_id": "qhnet-ood-033",
+      "source_relpath": "_references/qhnet/OpenMol/PACE/dataset/rmd17/xyz_data/ethanol/test_04.xyz",
+      "source_sha256": "b18c7c8941a56f7565f63b646e02c43e3c61fcf43e200c63d9058c1d36f30f76",
+      "first_frame_atom_count": 9,
+      "protocol_status": "external-geometry-only",
+      "disposition": "reject-and-recompute"
+    },
+    {
+      "case_id": "qhnet-ood-034",
+      "source_relpath": "_references/qhnet/OpenMol/PACE/dataset/rmd17/xyz_data/ethanol/test_05.xyz",
+      "source_sha256": "f910cdab6db55db7cbc425635e43b6d34a91da4a70190940873f756bdd17f64f",
+      "first_frame_atom_count": 9,
+      "protocol_status": "external-geometry-only",
+      "disposition": "reject-and-recompute"
+    },
+    {
+      "case_id": "qhnet-ood-035",
+      "source_relpath": "_references/qhnet/OpenMol/PACE/dataset/rmd17/xyz_data/ethanol/train_01.xyz",
+      "source_sha256": "ed5a0ee5c9ce3d2ed7d554e01afb49fa4f869d573fad1d6cc23e208780b1fa4e",
+      "first_frame_atom_count": 9,
+      "protocol_status": "external-geometry-only",
+      "disposition": "reject-and-recompute"
+    },
+    {
+      "case_id": "qhnet-ood-036",
+      "source_relpath": "_references/qhnet/OpenMol/PACE/dataset/rmd17/xyz_data/ethanol/train_02.xyz",
+      "source_sha256": "5839f06952e05771ea191b1f32b97693f0d27fa57094109ccaec74a3684e25f8",
+      "first_frame_atom_count": 9,
+      "protocol_status": "external-geometry-only",
+      "disposition": "reject-and-recompute"
+    },
+    {
+      "case_id": "qhnet-ood-037",
+      "source_relpath": "_references/qhnet/OpenMol/PACE/dataset/rmd17/xyz_data/ethanol/train_03.xyz",
+      "source_sha256": "17d8cd67365962057566774099bd2e762fe033b6cae2d13d2ca554dd247dd2f6",
+      "first_frame_atom_count": 9,
+      "protocol_status": "external-geometry-only",
+      "disposition": "reject-and-recompute"
+    },
+    {
+      "case_id": "qhnet-ood-038",
+      "source_relpath": "_references/qhnet/OpenMol/PACE/dataset/rmd17/xyz_data/ethanol/train_04.xyz",
+      "source_sha256": "65cda93e3cff35efe3d3a16833c2becafedf2043bf8cc5debdbe6f7aae197c84",
+      "first_frame_atom_count": 9,
+      "protocol_status": "external-geometry-only",
+      "disposition": "reject-and-recompute"
+    },
+    {
+      "case_id": "qhnet-ood-039",
+      "source_relpath": "_references/qhnet/OpenMol/PACE/dataset/rmd17/xyz_data/ethanol/train_05.xyz",
+      "source_sha256": "d65c42c91992c454b94de9b053d672d81d2eefdf7c1c49ef0715aaae4ccd5c71",
+      "first_frame_atom_count": 9,
+      "protocol_status": "external-geometry-only",
+      "disposition": "reject-and-recompute"
+    },
+    {
+      "case_id": "qhnet-ood-040",
+      "source_relpath": "_references/qhnet/OpenMol/PACE/dataset/rmd17/xyz_data/malonaldehyde/test_01.xyz",
+      "source_sha256": "1e7f625c9e06b36e5f9b25288227f5e81504e456b14641d2ef56d4bafe0740dd",
+      "first_frame_atom_count": 9,
+      "protocol_status": "external-geometry-only",
+      "disposition": "reject-and-recompute"
+    },
+    {
+      "case_id": "qhnet-ood-041",
+      "source_relpath": "_references/qhnet/OpenMol/PACE/dataset/rmd17/xyz_data/malonaldehyde/test_02.xyz",
+      "source_sha256": "d77df454a4a9720328ff6febd5b14ce986c4f230233c8c8ff1990dbe6b0203ae",
+      "first_frame_atom_count": 9,
+      "protocol_status": "external-geometry-only",
+      "disposition": "reject-and-recompute"
+    },
+    {
+      "case_id": "qhnet-ood-042",
+      "source_relpath": "_references/qhnet/OpenMol/PACE/dataset/rmd17/xyz_data/malonaldehyde/test_03.xyz",
+      "source_sha256": "4b98a151fa81a65a81bec9b36931e017077c3906f2680e5d12649908a9408e49",
+      "first_frame_atom_count": 9,
+      "protocol_status": "external-geometry-only",
+      "disposition": "reject-and-recompute"
+    },
+    {
+      "case_id": "qhnet-ood-043",
+      "source_relpath": "_references/qhnet/OpenMol/PACE/dataset/rmd17/xyz_data/malonaldehyde/test_04.xyz",
+      "source_sha256": "7c1acb6885c2457386ae582e8bbd964d45e6bc5f1ad1ca3dd03f58755c15f41b",
+      "first_frame_atom_count": 9,
+      "protocol_status": "external-geometry-only",
+      "disposition": "reject-and-recompute"
+    },
+    {
+      "case_id": "qhnet-ood-044",
+      "source_relpath": "_references/qhnet/OpenMol/PACE/dataset/rmd17/xyz_data/malonaldehyde/test_05.xyz",
+      "source_sha256": "bb211bd5bd61fe299ac285f7f02652ba05ab33612491b99f93e41efc79205207",
+      "first_frame_atom_count": 9,
+      "protocol_status": "external-geometry-only",
+      "disposition": "reject-and-recompute"
+    },
+    {
+      "case_id": "qhnet-ood-045",
+      "source_relpath": "_references/qhnet/OpenMol/PACE/dataset/rmd17/xyz_data/malonaldehyde/train_01.xyz",
+      "source_sha256": "c3c2fa3f86f80162321ca7a33acfce820b2392f08ef81d1b8aa328661879bad9",
+      "first_frame_atom_count": 9,
+      "protocol_status": "external-geometry-only",
+      "disposition": "reject-and-recompute"
+    },
+    {
+      "case_id": "qhnet-ood-046",
+      "source_relpath": "_references/qhnet/OpenMol/PACE/dataset/rmd17/xyz_data/malonaldehyde/train_02.xyz",
+      "source_sha256": "931688ab40c7b36e36354fa96934ae9e0d677f6aa07200f38b6bcf549b8b6ba6",
+      "first_frame_atom_count": 9,
+      "protocol_status": "external-geometry-only",
+      "disposition": "reject-and-recompute"
+    },
+    {
+      "case_id": "qhnet-ood-047",
+      "source_relpath": "_references/qhnet/OpenMol/PACE/dataset/rmd17/xyz_data/malonaldehyde/train_03.xyz",
+      "source_sha256": "9f805b66c0ef7119d862f0d7779abc425faaa603f9710867897b2ba3105fd4e5",
+      "first_frame_atom_count": 9,
+      "protocol_status": "external-geometry-only",
+      "disposition": "reject-and-recompute"
+    },
+    {
+      "case_id": "qhnet-ood-048",
+      "source_relpath": "_references/qhnet/OpenMol/PACE/dataset/rmd17/xyz_data/malonaldehyde/train_04.xyz",
+      "source_sha256": "39438dd8177fc9ae303854f6f7610a139f0f96ee14e4a5d614c94727b9f056c8",
+      "first_frame_atom_count": 9,
+      "protocol_status": "external-geometry-only",
+      "disposition": "reject-and-recompute"
+    },
+    {
+      "case_id": "qhnet-ood-049",
+      "source_relpath": "_references/qhnet/OpenMol/PACE/dataset/rmd17/xyz_data/malonaldehyde/train_05.xyz",
+      "source_sha256": "4618a79e5bcd2c4caff5565ccce991a1a8353108dc70ef37f3489c5f2d22c3ce",
+      "first_frame_atom_count": 9,
+      "protocol_status": "external-geometry-only",
+      "disposition": "reject-and-recompute"
+    },
+    {
+      "case_id": "qhnet-ood-050",
+      "source_relpath": "_references/qhnet/OpenMol/PACE/dataset/rmd17/xyz_data/naphthalene/test_01.xyz",
+      "source_sha256": "203bfd85cfafdb4e8bad392b8ed18649d2befc1c629a1d53e37b0773b5eebec0",
+      "first_frame_atom_count": 18,
+      "protocol_status": "external-geometry-only",
+      "disposition": "reject-and-recompute"
+    },
+    {
+      "case_id": "qhnet-ood-051",
+      "source_relpath": "_references/qhnet/OpenMol/PACE/dataset/rmd17/xyz_data/naphthalene/test_02.xyz",
+      "source_sha256": "5f426befcf0641ab5c9b277022e7d0f43ea5c08ca364dcb71f49237d37eed629",
+      "first_frame_atom_count": 18,
+      "protocol_status": "external-geometry-only",
+      "disposition": "reject-and-recompute"
+    },
+    {
+      "case_id": "qhnet-ood-052",
+      "source_relpath": "_references/qhnet/OpenMol/PACE/dataset/rmd17/xyz_data/naphthalene/test_03.xyz",
+      "source_sha256": "740f14670948ce1c8e10048f60775b569d546558ee16930f4d56236e94df2688",
+      "first_frame_atom_count": 18,
+      "protocol_status": "external-geometry-only",
+      "disposition": "reject-and-recompute"
+    },
+    {
+      "case_id": "qhnet-ood-053",
+      "source_relpath": "_references/qhnet/OpenMol/PACE/dataset/rmd17/xyz_data/naphthalene/test_04.xyz",
+      "source_sha256": "7a7df129027789c19947f097d2fad2d0440e1f5a58264d32706038fe2a05946a",
+      "first_frame_atom_count": 18,
+      "protocol_status": "external-geometry-only",
+      "disposition": "reject-and-recompute"
+    },
+    {
+      "case_id": "qhnet-ood-054",
+      "source_relpath": "_references/qhnet/OpenMol/PACE/dataset/rmd17/xyz_data/naphthalene/test_05.xyz",
+      "source_sha256": "4105c792c3d806ebc5f30fbdeab3b577c685966791b56aa4cb4b6fdce0fa50a5",
+      "first_frame_atom_count": 18,
+      "protocol_status": "external-geometry-only",
+      "disposition": "reject-and-recompute"
+    },
+    {
+      "case_id": "qhnet-ood-055",
+      "source_relpath": "_references/qhnet/OpenMol/PACE/dataset/rmd17/xyz_data/naphthalene/train_01.xyz",
+      "source_sha256": "e12f40cdc25168783fb896dc71d2840ca1aa304f56d7a1c18523445af10d16a9",
+      "first_frame_atom_count": 18,
+      "protocol_status": "external-geometry-only",
+      "disposition": "reject-and-recompute"
+    },
+    {
+      "case_id": "qhnet-ood-056",
+      "source_relpath": "_references/qhnet/OpenMol/PACE/dataset/rmd17/xyz_data/naphthalene/train_02.xyz",
+      "source_sha256": "3a5156a69554625b56669d49e61a736229c883846aea1a5ee17c869fcf88b124",
+      "first_frame_atom_count": 18,
+      "protocol_status": "external-geometry-only",
+      "disposition": "reject-and-recompute"
+    },
+    {
+      "case_id": "qhnet-ood-057",
+      "source_relpath": "_references/qhnet/OpenMol/PACE/dataset/rmd17/xyz_data/naphthalene/train_03.xyz",
+      "source_sha256": "492765a72d55f5879b479ddaf8a73001ddf84ec1cb342f23f1311ebac50b0c72",
+      "first_frame_atom_count": 18,
+      "protocol_status": "external-geometry-only",
+      "disposition": "reject-and-recompute"
+    },
+    {
+      "case_id": "qhnet-ood-058",
+      "source_relpath": "_references/qhnet/OpenMol/PACE/dataset/rmd17/xyz_data/naphthalene/train_04.xyz",
+      "source_sha256": "840c5eaf904349bcdd7ce55d782c8a64c1fb88a92a406980f6c2d70f24639392",
+      "first_frame_atom_count": 18,
+      "protocol_status": "external-geometry-only",
+      "disposition": "reject-and-recompute"
+    },
+    {
+      "case_id": "qhnet-ood-059",
+      "source_relpath": "_references/qhnet/OpenMol/PACE/dataset/rmd17/xyz_data/naphthalene/train_05.xyz",
+      "source_sha256": "93116ccb30effd75baec0f96563b1e23473b47837769b80a03cad32284b631c5",
+      "first_frame_atom_count": 18,
+      "protocol_status": "external-geometry-only",
+      "disposition": "reject-and-recompute"
+    },
+    {
+      "case_id": "qhnet-ood-060",
+      "source_relpath": "_references/qhnet/OpenMol/PACE/dataset/rmd17/xyz_data/paracetamol/test_01.xyz",
+      "source_sha256": "15fdfd689aa21fa33de1661a68c3ef0a4f73f5a84ef5af084a1682c5c37cedd6",
+      "first_frame_atom_count": 20,
+      "protocol_status": "external-geometry-only",
+      "disposition": "reject-and-recompute"
+    },
+    {
+      "case_id": "qhnet-ood-061",
+      "source_relpath": "_references/qhnet/OpenMol/PACE/dataset/rmd17/xyz_data/paracetamol/test_02.xyz",
+      "source_sha256": "f3aff9e7199771c0762856df8db8034de2c0bc8ae56891424863b604aafa4d34",
+      "first_frame_atom_count": 20,
+      "protocol_status": "external-geometry-only",
+      "disposition": "reject-and-recompute"
+    },
+    {
+      "case_id": "qhnet-ood-062",
+      "source_relpath": "_references/qhnet/OpenMol/PACE/dataset/rmd17/xyz_data/paracetamol/test_03.xyz",
+      "source_sha256": "30165c80b1995734e9a954fd67cfbb659206ebbaa45e0329c488195d761fbe4f",
+      "first_frame_atom_count": 20,
+      "protocol_status": "external-geometry-only",
+      "disposition": "reject-and-recompute"
+    },
+    {
+      "case_id": "qhnet-ood-063",
+      "source_relpath": "_references/qhnet/OpenMol/PACE/dataset/rmd17/xyz_data/paracetamol/test_04.xyz",
+      "source_sha256": "fcd4afbc06febfabc4861d0c7cf1bc1fef68162dbe49578072becaf2d2500fcd",
+      "first_frame_atom_count": 20,
+      "protocol_status": "external-geometry-only",
+      "disposition": "reject-and-recompute"
+    },
+    {
+      "case_id": "qhnet-ood-064",
+      "source_relpath": "_references/qhnet/OpenMol/PACE/dataset/rmd17/xyz_data/paracetamol/test_05.xyz",
+      "source_sha256": "78388babcf4be6d4df0e16cada95431f88d5fc5aae6c0b7c1abd672ebef58870",
+      "first_frame_atom_count": 20,
+      "protocol_status": "external-geometry-only",
+      "disposition": "reject-and-recompute"
+    },
+    {
+      "case_id": "qhnet-ood-065",
+      "source_relpath": "_references/qhnet/OpenMol/PACE/dataset/rmd17/xyz_data/paracetamol/train_01.xyz",
+      "source_sha256": "9e2b52cdf5236b84f9c0293ab8376c176ddf909b6a5f8b0dc8c377e48aac07cb",
+      "first_frame_atom_count": 20,
+      "protocol_status": "external-geometry-only",
+      "disposition": "reject-and-recompute"
+    },
+    {
+      "case_id": "qhnet-ood-066",
+      "source_relpath": "_references/qhnet/OpenMol/PACE/dataset/rmd17/xyz_data/paracetamol/train_02.xyz",
+      "source_sha256": "089aa1f93529ffb7f610e4cd8701286de064042dcaa98184fb6a8e4c068d117e",
+      "first_frame_atom_count": 20,
+      "protocol_status": "external-geometry-only",
+      "disposition": "reject-and-recompute"
+    },
+    {
+      "case_id": "qhnet-ood-067",
+      "source_relpath": "_references/qhnet/OpenMol/PACE/dataset/rmd17/xyz_data/paracetamol/train_03.xyz",
+      "source_sha256": "bf513930e2301a6f8306e071a9b030426ce4cbc25e9c435112820adafbe69c51",
+      "first_frame_atom_count": 20,
+      "protocol_status": "external-geometry-only",
+      "disposition": "reject-and-recompute"
+    },
+    {
+      "case_id": "qhnet-ood-068",
+      "source_relpath": "_references/qhnet/OpenMol/PACE/dataset/rmd17/xyz_data/paracetamol/train_04.xyz",
+      "source_sha256": "375ba6bb62eaf8d117c9453e134e51dcfcab014115f7fddc323f5f4022246bfd",
+      "first_frame_atom_count": 20,
+      "protocol_status": "external-geometry-only",
+      "disposition": "reject-and-recompute"
+    },
+    {
+      "case_id": "qhnet-ood-069",
+      "source_relpath": "_references/qhnet/OpenMol/PACE/dataset/rmd17/xyz_data/paracetamol/train_05.xyz",
+      "source_sha256": "38e7f12bfc2ed5c939f6267b4f4964bd12a7c89b74fbf5181a89131ef814751c",
+      "first_frame_atom_count": 20,
+      "protocol_status": "external-geometry-only",
+      "disposition": "reject-and-recompute"
+    },
+    {
+      "case_id": "qhnet-ood-070",
+      "source_relpath": "_references/qhnet/OpenMol/PACE/dataset/rmd17/xyz_data/salicylic/test_01.xyz",
+      "source_sha256": "e13aef8245910794b62564b83e8c32a84ccb2a1e251b64a2d20452b0a51b97e5",
+      "first_frame_atom_count": 16,
+      "protocol_status": "external-geometry-only",
+      "disposition": "reject-and-recompute"
+    },
+    {
+      "case_id": "qhnet-ood-071",
+      "source_relpath": "_references/qhnet/OpenMol/PACE/dataset/rmd17/xyz_data/salicylic/test_02.xyz",
+      "source_sha256": "93c10358e8e991398ecd8cf7ff2024779a66c1bd031742c28c732dad39c9bec5",
+      "first_frame_atom_count": 16,
+      "protocol_status": "external-geometry-only",
+      "disposition": "reject-and-recompute"
+    },
+    {
+      "case_id": "qhnet-ood-072",
+      "source_relpath": "_references/qhnet/OpenMol/PACE/dataset/rmd17/xyz_data/salicylic/test_03.xyz",
+      "source_sha256": "dacca605feca1c9ed5a7dc756d226af1f4962541322a5d1410c08543811b18b2",
+      "first_frame_atom_count": 16,
+      "protocol_status": "external-geometry-only",
+      "disposition": "reject-and-recompute"
+    },
+    {
+      "case_id": "qhnet-ood-073",
+      "source_relpath": "_references/qhnet/OpenMol/PACE/dataset/rmd17/xyz_data/salicylic/test_04.xyz",
+      "source_sha256": "065b8e953474b6ad862cc66eb9d8f5dd478702a6e11eca7129f991177afdc9b0",
+      "first_frame_atom_count": 16,
+      "protocol_status": "external-geometry-only",
+      "disposition": "reject-and-recompute"
+    },
+    {
+      "case_id": "qhnet-ood-074",
+      "source_relpath": "_references/qhnet/OpenMol/PACE/dataset/rmd17/xyz_data/salicylic/test_05.xyz",
+      "source_sha256": "9f77054c933d684eb75eda823d2d4997e19e8bb5be49f03ec862d6a992210607",
+      "first_frame_atom_count": 16,
+      "protocol_status": "external-geometry-only",
+      "disposition": "reject-and-recompute"
+    },
+    {
+      "case_id": "qhnet-ood-075",
+      "source_relpath": "_references/qhnet/OpenMol/PACE/dataset/rmd17/xyz_data/salicylic/train_01.xyz",
+      "source_sha256": "05b465efe0b3bc7601837db7ca1e8a49a94b8f9e100d1f3dbaa48ace0770210d",
+      "first_frame_atom_count": 16,
+      "protocol_status": "external-geometry-only",
+      "disposition": "reject-and-recompute"
+    },
+    {
+      "case_id": "qhnet-ood-076",
+      "source_relpath": "_references/qhnet/OpenMol/PACE/dataset/rmd17/xyz_data/salicylic/train_02.xyz",
+      "source_sha256": "01b46d2ae3ead8bc2e30293f8bf4581f0bcf626aca32e70770c9acd933fed79d",
+      "first_frame_atom_count": 16,
+      "protocol_status": "external-geometry-only",
+      "disposition": "reject-and-recompute"
+    },
+    {
+      "case_id": "qhnet-ood-077",
+      "source_relpath": "_references/qhnet/OpenMol/PACE/dataset/rmd17/xyz_data/salicylic/train_03.xyz",
+      "source_sha256": "b1de21a09f3498c486b8dc1f811b9376707249ee348ee6e74f8211627f762839",
+      "first_frame_atom_count": 16,
+      "protocol_status": "external-geometry-only",
+      "disposition": "reject-and-recompute"
+    },
+    {
+      "case_id": "qhnet-ood-078",
+      "source_relpath": "_references/qhnet/OpenMol/PACE/dataset/rmd17/xyz_data/salicylic/train_04.xyz",
+      "source_sha256": "8893794633b168c21b6ed50c9638c93c096848110f2bb2494abf25b6790edf00",
+      "first_frame_atom_count": 16,
+      "protocol_status": "external-geometry-only",
+      "disposition": "reject-and-recompute"
+    },
+    {
+      "case_id": "qhnet-ood-079",
+      "source_relpath": "_references/qhnet/OpenMol/PACE/dataset/rmd17/xyz_data/salicylic/train_05.xyz",
+      "source_sha256": "27855fcf029d19fc4ebc6e232d10d4ca3bc1d1f41e063a53c4b1187b1a3aaca4",
+      "first_frame_atom_count": 16,
+      "protocol_status": "external-geometry-only",
+      "disposition": "reject-and-recompute"
+    },
+    {
+      "case_id": "qhnet-ood-080",
+      "source_relpath": "_references/qhnet/OpenMol/PACE/dataset/rmd17/xyz_data/toluene/test_01.xyz",
+      "source_sha256": "f2d940a707e2cc3b21aef7282dfccf15e75bac58e00e089b973dabbbd7492e88",
+      "first_frame_atom_count": 15,
+      "protocol_status": "external-geometry-only",
+      "disposition": "reject-and-recompute"
+    },
+    {
+      "case_id": "qhnet-ood-081",
+      "source_relpath": "_references/qhnet/OpenMol/PACE/dataset/rmd17/xyz_data/toluene/test_02.xyz",
+      "source_sha256": "e4d0159cc63b789b2f4f35e4b2a4eb27ec8ac4c24ee47e246991361c5f81c835",
+      "first_frame_atom_count": 15,
+      "protocol_status": "external-geometry-only",
+      "disposition": "reject-and-recompute"
+    },
+    {
+      "case_id": "qhnet-ood-082",
+      "source_relpath": "_references/qhnet/OpenMol/PACE/dataset/rmd17/xyz_data/toluene/test_03.xyz",
+      "source_sha256": "89035d888aa2db5f92ca3e97cd3b701a072ac43d74e712b9484777c974715a4b",
+      "first_frame_atom_count": 15,
+      "protocol_status": "external-geometry-only",
+      "disposition": "reject-and-recompute"
+    },
+    {
+      "case_id": "qhnet-ood-083",
+      "source_relpath": "_references/qhnet/OpenMol/PACE/dataset/rmd17/xyz_data/toluene/test_04.xyz",
+      "source_sha256": "00fa1e544660122748f95ec407166a444bb839af3012d962c769ca6dcc448659",
+      "first_frame_atom_count": 15,
+      "protocol_status": "external-geometry-only",
+      "disposition": "reject-and-recompute"
+    },
+    {
+      "case_id": "qhnet-ood-084",
+      "source_relpath": "_references/qhnet/OpenMol/PACE/dataset/rmd17/xyz_data/toluene/test_05.xyz",
+      "source_sha256": "42b184383e224288c352d9e345f20cd341ce0fe084873e2e50e2afb719cd89f4",
+      "first_frame_atom_count": 15,
+      "protocol_status": "external-geometry-only",
+      "disposition": "reject-and-recompute"
+    },
+    {
+      "case_id": "qhnet-ood-085",
+      "source_relpath": "_references/qhnet/OpenMol/PACE/dataset/rmd17/xyz_data/toluene/train_01.xyz",
+      "source_sha256": "d2966ac02c2e4fc7a9f0cd307701657c365d40b21a30031bd02bb6804b47a732",
+      "first_frame_atom_count": 15,
+      "protocol_status": "external-geometry-only",
+      "disposition": "reject-and-recompute"
+    },
+    {
+      "case_id": "qhnet-ood-086",
+      "source_relpath": "_references/qhnet/OpenMol/PACE/dataset/rmd17/xyz_data/toluene/train_02.xyz",
+      "source_sha256": "d36f5a383362453a785d4074f7f398ec21ae70317ede2ac2133ca66974c8474f",
+      "first_frame_atom_count": 15,
+      "protocol_status": "external-geometry-only",
+      "disposition": "reject-and-recompute"
+    },
+    {
+      "case_id": "qhnet-ood-087",
+      "source_relpath": "_references/qhnet/OpenMol/PACE/dataset/rmd17/xyz_data/toluene/train_03.xyz",
+      "source_sha256": "2e86c5e72a7b573a3477a64d0627014f1ed1530597c48992eee80c8d454a29e8",
+      "first_frame_atom_count": 15,
+      "protocol_status": "external-geometry-only",
+      "disposition": "reject-and-recompute"
+    },
+    {
+      "case_id": "qhnet-ood-088",
+      "source_relpath": "_references/qhnet/OpenMol/PACE/dataset/rmd17/xyz_data/toluene/train_04.xyz",
+      "source_sha256": "0d927f772415b944309b3806958a1531feb5b7234c61b1140158d1648c54dba1",
+      "first_frame_atom_count": 15,
+      "protocol_status": "external-geometry-only",
+      "disposition": "reject-and-recompute"
+    },
+    {
+      "case_id": "qhnet-ood-089",
+      "source_relpath": "_references/qhnet/OpenMol/PACE/dataset/rmd17/xyz_data/toluene/train_05.xyz",
+      "source_sha256": "b70031dad3109c571c478c652bb5c8457e092d76fa422567bcdc3052c197f3d0",
+      "first_frame_atom_count": 15,
+      "protocol_status": "external-geometry-only",
+      "disposition": "reject-and-recompute"
+    },
+    {
+      "case_id": "qhnet-ood-090",
+      "source_relpath": "_references/qhnet/OpenMol/PACE/dataset/rmd17/xyz_data/uracil/test_01.xyz",
+      "source_sha256": "c3e6d1c8aa1b8066dd3096529b99974dce60264a942b7142dfdb32ffd2b18251",
+      "first_frame_atom_count": 12,
+      "protocol_status": "external-geometry-only",
+      "disposition": "reject-and-recompute"
+    },
+    {
+      "case_id": "qhnet-ood-091",
+      "source_relpath": "_references/qhnet/OpenMol/PACE/dataset/rmd17/xyz_data/uracil/test_02.xyz",
+      "source_sha256": "012f97f369dc63aea8eee9b173be59aee6dc808cf6063e07365d9e451420f1be",
+      "first_frame_atom_count": 12,
+      "protocol_status": "external-geometry-only",
+      "disposition": "reject-and-recompute"
+    },
+    {
+      "case_id": "qhnet-ood-092",
+      "source_relpath": "_references/qhnet/OpenMol/PACE/dataset/rmd17/xyz_data/uracil/test_03.xyz",
+      "source_sha256": "579aceae4eb4ebb97d826e30e0bcb23d825988611c924649ee3c0ec32216a1ce",
+      "first_frame_atom_count": 12,
+      "protocol_status": "external-geometry-only",
+      "disposition": "reject-and-recompute"
+    },
+    {
+      "case_id": "qhnet-ood-093",
+      "source_relpath": "_references/qhnet/OpenMol/PACE/dataset/rmd17/xyz_data/uracil/test_04.xyz",
+      "source_sha256": "dd58fbfc30b231305c8519be7c62e15c9554a0a9665861cb290a36009012e8d2",
+      "first_frame_atom_count": 12,
+      "protocol_status": "external-geometry-only",
+      "disposition": "reject-and-recompute"
+    },
+    {
+      "case_id": "qhnet-ood-094",
+      "source_relpath": "_references/qhnet/OpenMol/PACE/dataset/rmd17/xyz_data/uracil/test_05.xyz",
+      "source_sha256": "410458abff995e116dc980ed26c3cb46634952402e79873caa6a4331caca375d",
+      "first_frame_atom_count": 12,
+      "protocol_status": "external-geometry-only",
+      "disposition": "reject-and-recompute"
+    },
+    {
+      "case_id": "qhnet-ood-095",
+      "source_relpath": "_references/qhnet/OpenMol/PACE/dataset/rmd17/xyz_data/uracil/train_01.xyz",
+      "source_sha256": "c20274a712dea9b047e87e83982e5f4e9ad8a6fda583f3ea7b79310a1caf824c",
+      "first_frame_atom_count": 12,
+      "protocol_status": "external-geometry-only",
+      "disposition": "reject-and-recompute"
+    },
+    {
+      "case_id": "qhnet-ood-096",
+      "source_relpath": "_references/qhnet/OpenMol/PACE/dataset/rmd17/xyz_data/uracil/train_02.xyz",
+      "source_sha256": "6445a1b4ed0d2b2660d172adde74e3e633a2960cf35768bd1c67aa2d46482ca8",
+      "first_frame_atom_count": 12,
+      "protocol_status": "external-geometry-only",
+      "disposition": "reject-and-recompute"
+    },
+    {
+      "case_id": "qhnet-ood-097",
+      "source_relpath": "_references/qhnet/OpenMol/PACE/dataset/rmd17/xyz_data/uracil/train_03.xyz",
+      "source_sha256": "9de6fdc733e8da27e499ae77c2f6445aa9fa71a946f978fc678d366a62765e57",
+      "first_frame_atom_count": 12,
+      "protocol_status": "external-geometry-only",
+      "disposition": "reject-and-recompute"
+    },
+    {
+      "case_id": "qhnet-ood-098",
+      "source_relpath": "_references/qhnet/OpenMol/PACE/dataset/rmd17/xyz_data/uracil/train_04.xyz",
+      "source_sha256": "f871e99267e2582c41c89de0239b90371baf53c046306c942d29291cb8285686",
+      "first_frame_atom_count": 12,
+      "protocol_status": "external-geometry-only",
+      "disposition": "reject-and-recompute"
+    },
+    {
+      "case_id": "qhnet-ood-099",
+      "source_relpath": "_references/qhnet/OpenMol/PACE/dataset/rmd17/xyz_data/uracil/train_05.xyz",
+      "source_sha256": "5fc589f6aa16f8464292862bf6cef615af4559430ede6f5096cba34f7a58cad5",
+      "first_frame_atom_count": 12,
+      "protocol_status": "external-geometry-only",
+      "disposition": "reject-and-recompute"
+    }
+  ],
+  "response_labels_included": false
+}
