@@ -18,6 +18,10 @@ The pull request describes the scientific identity, independent reference, numer
 
 The required `Response validation gate` must pass before merge. It includes the archive replay, the molecular CPU regression, and the pre-commit hooks. Changes that alter a method, state, response, precision, or cost contract need an independent reference and a follow-up issue when the current evidence is incomplete.
 
+## Review identity
+
+The repository currently follows GenerativeQC's zero-required-approval ruleset while the project establishes an independent reviewer. The active GitHub account has repository administration for CI and ruleset maintenance. A second GitHub account can be added as a collaborator and then used for independent review. After that account is available, raise `required_approving_review_count` to `1` and add it to `.github/CODEOWNERS` for the scientific paths. Do not put passwords, personal access tokens, or cluster credentials in the repository.
+
 ## Merge and retain evidence
 
 `main` accepts pull requests through the repository ruleset and uses squash merges. Review the final diff after generated files are updated. Retain compact scientific records with source, input, environment, commands, gates, failures, and costs. Keep transient runs in `.work/` or CI artifacts. Do not publish a release or push a tag without explicit authorization for that operation.
