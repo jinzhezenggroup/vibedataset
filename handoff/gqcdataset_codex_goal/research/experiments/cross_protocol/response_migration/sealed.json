@@ -1,0 +1,104 @@
+{
+  "protocol": {
+    "producer": "response_migration.py",
+    "source_asset_protocol": "RHF/STO-3G, water, field x, q0, origin 0",
+    "target_labels_read": false
+  },
+  "requests": [
+    {
+      "basis": "sto-3g",
+      "charge": 0,
+      "classification": "direct_reuse",
+      "field": "x",
+      "geometry": "O 0.000000 0.000000 0.000000; H 0.000000 -1.432336 1.107153; H 0.000000 1.432336 1.107153",
+      "id": "direct_same_protocol",
+      "method": "rhf",
+      "observable": "q0",
+      "spin": 0
+    },
+    {
+      "basis": "6-31g*",
+      "charge": 0,
+      "classification": "initial_guess_only",
+      "field": "x",
+      "geometry": "O 0.000000 0.000000 0.000000; H 0.000000 -1.432336 1.107153; H 0.000000 1.432336 1.107153",
+      "id": "basis_change",
+      "method": "rhf",
+      "observable": "q0",
+      "spin": 0
+    },
+    {
+      "basis": "6-31g*",
+      "charge": 0,
+      "classification": "refine_required",
+      "field": "x",
+      "geometry": "O 0.000000 0.000000 0.000000; H 0.000000 -1.432336 1.107153; H 0.000000 1.432336 1.107153",
+      "id": "method_change",
+      "method": "b3lyp",
+      "observable": "q0",
+      "spin": 0
+    },
+    {
+      "basis": "sto-3g",
+      "charge": 1,
+      "classification": "reject_and_recompute",
+      "field": "x",
+      "geometry": "H 0.000000 0.000000 0.000000; H 0.000000 0.000000 1.400000",
+      "id": "open_shell",
+      "method": "uhf",
+      "observable": "q0",
+      "spin": 1
+    },
+    {
+      "basis": "sto-3g",
+      "charge": 0,
+      "classification": "evidence_unavailable",
+      "field": "x",
+      "geometry": "H 0.000000 0.000000 0.000000; H 0.000000 0.000000 10.000000",
+      "id": "low_gap",
+      "method": "rhf",
+      "observable": "q0",
+      "spin": 0
+    }
+  ],
+  "source_asset": {
+    "asset_id": "water-rhf-sto3g-x-q0",
+    "basis": "sto-3g",
+    "charge": 0,
+    "dimension": 10,
+    "energy_hartree": -74.96301837607457,
+    "field": "x",
+    "geometry": "O 0.000000 0.000000 0.000000; H 0.000000 -1.432336 1.107153; H 0.000000 1.432336 1.107153",
+    "method": "rhf",
+    "minimum_gap_hartree": 0.9958779376114824,
+    "multiplicity": 1,
+    "nao": 7,
+    "nelectron": 10,
+    "observable": "q0",
+    "physical_residual_l2": 1.1721775244379452e-16,
+    "protocol_identity": "7abdfcfa459d7fb186fc4ed81b1b38193812c3b75f51b867d0a9abed71688fee",
+    "response_counts": {
+      "density_columns": 2,
+      "response_operator_actions": 2
+    },
+    "response_vector": [
+      -1.8726584415158853e-19,
+      -1.4161542926355775e-17,
+      -1.3202152315462816e-16,
+      2.902980424161604e-17,
+      -0.14178571160085562,
+      -1.6706555999951866e-18,
+      -1.6918132366785358e-16,
+      -1.2609245765421932e-30,
+      7.7726752855861e-17,
+      -1.3068192556838366e-15
+    ],
+    "response_vector_sha256": "7c7546cd33e79ded4344e42bc1cd95e8b179555fc0de603c05ffdc19d0c2163e",
+    "scf_converged": true,
+    "scf_cycles": 7,
+    "seconds": 0.16522361700026522,
+    "spin": 0,
+    "status": "qualified",
+    "target_value": 1.1387865001328872e-16
+  }
+}

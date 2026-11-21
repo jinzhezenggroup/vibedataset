@@ -1,0 +1,346 @@
+{
+  "archived_strong_baselines": {
+    "cross-three/adjoint": {
+      "input_bytes": 0.0,
+      "marg_rhs": 96.0,
+      "output_bytes": 45956.0,
+      "quality_jk": 0.0,
+      "retained_bytes": 31508.0,
+      "total_jk": 7368.0,
+      "total_seconds": 120.58027115126606
+    },
+    "cross-three/dense": {
+      "input_bytes": 0.0,
+      "marg_rhs": 0.0,
+      "output_bytes": 45952.0,
+      "quality_jk": 96.0,
+      "retained_bytes": 31508.0,
+      "total_jk": 3504.0,
+      "total_seconds": 113.2893996933708
+    },
+    "cross-three/direct": {
+      "input_bytes": 0.0,
+      "marg_rhs": 96.0,
+      "output_bytes": 45956.0,
+      "quality_jk": 0.0,
+      "retained_bytes": 31508.0,
+      "total_jk": 7408.0,
+      "total_seconds": 120.59346315619769
+    },
+    "cross-three/hand_adjoint": {
+      "input_bytes": 31508.0,
+      "marg_rhs": 64.0,
+      "output_bytes": 55244.0,
+      "quality_jk": 0.0,
+      "retained_bytes": 31508.0,
+      "total_jk": 6656.0,
+      "total_seconds": 119.02624979329994
+    },
+    "cross-three/hand_field": {
+      "input_bytes": 31508.0,
+      "marg_rhs": 64.0,
+      "output_bytes": 55204.0,
+      "quality_jk": 0.0,
+      "retained_bytes": 31508.0,
+      "total_jk": 6656.0,
+      "total_seconds": 119.06284069118556
+    },
+    "cross-three/two": {
+      "input_bytes": 31508.0,
+      "marg_rhs": 64.0,
+      "output_bytes": 55204.0,
+      "quality_jk": 0.0,
+      "retained_bytes": 31508.0,
+      "total_jk": 6656.0,
+      "total_seconds": 118.86176161913318
+    },
+    "cross-three/vectors": {
+      "input_bytes": 134052.0,
+      "marg_rhs": 32.0,
+      "output_bytes": 45984.0,
+      "quality_jk": 64.0,
+      "retained_bytes": 165560.0,
+      "total_jk": 5472.0,
+      "total_seconds": 116.60111093724845
+    },
+    "cycle-one/adjoint": {
+      "input_bytes": 0.0,
+      "marg_rhs": 32.0,
+      "output_bytes": 17188.0,
+      "quality_jk": 0.0,
+      "retained_bytes": 45948.0,
+      "total_jk": 6080.0,
+      "total_seconds": 118.29825940224691
+    },
+    "cycle-one/dense": {
+      "input_bytes": 0.0,
+      "marg_rhs": 0.0,
+      "output_bytes": 17176.0,
+      "quality_jk": 32.0,
+      "retained_bytes": 45948.0,
+      "total_jk": 4192.0,
+      "total_seconds": 115.15226122419699
+    },
+    "cycle-one/direct": {
+      "input_bytes": 0.0,
+      "marg_rhs": 32.0,
+      "output_bytes": 17196.0,
+      "quality_jk": 0.0,
+      "retained_bytes": 45948.0,
+      "total_jk": 6208.0,
+      "total_seconds": 118.51359842316015
+    },
+    "cycle-one/hand_adjoint": {
+      "input_bytes": 0.0,
+      "marg_rhs": 32.0,
+      "output_bytes": 17188.0,
+      "quality_jk": 0.0,
+      "retained_bytes": 45948.0,
+      "total_jk": 6080.0,
+      "total_seconds": 118.27934016720974
+    },
+    "cycle-one/hand_field": {
+      "input_bytes": 0.0,
+      "marg_rhs": 32.0,
+      "output_bytes": 17196.0,
+      "quality_jk": 0.0,
+      "retained_bytes": 45948.0,
+      "total_jk": 6208.0,
+      "total_seconds": 118.3878259381163
+    },
+    "cycle-one/two": {
+      "input_bytes": 0.0,
+      "marg_rhs": 32.0,
+      "output_bytes": 17196.0,
+      "quality_jk": 0.0,
+      "retained_bytes": 45948.0,
+      "total_jk": 6208.0,
+      "total_seconds": 118.40600483221351
+    },
+    "cycle-one/vectors": {
+      "input_bytes": 199728.0,
+      "marg_rhs": 0.0,
+      "output_bytes": 17184.0,
+      "quality_jk": 32.0,
+      "retained_bytes": 245676.0,
+      "total_jk": 4192.0,
+      "total_seconds": 115.22024499508552
+    },
+    "cycle-three/adjoint": {
+      "input_bytes": 0.0,
+      "marg_rhs": 96.0,
+      "output_bytes": 45956.0,
+      "quality_jk": 0.0,
+      "retained_bytes": 45948.0,
+      "total_jk": 8120.0,
+      "total_seconds": 122.19066820625449
+    },
+    "cycle-three/dense": {
+      "input_bytes": 0.0,
+      "marg_rhs": 0.0,
+      "output_bytes": 45952.0,
+      "quality_jk": 96.0,
+      "retained_bytes": 45948.0,
+      "total_jk": 4256.0,
+      "total_seconds": 115.24652595023508
+    },
+    "cycle-three/direct": {
+      "input_bytes": 0.0,
+      "marg_rhs": 96.0,
+      "output_bytes": 45956.0,
+      "quality_jk": 0.0,
+      "retained_bytes": 45948.0,
+      "total_jk": 8160.0,
+      "total_seconds": 122.21347765621613
+    },
+    "cycle-three/hand_adjoint": {
+      "input_bytes": 45948.0,
+      "marg_rhs": 64.0,
+      "output_bytes": 59940.0,
+      "quality_jk": 0.0,
+      "retained_bytes": 45948.0,
+      "total_jk": 7456.0,
+      "total_seconds": 120.85691605610191
+    },
+    "cycle-three/hand_field": {
+      "input_bytes": 45948.0,
+      "marg_rhs": 64.0,
+      "output_bytes": 59940.0,
+      "quality_jk": 0.0,
+      "retained_bytes": 45948.0,
+      "total_jk": 7456.0,
+      "total_seconds": 120.78171474911505
+    },
+    "cycle-three/two": {
+      "input_bytes": 45948.0,
+      "marg_rhs": 64.0,
+      "output_bytes": 60072.0,
+      "quality_jk": 0.0,
+      "retained_bytes": 45948.0,
+      "total_jk": 7456.0,
+      "total_seconds": 129.493495663075
+    },
+    "cycle-three/vectors": {
+      "input_bytes": 199728.0,
+      "marg_rhs": 0.0,
+      "output_bytes": 45956.0,
+      "quality_jk": 96.0,
+      "retained_bytes": 245676.0,
+      "total_jk": 4256.0,
+      "total_seconds": 115.3218837051536
+    }
+  },
+  "candidate_search": {
+    "cross-three": {
+      "candidate_count": 15,
+      "multi3_score": [
+        2,
+        3,
+        5
+      ],
+      "multi4_score": [
+        2,
+        3,
+        5
+      ],
+      "selected_columns": [
+        "xy",
+        "z"
+      ],
+      "selected_plan_equal_to_multi3": true
+    },
+    "cycle-one": {
+      "candidate_count": 15,
+      "multi3_score": [
+        1,
+        1,
+        1
+      ],
+      "multi4_score": [
+        1,
+        1,
+        1
+      ],
+      "selected_columns": [
+        "x"
+      ],
+      "selected_plan_equal_to_multi3": true
+    },
+    "cycle-three": {
+      "candidate_count": 15,
+      "multi3_score": [
+        2,
+        4,
+        7
+      ],
+      "multi4_score": [
+        2,
+        4,
+        7
+      ],
+      "selected_columns": [
+        "xy",
+        "yz"
+      ],
+      "selected_plan_equal_to_multi3": true
+    }
+  },
+  "comparison": {
+    "hand_adjoint_independent": {
+      "accepted_outputs": 96,
+      "cost": {
+        "input_bytes": 45948,
+        "jk_calls": 9176,
+        "output_bytes": 123084,
+        "quality_native_actions": 0,
+        "rhs_columns": 192,
+        "seconds": 13.537839063997126,
+        "submitted_blocks": 96
+      },
+      "cost_vs_two": 40,
+      "fallbacks": 0,
+      "max_value_difference_vs_two": 6.146194664324867e-12,
+      "outputs_vs_two": 32,
+      "records": 96,
+      "terms_vs_two": 32
+    },
+    "hand_field_independent": {
+      "accepted_outputs": 96,
+      "cost": {
+        "input_bytes": 45948,
+        "jk_calls": 9344,
+        "output_bytes": 123092,
+        "quality_native_actions": 0,
+        "rhs_columns": 192,
+        "seconds": 13.77821302200573,
+        "submitted_blocks": 96
+      },
+      "cost_vs_two": 64,
+      "fallbacks": 0,
+      "max_value_difference_vs_two": 3.367972567502875e-12,
+      "outputs_vs_two": 64,
+      "records": 96,
+      "terms_vs_two": 64
+    },
+    "multi4": {
+      "accepted_outputs": 96,
+      "cost": {
+        "input_bytes": 77456,
+        "jk_calls": 8592,
+        "output_bytes": 132472,
+        "quality_native_actions": 0,
+        "rhs_columns": 160,
+        "seconds": 18.90474620999794,
+        "submitted_blocks": 96
+      },
+      "cost_vs_two": 96,
+      "fallbacks": 0,
+      "max_value_difference_vs_two": 0.0,
+      "outputs_vs_two": 96,
+      "records": 96,
+      "terms_vs_two": 96
+    }
+  },
+  "conditioning_and_cancellation": {
+    "max_cancellation_ratio": 1215.7039899082392
+  },
+  "independent_hand_terms": {
+    "hand_adjoint_independent": 96,
+    "hand_field_independent": 96
+  },
+  "protocol": {
+    "candidate_planner_sha256": "5f5b5d4b27ae1eaa22e04c8dfda3f59c010176a463c766e2feecd380c541121f",
+    "holdout_sources": [
+      "qm9-000005",
+      "qm9-000007",
+      "qm9-000008",
+      "qm9-000013",
+      "qm9-000014",
+      "qm9-000015",
+      "qm9-000016",
+      "qm9-000017"
+    ],
+    "independent_hand_module_sha256": "6af6fa157aa2e58d1e59a1f0b65f177850fcbf3fba54cc7d8c0306ca8d55b331",
+    "methods": [
+      "multi4",
+      "hand_field_independent",
+      "hand_adjoint_independent"
+    ],
+    "repetitions": 4,
+    "scenarios": [
+      "cycle-one",
+      "cycle-three",
+      "cross-three"
+    ],
+    "target_labels_read_by_production": false
+  },
+  "shared_run_cost": {
+    "input_bytes": 169352,
+    "jk_calls": 42496,
+    "output_bytes": 378648,
+    "quality_native_actions": 96,
+    "rhs_columns": 896,
+    "seconds": 89.32637976899969,
+    "submitted_blocks": 416
+  }
+}

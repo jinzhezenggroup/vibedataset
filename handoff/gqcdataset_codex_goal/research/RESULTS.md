@@ -94,3 +94,26 @@ n5 的 RTX 5090 为 13 条 QCFractal 源记录补齐了同协议 RHF/STO-3G 总�
 
 这三项实验把研究命题限定在同协议、目标相关、可审计的增量补全。自动规划没有
 超出手写线性代数，质量证书不是普适严格界，跨协议迁移默认需要重新验收。[第五轮决定](decisions/0005-information-certificates-and-migration-boundaries.md)
+
+## 复评后 #25–#27
+
+### #25 独立手写基线与搜索完备性
+
+独立手写 field/adjoint 模块在 8 个留出构型、4 次重复和 3 个场景上运行 96 条
+记录。两种手写路线分别使用 9,344 和 9,176 次后轮 J/K，`multi4` 使用 8,592
+次，所有输出接受且没有回退。四个二值混合场的 15 个非空子集已纳入搜索，三个
+场景的 `multi4` 计划都与三列搜索相同。[独立手写结果](experiments/information_sufficiency/issue25/README.md)
+
+### #26 算子级证书
+
+在 `qm9-000003` 的 10 维响应空间中，生产器和独立评分器各自运行 10 个标准基、
+4 个固定随机探针、6 个 RHS 和最小奇异向量。装配矩阵与原生算子的最大差为
+`7.22×10⁻¹⁶`。近奇异 `diag(1,1e-12)` 和 `1e-6` 非对称扰动均返回
+`evidence_unavailable`。[算子探针](experiments/error_certificates/operator_probe/README.md)
+
+### #27 响应资产迁移
+
+序列化的水 RHF/STO-3G `x/q0` 响应在独立进程重开后接受，向量差为
+`5.06×10⁻¹⁴`。RHF/6-31G* 归为初猜，B3LYP/6-31G* 归为精修，H₂⁺ UHF
+归为拒绝重算，10 Bohr 拉伸 H₂ 归为证据不可得。目标响应均由独立 PySCF CPHF
+重算并保留残差和 SCF 成本。[响应迁移](experiments/cross_protocol/response_migration/README.md)
