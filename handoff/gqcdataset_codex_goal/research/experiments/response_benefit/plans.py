@@ -109,6 +109,31 @@ def two(requests, known):
     return best
 
 
+def multi(requests, known):
+    """Search the finite one-, two- and three-mixed-field candidate set.
+
+    The response lives in a three-dimensional field space.  This bounded
+    search therefore includes every subset of the four registered binary
+    fields up to three columns.  It is intentionally separate from ``two``
+    so that a finite multi-field claim can be checked even when the selected
+    plan is unchanged.
+    """
+    best = single(requests, known)
+    for size in range(1, min(3, len(MIXED)) + 1):
+        for cols in combinations(MIXED, size):
+            outputs = []
+            for f, o in requests:
+                terms = decode_for(f, o, cols, known)
+                if terms is None:
+                    break
+                outputs.append((f, o, terms))
+            else:
+                proposal = make(outputs)
+                if score(proposal) < score(best):
+                    best = proposal
+    return best
+
+
 def hand(requests, known, orientation):
     if len(requests) == 1:
         return ordinary(requests, orientation)
@@ -129,6 +154,8 @@ def compile_plan(method, requests, known, stored):
         return single(requests, known)
     if method == 'two':
         return two(requests, known)
+    if method == 'multi':
+        return multi(requests, known)
     if method.startswith('hand_'):
         return hand(requests, known, method.split('_')[1])
     if method == 'vectors':

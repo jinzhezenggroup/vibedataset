@@ -271,7 +271,7 @@ def serve(ctx, scenario, method, assets, directory, identity, trace):
                 verify_scalar(f, o, r)
             vectors = read(method) if set(plan[0]).intersection(stored) else {}
             result, _ = evaluate(model, quality, stability, plan, hist, vectors, trace, decoders,
-                                 compiled=method in ('single', 'two'), dense=method == 'dense')
+                                 compiled=method in ('single', 'two', 'multi'), dense=method == 'dense')
     except (ValueError, ArithmeticError, RuntimeError, OSError, KeyError) as error:
         trace['fallback'].append(dict(reason=str(error), phase='candidate', submitted=dict(model.counts)))
         result, _ = evaluate(model, quality, stability, ordinary(requests, 'field'), {}, {}, trace, decoders)
@@ -319,7 +319,7 @@ def setup(out, meta, array, cache, kind, name):
     return model
 
 
-def run_case(out, catalog, row, quality, budget_start, total_jk):
+def run_case(out, catalog, row, quality, budget_start, total_jk, methods, scenarios, repetitions):
     name = row['name']
     meta, array = (catalog / row[k] for k in ('metadata_file', 'array_file'))
     directory = out / name
@@ -338,7 +338,7 @@ def run_case(out, catalog, row, quality, budget_start, total_jk):
                        'contract': model.contract_identity, 'units': UNITS, 'quality_sha256': Q_SHA,
                        'matrix': quality_info.report['matrix_sha256']})
     ctx = model, quality, quality_info, Decoders(directory / 'decoders')
-    for rep in range(4):
+    for rep in range(repetitions):
         where = directory / ('rep' + str(rep))
         where.mkdir()
         base = dict(source=name, repetition=rep, warmup=rep == 0, split='development' if catalog.name == 'qm9_response_assets' else 'holdout')
@@ -346,10 +346,10 @@ def run_case(out, catalog, row, quality, budget_start, total_jk):
         for h in (*HISTORIES, 'table_field', 'table_adjoint', 'table_dense'):
             assets[h] = record(out, model, dict(**base, phase='history', kind=h),
                                lambda trace: produce(ctx, h, where, scope, trace))
-        for i, scenario in enumerate(SCENARIOS):
-            methods = list(STRATEGIES)
-            random.Random(15017 + row['qm9_id'] * 100 + i * 10 + rep).shuffle(methods)
-            for order, method in enumerate(methods):
+        for i, scenario in enumerate(scenarios):
+            ordered_methods = list(methods)
+            random.Random(15017 + row['qm9_id'] * 100 + i * 10 + rep).shuffle(ordered_methods)
+            for order, method in enumerate(ordered_methods):
                 if total_jk + model.counts['jk_calls'] > 250_000 or clock() - budget_start > 3600:
                     raise RuntimeError('preregistered compute budget reached')
                 record(out, model, dict(**base, phase='future', scenario=scenario, method=method, order=order),
@@ -361,6 +361,10 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--out', type=Path, required=True)
     parser.add_argument('--cpu', type=int, default=0)
+    parser.add_argument('--split', choices=('all', 'development', 'holdout'), default='all')
+    parser.add_argument('--methods', nargs='+', choices=tuple(STRATEGIES) + ('multi',), default=None)
+    parser.add_argument('--scenarios', nargs='+', choices=tuple(SCENARIOS), default=None)
+    parser.add_argument('--repetitions', type=int, default=4)
     args = parser.parse_args()
     out = args.out.resolve()
     out.mkdir(parents=True, exist_ok=False)
@@ -378,6 +382,11 @@ def main():
                     compiler=subprocess.check_output(['c++', '--version'], text=True).splitlines()[0], threads=threads,
                     sccache_dir=os.environ.get('SCCACHE_DIR'), sccache_server_port=os.environ.get('SCCACHE_SERVER_PORT'),
                     utc=datetime.now(timezone.utc).isoformat())
+    methods = tuple(args.methods or STRATEGIES)
+    scenarios = tuple(args.scenarios or SCENARIOS)
+    check(args.repetitions > 0, 'positive repetitions required')
+    protocol.update(filters=dict(split=args.split, methods=methods, scenarios=scenarios,
+                                 repetitions=args.repetitions))
     save(out / 'protocol.json', protocol)
     start = clock()
     total = 0
@@ -385,11 +394,14 @@ def main():
         for row in sorted(json.loads((catalog / 'index.json').read_bytes())['rows'], key=lambda x:x.get('name') or ''):
             if not row.get('name'):
                 continue
+            row_split = 'development' if catalog.name == 'qm9_response_assets' else 'holdout'
+            if args.split != 'all' and args.split != row_split:
+                continue
             if row['status'] != 'verified':
                 journal(out, dict(source=row['name'], phase='reference_unavailable', reason=row['error'],
                                   member=row['member_sha256']))
                 continue
-            total += run_case(out, catalog, row, quality, start, total)
+            total += run_case(out, catalog, row, quality, start, total, methods, scenarios, args.repetitions)
             print(row['name'], total, flush=True)
     save(out / 'finished.json', dict(seconds=clock() - start, jk=total, journal_sha256=file_hash(out / 'events.jsonl')))
 
