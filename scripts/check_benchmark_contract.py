@@ -19,7 +19,7 @@ def main():
       if geometry_hash(row)!=row["geometry_hash"]:errors.append("geometry hash")
       if row["source_kind"]!="controlled-request":errors.append("source kind")
       if set(row["timing"])!=set(c["timing_fields"]):errors.append("timing schema")
-      for key in ("method","basis","charge","spin","origin","unit","precision","convergence","targets","fields","missingness_mask"): 
+      for key in ("method","basis","charge","spin","origin","unit","precision","convergence","targets","fields","missingness_mask"):
         if key not in row:errors.append(f"missing {key}")
     if errors:raise SystemExit("; ".join(sorted(set(errors))))
     result={"status":"passed","middle_queue_count":len(rows),"micro_workload_count":c["micro_workload_count"],"target_scale_status":c["target_scale_status"],"natural_request_count":0}
