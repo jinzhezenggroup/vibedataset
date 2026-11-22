@@ -6,6 +6,7 @@ from collections import Counter
 from datetime import datetime, timezone
 from hashlib import sha256
 from importlib import metadata
+import gzip
 import json
 import math
 import os
@@ -214,6 +215,17 @@ def check_molecular_report(expected_index, generated_index, code):
 
 def science(run):
     prepare_science(run)
+    raw_root = HANDOFF / "research/environment/gpu4pyscf-20261122/a-d-telemetry/raw"
+    new_ao_score = run.out / "independent-ao-score.json.gz"
+    run.command("cpu-ao-response", [sys.executable, SCRIPTS / "score_ao_density_response.py",
+                "--manifest", EXP / "attribution_4arm/manifest.json", "--raw-root", raw_root, "--out", new_ao_score])
+    physical = json.loads(gzip.decompress(new_ao_score.read_bytes()))
+    reference = json.loads(gzip.decompress((EXP / "response_asset_compiler/scorer-v192-ao.json.gz").read_bytes()))
+    require(physical["input_files"] == reference["input_files"] and physical["counts"] == {"accepted": 204},
+            "independent candidate AO response residual or denominator")
+    require(all(v["status"] == "reject-and-recompute" for v in physical["negative_controls"].values()),
+            "independent negative control accepted")
+
     from complete_response_dataset import DEFAULT_CATALOGS
 
     source_index, expected_index = DEFAULT_CATALOGS[0]
