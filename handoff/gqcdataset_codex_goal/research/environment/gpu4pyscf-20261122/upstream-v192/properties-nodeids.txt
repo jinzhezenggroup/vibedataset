@@ -1,0 +1,8 @@
+gpu4pyscf/tests/test_benchmark_properties.py::test_df_rb3lyp_nmr
+gpu4pyscf/tests/test_benchmark_properties.py::test_df_rb3lyp_polarizability
+gpu4pyscf/tests/test_benchmark_properties.py::test_direct_rb3lyp_nmr
+gpu4pyscf/tests/test_benchmark_properties.py::test_direct_rb3lyp_polarizability
+gpu4pyscf/tests/test_benchmark_properties.py::test_df_small_rb3lyp_nmr
+gpu4pyscf/tests/test_benchmark_properties.py::test_df_small_rb3lyp_polarizability
+gpu4pyscf/tests/test_benchmark_properties.py::test_df_rwb97mv_polarizability
+gpu4pyscf/tests/test_benchmark_properties.py::test_direct_rwb97mv_polarizability
