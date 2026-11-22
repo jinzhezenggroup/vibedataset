@@ -1,0 +1,1774 @@
+{
+  "schema": "vibedataset.prepared_property_batch.replay.v1",
+  "manifest_sha256": "e08193beba0fd3b15d3b6c2ecf531b3b38c6cb8fef3da0ee95d19cd78858a635",
+  "request_count": 51,
+  "bucket_count": 8,
+  "serial_setup_count": 51,
+  "resident_bucket_setup_count": 8,
+  "setup_reduction_ratio": 0.1568627450980392,
+  "accepted_receipts": 51,
+  "failures": [],
+  "scientific_producer": "archived raw receipt replay",
+  "oracle_loaded": false,
+  "planner_loaded": false,
+  "plan": {
+    "schema": "vibedataset.prepared_property_batch.v1",
+    "resident": true,
+    "max_workspace_bytes": 0,
+    "estimated_workspace_bytes": 7624,
+    "buckets": {
+      "RHF|sto-3g|0|0|real_spherical|9": [
+        "qm9-000001:cycle-one",
+        "qm9-000001:cycle-three",
+        "qm9-000001:cross-three"
+      ],
+      "RHF|sto-3g|0|0|real_spherical|8": [
+        "qm9-000002:cycle-one",
+        "qm9-000002:cycle-three",
+        "qm9-000002:cross-three",
+        "qm9-000004:cycle-one",
+        "qm9-000004:cycle-three",
+        "qm9-000004:cross-three",
+        "qm9-000006:cycle-one",
+        "qm9-000006:cycle-three",
+        "qm9-000006:cross-three"
+      ],
+      "RHF|sto-3g|0|0|real_spherical|7": [
+        "qm9-000003:cycle-one",
+        "qm9-000003:cycle-three",
+        "qm9-000003:cross-three",
+        "qm9-000005:cycle-one",
+        "qm9-000005:cycle-three",
+        "qm9-000005:cross-three"
+      ],
+      "RHF|sto-3g|0|0|real_spherical|12": [
+        "qm9-000007:cycle-one",
+        "qm9-000007:cycle-three",
+        "qm9-000007:cross-three"
+      ],
+      "RHF|sto-3g|0|0|real_spherical|10": [
+        "qm9-000008:cycle-one",
+        "qm9-000008:cycle-three",
+        "qm9-000008:cross-three",
+        "qm9-000010:cycle-one",
+        "qm9-000010:cycle-three",
+        "qm9-000010:cross-three",
+        "qm9-000012:cycle-one",
+        "qm9-000012:cycle-three",
+        "qm9-000012:cross-three"
+      ],
+      "RHF|sto-3g|0|0|real_spherical|11": [
+        "qm9-000009:cycle-one",
+        "qm9-000009:cycle-three",
+        "qm9-000009:cross-three",
+        "qm9-000011:cycle-one",
+        "qm9-000011:cycle-three",
+        "qm9-000011:cross-three",
+        "qm9-000017:cycle-one",
+        "qm9-000017:cycle-three",
+        "qm9-000017:cross-three"
+      ],
+      "RHF|sto-3g|0|0|real_spherical|15": [
+        "qm9-000013:cycle-one",
+        "qm9-000013:cycle-three",
+        "qm9-000013:cross-three"
+      ],
+      "RHF|sto-3g|0|0|real_spherical|13": [
+        "qm9-000014:cycle-one",
+        "qm9-000014:cycle-three",
+        "qm9-000014:cross-three",
+        "qm9-000015:cycle-one",
+        "qm9-000015:cycle-three",
+        "qm9-000015:cross-three",
+        "qm9-000016:cycle-one",
+        "qm9-000016:cycle-three",
+        "qm9-000016:cross-three"
+      ]
+    },
+    "workspace_plan": {
+      "RHF|sto-3g|0|0|real_spherical|9": {
+        "request_ids": [
+          "qm9-000001:cycle-one",
+          "qm9-000001:cycle-three",
+          "qm9-000001:cross-three"
+        ],
+        "workspace_bytes": 648,
+        "resident": true
+      },
+      "RHF|sto-3g|0|0|real_spherical|8": {
+        "request_ids": [
+          "qm9-000002:cycle-one",
+          "qm9-000002:cycle-three",
+          "qm9-000002:cross-three",
+          "qm9-000004:cycle-one",
+          "qm9-000004:cycle-three",
+          "qm9-000004:cross-three",
+          "qm9-000006:cycle-one",
+          "qm9-000006:cycle-three",
+          "qm9-000006:cross-three"
+        ],
+        "workspace_bytes": 512,
+        "resident": true
+      },
+      "RHF|sto-3g|0|0|real_spherical|7": {
+        "request_ids": [
+          "qm9-000003:cycle-one",
+          "qm9-000003:cycle-three",
+          "qm9-000003:cross-three",
+          "qm9-000005:cycle-one",
+          "qm9-000005:cycle-three",
+          "qm9-000005:cross-three"
+        ],
+        "workspace_bytes": 392,
+        "resident": true
+      },
+      "RHF|sto-3g|0|0|real_spherical|12": {
+        "request_ids": [
+          "qm9-000007:cycle-one",
+          "qm9-000007:cycle-three",
+          "qm9-000007:cross-three"
+        ],
+        "workspace_bytes": 1152,
+        "resident": true
+      },
+      "RHF|sto-3g|0|0|real_spherical|10": {
+        "request_ids": [
+          "qm9-000008:cycle-one",
+          "qm9-000008:cycle-three",
+          "qm9-000008:cross-three",
+          "qm9-000010:cycle-one",
+          "qm9-000010:cycle-three",
+          "qm9-000010:cross-three",
+          "qm9-000012:cycle-one",
+          "qm9-000012:cycle-three",
+          "qm9-000012:cross-three"
+        ],
+        "workspace_bytes": 800,
+        "resident": true
+      },
+      "RHF|sto-3g|0|0|real_spherical|11": {
+        "request_ids": [
+          "qm9-000009:cycle-one",
+          "qm9-000009:cycle-three",
+          "qm9-000009:cross-three",
+          "qm9-000011:cycle-one",
+          "qm9-000011:cycle-three",
+          "qm9-000011:cross-three",
+          "qm9-000017:cycle-one",
+          "qm9-000017:cycle-three",
+          "qm9-000017:cross-three"
+        ],
+        "workspace_bytes": 968,
+        "resident": true
+      },
+      "RHF|sto-3g|0|0|real_spherical|15": {
+        "request_ids": [
+          "qm9-000013:cycle-one",
+          "qm9-000013:cycle-three",
+          "qm9-000013:cross-three"
+        ],
+        "workspace_bytes": 1800,
+        "resident": true
+      },
+      "RHF|sto-3g|0|0|real_spherical|13": {
+        "request_ids": [
+          "qm9-000014:cycle-one",
+          "qm9-000014:cycle-three",
+          "qm9-000014:cross-three",
+          "qm9-000015:cycle-one",
+          "qm9-000015:cycle-three",
+          "qm9-000015:cross-three",
+          "qm9-000016:cycle-one",
+          "qm9-000016:cycle-three",
+          "qm9-000016:cross-three"
+        ],
+        "workspace_bytes": 1352,
+        "resident": true
+      }
+    },
+    "nodes": [
+      {
+        "node_id": "qm9-000001:cycle-one:reference",
+        "request_id": "qm9-000001:cycle-one",
+        "kind": "reference",
+        "depends_on": [],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|9",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000001:cycle-one:x",
+        "request_id": "qm9-000001:cycle-one",
+        "kind": "x",
+        "depends_on": [
+          "qm9-000001:cycle-one:reference"
+        ],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|9",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000001:cycle-three:reference",
+        "request_id": "qm9-000001:cycle-three",
+        "kind": "reference",
+        "depends_on": [],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|9",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000001:cycle-three:x",
+        "request_id": "qm9-000001:cycle-three",
+        "kind": "x",
+        "depends_on": [
+          "qm9-000001:cycle-three:reference"
+        ],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|9",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000001:cycle-three:y",
+        "request_id": "qm9-000001:cycle-three",
+        "kind": "y",
+        "depends_on": [
+          "qm9-000001:cycle-three:reference"
+        ],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|9",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000001:cycle-three:z",
+        "request_id": "qm9-000001:cycle-three",
+        "kind": "z",
+        "depends_on": [
+          "qm9-000001:cycle-three:reference"
+        ],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|9",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000001:cross-three:reference",
+        "request_id": "qm9-000001:cross-three",
+        "kind": "reference",
+        "depends_on": [],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|9",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000001:cross-three:x",
+        "request_id": "qm9-000001:cross-three",
+        "kind": "x",
+        "depends_on": [
+          "qm9-000001:cross-three:reference"
+        ],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|9",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000001:cross-three:z",
+        "request_id": "qm9-000001:cross-three",
+        "kind": "z",
+        "depends_on": [
+          "qm9-000001:cross-three:reference"
+        ],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|9",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000002:cycle-one:reference",
+        "request_id": "qm9-000002:cycle-one",
+        "kind": "reference",
+        "depends_on": [],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|8",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000002:cycle-one:x",
+        "request_id": "qm9-000002:cycle-one",
+        "kind": "x",
+        "depends_on": [
+          "qm9-000002:cycle-one:reference"
+        ],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|8",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000002:cycle-three:reference",
+        "request_id": "qm9-000002:cycle-three",
+        "kind": "reference",
+        "depends_on": [],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|8",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000002:cycle-three:x",
+        "request_id": "qm9-000002:cycle-three",
+        "kind": "x",
+        "depends_on": [
+          "qm9-000002:cycle-three:reference"
+        ],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|8",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000002:cycle-three:y",
+        "request_id": "qm9-000002:cycle-three",
+        "kind": "y",
+        "depends_on": [
+          "qm9-000002:cycle-three:reference"
+        ],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|8",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000002:cycle-three:z",
+        "request_id": "qm9-000002:cycle-three",
+        "kind": "z",
+        "depends_on": [
+          "qm9-000002:cycle-three:reference"
+        ],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|8",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000002:cross-three:reference",
+        "request_id": "qm9-000002:cross-three",
+        "kind": "reference",
+        "depends_on": [],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|8",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000002:cross-three:x",
+        "request_id": "qm9-000002:cross-three",
+        "kind": "x",
+        "depends_on": [
+          "qm9-000002:cross-three:reference"
+        ],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|8",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000002:cross-three:z",
+        "request_id": "qm9-000002:cross-three",
+        "kind": "z",
+        "depends_on": [
+          "qm9-000002:cross-three:reference"
+        ],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|8",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000003:cycle-one:reference",
+        "request_id": "qm9-000003:cycle-one",
+        "kind": "reference",
+        "depends_on": [],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|7",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000003:cycle-one:x",
+        "request_id": "qm9-000003:cycle-one",
+        "kind": "x",
+        "depends_on": [
+          "qm9-000003:cycle-one:reference"
+        ],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|7",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000003:cycle-three:reference",
+        "request_id": "qm9-000003:cycle-three",
+        "kind": "reference",
+        "depends_on": [],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|7",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000003:cycle-three:x",
+        "request_id": "qm9-000003:cycle-three",
+        "kind": "x",
+        "depends_on": [
+          "qm9-000003:cycle-three:reference"
+        ],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|7",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000003:cycle-three:y",
+        "request_id": "qm9-000003:cycle-three",
+        "kind": "y",
+        "depends_on": [
+          "qm9-000003:cycle-three:reference"
+        ],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|7",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000003:cycle-three:z",
+        "request_id": "qm9-000003:cycle-three",
+        "kind": "z",
+        "depends_on": [
+          "qm9-000003:cycle-three:reference"
+        ],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|7",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000003:cross-three:reference",
+        "request_id": "qm9-000003:cross-three",
+        "kind": "reference",
+        "depends_on": [],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|7",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000003:cross-three:x",
+        "request_id": "qm9-000003:cross-three",
+        "kind": "x",
+        "depends_on": [
+          "qm9-000003:cross-three:reference"
+        ],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|7",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000003:cross-three:z",
+        "request_id": "qm9-000003:cross-three",
+        "kind": "z",
+        "depends_on": [
+          "qm9-000003:cross-three:reference"
+        ],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|7",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000004:cycle-one:reference",
+        "request_id": "qm9-000004:cycle-one",
+        "kind": "reference",
+        "depends_on": [],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|8",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000004:cycle-one:x",
+        "request_id": "qm9-000004:cycle-one",
+        "kind": "x",
+        "depends_on": [
+          "qm9-000004:cycle-one:reference"
+        ],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|8",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000004:cycle-three:reference",
+        "request_id": "qm9-000004:cycle-three",
+        "kind": "reference",
+        "depends_on": [],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|8",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000004:cycle-three:x",
+        "request_id": "qm9-000004:cycle-three",
+        "kind": "x",
+        "depends_on": [
+          "qm9-000004:cycle-three:reference"
+        ],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|8",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000004:cycle-three:y",
+        "request_id": "qm9-000004:cycle-three",
+        "kind": "y",
+        "depends_on": [
+          "qm9-000004:cycle-three:reference"
+        ],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|8",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000004:cycle-three:z",
+        "request_id": "qm9-000004:cycle-three",
+        "kind": "z",
+        "depends_on": [
+          "qm9-000004:cycle-three:reference"
+        ],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|8",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000004:cross-three:reference",
+        "request_id": "qm9-000004:cross-three",
+        "kind": "reference",
+        "depends_on": [],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|8",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000004:cross-three:x",
+        "request_id": "qm9-000004:cross-three",
+        "kind": "x",
+        "depends_on": [
+          "qm9-000004:cross-three:reference"
+        ],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|8",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000004:cross-three:z",
+        "request_id": "qm9-000004:cross-three",
+        "kind": "z",
+        "depends_on": [
+          "qm9-000004:cross-three:reference"
+        ],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|8",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000005:cycle-one:reference",
+        "request_id": "qm9-000005:cycle-one",
+        "kind": "reference",
+        "depends_on": [],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|7",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000005:cycle-one:x",
+        "request_id": "qm9-000005:cycle-one",
+        "kind": "x",
+        "depends_on": [
+          "qm9-000005:cycle-one:reference"
+        ],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|7",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000005:cycle-three:reference",
+        "request_id": "qm9-000005:cycle-three",
+        "kind": "reference",
+        "depends_on": [],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|7",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000005:cycle-three:x",
+        "request_id": "qm9-000005:cycle-three",
+        "kind": "x",
+        "depends_on": [
+          "qm9-000005:cycle-three:reference"
+        ],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|7",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000005:cycle-three:y",
+        "request_id": "qm9-000005:cycle-three",
+        "kind": "y",
+        "depends_on": [
+          "qm9-000005:cycle-three:reference"
+        ],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|7",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000005:cycle-three:z",
+        "request_id": "qm9-000005:cycle-three",
+        "kind": "z",
+        "depends_on": [
+          "qm9-000005:cycle-three:reference"
+        ],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|7",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000005:cross-three:reference",
+        "request_id": "qm9-000005:cross-three",
+        "kind": "reference",
+        "depends_on": [],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|7",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000005:cross-three:x",
+        "request_id": "qm9-000005:cross-three",
+        "kind": "x",
+        "depends_on": [
+          "qm9-000005:cross-three:reference"
+        ],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|7",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000005:cross-three:z",
+        "request_id": "qm9-000005:cross-three",
+        "kind": "z",
+        "depends_on": [
+          "qm9-000005:cross-three:reference"
+        ],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|7",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000006:cycle-one:reference",
+        "request_id": "qm9-000006:cycle-one",
+        "kind": "reference",
+        "depends_on": [],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|8",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000006:cycle-one:x",
+        "request_id": "qm9-000006:cycle-one",
+        "kind": "x",
+        "depends_on": [
+          "qm9-000006:cycle-one:reference"
+        ],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|8",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000006:cycle-three:reference",
+        "request_id": "qm9-000006:cycle-three",
+        "kind": "reference",
+        "depends_on": [],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|8",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000006:cycle-three:x",
+        "request_id": "qm9-000006:cycle-three",
+        "kind": "x",
+        "depends_on": [
+          "qm9-000006:cycle-three:reference"
+        ],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|8",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000006:cycle-three:y",
+        "request_id": "qm9-000006:cycle-three",
+        "kind": "y",
+        "depends_on": [
+          "qm9-000006:cycle-three:reference"
+        ],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|8",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000006:cycle-three:z",
+        "request_id": "qm9-000006:cycle-three",
+        "kind": "z",
+        "depends_on": [
+          "qm9-000006:cycle-three:reference"
+        ],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|8",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000006:cross-three:reference",
+        "request_id": "qm9-000006:cross-three",
+        "kind": "reference",
+        "depends_on": [],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|8",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000006:cross-three:x",
+        "request_id": "qm9-000006:cross-three",
+        "kind": "x",
+        "depends_on": [
+          "qm9-000006:cross-three:reference"
+        ],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|8",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000006:cross-three:z",
+        "request_id": "qm9-000006:cross-three",
+        "kind": "z",
+        "depends_on": [
+          "qm9-000006:cross-three:reference"
+        ],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|8",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000007:cycle-one:reference",
+        "request_id": "qm9-000007:cycle-one",
+        "kind": "reference",
+        "depends_on": [],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|12",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000007:cycle-one:x",
+        "request_id": "qm9-000007:cycle-one",
+        "kind": "x",
+        "depends_on": [
+          "qm9-000007:cycle-one:reference"
+        ],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|12",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000007:cycle-three:reference",
+        "request_id": "qm9-000007:cycle-three",
+        "kind": "reference",
+        "depends_on": [],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|12",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000007:cycle-three:x",
+        "request_id": "qm9-000007:cycle-three",
+        "kind": "x",
+        "depends_on": [
+          "qm9-000007:cycle-three:reference"
+        ],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|12",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000007:cycle-three:y",
+        "request_id": "qm9-000007:cycle-three",
+        "kind": "y",
+        "depends_on": [
+          "qm9-000007:cycle-three:reference"
+        ],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|12",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000007:cycle-three:z",
+        "request_id": "qm9-000007:cycle-three",
+        "kind": "z",
+        "depends_on": [
+          "qm9-000007:cycle-three:reference"
+        ],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|12",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000007:cross-three:reference",
+        "request_id": "qm9-000007:cross-three",
+        "kind": "reference",
+        "depends_on": [],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|12",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000007:cross-three:x",
+        "request_id": "qm9-000007:cross-three",
+        "kind": "x",
+        "depends_on": [
+          "qm9-000007:cross-three:reference"
+        ],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|12",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000007:cross-three:z",
+        "request_id": "qm9-000007:cross-three",
+        "kind": "z",
+        "depends_on": [
+          "qm9-000007:cross-three:reference"
+        ],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|12",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000008:cycle-one:reference",
+        "request_id": "qm9-000008:cycle-one",
+        "kind": "reference",
+        "depends_on": [],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|10",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000008:cycle-one:x",
+        "request_id": "qm9-000008:cycle-one",
+        "kind": "x",
+        "depends_on": [
+          "qm9-000008:cycle-one:reference"
+        ],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|10",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000008:cycle-three:reference",
+        "request_id": "qm9-000008:cycle-three",
+        "kind": "reference",
+        "depends_on": [],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|10",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000008:cycle-three:x",
+        "request_id": "qm9-000008:cycle-three",
+        "kind": "x",
+        "depends_on": [
+          "qm9-000008:cycle-three:reference"
+        ],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|10",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000008:cycle-three:y",
+        "request_id": "qm9-000008:cycle-three",
+        "kind": "y",
+        "depends_on": [
+          "qm9-000008:cycle-three:reference"
+        ],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|10",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000008:cycle-three:z",
+        "request_id": "qm9-000008:cycle-three",
+        "kind": "z",
+        "depends_on": [
+          "qm9-000008:cycle-three:reference"
+        ],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|10",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000008:cross-three:reference",
+        "request_id": "qm9-000008:cross-three",
+        "kind": "reference",
+        "depends_on": [],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|10",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000008:cross-three:x",
+        "request_id": "qm9-000008:cross-three",
+        "kind": "x",
+        "depends_on": [
+          "qm9-000008:cross-three:reference"
+        ],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|10",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000008:cross-three:z",
+        "request_id": "qm9-000008:cross-three",
+        "kind": "z",
+        "depends_on": [
+          "qm9-000008:cross-three:reference"
+        ],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|10",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000009:cycle-one:reference",
+        "request_id": "qm9-000009:cycle-one",
+        "kind": "reference",
+        "depends_on": [],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|11",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000009:cycle-one:x",
+        "request_id": "qm9-000009:cycle-one",
+        "kind": "x",
+        "depends_on": [
+          "qm9-000009:cycle-one:reference"
+        ],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|11",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000009:cycle-three:reference",
+        "request_id": "qm9-000009:cycle-three",
+        "kind": "reference",
+        "depends_on": [],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|11",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000009:cycle-three:x",
+        "request_id": "qm9-000009:cycle-three",
+        "kind": "x",
+        "depends_on": [
+          "qm9-000009:cycle-three:reference"
+        ],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|11",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000009:cycle-three:y",
+        "request_id": "qm9-000009:cycle-three",
+        "kind": "y",
+        "depends_on": [
+          "qm9-000009:cycle-three:reference"
+        ],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|11",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000009:cycle-three:z",
+        "request_id": "qm9-000009:cycle-three",
+        "kind": "z",
+        "depends_on": [
+          "qm9-000009:cycle-three:reference"
+        ],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|11",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000009:cross-three:reference",
+        "request_id": "qm9-000009:cross-three",
+        "kind": "reference",
+        "depends_on": [],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|11",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000009:cross-three:x",
+        "request_id": "qm9-000009:cross-three",
+        "kind": "x",
+        "depends_on": [
+          "qm9-000009:cross-three:reference"
+        ],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|11",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000009:cross-three:z",
+        "request_id": "qm9-000009:cross-three",
+        "kind": "z",
+        "depends_on": [
+          "qm9-000009:cross-three:reference"
+        ],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|11",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000010:cycle-one:reference",
+        "request_id": "qm9-000010:cycle-one",
+        "kind": "reference",
+        "depends_on": [],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|10",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000010:cycle-one:x",
+        "request_id": "qm9-000010:cycle-one",
+        "kind": "x",
+        "depends_on": [
+          "qm9-000010:cycle-one:reference"
+        ],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|10",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000010:cycle-three:reference",
+        "request_id": "qm9-000010:cycle-three",
+        "kind": "reference",
+        "depends_on": [],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|10",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000010:cycle-three:x",
+        "request_id": "qm9-000010:cycle-three",
+        "kind": "x",
+        "depends_on": [
+          "qm9-000010:cycle-three:reference"
+        ],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|10",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000010:cycle-three:y",
+        "request_id": "qm9-000010:cycle-three",
+        "kind": "y",
+        "depends_on": [
+          "qm9-000010:cycle-three:reference"
+        ],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|10",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000010:cycle-three:z",
+        "request_id": "qm9-000010:cycle-three",
+        "kind": "z",
+        "depends_on": [
+          "qm9-000010:cycle-three:reference"
+        ],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|10",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000010:cross-three:reference",
+        "request_id": "qm9-000010:cross-three",
+        "kind": "reference",
+        "depends_on": [],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|10",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000010:cross-three:x",
+        "request_id": "qm9-000010:cross-three",
+        "kind": "x",
+        "depends_on": [
+          "qm9-000010:cross-three:reference"
+        ],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|10",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000010:cross-three:z",
+        "request_id": "qm9-000010:cross-three",
+        "kind": "z",
+        "depends_on": [
+          "qm9-000010:cross-three:reference"
+        ],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|10",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000011:cycle-one:reference",
+        "request_id": "qm9-000011:cycle-one",
+        "kind": "reference",
+        "depends_on": [],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|11",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000011:cycle-one:x",
+        "request_id": "qm9-000011:cycle-one",
+        "kind": "x",
+        "depends_on": [
+          "qm9-000011:cycle-one:reference"
+        ],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|11",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000011:cycle-three:reference",
+        "request_id": "qm9-000011:cycle-three",
+        "kind": "reference",
+        "depends_on": [],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|11",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000011:cycle-three:x",
+        "request_id": "qm9-000011:cycle-three",
+        "kind": "x",
+        "depends_on": [
+          "qm9-000011:cycle-three:reference"
+        ],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|11",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000011:cycle-three:y",
+        "request_id": "qm9-000011:cycle-three",
+        "kind": "y",
+        "depends_on": [
+          "qm9-000011:cycle-three:reference"
+        ],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|11",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000011:cycle-three:z",
+        "request_id": "qm9-000011:cycle-three",
+        "kind": "z",
+        "depends_on": [
+          "qm9-000011:cycle-three:reference"
+        ],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|11",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000011:cross-three:reference",
+        "request_id": "qm9-000011:cross-three",
+        "kind": "reference",
+        "depends_on": [],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|11",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000011:cross-three:x",
+        "request_id": "qm9-000011:cross-three",
+        "kind": "x",
+        "depends_on": [
+          "qm9-000011:cross-three:reference"
+        ],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|11",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000011:cross-three:z",
+        "request_id": "qm9-000011:cross-three",
+        "kind": "z",
+        "depends_on": [
+          "qm9-000011:cross-three:reference"
+        ],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|11",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000012:cycle-one:reference",
+        "request_id": "qm9-000012:cycle-one",
+        "kind": "reference",
+        "depends_on": [],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|10",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000012:cycle-one:x",
+        "request_id": "qm9-000012:cycle-one",
+        "kind": "x",
+        "depends_on": [
+          "qm9-000012:cycle-one:reference"
+        ],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|10",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000012:cycle-three:reference",
+        "request_id": "qm9-000012:cycle-three",
+        "kind": "reference",
+        "depends_on": [],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|10",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000012:cycle-three:x",
+        "request_id": "qm9-000012:cycle-three",
+        "kind": "x",
+        "depends_on": [
+          "qm9-000012:cycle-three:reference"
+        ],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|10",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000012:cycle-three:y",
+        "request_id": "qm9-000012:cycle-three",
+        "kind": "y",
+        "depends_on": [
+          "qm9-000012:cycle-three:reference"
+        ],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|10",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000012:cycle-three:z",
+        "request_id": "qm9-000012:cycle-three",
+        "kind": "z",
+        "depends_on": [
+          "qm9-000012:cycle-three:reference"
+        ],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|10",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000012:cross-three:reference",
+        "request_id": "qm9-000012:cross-three",
+        "kind": "reference",
+        "depends_on": [],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|10",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000012:cross-three:x",
+        "request_id": "qm9-000012:cross-three",
+        "kind": "x",
+        "depends_on": [
+          "qm9-000012:cross-three:reference"
+        ],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|10",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000012:cross-three:z",
+        "request_id": "qm9-000012:cross-three",
+        "kind": "z",
+        "depends_on": [
+          "qm9-000012:cross-three:reference"
+        ],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|10",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000013:cycle-one:reference",
+        "request_id": "qm9-000013:cycle-one",
+        "kind": "reference",
+        "depends_on": [],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|15",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000013:cycle-one:x",
+        "request_id": "qm9-000013:cycle-one",
+        "kind": "x",
+        "depends_on": [
+          "qm9-000013:cycle-one:reference"
+        ],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|15",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000013:cycle-three:reference",
+        "request_id": "qm9-000013:cycle-three",
+        "kind": "reference",
+        "depends_on": [],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|15",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000013:cycle-three:x",
+        "request_id": "qm9-000013:cycle-three",
+        "kind": "x",
+        "depends_on": [
+          "qm9-000013:cycle-three:reference"
+        ],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|15",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000013:cycle-three:y",
+        "request_id": "qm9-000013:cycle-three",
+        "kind": "y",
+        "depends_on": [
+          "qm9-000013:cycle-three:reference"
+        ],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|15",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000013:cycle-three:z",
+        "request_id": "qm9-000013:cycle-three",
+        "kind": "z",
+        "depends_on": [
+          "qm9-000013:cycle-three:reference"
+        ],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|15",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000013:cross-three:reference",
+        "request_id": "qm9-000013:cross-three",
+        "kind": "reference",
+        "depends_on": [],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|15",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000013:cross-three:x",
+        "request_id": "qm9-000013:cross-three",
+        "kind": "x",
+        "depends_on": [
+          "qm9-000013:cross-three:reference"
+        ],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|15",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000013:cross-three:z",
+        "request_id": "qm9-000013:cross-three",
+        "kind": "z",
+        "depends_on": [
+          "qm9-000013:cross-three:reference"
+        ],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|15",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000014:cycle-one:reference",
+        "request_id": "qm9-000014:cycle-one",
+        "kind": "reference",
+        "depends_on": [],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|13",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000014:cycle-one:x",
+        "request_id": "qm9-000014:cycle-one",
+        "kind": "x",
+        "depends_on": [
+          "qm9-000014:cycle-one:reference"
+        ],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|13",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000014:cycle-three:reference",
+        "request_id": "qm9-000014:cycle-three",
+        "kind": "reference",
+        "depends_on": [],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|13",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000014:cycle-three:x",
+        "request_id": "qm9-000014:cycle-three",
+        "kind": "x",
+        "depends_on": [
+          "qm9-000014:cycle-three:reference"
+        ],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|13",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000014:cycle-three:y",
+        "request_id": "qm9-000014:cycle-three",
+        "kind": "y",
+        "depends_on": [
+          "qm9-000014:cycle-three:reference"
+        ],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|13",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000014:cycle-three:z",
+        "request_id": "qm9-000014:cycle-three",
+        "kind": "z",
+        "depends_on": [
+          "qm9-000014:cycle-three:reference"
+        ],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|13",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000014:cross-three:reference",
+        "request_id": "qm9-000014:cross-three",
+        "kind": "reference",
+        "depends_on": [],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|13",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000014:cross-three:x",
+        "request_id": "qm9-000014:cross-three",
+        "kind": "x",
+        "depends_on": [
+          "qm9-000014:cross-three:reference"
+        ],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|13",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000014:cross-three:z",
+        "request_id": "qm9-000014:cross-three",
+        "kind": "z",
+        "depends_on": [
+          "qm9-000014:cross-three:reference"
+        ],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|13",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000015:cycle-one:reference",
+        "request_id": "qm9-000015:cycle-one",
+        "kind": "reference",
+        "depends_on": [],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|13",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000015:cycle-one:x",
+        "request_id": "qm9-000015:cycle-one",
+        "kind": "x",
+        "depends_on": [
+          "qm9-000015:cycle-one:reference"
+        ],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|13",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000015:cycle-three:reference",
+        "request_id": "qm9-000015:cycle-three",
+        "kind": "reference",
+        "depends_on": [],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|13",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000015:cycle-three:x",
+        "request_id": "qm9-000015:cycle-three",
+        "kind": "x",
+        "depends_on": [
+          "qm9-000015:cycle-three:reference"
+        ],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|13",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000015:cycle-three:y",
+        "request_id": "qm9-000015:cycle-three",
+        "kind": "y",
+        "depends_on": [
+          "qm9-000015:cycle-three:reference"
+        ],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|13",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000015:cycle-three:z",
+        "request_id": "qm9-000015:cycle-three",
+        "kind": "z",
+        "depends_on": [
+          "qm9-000015:cycle-three:reference"
+        ],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|13",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000015:cross-three:reference",
+        "request_id": "qm9-000015:cross-three",
+        "kind": "reference",
+        "depends_on": [],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|13",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000015:cross-three:x",
+        "request_id": "qm9-000015:cross-three",
+        "kind": "x",
+        "depends_on": [
+          "qm9-000015:cross-three:reference"
+        ],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|13",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000015:cross-three:z",
+        "request_id": "qm9-000015:cross-three",
+        "kind": "z",
+        "depends_on": [
+          "qm9-000015:cross-three:reference"
+        ],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|13",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000016:cycle-one:reference",
+        "request_id": "qm9-000016:cycle-one",
+        "kind": "reference",
+        "depends_on": [],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|13",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000016:cycle-one:x",
+        "request_id": "qm9-000016:cycle-one",
+        "kind": "x",
+        "depends_on": [
+          "qm9-000016:cycle-one:reference"
+        ],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|13",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000016:cycle-three:reference",
+        "request_id": "qm9-000016:cycle-three",
+        "kind": "reference",
+        "depends_on": [],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|13",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000016:cycle-three:x",
+        "request_id": "qm9-000016:cycle-three",
+        "kind": "x",
+        "depends_on": [
+          "qm9-000016:cycle-three:reference"
+        ],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|13",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000016:cycle-three:y",
+        "request_id": "qm9-000016:cycle-three",
+        "kind": "y",
+        "depends_on": [
+          "qm9-000016:cycle-three:reference"
+        ],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|13",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000016:cycle-three:z",
+        "request_id": "qm9-000016:cycle-three",
+        "kind": "z",
+        "depends_on": [
+          "qm9-000016:cycle-three:reference"
+        ],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|13",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000016:cross-three:reference",
+        "request_id": "qm9-000016:cross-three",
+        "kind": "reference",
+        "depends_on": [],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|13",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000016:cross-three:x",
+        "request_id": "qm9-000016:cross-three",
+        "kind": "x",
+        "depends_on": [
+          "qm9-000016:cross-three:reference"
+        ],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|13",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000016:cross-three:z",
+        "request_id": "qm9-000016:cross-three",
+        "kind": "z",
+        "depends_on": [
+          "qm9-000016:cross-three:reference"
+        ],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|13",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000017:cycle-one:reference",
+        "request_id": "qm9-000017:cycle-one",
+        "kind": "reference",
+        "depends_on": [],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|11",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000017:cycle-one:x",
+        "request_id": "qm9-000017:cycle-one",
+        "kind": "x",
+        "depends_on": [
+          "qm9-000017:cycle-one:reference"
+        ],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|11",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000017:cycle-three:reference",
+        "request_id": "qm9-000017:cycle-three",
+        "kind": "reference",
+        "depends_on": [],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|11",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000017:cycle-three:x",
+        "request_id": "qm9-000017:cycle-three",
+        "kind": "x",
+        "depends_on": [
+          "qm9-000017:cycle-three:reference"
+        ],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|11",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000017:cycle-three:y",
+        "request_id": "qm9-000017:cycle-three",
+        "kind": "y",
+        "depends_on": [
+          "qm9-000017:cycle-three:reference"
+        ],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|11",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000017:cycle-three:z",
+        "request_id": "qm9-000017:cycle-three",
+        "kind": "z",
+        "depends_on": [
+          "qm9-000017:cycle-three:reference"
+        ],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|11",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000017:cross-three:reference",
+        "request_id": "qm9-000017:cross-three",
+        "kind": "reference",
+        "depends_on": [],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|11",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000017:cross-three:x",
+        "request_id": "qm9-000017:cross-three",
+        "kind": "x",
+        "depends_on": [
+          "qm9-000017:cross-three:reference"
+        ],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|11",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "qm9-000017:cross-three:z",
+        "request_id": "qm9-000017:cross-three",
+        "kind": "z",
+        "depends_on": [
+          "qm9-000017:cross-three:reference"
+        ],
+        "bucket": "RHF|sto-3g|0|0|real_spherical|11",
+        "disposition": "ready",
+        "reason": ""
+      }
+    ],
+    "failures": []
+  }
+}
