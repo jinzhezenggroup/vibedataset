@@ -1,0 +1,1882 @@
+{
+  "schema": "vibedataset.gpu4pyscf_4arm_telemetry_summary.v1",
+  "manifest_sha256": "e08193beba0fd3b15d3b6c2ecf531b3b38c6cb8fef3da0ee95d19cd78858a635",
+  "arms": {
+    "A": {
+      "rows": 51,
+      "failed": 0,
+      "scorer_accepted": 51,
+      "totals": {
+        "end_to_end_wall_seconds": 197.6154811886372,
+        "prepare": 0.02176850743126124,
+        "environment_startup": 0.8277290719561279,
+        "data_read": 0.00044177297968417406,
+        "h2d": 0.004875828162766993,
+        "scf_fock": 49.518862270982936,
+        "cp_hf_gmres": 131.7933419997571,
+        "property_readout": 0.12623218866065145,
+        "physical_residual": 15.251826517283916,
+        "serialization": 0.015982827288098633,
+        "retry": 0.0,
+        "fallback": 0.0,
+        "operator_rows": 772.0,
+        "rhs_columns": 102.0,
+        "host_to_device_bytes": 386688.0,
+        "device_to_host_bytes": 52752.0
+      },
+      "molecule_count": 17,
+      "molecule_wall_seconds": {
+        "qm9-000001": {
+          "end_to_end_wall_seconds": 6.912791102891788,
+          "prepare": 0.0011688090162351727,
+          "environment_startup": 0.8277290719561279,
+          "data_read": 0.00044177297968417406,
+          "h2d": 0.00029817409813404083,
+          "scf_fock": 1.9928184790769592,
+          "cp_hf_gmres": 3.406397382961586,
+          "property_readout": 0.008834481937810779,
+          "physical_residual": 0.6684894500067458,
+          "serialization": 0.0004306549672037363,
+          "retry": 0.0,
+          "fallback": 0.0,
+          "operator_rows": 27.0,
+          "rhs_columns": 6.0,
+          "host_to_device_bytes": 6792.0,
+          "device_to_host_bytes": 960.0
+        },
+        "qm9-000002": {
+          "end_to_end_wall_seconds": 6.804398709908128,
+          "prepare": 0.0011470969766378403,
+          "environment_startup": 0.0,
+          "data_read": 0.0,
+          "h2d": 0.00027755508199334145,
+          "scf_fock": 1.8597994410665706,
+          "cp_hf_gmres": 4.26204119680915,
+          "property_readout": 0.007208405993878841,
+          "physical_residual": 0.6707313738297671,
+          "serialization": 0.00038554694037884474,
+          "retry": 0.0,
+          "fallback": 0.0,
+          "operator_rows": 33.0,
+          "rhs_columns": 6.0,
+          "host_to_device_bytes": 5328.0,
+          "device_to_host_bytes": 720.0
+        },
+        "qm9-000003": {
+          "end_to_end_wall_seconds": 2.990637005888857,
+          "prepare": 0.001053815009072423,
+          "environment_startup": 0.0,
+          "data_read": 0.0,
+          "h2d": 0.000283382018096745,
+          "scf_fock": 0.9238947469275445,
+          "cp_hf_gmres": 1.7324711889959872,
+          "property_readout": 0.007103375857695937,
+          "physical_residual": 0.32273105694912374,
+          "serialization": 0.0002801568480208516,
+          "retry": 0.0,
+          "fallback": 0.0,
+          "operator_rows": 25.0,
+          "rhs_columns": 6.0,
+          "host_to_device_bytes": 4008.0,
+          "device_to_host_bytes": 480.0
+        },
+        "qm9-000004": {
+          "end_to_end_wall_seconds": 7.055580340907909,
+          "prepare": 0.0010530030122026801,
+          "environment_startup": 0.0,
+          "data_read": 0.0,
+          "h2d": 0.00027999584563076496,
+          "scf_fock": 1.649088265025057,
+          "cp_hf_gmres": 4.723074691020884,
+          "property_readout": 0.007282899925485253,
+          "physical_residual": 0.6711998539976776,
+          "serialization": 0.0007400967879220843,
+          "retry": 0.0,
+          "fallback": 0.0,
+          "operator_rows": 30.0,
+          "rhs_columns": 6.0,
+          "host_to_device_bytes": 12048.0,
+          "device_to_host_bytes": 1680.0
+        },
+        "qm9-000005": {
+          "end_to_end_wall_seconds": 7.9381386149907485,
+          "prepare": 0.001384127070195973,
+          "environment_startup": 0.0,
+          "data_read": 0.0,
+          "h2d": 0.00027503015007823706,
+          "scf_fock": 2.1001396590145305,
+          "cp_hf_gmres": 5.156012836028822,
+          "property_readout": 0.007217959966510534,
+          "physical_residual": 0.6697497291024774,
+          "serialization": 0.0005567269399762154,
+          "retry": 0.0,
+          "fallback": 0.0,
+          "operator_rows": 44.0,
+          "rhs_columns": 6.0,
+          "host_to_device_bytes": 10056.0,
+          "device_to_host_bytes": 1344.0
+        },
+        "qm9-000006": {
+          "end_to_end_wall_seconds": 16.154455221956596,
+          "prepare": 0.0013989300932735205,
+          "environment_startup": 0.0,
+          "data_read": 0.0,
+          "h2d": 0.00027809187304228544,
+          "scf_fock": 4.303581235930324,
+          "cp_hf_gmres": 10.571135924896225,
+          "property_readout": 0.007262469152919948,
+          "physical_residual": 1.2673274439293891,
+          "serialization": 0.00060094497166574,
+          "retry": 0.0,
+          "fallback": 0.0,
+          "operator_rows": 46.0,
+          "rhs_columns": 6.0,
+          "host_to_device_bytes": 11904.0,
+          "device_to_host_bytes": 1536.0
+        },
+        "qm9-000007": {
+          "end_to_end_wall_seconds": 7.082324991002679,
+          "prepare": 0.0010874859290197492,
+          "environment_startup": 0.0,
+          "data_read": 0.0,
+          "h2d": 0.00028145010583102703,
+          "scf_fock": 1.6790320449508727,
+          "cp_hf_gmres": 4.7183581891004,
+          "property_readout": 0.007382342009805143,
+          "physical_residual": 0.6722636229824275,
+          "serialization": 0.0009356449590995908,
+          "retry": 0.0,
+          "fallback": 0.0,
+          "operator_rows": 42.0,
+          "rhs_columns": 6.0,
+          "host_to_device_bytes": 21456.0,
+          "device_to_host_bytes": 3024.0
+        },
+        "qm9-000008": {
+          "end_to_end_wall_seconds": 16.187185060116462,
+          "prepare": 0.0014186400221660733,
+          "environment_startup": 0.0,
+          "data_read": 0.0,
+          "h2d": 0.00028972094878554344,
+          "scf_fock": 3.9209914499660954,
+          "cp_hf_gmres": 10.985812271013856,
+          "property_readout": 0.007286646869033575,
+          "physical_residual": 1.267791146878153,
+          "serialization": 0.0006983421044424176,
+          "retry": 0.0,
+          "fallback": 0.0,
+          "operator_rows": 49.0,
+          "rhs_columns": 6.0,
+          "host_to_device_bytes": 16272.0,
+          "device_to_host_bytes": 2160.0
+        },
+        "qm9-000009": {
+          "end_to_end_wall_seconds": 9.392882080981508,
+          "prepare": 0.0010593630140647292,
+          "environment_startup": 0.0,
+          "data_read": 0.0,
+          "h2d": 0.00028726679738610983,
+          "scf_fock": 2.170408724923618,
+          "cp_hf_gmres": 6.537119301036,
+          "property_readout": 0.007377123925834894,
+          "physical_residual": 0.6723860669881105,
+          "serialization": 0.0012132669799029827,
+          "retry": 0.0,
+          "fallback": 0.0,
+          "operator_rows": 53.0,
+          "rhs_columns": 6.0,
+          "host_to_device_bytes": 30216.0,
+          "device_to_host_bytes": 4224.0
+        },
+        "qm9-000010": {
+          "end_to_end_wall_seconds": 9.581434062914923,
+          "prepare": 0.001397548010572791,
+          "environment_startup": 0.0,
+          "data_read": 0.0,
+          "h2d": 0.00029231503140181303,
+          "scf_fock": 2.3948792450828478,
+          "cp_hf_gmres": 6.503094392945059,
+          "property_readout": 0.007344344048760831,
+          "physical_residual": 0.6703819199465215,
+          "serialization": 0.0011015268974006176,
+          "retry": 0.0,
+          "fallback": 0.0,
+          "operator_rows": 54.0,
+          "rhs_columns": 6.0,
+          "host_to_device_bytes": 27024.0,
+          "device_to_host_bytes": 3696.0
+        },
+        "qm9-000011": {
+          "end_to_end_wall_seconds": 18.423143094871193,
+          "prepare": 0.0014136730460450053,
+          "environment_startup": 0.0,
+          "data_read": 0.0,
+          "h2d": 0.00029514008201658726,
+          "scf_fock": 4.412684581009671,
+          "cp_hf_gmres": 12.72927268606145,
+          "property_readout": 0.00734485499560833,
+          "physical_residual": 1.26803880603984,
+          "serialization": 0.0010974319884553552,
+          "retry": 0.0,
+          "fallback": 0.0,
+          "operator_rows": 56.0,
+          "rhs_columns": 6.0,
+          "host_to_device_bytes": 30024.0,
+          "device_to_host_bytes": 4032.0
+        },
+        "qm9-000012": {
+          "end_to_end_wall_seconds": 18.82440429693088,
+          "prepare": 0.001751577015966177,
+          "environment_startup": 0.0,
+          "data_read": 0.0,
+          "h2d": 0.000285944901406765,
+          "scf_fock": 4.837590388022363,
+          "cp_hf_gmres": 12.703043476096354,
+          "property_readout": 0.007426450145430863,
+          "physical_residual": 1.2702413199003786,
+          "serialization": 0.00104549212846905,
+          "retry": 0.0,
+          "fallback": 0.0,
+          "operator_rows": 56.0,
+          "rhs_columns": 6.0,
+          "host_to_device_bytes": 26784.0,
+          "device_to_host_bytes": 3456.0
+        },
+        "qm9-000013": {
+          "end_to_end_wall_seconds": 8.53601811802946,
+          "prepare": 0.0010960591025650501,
+          "environment_startup": 0.0,
+          "data_read": 0.0,
+          "h2d": 0.0002923861611634493,
+          "scf_fock": 1.9874188549583778,
+          "cp_hf_gmres": 5.861876085051335,
+          "property_readout": 0.0076020469423383474,
+          "physical_residual": 0.6727831399766728,
+          "serialization": 0.0016169619048014283,
+          "retry": 0.0,
+          "fallback": 0.0,
+          "operator_rows": 49.0,
+          "rhs_columns": 6.0,
+          "host_to_device_bytes": 44328.0,
+          "device_to_host_bytes": 6240.0
+        },
+        "qm9-000014": {
+          "end_to_end_wall_seconds": 17.63150647911243,
+          "prepare": 0.0014183400198817253,
+          "environment_startup": 0.0,
+          "data_read": 0.0,
+          "h2d": 0.00029150303453207016,
+          "scf_fock": 4.462380305980332,
+          "cp_hf_gmres": 11.882205887814052,
+          "property_readout": 0.007429245044477284,
+          "physical_residual": 1.2733330829069018,
+          "serialization": 0.0013887860113754869,
+          "retry": 0.0,
+          "fallback": 0.0,
+          "operator_rows": 53.0,
+          "rhs_columns": 6.0,
+          "host_to_device_bytes": 36744.0,
+          "device_to_host_bytes": 4992.0
+        },
+        "qm9-000015": {
+          "end_to_end_wall_seconds": 17.627411490073428,
+          "prepare": 0.0014353460865095258,
+          "environment_startup": 0.0,
+          "data_read": 0.0,
+          "h2d": 0.0002898810198530555,
+          "scf_fock": 4.454270406044088,
+          "cp_hf_gmres": 11.885282517061569,
+          "property_readout": 0.007439258857630193,
+          "physical_residual": 1.2743258979171515,
+          "serialization": 0.0013360549928620458,
+          "retry": 0.0,
+          "fallback": 0.0,
+          "operator_rows": 52.0,
+          "rhs_columns": 6.0,
+          "host_to_device_bytes": 36744.0,
+          "device_to_host_bytes": 4992.0
+        },
+        "qm9-000016": {
+          "end_to_end_wall_seconds": 8.509806515998207,
+          "prepare": 0.0010804450139403343,
+          "environment_startup": 0.0,
+          "data_read": 0.0,
+          "h2d": 0.0002918649697676301,
+          "scf_fock": 1.962758845067583,
+          "cp_hf_gmres": 5.859550826949999,
+          "property_readout": 0.00738722993992269,
+          "physical_residual": 0.6735361919272691,
+          "serialization": 0.0013954759342595935,
+          "retry": 0.0,
+          "fallback": 0.0,
+          "operator_rows": 49.0,
+          "rhs_columns": 6.0,
+          "host_to_device_bytes": 36936.0,
+          "device_to_host_bytes": 5184.0
+        },
+        "qm9-000017": {
+          "end_to_end_wall_seconds": 17.963364002062008,
+          "prepare": 0.0014042489929124713,
+          "environment_startup": 0.0,
+          "data_read": 0.0,
+          "h2d": 0.0002861260436475277,
+          "scf_fock": 4.407125597936101,
+          "cp_hf_gmres": 12.276593145914376,
+          "property_readout": 0.007303053047508001,
+          "physical_residual": 1.2665164140053093,
+          "serialization": 0.0011597159318625927,
+          "retry": 0.0,
+          "fallback": 0.0,
+          "operator_rows": 54.0,
+          "rhs_columns": 6.0,
+          "host_to_device_bytes": 30024.0,
+          "device_to_host_bytes": 4032.0
+        }
+      },
+      "patch_sha256": null
+    },
+    "B": {
+      "rows": 51,
+      "failed": 0,
+      "scorer_accepted": 51,
+      "totals": {
+        "end_to_end_wall_seconds": 296.95423073053826,
+        "prepare": 0.02181653631851077,
+        "environment_startup": 0.8726690619951114,
+        "data_read": 0.00044026109389960766,
+        "h2d": 0.004863795242272317,
+        "scf_fock": 49.33821237122174,
+        "cp_hf_gmres": 231.3599113621749,
+        "property_readout": 0.12481186678633094,
+        "physical_residual": 15.160251869587228,
+        "serialization": 0.016308284713886678,
+        "retry": 0.0,
+        "fallback": 0.0,
+        "operator_rows": 738.0,
+        "rhs_columns": 102.0,
+        "host_to_device_bytes": 386688.0,
+        "device_to_host_bytes": 52752.0
+      },
+      "molecule_count": 17,
+      "molecule_wall_seconds": {
+        "qm9-000001": {
+          "end_to_end_wall_seconds": 9.18276346300263,
+          "prepare": 0.0011642529862001538,
+          "environment_startup": 0.8726690619951114,
+          "data_read": 0.00044026109389960766,
+          "h2d": 0.0002947209868580103,
+          "scf_fock": 1.9968405519612134,
+          "cp_hf_gmres": 5.621435002074577,
+          "property_readout": 0.008732180926017463,
+          "physical_residual": 0.6744244289584458,
+          "serialization": 0.0004199499962851405,
+          "retry": 0.0,
+          "fallback": 0.0,
+          "operator_rows": 25.0,
+          "rhs_columns": 6.0,
+          "host_to_device_bytes": 6792.0,
+          "device_to_host_bytes": 960.0
+        },
+        "qm9-000002": {
+          "end_to_end_wall_seconds": 9.447931200033054,
+          "prepare": 0.0011372420703992248,
+          "environment_startup": 0.0,
+          "data_read": 0.0,
+          "h2d": 0.00027789396699517965,
+          "scf_fock": 1.8462596490280703,
+          "cp_hf_gmres": 6.920211376971565,
+          "property_readout": 0.007040804834105074,
+          "physical_residual": 0.6697627351386473,
+          "serialization": 0.00037311005871742964,
+          "retry": 0.0,
+          "fallback": 0.0,
+          "operator_rows": 31.0,
+          "rhs_columns": 6.0,
+          "host_to_device_bytes": 5328.0,
+          "device_to_host_bytes": 720.0
+        },
+        "qm9-000003": {
+          "end_to_end_wall_seconds": 3.719825599924661,
+          "prepare": 0.0010695590171962976,
+          "environment_startup": 0.0,
+          "data_read": 0.0,
+          "h2d": 0.00028128980193287134,
+          "scf_fock": 0.9216994810849428,
+          "cp_hf_gmres": 2.4657537379534915,
+          "property_readout": 0.00697881996165961,
+          "physical_residual": 0.3208995359018445,
+          "serialization": 0.0002907337620854378,
+          "retry": 0.0,
+          "fallback": 0.0,
+          "operator_rows": 23.0,
+          "rhs_columns": 6.0,
+          "host_to_device_bytes": 4008.0,
+          "device_to_host_bytes": 480.0
+        },
+        "qm9-000004": {
+          "end_to_end_wall_seconds": 8.545093843946233,
+          "prepare": 0.0010523829841986299,
+          "environment_startup": 0.0,
+          "data_read": 0.0,
+          "h2d": 0.0002764519304037094,
+          "scf_fock": 1.628464211942628,
+          "cp_hf_gmres": 6.241238863905892,
+          "property_readout": 0.00712428183760494,
+          "physical_residual": 0.6631986669963226,
+          "serialization": 0.0006655229954048991,
+          "retry": 0.0,
+          "fallback": 0.0,
+          "operator_rows": 28.0,
+          "rhs_columns": 6.0,
+          "host_to_device_bytes": 12048.0,
+          "device_to_host_bytes": 1680.0
+        },
+        "qm9-000005": {
+          "end_to_end_wall_seconds": 12.133156542899087,
+          "prepare": 0.001389737008139491,
+          "environment_startup": 0.0,
+          "data_read": 0.0,
+          "h2d": 0.000278924242593348,
+          "scf_fock": 2.0909961439901963,
+          "cp_hf_gmres": 9.36308931617532,
+          "property_readout": 0.007085332181304693,
+          "physical_residual": 0.6668758739251643,
+          "serialization": 0.0005516899982467294,
+          "retry": 0.0,
+          "fallback": 0.0,
+          "operator_rows": 42.0,
+          "rhs_columns": 6.0,
+          "host_to_device_bytes": 10056.0,
+          "device_to_host_bytes": 1344.0
+        },
+        "qm9-000006": {
+          "end_to_end_wall_seconds": 24.042648622998968,
+          "prepare": 0.00140923704020679,
+          "environment_startup": 0.0,
+          "data_read": 0.0,
+          "h2d": 0.0002770129358395934,
+          "scf_fock": 4.305987217929214,
+          "cp_hf_gmres": 18.466072925948538,
+          "property_readout": 0.007218745769932866,
+          "physical_residual": 1.2581518139922991,
+          "serialization": 0.0005991840735077858,
+          "retry": 0.0,
+          "fallback": 0.0,
+          "operator_rows": 44.0,
+          "rhs_columns": 6.0,
+          "host_to_device_bytes": 11904.0,
+          "device_to_host_bytes": 1536.0
+        },
+        "qm9-000007": {
+          "end_to_end_wall_seconds": 11.263597436016425,
+          "prepare": 0.0010956089245155454,
+          "environment_startup": 0.0,
+          "data_read": 0.0,
+          "h2d": 0.00028145010583102703,
+          "scf_fock": 1.6785407280549407,
+          "cp_hf_gmres": 8.908421699190512,
+          "property_readout": 0.00725142692681402,
+          "physical_residual": 0.6640031239949167,
+          "serialization": 0.0009578889003023505,
+          "retry": 0.0,
+          "fallback": 0.0,
+          "operator_rows": 40.0,
+          "rhs_columns": 6.0,
+          "host_to_device_bytes": 21456.0,
+          "device_to_host_bytes": 3024.0
+        },
+        "qm9-000008": {
+          "end_to_end_wall_seconds": 24.90232862904668,
+          "prepare": 0.0014230080414563417,
+          "environment_startup": 0.0,
+          "data_read": 0.0,
+          "h2d": 0.00028348073828965425,
+          "scf_fock": 3.896363800042309,
+          "cp_hf_gmres": 19.73742104799021,
+          "property_readout": 0.007223924854770303,
+          "physical_residual": 1.2559315889375284,
+          "serialization": 0.0007098108762875199,
+          "retry": 0.0,
+          "fallback": 0.0,
+          "operator_rows": 47.0,
+          "rhs_columns": 6.0,
+          "host_to_device_bytes": 16272.0,
+          "device_to_host_bytes": 2160.0
+        },
+        "qm9-000009": {
+          "end_to_end_wall_seconds": 14.235254987957887,
+          "prepare": 0.0010665140580385923,
+          "environment_startup": 0.0,
+          "data_read": 0.0,
+          "h2d": 0.00029465905390679836,
+          "scf_fock": 2.1697506989585236,
+          "cp_hf_gmres": 11.38187172403559,
+          "property_readout": 0.007327232859097421,
+          "physical_residual": 0.6706129400990903,
+          "serialization": 0.001254499889910221,
+          "retry": 0.0,
+          "fallback": 0.0,
+          "operator_rows": 51.0,
+          "rhs_columns": 6.0,
+          "host_to_device_bytes": 30216.0,
+          "device_to_host_bytes": 4224.0
+        },
+        "qm9-000010": {
+          "end_to_end_wall_seconds": 14.657937525073066,
+          "prepare": 0.0014104580041021109,
+          "environment_startup": 0.0,
+          "data_read": 0.0,
+          "h2d": 0.0002927250461652875,
+          "scf_fock": 2.3821150209987536,
+          "cp_hf_gmres": 11.59701785503421,
+          "property_readout": 0.007299769902601838,
+          "physical_residual": 0.6656528818421066,
+          "serialization": 0.0011091590858995914,
+          "retry": 0.0,
+          "fallback": 0.0,
+          "operator_rows": 52.0,
+          "rhs_columns": 6.0,
+          "host_to_device_bytes": 27024.0,
+          "device_to_host_bytes": 3696.0
+        },
+        "qm9-000011": {
+          "end_to_end_wall_seconds": 28.369851913885213,
+          "prepare": 0.0014086270239204168,
+          "environment_startup": 0.0,
+          "data_read": 0.0,
+          "h2d": 0.0002874690108001232,
+          "scf_fock": 4.399702494964004,
+          "cp_hf_gmres": 22.69429911801126,
+          "property_readout": 0.0073087242199108005,
+          "physical_residual": 1.2626096678432077,
+          "serialization": 0.0011562419822439551,
+          "retry": 0.0,
+          "fallback": 0.0,
+          "operator_rows": 54.0,
+          "rhs_columns": 6.0,
+          "host_to_device_bytes": 30024.0,
+          "device_to_host_bytes": 4032.0
+        },
+        "qm9-000012": {
+          "end_to_end_wall_seconds": 28.782759212888777,
+          "prepare": 0.0017525299917906523,
+          "environment_startup": 0.0,
+          "data_read": 0.0,
+          "h2d": 0.0002852452453225851,
+          "scf_fock": 4.808578509022482,
+          "cp_hf_gmres": 22.69775556505192,
+          "property_readout": 0.007323827128857374,
+          "physical_residual": 1.2628967779455706,
+          "serialization": 0.0010736361145973206,
+          "retry": 0.0,
+          "fallback": 0.0,
+          "operator_rows": 54.0,
+          "rhs_columns": 6.0,
+          "host_to_device_bytes": 26784.0,
+          "device_to_host_bytes": 3456.0
+        },
+        "qm9-000013": {
+          "end_to_end_wall_seconds": 13.146872892859392,
+          "prepare": 0.001100216992199421,
+          "environment_startup": 0.0,
+          "data_read": 0.0,
+          "h2d": 0.00029117404483258724,
+          "scf_fock": 1.9824210910592228,
+          "cp_hf_gmres": 10.482349755940959,
+          "property_readout": 0.0075851461151614785,
+          "physical_residual": 0.667994440998882,
+          "serialization": 0.0017615420510992408,
+          "retry": 0.0,
+          "fallback": 0.0,
+          "operator_rows": 47.0,
+          "rhs_columns": 6.0,
+          "host_to_device_bytes": 44328.0,
+          "device_to_host_bytes": 6240.0
+        },
+        "qm9-000014": {
+          "end_to_end_wall_seconds": 27.154831947991624,
+          "prepare": 0.0014237700961530209,
+          "environment_startup": 0.0,
+          "data_read": 0.0,
+          "h2d": 0.0002987941261380911,
+          "scf_fock": 4.433284034021199,
+          "cp_hf_gmres": 21.445217419066466,
+          "property_readout": 0.007372551131993532,
+          "physical_residual": 1.2627473419997841,
+          "serialization": 0.001392762060277164,
+          "retry": 0.0,
+          "fallback": 0.0,
+          "operator_rows": 51.0,
+          "rhs_columns": 6.0,
+          "host_to_device_bytes": 36744.0,
+          "device_to_host_bytes": 4992.0
+        },
+        "qm9-000015": {
+          "end_to_end_wall_seconds": 26.71573606110178,
+          "prepare": 0.0014323530485853553,
+          "environment_startup": 0.0,
+          "data_read": 0.0,
+          "h2d": 0.00028764817398041487,
+          "scf_fock": 4.421596892061643,
+          "cp_hf_gmres": 21.01776141289156,
+          "property_readout": 0.007351151085458696,
+          "physical_residual": 1.2628249560948461,
+          "serialization": 0.00139244191814214,
+          "retry": 0.0,
+          "fallback": 0.0,
+          "operator_rows": 50.0,
+          "rhs_columns": 6.0,
+          "host_to_device_bytes": 36744.0,
+          "device_to_host_bytes": 4992.0
+        },
+        "qm9-000016": {
+          "end_to_end_wall_seconds": 13.117392492946237,
+          "prepare": 0.0010753480019047856,
+          "environment_startup": 0.0,
+          "data_read": 0.0,
+          "h2d": 0.0002873198827728629,
+          "scf_fock": 1.9624438870232552,
+          "cp_hf_gmres": 10.47166808100883,
+          "property_readout": 0.007319652941077948,
+          "physical_residual": 0.6700466319452971,
+          "serialization": 0.0014423279790207744,
+          "retry": 0.0,
+          "fallback": 0.0,
+          "operator_rows": 47.0,
+          "rhs_columns": 6.0,
+          "host_to_device_bytes": 36936.0,
+          "device_to_host_bytes": 5184.0
+        },
+        "qm9-000017": {
+          "end_to_end_wall_seconds": 27.536248357966542,
+          "prepare": 0.0014056910295039415,
+          "environment_startup": 0.0,
+          "data_read": 0.0,
+          "h2d": 0.0002875359496101737,
+          "scf_fock": 4.413167959079146,
+          "cp_hf_gmres": 21.848326460924,
+          "property_readout": 0.007268294109962881,
+          "physical_residual": 1.2616184629732743,
+          "serialization": 0.0011577829718589783,
+          "retry": 0.0,
+          "fallback": 0.0,
+          "operator_rows": 52.0,
+          "rhs_columns": 6.0,
+          "host_to_device_bytes": 30024.0,
+          "device_to_host_bytes": 4032.0
+        }
+      },
+      "patch_sha256": "dad0f28af59dc9dca2fc3c0c78f73920ae4f5593bc2d50408fc02153293679d5"
+    },
+    "C": {
+      "rows": 51,
+      "failed": 0,
+      "scorer_accepted": 51,
+      "totals": {
+        "end_to_end_wall_seconds": 148.60184598900378,
+        "prepare": 0.02155309496447444,
+        "environment_startup": 0.830470684915781,
+        "data_read": 0.00042549800127744675,
+        "h2d": 0.004238881170749664,
+        "scf_fock": 49.02608684496954,
+        "cp_hf_gmres": 88.50249271921348,
+        "property_readout": 0.122988814371638,
+        "physical_residual": 10.039807421038859,
+        "serialization": 0.01572686107829213,
+        "retry": 0.0,
+        "fallback": 0.0,
+        "operator_rows": 407.0,
+        "rhs_columns": 51.0,
+        "host_to_device_bytes": 275376.0,
+        "device_to_host_bytes": 26376.0
+      },
+      "molecule_count": 17,
+      "molecule_wall_seconds": {
+        "qm9-000001": {
+          "end_to_end_wall_seconds": 5.529108533053659,
+          "prepare": 0.0011623710161074996,
+          "environment_startup": 0.830470684915781,
+          "data_read": 0.00042549800127744675,
+          "h2d": 0.0002605271292850375,
+          "scf_fock": 1.9750856100581586,
+          "cp_hf_gmres": 2.2625556509010494,
+          "property_readout": 0.008663190994411707,
+          "physical_residual": 0.44451526494231075,
+          "serialization": 0.00039791606832295656,
+          "retry": 0.0,
+          "fallback": 0.0,
+          "operator_rows": 14.0,
+          "rhs_columns": 3.0,
+          "host_to_device_bytes": 4848.0,
+          "device_to_host_bytes": 480.0
+        },
+        "qm9-000002": {
+          "end_to_end_wall_seconds": 5.408693062025122,
+          "prepare": 0.0011315339943394065,
+          "environment_startup": 0.0,
+          "data_read": 0.0,
+          "h2d": 0.00023966690059751272,
+          "scf_fock": 1.8452809919836,
+          "cp_hf_gmres": 3.110978187993169,
+          "property_readout": 0.00690971699077636,
+          "physical_residual": 0.4419220860581845,
+          "serialization": 0.00031629297882318497,
+          "retry": 0.0,
+          "fallback": 0.0,
+          "operator_rows": 19.0,
+          "rhs_columns": 3.0,
+          "host_to_device_bytes": 3792.0,
+          "device_to_host_bytes": 360.0
+        },
+        "qm9-000003": {
+          "end_to_end_wall_seconds": 2.4254881689557806,
+          "prepare": 0.0010439299512654543,
+          "environment_startup": 0.0,
+          "data_read": 0.0,
+          "h2d": 0.0002468670718371868,
+          "scf_fock": 0.9174660289427266,
+          "cp_hf_gmres": 1.2859581760130823,
+          "property_readout": 0.00691055809147656,
+          "physical_residual": 0.21164703206159174,
+          "serialization": 0.0002888800809159875,
+          "retry": 0.0,
+          "fallback": 0.0,
+          "operator_rows": 16.0,
+          "rhs_columns": 3.0,
+          "host_to_device_bytes": 2832.0,
+          "device_to_host_bytes": 240.0
+        },
+        "qm9-000004": {
+          "end_to_end_wall_seconds": 4.29523897706531,
+          "prepare": 0.0010379909072071314,
+          "environment_startup": 0.0,
+          "data_read": 0.0,
+          "h2d": 0.0002404650440439582,
+          "scf_fock": 1.6263186020078138,
+          "cp_hf_gmres": 2.2157409180654213,
+          "property_readout": 0.007039025076664984,
+          "physical_residual": 0.4422244889428839,
+          "serialization": 0.0006529251113533974,
+          "retry": 0.0,
+          "fallback": 0.0,
+          "operator_rows": 13.0,
+          "rhs_columns": 3.0,
+          "host_to_device_bytes": 8592.0,
+          "device_to_host_bytes": 840.0
+        },
+        "qm9-000005": {
+          "end_to_end_wall_seconds": 6.087729464052245,
+          "prepare": 0.001387753989547491,
+          "environment_startup": 0.0,
+          "data_read": 0.0,
+          "h2d": 0.00023907283321022987,
+          "scf_fock": 2.085141333984211,
+          "cp_hf_gmres": 3.5490861180005595,
+          "property_readout": 0.0069899800000712276,
+          "physical_residual": 0.44244766898918897,
+          "serialization": 0.0005248410161584616,
+          "retry": 0.0,
+          "fallback": 0.0,
+          "operator_rows": 23.0,
+          "rhs_columns": 3.0,
+          "host_to_device_bytes": 7152.0,
+          "device_to_host_bytes": 672.0
+        },
+        "qm9-000006": {
+          "end_to_end_wall_seconds": 12.254668244975619,
+          "prepare": 0.001386443036608398,
+          "environment_startup": 0.0,
+          "data_read": 0.0,
+          "h2d": 0.00024159904569387436,
+          "scf_fock": 4.284240594948642,
+          "cp_hf_gmres": 7.122142456122674,
+          "property_readout": 0.007044303114525974,
+          "physical_residual": 0.8370608830591664,
+          "serialization": 0.0005668431986123323,
+          "retry": 0.0,
+          "fallback": 0.0,
+          "operator_rows": 24.0,
+          "rhs_columns": 3.0,
+          "host_to_device_bytes": 8448.0,
+          "device_to_host_bytes": 768.0
+        },
+        "qm9-000007": {
+          "end_to_end_wall_seconds": 5.237936199060641,
+          "prepare": 0.0010694990633055568,
+          "environment_startup": 0.0,
+          "data_read": 0.0,
+          "h2d": 0.00024230906274169683,
+          "scf_fock": 1.6655362760648131,
+          "cp_hf_gmres": 3.118838013964705,
+          "property_readout": 0.007187721901573241,
+          "physical_residual": 0.4420929729240015,
+          "serialization": 0.000935395946726203,
+          "retry": 0.0,
+          "fallback": 0.0,
+          "operator_rows": 21.0,
+          "rhs_columns": 3.0,
+          "host_to_device_bytes": 15312.0,
+          "device_to_host_bytes": 1512.0
+        },
+        "qm9-000008": {
+          "end_to_end_wall_seconds": 12.241286951000802,
+          "prepare": 0.0014011649182066321,
+          "environment_startup": 0.0,
+          "data_read": 0.0,
+          "h2d": 0.00024873914662748575,
+          "scf_fock": 3.873435982968658,
+          "cp_hf_gmres": 7.522518454003148,
+          "property_readout": 0.007079165079630911,
+          "physical_residual": 0.8339274149620906,
+          "serialization": 0.0006780119147151709,
+          "retry": 0.0,
+          "fallback": 0.0,
+          "operator_rows": 26.0,
+          "rhs_columns": 3.0,
+          "host_to_device_bytes": 11568.0,
+          "device_to_host_bytes": 1080.0
+        },
+        "qm9-000009": {
+          "end_to_end_wall_seconds": 7.0426843049936,
+          "prepare": 0.0010578820947557688,
+          "environment_startup": 0.0,
+          "data_read": 0.0,
+          "h2d": 0.00025218387600034475,
+          "scf_fock": 2.14780267898459,
+          "cp_hf_gmres": 4.4415929990354925,
+          "property_readout": 0.007215323974378407,
+          "physical_residual": 0.4414544851751998,
+          "serialization": 0.0012389079201966524,
+          "retry": 0.0,
+          "fallback": 0.0,
+          "operator_rows": 28.0,
+          "rhs_columns": 3.0,
+          "host_to_device_bytes": 21552.0,
+          "device_to_host_bytes": 2112.0
+        },
+        "qm9-000010": {
+          "end_to_end_wall_seconds": 7.48013250308577,
+          "prepare": 0.0013825170462951064,
+          "environment_startup": 0.0,
+          "data_read": 0.0,
+          "h2d": 0.00025039201136678457,
+          "scf_fock": 2.3748602439882234,
+          "cp_hf_gmres": 4.6496947929263115,
+          "property_readout": 0.007192238001152873,
+          "physical_residual": 0.44360252912156284,
+          "serialization": 0.0010852330597117543,
+          "retry": 0.0,
+          "fallback": 0.0,
+          "operator_rows": 29.0,
+          "rhs_columns": 3.0,
+          "host_to_device_bytes": 19248.0,
+          "device_to_host_bytes": 1848.0
+        },
+        "qm9-000011": {
+          "end_to_end_wall_seconds": 13.597389567876235,
+          "prepare": 0.0013929320266470313,
+          "environment_startup": 0.0,
+          "data_read": 0.0,
+          "h2d": 0.0002510140184313059,
+          "scf_fock": 4.364560055080801,
+          "cp_hf_gmres": 8.38595001201611,
+          "property_readout": 0.007203746004961431,
+          "physical_residual": 0.834870244958438,
+          "serialization": 0.001110902987420559,
+          "retry": 0.0,
+          "fallback": 0.0,
+          "operator_rows": 29.0,
+          "rhs_columns": 3.0,
+          "host_to_device_bytes": 21360.0,
+          "device_to_host_bytes": 2016.0
+        },
+        "qm9-000012": {
+          "end_to_end_wall_seconds": 14.42529435781762,
+          "prepare": 0.0017303569475188851,
+          "environment_startup": 0.0,
+          "data_read": 0.0,
+          "h2d": 0.0002485289005562663,
+          "scf_fock": 4.776068917941302,
+          "cp_hf_gmres": 8.802163442014717,
+          "property_readout": 0.0071936509339138865,
+          "physical_residual": 0.8348088858183473,
+          "serialization": 0.0010471859714016318,
+          "retry": 0.0,
+          "fallback": 0.0,
+          "operator_rows": 30.0,
+          "rhs_columns": 3.0,
+          "host_to_device_bytes": 19008.0,
+          "device_to_host_bytes": 1728.0
+        },
+        "qm9-000013": {
+          "end_to_end_wall_seconds": 6.208563269930892,
+          "prepare": 0.0010817379225045443,
+          "environment_startup": 0.0,
+          "data_read": 0.0,
+          "h2d": 0.00025689019821584225,
+          "scf_fock": 1.9691818139981478,
+          "cp_hf_gmres": 3.783843424054794,
+          "property_readout": 0.007471313001587987,
+          "physical_residual": 0.44283459591679275,
+          "serialization": 0.001645767013542354,
+          "retry": 0.0,
+          "fallback": 0.0,
+          "operator_rows": 25.0,
+          "rhs_columns": 3.0,
+          "host_to_device_bytes": 31632.0,
+          "device_to_host_bytes": 3120.0
+        },
+        "qm9-000014": {
+          "end_to_end_wall_seconds": 13.192798014031723,
+          "prepare": 0.0014163380255922675,
+          "environment_startup": 0.0,
+          "data_read": 0.0,
+          "h2d": 0.0002501311246305704,
+          "scf_fock": 4.393430996919051,
+          "cp_hf_gmres": 7.951619909028523,
+          "property_readout": 0.0072378290351480246,
+          "physical_residual": 0.8354431689949706,
+          "serialization": 0.0013227559393271804,
+          "retry": 0.0,
+          "fallback": 0.0,
+          "operator_rows": 28.0,
+          "rhs_columns": 3.0,
+          "host_to_device_bytes": 26160.0,
+          "device_to_host_bytes": 2496.0
+        },
+        "qm9-000015": {
+          "end_to_end_wall_seconds": 13.19245845603291,
+          "prepare": 0.0014126020250841975,
+          "environment_startup": 0.0,
+          "data_read": 0.0,
+          "h2d": 0.0002510820049792528,
+          "scf_fock": 4.406423612032086,
+          "cp_hf_gmres": 7.941957114031538,
+          "property_readout": 0.007239570957608521,
+          "physical_residual": 0.8317454820498824,
+          "serialization": 0.0013528219424188137,
+          "retry": 0.0,
+          "fallback": 0.0,
+          "operator_rows": 28.0,
+          "rhs_columns": 3.0,
+          "host_to_device_bytes": 26160.0,
+          "device_to_host_bytes": 2496.0
+        },
+        "qm9-000016": {
+          "end_to_end_wall_seconds": 6.3981121010147035,
+          "prepare": 0.0010636909864842892,
+          "environment_startup": 0.0,
+          "data_read": 0.0,
+          "h2d": 0.00026489992160350084,
+          "scf_fock": 1.946441081003286,
+          "cp_hf_gmres": 3.998528386000544,
+          "property_readout": 0.007224652101285756,
+          "physical_residual": 0.44112706696614623,
+          "serialization": 0.0013909549452364445,
+          "retry": 0.0,
+          "fallback": 0.0,
+          "operator_rows": 26.0,
+          "rhs_columns": 3.0,
+          "host_to_device_bytes": 26352.0,
+          "device_to_host_bytes": 2592.0
+        },
+        "qm9-000017": {
+          "end_to_end_wall_seconds": 13.584263814031146,
+          "prepare": 0.0013943510130047798,
+          "environment_startup": 0.0,
+          "data_read": 0.0,
+          "h2d": 0.0002545128809288144,
+          "scf_fock": 4.374812024063431,
+          "cp_hf_gmres": 8.35932466504164,
+          "property_readout": 0.00718682911247015,
+          "physical_residual": 0.8380831500981003,
+          "serialization": 0.0011712249834090471,
+          "retry": 0.0,
+          "fallback": 0.0,
+          "operator_rows": 28.0,
+          "rhs_columns": 3.0,
+          "host_to_device_bytes": 21360.0,
+          "device_to_host_bytes": 2016.0
+        }
+      },
+      "patch_sha256": null
+    },
+    "D": {
+      "rows": 51,
+      "failed": 0,
+      "scorer_accepted": 51,
+      "totals": {
+        "end_to_end_wall_seconds": 186.2619204542134,
+        "prepare": 0.021694572875276208,
+        "environment_startup": 0.8042108779773116,
+        "data_read": 0.00043591996654868126,
+        "h2d": 0.004344463930465281,
+        "scf_fock": 49.01578641694505,
+        "cp_hf_gmres": 126.20779988204595,
+        "property_readout": 0.12012737384065986,
+        "physical_residual": 10.033360814326443,
+        "serialization": 0.015538274659775198,
+        "retry": 0.0,
+        "fallback": 0.0,
+        "operator_rows": 407.0,
+        "rhs_columns": 51.0,
+        "host_to_device_bytes": 275376.0,
+        "device_to_host_bytes": 26376.0
+      },
+      "molecule_count": 17,
+      "molecule_wall_seconds": {
+        "qm9-000001": {
+          "end_to_end_wall_seconds": 6.395239594974555,
+          "prepare": 0.0011798139894381166,
+          "environment_startup": 0.8042108779773116,
+          "data_read": 0.00043591996654868126,
+          "h2d": 0.00025910104159265757,
+          "scf_fock": 1.9850135040469468,
+          "cp_hf_gmres": 3.140989205101505,
+          "property_readout": 0.008393924101255834,
+          "physical_residual": 0.4486348310019821,
+          "serialization": 0.0004042909713461995,
+          "retry": 0.0,
+          "fallback": 0.0,
+          "operator_rows": 14.0,
+          "rhs_columns": 3.0,
+          "host_to_device_bytes": 4848.0,
+          "device_to_host_bytes": 480.0
+        },
+        "qm9-000002": {
+          "end_to_end_wall_seconds": 6.502076303819194,
+          "prepare": 0.0011428080033510923,
+          "environment_startup": 0.0,
+          "data_read": 0.0,
+          "h2d": 0.000244520022533834,
+          "scf_fock": 1.8331044679507613,
+          "cp_hf_gmres": 4.216756074922159,
+          "property_readout": 0.006828467943705618,
+          "physical_residual": 0.44171939592342824,
+          "serialization": 0.0003178010229021311,
+          "retry": 0.0,
+          "fallback": 0.0,
+          "operator_rows": 19.0,
+          "rhs_columns": 3.0,
+          "host_to_device_bytes": 3792.0,
+          "device_to_host_bytes": 360.0
+        },
+        "qm9-000003": {
+          "end_to_end_wall_seconds": 2.840274768183008,
+          "prepare": 0.0010722309816628695,
+          "environment_startup": 0.0,
+          "data_read": 0.0,
+          "h2d": 0.0002454399364069104,
+          "scf_fock": 0.9119568660389632,
+          "cp_hf_gmres": 1.7062191250734031,
+          "property_readout": 0.00674297905061394,
+          "physical_residual": 0.21184983605053276,
+          "serialization": 0.0002673439448699355,
+          "retry": 0.0,
+          "fallback": 0.0,
+          "operator_rows": 16.0,
+          "rhs_columns": 3.0,
+          "host_to_device_bytes": 2832.0,
+          "device_to_host_bytes": 240.0
+        },
+        "qm9-000004": {
+          "end_to_end_wall_seconds": 4.948668154072948,
+          "prepare": 0.0010454909643158317,
+          "environment_startup": 0.0,
+          "data_read": 0.0,
+          "h2d": 0.0002481758128851652,
+          "scf_fock": 1.6252091799397022,
+          "cp_hf_gmres": 2.871878393110819,
+          "property_readout": 0.0068931670393794775,
+          "physical_residual": 0.4407669941429049,
+          "serialization": 0.000632226001471281,
+          "retry": 0.0,
+          "fallback": 0.0,
+          "operator_rows": 13.0,
+          "rhs_columns": 3.0,
+          "host_to_device_bytes": 8592.0,
+          "device_to_host_bytes": 840.0
+        },
+        "qm9-000005": {
+          "end_to_end_wall_seconds": 7.60976426594425,
+          "prepare": 0.0013849749229848385,
+          "environment_startup": 0.0,
+          "data_read": 0.0,
+          "h2d": 0.00024275609757751226,
+          "scf_fock": 2.076034649973735,
+          "cp_hf_gmres": 5.08253874105867,
+          "property_readout": 0.006799205089919269,
+          "physical_residual": 0.4403093939181417,
+          "serialization": 0.0005087088793516159,
+          "retry": 0.0,
+          "fallback": 0.0,
+          "operator_rows": 23.0,
+          "rhs_columns": 3.0,
+          "host_to_device_bytes": 7152.0,
+          "device_to_host_bytes": 672.0
+        },
+        "qm9-000006": {
+          "end_to_end_wall_seconds": 15.135919207008556,
+          "prepare": 0.0013931980356574059,
+          "environment_startup": 0.0,
+          "data_read": 0.0,
+          "h2d": 0.0002448100131005049,
+          "scf_fock": 4.2774048099527135,
+          "cp_hf_gmres": 10.016168002970517,
+          "property_readout": 0.006880179047584534,
+          "physical_residual": 0.8312757438980043,
+          "serialization": 0.0005517550744116306,
+          "retry": 0.0,
+          "fallback": 0.0,
+          "operator_rows": 24.0,
+          "rhs_columns": 3.0,
+          "host_to_device_bytes": 8448.0,
+          "device_to_host_bytes": 768.0
+        },
+        "qm9-000007": {
+          "end_to_end_wall_seconds": 6.753546601044945,
+          "prepare": 0.0010744049213826656,
+          "environment_startup": 0.0,
+          "data_read": 0.0,
+          "h2d": 0.0002563177840784192,
+          "scf_fock": 1.6669939620187506,
+          "cp_hf_gmres": 4.63502214604523,
+          "property_readout": 0.006995854899287224,
+          "physical_residual": 0.4402125380001962,
+          "serialization": 0.0009250589646399021,
+          "retry": 0.0,
+          "fallback": 0.0,
+          "operator_rows": 21.0,
+          "rhs_columns": 3.0,
+          "host_to_device_bytes": 15312.0,
+          "device_to_host_bytes": 1512.0
+        },
+        "qm9-000008": {
+          "end_to_end_wall_seconds": 15.55433489906136,
+          "prepare": 0.0014113549841567874,
+          "environment_startup": 0.0,
+          "data_read": 0.0,
+          "h2d": 0.0002458220114931464,
+          "scf_fock": 3.870263159973547,
+          "cp_hf_gmres": 10.839386278879829,
+          "property_readout": 0.006972431903705001,
+          "physical_residual": 0.8333602028433233,
+          "serialization": 0.0006670289440080523,
+          "retry": 0.0,
+          "fallback": 0.0,
+          "operator_rows": 26.0,
+          "rhs_columns": 3.0,
+          "host_to_device_bytes": 11568.0,
+          "device_to_host_bytes": 1080.0
+        },
+        "qm9-000009": {
+          "end_to_end_wall_seconds": 8.81189897202421,
+          "prepare": 0.0010586120188236237,
+          "environment_startup": 0.0,
+          "data_read": 0.0,
+          "h2d": 0.00026412890292704105,
+          "scf_fock": 2.152519284049049,
+          "cp_hf_gmres": 6.205102395964786,
+          "property_readout": 0.0070145969511941075,
+          "physical_residual": 0.44263728498481214,
+          "serialization": 0.0012122539337724447,
+          "retry": 0.0,
+          "fallback": 0.0,
+          "operator_rows": 28.0,
+          "rhs_columns": 3.0,
+          "host_to_device_bytes": 21552.0,
+          "device_to_host_bytes": 2112.0
+        },
+        "qm9-000010": {
+          "end_to_end_wall_seconds": 9.25987253303174,
+          "prepare": 0.0014022220857441425,
+          "environment_startup": 0.0,
+          "data_read": 0.0,
+          "h2d": 0.000260493834502995,
+          "scf_fock": 2.3742788899689913,
+          "cp_hf_gmres": 6.432565754046664,
+          "property_readout": 0.007028198102489114,
+          "physical_residual": 0.44120323099195957,
+          "serialization": 0.0010848732199519873,
+          "retry": 0.0,
+          "fallback": 0.0,
+          "operator_rows": 29.0,
+          "rhs_columns": 3.0,
+          "host_to_device_bytes": 19248.0,
+          "device_to_host_bytes": 1848.0
+        },
+        "qm9-000011": {
+          "end_to_end_wall_seconds": 17.33293551998213,
+          "prepare": 0.0014020130038261414,
+          "environment_startup": 0.0,
+          "data_read": 0.0,
+          "h2d": 0.00025625922717154026,
+          "scf_fock": 4.3576072819996625,
+          "cp_hf_gmres": 12.127657645032741,
+          "property_readout": 0.007014098926447332,
+          "physical_residual": 0.8357812239555642,
+          "serialization": 0.0011228099465370178,
+          "retry": 0.0,
+          "fallback": 0.0,
+          "operator_rows": 29.0,
+          "rhs_columns": 3.0,
+          "host_to_device_bytes": 21360.0,
+          "device_to_host_bytes": 2016.0
+        },
+        "qm9-000012": {
+          "end_to_end_wall_seconds": 18.157769223093055,
+          "prepare": 0.0017401049844920635,
+          "environment_startup": 0.0,
+          "data_read": 0.0,
+          "h2d": 0.000263259164057672,
+          "scf_fock": 4.784781276015565,
+          "cp_hf_gmres": 12.524981238995679,
+          "property_readout": 0.007031936896964908,
+          "physical_residual": 0.8358548268442973,
+          "serialization": 0.0010223878780379891,
+          "retry": 0.0,
+          "fallback": 0.0,
+          "operator_rows": 30.0,
+          "rhs_columns": 3.0,
+          "host_to_device_bytes": 19008.0,
+          "device_to_host_bytes": 1728.0
+        },
+        "qm9-000013": {
+          "end_to_end_wall_seconds": 7.97565515502356,
+          "prepare": 0.0010802260367199779,
+          "environment_startup": 0.0,
+          "data_read": 0.0,
+          "h2d": 0.0002638088772073388,
+          "scf_fock": 1.965943339979276,
+          "cp_hf_gmres": 5.553651105961762,
+          "property_readout": 0.007309658918529749,
+          "physical_residual": 0.4435226219939068,
+          "serialization": 0.0016085871029645205,
+          "retry": 0.0,
+          "fallback": 0.0,
+          "operator_rows": 25.0,
+          "rhs_columns": 3.0,
+          "host_to_device_bytes": 31632.0,
+          "device_to_host_bytes": 3120.0
+        },
+        "qm9-000014": {
+          "end_to_end_wall_seconds": 16.937809264054522,
+          "prepare": 0.0014089540345594287,
+          "environment_startup": 0.0,
+          "data_read": 0.0,
+          "h2d": 0.00026170804630964994,
+          "scf_fock": 4.399582677986473,
+          "cp_hf_gmres": 11.69127878791187,
+          "property_readout": 0.007089057005941868,
+          "physical_residual": 0.8347345498623326,
+          "serialization": 0.0013431849656626582,
+          "retry": 0.0,
+          "fallback": 0.0,
+          "operator_rows": 28.0,
+          "rhs_columns": 3.0,
+          "host_to_device_bytes": 26160.0,
+          "device_to_host_bytes": 2496.0
+        },
+        "qm9-000015": {
+          "end_to_end_wall_seconds": 16.968445112928748,
+          "prepare": 0.0014229649677872658,
+          "environment_startup": 0.0,
+          "data_read": 0.0,
+          "h2d": 0.0002565900795161724,
+          "scf_fock": 4.410700158099644,
+          "cp_hf_gmres": 11.709394217003137,
+          "property_readout": 0.007057481096126139,
+          "physical_residual": 0.8361773870419711,
+          "serialization": 0.0013369058724492788,
+          "retry": 0.0,
+          "fallback": 0.0,
+          "operator_rows": 28.0,
+          "rhs_columns": 3.0,
+          "host_to_device_bytes": 26160.0,
+          "device_to_host_bytes": 2496.0
+        },
+        "qm9-000016": {
+          "end_to_end_wall_seconds": 8.162036272929981,
+          "prepare": 0.00107238395139575,
+          "environment_startup": 0.0,
+          "data_read": 0.0,
+          "h2d": 0.0002700689947232604,
+          "scf_fock": 1.9571125389775261,
+          "cp_hf_gmres": 5.752425558981486,
+          "property_readout": 0.007106096018105745,
+          "physical_residual": 0.4405889519257471,
+          "serialization": 0.001362013048492372,
+          "retry": 0.0,
+          "fallback": 0.0,
+          "operator_rows": 26.0,
+          "rhs_columns": 3.0,
+          "host_to_device_bytes": 26352.0,
+          "device_to_host_bytes": 2592.0
+        },
+        "qm9-000017": {
+          "end_to_end_wall_seconds": 16.915674607036635,
+          "prepare": 0.0014028149889782071,
+          "environment_startup": 0.0,
+          "data_read": 0.0,
+          "h2d": 0.00026120408438146114,
+          "scf_fock": 4.3672803699737415,
+          "cp_hf_gmres": 11.70178521098569,
+          "property_readout": 0.0069700408494099975,
+          "physical_residual": 0.8347318009473383,
+          "serialization": 0.0011710448889061809,
+          "retry": 0.0,
+          "fallback": 0.0,
+          "operator_rows": 28.0,
+          "rhs_columns": 3.0,
+          "host_to_device_bytes": 21360.0,
+          "device_to_host_bytes": 2016.0
+        }
+      },
+      "patch_sha256": "dad0f28af59dc9dca2fc3c0c78f73920ae4f5593bc2d50408fc02153293679d5"
+    }
+  },
+  "paired_effects": {
+    "official_native_over_gqc": {
+      "end_to_end_wall_seconds": {
+        "paired_median_difference": 2.3501977759879082,
+        "paired_bootstrap_95ci": [
+          1.8504091509385034,
+          4.379100188030861
+        ],
+        "geometric_mean_ratio": 1.3301310312140333
+      },
+      "prepare": {
+        "paired_median_difference": 1.5012104995548725e-05,
+        "paired_bootstrap_95ci": [
+          9.885057806968689e-06,
+          1.7475103959441185e-05
+        ],
+        "geometric_mean_ratio": 1.0100982856413845
+      },
+      "environment_startup": {
+        "paired_median_difference": 0.0,
+        "paired_bootstrap_95ci": [
+          0.0,
+          0.0
+        ],
+        "geometric_mean_ratio": 0.9966987239773175
+      },
+      "data_read": {
+        "paired_median_difference": 0.0,
+        "paired_bootstrap_95ci": [
+          0.0,
+          0.0
+        ],
+        "geometric_mean_ratio": 1.0382492476060192
+      },
+      "h2d": {
+        "paired_median_difference": 3.7646968849003315e-05,
+        "paired_bootstrap_95ci": [
+          3.595731686800718e-05,
+          3.9530801586806774e-05
+        ],
+        "geometric_mean_ratio": 1.150433927118557
+      },
+      "scf_fock": {
+        "paired_median_difference": 0.0200190010946244,
+        "paired_bootstrap_95ci": [
+          0.01631776406429708,
+          0.04755546699743718
+        ],
+        "geometric_mean_ratio": 1.0096660031717655
+      },
+      "cp_hf_gmres": {
+        "paired_median_difference": 2.0955263020005077,
+        "paired_bootstrap_95ci": [
+          1.6069267180282623,
+          3.900880034081638
+        ],
+        "geometric_mean_ratio": 1.4966710001763097
+      },
+      "property_readout": {
+        "paired_median_difference": 0.00019281776621937752,
+        "paired_bootstrap_95ci": [
+          0.00016179995145648718,
+          0.0002181660383939743
+        ],
+        "geometric_mean_ratio": 1.0265211938685654
+      },
+      "physical_residual": {
+        "paired_median_difference": 0.23093158181291074,
+        "paired_bootstrap_95ci": [
+          0.2288092877715826,
+          0.433168561081402
+        ],
+        "geometric_mean_ratio": 1.5188843000728454
+      },
+      "serialization": {
+        "paired_median_difference": 4.5209890231490135e-06,
+        "paired_bootstrap_95ci": [
+          -1.150905154645443e-05,
+          3.273889888077974e-05
+        ],
+        "geometric_mean_ratio": 1.030518213218967
+      },
+      "retry": {
+        "paired_median_difference": 0.0,
+        "paired_bootstrap_95ci": [
+          0.0,
+          0.0
+        ],
+        "geometric_mean_ratio": 0.0
+      },
+      "fallback": {
+        "paired_median_difference": 0.0,
+        "paired_bootstrap_95ci": [
+          0.0,
+          0.0
+        ],
+        "geometric_mean_ratio": 0.0
+      },
+      "operator_rows": {
+        "paired_median_difference": 23.0,
+        "paired_bootstrap_95ci": [
+          21.0,
+          25.0
+        ],
+        "geometric_mean_ratio": 1.8964917385384417
+      },
+      "rhs_columns": {
+        "paired_median_difference": 3.0,
+        "paired_bootstrap_95ci": [
+          3.0,
+          3.0
+        ],
+        "geometric_mean_ratio": 2.0
+      },
+      "host_to_device_bytes": {
+        "paired_median_difference": 7776.0,
+        "paired_bootstrap_95ci": [
+          3456.0,
+          8664.0
+        ],
+        "geometric_mean_ratio": 1.40499943834667
+      },
+      "device_to_host_bytes": {
+        "paired_median_difference": 1728.0,
+        "paired_bootstrap_95ci": [
+          768.0,
+          2112.0
+        ],
+        "geometric_mean_ratio": 2.0
+      }
+    },
+    "patch_native_over_official_native": {
+      "end_to_end_wall_seconds": {
+        "paired_median_difference": 4.8423729069763795,
+        "paired_bootstrap_95ci": [
+          4.181272445013747,
+          9.088324571028352
+        ],
+        "geometric_mean_ratio": 1.4722300523745848
+      },
+      "prepare": {
+        "paired_median_difference": 4.157889634370804e-06,
+        "paired_bootstrap_95ci": [
+          -2.993037924170494e-06,
+          7.151043973863125e-06
+        ],
+        "geometric_mean_ratio": 1.0022564794874318
+      },
+      "environment_startup": {
+        "paired_median_difference": 0.0,
+        "paired_bootstrap_95ci": [
+          0.0,
+          0.0
+        ],
+        "geometric_mean_ratio": 1.054293115418526
+      },
+      "data_read": {
+        "paired_median_difference": 0.0,
+        "paired_bootstrap_95ci": [
+          0.0,
+          0.0
+        ],
+        "geometric_mean_ratio": 0.9965776861553478
+      },
+      "h2d": {
+        "paired_median_difference": -1.0789372026920319e-06,
+        "paired_bootstrap_95ci": [
+          -3.4531112760305405e-06,
+          4.100147634744644e-07
+        ],
+        "geometric_mean_ratio": 0.9975256618046213
+      },
+      "scf_fock": {
+        "paired_median_difference": -0.009143515024334192,
+        "paired_bootstrap_95ci": [
+          -0.020624053082428873,
+          -0.0004913168959319592
+        ],
+        "geometric_mean_ratio": 0.9964490433349039
+      },
+      "cp_hf_gmres": {
+        "paired_median_difference": 4.844752422999591,
+        "paired_bootstrap_95ci": [
+          4.190063510090113,
+          9.13247889582999
+        ],
+        "geometric_mean_ratio": 1.7163676585973175
+      },
+      "property_readout": {
+        "paired_median_difference": -6.757699884474277e-05,
+        "paired_bootstrap_95ci": [
+          -0.00012455589603632689,
+          -4.4574146158993244e-05
+        ],
+        "geometric_mean_ratio": 0.9886829814682351
+      },
+      "physical_residual": {
+        "paired_median_difference": -0.004897951032035053,
+        "paired_bootstrap_95ci": [
+          -0.0082604989875108,
+          -0.0028738551773130894
+        ],
+        "geometric_mean_ratio": 0.9943071734545554
+      },
+      "serialization": {
+        "paired_median_difference": 1.0576914064586163e-05,
+        "paired_bootstrap_95ci": [
+          -1.9329600036144257e-06,
+          4.123291000723839e-05
+        ],
+        "geometric_mean_ratio": 1.010700029774868
+      },
+      "retry": {
+        "paired_median_difference": 0.0,
+        "paired_bootstrap_95ci": [
+          0.0,
+          0.0
+        ],
+        "geometric_mean_ratio": 0.0
+      },
+      "fallback": {
+        "paired_median_difference": 0.0,
+        "paired_bootstrap_95ci": [
+          0.0,
+          0.0
+        ],
+        "geometric_mean_ratio": 0.0
+      },
+      "operator_rows": {
+        "paired_median_difference": -2.0,
+        "paired_bootstrap_95ci": [
+          -2.0,
+          -2.0
+        ],
+        "geometric_mean_ratio": 0.9528532073374606
+      },
+      "rhs_columns": {
+        "paired_median_difference": 0.0,
+        "paired_bootstrap_95ci": [
+          0.0,
+          0.0
+        ],
+        "geometric_mean_ratio": 1.0
+      },
+      "host_to_device_bytes": {
+        "paired_median_difference": 0.0,
+        "paired_bootstrap_95ci": [
+          0.0,
+          0.0
+        ],
+        "geometric_mean_ratio": 1.0
+      },
+      "device_to_host_bytes": {
+        "paired_median_difference": 0.0,
+        "paired_bootstrap_95ci": [
+          0.0,
+          0.0
+        ],
+        "geometric_mean_ratio": 1.0
+      }
+    },
+    "patch_gqc_over_official_gqc": {
+      "end_to_end_wall_seconds": {
+        "paired_median_difference": 1.7692146670306101,
+        "paired_bootstrap_95ci": [
+          1.5156104019843042,
+          3.331410793005489
+        ],
+        "geometric_mean_ratio": 1.241860186825735
+      },
+      "prepare": {
+        "paired_median_difference": 8.692964911460876e-06,
+        "paired_bootstrap_95ci": [
+          4.90585807710886e-06,
+          1.0362942703068256e-05
+        ],
+        "geometric_mean_ratio": 1.0068035728574454
+      },
+      "environment_startup": {
+        "paired_median_difference": 0.0,
+        "paired_bootstrap_95ci": [
+          0.0,
+          0.0
+        ],
+        "geometric_mean_ratio": 0.9683796100025704
+      },
+      "data_read": {
+        "paired_median_difference": 0.0,
+        "paired_bootstrap_95ci": [
+          0.0,
+          0.0
+        ],
+        "geometric_mean_ratio": 1.0244935704514364
+      },
+      "h2d": {
+        "paired_median_difference": 5.508074536919594e-06,
+        "paired_bootstrap_95ci": [
+          3.6832643672823906e-06,
+          1.0101823136210442e-05
+        ],
+        "geometric_mean_ratio": 1.0247790476243441
+      },
+      "scf_fock": {
+        "paired_median_difference": -0.0011094220681115985,
+        "paired_bootstrap_95ci": [
+          -0.006835784995928407,
+          0.004716605064459145
+        ],
+        "geometric_mean_ratio": 0.9995538935323512
+      },
+      "cp_hf_gmres": {
+        "paired_median_difference": 1.7698076819069684,
+        "paired_bootstrap_95ci": [
+          1.5161841320805252,
+          3.34246054594405
+        ],
+        "geometric_mean_ratio": 1.4127350085081798
+      },
+      "property_readout": {
+        "paired_median_difference": -0.0001641240669414401,
+        "paired_bootstrap_95ci": [
+          -0.00019077491015195847,
+          -0.00014877202920615673
+        ],
+        "geometric_mean_ratio": 0.9768383755655868
+      },
+      "physical_residual": {
+        "paired_median_difference": -0.0005381150403991342,
+        "paired_bootstrap_95ci": [
+          -0.0018804349238052964,
+          0.0009109789971262217
+        ],
+        "geometric_mean_ratio": 0.9994169760471145
+      },
+      "serialization": {
+        "paired_median_difference": -1.5088124200701714e-05,
+        "paired_bootstrap_95ci": [
+          -2.153613604605198e-05,
+          -1.8009450286626816e-07
+        ],
+        "geometric_mean_ratio": 0.9853665361732222
+      },
+      "retry": {
+        "paired_median_difference": 0.0,
+        "paired_bootstrap_95ci": [
+          0.0,
+          0.0
+        ],
+        "geometric_mean_ratio": 0.0
+      },
+      "fallback": {
+        "paired_median_difference": 0.0,
+        "paired_bootstrap_95ci": [
+          0.0,
+          0.0
+        ],
+        "geometric_mean_ratio": 0.0
+      },
+      "operator_rows": {
+        "paired_median_difference": 0.0,
+        "paired_bootstrap_95ci": [
+          0.0,
+          0.0
+        ],
+        "geometric_mean_ratio": 1.0
+      },
+      "rhs_columns": {
+        "paired_median_difference": 0.0,
+        "paired_bootstrap_95ci": [
+          0.0,
+          0.0
+        ],
+        "geometric_mean_ratio": 1.0
+      },
+      "host_to_device_bytes": {
+        "paired_median_difference": 0.0,
+        "paired_bootstrap_95ci": [
+          0.0,
+          0.0
+        ],
+        "geometric_mean_ratio": 1.0
+      },
+      "device_to_host_bytes": {
+        "paired_median_difference": 0.0,
+        "paired_bootstrap_95ci": [
+          0.0,
+          0.0
+        ],
+        "geometric_mean_ratio": 1.0
+      }
+    },
+    "interaction_(D-B)-(C-A)": {
+      "end_to_end_wall_seconds": {
+        "paired_median_difference": -3.0731582399457693,
+        "paired_bootstrap_95ci": [
+          -5.402095620869659,
+          -2.6656620430294424
+        ]
+      },
+      "prepare": {
+        "paired_median_difference": 7.021939381957054e-06,
+        "paired_bootstrap_95ci": [
+          -3.551947884261608e-06,
+          1.335598062723875e-05
+        ]
+      },
+      "environment_startup": {
+        "paired_median_difference": 0.0,
+        "paired_bootstrap_95ci": [
+          0.0,
+          0.0
+        ]
+      },
+      "data_read": {
+        "paired_median_difference": 0.0,
+        "paired_bootstrap_95ci": [
+          0.0,
+          0.0
+        ]
+      },
+      "h2d": {
+        "paired_median_difference": 5.281297490000725e-06,
+        "paired_bootstrap_95ci": [
+          4.285830073058605e-06,
+          9.714160114526749e-06
+        ]
+      },
+      "scf_fock": {
+        "paired_median_difference": 0.00590582110453397,
+        "paired_bootstrap_95ci": [
+          0.0013632680056616664,
+          0.019514631014317274
+        ]
+      },
+      "cp_hf_gmres": {
+        "paired_median_difference": -3.0812430260702968,
+        "paired_bootstrap_95ci": [
+          -5.4347409520996734,
+          -2.673623857088387
+        ]
+      },
+      "property_readout": {
+        "paired_median_difference": -9.207811672240496e-05,
+        "paired_bootstrap_95ci": [
+          -0.00014475325588136911,
+          -5.0979084335267544e-05
+        ]
+      },
+      "physical_residual": {
+        "paired_median_difference": 0.0033904907759279013,
+        "paired_bootstrap_95ci": [
+          0.0020343250362202525,
+          0.006543692201375961
+        ]
+      },
+      "serialization": {
+        "paired_median_difference": -2.245174255222082e-05,
+        "paired_bootstrap_95ci": [
+          -5.294207949191332e-05,
+          1.7528655007481575e-06
+        ]
+      },
+      "retry": {
+        "paired_median_difference": 0.0,
+        "paired_bootstrap_95ci": [
+          0.0,
+          0.0
+        ]
+      },
+      "fallback": {
+        "paired_median_difference": 0.0,
+        "paired_bootstrap_95ci": [
+          0.0,
+          0.0
+        ]
+      },
+      "operator_rows": {
+        "paired_median_difference": 2.0,
+        "paired_bootstrap_95ci": [
+          2.0,
+          2.0
+        ]
+      },
+      "rhs_columns": {
+        "paired_median_difference": 0.0,
+        "paired_bootstrap_95ci": [
+          0.0,
+          0.0
+        ]
+      },
+      "host_to_device_bytes": {
+        "paired_median_difference": 0.0,
+        "paired_bootstrap_95ci": [
+          0.0,
+          0.0
+        ]
+      },
+      "device_to_host_bytes": {
+        "paired_median_difference": 0.0,
+        "paired_bootstrap_95ci": [
+          0.0,
+          0.0
+        ]
+      }
+    }
+  },
+  "scorer": {
+    "rows": 204,
+    "accepted": 204,
+    "reject_and_recompute": 0,
+    "max_target_error": 5.371305351227484e-07,
+    "max_operator_image_error": 1.0302424205197571,
+    "max_ao_density_error": 6.490195320341119e-07,
+    "max_oracle_residual": 1.243767613625605e-07,
+    "score_elapsed_seconds": 336.67486334592104,
+    "operator_image_diagnostic": {
+      "max_error": 1.0302424205197571,
+      "rows_over_1e-5": 30,
+      "rows_over_1e-5_by_arm": {
+        "A": 9,
+        "B": 6,
+        "C": 6,
+        "D": 9
+      },
+      "included_in_acceptance": false,
+      "reason": "The existing independent scorer accepts on target, density and oracle residual gates. The image value is retained as a diagnostic because its MO-gauge interpretation is not a settled acceptance predicate."
+    }
+  },
+  "unknowns": [
+    "compile_jit is not exposed by the official Python API",
+    "independent scorer is a separate process and is not included in producer wall time",
+    "kernel launch count, occupancy, FLOPs, CUPTI/Nsight and energy were not collected",
+    "operator-image diagnostic is retained but is not used as a quality acceptance gate"
+  ],
+  "source_sha256": {
+    "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/a-d-telemetry/raw/A/raw.jsonl": "3ef9d09a9f6630c67211b3c8c02561cf032deb8d99ed40bccc35d0220faf59d3",
+    "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/a-d-telemetry/raw/A/run.json": "0faac3fba45f61de5a33b50b6eaeafbd6516fe6833b17ba24a331ccd853fecf6",
+    "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/a-d-telemetry/raw/B/raw.jsonl": "9c0889b7f514c37582c732b3eca9a17b89aa947c29672559f11b39920e94e24b",
+    "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/a-d-telemetry/raw/B/run.json": "e5d65d0aa50c850e701ba80262b4c57ffa6364d41b6dcfb7a639871c6f9f2966",
+    "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/a-d-telemetry/raw/C/raw.jsonl": "da4aa636560e9ac5ebf2ccb34d656d2925c269624b3d73cdc83630da0efeeb5e",
+    "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/a-d-telemetry/raw/C/run.json": "9a460f2817dedda70b13cdc1be93d2e2627f92e18cc51c18147c904da5316080",
+    "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/a-d-telemetry/raw/D/raw.jsonl": "7dfa539dcebe79c68e0efded27e8d1cedfef421bf2b7394758befd650aa01709",
+    "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/a-d-telemetry/raw/D/run.json": "89d5eec47d95a9190c40177aae13a0b203cdf3c2a33101ea96e9ea4eb0aa70d3"
+  }
+}

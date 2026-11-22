@@ -2,11 +2,23 @@
   "schema": "vibedataset.research_release.v2",
   "git_head": "92d9bac6384208881827313709fc0a03f60b0bad",
   "git_head_kind": "audited_source_commit",
-  "built_from_git_head": "74c13e9c82a9f7312011c33c2a9e019e8bd10fa9",
+  "built_from_git_head": "4c21c5898a34b93edf1e10ca0cffbffb42685972",
   "artifacts": [
     {
       "path": "README.md",
       "sha256": "87b61a754ed3c0a3c05c5e4611a564242d8a212df31f7350cafb05d5933a0c62"
+    },
+    {
+      "path": "scripts/run_gpu4pyscf_4arm_telemetry.py",
+      "sha256": "b658031181b5b3796037b6f7e9fd8e9d61d81d6d5168be1bf6d4b8a1225bfddb"
+    },
+    {
+      "path": "scripts/check_gpu4pyscf_4arm_telemetry.py",
+      "sha256": "98e4b87f57d01ab32d35660a35981d7a8d58b5177327d1730f056aad685c58af"
+    },
+    {
+      "path": "scripts/summarize_gpu4pyscf_4arm_telemetry.py",
+      "sha256": "13d85eb1f010047ff06101ecd09350d7d16edda9761310cf45fbf75512009392"
     },
     {
       "path": "handoff/gqcdataset_codex_goal/research/experiments/attribution_4arm/manifest.json",
@@ -34,7 +46,7 @@
     },
     {
       "path": "handoff/gqcdataset_codex_goal/research/performance/profiling.md",
-      "sha256": "1f7194bbacb40a6f4eec8ac81b8145599fd4cd260a4eb4bc3f347b99876ecf89"
+      "sha256": "57c96f5a308b5033b10ef1fe7dc99bffeecd4a068e15a611162338b53b2fcd3a"
     },
     {
       "path": "handoff/gqcdataset_codex_goal/research/performance/scale_ablation.md",
@@ -223,6 +235,114 @@
     {
       "path": "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/v1.9.2-wheel-tests/slurm-5561.err",
       "sha256": "2b434a73fb73fa581620f95403bc879baa88138deec58ce9f98af6643f635c1d"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/a-d-telemetry/run-arm-telemetry.slurm",
+      "sha256": "350e6cf13f9a8a372d9f07bff9a83539f9387a2d1c94145b750311a1834e4216"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/a-d-telemetry/run-independent-scorer.slurm",
+      "sha256": "5df70bdee3c8acf151d47fab877d05f7da6e92e82280709f95ccf0d379fdfaf5"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/a-d-telemetry/check.json",
+      "sha256": "4b45c930c47e223ecf3d9181ba2c6b6d7f43957772d8fc4a74090f8819cbc23b"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/a-d-telemetry/summary.json",
+      "sha256": "3949943c332fc6a52f8c1f502b4a6000eb877f8e32d5d88fad65104ca05862ff"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/a-d-telemetry/raw/A/run.json",
+      "sha256": "0faac3fba45f61de5a33b50b6eaeafbd6516fe6833b17ba24a331ccd853fecf6"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/a-d-telemetry/raw/A/raw.jsonl",
+      "sha256": "3ef9d09a9f6630c67211b3c8c02561cf032deb8d99ed40bccc35d0220faf59d3"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/a-d-telemetry/raw/B/run.json",
+      "sha256": "e5d65d0aa50c850e701ba80262b4c57ffa6364d41b6dcfb7a639871c6f9f2966"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/a-d-telemetry/raw/B/raw.jsonl",
+      "sha256": "9c0889b7f514c37582c732b3eca9a17b89aa947c29672559f11b39920e94e24b"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/a-d-telemetry/raw/C/run.json",
+      "sha256": "9a460f2817dedda70b13cdc1be93d2e2627f92e18cc51c18147c904da5316080"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/a-d-telemetry/raw/C/raw.jsonl",
+      "sha256": "da4aa636560e9ac5ebf2ccb34d656d2925c269624b3d73cdc83630da0efeeb5e"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/a-d-telemetry/raw/D/run.json",
+      "sha256": "89d5eec47d95a9190c40177aae13a0b203cdf3c2a33101ea96e9ea4eb0aa70d3"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/a-d-telemetry/raw/D/raw.jsonl",
+      "sha256": "7dfa539dcebe79c68e0efded27e8d1cedfef421bf2b7394758befd650aa01709"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/a-d-telemetry/independent-score/score.json",
+      "sha256": "eeca9c786bdb4f78a192e861e3d202049f92bdea11b4ca3749b54db2b8051781"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/a-d-telemetry/independent-score/slurm-5571.out",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/a-d-telemetry/independent-score/slurm-5571.err",
+      "sha256": "2b434a73fb73fa581620f95403bc879baa88138deec58ce9f98af6643f635c1d"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/a-d-telemetry/slurm-5564.out",
+      "sha256": "785a5c09521ec37a8e24964385399c0f73bcc31d546a35f6818e4e27b9d762a2"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/a-d-telemetry/slurm-5564.err",
+      "sha256": "2b434a73fb73fa581620f95403bc879baa88138deec58ce9f98af6643f635c1d"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/a-d-telemetry/slurm-5565.out",
+      "sha256": "f10ed7802c062115ca72c80ef419b82120a1febfdf16501221ae917e97a28b96"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/a-d-telemetry/slurm-5565.err",
+      "sha256": "2b434a73fb73fa581620f95403bc879baa88138deec58ce9f98af6643f635c1d"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/a-d-telemetry/slurm-5567.out",
+      "sha256": "f10ed7802c062115ca72c80ef419b82120a1febfdf16501221ae917e97a28b96"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/a-d-telemetry/slurm-5567.err",
+      "sha256": "2b434a73fb73fa581620f95403bc879baa88138deec58ce9f98af6643f635c1d"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/a-d-telemetry/slurm-5568.out",
+      "sha256": "d84925c93bf8ae42774fb8f266b489cddef418a87e1a00729259088bd63e9d2e"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/a-d-telemetry/slurm-5568.err",
+      "sha256": "c885d84f5d4576ca212379f197b66ffe4f703abd044e52ad2a30a7d341bc507f"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/a-d-telemetry/slurm-5569.out",
+      "sha256": "be75042be708e8dec1792712a31abbcfe86b0b2f083d57f99ea528625946f3be"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/a-d-telemetry/slurm-5569.err",
+      "sha256": "2b434a73fb73fa581620f95403bc879baa88138deec58ce9f98af6643f635c1d"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/a-d-telemetry/slurm-5570.out",
+      "sha256": "c39c197b683472d9204954516069afdc07680c67eb25c8a481ffdfb63f4f4db3"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/a-d-telemetry/slurm-5570.err",
+      "sha256": "c885d84f5d4576ca212379f197b66ffe4f703abd044e52ad2a30a7d341bc507f"
     },
     {
       "path": "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/phase-profile-control/README.md",
