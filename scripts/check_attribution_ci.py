@@ -116,6 +116,21 @@ def main():
     replay_data = read(replay)
     require(replay_data["request_count"] == 51 and replay_data["accepted_receipts"] == 51 and not replay_data["oracle_loaded"], "prepared batch replay")
     subprocess.check_call([sys.executable, str(SCRIPTS / "verify_response_asset_compiler.py"), "--plan", str(ROOT / "handoff/gqcdataset_codex_goal/research/experiments/response_asset_compiler/plan.json"), "--score", str(EXP / "score.json"), "--out", str(args.out / "response-asset-compiler.json")], cwd=ROOT)
+    subprocess.check_call(
+        [
+            sys.executable,
+            str(SCRIPTS / "verify_gpu_response_assets.py"),
+            "--assets",
+            str(ROOT / "handoff/gqcdataset_codex_goal/research/experiments/response_asset_compiler/gpu-assets.json"),
+            "--manifest",
+            str(EXP / "manifest.json"),
+            "--score",
+            str(EXP / "score.json"),
+            "--out",
+            str(args.out / "gpu-response-assets.json"),
+        ],
+        cwd=ROOT,
+    )
     with tempfile.TemporaryDirectory(dir=args.out) as temp:
         temp_path = Path(temp)
         generated_controls = temp_path / "algorithm-controls.json"
