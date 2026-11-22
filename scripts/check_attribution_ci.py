@@ -84,6 +84,12 @@ def main():
     subprocess.check_call([sys.executable, str(SCRIPTS / "summarize_response_frontier.py"),
                            "--root", str(frontier), "--out", str(frontier_summary)])
     require(read(frontier_summary) == read(frontier / "summary.json"), "bounded response frontier")
+    spectroscopy = EXP.parent / "hessian_cphf/shared-spectroscopy"
+    shared_score = args.out / "shared-spectroscopy.json"
+    subprocess.check_call([sys.executable, str(SCRIPTS / "score_shared_spectroscopy.py"), "--root", str(spectroscopy),
+                           "--protocol", str(spectroscopy / "protocol.json"), "--refinement", str(spectroscopy / "shared-refinement"),
+                           "--serial-refinement", str(spectroscopy / "serial-refinement"), "--out", str(shared_score)])
+    require(read(shared_score) == read(spectroscopy / "verification.json"), "shared multi-sample spectroscopy certificates")
     hessian_artifact = ROOT / "handoff/gqcdataset_codex_goal/research/experiments/hessian_cphf/cpu-gpu-crosscheck.json"
     generated_hessian = args.out / "hessian-crosscheck.json"
     subprocess.check_call(

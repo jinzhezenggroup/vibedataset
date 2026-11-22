@@ -42,6 +42,7 @@ def main():
     source_paths = {}
     cases = {c["id"]: c for c in spec["cases"]}
     per_mode = {}
+    candidates_by_mode = {}
     for kind in ("serial", "shared"):
         file = a.root / kind / "result.json"
         run = load(file)
@@ -56,6 +57,7 @@ def main():
         )
         source_paths[kind] = digest(file)
         per_mode[kind] = {}
+        candidates_by_mode[kind] = candidates
         for req in queue:
             name, prop, rid = req["molecule"], req["property"], req["id"]
             cand = candidates[rid]
@@ -168,6 +170,7 @@ def main():
         )
     refined = {"shared": {}, "serial": {}}
     correction_cost = {"shared": {}, "serial": {}}
+    correction_values = {"shared": {}, "serial": {}}
     for mode, root in (("shared", a.refinement), ("serial", a.serial_refinement)):
         if root is None:
             continue
@@ -233,6 +236,10 @@ def main():
                     )
                 )
             refined[mode][key] = corrected
+            correction_values[mode][key] = {
+                k: [v[k] for v in run["steps"][-1]["modes"]]
+                for k in ("raman_A4_amu", "raman_depolarization")
+            }
             correction_cost[mode][key] = dict(
                 displaced_scf_calls=len(pairs) // 2,
                 electric_rhs=3 * len(pairs) // 2,
@@ -242,6 +249,7 @@ def main():
     final = {}
     for mode, items in per_mode.items():
         dispositions = {}
+        publications = {}
         for req in queue:
             r = items[req["id"]]
             name = req["molecule"]
@@ -256,8 +264,33 @@ def main():
                 )
             )
             dispositions[req["id"]] = "accepted" if ok else r["status"]
+            rid = req["id"]
+            if ok:
+                raw = candidates_by_mode[mode][rid]["result"]
+                values = dict(raw["result"])
+                key = name if mode == "shared" else rid
+                used = r["status"] == "default-rejected"
+                if used:
+                    values.update(correction_values[mode][key])
+                publications[rid] = dict(
+                    molecule=name,
+                    property=req["property"],
+                    identity=raw["scientific_identity"],
+                    values=values,
+                    default_failed_gates=r["failed"],
+                    source="two-step directional refinement"
+                    if used
+                    else "original GPU readout",
+                    minimum_spectrum_disposition="reject-imaginary-frequency"
+                    if any(
+                        f < 0 for f in refs[name]["spectroscopy"]["ir_frequency_cm1"]
+                    )
+                    else "passes-frequency-gate",
+                )
         final[mode] = dict(
-            dispositions=dispositions, counts=dict(Counter(dispositions.values()))
+            publications=publications,
+            dispositions=dispositions,
+            counts=dict(Counter(dispositions.values())),
         )
     imaginary = {
         n: [v for v in r["spectroscopy"]["ir_frequency_cm1"] if v < 0]
@@ -289,6 +322,13 @@ def main():
         imaginary_modes_cm1=imaginary,
         neighbors_within_5_cm1=neighbors,
         veloxchem_reference_sha256=digest(a.root / "veloxchem/events.jsonl"),
+        measured_independent_VeloxChem_seconds={
+            k: v["wall_seconds"] for k, v in refs.items()
+        },
+        raw_result_bytes={
+            m: (a.root / m / "result.json").stat().st_size
+            for m in ("serial", "shared", "failures")
+        },
     )
     a.out.write_text(json.dumps(output, indent=2, allow_nan=False) + "\n")
     print(

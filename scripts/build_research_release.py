@@ -208,6 +208,23 @@ for attempt in ("pilot", "counterbalanced/rep-1", "counterbalanced/rep-2"):
         RELEASE_ARTIFACTS.extend(f"{folder}/{case}.json.gz" for case in frontier_cases)
 
 
+SHARED_SPECTRA = "handoff/gqcdataset_codex_goal/research/experiments/hessian_cphf/shared-spectroscopy"
+RELEASE_ARTIFACTS.extend(["scripts/run_shared_spectroscopy.py", "scripts/score_shared_spectroscopy.py"])
+RELEASE_ARTIFACTS.extend(f"{SHARED_SPECTRA}/{p}" for p in ("README.md", "protocol.json", "shared.slurm",
+    "refine.slurm","serial-refine.slurm","console-sha256.json","input-sha256","project-commit","finished","process-wall.txt",
+    "default-verification.json","verification.json","veloxchem/events.jsonl","veloxchem/run.json",
+    "veloxchem/MATCHED-STO-3G","veloxchem/console.log.gz"))
+for mode in ("serial","shared","failures"):
+    for name in ("result.json","attempts.jsonl","console.log.gz"):
+        RELEASE_ARTIFACTS.append(f"{SHARED_SPECTRA}/{mode}/{name}")
+for mode, cases in (("shared",("h2o","nh3","lih")),("serial",("07-h2o-raman","08-nh3-raman","09-lih-raman","12-lih-raman"))):
+    for case in cases:
+        plan_prefix="refine" if mode=="shared" else "serial-refine"
+        RELEASE_ARTIFACTS.append(f"{SHARED_SPECTRA}/{plan_prefix}-{case}.json")
+        for name in ("run.json","displacements.jsonl","console.log.gz"):
+            RELEASE_ARTIFACTS.append(f"{SHARED_SPECTRA}/{mode}-refinement/{case}/{name}")
+
+
 CLAIMS = [
     {
         "claim_id": "34",
@@ -284,9 +301,9 @@ CLAIMS = [
     {
         "claim_id": "40",
         "claim": "Hessian/CPKS main load",
-        "status": "matched-RHF-Hessians-and-water-spectra-with-refinement",
-        "evidence": "experiments/hessian_cphf/cross-engine/verification.json;experiments/hessian_cphf/cpu-gpu-crosscheck.json",
-        "condition": "3 direct RHF/STO-3G Hessians, water IR/Raman, 12 extra displaced SCFs for the rejected default Raman ratios",
+        "status": "three-molecule-multi-request-shared-RHF-spectra-with-refinement",
+        "evidence": "experiments/hessian_cphf/shared-spectroscopy/verification.json;experiments/hessian_cphf/cross-engine/verification.json;experiments/hessian_cphf/cpu-gpu-crosscheck.json",
+        "condition": "3 direct RHF/STO-3G Hessians, multi-sample 12-request IR/Raman queue, independent VeloxChem, 40 shared or 44 serial displaced SCFs for four initially rejected readouts",
         "unknown": "",
     },
     {
@@ -315,7 +332,7 @@ UNKNOWNs = [
     "dataset-scale energy and device memory profile",
     "1000-row protocol-consistent request asset",
     "A100/H100 comparison",
-    "VeloxChem GPU CPKS, larger spectroscopy batches and failure controls",
+    "VeloxChem GPU performance and broader methods/devices in shared spectroscopy",
     "same-context GPU4PySCF stream safety",
     "ragged/fused PreparedPropertyBatch kernels",
 ]

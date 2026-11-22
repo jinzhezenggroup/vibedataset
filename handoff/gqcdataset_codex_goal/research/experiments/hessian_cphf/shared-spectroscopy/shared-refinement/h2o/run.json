@@ -1,0 +1,51 @@
+{
+  "schema": "vibedataset.directional_raman_refinement.v1",
+  "protocol_sha256": "674b477726881e6549ad4a5d9f31e348e307693631a1de69d585475b9913e0ca",
+  "plan_sha256": "4065d34135836bcb03c6480c0a0da14d7a7efda509fe108e017b7efab42e4c80",
+  "source_shared_sha256": "ee9d320b3386dfa904eb978378a5a5633d63c5ad940e6b2fab9e02d56fda61a1",
+  "driver_sha256": "92e63037ef93db3c0ddea5f2b464758f222f3a346ed16c796135a1a3a1689de4",
+  "displacements_sha256": "163a1d2587d671e67251a59f94140a393fb7c33299c77df198a9940eee26a904",
+  "steps": [
+    {
+      "step": 0.001,
+      "modes": [
+        {
+          "raman_A4_amu": 4.333050764283792,
+          "raman_depolarization": 0.6382189578696021
+        },
+        {
+          "raman_A4_amu": 9.601607029710458,
+          "raman_depolarization": 0.30169557307131695
+        },
+        {
+          "raman_A4_amu": 7.100122745023456,
+          "raman_depolarization": 0.32931048042166045
+        }
+      ]
+    },
+    {
+      "step": 0.0005,
+      "modes": [
+        {
+          "raman_A4_amu": 4.333051246764355,
+          "raman_depolarization": 0.6382189474787398
+        },
+        {
+          "raman_A4_amu": 9.601605882580648,
+          "raman_depolarization": 0.3016955794044579
+        },
+        {
+          "raman_A4_amu": 7.100121452218273,
+          "raman_depolarization": 0.32931049601664586
+        }
+      ]
+    }
+  ],
+  "signed_frequencies_cm1": [
+    -1980.570929334541,
+    8725.433182214932,
+    10338.103398246561
+  ],
+  "elapsed_seconds": 18.732579460018314,
+  "slurm_job": "5662"
+}

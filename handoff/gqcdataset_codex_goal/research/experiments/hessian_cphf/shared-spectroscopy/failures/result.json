@@ -1,0 +1,479 @@
+{
+  "schema": "vibedataset.shared_spectroscopy.v1",
+  "mode": "failures",
+  "job": "5657",
+  "protocol_sha256": "674b477726881e6549ad4a5d9f31e348e307693631a1de69d585475b9913e0ca",
+  "driver_sha256": "4f31551894d7e2adcabc70416f9969d3f3898388f9da740fc6937724e8a8c6ab",
+  "hessian_source_sha256": "7ff4a2b585b1d9d64f0ab221e66246521a0b4863122229ecdf9c3ec66e79ed0c",
+  "gpu4pyscf": "1.9.2",
+  "gpu": "NVIDIA RTX PRO 6000 Blackwell Workstation Edition",
+  "schedule": [
+    {
+      "id": "single-request-scf-failure",
+      "molecule": "h2o",
+      "property": "hessian"
+    },
+    {
+      "id": "allocator-oom",
+      "molecule": "h2o",
+      "property": "hessian"
+    },
+    {
+      "id": "unsupported-property",
+      "molecule": "h2o",
+      "property": "invalid"
+    },
+    {
+      "id": "restricted-H2-stretched-gap",
+      "molecule": "stretched-h2",
+      "property": "hessian"
+    },
+    {
+      "id": "healthy-after-failures",
+      "molecule": "h2o",
+      "property": "hessian"
+    }
+  ],
+  "graph": {
+    "schema": "vibedataset.prepared_property_batch.v1",
+    "resident": true,
+    "max_workspace_bytes": 0,
+    "estimated_workspace_bytes": 424,
+    "buckets": {
+      "RHF|STO-3G|0|0|real spherical|7": [
+        "single-request-scf-failure",
+        "allocator-oom",
+        "unsupported-property",
+        "healthy-after-failures"
+      ],
+      "RHF|STO-3G|0|0|real spherical|2": [
+        "restricted-H2-stretched-gap"
+      ]
+    },
+    "workspace_plan": {
+      "RHF|STO-3G|0|0|real spherical|7": {
+        "request_ids": [
+          "single-request-scf-failure",
+          "allocator-oom",
+          "unsupported-property",
+          "healthy-after-failures"
+        ],
+        "workspace_bytes": 392,
+        "resident": true
+      },
+      "RHF|STO-3G|0|0|real spherical|2": {
+        "request_ids": [
+          "restricted-H2-stretched-gap"
+        ],
+        "workspace_bytes": 32,
+        "resident": true
+      }
+    },
+    "nodes": [
+      {
+        "node_id": "single-request-scf-failure:reference",
+        "request_id": "single-request-scf-failure",
+        "kind": "reference",
+        "depends_on": [],
+        "bucket": "RHF|STO-3G|0|0|real spherical|7",
+        "disposition": "reject-and-recompute",
+        "reason": "request_failed:RuntimeError"
+      },
+      {
+        "node_id": "single-request-scf-failure:cpks",
+        "request_id": "single-request-scf-failure",
+        "kind": "cpks",
+        "depends_on": [
+          "single-request-scf-failure:reference"
+        ],
+        "bucket": "RHF|STO-3G|0|0|real spherical|7",
+        "disposition": "reject-and-recompute",
+        "reason": "request_failed:RuntimeError"
+      },
+      {
+        "node_id": "single-request-scf-failure:hessian",
+        "request_id": "single-request-scf-failure",
+        "kind": "hessian",
+        "depends_on": [
+          "single-request-scf-failure:reference",
+          "single-request-scf-failure:cpks"
+        ],
+        "bucket": "RHF|STO-3G|0|0|real spherical|7",
+        "disposition": "reject-and-recompute",
+        "reason": "request_failed:RuntimeError"
+      },
+      {
+        "node_id": "allocator-oom:reference",
+        "request_id": "allocator-oom",
+        "kind": "reference",
+        "depends_on": [],
+        "bucket": "RHF|STO-3G|0|0|real spherical|7",
+        "disposition": "reject-and-recompute",
+        "reason": "request_failed:OutOfMemoryError"
+      },
+      {
+        "node_id": "allocator-oom:cpks",
+        "request_id": "allocator-oom",
+        "kind": "cpks",
+        "depends_on": [
+          "allocator-oom:reference"
+        ],
+        "bucket": "RHF|STO-3G|0|0|real spherical|7",
+        "disposition": "reject-and-recompute",
+        "reason": "request_failed:OutOfMemoryError"
+      },
+      {
+        "node_id": "allocator-oom:hessian",
+        "request_id": "allocator-oom",
+        "kind": "hessian",
+        "depends_on": [
+          "allocator-oom:reference",
+          "allocator-oom:cpks"
+        ],
+        "bucket": "RHF|STO-3G|0|0|real spherical|7",
+        "disposition": "reject-and-recompute",
+        "reason": "request_failed:OutOfMemoryError"
+      },
+      {
+        "node_id": "unsupported-property:reference",
+        "request_id": "unsupported-property",
+        "kind": "reference",
+        "depends_on": [],
+        "bucket": "RHF|STO-3G|0|0|real spherical|7",
+        "disposition": "reject-and-recompute",
+        "reason": "request_failed:NotImplementedError"
+      },
+      {
+        "node_id": "unsupported-property:cpks",
+        "request_id": "unsupported-property",
+        "kind": "cpks",
+        "depends_on": [
+          "unsupported-property:reference"
+        ],
+        "bucket": "RHF|STO-3G|0|0|real spherical|7",
+        "disposition": "reject-and-recompute",
+        "reason": "request_failed:NotImplementedError"
+      },
+      {
+        "node_id": "unsupported-property:invalid",
+        "request_id": "unsupported-property",
+        "kind": "invalid",
+        "depends_on": [
+          "unsupported-property:reference"
+        ],
+        "bucket": "RHF|STO-3G|0|0|real spherical|7",
+        "disposition": "reject-and-recompute",
+        "reason": "request_failed:NotImplementedError"
+      },
+      {
+        "node_id": "restricted-H2-stretched-gap:reference",
+        "request_id": "restricted-H2-stretched-gap",
+        "kind": "reference",
+        "depends_on": [],
+        "bucket": "RHF|STO-3G|0|0|real spherical|2",
+        "disposition": "reject-and-recompute",
+        "reason": "request_failed:ValueError"
+      },
+      {
+        "node_id": "restricted-H2-stretched-gap:cpks",
+        "request_id": "restricted-H2-stretched-gap",
+        "kind": "cpks",
+        "depends_on": [
+          "restricted-H2-stretched-gap:reference"
+        ],
+        "bucket": "RHF|STO-3G|0|0|real spherical|2",
+        "disposition": "reject-and-recompute",
+        "reason": "request_failed:ValueError"
+      },
+      {
+        "node_id": "restricted-H2-stretched-gap:hessian",
+        "request_id": "restricted-H2-stretched-gap",
+        "kind": "hessian",
+        "depends_on": [
+          "restricted-H2-stretched-gap:reference",
+          "restricted-H2-stretched-gap:cpks"
+        ],
+        "bucket": "RHF|STO-3G|0|0|real spherical|2",
+        "disposition": "reject-and-recompute",
+        "reason": "request_failed:ValueError"
+      },
+      {
+        "node_id": "healthy-after-failures:reference",
+        "request_id": "healthy-after-failures",
+        "kind": "reference",
+        "depends_on": [],
+        "bucket": "RHF|STO-3G|0|0|real spherical|7",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "healthy-after-failures:cpks",
+        "request_id": "healthy-after-failures",
+        "kind": "cpks",
+        "depends_on": [
+          "healthy-after-failures:reference"
+        ],
+        "bucket": "RHF|STO-3G|0|0|real spherical|7",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "healthy-after-failures:hessian",
+        "request_id": "healthy-after-failures",
+        "kind": "hessian",
+        "depends_on": [
+          "healthy-after-failures:reference",
+          "healthy-after-failures:cpks"
+        ],
+        "bucket": "RHF|STO-3G|0|0|real spherical|7",
+        "disposition": "ready",
+        "reason": ""
+      }
+    ],
+    "failures": [
+      {
+        "request_id": "single-request-scf-failure",
+        "reason": "request_failed:RuntimeError"
+      },
+      {
+        "request_id": "allocator-oom",
+        "reason": "request_failed:OutOfMemoryError"
+      },
+      {
+        "request_id": "unsupported-property",
+        "reason": "request_failed:NotImplementedError"
+      },
+      {
+        "request_id": "restricted-H2-stretched-gap",
+        "reason": "request_failed:ValueError"
+      }
+    ]
+  },
+  "requests": [
+    {
+      "request_id": "single-request-scf-failure",
+      "bucket": "RHF|STO-3G|0|0|real spherical|7",
+      "status": "reject-and-recompute",
+      "reason": "scf_nonconvergence"
+    },
+    {
+      "request_id": "allocator-oom",
+      "bucket": "RHF|STO-3G|0|0|real spherical|7",
+      "status": "reject-and-recompute",
+      "reason": "Out of memory allocating 4,096 bytes (allocated so far: 0 bytes, limit set to: 1,024 bytes)."
+    },
+    {
+      "request_id": "unsupported-property",
+      "bucket": "RHF|STO-3G|0|0|real spherical|7",
+      "status": "reject-and-recompute",
+      "reason": "unsupported_property"
+    },
+    {
+      "request_id": "healthy-after-failures",
+      "bucket": "RHF|STO-3G|0|0|real spherical|7",
+      "status": "accepted",
+      "result": {
+        "request_id": "healthy-after-failures",
+        "molecule": "h2o",
+        "property": "hessian",
+        "scientific_identity": "03d674ef3f0595618ac45a27dae11f64a90d30a197f390859f675e8e1a7f5e54",
+        "energy_hartree": -74.63485187691971,
+        "result": {
+          "hessian": [
+            [
+              3.4646240834527324,
+              -0.08228896037366648,
+              -6.328897531746383e-16,
+              0.3056329808125797,
+              0.1837067711737021,
+              5.928729161827849e-16,
+              -3.7702570642634514,
+              -0.10141781080004214,
+              4.0016836991857963e-17
+            ],
+            [
+              -0.08228896037366648,
+              2.072736991663738,
+              -6.255885294750636e-16,
+              -0.10399857028005335,
+              -2.649815755451881,
+              2.578309001395654e-17,
+              0.18628753065371534,
+              0.5770787637909129,
+              5.998054394611215e-16
+            ],
+            [
+              -6.328897531746383e-16,
+              -6.255885294750636e-16,
+              -1.0888839288056857,
+              2.4266949438191777e-16,
+              2.785606939005786e-16,
+              0.3998066758467935,
+              3.902202587927107e-16,
+              3.4702783557445555e-16,
+              0.6890772529615612
+            ],
+            [
+              0.3056329808125797,
+              -0.10399857028005335,
+              2.4266949438191777e-16,
+              -0.23982190952135785,
+              -0.14731057199424696,
+              -4.589164892590077e-16,
+              -0.06581107129122275,
+              0.2513091422743,
+              2.1624699487709346e-16
+            ],
+            [
+              0.1837067711737021,
+              -2.649815755451881,
+              2.785606939005786e-16,
+              -0.14731057199424702,
+              2.7350841652190825,
+              -1.589333707391409e-16,
+              -0.03639619917945541,
+              -0.0852684097671997,
+              -1.1962732316144436e-16
+            ],
+            [
+              5.928729161827849e-16,
+              2.578309001395654e-17,
+              0.3998066758467935,
+              -4.589164892590077e-16,
+              -1.589333707391409e-16,
+              -0.4731804157338866,
+              -1.3395642692377247e-16,
+              1.3315028072520304e-16,
+              0.07337373988709375
+            ],
+            [
+              -3.7702570642634514,
+              0.18628753065371534,
+              3.902202587927107e-16,
+              -0.06581107129122275,
+              -0.03639619917945544,
+              -1.3395642692377247e-16,
+              3.8360681355546773,
+              -0.14989133147425898,
+              -2.5626383186894874e-16
+            ],
+            [
+              -0.10141781080004214,
+              0.5770787637909129,
+              3.4702783557445555e-16,
+              0.25130914227430007,
+              -0.0852684097671997,
+              1.3315028072520304e-16,
+              -0.14989133147425898,
+              -0.49181035402371664,
+              -4.801781162996699e-16
+            ],
+            [
+              4.0016836991857963e-17,
+              5.998054394611215e-16,
+              0.6890772529615612,
+              2.1624699487709346e-16,
+              -1.1962732316144436e-16,
+              0.07337373988709375,
+              -2.5626383186894874e-16,
+              -4.801781162996699e-16,
+              -0.7624509928486591
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "request_id": "restricted-H2-stretched-gap",
+      "bucket": "RHF|STO-3G|0|0|real spherical|2",
+      "status": "reject-and-recompute",
+      "reason": "restricted_state_near_degenerate"
+    }
+  ],
+  "events": [
+    {
+      "request_id": "single-request-scf-failure",
+      "wall_seconds": 0.899692198028788
+    },
+    {
+      "request_id": "allocator-oom",
+      "wall_seconds": 0.001060465001501143
+    },
+    {
+      "request_id": "unsupported-property",
+      "wall_seconds": 0.0008645560592412949
+    },
+    {
+      "request_id": "healthy-after-failures",
+      "wall_seconds": 2.0969505889806896
+    },
+    {
+      "request_id": "restricted-H2-stretched-gap",
+      "wall_seconds": 0.05803847196511924
+    }
+  ],
+  "history": [
+    {
+      "request_id": "single-request-scf-failure",
+      "kind": "SCF",
+      "status": "started"
+    },
+    {
+      "request_id": "healthy-after-failures",
+      "kind": "SCF",
+      "status": "started"
+    },
+    {
+      "request_id": "healthy-after-failures",
+      "kind": "SCF",
+      "status": "finished",
+      "seconds": 0.975726094096899
+    },
+    {
+      "request_id": "healthy-after-failures",
+      "kind": "geometric-H1",
+      "reused": false,
+      "newly_solved_cartesian_rhs": 0,
+      "seconds": 0.3146728220162913
+    },
+    {
+      "request_id": "healthy-after-failures",
+      "kind": "gen-vind",
+      "reused": false,
+      "newly_solved_cartesian_rhs": 0,
+      "seconds": 0.00019541801884770393
+    },
+    {
+      "request_id": "healthy-after-failures",
+      "kind": "geometric-CPHF",
+      "reused": false,
+      "newly_solved_cartesian_rhs": 9,
+      "seconds": 0.48366246302612126
+    },
+    {
+      "request_id": "healthy-after-failures",
+      "kind": "hessian",
+      "reused": false,
+      "newly_solved_cartesian_rhs": 0,
+      "seconds": 1.118004052899778
+    },
+    {
+      "request_id": "restricted-H2-stretched-gap",
+      "kind": "SCF",
+      "status": "started"
+    },
+    {
+      "request_id": "restricted-H2-stretched-gap",
+      "kind": "SCF",
+      "status": "finished",
+      "seconds": 0.05717385502066463
+    }
+  ],
+  "controls": {
+    "restricted-H2-stretched-gap": {
+      "gap_hartree": 0.0005000000000000143,
+      "threshold": 0.001
+    }
+  },
+  "elapsed_seconds": 3.853810669039376
+}
