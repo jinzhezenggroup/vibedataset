@@ -7,6 +7,10 @@ import argparse
 import csv
 import hashlib
 import json
+import gzip
+import io
+import tarfile
+import tempfile
 import subprocess
 from pathlib import Path
 
@@ -254,14 +258,23 @@ def current_head(root: Path) -> str:
 
 def build(root: Path, out: Path, audited_head: str | None) -> None:
     checkout_head = current_head(root)
-    source_head = audited_head or checkout_head
+    if audited_head is not None and audited_head != checkout_head:
+        raise ValueError("--git-head must match the checkout being packaged")
     out.mkdir(parents=True, exist_ok=True)
+    artifacts = []
+    for path in RELEASE_ARTIFACTS:
+        committed = subprocess.check_output(["git", "cat-file", "blob", f"{checkout_head}:{path}"], cwd=root)
+        checksum = hashlib.sha256(committed).hexdigest()
+        if sha(root / path) != checksum:
+            raise ValueError(f"release input differs from {checkout_head}: {path}")
+        artifacts.append({"path": path, "sha256": checksum})
     manifest = {
-        "schema": "vibedataset.research_release.v2",
-        "git_head": source_head,
-        "git_head_kind": "audited_source_commit",
+        "schema": "vibedataset.research_release.v3",
+        "git_head": checkout_head,
+        "git_head_kind": "payload_checkout",
         "built_from_git_head": checkout_head,
-        "artifacts": [{"path": path, "sha256": sha(root / path)} for path in RELEASE_ARTIFACTS],
+        "audited_baseline_git_head": "92d9bac6384208881827313709fc0a03f60b0bad",
+        "artifacts": artifacts,
         "commands": [
             "python3 scripts/check_source_audit_32.py",
             "python3 scripts/check_attribution_ci.py --out .work/attribution-ci",
@@ -270,7 +283,6 @@ def build(root: Path, out: Path, audited_head: str | None) -> None:
         ],
         "unknowns": UNKNOWNs,
     }
-    (out / "release_manifest.json").write_text(json.dumps(manifest, indent=2) + "\n")
     with (out / "claims.csv").open("w", newline="") as handle:
         writer = csv.DictWriter(
             handle,
@@ -281,24 +293,52 @@ def build(root: Path, out: Path, audited_head: str | None) -> None:
         writer.writerows(CLAIMS)
     (out / "release_checklist.md").write_text(
         "# 可复现发布包与 claim gate（Issue #42）\n\n"
-        "机器可读发布清单是 `release_manifest.json`，主张表是 `claims.csv`。"
-        "`git_head` 指向被审计的 source commit，`built_from_git_head` 记录生成该快照时的 checkout。"
-        "CI 还会在当前 checkout 临时重建 release manifest，并用 strict-head 检查当前 HEAD 与新 manifest 一致。"
-        "每条主张绑定固定 artifact SHA、条件和未知成本。官方 GPU4PySCF 1.9.2 wheel 的选定上游测试已通过，"
-        "但完整上游 suite、1.9.0 可执行环境和论文版本映射仍保持 unknown。10× 仍写成 `falsified-partial`，"
-        "没有把未知 telemetry 填成零。\n\n"
-        "发布前必须补齐清单中的 unknowns，或按 claims.csv 的 partial/falsified 状态发布。\n"
+        "CI 的 attribution artifact 提供当前提交的 release_manifest.json、claims.csv 和对应原始文件。"
+        "git_head 绑定打包时的 Git 提交，audited_baseline_git_head 记录最初受控实验的提交。"
+        "验证器逐文件核对 Git blob 和 SHA-256。仓库内历史快照按清单记录的提交重放。\n"
     )
+    manifest["metadata_sha256"] = {name: sha(out / name) for name in ("claims.csv", "release_checklist.md")}
+    (out / "release_manifest.json").write_text(json.dumps(manifest, indent=2) + "\n")
     print(json.dumps({"status": "built", "artifacts": len(RELEASE_ARTIFACTS), "claims": len(CLAIMS)}, indent=2))
+
+
+def pack(root: Path, out: Path) -> None:
+    # Use the already checked snapshot and fixed tar/gzip metadata for byte-for-byte replay.
+    manifest = json.loads((out / "release_manifest.json").read_text())
+    with tempfile.TemporaryDirectory(dir=out) as staging:
+        bundle = Path(staging) / "research-release.tar.gz"
+        with bundle.open("wb") as handle, gzip.GzipFile(
+            filename="", mode="wb", fileobj=handle, mtime=0
+        ) as compressed, tarfile.open(fileobj=compressed, mode="w|", format=tarfile.GNU_FORMAT) as archive:
+            for name in ("release_manifest.json", *manifest["metadata_sha256"]):
+                data = (out / name).read_bytes()
+                if name in manifest["metadata_sha256"] and hashlib.sha256(data).hexdigest() != manifest["metadata_sha256"][name]:
+                    raise ValueError(f"release metadata changed during packaging: {name}")
+                info = tarfile.TarInfo(name)
+                info.size = len(data)
+                archive.addfile(info, io.BytesIO(data))
+            for item in manifest["artifacts"]:
+                path = item["path"]
+                data = subprocess.check_output(["git", "cat-file", "blob", f"{manifest['git_head']}:{path}"], cwd=root)
+                if hashlib.sha256(data).hexdigest() != item["sha256"]:
+                    raise ValueError(f"archived bytes differ from manifest: {path}")
+                info = tarfile.TarInfo(path)
+                info.size = len(data)
+                archive.addfile(info, io.BytesIO(data))
+        bundle.replace(out / bundle.name)
+
 
 
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--root", type=Path, required=True)
     parser.add_argument("--out", type=Path, required=True)
-    parser.add_argument("--git-head", default=None, help="audited source commit, defaults to current checkout HEAD")
+    parser.add_argument("--git-head", default=None, help="assert the expected checkout HEAD")
+    parser.add_argument("--bundle", action="store_true", help="also write the complete compressed release")
     args = parser.parse_args()
     build(args.root, args.out, args.git_head)
+    if args.bundle:
+        pack(args.root, args.out)
 
 
 if __name__ == "__main__":
