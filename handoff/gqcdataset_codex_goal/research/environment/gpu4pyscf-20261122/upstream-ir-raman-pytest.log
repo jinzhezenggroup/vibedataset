@@ -10,16 +10,16 @@ self = <test_ir_intensity.KnownValues testMethod=test_pcm_not_supported>
                 NotImplementedError, 'PCM solvent response is not supported'):
 >           ir.eval_ir_freq_intensity(mf, None)
 
-vibedataset/runs/gpu-property-tests-20261122/test_ir_intensity.py:114: 
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+vibedataset/runs/gpu-property-tests-20261122/test_ir_intensity.py:114:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
 
     def eval_ir_freq_intensity(mf, hessian_obj):
         '''Main driver of infrared spectra intensity
-    
+
         Args:
             mf: mean field object
             hessian_obj: hessian object
-    
+
         Returns:
             frequency mode: in cm^-1
             infrared spectra intensity: in km/mol
