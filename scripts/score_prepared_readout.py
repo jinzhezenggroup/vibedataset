@@ -4,6 +4,8 @@
 import argparse
 from collections import Counter
 import json
+import gzip
+import hashlib
 import math
 from pathlib import Path
 import time
@@ -63,7 +65,13 @@ def main():
     results = {}
     errors = []
     for mode in modes:
-        run = json.loads((a.root / (mode + ".json")).read_bytes())
+        raw_path = a.root / (mode + ".json")
+        raw = (
+            raw_path.read_bytes()
+            if raw_path.is_file()
+            else gzip.decompress((a.root / (mode + ".json.gz")).read_bytes())
+        )
+        run = json.loads(raw)
         if (
             run["manifest_sha256"] != manifest["manifest_sha256"]
             or run["gpu4pyscf_source_commit"]
@@ -145,6 +153,7 @@ def main():
         ):
             errors.append([mode, "budget fallback did not execute"])
         results[mode] = dict(
+            uncompressed_producer_sha256=hashlib.sha256(raw).hexdigest(),
             external_process_wall_s=wall[mode],
             receipts=observed,
             counts=dict(Counter(r["status"] for r in observed)),

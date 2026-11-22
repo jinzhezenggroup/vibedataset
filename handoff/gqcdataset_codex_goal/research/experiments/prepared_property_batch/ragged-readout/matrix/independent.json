@@ -1,0 +1,2339 @@
+{
+  "schema": "vibedataset.independent_prepared_readout.v1",
+  "status": "passed",
+  "errors": [],
+  "modes": {
+    "serial": {
+      "uncompressed_producer_sha256": "7be4ff694c07d3dccf0286db1b7aeeb8b0546028c9ada4b4be494f84849678de",
+      "external_process_wall_s": 30.67293729,
+      "receipts": [
+        {
+          "request_id": "qm9-000003:cycle-one",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 2.8409468905143953e-07,
+            "dense_reference_residual_l2": 7.417139829210089e-16,
+            "ao_tangent_reconstruction_linf": 9.306172567002946e-07,
+            "candidate_vs_dense_density_linf": 1.6664004414135292e-06,
+            "readout_vs_candidate_density_linf": 4.440892098500626e-16,
+            "readout_vs_dense_reference_linf": 1.4490891815377438e-06
+          },
+          "per_field_residual_linf": {
+            "x": 2.8409468905143953e-07
+          }
+        },
+        {
+          "request_id": "qm9-000009:cycle-one",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 1.1518358351836344e-07,
+            "dense_reference_residual_l2": 3.5865137042849024e-15,
+            "ao_tangent_reconstruction_linf": 1.9861847994073756e-07,
+            "candidate_vs_dense_density_linf": 3.5395707093099915e-07,
+            "readout_vs_candidate_density_linf": 1.7763568394002505e-15,
+            "readout_vs_dense_reference_linf": 4.928641175183657e-07
+          },
+          "per_field_residual_linf": {
+            "x": 1.1518358351836344e-07
+          }
+        },
+        {
+          "request_id": "qm9-000011:cycle-one",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 1.1659372699535098e-06,
+            "dense_reference_residual_l2": 3.31276963583285e-15,
+            "ao_tangent_reconstruction_linf": 5.63796565378194e-07,
+            "candidate_vs_dense_density_linf": 3.709999445655754e-06,
+            "readout_vs_candidate_density_linf": 3.552713678800501e-15,
+            "readout_vs_dense_reference_linf": 5.690460838536637e-06
+          },
+          "per_field_residual_linf": {
+            "x": 1.1659372699535098e-06
+          }
+        },
+        {
+          "request_id": "qm9-000001:cycle-one",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 2.9969660464423953e-07,
+            "dense_reference_residual_l2": 1.0487084428818532e-15,
+            "ao_tangent_reconstruction_linf": 2.089686679251912e-08,
+            "candidate_vs_dense_density_linf": 9.15843215487655e-07,
+            "readout_vs_candidate_density_linf": 8.881784197001252e-16,
+            "readout_vs_dense_reference_linf": 1.8825903476127337e-06
+          },
+          "per_field_residual_linf": {
+            "x": 2.9969660464423953e-07
+          }
+        },
+        {
+          "request_id": "qm9-000003:cycle-three",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 4.31582952264975e-07,
+            "dense_reference_residual_l2": 7.417139829210089e-16,
+            "ao_tangent_reconstruction_linf": 9.306172565892723e-07,
+            "candidate_vs_dense_density_linf": 1.6664004414135292e-06,
+            "readout_vs_candidate_density_linf": 4.440892098500626e-16,
+            "readout_vs_dense_reference_linf": 1.4490891810936546e-06
+          },
+          "per_field_residual_linf": {
+            "x": 2.840946893289953e-07,
+            "y": 4.31582952264975e-07,
+            "z": 1.2029034103522296e-07
+          }
+        },
+        {
+          "request_id": "qm9-000009:cycle-three",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 5.034170005198402e-07,
+            "dense_reference_residual_l2": 3.5865137042849024e-15,
+            "ao_tangent_reconstruction_linf": 1.200955398461545e-06,
+            "candidate_vs_dense_density_linf": 2.2011290738976896e-06,
+            "readout_vs_candidate_density_linf": 3.552713678800501e-15,
+            "readout_vs_dense_reference_linf": 2.2659455254370187e-06
+          },
+          "per_field_residual_linf": {
+            "x": 1.1518358351836344e-07,
+            "y": 2.7594307552836206e-07,
+            "z": 5.034170005198402e-07
+          }
+        },
+        {
+          "request_id": "qm9-000011:cycle-three",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 4.45831159810034e-06,
+            "dense_reference_residual_l2": 3.31276963583285e-15,
+            "ao_tangent_reconstruction_linf": 6.629976209149291e-07,
+            "candidate_vs_dense_density_linf": 3.709999445655754e-06,
+            "readout_vs_candidate_density_linf": 3.552713678800501e-15,
+            "readout_vs_dense_reference_linf": 5.690460838536637e-06
+          },
+          "per_field_residual_linf": {
+            "x": 1.1659372699535098e-06,
+            "y": 9.855993328145018e-07,
+            "z": 4.45831159810034e-06
+          }
+        },
+        {
+          "request_id": "qm9-000001:cycle-three",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 3.4515612767904713e-07,
+            "dense_reference_residual_l2": 1.0487084428818532e-15,
+            "ao_tangent_reconstruction_linf": 2.208482940968537e-08,
+            "candidate_vs_dense_density_linf": 9.758403916038105e-07,
+            "readout_vs_candidate_density_linf": 2.6645352591003757e-15,
+            "readout_vs_dense_reference_linf": 1.8920997986171528e-06
+          },
+          "per_field_residual_linf": {
+            "x": 2.996966043111726e-07,
+            "y": 2.9552932029330847e-07,
+            "z": 3.4515612767904713e-07
+          }
+        },
+        {
+          "request_id": "qm9-000003:cross-three",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 2.840946893289953e-07,
+            "dense_reference_residual_l2": 7.417139829210089e-16,
+            "ao_tangent_reconstruction_linf": 9.306172565892723e-07,
+            "candidate_vs_dense_density_linf": 1.6664004414135292e-06,
+            "readout_vs_candidate_density_linf": 3.469446951953614e-18,
+            "readout_vs_dense_reference_linf": 1.854450088628612e-08
+          },
+          "per_field_residual_linf": {
+            "x": 2.840946893289953e-07,
+            "z": 1.2029034103522296e-07
+          }
+        },
+        {
+          "request_id": "qm9-000009:cross-three",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 5.034170005198402e-07,
+            "dense_reference_residual_l2": 3.5865137042849024e-15,
+            "ao_tangent_reconstruction_linf": 1.9861847994073756e-07,
+            "candidate_vs_dense_density_linf": 4.4220254835636297e-07,
+            "readout_vs_candidate_density_linf": 1.5163651584382265e-15,
+            "readout_vs_dense_reference_linf": 1.174735624531395e-09
+          },
+          "per_field_residual_linf": {
+            "x": 1.1518358351836344e-07,
+            "z": 5.034170005198402e-07
+          }
+        },
+        {
+          "request_id": "qm9-000011:cross-three",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 4.45831159810034e-06,
+            "dense_reference_residual_l2": 3.31276963583285e-15,
+            "ao_tangent_reconstruction_linf": 5.63796565378194e-07,
+            "candidate_vs_dense_density_linf": 3.709999445655754e-06,
+            "readout_vs_candidate_density_linf": 1.7763568394002505e-15,
+            "readout_vs_dense_reference_linf": 1.636948486094525e-06
+          },
+          "per_field_residual_linf": {
+            "x": 1.1659372699535098e-06,
+            "z": 4.45831159810034e-06
+          }
+        },
+        {
+          "request_id": "qm9-000001:cross-three",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 3.4515612779006943e-07,
+            "dense_reference_residual_l2": 1.0487084428818532e-15,
+            "ao_tangent_reconstruction_linf": 2.089686679251912e-08,
+            "candidate_vs_dense_density_linf": 9.15843215487655e-07,
+            "readout_vs_candidate_density_linf": 3.434752482434078e-16,
+            "readout_vs_dense_reference_linf": 6.399572989590485e-10
+          },
+          "per_field_residual_linf": {
+            "x": 2.996966043111726e-07,
+            "z": 3.4515612779006943e-07
+          }
+        }
+      ],
+      "counts": {
+        "accepted": 12
+      },
+      "density_readout_shapes": [
+        [
+          7,
+          19,
+          19,
+          9
+        ],
+        [
+          7,
+          19,
+          19,
+          9
+        ],
+        [
+          7,
+          19,
+          19,
+          9
+        ]
+      ],
+      "compile_s": 0.0,
+      "staging_allocations": 1,
+      "staging_capacity_bytes": 41376,
+      "response_operator_rows": 87
+    },
+    "async": {
+      "uncompressed_producer_sha256": "2bf3051aaf8e46ac38a57218a9a754f61abc3afe27989e9b71d2cb99c4438951",
+      "external_process_wall_s": 30.827143015,
+      "receipts": [
+        {
+          "request_id": "qm9-000003:cycle-one",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 2.84094506419752e-07,
+            "dense_reference_residual_l2": 7.417139829210089e-16,
+            "ao_tangent_reconstruction_linf": 9.306176711465497e-07,
+            "candidate_vs_dense_density_linf": 1.66640039034327e-06,
+            "readout_vs_candidate_density_linf": 0.0,
+            "readout_vs_dense_reference_linf": 1.4490871063088662e-06
+          },
+          "per_field_residual_linf": {
+            "x": 2.84094506419752e-07
+          }
+        },
+        {
+          "request_id": "qm9-000009:cycle-one",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 1.1518358207507351e-07,
+            "dense_reference_residual_l2": 3.5865137042849024e-15,
+            "ao_tangent_reconstruction_linf": 1.9861846836666253e-07,
+            "candidate_vs_dense_density_linf": 3.5395707137508836e-07,
+            "readout_vs_candidate_density_linf": 8.881784197001252e-16,
+            "readout_vs_dense_reference_linf": 4.928641432755398e-07
+          },
+          "per_field_residual_linf": {
+            "x": 1.1518358207507351e-07
+          }
+        },
+        {
+          "request_id": "qm9-000011:cycle-one",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 1.1659371006444985e-06,
+            "dense_reference_residual_l2": 3.31276963583285e-15,
+            "ao_tangent_reconstruction_linf": 5.637965762861352e-07,
+            "candidate_vs_dense_density_linf": 3.709998960488292e-06,
+            "readout_vs_candidate_density_linf": 3.552713678800501e-15,
+            "readout_vs_dense_reference_linf": 5.6904599077256535e-06
+          },
+          "per_field_residual_linf": {
+            "x": 1.1659371006444985e-06
+          }
+        },
+        {
+          "request_id": "qm9-000001:cycle-one",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 2.996966083079755e-07,
+            "dense_reference_residual_l2": 1.0487084428818532e-15,
+            "ao_tangent_reconstruction_linf": 2.08968659043407e-08,
+            "candidate_vs_dense_density_linf": 9.158432776601444e-07,
+            "readout_vs_candidate_density_linf": 8.881784197001252e-16,
+            "readout_vs_dense_reference_linf": 1.8825903538299826e-06
+          },
+          "per_field_residual_linf": {
+            "x": 2.996966083079755e-07
+          }
+        },
+        {
+          "request_id": "qm9-000003:cycle-three",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 4.315825277156904e-07,
+            "dense_reference_residual_l2": 7.417139829210089e-16,
+            "ao_tangent_reconstruction_linf": 9.306176710355274e-07,
+            "candidate_vs_dense_density_linf": 1.66640039034327e-06,
+            "readout_vs_candidate_density_linf": 8.326672684688674e-17,
+            "readout_vs_dense_reference_linf": 1.4490871063088662e-06
+          },
+          "per_field_residual_linf": {
+            "x": 2.840945065307743e-07,
+            "y": 4.315825277156904e-07,
+            "z": 1.2029042945060908e-07
+          }
+        },
+        {
+          "request_id": "qm9-000009:cycle-three",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 5.034169713695469e-07,
+            "dense_reference_residual_l2": 3.5865137042849024e-15,
+            "ao_tangent_reconstruction_linf": 1.2009552328162698e-06,
+            "candidate_vs_dense_density_linf": 2.2011288693946085e-06,
+            "readout_vs_candidate_density_linf": 7.105427357601002e-15,
+            "readout_vs_dense_reference_linf": 2.2659458167595403e-06
+          },
+          "per_field_residual_linf": {
+            "x": 1.1518358207507351e-07,
+            "y": 2.759430620391523e-07,
+            "z": 5.034169713695469e-07
+          }
+        },
+        {
+          "request_id": "qm9-000011:cycle-three",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 4.458311607481724e-06,
+            "dense_reference_residual_l2": 3.31276963583285e-15,
+            "ao_tangent_reconstruction_linf": 6.629976081473643e-07,
+            "candidate_vs_dense_density_linf": 3.709998960488292e-06,
+            "readout_vs_candidate_density_linf": 3.552713678800501e-15,
+            "readout_vs_dense_reference_linf": 5.6904599077256535e-06
+          },
+          "per_field_residual_linf": {
+            "x": 1.1659371006444985e-06,
+            "y": 9.85599156289041e-07,
+            "z": 4.458311607481724e-06
+          }
+        },
+        {
+          "request_id": "qm9-000001:cycle-three",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 3.4515613223096153e-07,
+            "dense_reference_residual_l2": 1.0487084428818532e-15,
+            "ao_tangent_reconstruction_linf": 2.2084829187640764e-08,
+            "candidate_vs_dense_density_linf": 9.75840561689978e-07,
+            "readout_vs_candidate_density_linf": 8.881784197001252e-16,
+            "readout_vs_dense_reference_linf": 1.892099801281688e-06
+          },
+          "per_field_residual_linf": {
+            "x": 2.996966085300201e-07,
+            "y": 2.955293241235779e-07,
+            "z": 3.4515613223096153e-07
+          }
+        },
+        {
+          "request_id": "qm9-000003:cross-three",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 2.840945065307743e-07,
+            "dense_reference_residual_l2": 7.417139829210089e-16,
+            "ao_tangent_reconstruction_linf": 9.306176710355274e-07,
+            "candidate_vs_dense_density_linf": 1.66640039034327e-06,
+            "readout_vs_candidate_density_linf": 3.469446951953614e-18,
+            "readout_vs_dense_reference_linf": 1.8544511384832596e-08
+          },
+          "per_field_residual_linf": {
+            "x": 2.840945065307743e-07,
+            "z": 1.2029042945060908e-07
+          }
+        },
+        {
+          "request_id": "qm9-000009:cross-three",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 5.034169713695469e-07,
+            "dense_reference_residual_l2": 3.5865137042849024e-15,
+            "ao_tangent_reconstruction_linf": 1.9861846836666253e-07,
+            "candidate_vs_dense_density_linf": 4.422025402517349e-07,
+            "readout_vs_candidate_density_linf": 7.277164981722706e-16,
+            "readout_vs_dense_reference_linf": 1.1747420198063296e-09
+          },
+          "per_field_residual_linf": {
+            "x": 1.1518358207507351e-07,
+            "z": 5.034169713695469e-07
+          }
+        },
+        {
+          "request_id": "qm9-000011:cross-three",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 4.458311607481724e-06,
+            "dense_reference_residual_l2": 3.31276963583285e-15,
+            "ao_tangent_reconstruction_linf": 5.637965762861352e-07,
+            "candidate_vs_dense_density_linf": 3.709998960488292e-06,
+            "readout_vs_candidate_density_linf": 0.0,
+            "readout_vs_dense_reference_linf": 1.636948253391779e-06
+          },
+          "per_field_residual_linf": {
+            "x": 1.1659371006444985e-06,
+            "z": 4.458311607481724e-06
+          }
+        },
+        {
+          "request_id": "qm9-000001:cross-three",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 3.4515613223096153e-07,
+            "dense_reference_residual_l2": 1.0487084428818532e-15,
+            "ao_tangent_reconstruction_linf": 2.0896866015363003e-08,
+            "candidate_vs_dense_density_linf": 9.158432776601444e-07,
+            "readout_vs_candidate_density_linf": 4.926614671774132e-16,
+            "readout_vs_dense_reference_linf": 6.399634884524108e-10
+          },
+          "per_field_residual_linf": {
+            "x": 2.996966085300201e-07,
+            "z": 3.4515613223096153e-07
+          }
+        }
+      ],
+      "counts": {
+        "accepted": 12
+      },
+      "density_readout_shapes": [
+        [
+          7,
+          19,
+          19,
+          9
+        ],
+        [
+          7,
+          19,
+          19,
+          9
+        ],
+        [
+          7,
+          19,
+          19,
+          9
+        ]
+      ],
+      "compile_s": 0.0,
+      "staging_allocations": 2,
+      "staging_capacity_bytes": 82752,
+      "response_operator_rows": 87
+    },
+    "ragged": {
+      "uncompressed_producer_sha256": "f41ec8a3c9479b1f76a23e0545ec8cd7bd310a0d1a45ff85102b5628a03f6a69",
+      "external_process_wall_s": 29.891908516,
+      "receipts": [
+        {
+          "request_id": "qm9-000003:cycle-one",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 2.8409449909228e-07,
+            "dense_reference_residual_l2": 7.417139829210089e-16,
+            "ao_tangent_reconstruction_linf": 9.306176909085195e-07,
+            "candidate_vs_dense_density_linf": 1.6664004113264852e-06,
+            "readout_vs_candidate_density_linf": 0.0,
+            "readout_vs_dense_reference_linf": 1.4490870103855968e-06
+          },
+          "per_field_residual_linf": {
+            "x": 2.8409449909228e-07
+          }
+        },
+        {
+          "request_id": "qm9-000009:cycle-one",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 1.1518358714046606e-07,
+            "dense_reference_residual_l2": 3.5865137042849024e-15,
+            "ao_tangent_reconstruction_linf": 1.9861849315239155e-07,
+            "candidate_vs_dense_density_linf": 3.539570879729226e-07,
+            "readout_vs_candidate_density_linf": 0.0,
+            "readout_vs_dense_reference_linf": 4.928640882084778e-07
+          },
+          "per_field_residual_linf": {
+            "x": 1.1518358714046606e-07
+          }
+        },
+        {
+          "request_id": "qm9-000011:cycle-one",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 1.1659375208639133e-06,
+            "dense_reference_residual_l2": 3.31276963583285e-15,
+            "ao_tangent_reconstruction_linf": 5.637965418692215e-07,
+            "candidate_vs_dense_density_linf": 3.7100001839540653e-06,
+            "readout_vs_candidate_density_linf": 5.329070518200751e-15,
+            "readout_vs_dense_reference_linf": 5.690462238305827e-06
+          },
+          "per_field_residual_linf": {
+            "x": 1.1659375208639133e-06
+          }
+        },
+        {
+          "request_id": "qm9-000001:cycle-one",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 2.9969660930717623e-07,
+            "dense_reference_residual_l2": 1.0487084428818532e-15,
+            "ao_tangent_reconstruction_linf": 2.0896867125586027e-08,
+            "candidate_vs_dense_density_linf": 9.158432829892149e-07,
+            "readout_vs_candidate_density_linf": 1.7763568394002505e-15,
+            "readout_vs_dense_reference_linf": 1.8825903573826963e-06
+          },
+          "per_field_residual_linf": {
+            "x": 2.9969660930717623e-07
+          }
+        },
+        {
+          "request_id": "qm9-000003:cycle-three",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 4.3158250406793996e-07,
+            "dense_reference_residual_l2": 7.417139829210089e-16,
+            "ao_tangent_reconstruction_linf": 9.306176909085195e-07,
+            "candidate_vs_dense_density_linf": 1.6664004113264852e-06,
+            "readout_vs_candidate_density_linf": 1.3322676295501878e-15,
+            "readout_vs_dense_reference_linf": 1.4490870103855968e-06
+          },
+          "per_field_residual_linf": {
+            "x": 2.8409449914779117e-07,
+            "y": 4.3158250406793996e-07,
+            "z": 1.2029043404415685e-07
+          }
+        },
+        {
+          "request_id": "qm9-000009:cycle-three",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 5.034170271790706e-07,
+            "dense_reference_residual_l2": 3.5865137042849024e-15,
+            "ao_tangent_reconstruction_linf": 1.2009555276915052e-06,
+            "candidate_vs_dense_density_linf": 2.201129352563669e-06,
+            "readout_vs_candidate_density_linf": 3.552713678800501e-15,
+            "readout_vs_dense_reference_linf": 2.2659451168749456e-06
+          },
+          "per_field_residual_linf": {
+            "x": 1.1518358714046606e-07,
+            "y": 2.759430834664567e-07,
+            "z": 5.034170271790706e-07
+          }
+        },
+        {
+          "request_id": "qm9-000011:cycle-three",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 4.4583115045224164e-06,
+            "dense_reference_residual_l2": 3.31276963583285e-15,
+            "ao_tangent_reconstruction_linf": 6.629976213590183e-07,
+            "candidate_vs_dense_density_linf": 3.7100001839540653e-06,
+            "readout_vs_candidate_density_linf": 5.329070518200751e-15,
+            "readout_vs_dense_reference_linf": 5.690462238305827e-06
+          },
+          "per_field_residual_linf": {
+            "x": 1.1659375208639133e-06,
+            "y": 9.855995836138831e-07,
+            "z": 4.4583115045224164e-06
+          }
+        },
+        {
+          "request_id": "qm9-000001:cycle-three",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 3.4515612756802483e-07,
+            "dense_reference_residual_l2": 1.0487084428818532e-15,
+            "ao_tangent_reconstruction_linf": 2.2084830075819184e-08,
+            "candidate_vs_dense_density_linf": 9.758404786452957e-07,
+            "readout_vs_candidate_density_linf": 2.6645352591003757e-15,
+            "readout_vs_dense_reference_linf": 1.8920998119398291e-06
+          },
+          "per_field_residual_linf": {
+            "x": 2.996966094737097e-07,
+            "y": 2.955293230133549e-07,
+            "z": 3.4515612756802483e-07
+          }
+        },
+        {
+          "request_id": "qm9-000003:cross-three",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 2.8409449914779117e-07,
+            "dense_reference_residual_l2": 7.417139829210089e-16,
+            "ao_tangent_reconstruction_linf": 9.306176909085195e-07,
+            "candidate_vs_dense_density_linf": 1.6664004113264852e-06,
+            "readout_vs_candidate_density_linf": 6.938893903907228e-18,
+            "readout_vs_dense_reference_linf": 1.8544510746454357e-08
+          },
+          "per_field_residual_linf": {
+            "x": 2.8409449914779117e-07,
+            "z": 1.2029043404415685e-07
+          }
+        },
+        {
+          "request_id": "qm9-000009:cross-three",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 5.034170271790706e-07,
+            "dense_reference_residual_l2": 3.5865137042849024e-15,
+            "ao_tangent_reconstruction_linf": 1.9861849315239155e-07,
+            "candidate_vs_dense_density_linf": 4.4220255712712486e-07,
+            "readout_vs_candidate_density_linf": 7.771561172376096e-16,
+            "readout_vs_dense_reference_linf": 1.17473608618468e-09
+          },
+          "per_field_residual_linf": {
+            "x": 1.1518358714046606e-07,
+            "z": 5.034170271790706e-07
+          }
+        },
+        {
+          "request_id": "qm9-000011:cross-three",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 4.4583115045224164e-06,
+            "dense_reference_residual_l2": 3.31276963583285e-15,
+            "ao_tangent_reconstruction_linf": 5.637965418692215e-07,
+            "candidate_vs_dense_density_linf": 3.7100001839540653e-06,
+            "readout_vs_candidate_density_linf": 1.7763568394002505e-15,
+            "readout_vs_dense_reference_linf": 1.63694883736909e-06
+          },
+          "per_field_residual_linf": {
+            "x": 1.1659375208639133e-06,
+            "z": 4.4583115045224164e-06
+          }
+        },
+        {
+          "request_id": "qm9-000001:cross-three",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 3.451561274570025e-07,
+            "dense_reference_residual_l2": 1.0487084428818532e-15,
+            "ao_tangent_reconstruction_linf": 2.0896867014563725e-08,
+            "candidate_vs_dense_density_linf": 9.158432821010365e-07,
+            "readout_vs_candidate_density_linf": 4.440892098500626e-16,
+            "readout_vs_dense_reference_linf": 6.39953867676013e-10
+          },
+          "per_field_residual_linf": {
+            "x": 2.996966094737097e-07,
+            "z": 3.451561274570025e-07
+          }
+        }
+      ],
+      "counts": {
+        "accepted": 12
+      },
+      "density_readout_shapes": [
+        [
+          7,
+          19,
+          19,
+          9
+        ],
+        [
+          7,
+          19,
+          19,
+          9
+        ],
+        [
+          7,
+          19,
+          19,
+          9
+        ]
+      ],
+      "compile_s": 0.018800155958160758,
+      "staging_allocations": 1,
+      "staging_capacity_bytes": 41376,
+      "response_operator_rows": 87
+    },
+    "async-ragged": {
+      "uncompressed_producer_sha256": "1346056e4d698f60a74c288b784031ecb4a0b32ab1d6a4efe29174e1de1002a0",
+      "external_process_wall_s": 29.670696016,
+      "receipts": [
+        {
+          "request_id": "qm9-000003:cycle-one",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 2.840945018678376e-07,
+            "dense_reference_residual_l2": 7.417139829210089e-16,
+            "ao_tangent_reconstruction_linf": 9.306176560475166e-07,
+            "candidate_vs_dense_density_linf": 1.666400368693921e-06,
+            "readout_vs_candidate_density_linf": 1.3322676295501878e-15,
+            "readout_vs_dense_reference_linf": 1.4490870774430675e-06
+          },
+          "per_field_residual_linf": {
+            "x": 2.840945018678376e-07
+          }
+        },
+        {
+          "request_id": "qm9-000009:cycle-one",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 1.1518356066164692e-07,
+            "dense_reference_residual_l2": 3.5865137042849024e-15,
+            "ao_tangent_reconstruction_linf": 1.9861842667778795e-07,
+            "candidate_vs_dense_density_linf": 3.5395700970219934e-07,
+            "readout_vs_candidate_density_linf": 1.7763568394002505e-15,
+            "readout_vs_dense_reference_linf": 4.928642285406681e-07
+          },
+          "per_field_residual_linf": {
+            "x": 1.1518356066164692e-07
+          }
+        },
+        {
+          "request_id": "qm9-000011:cycle-one",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 1.1659371259575835e-06,
+            "dense_reference_residual_l2": 3.31276963583285e-15,
+            "ao_tangent_reconstruction_linf": 5.637965760640906e-07,
+            "candidate_vs_dense_density_linf": 3.709999031986655e-06,
+            "readout_vs_candidate_density_linf": 3.552713678800501e-15,
+            "readout_vs_dense_reference_linf": 5.690460090690408e-06
+          },
+          "per_field_residual_linf": {
+            "x": 1.1659371259575835e-06
+          }
+        },
+        {
+          "request_id": "qm9-000001:cycle-one",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 2.996966058099737e-07,
+            "dense_reference_residual_l2": 1.0487084428818532e-15,
+            "ao_tangent_reconstruction_linf": 2.089686457207307e-08,
+            "candidate_vs_dense_density_linf": 9.158431608646822e-07,
+            "readout_vs_candidate_density_linf": 1.7763568394002505e-15,
+            "readout_vs_dense_reference_linf": 1.8825903662644805e-06
+          },
+          "per_field_residual_linf": {
+            "x": 2.996966058099737e-07
+          }
+        },
+        {
+          "request_id": "qm9-000003:cycle-three",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 4.3158252538422204e-07,
+            "dense_reference_residual_l2": 7.417139829210089e-16,
+            "ao_tangent_reconstruction_linf": 9.306176560475166e-07,
+            "candidate_vs_dense_density_linf": 1.666400368693921e-06,
+            "readout_vs_candidate_density_linf": 4.440892098500626e-16,
+            "readout_vs_dense_reference_linf": 1.449087078331246e-06
+          },
+          "per_field_residual_linf": {
+            "x": 2.8409450181232643e-07,
+            "y": 4.3158252538422204e-07,
+            "z": 1.2029042800731915e-07
+          }
+        },
+        {
+          "request_id": "qm9-000009:cycle-three",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 5.03417034095413e-07,
+            "dense_reference_residual_l2": 3.5865137042849024e-15,
+            "ao_tangent_reconstruction_linf": 1.2009548453484342e-06,
+            "candidate_vs_dense_density_linf": 2.2011285694123472e-06,
+            "readout_vs_candidate_density_linf": 7.105427357601002e-15,
+            "readout_vs_dense_reference_linf": 2.265946658752682e-06
+          },
+          "per_field_residual_linf": {
+            "x": 1.1518356066164692e-07,
+            "y": 2.7594301074684857e-07,
+            "z": 5.03417034095413e-07
+          }
+        },
+        {
+          "request_id": "qm9-000011:cycle-three",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 4.458311538758919e-06,
+            "dense_reference_residual_l2": 3.31276963583285e-15,
+            "ao_tangent_reconstruction_linf": 6.62997599598647e-07,
+            "candidate_vs_dense_density_linf": 3.709999031986655e-06,
+            "readout_vs_candidate_density_linf": 7.105427357601002e-15,
+            "readout_vs_dense_reference_linf": 5.690460090690408e-06
+          },
+          "per_field_residual_linf": {
+            "x": 1.1659371259575835e-06,
+            "y": 9.855991767171446e-07,
+            "z": 4.458311538758919e-06
+          }
+        },
+        {
+          "request_id": "qm9-000001:cycle-three",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 3.4515612856722555e-07,
+            "dense_reference_residual_l2": 1.0487084428818532e-15,
+            "ao_tangent_reconstruction_linf": 2.2084830075819184e-08,
+            "candidate_vs_dense_density_linf": 9.758403298754104e-07,
+            "readout_vs_candidate_density_linf": 1.7763568394002505e-15,
+            "readout_vs_dense_reference_linf": 1.8920998119398291e-06
+          },
+          "per_field_residual_linf": {
+            "x": 2.9969660564344025e-07,
+            "y": 2.955293206263754e-07,
+            "z": 3.4515612856722555e-07
+          }
+        },
+        {
+          "request_id": "qm9-000003:cross-three",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 2.8409450181232643e-07,
+            "dense_reference_residual_l2": 7.417139829210089e-16,
+            "ao_tangent_reconstruction_linf": 9.306176560475166e-07,
+            "candidate_vs_dense_density_linf": 1.666400368693921e-06,
+            "readout_vs_candidate_density_linf": 6.938893903907228e-18,
+            "readout_vs_dense_reference_linf": 1.8544511273810294e-08
+          },
+          "per_field_residual_linf": {
+            "x": 2.8409450181232643e-07,
+            "z": 1.2029042800731915e-07
+          }
+        },
+        {
+          "request_id": "qm9-000009:cross-three",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 5.03417034095413e-07,
+            "dense_reference_residual_l2": 3.5865137042849024e-15,
+            "ao_tangent_reconstruction_linf": 1.9861842667778795e-07,
+            "candidate_vs_dense_density_linf": 4.4220248540671747e-07,
+            "readout_vs_candidate_density_linf": 2.7755575615628914e-16,
+            "readout_vs_dense_reference_linf": 1.1747265937778195e-09
+          },
+          "per_field_residual_linf": {
+            "x": 1.1518356066164692e-07,
+            "z": 5.03417034095413e-07
+          }
+        },
+        {
+          "request_id": "qm9-000011:cross-three",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 4.458311538758919e-06,
+            "dense_reference_residual_l2": 3.31276963583285e-15,
+            "ao_tangent_reconstruction_linf": 5.637965760640906e-07,
+            "candidate_vs_dense_density_linf": 3.709999031986655e-06,
+            "readout_vs_candidate_density_linf": 8.881784197001252e-16,
+            "readout_vs_dense_reference_linf": 1.6369483111233762e-06
+          },
+          "per_field_residual_linf": {
+            "x": 1.1659371259575835e-06,
+            "z": 4.458311538758919e-06
+          }
+        },
+        {
+          "request_id": "qm9-000001:cross-three",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 3.4515612856722555e-07,
+            "dense_reference_residual_l2": 1.0487084428818532e-15,
+            "ao_tangent_reconstruction_linf": 2.089686457207307e-08,
+            "candidate_vs_dense_density_linf": 9.158431608646822e-07,
+            "readout_vs_candidate_density_linf": 8.881784197001252e-16,
+            "readout_vs_dense_reference_linf": 6.399505370069392e-10
+          },
+          "per_field_residual_linf": {
+            "x": 2.9969660564344025e-07,
+            "z": 3.4515612856722555e-07
+          }
+        }
+      ],
+      "counts": {
+        "accepted": 12
+      },
+      "density_readout_shapes": [
+        [
+          7,
+          19,
+          19,
+          9
+        ],
+        [
+          7,
+          19,
+          19,
+          9
+        ],
+        [
+          7,
+          19,
+          19,
+          9
+        ]
+      ],
+      "compile_s": 0.019714190042577684,
+      "staging_allocations": 2,
+      "staging_capacity_bytes": 82752,
+      "response_operator_rows": 87
+    },
+    "allocate": {
+      "uncompressed_producer_sha256": "267d75c8ed86fc6e137f0e4d5302f413d02a24e6fe27468bb0258f3fd51bdb70",
+      "external_process_wall_s": 29.795245277,
+      "receipts": [
+        {
+          "request_id": "qm9-000003:cycle-one",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 2.840944817172897e-07,
+            "dense_reference_residual_l2": 7.417139829210089e-16,
+            "ao_tangent_reconstruction_linf": 9.306177235490765e-07,
+            "candidate_vs_dense_density_linf": 1.6664004003352773e-06,
+            "readout_vs_candidate_density_linf": 0.0,
+            "readout_vs_dense_reference_linf": 1.4490868092131848e-06
+          },
+          "per_field_residual_linf": {
+            "x": 2.840944817172897e-07
+          }
+        },
+        {
+          "request_id": "qm9-000009:cycle-one",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 1.1518357756479247e-07,
+            "dense_reference_residual_l2": 3.5865137042849024e-15,
+            "ao_tangent_reconstruction_linf": 1.986184706703753e-07,
+            "candidate_vs_dense_density_linf": 3.539570619937038e-07,
+            "readout_vs_candidate_density_linf": 0.0,
+            "readout_vs_dense_reference_linf": 4.928641379464693e-07
+          },
+          "per_field_residual_linf": {
+            "x": 1.1518357756479247e-07
+          }
+        },
+        {
+          "request_id": "qm9-000011:cycle-one",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 1.165937208003065e-06,
+            "dense_reference_residual_l2": 3.31276963583285e-15,
+            "ao_tangent_reconstruction_linf": 5.637965657945276e-07,
+            "candidate_vs_dense_density_linf": 3.7099992811207017e-06,
+            "readout_vs_candidate_density_linf": 7.105427357601002e-15,
+            "readout_vs_dense_reference_linf": 5.690460533003261e-06
+          },
+          "per_field_residual_linf": {
+            "x": 1.165937208003065e-06
+          }
+        },
+        {
+          "request_id": "qm9-000001:cycle-one",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 2.9969660086948124e-07,
+            "dense_reference_residual_l2": 1.0487084428818532e-15,
+            "ao_tangent_reconstruction_linf": 2.0896862462649324e-08,
+            "candidate_vs_dense_density_linf": 9.158431830691427e-07,
+            "readout_vs_candidate_density_linf": 8.881784197001252e-16,
+            "readout_vs_dense_reference_linf": 1.8825903564945179e-06
+          },
+          "per_field_residual_linf": {
+            "x": 2.9969660086948124e-07
+          }
+        },
+        {
+          "request_id": "qm9-000003:cycle-three",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 4.315824797540557e-07,
+            "dense_reference_residual_l2": 7.417139829210089e-16,
+            "ao_tangent_reconstruction_linf": 9.306177236600988e-07,
+            "candidate_vs_dense_density_linf": 1.6664004003352773e-06,
+            "readout_vs_candidate_density_linf": 8.881784197001252e-16,
+            "readout_vs_dense_reference_linf": 1.449086809657274e-06
+          },
+          "per_field_residual_linf": {
+            "x": 2.840944817172897e-07,
+            "y": 4.315824797540557e-07,
+            "z": 1.2029044212102935e-07
+          }
+        },
+        {
+          "request_id": "qm9-000009:cycle-three",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 5.03417200991424e-07,
+            "dense_reference_residual_l2": 3.5865137042849024e-15,
+            "ao_tangent_reconstruction_linf": 1.2009553480574198e-06,
+            "candidate_vs_dense_density_linf": 2.2011290869983213e-06,
+            "readout_vs_candidate_density_linf": 4.440892098500626e-15,
+            "readout_vs_dense_reference_linf": 2.2659455716222965e-06
+          },
+          "per_field_residual_linf": {
+            "x": 1.1518357756479247e-07,
+            "y": 2.7594306645228883e-07,
+            "z": 5.03417200991424e-07
+          }
+        },
+        {
+          "request_id": "qm9-000011:cycle-three",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 4.458311645243185e-06,
+            "dense_reference_residual_l2": 3.31276963583285e-15,
+            "ao_tangent_reconstruction_linf": 6.629975972671787e-07,
+            "candidate_vs_dense_density_linf": 3.7099992811207017e-06,
+            "readout_vs_candidate_density_linf": 7.105427357601002e-15,
+            "readout_vs_dense_reference_linf": 5.690460533003261e-06
+          },
+          "per_field_residual_linf": {
+            "x": 1.165937208003065e-06,
+            "y": 9.85599268643611e-07,
+            "z": 4.458311645243185e-06
+          }
+        },
+        {
+          "request_id": "qm9-000001:cycle-three",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 3.451561256806457e-07,
+            "dense_reference_residual_l2": 1.0487084428818532e-15,
+            "ao_tangent_reconstruction_linf": 2.208483174115372e-08,
+            "candidate_vs_dense_density_linf": 9.758405692394945e-07,
+            "readout_vs_candidate_density_linf": 1.7763568394002505e-15,
+            "readout_vs_dense_reference_linf": 1.8920998154925428e-06
+          },
+          "per_field_residual_linf": {
+            "x": 2.996966010360147e-07,
+            "y": 2.9552932057086423e-07,
+            "z": 3.451561256806457e-07
+          }
+        },
+        {
+          "request_id": "qm9-000003:cross-three",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 2.840944817172897e-07,
+            "dense_reference_residual_l2": 7.417139829210089e-16,
+            "ao_tangent_reconstruction_linf": 9.306177236600988e-07,
+            "candidate_vs_dense_density_linf": 1.6664004003352773e-06,
+            "readout_vs_candidate_density_linf": 3.469446951953614e-18,
+            "readout_vs_dense_reference_linf": 1.8544512057905305e-08
+          },
+          "per_field_residual_linf": {
+            "x": 2.840944817172897e-07,
+            "z": 1.2029044212102935e-07
+          }
+        },
+        {
+          "request_id": "qm9-000009:cross-three",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 5.03417200991424e-07,
+            "dense_reference_residual_l2": 3.5865137042849024e-15,
+            "ao_tangent_reconstruction_linf": 1.986184706703753e-07,
+            "candidate_vs_dense_density_linf": 4.422025084993564e-07,
+            "readout_vs_candidate_density_linf": 1.609823385706477e-15,
+            "readout_vs_dense_reference_linf": 1.1747270933781806e-09
+          },
+          "per_field_residual_linf": {
+            "x": 1.1518357756479247e-07,
+            "z": 5.03417200991424e-07
+          }
+        },
+        {
+          "request_id": "qm9-000011:cross-three",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 4.458311645243185e-06,
+            "dense_reference_residual_l2": 3.31276963583285e-15,
+            "ao_tangent_reconstruction_linf": 5.637965657945276e-07,
+            "candidate_vs_dense_density_linf": 3.7099992811207017e-06,
+            "readout_vs_candidate_density_linf": 4.440892098500626e-16,
+            "readout_vs_dense_reference_linf": 1.6369484070466456e-06
+          },
+          "per_field_residual_linf": {
+            "x": 1.165937208003065e-06,
+            "z": 4.458311645243185e-06
+          }
+        },
+        {
+          "request_id": "qm9-000001:cross-three",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 3.451561256806457e-07,
+            "dense_reference_residual_l2": 1.0487084428818532e-15,
+            "ao_tangent_reconstruction_linf": 2.089686235162702e-08,
+            "candidate_vs_dense_density_linf": 9.158431830691427e-07,
+            "readout_vs_candidate_density_linf": 5.551115123125783e-16,
+            "readout_vs_dense_reference_linf": 6.399485386054948e-10
+          },
+          "per_field_residual_linf": {
+            "x": 2.996966010360147e-07,
+            "z": 3.451561256806457e-07
+          }
+        }
+      ],
+      "counts": {
+        "accepted": 12
+      },
+      "density_readout_shapes": [
+        [
+          7,
+          19,
+          19,
+          9
+        ],
+        [
+          7,
+          19,
+          19,
+          9
+        ],
+        [
+          7,
+          19,
+          19,
+          9
+        ]
+      ],
+      "compile_s": 0.018706580973230302,
+      "staging_allocations": 3,
+      "staging_capacity_bytes": 82752,
+      "response_operator_rows": 87
+    },
+    "batch-one": {
+      "uncompressed_producer_sha256": "40c8039f3f929e834dd1e1b9e0ccdd840c9f98463799e5d096ff6689b67efa0a",
+      "external_process_wall_s": 30.508123988,
+      "receipts": [
+        {
+          "request_id": "qm9-000003:cycle-one",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 2.8409451569011424e-07,
+            "dense_reference_residual_l2": 7.417139829210089e-16,
+            "ao_tangent_reconstruction_linf": 9.306176275147848e-07,
+            "candidate_vs_dense_density_linf": 1.6664003781308168e-06,
+            "readout_vs_candidate_density_linf": 4.440892098500626e-16,
+            "readout_vs_dense_reference_linf": 1.4490872364270047e-06
+          },
+          "per_field_residual_linf": {
+            "x": 2.8409451569011424e-07
+          }
+        },
+        {
+          "request_id": "qm9-000009:cycle-one",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 1.1518357712070326e-07,
+            "dense_reference_residual_l2": 3.5865137042849024e-15,
+            "ao_tangent_reconstruction_linf": 1.986184740843111e-07,
+            "candidate_vs_dense_density_linf": 3.5395705694218904e-07,
+            "readout_vs_candidate_density_linf": 8.881784197001252e-16,
+            "readout_vs_dense_reference_linf": 4.928641264001499e-07
+          },
+          "per_field_residual_linf": {
+            "x": 1.1518357712070326e-07
+          }
+        },
+        {
+          "request_id": "qm9-000011:cycle-one",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 1.1659372154415593e-06,
+            "dense_reference_residual_l2": 3.31276963583285e-15,
+            "ao_tangent_reconstruction_linf": 5.637965624083474e-07,
+            "candidate_vs_dense_density_linf": 3.7099992957756456e-06,
+            "readout_vs_candidate_density_linf": 1.0658141036401503e-14,
+            "readout_vs_dense_reference_linf": 5.6904605933993935e-06
+          },
+          "per_field_residual_linf": {
+            "x": 1.1659372154415593e-06
+          }
+        },
+        {
+          "request_id": "qm9-000001:cycle-one",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 2.99696607752864e-07,
+            "dense_reference_residual_l2": 1.0487084428818532e-15,
+            "ao_tangent_reconstruction_linf": 2.089686279571623e-08,
+            "candidate_vs_dense_density_linf": 9.158432434652752e-07,
+            "readout_vs_candidate_density_linf": 8.881784197001252e-16,
+            "readout_vs_dense_reference_linf": 1.8825903778108e-06
+          },
+          "per_field_residual_linf": {
+            "x": 2.99696607752864e-07
+          }
+        },
+        {
+          "request_id": "qm9-000003:cycle-three",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 4.3158258022923945e-07,
+            "dense_reference_residual_l2": 7.417139829210089e-16,
+            "ao_tangent_reconstruction_linf": 9.306176274037625e-07,
+            "candidate_vs_dense_density_linf": 1.666400378241839e-06,
+            "readout_vs_candidate_density_linf": 1.3322676295501878e-15,
+            "readout_vs_dense_reference_linf": 1.449087237315183e-06
+          },
+          "per_field_residual_linf": {
+            "x": 2.840945155235808e-07,
+            "y": 4.3158258022923945e-07,
+            "z": 1.2029042177619242e-07
+          }
+        },
+        {
+          "request_id": "qm9-000009:cycle-three",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 5.034169976991798e-07,
+            "dense_reference_residual_l2": 3.5865137042849024e-15,
+            "ao_tangent_reconstruction_linf": 1.200955323188424e-06,
+            "candidate_vs_dense_density_linf": 2.20112912985293e-06,
+            "readout_vs_candidate_density_linf": 1.0658141036401503e-14,
+            "readout_vs_dense_reference_linf": 2.2659455254370187e-06
+          },
+          "per_field_residual_linf": {
+            "x": 1.1518357712070326e-07,
+            "y": 2.7594306253875267e-07,
+            "z": 5.034169976991798e-07
+          }
+        },
+        {
+          "request_id": "qm9-000011:cycle-three",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 4.458311581211072e-06,
+            "dense_reference_residual_l2": 3.31276963583285e-15,
+            "ao_tangent_reconstruction_linf": 6.629975917160635e-07,
+            "candidate_vs_dense_density_linf": 3.7099992957756456e-06,
+            "readout_vs_candidate_density_linf": 1.0658141036401503e-14,
+            "readout_vs_dense_reference_linf": 5.6904605933993935e-06
+          },
+          "per_field_residual_linf": {
+            "x": 1.1659372154415593e-06,
+            "y": 9.855992648688527e-07,
+            "z": 4.458311581211072e-06
+          }
+        },
+        {
+          "request_id": "qm9-000001:cycle-three",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 3.4515613356322916e-07,
+            "dense_reference_residual_l2": 1.0487084428818532e-15,
+            "ao_tangent_reconstruction_linf": 2.208483163013142e-08,
+            "candidate_vs_dense_density_linf": 9.758406029902744e-07,
+            "readout_vs_candidate_density_linf": 8.881784197001252e-16,
+            "readout_vs_dense_reference_linf": 1.892099830591576e-06
+          },
+          "per_field_residual_linf": {
+            "x": 2.99696607752864e-07,
+            "y": 2.9552932440113366e-07,
+            "z": 3.4515613356322916e-07
+          }
+        },
+        {
+          "request_id": "qm9-000003:cross-three",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 2.840945155235808e-07,
+            "dense_reference_residual_l2": 7.417139829210089e-16,
+            "ao_tangent_reconstruction_linf": 9.306176274037625e-07,
+            "candidate_vs_dense_density_linf": 1.666400378241839e-06,
+            "readout_vs_candidate_density_linf": 3.469446951953614e-18,
+            "readout_vs_dense_reference_linf": 1.8544510534818093e-08
+          },
+          "per_field_residual_linf": {
+            "x": 2.840945155235808e-07,
+            "z": 1.2029042177619242e-07
+          }
+        },
+        {
+          "request_id": "qm9-000009:cross-three",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 5.034169976991798e-07,
+            "dense_reference_residual_l2": 3.5865137042849024e-15,
+            "ao_tangent_reconstruction_linf": 1.986184740843111e-07,
+            "candidate_vs_dense_density_linf": 4.422025497996529e-07,
+            "readout_vs_candidate_density_linf": 6.106226635438361e-16,
+            "readout_vs_dense_reference_linf": 1.1747335881828747e-09
+          },
+          "per_field_residual_linf": {
+            "x": 1.1518357712070326e-07,
+            "z": 5.034169976991798e-07
+          }
+        },
+        {
+          "request_id": "qm9-000011:cross-three",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 4.458311581211072e-06,
+            "dense_reference_residual_l2": 3.31276963583285e-15,
+            "ao_tangent_reconstruction_linf": 5.637965624083474e-07,
+            "candidate_vs_dense_density_linf": 3.7099992957756456e-06,
+            "readout_vs_candidate_density_linf": 4.440892098500626e-16,
+            "readout_vs_dense_reference_linf": 1.6369484421296931e-06
+          },
+          "per_field_residual_linf": {
+            "x": 1.1659372154415593e-06,
+            "z": 4.458311581211072e-06
+          }
+        },
+        {
+          "request_id": "qm9-000001:cross-three",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 3.4515613367425146e-07,
+            "dense_reference_residual_l2": 1.0487084428818532e-15,
+            "ao_tangent_reconstruction_linf": 2.0896862906738534e-08,
+            "candidate_vs_dense_density_linf": 9.158432439093644e-07,
+            "readout_vs_candidate_density_linf": 4.440892098500626e-16,
+            "readout_vs_dense_reference_linf": 6.399543117652229e-10
+          },
+          "per_field_residual_linf": {
+            "x": 2.99696607752864e-07,
+            "z": 3.4515613367425146e-07
+          }
+        }
+      ],
+      "counts": {
+        "accepted": 12
+      },
+      "density_readout_shapes": [
+        [
+          7
+        ],
+        [
+          19
+        ],
+        [
+          19
+        ],
+        [
+          9
+        ],
+        [
+          7
+        ],
+        [
+          19
+        ],
+        [
+          19
+        ],
+        [
+          9
+        ],
+        [
+          7
+        ],
+        [
+          19
+        ],
+        [
+          19
+        ],
+        [
+          9
+        ]
+      ],
+      "compile_s": 0.018510350957512856,
+      "staging_allocations": 2,
+      "staging_capacity_bytes": 34896,
+      "response_operator_rows": 87
+    },
+    "single-rhs": {
+      "uncompressed_producer_sha256": "b122cbd16882e06d8a5ca46714fc0036bc7899c6b5045291efb93b3a7727d605",
+      "external_process_wall_s": 40.989498409,
+      "receipts": [
+        {
+          "request_id": "qm9-000003:cycle-one",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 2.8409449653876706e-07,
+            "dense_reference_residual_l2": 7.417139829210089e-16,
+            "ao_tangent_reconstruction_linf": 9.30617695127367e-07,
+            "candidate_vs_dense_density_linf": 1.666400396560519e-06,
+            "readout_vs_candidate_density_linf": 4.440892098500626e-16,
+            "readout_vs_dense_reference_linf": 1.449086995730653e-06
+          },
+          "per_field_residual_linf": {
+            "x": 2.8409449653876706e-07
+          }
+        },
+        {
+          "request_id": "qm9-000009:cycle-one",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 1.1518357766193699e-07,
+            "dense_reference_residual_l2": 3.5865137042849024e-15,
+            "ao_tangent_reconstruction_linf": 1.986184655633494e-07,
+            "candidate_vs_dense_density_linf": 3.539570697097538e-07,
+            "readout_vs_candidate_density_linf": 3.552713678800501e-15,
+            "readout_vs_dense_reference_linf": 4.928641601509298e-07
+          },
+          "per_field_residual_linf": {
+            "x": 1.1518357766193699e-07
+          }
+        },
+        {
+          "request_id": "qm9-000011:cycle-one",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 1.1659368800431835e-06,
+            "dense_reference_residual_l2": 3.31276963583285e-15,
+            "ao_tangent_reconstruction_linf": 5.637965895255448e-07,
+            "candidate_vs_dense_density_linf": 3.7099983292154803e-06,
+            "readout_vs_candidate_density_linf": 3.552713678800501e-15,
+            "readout_vs_dense_reference_linf": 5.690458760199135e-06
+          },
+          "per_field_residual_linf": {
+            "x": 1.1659368800431835e-06
+          }
+        },
+        {
+          "request_id": "qm9-000001:cycle-one",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 2.9969660758633054e-07,
+            "dense_reference_residual_l2": 1.0487084428818532e-15,
+            "ao_tangent_reconstruction_linf": 2.0896864683095373e-08,
+            "candidate_vs_dense_density_linf": 9.15843276771966e-07,
+            "readout_vs_candidate_density_linf": 0.0,
+            "readout_vs_dense_reference_linf": 1.8825903698171942e-06
+          },
+          "per_field_residual_linf": {
+            "x": 2.9969660758633054e-07
+          }
+        },
+        {
+          "request_id": "qm9-000003:cycle-three",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 4.3222340717630203e-07,
+            "dense_reference_residual_l2": 7.417139829210089e-16,
+            "ao_tangent_reconstruction_linf": 9.306176950163447e-07,
+            "candidate_vs_dense_density_linf": 1.666400396560519e-06,
+            "readout_vs_candidate_density_linf": 4.440892098500626e-16,
+            "readout_vs_dense_reference_linf": 1.449086995730653e-06
+          },
+          "per_field_residual_linf": {
+            "x": 2.8409449642774476e-07,
+            "y": 4.3222340717630203e-07,
+            "z": 1.2028852783285693e-07
+          }
+        },
+        {
+          "request_id": "qm9-000009:cycle-three",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 2.7599570096015213e-07,
+            "dense_reference_residual_l2": 3.5865137042849024e-15,
+            "ao_tangent_reconstruction_linf": 1.200955237257162e-06,
+            "candidate_vs_dense_density_linf": 2.2010733551347528e-06,
+            "readout_vs_candidate_density_linf": 7.105427357601002e-15,
+            "readout_vs_dense_reference_linf": 2.2659534906210865e-06
+          },
+          "per_field_residual_linf": {
+            "x": 1.1518357766193699e-07,
+            "y": 2.7599570096015213e-07,
+            "z": 1.2212913311215878e-07
+          }
+        },
+        {
+          "request_id": "qm9-000011:cycle-three",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 1.1708819866243503e-06,
+            "dense_reference_residual_l2": 3.31276963583285e-15,
+            "ao_tangent_reconstruction_linf": 6.629976034844276e-07,
+            "candidate_vs_dense_density_linf": 3.7099983292154803e-06,
+            "readout_vs_candidate_density_linf": 3.552713678800501e-15,
+            "readout_vs_dense_reference_linf": 5.690458760199135e-06
+          },
+          "per_field_residual_linf": {
+            "x": 1.1659368800431835e-06,
+            "y": 9.847588595679468e-07,
+            "z": 1.1708819866243503e-06
+          }
+        },
+        {
+          "request_id": "qm9-000001:cycle-three",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 3.451702116352706e-07,
+            "dense_reference_residual_l2": 1.0487084428818532e-15,
+            "ao_tangent_reconstruction_linf": 2.208482940968537e-08,
+            "candidate_vs_dense_density_linf": 9.758417389704732e-07,
+            "readout_vs_candidate_density_linf": 4.440892098500626e-16,
+            "readout_vs_dense_reference_linf": 1.892099824374327e-06
+          },
+          "per_field_residual_linf": {
+            "x": 2.99696607752864e-07,
+            "y": 2.955203640131465e-07,
+            "z": 3.451702116352706e-07
+          }
+        },
+        {
+          "request_id": "qm9-000003:cross-three",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 2.8409449642774476e-07,
+            "dense_reference_residual_l2": 7.417139829210089e-16,
+            "ao_tangent_reconstruction_linf": 9.306176950163447e-07,
+            "candidate_vs_dense_density_linf": 1.666400396560519e-06,
+            "readout_vs_candidate_density_linf": 3.469446951953614e-18,
+            "readout_vs_dense_reference_linf": 2.5697927830831135e-08
+          },
+          "per_field_residual_linf": {
+            "x": 2.8409449642774476e-07,
+            "z": 1.2028852783285693e-07
+          }
+        },
+        {
+          "request_id": "qm9-000009:cross-three",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 1.2212913311215878e-07,
+            "dense_reference_residual_l2": 3.5865137042849024e-15,
+            "ao_tangent_reconstruction_linf": 1.986184655633494e-07,
+            "candidate_vs_dense_density_linf": 3.5839687795302666e-07,
+            "readout_vs_candidate_density_linf": 6.661338147750939e-16,
+            "readout_vs_dense_reference_linf": 1.174729369335381e-09
+          },
+          "per_field_residual_linf": {
+            "x": 1.1518357766193699e-07,
+            "z": 1.2212913311215878e-07
+          }
+        },
+        {
+          "request_id": "qm9-000011:cross-three",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 1.1708819866243503e-06,
+            "dense_reference_residual_l2": 3.31276963583285e-15,
+            "ao_tangent_reconstruction_linf": 5.637965895255448e-07,
+            "candidate_vs_dense_density_linf": 3.7099983292154803e-06,
+            "readout_vs_candidate_density_linf": 1.7763568394002505e-15,
+            "readout_vs_dense_reference_linf": 1.6369479518552055e-06
+          },
+          "per_field_residual_linf": {
+            "x": 1.1659368800431835e-06,
+            "z": 1.1708819866243503e-06
+          }
+        },
+        {
+          "request_id": "qm9-000001:cross-three",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 3.451702117462929e-07,
+            "dense_reference_residual_l2": 1.0487084428818532e-15,
+            "ao_tangent_reconstruction_linf": 2.0896864794117676e-08,
+            "candidate_vs_dense_density_linf": 9.15843276771966e-07,
+            "readout_vs_candidate_density_linf": 4.440892098500626e-16,
+            "readout_vs_dense_reference_linf": 6.400219243474226e-10
+          },
+          "per_field_residual_linf": {
+            "x": 2.99696607752864e-07,
+            "z": 3.451702117462929e-07
+          }
+        }
+      ],
+      "counts": {
+        "accepted": 12
+      },
+      "density_readout_shapes": [
+        [
+          7,
+          19,
+          19,
+          9
+        ],
+        [
+          7,
+          19,
+          19,
+          9
+        ],
+        [
+          7,
+          19,
+          19,
+          9
+        ]
+      ],
+      "compile_s": 0.019014098099432886,
+      "staging_allocations": 2,
+      "staging_capacity_bytes": 82752,
+      "response_operator_rows": 98
+    },
+    "no-asset": {
+      "uncompressed_producer_sha256": "c7e13597acef580822c1f62cf504ffb54136130ff8a62b09ee8fc7260baf551d",
+      "external_process_wall_s": 38.601075359,
+      "receipts": [
+        {
+          "request_id": "qm9-000003:cycle-one",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 2.8409452784705636e-07,
+            "dense_reference_residual_l2": 7.417139829210089e-16,
+            "ao_tangent_reconstruction_linf": 9.306176239620711e-07,
+            "candidate_vs_dense_density_linf": 1.6664004106603514e-06,
+            "readout_vs_candidate_density_linf": 4.440892098500626e-16,
+            "readout_vs_dense_reference_linf": 1.4490873527783776e-06
+          },
+          "per_field_residual_linf": {
+            "x": 2.8409452784705636e-07
+          }
+        },
+        {
+          "request_id": "qm9-000009:cycle-one",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 1.1518358050688349e-07,
+            "dense_reference_residual_l2": 3.5865137042849024e-15,
+            "ao_tangent_reconstruction_linf": 1.986184711422201e-07,
+            "candidate_vs_dense_density_linf": 3.539570794242053e-07,
+            "readout_vs_candidate_density_linf": 0.0,
+            "readout_vs_dense_reference_linf": 4.928641326173988e-07
+          },
+          "per_field_residual_linf": {
+            "x": 1.1518358050688349e-07
+          }
+        },
+        {
+          "request_id": "qm9-000011:cycle-one",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 1.1659373935213324e-06,
+            "dense_reference_residual_l2": 3.31276963583285e-15,
+            "ao_tangent_reconstruction_linf": 5.637965500293607e-07,
+            "candidate_vs_dense_density_linf": 3.7099998111411736e-06,
+            "readout_vs_candidate_density_linf": 3.552713678800501e-15,
+            "readout_vs_dense_reference_linf": 5.690461513552236e-06
+          },
+          "per_field_residual_linf": {
+            "x": 1.1659373935213324e-06
+          }
+        },
+        {
+          "request_id": "qm9-000001:cycle-one",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 2.996966074197971e-07,
+            "dense_reference_residual_l2": 1.0487084428818532e-15,
+            "ao_tangent_reconstruction_linf": 2.0896867569675237e-08,
+            "candidate_vs_dense_density_linf": 9.158432083822277e-07,
+            "readout_vs_candidate_density_linf": 0.0,
+            "readout_vs_dense_reference_linf": 1.8825903627117668e-06
+          },
+          "per_field_residual_linf": {
+            "x": 2.996966074197971e-07
+          }
+        },
+        {
+          "request_id": "qm9-000003:cycle-three",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 4.31582590332269e-07,
+            "dense_reference_residual_l2": 7.417139829210089e-16,
+            "ao_tangent_reconstruction_linf": 9.306176281809186e-07,
+            "candidate_vs_dense_density_linf": 1.6467132710751287e-06,
+            "readout_vs_candidate_density_linf": 1.7763568394002505e-15,
+            "readout_vs_dense_reference_linf": 1.4480573344854974e-06
+          },
+          "per_field_residual_linf": {
+            "x": 2.844032201965163e-07,
+            "y": 4.31582590332269e-07,
+            "z": 1.2029041937533513e-07
+          }
+        },
+        {
+          "request_id": "qm9-000009:cycle-three",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 5.030787397029141e-07,
+            "dense_reference_residual_l2": 3.5865137042849024e-15,
+            "ao_tangent_reconstruction_linf": 1.200955329405673e-06,
+            "candidate_vs_dense_density_linf": 2.168106620459298e-06,
+            "readout_vs_candidate_density_linf": 7.105427357601002e-15,
+            "readout_vs_dense_reference_linf": 2.2743651371115448e-06
+          },
+          "per_field_residual_linf": {
+            "x": 5.030214577459585e-07,
+            "y": 2.793718087423791e-07,
+            "z": 5.030787397029141e-07
+          }
+        },
+        {
+          "request_id": "qm9-000011:cycle-three",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 2.136846047138402e-06,
+            "dense_reference_residual_l2": 3.31276963583285e-15,
+            "ao_tangent_reconstruction_linf": 6.629976171401708e-07,
+            "candidate_vs_dense_density_linf": 3.6406277150735633e-06,
+            "readout_vs_candidate_density_linf": 5.329070518200751e-15,
+            "readout_vs_dense_reference_linf": 5.719962071992768e-06
+          },
+          "per_field_residual_linf": {
+            "x": 1.14197606826405e-06,
+            "y": 9.842212416177887e-07,
+            "z": 2.136846047138402e-06
+          }
+        },
+        {
+          "request_id": "qm9-000001:cycle-three",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 3.4515989799643876e-07,
+            "dense_reference_residual_l2": 1.0487084428818532e-15,
+            "ao_tangent_reconstruction_linf": 2.208482985377458e-08,
+            "candidate_vs_dense_density_linf": 9.758275183457954e-07,
+            "readout_vs_candidate_density_linf": 3.552713678800501e-15,
+            "readout_vs_dense_reference_linf": 1.8920998190452565e-06
+          },
+          "per_field_residual_linf": {
+            "x": 2.996056370219158e-07,
+            "y": 2.956172355794706e-07,
+            "z": 3.4515989799643876e-07
+          }
+        },
+        {
+          "request_id": "qm9-000003:cross-three",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 2.8440322086265013e-07,
+            "dense_reference_residual_l2": 7.417139829210089e-16,
+            "ao_tangent_reconstruction_linf": 9.306176281809186e-07,
+            "candidate_vs_dense_density_linf": 1.64671327307353e-06,
+            "readout_vs_candidate_density_linf": 6.938893903907228e-18,
+            "readout_vs_dense_reference_linf": 1.643411094709446e-08
+          },
+          "per_field_residual_linf": {
+            "x": 2.8440322086265013e-07,
+            "z": 1.2029041950023522e-07
+          }
+        },
+        {
+          "request_id": "qm9-000009:cross-three",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 6.130102094756285e-07,
+            "dense_reference_residual_l2": 3.5865137042849024e-15,
+            "ao_tangent_reconstruction_linf": 1.9861847108670894e-07,
+            "candidate_vs_dense_density_linf": 4.6214730053950603e-07,
+            "readout_vs_candidate_density_linf": 6.106226635438361e-16,
+            "readout_vs_dense_reference_linf": 1.7177409494806284e-09
+          },
+          "per_field_residual_linf": {
+            "x": 1.337855917073888e-07,
+            "z": 6.130102094756285e-07
+          }
+        },
+        {
+          "request_id": "qm9-000011:cross-three",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 1.1683624222061373e-06,
+            "dense_reference_residual_l2": 3.31276963583285e-15,
+            "ao_tangent_reconstruction_linf": 5.637965261595657e-07,
+            "candidate_vs_dense_density_linf": 3.6947265014131148e-06,
+            "readout_vs_candidate_density_linf": 1.7763568394002505e-15,
+            "readout_vs_dense_reference_linf": 1.6195055976275796e-06
+          },
+          "per_field_residual_linf": {
+            "x": 1.1408742999208243e-06,
+            "z": 1.1683624222061373e-06
+          }
+        },
+        {
+          "request_id": "qm9-000001:cross-three",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 3.452007870663465e-07,
+            "dense_reference_residual_l2": 1.0487084428818532e-15,
+            "ao_tangent_reconstruction_linf": 2.0896867347630632e-08,
+            "candidate_vs_dense_density_linf": 9.158441574008691e-07,
+            "readout_vs_candidate_density_linf": 1.2212453270876722e-15,
+            "readout_vs_dense_reference_linf": 1.0214885604042934e-09
+          },
+          "per_field_residual_linf": {
+            "x": 2.99690653293716e-07,
+            "z": 3.452007870663465e-07
+          }
+        }
+      ],
+      "counts": {
+        "accepted": 12
+      },
+      "density_readout_shapes": [
+        [
+          7,
+          19,
+          19,
+          9
+        ],
+        [
+          7,
+          19,
+          19,
+          9
+        ],
+        [
+          7,
+          19,
+          19,
+          9
+        ]
+      ],
+      "compile_s": 0.018920394009910524,
+      "staging_allocations": 2,
+      "staging_capacity_bytes": 82752,
+      "response_operator_rows": 161
+    },
+    "budget": {
+      "uncompressed_producer_sha256": "42a0f33f3f372666779e56aafcca6ea1e7866cbb0d5b4074a8a7b31a9de664bf",
+      "external_process_wall_s": 29.458901664,
+      "receipts": [
+        {
+          "request_id": "qm9-000003:cycle-one",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 2.840946926041532e-07,
+            "dense_reference_residual_l2": 7.417139829210089e-16,
+            "ao_tangent_reconstruction_linf": 9.306172668033241e-07,
+            "candidate_vs_dense_density_linf": 1.6664004579558522e-06,
+            "readout_vs_candidate_density_linf": 4.440892098500626e-16,
+            "readout_vs_dense_reference_linf": 1.4490891979690446e-06
+          },
+          "per_field_residual_linf": {
+            "x": 2.840946926041532e-07
+          }
+        },
+        {
+          "request_id": "qm9-000009:cycle-one",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 1.1518357209694408e-07,
+            "dense_reference_residual_l2": 3.5865137042849024e-15,
+            "ao_tangent_reconstruction_linf": 1.9861845387825205e-07,
+            "candidate_vs_dense_density_linf": 3.5395704534035843e-07,
+            "readout_vs_candidate_density_linf": 8.881784197001252e-16,
+            "readout_vs_dense_reference_linf": 4.928641761381414e-07
+          },
+          "per_field_residual_linf": {
+            "x": 1.1518357209694408e-07
+          }
+        },
+        {
+          "request_id": "qm9-000011:cycle-one",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 1.165937104530279e-06,
+            "dense_reference_residual_l2": 3.31276963583285e-15,
+            "ao_tangent_reconstruction_linf": 5.637965672655731e-07,
+            "candidate_vs_dense_density_linf": 3.7099989755873253e-06,
+            "readout_vs_candidate_density_linf": 8.881784197001252e-15,
+            "readout_vs_dense_reference_linf": 5.6904599841089976e-06
+          },
+          "per_field_residual_linf": {
+            "x": 1.165937104530279e-06
+          }
+        },
+        {
+          "request_id": "qm9-000001:cycle-one",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 2.9969660281237154e-07,
+            "dense_reference_residual_l2": 1.0487084428818532e-15,
+            "ao_tangent_reconstruction_linf": 2.0896861685493207e-08,
+            "candidate_vs_dense_density_linf": 9.158432061617816e-07,
+            "readout_vs_candidate_density_linf": 1.7763568394002505e-15,
+            "readout_vs_dense_reference_linf": 1.882590339619128e-06
+          },
+          "per_field_residual_linf": {
+            "x": 2.9969660281237154e-07
+          }
+        },
+        {
+          "request_id": "qm9-000003:cycle-three",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 4.31582969140365e-07,
+            "dense_reference_residual_l2": 7.417139829210089e-16,
+            "ao_tangent_reconstruction_linf": 9.306172668033241e-07,
+            "candidate_vs_dense_density_linf": 1.6664004579558522e-06,
+            "readout_vs_candidate_density_linf": 0.0,
+            "readout_vs_dense_reference_linf": 1.4490891975249554e-06
+          },
+          "per_field_residual_linf": {
+            "x": 2.8409469288170897e-07,
+            "y": 4.31582969140365e-07,
+            "z": 1.2029034207605704e-07
+          }
+        },
+        {
+          "request_id": "qm9-000009:cycle-three",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 5.034170513749936e-07,
+            "dense_reference_residual_l2": 3.5865137042849024e-15,
+            "ao_tangent_reconstruction_linf": 1.2009551684233344e-06,
+            "candidate_vs_dense_density_linf": 2.201128869172564e-06,
+            "readout_vs_candidate_density_linf": 0.0,
+            "readout_vs_dense_reference_linf": 2.2659460050533653e-06
+          },
+          "per_field_residual_linf": {
+            "x": 1.1518357209694408e-07,
+            "y": 2.759430480225866e-07,
+            "z": 5.034170513749936e-07
+          }
+        },
+        {
+          "request_id": "qm9-000011:cycle-three",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 4.458311514111968e-06,
+            "dense_reference_residual_l2": 3.31276963583285e-15,
+            "ao_tangent_reconstruction_linf": 6.629975902727736e-07,
+            "candidate_vs_dense_density_linf": 3.7099989755873253e-06,
+            "readout_vs_candidate_density_linf": 0.0,
+            "readout_vs_dense_reference_linf": 5.690459992990782e-06
+          },
+          "per_field_residual_linf": {
+            "x": 1.165937104530279e-06,
+            "y": 9.855991525142827e-07,
+            "z": 4.458311514111968e-06
+          }
+        },
+        {
+          "request_id": "qm9-000001:cycle-three",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 3.4515611924135214e-07,
+            "dense_reference_residual_l2": 1.0487084428818532e-15,
+            "ao_tangent_reconstruction_linf": 2.2084828299462345e-08,
+            "candidate_vs_dense_density_linf": 9.758405061788267e-07,
+            "readout_vs_candidate_density_linf": 0.0,
+            "readout_vs_dense_reference_linf": 1.892099786182655e-06
+          },
+          "per_field_residual_linf": {
+            "x": 2.996966028678827e-07,
+            "y": 2.955293178508178e-07,
+            "z": 3.4515611924135214e-07
+          }
+        },
+        {
+          "request_id": "qm9-000003:cross-three",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 2.8409469288170897e-07,
+            "dense_reference_residual_l2": 7.417139829210089e-16,
+            "ao_tangent_reconstruction_linf": 9.306172668033241e-07,
+            "candidate_vs_dense_density_linf": 1.6664004579558522e-06,
+            "readout_vs_candidate_density_linf": 0.0,
+            "readout_vs_dense_reference_linf": 1.8544500893225013e-08
+          },
+          "per_field_residual_linf": {
+            "x": 2.8409469288170897e-07,
+            "z": 1.2029034207605704e-07
+          }
+        },
+        {
+          "request_id": "qm9-000009:cross-three",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 5.034170513749936e-07,
+            "dense_reference_residual_l2": 3.5865137042849024e-15,
+            "ao_tangent_reconstruction_linf": 1.9861845387825205e-07,
+            "candidate_vs_dense_density_linf": 4.4220251854687476e-07,
+            "readout_vs_candidate_density_linf": 0.0,
+            "readout_vs_dense_reference_linf": 1.1747344763612944e-09
+          },
+          "per_field_residual_linf": {
+            "x": 1.1518357209694408e-07,
+            "z": 5.034170513749936e-07
+          }
+        },
+        {
+          "request_id": "qm9-000011:cross-three",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 4.458311514111968e-06,
+            "dense_reference_residual_l2": 3.31276963583285e-15,
+            "ao_tangent_reconstruction_linf": 5.637965672655731e-07,
+            "candidate_vs_dense_density_linf": 3.7099989755873253e-06,
+            "readout_vs_candidate_density_linf": 0.0,
+            "readout_vs_dense_reference_linf": 1.6369482902511834e-06
+          },
+          "per_field_residual_linf": {
+            "x": 1.165937104530279e-06,
+            "z": 4.458311514111968e-06
+          }
+        },
+        {
+          "request_id": "qm9-000001:cross-three",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 3.4515611924135214e-07,
+            "dense_reference_residual_l2": 1.0487084428818532e-15,
+            "ao_tangent_reconstruction_linf": 2.089686179651551e-08,
+            "candidate_vs_dense_density_linf": 9.158432061617816e-07,
+            "readout_vs_candidate_density_linf": 0.0,
+            "readout_vs_dense_reference_linf": 6.399591967465312e-10
+          },
+          "per_field_residual_linf": {
+            "x": 2.996966028678827e-07,
+            "z": 3.4515611924135214e-07
+          }
+        }
+      ],
+      "counts": {
+        "accepted": 12
+      },
+      "density_readout_shapes": [],
+      "compile_s": 0.0,
+      "staging_allocations": 0,
+      "staging_capacity_bytes": 82752,
+      "response_operator_rows": 87
+    },
+    "isolation": {
+      "uncompressed_producer_sha256": "6b502693641659761d79300e0b0433f5b6641546f98f614b169df5db3912e564",
+      "external_process_wall_s": 28.782244576,
+      "receipts": [
+        {
+          "request_id": "qm9-000003:cycle-one",
+          "status": "reject-and-recompute",
+          "reason": "RuntimeError: scf_nonconvergence"
+        },
+        {
+          "request_id": "qm9-000009:cycle-one",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 1.1518358281059626e-07,
+            "dense_reference_residual_l2": 3.5865137042849024e-15,
+            "ao_tangent_reconstruction_linf": 1.9861848060687137e-07,
+            "candidate_vs_dense_density_linf": 3.539570832544747e-07,
+            "readout_vs_candidate_density_linf": 1.7763568394002505e-15,
+            "readout_vs_dense_reference_linf": 4.928641219592578e-07
+          },
+          "per_field_residual_linf": {
+            "x": 1.1518358281059626e-07
+          }
+        },
+        {
+          "request_id": "qm9-000011:cycle-one",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 1.165937203562173e-06,
+            "dense_reference_residual_l2": 3.31276963583285e-15,
+            "ao_tangent_reconstruction_linf": 5.637965627969255e-07,
+            "candidate_vs_dense_density_linf": 3.7099992722389175e-06,
+            "readout_vs_candidate_density_linf": 1.0658141036401503e-14,
+            "readout_vs_dense_reference_linf": 5.69046052767419e-06
+          },
+          "per_field_residual_linf": {
+            "x": 1.165937203562173e-06
+          }
+        },
+        {
+          "request_id": "qm9-000001:cycle-one",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 2.996966108059773e-07,
+            "dense_reference_residual_l2": 1.0487084428818532e-15,
+            "ao_tangent_reconstruction_linf": 2.0896862906738534e-08,
+            "candidate_vs_dense_density_linf": 9.158434308709218e-07,
+            "readout_vs_candidate_density_linf": 1.7763568394002505e-15,
+            "readout_vs_dense_reference_linf": 1.882590384028049e-06
+          },
+          "per_field_residual_linf": {
+            "x": 2.996966108059773e-07
+          }
+        },
+        {
+          "request_id": "qm9-000003:cycle-three",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 4.3158287232891723e-07,
+            "dense_reference_residual_l2": 7.417139829210089e-16,
+            "ao_tangent_reconstruction_linf": 9.306173089917991e-07,
+            "candidate_vs_dense_density_linf": 1.6467132398778617e-06,
+            "readout_vs_candidate_density_linf": 8.881784197001252e-16,
+            "readout_vs_dense_reference_linf": 1.4480587262610811e-06
+          },
+          "per_field_residual_linf": {
+            "x": 2.8440333726953426e-07,
+            "y": 4.3158287232891723e-07,
+            "z": 1.202903538582989e-07
+          }
+        },
+        {
+          "request_id": "qm9-000009:cycle-three",
+          "status": "reject-and-recompute",
+          "reason": "OutOfMemoryError: Out of memory allocating 4,096 bytes (allocated so far: 0 bytes, limit set to: 1,024 bytes)."
+        },
+        {
+          "request_id": "qm9-000011:cycle-three",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 4.458311598919129e-06,
+            "dense_reference_residual_l2": 3.31276963583285e-15,
+            "ao_tangent_reconstruction_linf": 6.629975887184614e-07,
+            "candidate_vs_dense_density_linf": 3.7099992722389175e-06,
+            "readout_vs_candidate_density_linf": 1.0658141036401503e-14,
+            "readout_vs_dense_reference_linf": 5.69046052767419e-06
+          },
+          "per_field_residual_linf": {
+            "x": 1.165937203562173e-06,
+            "y": 9.855992564311578e-07,
+            "z": 4.458311598919129e-06
+          }
+        },
+        {
+          "request_id": "qm9-000001:cycle-three",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 3.4515612812313634e-07,
+            "dense_reference_residual_l2": 1.0487084428818532e-15,
+            "ao_tangent_reconstruction_linf": 2.208483118604221e-08,
+            "candidate_vs_dense_density_linf": 9.758405505877477e-07,
+            "readout_vs_candidate_density_linf": 1.7763568394002505e-15,
+            "readout_vs_dense_reference_linf": 1.892099824374327e-06
+          },
+          "per_field_residual_linf": {
+            "x": 2.996966108059773e-07,
+            "y": 2.9552932567789014e-07,
+            "z": 3.4515612812313634e-07
+          }
+        },
+        {
+          "request_id": "qm9-000003:cross-three",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 2.8440333726953426e-07,
+            "dense_reference_residual_l2": 7.417139829210089e-16,
+            "ao_tangent_reconstruction_linf": 9.306173089917991e-07,
+            "candidate_vs_dense_density_linf": 1.6467132398778617e-06,
+            "readout_vs_candidate_density_linf": 3.469446951953614e-18,
+            "readout_vs_dense_reference_linf": 1.643411279284024e-08
+          },
+          "per_field_residual_linf": {
+            "x": 2.8440333726953426e-07,
+            "z": 1.202903538582989e-07
+          }
+        },
+        {
+          "request_id": "qm9-000009:cross-three",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 1.2212913998166375e-07,
+            "dense_reference_residual_l2": 3.5865137042849024e-15,
+            "ao_tangent_reconstruction_linf": 1.9861848060687137e-07,
+            "candidate_vs_dense_density_linf": 3.5839688217187415e-07,
+            "readout_vs_candidate_density_linf": 2.7755575615628914e-16,
+            "readout_vs_dense_reference_linf": 1.174734642894748e-09
+          },
+          "per_field_residual_linf": {
+            "x": 1.1518358281059626e-07,
+            "z": 1.2212913998166375e-07
+          }
+        },
+        {
+          "request_id": "qm9-000011:cross-three",
+          "status": "reject-and-recompute",
+          "reason": "NotImplementedError: unsupported_property"
+        },
+        {
+          "request_id": "qm9-000001:cross-three",
+          "status": "accepted",
+          "failed_gates": [],
+          "metrics": {
+            "candidate_physical_residual_linf": 3.4515612812313634e-07,
+            "dense_reference_residual_l2": 1.0487084428818532e-15,
+            "ao_tangent_reconstruction_linf": 2.0896862906738534e-08,
+            "candidate_vs_dense_density_linf": 9.15843431315011e-07,
+            "readout_vs_candidate_density_linf": 1.1102230246251565e-16,
+            "readout_vs_dense_reference_linf": 6.399507590515441e-10
+          },
+          "per_field_residual_linf": {
+            "x": 2.996966108059773e-07,
+            "z": 3.4515612812313634e-07
+          }
+        }
+      ],
+      "counts": {
+        "reject-and-recompute": 3,
+        "accepted": 9
+      },
+      "density_readout_shapes": [
+        [
+          19,
+          19,
+          9
+        ],
+        [
+          7,
+          19,
+          9
+        ],
+        [
+          7,
+          19,
+          9
+        ]
+      ],
+      "compile_s": 0.019516922999173403,
+      "staging_allocations": 2,
+      "staging_capacity_bytes": 82752,
+      "response_operator_rows": 72
+    }
+  },
+  "independent_scorer_seconds": 0.3903232049997314
+}
