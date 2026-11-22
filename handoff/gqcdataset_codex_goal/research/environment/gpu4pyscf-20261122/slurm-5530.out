@@ -1,0 +1,10 @@
+Python 3.11.17
+1.8.1 14.2.0
+{
+  "status": "accepted",
+  "request_count": 9,
+  "bucket_count": 1,
+  "resident_bucket_setup_count": 1,
+  "serial_setup_count_reference": 3,
+  "setup_reduction_ratio_reference": 0.3333333333333333
+}

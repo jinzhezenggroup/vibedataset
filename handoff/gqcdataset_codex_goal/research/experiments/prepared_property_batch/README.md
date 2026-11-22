@@ -7,3 +7,7 @@
 `check_prepared_property_batch.py` 的固定控制结果为 2 个 shape bucket、12 个节点、1 个隔离失败和 2 个预算回退。真正的跨样本 GPU residency、异步 stream、ragged batch 和融合 J/K 需要 #37 的分段 profile 后在 n2/n5 上实测，当前不宣称已经获得端到端收益。
 
 `run_prepared_property_batch_replay.py` 还将 51 条已封存 C 轨请求作为 producer receipt 重放。51 条请求按 8 个 shape bucket 组织，bucket setup accounting 从逐请求 51 次降为 8 次，51/51 receipt 保持 accepted。这个数字是静态图/资源准备账本，不是 GPU wall-time speedup，也没有重新生成科学标签。
+
+`gpu-control.json` 是一个独立 n2 GPU 控制。它在同一 CUDA context 中把 `qm9-000009`、`qm9-000011` 和 `qm9-000017` 的 9 条请求放入一个 `nao=19` shape bucket，实际 setup 为 1 次，serial setup reference 为 3 次，9/9 request receipts accepted。每条新响应保留官方 GPU4PySCF 的 residual、operator rows、H2D/D2H 和 target。`gpu-control-verification.json` 将 27 个 target 分量与已封存 C receipt 比较，最大差为 `5.22e-12`，并确认对应的 51 条独立 scorer C 行均 accepted。
+
+这个控制只验证单进程、单 CUDA context 的跨样本编排和逐条失败隔离。resident buffer 是编排层 workspace，未被写成共享 GPU4PySCF operator asset。async streams、ragged batch、跨分子 operator reuse、融合 J/K、独立新 scorer 和端到端 serial-process speedup 仍未完成。

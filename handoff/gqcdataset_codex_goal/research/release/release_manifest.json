@@ -1,6 +1,6 @@
 {
   "schema": "vibedataset.research_release.v1",
-  "git_head": "ec2fddbe4d36437816da2c1fb4cdae0d712a46b2",
+  "git_head": "ea546f52281d0b6a3b485f5738b76fcfe955b114",
   "artifacts": [
     {
       "path": "README.md",
@@ -48,7 +48,15 @@
     },
     {
       "path": "handoff/gqcdataset_codex_goal/research/experiments/prepared_property_batch/README.md",
-      "sha256": "90f9d415580900cdb86483f88efb65ab8307cc5ddf1b60fd28995ba6487d71d6"
+      "sha256": "9b50d286820e456807913af5faf2fddd739b78a6dc9be8c42aa948931c09f0e5"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/research/experiments/prepared_property_batch/gpu-control.json",
+      "sha256": "446b89ab30e24c0a9ed9e3af7b98c0a23d0b477ff3b63b0955a253799556ad5f"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/research/experiments/prepared_property_batch/gpu-control-verification.json",
+      "sha256": "88fa13195906b319cf489588055b28d0ae44d228e3d496607ce87e6744816779"
     },
     {
       "path": "handoff/gqcdataset_codex_goal/research/experiments/response_asset_compiler/plan.json",
@@ -81,6 +89,18 @@
     {
       "path": "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/baseline.json",
       "sha256": "24480bceff28eb025625de47eaf33af722aaac6a6612efcd587353a5d075721d"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/result.json",
+      "sha256": "364e680f19a61be2e8d60d0f892414fec07daab29e2b8e5e53cc71194ec69448"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/slurm-5530.out",
+      "sha256": "78e34b9acf5199f653d8d5b2c43e853aafb75743418f0e97b79827562383d01a"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/slurm-5530.err",
+      "sha256": "6f223205a2908b93369966cfa357520bffdeed529a640fa4002ba272c61857a4"
     },
     {
       "path": "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/phase-profile-control/README.md",
