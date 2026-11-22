@@ -1,6 +1,6 @@
 {
   "schema": "vibedataset.research_release.v1",
-  "git_head": "866ce89c7d0ae662588c6b10ff648bc2b74d91a8",
+  "git_head": "ec2fddbe4d36437816da2c1fb4cdae0d712a46b2",
   "artifacts": [
     {
       "path": "README.md",
@@ -29,6 +29,10 @@
     {
       "path": "handoff/gqcdataset_codex_goal/research/performance/attribution_profile.json",
       "sha256": "23726b0d93df39bcf4e43bee916ebed43575a50f24c0ee6f4cbad66046edf582"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/research/performance/profiling.md",
+      "sha256": "1f7194bbacb40a6f4eec8ac81b8145599fd4cd260a4eb4bc3f347b99876ecf89"
     },
     {
       "path": "handoff/gqcdataset_codex_goal/research/performance/scale_ablation_plan.json",
@@ -77,6 +81,22 @@
     {
       "path": "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/baseline.json",
       "sha256": "24480bceff28eb025625de47eaf33af722aaac6a6612efcd587353a5d075721d"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/phase-profile-control/README.md",
+      "sha256": "c57a558b6c0388d688c5966fe10eba08f30064c5b230cb81f05415e92fb233b0"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/phase-profile-control/profile-A.json",
+      "sha256": "d79e009ad94d627b0156a8c60693c2fa4bc2103855d22011326ff40d051352f5"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/phase-profile-control/profile-C.json",
+      "sha256": "432ebc0fea0378a036dfaf736c5c62f0d166eb63910acc35fe0b0dd318045a5f"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/phase-profile-control/receipt.json",
+      "sha256": "2de7943a467fcb8e5d9c54506e95767276d6d91703bae23d2d6ff7e8f12bd2e7"
     },
     {
       "path": "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/upstream-polarizability-pytest.log",
