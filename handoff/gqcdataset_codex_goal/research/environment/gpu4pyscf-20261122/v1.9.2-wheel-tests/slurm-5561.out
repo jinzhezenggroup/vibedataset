@@ -1,0 +1,16 @@
+{
+  "compute_capability": "120",
+  "cuda_runtime_version": 12090,
+  "cupy": "14.2.0",
+  "device": "NVIDIA RTX PRO 6000 Blackwell Workstation Edition",
+  "device_count": 1,
+  "gpu4pyscf": "1.9.2",
+  "nvcc": "nvcc: NVIDIA (R) Cuda compiler driver\nCopyright (c) 2005-2025 NVIDIA Corporation\nBuilt on Tue_May_27_02:21:03_PDT_2025\nCuda compilation tools, release 12.9, V12.9.86\nBuild cuda_12.9.r12.9/compiler.36037853_0\n",
+  "nvcc_path": "/home/lhshen/miniconda3/pkgs/cuda-nvcc-tools-12.9.86-he02047a_2/bin/nvcc",
+  "nvidia_smi": "NVIDIA RTX PRO 6000 Blackwell Workstation Edition, 595.99.02, 97887 MiB\nNVIDIA RTX PRO 6000 Blackwell Workstation Edition, 595.99.02, 97887 MiB\nNVIDIA RTX PRO 6000 Blackwell Workstation Edition, 595.99.02, 97887 MiB\nNVIDIA RTX PRO 6000 Blackwell Workstation Edition, 595.99.02, 97887 MiB\n",
+  "platform": "Linux-6.8.0-149-generic-x86_64-with-glibc2.35",
+  "pyscf": "2.14.0",
+  "python": "3.11.17 (main, Oct  1 2026, 20:17:42) [GCC 14.3.0]",
+  "wheel_filename": "gpu4pyscf_cuda12x-1.9.2-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+  "wheel_sha256": "519d78d412392ffa7ba73683742e01716ac2be303462c6b420b8712e003880fd"
+}
