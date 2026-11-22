@@ -1,0 +1,99 @@
+{
+  "schema": "vibedataset.cpu_pyscf_selected_tests.v1",
+  "source_commit": "c63a953ba603a5ad8c1d65d88da72aaf05ede4d8",
+  "pyscf": "2.14.0",
+  "threads_per_process": 1,
+  "python": "3.13",
+  "runner": "python <pinned test file> via its upstream unittest main; 35-minute maximum per file; up to 3 independent single-thread workers",
+  "files": [
+    {
+      "source": "pyscf/grad/test/test_rhf.py",
+      "source_sha256": "270f37491f627cf24a8306237d9884c5bee5ba5c643acbfa2c05cc7f837ed912",
+      "exit": 0,
+      "elapsed_seconds": 1.8783481900009065,
+      "log_sha256": "747d494fba41817d46f4202935ffdac4896645d3ef285342eeb7feef129295b8",
+      "collected": 14,
+      "passed": 12,
+      "skipped": 2,
+      "published_log": "pyscf_grad_test_test_rhf.py.log.gz",
+      "published_log_sha256": "4043c9d610696939051c8c923e184d964b3b40faec75636132ec0d4d52a88964"
+    },
+    {
+      "source": "pyscf/grad/test/test_uhf.py",
+      "source_sha256": "deed72ba7d2a2e0299e1058d87a4283bb3f724a5530a02a87ac88811d4185534",
+      "exit": 0,
+      "elapsed_seconds": 2.1190464470000734,
+      "log_sha256": "7a6db5ec0eef9ec86c2150cb39b02aa16765ed690290550e8c215ba8f40061ac",
+      "collected": 10,
+      "passed": 6,
+      "skipped": 4,
+      "published_log": "pyscf_grad_test_test_uhf.py.log.gz",
+      "published_log_sha256": "7a6db5ec0eef9ec86c2150cb39b02aa16765ed690290550e8c215ba8f40061ac"
+    },
+    {
+      "source": "pyscf/hessian/test/test_rhf.py",
+      "source_sha256": "b8945acfd47dbfd8d42e6a1a2fc853d82e9c105764f86d3a474f266c67f693a7",
+      "exit": 0,
+      "elapsed_seconds": 4.973427675999119,
+      "log_sha256": "76e2162baf76ac491cd09b7ad551b018d83e1e494c18b111d2b42087c2b48d5d",
+      "collected": 8,
+      "passed": 6,
+      "skipped": 2,
+      "published_log": "pyscf_hessian_test_test_rhf.py.log.gz",
+      "published_log_sha256": "76e2162baf76ac491cd09b7ad551b018d83e1e494c18b111d2b42087c2b48d5d"
+    },
+    {
+      "source": "pyscf/hessian/test/test_rks.py",
+      "source_sha256": "9aaf7872e2626e5943bea0836fd258a692dac70adb187b3cc415c5b55b423d78",
+      "exit": 0,
+      "elapsed_seconds": 45.5922923750004,
+      "log_sha256": "d4d4fab19de69a1ca9c11b001c7e5f5471067e37bccdb308dd8a7d92825dbec9",
+      "collected": 13,
+      "passed": 10,
+      "skipped": 3,
+      "published_log": "pyscf_hessian_test_test_rks.py.log.gz",
+      "published_log_sha256": "d4d4fab19de69a1ca9c11b001c7e5f5471067e37bccdb308dd8a7d92825dbec9"
+    },
+    {
+      "source": "pyscf/hessian/test/test_uhf.py",
+      "source_sha256": "98dae4834287eb777fda8552d0e23adc0885745cf588719009ce4eab7475d75b",
+      "exit": 0,
+      "elapsed_seconds": 2.218179110001074,
+      "log_sha256": "e2c27c88ca9fe451964277b79f3bd383ad38eda713887c5aba0c64470c333161",
+      "collected": 6,
+      "passed": 4,
+      "skipped": 2,
+      "published_log": "pyscf_hessian_test_test_uhf.py.log.gz",
+      "published_log_sha256": "e2c27c88ca9fe451964277b79f3bd383ad38eda713887c5aba0c64470c333161"
+    },
+    {
+      "source": "pyscf/scf/test/test_rhf.py",
+      "source_sha256": "394d47a627a1bddccaadbb956114ebb92215a7f4990be4efdb6676a91346fd5f",
+      "exit": 0,
+      "elapsed_seconds": 3.0930367410001054,
+      "log_sha256": "cd7c12bf8659cec5a0ef66836b1d18f09a2fc3412a1297c6aeefbe2f5565ecd7",
+      "collected": 63,
+      "passed": 60,
+      "skipped": 3,
+      "published_log": "pyscf_scf_test_test_rhf.py.log.gz",
+      "published_log_sha256": "ac77cb07b6980002ef00f3172874e02e3cf2519ca2df2c91f183f8cdc2d7cd6c"
+    },
+    {
+      "source": "pyscf/scf/test/test_uhf.py",
+      "source_sha256": "86e5e6fe4ce1b82ef834583021f90aa09654388f7ad490f0bb3bcdd6590b8a40",
+      "exit": 0,
+      "elapsed_seconds": 1.931113134000043,
+      "log_sha256": "2f01e4551a0de209c22e798bfc5aa3f2893ff0cbf4d6315b3b6028ea0796e66a",
+      "collected": 42,
+      "passed": 40,
+      "skipped": 2,
+      "published_log": "pyscf_scf_test_test_uhf.py.log.gz",
+      "published_log_sha256": "99f4a783428cdbf0e24b4be81c8d828f97bbef867f3ecc0e252e06d53591b991"
+    }
+  ],
+  "totals": {
+    "collected": 156,
+    "passed": 138,
+    "skipped": 18
+  }
+}

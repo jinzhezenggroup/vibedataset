@@ -30,3 +30,5 @@ GQC 固定版本的 block GMRES 在同一调用内合并初始残差子空间，
 ## 独立 Hessian 与光谱参考（#40）
 
 VeloxChem 的解析 RHF Hessian 通过核坐标 CPHF 解组装二阶导数。水、氨、氢化锂的 261 个笛卡尔分量已与官方 GPU4PySCF 1.9.2 对照。水的 Raman 去偏振比触发了实际重算，同一几何三个模式的极化率方向导数在两个步长下独立通过。此处执行的是 VeloxChem CPU 发行包。论文所用 GPU CPKS 另有性能实验边界。[固定源码、数值与回执](experiments/hessian_cphf/cross-engine/README.md) · [VeloxChem 的二阶导数论文](https://doi.org/10.1021/acs.jpca.5c04510)
+
+GPU4PySCF 1.9.0 与 1.9.2 的官方 CUDA-12 wheel 上游发布作业现在可按 tag、运行 ID、容器 digest 和实际 CMake 配置追踪，两者均禁用 multigrid V2。PySCF 2.14 的七个固定上游 CPU 测试文件覆盖 RHF/UHF SCF 和梯度、RHF/UHF/RKS Hessian，共 138 个通过、18 个跳过。独立的项目响应标签、GPU4PySCF 示例及 GQC 论文水簇计时保留各自的协议和分母。[上游编译记录](environment/gpu4pyscf-20261122/upstream-v192/wheel-build-provenance.json) · [CPU 测试原始结果](environment/gpu4pyscf-20261122/upstream-v192/pyscf-cpu/receipt.json)
