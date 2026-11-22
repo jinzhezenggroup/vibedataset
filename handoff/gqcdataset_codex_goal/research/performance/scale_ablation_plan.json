@@ -4,8 +4,9 @@
   "completed_scale": {
     "molecules": 17,
     "request_rows": 51,
+    "geometry_manifest_rows": 1000,
     "target_scale": 1000,
-    "status": "partial-falsified"
+    "status": "partial-falsified-response-labels-blocked"
   },
   "strata": [
     {
@@ -90,6 +91,6 @@
   "claim_gate": {
     "ten_x": "not_supported",
     "reason": "C vs A endpoint geometric mean speedup about 1.09x and CI crosses 1",
-    "next_required": "obtain protocol-consistent 1000-row asset and at least one second GPU before broad claim"
+    "next_required": "generate protocol-consistent response labels and independent quality references for the 1000-row geometry manifest before broad claim"
   }
 }
