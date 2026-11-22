@@ -1,0 +1,31 @@
+{
+  "serial": {
+    "primary_stream": 7,
+    "readout_streams": [
+      7
+    ],
+    "ragged_launch_count": 3,
+    "primary_kernel_count": 34399,
+    "nonprimary_readout_D2H_bytes": 0,
+    "independent_H2D_bytes": 0,
+    "readout_D2H_with_primary_kernel_ns": 0,
+    "independent_H2D_with_primary_kernel_ns": 0,
+    "readout_stream_kernel_with_primary_kernel_ns": 0,
+    "sqlite_sha256": "8897c8a7c81caf008ff98183168e4f11d3f5d5888d823d7a95fb135671428639"
+  },
+  "async_streams": {
+    "primary_stream": 7,
+    "readout_streams": [
+      14,
+      15
+    ],
+    "ragged_launch_count": 3,
+    "primary_kernel_count": 34384,
+    "nonprimary_readout_D2H_bytes": 41184,
+    "independent_H2D_bytes": 20448,
+    "readout_D2H_with_primary_kernel_ns": 0,
+    "independent_H2D_with_primary_kernel_ns": 0,
+    "readout_stream_kernel_with_primary_kernel_ns": 0,
+    "sqlite_sha256": "b74191c2de72e9ed4c4f6ca3f4b10028a2c519f63c7f42c23ec88a640f735a43"
+  }
+}

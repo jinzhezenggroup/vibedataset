@@ -25,6 +25,22 @@ def sha256_file(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
+def measured_prepared_backend():
+    import gpu4pyscf
+    from gpu4pyscf.scf import cphf
+
+    path = Path(cphf.__file__)
+    native = path.parents[1] / "lib/libgvhf_rys.so"
+    solver_hash = sha256_file(path)
+    native_hash = sha256_file(native) if native.is_file() else None
+    matched = (gpu4pyscf.__version__ == "1.9.2"
+               and solver_hash == "1010af1ff5cb62e424223e6c65bad9344e7a6e37bf6882ff574efddb9e2839de"
+               and native_hash == "8312920d884ae714a9b5b2d982c13a90f0cbc3725e18546361fbb781a1734912")
+    return {"gpu4pyscf_version": gpu4pyscf.__version__, "cphf_sha256": solver_hash,
+            "libgvhf_rys_sha256": native_hash,
+            "gpu4pyscf_source_commit": "8536a80c1e03260aab030e108ef1d181a3709057" if matched else None}
+
+
 def load_manifest(path: Path) -> dict:
     manifest = json.loads(path.read_text())
     encoded = dict(manifest)
@@ -69,7 +85,7 @@ def device_info(cupy) -> dict:
     }
 
 
-def solve_fields(cupy, cphf, mf, field_indices, tol, max_cycle, backend_cache):
+def solve_fields(cupy, cphf, mf, field_indices, tol, max_cycle, backend_cache, *, position=None, keep_device=False, on_operator=None):
     """Solve a batch of electric-field response columns and return diagnostics."""
     from gpu4pyscf.properties import polarizability
 
@@ -78,8 +94,10 @@ def solve_fields(cupy, cphf, mf, field_indices, tol, max_cycle, backend_cache):
     mo_energy = cupy.asarray(mf.mo_energy)
     mocc = mo_coeff[:, mo_occ > 0]
     mvir = mo_coeff[:, mo_occ == 0]
-    with mf.mol.with_common_orig((0.0, 0.0, 0.0)):
-        h1 = cupy.asarray(mf.mol.intor("int1e_r"))
+    h1 = position
+    if h1 is None:
+        with mf.mol.with_common_orig((0.0, 0.0, 0.0)):
+            h1 = cupy.asarray(mf.mol.intor("int1e_r"))
     h1ai_all = -cupy.einsum("au,dui->dai", mvir.conj().T, cupy.einsum("duv,vi->dui", h1, mocc))
     h1ai = h1ai_all[field_indices]
     fvind_original = polarizability.gen_vind(mf, mo_coeff, mo_occ, with_nlc=True)
@@ -88,6 +106,8 @@ def solve_fields(cupy, cphf, mf, field_indices, tol, max_cycle, backend_cache):
     def fvind_counted(mo1):
         counters["operator_calls"] += 1
         counters["operator_rows"] += int(mo1.shape[0])
+        if on_operator is not None:
+            on_operator()
         return fvind_original(mo1)
 
     started = time.perf_counter()
@@ -115,9 +135,9 @@ def solve_fields(cupy, cphf, mf, field_indices, tol, max_cycle, backend_cache):
     values = {}
     names = {0: "x", 1: "y", 2: "z"}
     for local, direction in enumerate(field_indices):
-        values[direction] = np.asarray(cupy.asnumpy(mo1[local]), dtype=np.float64)
-        values[names[direction]] = values.pop(direction)
-    host_bytes = int(mo1.nbytes)
+        vector = mo1[local]
+        values[names[direction]] = vector if keep_device else np.asarray(cupy.asnumpy(vector), dtype=np.float64)
+    host_bytes = 0 if keep_device else int(mo1.nbytes)
     return {
         "vectors": values,
         "seconds": elapsed,
