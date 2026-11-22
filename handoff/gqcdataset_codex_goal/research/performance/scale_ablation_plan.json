@@ -45,8 +45,8 @@
     }
   ],
   "devices": {
-    "n2": "NVIDIA RTX PRO 6000 Blackwell, measured",
-    "n5": "NVIDIA RTX 5090, energy assets measured in prior handoff",
+    "n2": "NVIDIA RTX PRO 6000 Blackwell, matched single-GPU four arms",
+    "n5": "NVIDIA RTX 5090, matched single-GPU four arms",
     "A100_H100": "not_available"
   },
   "ablations": [
@@ -105,5 +105,29 @@
     "ten_x": "not_supported",
     "reason": "C vs A endpoint geometric mean speedup about 1.09x and CI crosses 1",
     "next_required": "generate protocol-consistent response labels and independent quality references for the 1000-row geometry manifest before broad claim"
+  },
+  "measured_single_gpu_pairs": {
+    "rtx5090": {
+      "rows": 204,
+      "cpu_accepted": 204,
+      "producer_A_over_C": {
+        "geometric_mean": 1.3057663707810776,
+        "molecule_paired_bootstrap_95ci": [
+          1.2515910816065485,
+          1.362179962146102
+        ]
+      }
+    },
+    "pro6000": {
+      "rows": 204,
+      "cpu_accepted": 204,
+      "producer_A_over_C": {
+        "geometric_mean": 1.2880992742150985,
+        "molecule_paired_bootstrap_95ci": [
+          1.2497208043093058,
+          1.334138020047402
+        ]
+      }
+    }
   }
 }

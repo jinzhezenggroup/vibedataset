@@ -71,12 +71,12 @@
 |---|---|---|
 | #34 10× claim gate | falsified/partial | [10× 决策](decisions/0006-nature-10x-claim-gate.md) · [profile](performance/attribution_profile.json) |
 | #35 benchmark contract | 合同冻结，规模阻塞 | [benchmark_contract.md](performance/benchmark_contract.md) · [contract JSON](performance/benchmark_contract.json) |
-| #36 GPU4PySCF/PySCF | 官方 v1.9.2 wheel 选定测试通过，完整 suite 与版本审计仍未完成 | [gpu4pyscf.md](audits/gpu4pyscf.md) · [coverage](audits/gpu4pyscf_source_coverage.csv) · [release tags](environment/gpu4pyscf-20261122/release-tags.json) · [v1.9.2 wheel receipt](environment/gpu4pyscf-20261122/v1.9.2-wheel-tests/v1.9.2-wheel-test-receipt.json) · [source build receipt](environment/gpu4pyscf-20261122/v1.9.2-build-attempt.json) |
+| #36 GPU4PySCF/PySCF | 官方 v1.9.0 与 v1.9.2 选定测试均已完成，完整 suite 已收集 | [gpu4pyscf.md](audits/gpu4pyscf.md) · [coverage](audits/gpu4pyscf_source_coverage.csv) · [release tags](environment/gpu4pyscf-20261122/release-tags.json) · [v1.9.2 wheel receipt](environment/gpu4pyscf-20261122/v1.9.2-wheel-tests/v1.9.2-wheel-test-receipt.json) · [source build receipt](environment/gpu4pyscf-20261122/v1.9.2-build-attempt.json) |
 | #37 profiling | 完成单分子 A–D 冷热 Nsight/CUPTI 采样 | [17 分子墙时](performance/profiling.md) · [kernel、能耗和显存](environment/gpu4pyscf-20261122/nsight-control/README.md) |
 | #38 PreparedPropertyBatch | planner 与 process-isolated runtime 已实测，同一 context async streams 被拒绝 | [实验入口](experiments/prepared_property_batch/README.md) · [runtime summary](environment/gpu4pyscf-20261122/prepared-runtime/runtime-summary.json)；ragged kernel、融合 J/K、跨分子 operator reuse、same-context stream safety、独立 scorer 和端到端 speedup 仍未完成 |
 | #39 response asset compiler | identity planner 与 GPU C receipt compiler 完成 | [实验入口](experiments/response_asset_compiler/README.md)；跨协议 refine/reject、过期/损坏资产和完整证书 frontier 仍需扩展 |
 | #40 Hessian/CPKS | RHF 的独立 VeloxChem 交叉验收完成，数据集级共享待验证 | [3 个 Hessian、水的 IR/Raman 和去偏振比精修](experiments/hessian_cphf/cross-engine/README.md) |
-| #41 scale/ablation | partial-falsified，补充 bounded shape/residency control | [状态](performance/scale_ablation.md) · [计划 JSON](performance/scale_ablation_plan.json)；1000-row response labels、第二 GPU 和完整消融仍阻塞 |
+| #41 scale/ablation | RTX 5090 与 RTX PRO 6000 的匹配单卡四臂通过独立评分，继续规模和消融 | [对照与计时边界](environment/gpu4pyscf-20261122/single-gpu-pairs/README.md) · [规模状态](performance/scale_ablation.md) |
 | #42 release/claim gate | partial release package | [release checklist](release/release_checklist.md) · [claims.csv](release/claims.csv) |
 
 这些阶段产物保留了未取得的资产、未运行的 profiling 和未知成本。它们不把 partial 结果写成所有验收条件已满足。
