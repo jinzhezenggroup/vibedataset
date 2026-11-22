@@ -117,8 +117,8 @@ def refinement(root, protocol, protocol_hash, reference, initial):
             tensors = [r["polarizability"] for r in (minus,plus)]
             check(all(len(t) == 3 and all(len(v)==3 and all(map(finite,v)) for v in t) for t in tensors), "tensor shape")
             diff = [[(tensors[1][j][k]-tensors[0][j][k])/(2*h) for k in range(3)] for j in range(3)]
-            mean = sum(diff[j][j] for j in range(3))/3
-            anis = sum((diff[j][j]-diff[k][k])**2/2 + 3*((diff[j][k]+diff[k][j])/2)**2
+            mean = math.fsum(diff[j][j] for j in range(3))/3
+            anis = math.fsum((diff[j][j]-diff[k][k])**2/2 + 3*((diff[j][k]+diff[k][j])/2)**2
                        for j,k in ((0,1),(0,2),(1,2)))
             # PySCF 2.14.0 data/nist.py supplies the Bohr-to-angstrom conversion.
             values["raman_A4_amu"].append((45*mean**2+7*anis)*0.52917721092**4)

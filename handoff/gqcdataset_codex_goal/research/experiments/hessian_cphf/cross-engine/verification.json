@@ -112,7 +112,7 @@
       "raman_depolarization": {
         "fine_vs_veloxchem": {
           "components": 3,
-          "max_abs": 3.2955157658332013e-07,
+          "max_abs": 3.2955157669434243e-07,
           "worst_flat_index": 0,
           "rejected_indices": [],
           "atol": 0.005,
@@ -138,7 +138,7 @@
         },
         "fine_vs_coarse": {
           "components": 3,
-          "max_abs": 1.290265333686591e-06,
+          "max_abs": 1.2902653345747694e-06,
           "worst_flat_index": 2,
           "rejected_indices": [],
           "atol": 0.05,
