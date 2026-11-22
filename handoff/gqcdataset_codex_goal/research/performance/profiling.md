@@ -30,3 +30,5 @@ C 相对 A 的端到端几何均值 speedup 为约 1.09×。其 molecule-time pa
 按 17 个分子聚合请求端到端墙时，A 相对 C 的几何均值比为 `1.3301310312140333`。以 A−C 的分子配对中位数差做 bootstrap，95% 区间为 `[1.8504091509385034, 4.379100188030861]` 秒。B/A 的几何均值比为 `1.4722300523745848`，D/C 为 `1.241860186825735`。这些结果是 1.9.2 单 GPU 小队列 telemetry，不与原 1.8.1 A–D 结论混合，也不支持 10× 主张。
 
 原始 run、Slurm 日志、独立 scorer、结构检查和汇总见 [a-d-telemetry](../environment/gpu4pyscf-20261122/a-d-telemetry/)。compile/JIT 分段和 producer 内 independent scorer 仍为显式 `null`。kernel launch、occupancy、FLOPs、CUPTI/Nsight、能耗、第二 GPU、cold/warm 分离和完整 scale workload 仍未取得。
+
+同一张 RTX PRO 6000 上已补测冷、热缓存各四臂的 Nsight/CUPTI request trace。温缓存下 A/B/C/D 三次请求分别启动 4687、6457、3088、3800 个 kernel。板卡能耗、逐笔传输和分配高水位可由原始时间戳重算。硬件性能计数器返回 ERR_NVGPUCTRPERM。[单分子四臂实测](../environment/gpu4pyscf-20261122/nsight-control/README.md)

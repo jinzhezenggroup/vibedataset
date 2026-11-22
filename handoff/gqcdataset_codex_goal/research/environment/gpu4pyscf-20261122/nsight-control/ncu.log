@@ -1,0 +1,5 @@
+~/vibedataset/runs/gpu4pyscf-v1.9.2-build-20261122/wheel-venv/lib/python3.11/site-packages/gpu4pyscf/lib/cutensor.py:154: UserWarning: using cupy as the tensor contraction engine.
+  warnings.warn(f'using {contract_engine} as the tensor contraction engine.')
+==PROF== Connected to process 2320826 (~/miniconda3/envs/xtbflow-qc/bin/python3.11)
+==ERROR== ERR_NVGPUCTRPERM - The user does not have permission to access NVIDIA GPU Performance Counters on the target device 0. For instructions on enabling permissions and to get more information see https://developer.nvidia.com/ERR_NVGPUCTRPERM
+==PROF== Disconnected from process 2320826

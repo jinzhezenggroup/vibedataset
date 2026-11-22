@@ -68,6 +68,11 @@ def main():
     subprocess.check_call([sys.executable, str(SCRIPTS / "verify_cross_engine_hessians.py"),
                            "--root", str(cross_engine), "--out", str(verified)])
     require(read(verified) == read(cross_engine / "verification.json"), "cross-engine Hessian replay")
+    hardware = ROOT / "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/nsight-control"
+    trace_summary = args.out / "nsight-matrix.json"
+    subprocess.check_call([sys.executable, str(SCRIPTS / "summarize_request_traces.py"), "summarize",
+                           str(hardware), str(trace_summary)])
+    require(read(trace_summary) == read(hardware / "summary.json"), "CUPTI activity replay")
     hessian_artifact = ROOT / "handoff/gqcdataset_codex_goal/research/experiments/hessian_cphf/cpu-gpu-crosscheck.json"
     generated_hessian = args.out / "hessian-crosscheck.json"
     subprocess.check_call(
