@@ -1,0 +1,22 @@
+{
+  "schema": "vibedataset.gpu_response_asset_negative_controls.v1",
+  "status": "passed",
+  "controls": [
+    {
+      "name": "stale_asset_hash",
+      "status": "reject-and-recompute"
+    },
+    {
+      "name": "wrong_geometry_identity",
+      "status": "reject-and-recompute"
+    },
+    {
+      "name": "missing_response_density",
+      "status": "reject-and-recompute"
+    }
+  ],
+  "oracle_loaded": false,
+  "limitations": [
+    "These controls test verifier predicates and do not launch a GPU calculation."
+  ]
+}

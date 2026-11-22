@@ -78,6 +78,19 @@ def main():
     subprocess.check_call(
         [
             sys.executable,
+            str(SCRIPTS / "verify_gpu_response_asset_negative_controls.py"),
+            "--assets",
+            str(ROOT / "handoff/gqcdataset_codex_goal/research/experiments/response_asset_compiler/gpu-assets.json"),
+            "--manifest",
+            str(EXP / "manifest.json"),
+            "--out",
+            str(args.out / "gpu-response-asset-negative-controls.json"),
+        ],
+        cwd=ROOT,
+    )
+    subprocess.check_call(
+        [
+            sys.executable,
             str(SCRIPTS / "verify_prepared_gpu4pyscf_control.py"),
             "--result",
             str(ROOT / "handoff/gqcdataset_codex_goal/research/experiments/prepared_property_batch/gpu-control.json"),
