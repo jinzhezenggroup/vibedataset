@@ -8,6 +8,6 @@ claim_id,claim,status,evidence,condition,unknown
 37,phase profiling baseline,partial,performance/attribution_profile.json,unknown CUPTI/Nsight fields remain explicit,
 38,cross-sample resident runtime,planner-only,experiments/prepared_property_batch/README.md,GPU implementation not claimed,
 39,response asset compiler and certificate dispositions,planner-only,experiments/response_asset_compiler/plan.json,independent scorer remains required,
-40,Hessian/CPKS main load,CPU-control,experiments/hessian_cphf/results.json,IR/Raman/GPU cross-check unavailable,
+40,Hessian/CPKS main load,CPU-GPU-micro-control,experiments/hessian_cphf/cpu-gpu-crosscheck.json,VeloxChem/multi-sample shared runtime unavailable,
 41,"scale, ablation and amortization",partial-falsified,performance/scale_ablation_plan.json,"17 measured, 1000 target blocked",
 42,reproducible release and claim gate,partial,release/release_manifest.json,unknown costs and unavailable upstream assets listed,

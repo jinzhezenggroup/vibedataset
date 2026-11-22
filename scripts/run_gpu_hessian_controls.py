@@ -14,7 +14,7 @@ def main():
   if xc:mf.xc=xc
   mf.conv_tol=1e-10;mf.max_cycle=100;started=time.perf_counter();mf.kernel();row={'name':name,'method':kind,'xc':xc,'scf_converged':bool(mf.converged),'energy_hartree':float(mf.e_tot),'scf_hessian_status':'pending'}
   try:
-   h=mf.Hessian().kernel();row.update(scf_hessian_status='accepted',hessian_shape=list(h.shape),hessian_max=float(np.max(np.abs(h))),hessian_sha256=hashlib.sha256(np.asarray(h,dtype=np.float64).tobytes()).hexdigest(),seconds=time.perf_counter()-started)
+   h=mf.Hessian().kernel();row.update(scf_hessian_status='accepted',hessian_shape=list(h.shape),hessian_max=float(np.max(np.abs(h))),hessian_sha256=hashlib.sha256(np.asarray(h,dtype=np.float64).tobytes()).hexdigest(),hessian_values=np.asarray(h,dtype=np.float64).tolist(),seconds=time.perf_counter()-started)
   except Exception as exc:row.update(scf_hessian_status='reject-and-recompute',reason=f'{type(exc).__name__}: {exc}',seconds=time.perf_counter()-started)
   rows.append(row)
  result={'schema':'vibedataset.gpu_hessian_controls.v1','python':sys.version,'gpu4pyscf_source_commit':'5a717f899cb40d64a5799ef1df7e3626c505c3bd','rows':rows,'limitations':['no IR/Raman','no VeloxChem cross-check','no finite-difference GPU Hessian']}
