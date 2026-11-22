@@ -7,6 +7,8 @@ import gzip
 import hashlib
 import json
 import math
+import random
+import statistics
 from pathlib import Path
 import tempfile
 
@@ -67,6 +69,55 @@ def export(root, source, scores):
     (root / "parts.json").write_text(json.dumps(blobs, indent=2) + "\n")
 
 
+def effects(runs, molecules, phase, seed):
+    totals = {}
+    for arm in "ABCD":
+        rows = runs[f"{arm}-{phase}"]["requests"]
+        totals[arm] = [
+            math.fsum(
+                row["timing"]["end_to_end_wall_seconds"]
+                for row in rows
+                if row["molecule"] == m
+            )
+            for m in molecules
+        ]
+    # Keep all trajectories from the same molecule in every resample.
+    samples = {
+        key: [] for key in ("A_over_C", "orchestration_s", "patch_s", "interaction_s")
+    }
+    ratios = [math.log(a / c) for a, c in zip(totals["A"], totals["C"])]
+    contrasts = {"orchestration_s": [], "patch_s": [], "interaction_s": []}
+    for a, b, c, d in zip(*(totals[k] for k in "ABCD")):
+        contrasts["orchestration_s"].append(((c - a) + (d - b)) / 2)
+        contrasts["patch_s"].append(((b - a) + (d - c)) / 2)
+        contrasts["interaction_s"].append((d - b) - (c - a))
+    n = len(ratios)
+    rng = random.Random(seed)
+    means = {
+        "A_over_C": math.exp(math.fsum(ratios) / n),
+        **{k: math.fsum(v) / n for k, v in contrasts.items()},
+    }
+    for _ in range(4000):
+        ids = rng.choices(range(n), k=n)
+        samples["A_over_C"].append(math.exp(math.fsum(ratios[i] for i in ids) / n))
+        for k, values in contrasts.items():
+            samples[k].append(math.fsum(values[i] for i in ids) / n)
+
+    def quantile(values, p):
+        point = p * (len(values) - 1)
+        v = sorted(values)
+        lo = math.floor(point)
+        return v[lo] + (point - lo) * (v[math.ceil(point)] - v[lo])
+
+    return {
+        k: dict(
+            estimate=means[k],
+            molecule_bootstrap_95ci=[quantile(v, 0.025), quantile(v, 0.975)],
+        )
+        for k, v in samples.items()
+    }
+
+
 def ledger(root, manifest):
     seals = json.loads((root / "parts.json").read_bytes())
     outputs = {}
@@ -77,9 +128,15 @@ def ledger(root, manifest):
         for m in by_name
         for q in sorted(manifest["request_trajectories"], key=lambda x: x["order"])
     ]
+    shared_scorers = {}
     for phase in ("cold", "warm"):
         official = packed(root / f"official-score-{phase}.json.gz")
         cpu = packed(root / f"cpu-score-{phase}.json.gz")
+        shared_scorers[phase] = dict(
+            cpu_s=cpu["full_scorer_seconds"],
+            official_gpu_s=official["elapsed_seconds"],
+            rows=len(cpu["rows"]),
+        )
         checks = {}
         for name, rec in (("official", official), ("independent_cpu", cpu)):
             ix = {(r["arm"], r["molecule"], r["trajectory"]): r for r in rec["rows"]}
@@ -145,11 +202,20 @@ def ledger(root, manifest):
                 ev = events[f"request/{molecule}/{traj}"]
                 g = checks["official"][(arm, *k)]
                 q = checks["independent_cpu"][(arm, *k)]
-                if q.get("raw_line_sha256") != sha(line) or not all(
-                    math.isfinite(z) and 0 <= z <= cpu["threshold"]
-                    for z in q.get("metrics", {}).values()
+                line_hash = q.get("raw_line_sha256")
+                if line_hash is not None and line_hash != sha(line):
+                    raise ValueError(
+                        "independent physical certificate refers to a different row"
+                    )
+                if q["status"] == "accepted" and (
+                    line_hash is None
+                    or not q.get("metrics")
+                    or not all(
+                        math.isfinite(z) and 0 <= z <= cpu["threshold"]
+                        for z in q["metrics"].values()
+                    )
                 ):
-                    raise ValueError("independent physical certificate mismatch")
+                    raise ValueError("accepted certificate failed its physical gates")
                 times = row["timing"]
                 ledger_rows.append(
                     dict(
@@ -198,8 +264,9 @@ def ledger(root, manifest):
                 pci=bounded["pci"],
                 cphf_sha256=src["observer"]["cphf_sha256"],
                 queue_fsync_ns=stored["queue_fsync_ns"],
-                physical_scorer_process_s=cpu["full_scorer_seconds"],
-                official_scorer_process_s=official["elapsed_seconds"],
+                median_request_producer_s=statistics.median(
+                    r["timing"]["end_to_end_wall_seconds"] for r in ledger_rows
+                ),
             )
     if len({v["pci"] for v in summaries.values()}) != 1:
         raise ValueError("mixed physical GPU assignment")
@@ -207,6 +274,16 @@ def ledger(root, manifest):
         schema="vibedataset.full_queue_profile.v1",
         manifest_sha256=manifest["manifest_sha256"],
         runs=summaries,
+        independent_scorers_for_all_four_arms=shared_scorers,
+        within_device_producer_effects={
+            p: effects(outputs, list(by_name), p, manifest["protocol"]["seed"])
+            for p in ("cold", "warm")
+            if all(
+                summaries[f"{arm}-{p}"]["quality"]
+                == {"accepted/accepted/accepted": len(requests)}
+                for arm in "ABCD"
+            )
+        },
         attained_occupancy=None,
         hardware_flop_count=None,
         standalone_jit_seconds=None,

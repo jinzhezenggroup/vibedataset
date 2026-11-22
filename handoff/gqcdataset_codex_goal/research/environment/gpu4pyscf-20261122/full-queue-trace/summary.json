@@ -1,0 +1,204 @@
+{
+  "schema": "vibedataset.full_queue_profile.v1",
+  "manifest_sha256": "e08193beba0fd3b15d3b6c2ecf531b3b38c6cb8fef3da0ee95d19cd78858a635",
+  "runs": {
+    "A-cold": {
+      "requests": 51,
+      "quality": {
+        "accepted/accepted/accepted": 51
+      },
+      "summed_request_joules": 19612.84,
+      "summed_request_kernel_launches": 152820,
+      "summed_published_bytes": 845547,
+      "native_report_sha256": "4b16712b3cfbcb8838802693e54d24199e0f88da83404c44b77ba9bf0921fd81",
+      "sqlite_sha256": "7f62b247199f2ff798a2ce9332662f4d8244c25e2b67e9b12136e2aecd69c06b",
+      "pci": "0000:C2:00.0",
+      "cphf_sha256": "1010af1ff5cb62e424223e6c65bad9344e7a6e37bf6882ff574efddb9e2839de",
+      "queue_fsync_ns": 3061369,
+      "median_request_producer_s": 3.8262981459265575
+    },
+    "B-cold": {
+      "requests": 51,
+      "quality": {
+        "accepted/accepted/accepted": 51
+      },
+      "summed_request_joules": 36484.459,
+      "summed_request_kernel_launches": 227968,
+      "summed_published_bytes": 847669,
+      "native_report_sha256": "ed09120b2d807ddb8159a5fa418bff616cbb4150b47cbc4cf5398182a0cab003",
+      "sqlite_sha256": "cf1223d953df533a7fe1e81d5f360e74fc8cfebd17c9908c0e6e52dc96fc65d8",
+      "pci": "0000:C2:00.0",
+      "cphf_sha256": "e945d59c4b19a5b183af2e4651caf2bb9276dc807079b8c060bb6490854a4d6a",
+      "queue_fsync_ns": 2052802,
+      "median_request_producer_s": 5.249230048968457
+    },
+    "C-cold": {
+      "requests": 51,
+      "quality": {
+        "accepted/accepted/accepted": 51
+      },
+      "summed_request_joules": 13868.934,
+      "summed_request_kernel_launches": 101527,
+      "summed_published_bytes": 845157,
+      "native_report_sha256": "749bbe680c5554adfc886eb48ca4322a4c928ebfdd548f2fa143ff1a81a766f1",
+      "sqlite_sha256": "930cfffb6ca9c542a01dfe8e652a42454fd554bae17f2ffe2201b705a9d04e4e",
+      "pci": "0000:C2:00.0",
+      "cphf_sha256": "1010af1ff5cb62e424223e6c65bad9344e7a6e37bf6882ff574efddb9e2839de",
+      "queue_fsync_ns": 1898469,
+      "median_request_producer_s": 2.447746856021695
+    },
+    "D-cold": {
+      "requests": 51,
+      "quality": {
+        "accepted/accepted/accepted": 51
+      },
+      "summed_request_joules": 18414.188,
+      "summed_request_kernel_launches": 130166,
+      "summed_published_bytes": 846903,
+      "native_report_sha256": "d1e1ea72b587aad488eeccc93d80f433273aa90e3007a1a05cdc8cdc82fe2158",
+      "sqlite_sha256": "5a7de5e4f93bf27ddb3aa98586976c8510c4544d1487452aaa199ab7bcf2f8b6",
+      "pci": "0000:C2:00.0",
+      "cphf_sha256": "e945d59c4b19a5b183af2e4651caf2bb9276dc807079b8c060bb6490854a4d6a",
+      "queue_fsync_ns": 1872346,
+      "median_request_producer_s": 3.7225317580159754
+    },
+    "A-warm": {
+      "requests": 51,
+      "quality": {
+        "accepted/accepted/accepted": 51
+      },
+      "summed_request_joules": 19561.213,
+      "summed_request_kernel_launches": 152820,
+      "summed_published_bytes": 846104,
+      "native_report_sha256": "8678d590df00c3a87f7e0de29f2698a4427e3db620b7afe3e88adbc56fbd1b07",
+      "sqlite_sha256": "7e7fb6814957a1fea4477f01d7a8c15069035b2b4b09864ab64fde4f84366ae0",
+      "pci": "0000:C2:00.0",
+      "cphf_sha256": "1010af1ff5cb62e424223e6c65bad9344e7a6e37bf6882ff574efddb9e2839de",
+      "queue_fsync_ns": 2886452,
+      "median_request_producer_s": 3.8051931048976257
+    },
+    "B-warm": {
+      "requests": 51,
+      "quality": {
+        "accepted/accepted/accepted": 51
+      },
+      "summed_request_joules": 36395.517,
+      "summed_request_kernel_launches": 227968,
+      "summed_published_bytes": 847583,
+      "native_report_sha256": "a6d51c9f0df19d8729e694cbfea4c737c8e2e49f9038b535040af79315f03a2c",
+      "sqlite_sha256": "eceb2b10c6e7c98272991ce8aa4ce7bec0d7c5ccd57721496bccb6a9df0f6c8b",
+      "pci": "0000:C2:00.0",
+      "cphf_sha256": "e945d59c4b19a5b183af2e4651caf2bb9276dc807079b8c060bb6490854a4d6a",
+      "queue_fsync_ns": 3136629,
+      "median_request_producer_s": 4.926609355956316
+    },
+    "C-warm": {
+      "requests": 51,
+      "quality": {
+        "accepted/accepted/accepted": 51
+      },
+      "summed_request_joules": 14400.059,
+      "summed_request_kernel_launches": 101527,
+      "summed_published_bytes": 845405,
+      "native_report_sha256": "f60d9aa16f41c7dde105f867fafb674a00b549fae7faa006f4be79617208b75a",
+      "sqlite_sha256": "4ac94d218a73130d1d5da96f69702d38c4cd3ac360d2dad404c9f4689671c863",
+      "pci": "0000:C2:00.0",
+      "cphf_sha256": "1010af1ff5cb62e424223e6c65bad9344e7a6e37bf6882ff574efddb9e2839de",
+      "queue_fsync_ns": 2012984,
+      "median_request_producer_s": 2.3165842139860615
+    },
+    "D-warm": {
+      "requests": 51,
+      "quality": {
+        "accepted/accepted/accepted": 51
+      },
+      "summed_request_joules": 18512.789,
+      "summed_request_kernel_launches": 130166,
+      "summed_published_bytes": 847038,
+      "native_report_sha256": "61d65f3e8f700a8ec4941e66ca94745b3532e9c964633a8f94cf38a0e1c40547",
+      "sqlite_sha256": "b18cbf2b493a39dbe48606e2891307f967f8f193146421af942433b428491d2d",
+      "pci": "0000:C2:00.0",
+      "cphf_sha256": "e945d59c4b19a5b183af2e4651caf2bb9276dc807079b8c060bb6490854a4d6a",
+      "queue_fsync_ns": 1761319,
+      "median_request_producer_s": 3.630825744010508
+    }
+  },
+  "independent_scorers_for_all_four_arms": {
+    "cold": {
+      "cpu_s": 2.149620824999147,
+      "official_gpu_s": 339.07204973197076,
+      "rows": 204
+    },
+    "warm": {
+      "cpu_s": 2.138465374000589,
+      "official_gpu_s": 338.8602929969784,
+      "rows": 204
+    }
+  },
+  "within_device_producer_effects": {
+    "cold": {
+      "A_over_C": {
+        "estimate": 1.2718271764582316,
+        "molecule_bootstrap_95ci": [
+          1.2126916358962823,
+          1.3280949625958576
+        ]
+      },
+      "orchestration_s": {
+        "estimate": -4.128866272334776,
+        "molecule_bootstrap_95ci": [
+          -5.634928305395057,
+          -2.2221120424413714
+        ]
+      },
+      "patch_s": {
+        "estimate": 4.651003587648601,
+        "molecule_bootstrap_95ci": [
+          3.466182275161469,
+          5.855108917476987
+        ]
+      },
+      "interaction_s": {
+        "estimate": -3.6674446129952285,
+        "molecule_bootstrap_95ci": [
+          -5.055711741951939,
+          -2.0406989982771098
+        ]
+      }
+    },
+    "warm": {
+      "A_over_C": {
+        "estimate": 1.3068625771191311,
+        "molecule_bootstrap_95ci": [
+          1.270505728081123,
+          1.3507797868577713
+        ]
+      },
+      "orchestration_s": {
+        "estimate": -4.580565378936145,
+        "molecule_bootstrap_95ci": [
+          -5.608332974731456,
+          -3.5298114346289795
+        ]
+      },
+      "patch_s": {
+        "estimate": 3.972826339862556,
+        "molecule_bootstrap_95ci": [
+          2.9628803741775784,
+          4.977189441597405
+        ]
+      },
+      "interaction_s": {
+        "estimate": -3.633813113172758,
+        "molecule_bootstrap_95ci": [
+          -4.613452116292661,
+          -2.64854088134033
+        ]
+      }
+    }
+  },
+  "attained_occupancy": null,
+  "hardware_flop_count": null,
+  "standalone_jit_seconds": null,
+  "scope": "cold/warm disk cache, fresh processes, per-request CUPTI activity and board energy. Queue fsync and fresh scorer elapsed are separately reported."
+}

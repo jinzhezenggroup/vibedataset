@@ -84,6 +84,16 @@ def main():
     subprocess.check_call([sys.executable, str(SCRIPTS / "summarize_response_frontier.py"),
                            "--root", str(frontier), "--out", str(frontier_summary)])
     require(read(frontier_summary) == read(frontier / "summary.json"), "bounded response frontier")
+    full_trace = hardware.parent / "full-queue-trace"
+    replay_full = args.out / "full-cupti.json"
+    replay_rows = args.out / "full-cupti-requests.json.gz"
+    subprocess.check_call([sys.executable, str(SCRIPTS / "full_gpu_trace_ledger.py"),
+                           "--root", str(full_trace), "--manifest", str(EXP / "manifest.json"),
+                           "--out", str(replay_full), "--rows", str(replay_rows)])
+    require(read(replay_full) == read(full_trace / "summary.json"), "complete A-D CUPTI accounting")
+    import gzip
+    require(gzip.decompress(replay_rows.read_bytes()) == gzip.decompress((full_trace / "request-ledger.json.gz").read_bytes()),
+            "per-request GPU activity and durable bytes")
     hessian_artifact = ROOT / "handoff/gqcdataset_codex_goal/research/experiments/hessian_cphf/cpu-gpu-crosscheck.json"
     generated_hessian = args.out / "hessian-crosscheck.json"
     subprocess.check_call(
