@@ -209,7 +209,11 @@ for attempt in ("pilot", "counterbalanced/rep-1", "counterbalanced/rep-2"):
 
 
 SHARED_SPECTRA = "handoff/gqcdataset_codex_goal/research/experiments/hessian_cphf/shared-spectroscopy"
-RELEASE_ARTIFACTS.extend(["scripts/run_shared_spectroscopy.py", "scripts/score_shared_spectroscopy.py"])
+RELEASE_ARTIFACTS.extend(["scripts/run_shared_spectroscopy.py", "scripts/score_shared_spectroscopy.py", "scripts/score_cartesian_cphf.py"])
+RELEASE_ARTIFACTS.extend(f"{SHARED_SPECTRA}/{p}" for p in ("cartesian.slurm",
+    "cartesian-certificate/result.json","cartesian-certificate/attempts.jsonl","cartesian-certificate/independent.json",
+    "cartesian-certificate/cartesian/01-h2o-hessian.npz","cartesian-certificate/cartesian/02-nh3-hessian.npz",
+    "cartesian-certificate/cartesian/03-lih-hessian.npz"))
 RELEASE_ARTIFACTS.extend(f"{SHARED_SPECTRA}/{p}" for p in ("README.md", "protocol.json", "shared.slurm",
     "refine.slurm","serial-refine.slurm","console-sha256.json","input-sha256","project-commit","finished","process-wall.txt",
     "default-verification.json","verification.json","veloxchem/events.jsonl","veloxchem/run.json",

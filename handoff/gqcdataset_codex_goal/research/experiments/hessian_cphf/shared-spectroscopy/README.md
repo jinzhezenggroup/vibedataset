@@ -25,3 +25,5 @@ d=handoff/gqcdataset_codex_goal/research/experiments/hessian_cphf/shared-spectro
 python3 scripts/score_shared_spectroscopy.py --root "$d" --protocol "$d/protocol.json" \
   --refinement "$d/shared-refinement" --serial-refinement "$d/serial-refinement" --out /tmp/shared-spectroscopy.json
 ```
+
+单独的作业 5687 封存了另一遍共享执行中真正使用的 H1、轨道系数、占据、轨道能、27 个 Cartesian MO1 和占据块能量导数。独立 CPU PySCF 用 AO J/K 与核坐标重叠导数验证未预条件的虚占轨道方程、占据轨道正交约束及占据块能量导数。三份物理状态各自通过，12 个请求都绑定到对应的解散列。对一个响应振幅加入 0.01 的损坏控制后，未预条件残差为 0.204。此验证单列测量成本。[原始张量和独立残差](cartesian-certificate/independent.json)
