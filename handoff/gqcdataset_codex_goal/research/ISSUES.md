@@ -74,7 +74,7 @@
 | #36 GPU4PySCF/PySCF | 官方 v1.9.0 与 v1.9.2 选定测试均已完成，完整 suite 已收集 | [gpu4pyscf.md](audits/gpu4pyscf.md) · [coverage](audits/gpu4pyscf_source_coverage.csv) · [release tags](environment/gpu4pyscf-20261122/release-tags.json) · [v1.9.2 wheel receipt](environment/gpu4pyscf-20261122/v1.9.2-wheel-tests/v1.9.2-wheel-test-receipt.json) · [source build receipt](environment/gpu4pyscf-20261122/v1.9.2-build-attempt.json) |
 | #37 profiling | 完成单分子 A–D 冷热 Nsight/CUPTI 采样 | [17 分子墙时](performance/profiling.md) · [kernel、能耗和显存](environment/gpu4pyscf-20261122/nsight-control/README.md) |
 | #38 PreparedPropertyBatch | planner 与 process-isolated runtime 已实测，同一 context async streams 被拒绝 | [实验入口](experiments/prepared_property_batch/README.md) · [runtime summary](environment/gpu4pyscf-20261122/prepared-runtime/runtime-summary.json)；ragged kernel、融合 J/K、跨分子 operator reuse、same-context stream safety、独立 scorer 和端到端 speedup 仍未完成 |
-| #39 response asset compiler | identity planner 与 GPU C receipt compiler 完成 | [实验入口](experiments/response_asset_compiler/README.md)；跨协议 refine/reject、过期/损坏资产和完整证书 frontier 仍需扩展 |
+| #39 response assets | 已执行同协议复用、跨基组/方法精修、损坏与身份变化后的重算 | [GPU 与独立 CPU 证据](experiments/response_asset_compiler/README.md) · [完整分母](experiments/response_asset_compiler/frontier/summary.json) |
 | #40 Hessian/CPKS | RHF 的独立 VeloxChem 交叉验收完成，数据集级共享待验证 | [3 个 Hessian、水的 IR/Raman 和去偏振比精修](experiments/hessian_cphf/cross-engine/README.md) |
 | #41 scale/ablation | RTX 5090 与 RTX PRO 6000 的匹配单卡四臂通过独立评分，继续规模和消融 | [对照与计时边界](environment/gpu4pyscf-20261122/single-gpu-pairs/README.md) · [规模状态](performance/scale_ablation.md) |
 | #42 release/claim gate | partial release package | [release checklist](release/release_checklist.md) · [claims.csv](release/claims.csv) |

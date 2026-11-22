@@ -7,11 +7,16 @@ from pathlib import Path
 def canonical(x):return json.dumps(x,sort_keys=True,separators=(',',':')).encode()
 def identity(protocol,molecule):return hashlib.sha256(canonical({'protocol':protocol,'molecule':molecule})).hexdigest()
 def classify(source,target):
- keys=('method','basis','charge','multiplicity','basis_representation','origin','unit','precision')
- mism=[k for k in keys if source.get(k)!=target.get(k)]
- if not mism:return 'direct_reuse','exact_protocol_identity'
- if set(mism)<= {'basis','method'} and source.get('charge')==target.get('charge') and source.get('multiplicity')==target.get('multiplicity'):return 'refine_required','protocol_model_changed'
- return 'reject-and-recompute','state_or_operator_identity_mismatch'
+ required = {"method", "basis", "charge", "multiplicity", "basis_representation", "origin", "unit", "precision"}
+ if not required.issubset(source) or not required.issubset(target):
+  return "reject-and-recompute", "incomplete_scientific_identity"
+ differences = {key for key in source.keys() | target.keys() if source.get(key) != target.get(key) or (key in source) != (key in target)}
+ if not differences:
+  return "direct_reuse", "exact_protocol_identity"
+ if differences <= {"basis", "method", "basis_parameters_sha256", "grid_sha256"} and differences & {"basis", "method"}:
+  return "refine_required", "protocol_model_changed"
+ return "reject-and-recompute", "state_or_operator_identity_mismatch"
+
 def main():
  p=argparse.ArgumentParser();p.add_argument('--manifest',type=Path,required=True);p.add_argument('--out',type=Path,required=True);a=p.parse_args();m=json.loads(a.manifest.read_text());base={**m['protocol'],'method':m['protocol']['method'],'basis':m['protocol']['basis'],'charge':0,'multiplicity':1,'unit':m['protocol']['unit'],'precision':m['protocol']['precision']}
  rows=[]
