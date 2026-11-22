@@ -1,5 +1,5 @@
 {
-  "schema": "vibedataset.gpu4pyscf_phase_profile_control.v1",
+  "schema": "vibedataset.gpu4pyscf_phase_profile_control.v2",
   "arm": "C",
   "molecule": "qm9-000001",
   "manifest_sha256": "e08193beba0fd3b15d3b6c2ecf531b3b38c6cb8fef3da0ee95d19cd78858a635",
@@ -29,21 +29,21 @@
     "total_bytes": 101973491712,
     "pool_used_bytes": 28672,
     "pool_total_bytes": 823296,
-    "pinned_used_bytes": 0
+    "pinned_free_blocks": 0
   },
   "initial_memory": {
     "free_bytes": 101372723200,
     "total_bytes": 101973491712,
     "pool_used_bytes": 0,
     "pool_total_bytes": 0,
-    "pinned_used_bytes": 0
+    "pinned_free_blocks": 0
   },
   "final_memory": {
     "free_bytes": 100015865856,
     "total_bytes": 101973491712,
     "pool_used_bytes": 28672,
     "pool_total_bytes": 823296,
-    "pinned_used_bytes": 0
+    "pinned_free_blocks": 0
   },
   "rows": [
     {
@@ -79,7 +79,7 @@
         "total_bytes": 101973491712,
         "pool_used_bytes": 28160,
         "pool_total_bytes": 823296,
-        "pinned_used_bytes": 0
+        "pinned_free_blocks": 0
       }
     },
     {
@@ -125,7 +125,7 @@
         "total_bytes": 101973491712,
         "pool_used_bytes": 28672,
         "pool_total_bytes": 823296,
-        "pinned_used_bytes": 0
+        "pinned_free_blocks": 0
       }
     },
     {
@@ -164,7 +164,7 @@
         "total_bytes": 101973491712,
         "pool_used_bytes": 28672,
         "pool_total_bytes": 823296,
-        "pinned_used_bytes": 0
+        "pinned_free_blocks": 0
       }
     }
   ],
@@ -173,5 +173,8 @@
     "kernel launch count, occupancy and FLOPs were not collected",
     "compile/JIT cache hit state is not separated from the backend calls",
     "this one-molecule control does not establish A-D queue-level statistics"
-  ]
+  ],
+  "telemetry_semantics": {
+    "pinned_free_blocks": "CuPy pinned-memory pool free-block count, not bytes"
+  }
 }

@@ -1,5 +1,5 @@
 {
-  "schema": "vibedataset.gpu4pyscf_phase_profile_receipt.v1",
+  "schema": "vibedataset.gpu4pyscf_phase_profile_receipt.v2",
   "project_commit": "2df4879e352e9d2ea63fb32efd47735fc59a3bee",
   "driver": "scripts/profile_gpu4pyscf_phase_control.py",
   "driver_sha256": "57908219b8c5add1de13e0e23a964f3f86a01c6e814bacbe686bdaa8d6aaf23b",
@@ -34,11 +34,14 @@
     "phase_wall_and_cuda_event_timing": true,
     "memory_pool_and_memgetinfo": true,
     "kernel_launch_occupancy_flops": "not_collected",
-    "compile_jit_cache_hit": "not_separated"
+    "compile_jit_cache_hit": "not_separated",
+    "memory_field_semantics": {
+      "pinned_free_blocks": "CuPy pinned-memory pool free-block count, not bytes"
+    }
   },
   "artifacts": {
-    "profile-A.json": "d79e009ad94d627b0156a8c60693c2fa4bc2103855d22011326ff40d051352f5",
-    "profile-C.json": "432ebc0fea0378a036dfaf736c5c62f0d166eb63910acc35fe0b0dd318045a5f",
+    "profile-A.json": "d549602bae66f7ff5fdcb6aeb76e08c74207ee6ce80c54803a1b7cb75ef629c9",
+    "profile-C.json": "d9854e7d3b19f804d3550814e90dbbbcc1c4ed2f15bdc1fcd27427e08c6c4411",
     "slurm-5528.out": "d8a083abe32cb72279b3ff3e064773228d6ab8c9ad69356ca7be2d5ba4596b98",
     "slurm-5528.err": "6f223205a2908b93369966cfa357520bffdeed529a640fa4002ba272c61857a4",
     "slurm-5529.out": "1282ee3bb3840b7c6f69b9a425bd174f3dd50b45c844ef4c6156a6c862bc80c5",

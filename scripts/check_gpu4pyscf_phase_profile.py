@@ -21,7 +21,7 @@ def main() -> None:
             continue
         document = json.loads(path.read_text())
         profiles[arm] = document
-        if document.get("schema") != "vibedataset.gpu4pyscf_phase_profile_control.v1":
+        if document.get("schema") != "vibedataset.gpu4pyscf_phase_profile_control.v2":
             errors.append(f"schema {arm}")
         if document.get("arm") != arm or document.get("molecule") != "qm9-000001":
             errors.append(f"identity {arm}")
