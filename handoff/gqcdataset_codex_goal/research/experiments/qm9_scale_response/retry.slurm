@@ -17,9 +17,11 @@ cp "$list" "$out/indices.txt"
 date -u +%FT%TZ > "$out/started"
 printf '%s\n' "$PROJECT_SHA" > "$out/project-commit"
 sha256sum *.py protocol.json geometries.json.gz "$list" > "$out/input-sha256"
+repair=()
+if [[ ${2:-} == full-fock ]]; then repair=(--full-fock-repair); fi
 while read -r i; do
     [[ $i =~ ^[0-9]+$ ]] && (( i >= 1 && i <= 1000 )) || exit 2
     "$py" run_qm9_scale_response.py produce --protocol protocol.json --geometries geometries.json.gz --retry \
-        --start "$i" --stop "$i" --out "$out"
+        --start "$i" --stop "$i" "${repair[@]}" --out "$out"
 done < "$list"
 date -u +%FT%TZ > "$out/finished"

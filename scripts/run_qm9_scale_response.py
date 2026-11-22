@@ -139,14 +139,63 @@ def reference(mol, protocol, cfg):
     return arrays, facts
 
 
-def produce(mol, protocol, cfg):
+def full_fock_retry(mol,protocol,cfg,diagnostics):
+    """Converge the original tighter retry gates with full Fock rebuilds and the official SOSCF fallback."""
+    from gpu4pyscf import scf as gpu_scf
+    from gpu4pyscf.scf import soscf
+    import cupy
+
+    tick=time.perf_counter()
+    mf=gpu_scf.RHF(mol)
+    mf.direct_scf=False
+    mf.direct_scf_tol=1e-16
+    def watch(stage):
+        entry={"stage":stage,"cycles":[]}
+        diagnostics.append(entry)
+        def callback(env):
+            record={}
+            for k in ("cycle","e_tot","last_hf_e","norm_gorb","norm_ddm"):
+                if k in env and env[k] is not None:
+                    record[k]=float(env[k])
+            entry["cycles"].append(record)
+        return callback
+    mf.callback=watch("ordinary GPU warm start with full J/K")
+    converge(mf,protocol["producer"])
+    seed=mf.make_rdm1()
+    mf.callback=watch("strict GPU full Fock")
+    mf.conv_tol=cfg["scf_energy_tol"];mf.conv_tol_grad=cfg["scf_gradient_tol"];mf.max_cycle=cfg["scf_cycles"]
+    mf.diis_space=12
+    mf.kernel(dm0=seed)
+    backend="full Fock DIIS"
+    if not mf.converged:
+        solver=soscf.newton(mf)
+        solver.conv_tol=cfg["scf_energy_tol"];solver.conv_tol_grad=cfg["scf_gradient_tol"]
+        solver.max_cycle=cfg["scf_cycles"];solver.callback=watch("official second-order GPU SCF")
+        solver.kernel(mo_coeff=mf.mo_coeff,mo_occ=mf.mo_occ)
+        mf=solver;backend="official GPU second-order SCF"
+    if not mf.converged:
+        raise RuntimeError("strict full-Fock DIIS and official GPU SOSCF did not converge")
+    dm=mf.make_rdm1()
+    vhf=mf.get_veff(mol,dm)
+    fock=mf.get_hcore(mol)+vhf
+    grad=float(cupy.linalg.norm(mf.get_grad(mf.mo_coeff,mf.mo_occ,fock)).item())
+    diagnostics.append(dict(backend=backend,independent_full_fock_gradient_l2=grad,energy_hartree=float(mf.e_tot)))
+    if not np.isfinite(grad) or grad>cfg["scf_gradient_tol"]:
+        raise RuntimeError(f"strict full Fock gradient {grad} exceeds frozen threshold")
+    return mf,time.perf_counter()-tick
+
+
+def produce(mol, protocol, cfg, full_fock=False, diagnostics=None):
     import cupy
     from gpu4pyscf import scf as gpu_scf
     from gpu4pyscf.scf import cphf
     from run_gpu4pyscf_4arm import density_values, solve_fields, target_values
 
-    mf = gpu_scf.RHF(mol)
-    scf_time = converge(mf, cfg)
+    if full_fock:
+        mf,scf_time=full_fock_retry(mol,protocol,cfg,diagnostics)
+    else:
+        mf = gpu_scf.RHF(mol)
+        scf_time = converge(mf, cfg)
     start = time.perf_counter()
     result = solve_fields(cupy, cphf, mf, [0, 1, 2], cfg["response_tol"], cfg["response_cycles"], None)
     residual_history = []
@@ -282,7 +331,10 @@ def main():
     parser.add_argument("--references", type=Path)
     parser.add_argument("--candidates", type=Path)
     parser.add_argument("--retry", action="store_true")
+    parser.add_argument("--full-fock-repair",action="store_true",help="use official full-Fock and SOSCF routes on an already rejected request")
     args = parser.parse_args()
+    if args.full_fock_repair and (args.phase!="produce" or not args.retry):
+        parser.error("full Fock recovery requires a producer retry")
     begun = time.perf_counter()
     protocol = json.loads(args.protocol.read_bytes())
     seal = digest(args.protocol.read_bytes())
@@ -321,8 +373,11 @@ def main():
             if args.phase == "score":
                 receipt.update(score(mol,protocol,req,key,basis_hash,args))
             else:
-                method = produce if args.phase == "produce" else reference
-                arrays, facts = method(mol, protocol, cfg)
+                if args.phase=="produce":
+                    history=[];receipt["scf_recovery_history"]=history
+                    arrays,facts=produce(mol,protocol,cfg,args.full_fock_repair,history)
+                else:
+                    arrays,facts=reference(mol,protocol,cfg)
                 if not all(np.isfinite(x).all() for x in arrays.values()):
                     raise ValueError("non-finite scientific output")
                 serial = time.perf_counter()
