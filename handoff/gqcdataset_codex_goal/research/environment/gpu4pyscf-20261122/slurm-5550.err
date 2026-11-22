@@ -1,0 +1,7 @@
+CMake Error at /home/lhshen/miniconda3/share/cmake-4.2/Modules/Internal/CMakeNVCCParseImplicitInfo.cmake:141 (message):
+  Failed to extract nvcc implicit link line.
+Call Stack (most recent call first):
+  /home/lhshen/miniconda3/share/cmake-4.2/Modules/CMakeDetermineCUDACompiler.cmake:295 (cmake_nvcc_parse_implicit_info)
+  CMakeLists.txt:30 (enable_language)
+
+

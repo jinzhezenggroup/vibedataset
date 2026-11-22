@@ -66,7 +66,7 @@
 |---|---|---|
 | #34 10× claim gate | 已形成 falsified/partial 结论 | `performance/attribution_profile.json` 显示官方后端 GQC 相对 native 约 1.09×，paired CI 下限未超过 1。10× 主张被拒绝，见决策 `0006`。 |
 | #35 benchmark contract | 已冻结合同，规模目标阻塞 | 3 个微型控制、306 条中型受控请求、完整 timing schema 和 source_kind ledger 已有。自然请求流为 0，1000 行 CC0 QM9 geometry manifest 已取得，但 response labels 和独立质量参考仍未取得。 |
-| #36 GPU4PySCF/PySCF 审计 | 项目 baseline 与官方 release tags 已取得，上游执行部分阻塞 | 固定当前源码、v1.9.0/v1.9.2 tag 树、28 行覆盖和 n2 官方 baseline 已提交。匹配 1.9.x 二进制环境的 tag-specific suite、完整上游 suite、CUPTI/Nsight 和多设备公平基线仍未知。 |
+| #36 GPU4PySCF/PySCF 审计 | 项目 baseline 与官方 release tags 已取得，匹配运行时构建阻塞 | 固定当前源码、v1.9.0/v1.9.2 tag 树、28 行覆盖和 n2 官方 baseline 已提交。v1.9.2 隔离构建的 15 次工具链失败和最终 nvcc implicit-link failure 已归档。完整上游 suite、CUPTI/Nsight 和多设备公平基线仍未知。 |
 | #37 profiling | 阶段 baseline 与单分子 A/C telemetry 已完成 | A–D 成本与 paired CI、以及 `qm9-000001` 的 CUDA event、阶段墙时、H2D/D2H 和显存池快照已归档。B/D、完整队列 telemetry、kernel launches、occupancy、FLOPs、CUPTI/Nsight 和能耗仍未知。 |
 | #38 PreparedPropertyBatch | planner/producer 边界与 bounded GPU control 已实现 | 51 条 replay 仍为 8 bucket 的静态 accounting；另有 n2 同一 CUDA context 的 3 分子/9 请求 `nao=19` control，1 次 bucket setup、9/9 accepted，target 与已封存 C receipt 最大差 5.22×10⁻¹²。async streams、ragged batch、跨分子 operator reuse 和独立新 scorer 仍未完成。 |
 | #39 response asset compiler | identity planner 与 GPU C receipt compiler 已完成 | 17 direct、2 refine、1 reject 的无 oracle 计划仍保留；新增 51 个官方 C GPU assets、逐 asset identity/SHA、向量/密度和 independent scorer certificate，51/51 accepted。跨协议 refine/reject、过期/损坏资产和完整证书 frontier 仍需扩展。 |

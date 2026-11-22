@@ -71,7 +71,7 @@
 |---|---|---|
 | #34 10× claim gate | falsified/partial | [10× 决策](decisions/0006-nature-10x-claim-gate.md) · [profile](performance/attribution_profile.json) |
 | #35 benchmark contract | 合同冻结，规模阻塞 | [benchmark_contract.md](performance/benchmark_contract.md) · [contract JSON](performance/benchmark_contract.json) |
-| #36 GPU4PySCF/PySCF | 项目 baseline 与 v1.9.0/v1.9.2 tags 已取得，上游执行阻塞 | [gpu4pyscf.md](audits/gpu4pyscf.md) · [coverage](audits/gpu4pyscf_source_coverage.csv) · [release tags](environment/gpu4pyscf-20261122/release-tags.json) · [环境](environment/gpu4pyscf-20261122/baseline.json) |
+| #36 GPU4PySCF/PySCF | 项目 baseline 与 tags 已取得，v1.9.x 匹配构建阻塞 | [gpu4pyscf.md](audits/gpu4pyscf.md) · [coverage](audits/gpu4pyscf_source_coverage.csv) · [release tags](environment/gpu4pyscf-20261122/release-tags.json) · [v1.9.2 build receipt](environment/gpu4pyscf-20261122/v1.9.2-build-attempt.json) |
 | #37 profiling | 阶段 baseline 与单分子 A/C telemetry 完成 | [profiling](performance/profiling.md) · [profile JSON](performance/attribution_profile.json) · [phase telemetry](environment/gpu4pyscf-20261122/phase-profile-control/README.md) |
 | #38 PreparedPropertyBatch | planner/producer 与 bounded GPU control 完成 | [实验入口](experiments/prepared_property_batch/README.md)；async streams、ragged batch、跨分子 operator reuse 和独立新 scorer 仍未完成 |
 | #39 response asset compiler | identity planner 与 GPU C receipt compiler 完成 | [实验入口](experiments/response_asset_compiler/README.md)；跨协议 refine/reject、过期/损坏资产和完整证书 frontier 仍需扩展 |

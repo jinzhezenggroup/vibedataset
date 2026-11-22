@@ -1,0 +1,42 @@
+{
+  "schema": "vibedataset.gpu4pyscf_v1_9_2_build_attempt.v1",
+  "source_tag": "v1.9.2",
+  "source_commit": "8536a80c1e03260aab030e108ef1d181a3709057",
+  "source_tree": "69fdba009b630fefbaf15dfda71586f368a37a26",
+  "n2_directory": "~/vibedataset/runs/gpu4pyscf-v1.9.2-build-20261122",
+  "cuda_toolkit": "12.9.86",
+  "gpu_partition": "main",
+  "gpu": "NVIDIA RTX PRO 6000 Blackwell Workstation Edition",
+  "build_patch": {
+    "description": "remove unused Fortran language from CMake project() while BUILD_LIBXC=OFF",
+    "patch_sha256": "2b7db1fdc0366c39ac6a34e0f6fa20505d97f2e6c932ef0835fb681209efdbd9",
+    "modified_cmake_sha256": "0a338370bd16a825ff2a2f84e6ffc40cc5bf364e80eae1ea27a130276f858039"
+  },
+  "attempts": [
+    {"job": "5536", "status": "failed-before-configure", "reason": "cmake not in xtbflow-qc PATH"},
+    {"job": "5537", "status": "failed-configure", "reason": "no Fortran compiler"},
+    {"job": "5538", "status": "failed-configure", "reason": "CMake could not find CUDA library root"},
+    {"job": "5539", "status": "failed-configure", "reason": "CMake could not find CUDA library root"},
+    {"job": "5540", "status": "failed-compiler-detect", "reason": "host compiler cc1plus missing"},
+    {"job": "5541", "status": "failed-compiler-detect", "reason": "host compiler cc1plus missing"},
+    {"job": "5542", "status": "failed-compiler-detect", "reason": "cuda_runtime.h missing"},
+    {"job": "5543", "status": "failed-compiler-detect", "reason": "crt/host_config.h missing"},
+    {"job": "5544", "status": "failed-compiler-detect", "reason": "cicc missing"},
+    {"job": "5545", "status": "failed-compiler-detect", "reason": "fatbinary missing"},
+    {"job": "5546", "status": "failed-compiler-detect", "reason": "crt/link.stub missing"},
+    {"job": "5547", "status": "failed-compiler-detect", "reason": "libcudadevrt and libcudart_static not found"},
+    {"job": "5548", "status": "failed-compiler-detect", "reason": "static CUDA libraries remained outside CMake implicit link search"},
+    {"job": "5549", "status": "failed-configure", "reason": "CMake failed to extract nvcc implicit link line"},
+    {"job": "5550", "status": "failed-configure", "reason": "CMake failed to extract nvcc implicit link line"}
+  ],
+  "last_logs": {
+    "slurm-5550.out": "3cf609690b1a615372dffe8a69395580c16d596c06fd798cd321180b821a8e0d",
+    "slurm-5550.err": "e9767e4f45e62021358ff1a073d316ca0d2f41017446cf0d4b1bc3c228cbd5ba"
+  },
+  "status": "blocked-environment",
+  "scientific_execution": "not_run",
+  "limitations": [
+    "No v1.9.2 binary was produced. The existing 1.8.1 runtime was not relabeled as v1.9.2.",
+    "The isolated build copy was never used to generate benchmark labels or speed claims."
+  ]
+}
