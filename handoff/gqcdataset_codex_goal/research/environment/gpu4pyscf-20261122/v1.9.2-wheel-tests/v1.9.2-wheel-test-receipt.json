@@ -1,0 +1,223 @@
+{
+  "attempts": [
+    {
+      "job": "5552",
+      "reason": "initial import could not load libcusolver before symlink compatibility setup",
+      "status": "failed-before-tests"
+    },
+    {
+      "job": "5553",
+      "reason": "pytest was not installed in the isolated venv",
+      "status": "failed-before-tests"
+    },
+    {
+      "job": "5554",
+      "reason": "a Python 3.11 venv inherited an incompatible Python 3.13 NumPy from the conda environment",
+      "status": "failed-before-tests"
+    },
+    {
+      "job": "5555",
+      "purpose": "selected polarizability, CPHF, IR and Raman upstream tests",
+      "status": "completed"
+    },
+    {
+      "job": "5556",
+      "reason": "benchmark test path was not yet present",
+      "status": "no-tests"
+    },
+    {
+      "job": "5557",
+      "reason": "benchmark test path was not yet present",
+      "status": "no-tests"
+    },
+    {
+      "job": "5558",
+      "purpose": "selected benchmark-properties tests excluding slow and high_memory marks",
+      "status": "completed"
+    },
+    {
+      "job": "5560",
+      "reason": "identity probe found nvcc only in the conda package cache, not on PATH",
+      "status": "failed-after-import"
+    },
+    {
+      "job": "5561",
+      "purpose": "runtime identity probe with explicit nvcc path",
+      "status": "completed"
+    }
+  ],
+  "distribution": {
+    "bytes": 99152197,
+    "filename": "gpu4pyscf_cuda12x-1.9.2-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+    "package": "gpu4pyscf-cuda12x",
+    "provenance": "official PyPI release wheel",
+    "sha256": "519d78d412392ffa7ba73683742e01716ac2be303462c6b420b8712e003880fd",
+    "url": "https://files.pythonhosted.org/packages/3d/12/b9fe19bc9cb525eb21293faee1b34f03ad830b58548eed4dbf1d345bcbf4/gpu4pyscf_cuda12x-1.9.2-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+    "version": "1.9.2"
+  },
+  "isolated_environment": {
+    "loader_compatibility": {
+      "reason": "GPU4PySCF 1.9.2 loads unversioned library names through numpy.ctypeslib while the installed NVIDIA packages expose versioned SONAME files.",
+      "scope": "The symlinks are confined to the isolated venv and do not modify the wheel or source tree.",
+      "symlinks": [
+        "nvidia/cusolver/lib/libcusolver.so -> libcusolver.so.11",
+        "nvidia/cusolver/lib/libcusolverMg.so -> libcusolverMg.so.11",
+        "nvidia/cublas/lib/libcublas.so -> libcublas.so.12",
+        "nvidia/cublas/lib/libcublasLt.so -> libcublasLt.so.12",
+        "nvidia/cusparse/lib/libcusparse.so -> libcusparse.so.12"
+      ]
+    },
+    "pytest_dependencies": "pytest, pytest-benchmark and their pinned wheels were installed separately into the isolated venv",
+    "venv_creation": "python -m venv --system-site-packages wheel-venv",
+    "wheel_install": "wheel-venv/bin/python -m pip install --no-deps gpu4pyscf_cuda12x-1.9.2-*.whl"
+  },
+  "limitations": [
+    "This proves selected v1.9.2 wheel execution on one RTX PRO 6000, not execution of the complete v1.9.2 source test and benchmark suite.",
+    "The benchmark selection excludes tests marked slow or high_memory, and pytest-benchmark timing was disabled.",
+    "No CUPTI/Nsight trace, energy measurement, multi-GPU result, or v1.9.0 executable result is included.",
+    "This runtime receipt is not an A-D attribution run and does not change the 10x claim status.",
+    "The source CMake build attempt remains separately recorded as blocked. The tested binary is the official PyPI wheel."
+  ],
+  "raw_logs": {
+    "slurm-5552.err": {
+      "bytes": 1517,
+      "sha256": "3de4d746c371ee323f7a6cd1b894a1c14dc9a0160751c4a481841e4309424ce9"
+    },
+    "slurm-5552.out": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "slurm-5553.err": {
+      "bytes": 377,
+      "sha256": "b28e6fc29edbb0c521bef283017a941a7375f45357a04b3192bed77a50e7ebb5"
+    },
+    "slurm-5553.out": {
+      "bytes": 114,
+      "sha256": "673857344fe69d5fb8e5bf1174216065ecaecea31deb6ede91ac0e48859b4e69"
+    },
+    "slurm-5554.err": {
+      "bytes": 2560,
+      "sha256": "bd505afc85072d928692cd9f79a90308b5e88410cf272d362610d8dc873a7b74"
+    },
+    "slurm-5554.out": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "slurm-5555.err": {
+      "bytes": 269,
+      "sha256": "2b434a73fb73fa581620f95403bc879baa88138deec58ce9f98af6643f635c1d"
+    },
+    "slurm-5555.out": {
+      "bytes": 3603,
+      "sha256": "9966f45f12c5e4eb48ff7418748db02b1c5d7773cf458c128be852ad278a22e2"
+    },
+    "slurm-5556.err": {
+      "bytes": 211,
+      "sha256": "42e1af7eb418ab91fca3dd212911542217b8e64fd03bfd8ffb02eb87f84dbda6"
+    },
+    "slurm-5556.out": {
+      "bytes": 170,
+      "sha256": "890507e4cfb90584ea6543cbe6f0cb042988f8bb64a089a6bdcf5a642384e335"
+    },
+    "slurm-5557.err": {
+      "bytes": 211,
+      "sha256": "42e1af7eb418ab91fca3dd212911542217b8e64fd03bfd8ffb02eb87f84dbda6"
+    },
+    "slurm-5557.out": {
+      "bytes": 220,
+      "sha256": "7ca1d32a1b46cb21736a9e42fd6193e1a2ca4201f2d3a708dbb52c15bd9436ef"
+    },
+    "slurm-5558.err": {
+      "bytes": 119,
+      "sha256": "65f9cf5d3844508c815092b7c2179e8fb6b39486938d28f0f3ab7f3f2c6f1b2f"
+    },
+    "slurm-5558.out": {
+      "bytes": 816,
+      "sha256": "ada9fb8e5a461c22daee5770eae351ec864ce43be23a98b69ba3a5ae5b2f26f6"
+    },
+    "slurm-5560.err": {
+      "bytes": 928,
+      "sha256": "1327e98e4762aa1275a18e236f80a3a4401ce104edd741761ab4e8d3fdc2858f"
+    },
+    "slurm-5560.out": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "slurm-5561.err": {
+      "bytes": 269,
+      "sha256": "2b434a73fb73fa581620f95403bc879baa88138deec58ce9f98af6643f635c1d"
+    },
+    "slurm-5561.out": {
+      "bytes": 1166,
+      "sha256": "fda2227e7178f3b44e7f7a3c274833c6fc7bb7094372b1d1134c71c1730d5205"
+    }
+  },
+  "runtime": {
+    "compute_capability": "120",
+    "conda_environment": "xtbflow-qc",
+    "cuda_runtime_version": "12.9",
+    "cupy": "14.2.0",
+    "device_count": 1,
+    "driver": "595.99.02",
+    "gpu": "NVIDIA RTX PRO 6000 Blackwell Workstation Edition",
+    "gpu4pyscf": "1.9.2",
+    "gpu_memory_mib": 97887,
+    "host": "n2/node2",
+    "identity_job": "5561",
+    "nvcc_version": "12.9.86",
+    "partition": "main",
+    "pyscf": "2.14.0",
+    "python": "3.11.17",
+    "python_executable": "~/vibedataset/runs/gpu4pyscf-v1.9.2-build-20261122/wheel-venv/bin/python",
+    "slurm_resources": {
+      "cpus_per_task": 4,
+      "memory_gb": 16,
+      "time_limit": "00:30:00"
+    },
+    "source_runtime_directory": "~/vibedataset/runs/gpu4pyscf-v1.9.2-build-20261122"
+  },
+  "schema": "vibedataset.gpu4pyscf_v1_9_2_wheel_test.v1",
+  "source": {
+    "commit": "8536a80c1e03260aab030e108ef1d181a3709057",
+    "repository": "https://github.com/pyscf/gpu4pyscf",
+    "source_archive_sha256": "e10c13bd0b92f03a99b6695dafde2df606de668578f1e79e34c5f375e63221c2",
+    "tag": "v1.9.2",
+    "tree": "69fdba009b630fefbaf15dfda71586f368a37a26"
+  },
+  "status": "selected-tag-tests-passed",
+  "test_bundle": {
+    "archive_sha256": "399eed5f2b250ff20b4f565dd7a04840545bd3944ba792620b76d3c624233207",
+    "selection": [
+      "gpu4pyscf/properties/tests/test_polarizability.py",
+      "gpu4pyscf/scf/tests/test_cphf.py",
+      "gpu4pyscf/properties/tests/test_ir_intensity.py",
+      "gpu4pyscf/properties/tests/test_raman_intensity.py",
+      "gpu4pyscf/tests/test_benchmark_properties.py"
+    ],
+    "selection_note": "Files extracted from the v1.9.2 source tag for the recorded selected upstream tests."
+  },
+  "tests": [
+    {
+      "command": "wheel-venv/bin/python -m pytest -q tag-tests/gpu4pyscf/properties/tests/test_polarizability.py tag-tests/gpu4pyscf/scf/tests/test_cphf.py tag-tests/gpu4pyscf/properties/tests/test_ir_intensity.py tag-tests/gpu4pyscf/properties/tests/test_raman_intensity.py --maxfail=1",
+      "failed": 0,
+      "job": "5555",
+      "name": "selected-response-properties",
+      "passed": 19,
+      "skipped": 3,
+      "summary": "19 passed, 3 skipped, 8 warnings in 495.34s",
+      "terminal_evidence": "pytest reached its 100% summary in slurm-5555.out; Slurm accounting storage was disabled.",
+      "wall_seconds": 495.34
+    },
+    {
+      "command": "wheel-venv/bin/python -m pytest -q tag-tests/gpu4pyscf/tests/test_benchmark_properties.py --benchmark-disable -m \"not slow and not high_memory\" --maxfail=1",
+      "failed": 0,
+      "job": "5558",
+      "name": "selected-benchmark-properties",
+      "passed": 8,
+      "skipped": 0,
+      "summary": "8 passed, 1 warning in 1089.04s",
+      "terminal_evidence": "pytest reached its 100% summary in slurm-5558.out; Slurm accounting storage was disabled.",
+      "wall_seconds": 1089.04
+    }
+  ]
+}

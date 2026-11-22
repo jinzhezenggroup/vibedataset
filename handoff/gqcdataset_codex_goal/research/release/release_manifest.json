@@ -2,7 +2,7 @@
   "schema": "vibedataset.research_release.v2",
   "git_head": "92d9bac6384208881827313709fc0a03f60b0bad",
   "git_head_kind": "audited_source_commit",
-  "built_from_git_head": "b532269698ba8134955739293db76c468e016e4e",
+  "built_from_git_head": "2cdd6a8e0cdcf396bab87f74393af06491ec59a6",
   "artifacts": [
     {
       "path": "README.md",
@@ -106,7 +106,7 @@
     },
     {
       "path": "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/release-tags.json",
-      "sha256": "f5fe46e0d4383b1e5e5ac30cb10890d08a3ae7449220da9552cb6fda317b8b29"
+      "sha256": "6665786669eb1e5085cc5c138bbfa904f6faf999f4ef740ccb85147bc3c128b6"
     },
     {
       "path": "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/baseline.json",
@@ -135,6 +135,94 @@
     {
       "path": "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/slurm-5550.err",
       "sha256": "8ab22490a5f9cc315f29244225c0614a7c429358c227f42caeb1eb6ea6f1f491"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/v1.9.2-wheel-tests/v1.9.2-wheel-test-receipt.json",
+      "sha256": "0a8c5fe0dafc5094a9c9e2106d15045f591aeee80c1ac4d4fa89e907ec1e6308"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/v1.9.2-wheel-tests/run-tests.slurm",
+      "sha256": "3b4e9cd582cc230faf83b0f027ba69d1c4e660bcf1453ef5a9cc723d7e57026d"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/v1.9.2-wheel-tests/run-benchmark-properties.slurm",
+      "sha256": "8722f09fd1a98f72b333aa8d336269fb406c10740fe0a6850121cb474a0d8726"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/v1.9.2-wheel-tests/run-runtime-identity.slurm",
+      "sha256": "a6fbe65ca47c88008185688292e56410de6cad58b74e6262b68914134d6a43fa"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/v1.9.2-wheel-tests/slurm-5552.out",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/v1.9.2-wheel-tests/slurm-5552.err",
+      "sha256": "3de4d746c371ee323f7a6cd1b894a1c14dc9a0160751c4a481841e4309424ce9"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/v1.9.2-wheel-tests/slurm-5553.out",
+      "sha256": "673857344fe69d5fb8e5bf1174216065ecaecea31deb6ede91ac0e48859b4e69"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/v1.9.2-wheel-tests/slurm-5553.err",
+      "sha256": "b28e6fc29edbb0c521bef283017a941a7375f45357a04b3192bed77a50e7ebb5"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/v1.9.2-wheel-tests/slurm-5554.out",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/v1.9.2-wheel-tests/slurm-5554.err",
+      "sha256": "bd505afc85072d928692cd9f79a90308b5e88410cf272d362610d8dc873a7b74"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/v1.9.2-wheel-tests/slurm-5555.out",
+      "sha256": "9966f45f12c5e4eb48ff7418748db02b1c5d7773cf458c128be852ad278a22e2"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/v1.9.2-wheel-tests/slurm-5555.err",
+      "sha256": "2b434a73fb73fa581620f95403bc879baa88138deec58ce9f98af6643f635c1d"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/v1.9.2-wheel-tests/slurm-5556.out",
+      "sha256": "890507e4cfb90584ea6543cbe6f0cb042988f8bb64a089a6bdcf5a642384e335"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/v1.9.2-wheel-tests/slurm-5556.err",
+      "sha256": "42e1af7eb418ab91fca3dd212911542217b8e64fd03bfd8ffb02eb87f84dbda6"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/v1.9.2-wheel-tests/slurm-5557.out",
+      "sha256": "7ca1d32a1b46cb21736a9e42fd6193e1a2ca4201f2d3a708dbb52c15bd9436ef"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/v1.9.2-wheel-tests/slurm-5557.err",
+      "sha256": "42e1af7eb418ab91fca3dd212911542217b8e64fd03bfd8ffb02eb87f84dbda6"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/v1.9.2-wheel-tests/slurm-5558.out",
+      "sha256": "ada9fb8e5a461c22daee5770eae351ec864ce43be23a98b69ba3a5ae5b2f26f6"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/v1.9.2-wheel-tests/slurm-5558.err",
+      "sha256": "65f9cf5d3844508c815092b7c2179e8fb6b39486938d28f0f3ab7f3f2c6f1b2f"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/v1.9.2-wheel-tests/slurm-5560.out",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/v1.9.2-wheel-tests/slurm-5560.err",
+      "sha256": "1327e98e4762aa1275a18e236f80a3a4401ce104edd741761ab4e8d3fdc2858f"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/v1.9.2-wheel-tests/slurm-5561.out",
+      "sha256": "fda2227e7178f3b44e7f7a3c274833c6fc7bb7094372b1d1134c71c1730d5205"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/v1.9.2-wheel-tests/slurm-5561.err",
+      "sha256": "2b434a73fb73fa581620f95403bc879baa88138deec58ce9f98af6643f635c1d"
     },
     {
       "path": "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/phase-profile-control/README.md",
@@ -176,8 +264,8 @@
     "python3 scripts/check_benchmark_contract.py --contract handoff/gqcdataset_codex_goal/research/performance/benchmark_contract.json --manifest handoff/gqcdataset_codex_goal/research/experiments/attribution_4arm/manifest.json --out .work/benchmark-contract"
   ],
   "unknowns": [
-    "full upstream GPU4PySCF benchmark suite",
-    "tag-specific execution in a matching GPU4PySCF 1.9.x binary environment",
+    "complete upstream GPU4PySCF v1.9.2 source test and benchmark suite",
+    "executable GPU4PySCF v1.9.0 runtime and selected tests",
     "paper-version mapping for v1.9.0/v1.9.2",
     "CUPTI/Nsight traces",
     "energy and peak-memory telemetry",

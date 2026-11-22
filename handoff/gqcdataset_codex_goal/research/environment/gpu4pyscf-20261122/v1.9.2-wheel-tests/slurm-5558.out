@@ -1,0 +1,10 @@
+Processing ./pytest_benchmark-5.3.1-py3-none-any.whl
+pytest-benchmark is already installed with the same version as the provided wheel. Use --force-reinstall to force an installation of the wheel.
+........                                                                 [100%]
+=============================== warnings summary ===============================
+wheel-venv/lib/python3.11/site-packages/gpu4pyscf/lib/cutensor.py:154
+  /home/lhshen/vibedataset/runs/gpu4pyscf-v1.9.2-build-20261122/wheel-venv/lib/python3.11/site-packages/gpu4pyscf/lib/cutensor.py:154: UserWarning: using cupy as the tensor contraction engine.
+    warnings.warn(f'using {contract_engine} as the tensor contraction engine.')
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+8 passed, 1 warning in 1089.04s (0:18:09)

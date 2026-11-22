@@ -1,0 +1,16 @@
+/home/lhshen/vibedataset/runs/gpu4pyscf-v1.9.2-build-20261122/wheel-venv/lib/python3.11/site-packages/gpu4pyscf/lib/cutensor.py:154: UserWarning: using cupy as the tensor contraction engine.
+  warnings.warn(f'using {contract_engine} as the tensor contraction engine.')
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/lhshen/vibedataset/runs/gpu4pyscf-v1.9.2-build-20261122/wheel-venv/lib/python3.11/site-packages/gpu4pyscf/__init__.py", line 19, in <module>
+    from . import lib, grad, hessian, solvent, scf, dft, tdscf, nac
+  File "/home/lhshen/vibedataset/runs/gpu4pyscf-v1.9.2-build-20261122/wheel-venv/lib/python3.11/site-packages/gpu4pyscf/lib/__init__.py", line 18, in <module>
+    from gpu4pyscf.lib import cupy_helper
+  File "/home/lhshen/vibedataset/runs/gpu4pyscf-v1.9.2-build-20261122/wheel-venv/lib/python3.11/site-packages/gpu4pyscf/lib/cupy_helper.py", line 26, in <module>
+    from gpu4pyscf.lib import cusolver
+  File "/home/lhshen/vibedataset/runs/gpu4pyscf-v1.9.2-build-20261122/wheel-venv/lib/python3.11/site-packages/gpu4pyscf/lib/cusolver.py", line 30, in <module>
+    libcusolver = load_library('libcusolver', path='nvidia/cusolver/lib')
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lhshen/vibedataset/runs/gpu4pyscf-v1.9.2-build-20261122/wheel-venv/lib/python3.11/site-packages/gpu4pyscf/lib/utils.py", line 47, in load_library
+    raise OSError(f'Unable to load {libname}')
+OSError: Unable to load libcusolver

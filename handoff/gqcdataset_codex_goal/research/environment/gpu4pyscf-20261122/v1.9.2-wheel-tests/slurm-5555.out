@@ -1,0 +1,41 @@
+gpu4pyscf 1.9.2
+cupy 14.2.0
+pyscf 2.14.0
+python 3.11.17 (main, Oct  1 2026, 20:17:42) [GCC 14.3.0]
+device_count 1
+s..........s........s.                                                   [100%]
+=============================== warnings summary ===============================
+wheel-venv/lib/python3.11/site-packages/gpu4pyscf/lib/cutensor.py:154
+  /home/lhshen/vibedataset/runs/gpu4pyscf-v1.9.2-build-20261122/wheel-venv/lib/python3.11/site-packages/gpu4pyscf/lib/cutensor.py:154: UserWarning: using cupy as the tensor contraction engine.
+    warnings.warn(f'using {contract_engine} as the tensor contraction engine.')
+
+tag-tests/gpu4pyscf/properties/tests/test_polarizability.py:171
+  /home/lhshen/vibedataset/runs/gpu4pyscf-v1.9.2-build-20261122/tag-tests/gpu4pyscf/properties/tests/test_polarizability.py:171: PytestUnknownMarkWarning: Unknown pytest.mark.slow - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.slow
+
+tag-tests/gpu4pyscf/properties/tests/test_polarizability.py:181
+  /home/lhshen/vibedataset/runs/gpu4pyscf-v1.9.2-build-20261122/tag-tests/gpu4pyscf/properties/tests/test_polarizability.py:181: PytestUnknownMarkWarning: Unknown pytest.mark.slow - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.slow
+
+tag-tests/gpu4pyscf/properties/tests/test_polarizability.py:192
+  /home/lhshen/vibedataset/runs/gpu4pyscf-v1.9.2-build-20261122/tag-tests/gpu4pyscf/properties/tests/test_polarizability.py:192: PytestUnknownMarkWarning: Unknown pytest.mark.slow - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.slow
+
+tag-tests/gpu4pyscf/properties/tests/test_polarizability.py:233
+  /home/lhshen/vibedataset/runs/gpu4pyscf-v1.9.2-build-20261122/tag-tests/gpu4pyscf/properties/tests/test_polarizability.py:233: PytestUnknownMarkWarning: Unknown pytest.mark.slow - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.slow
+
+tag-tests/gpu4pyscf/properties/tests/test_polarizability.py:252
+  /home/lhshen/vibedataset/runs/gpu4pyscf-v1.9.2-build-20261122/tag-tests/gpu4pyscf/properties/tests/test_polarizability.py:252: PytestUnknownMarkWarning: Unknown pytest.mark.slow - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.slow
+
+tag-tests/gpu4pyscf/properties/tests/test_raman_intensity.py:95
+  /home/lhshen/vibedataset/runs/gpu4pyscf-v1.9.2-build-20261122/tag-tests/gpu4pyscf/properties/tests/test_raman_intensity.py:95: PytestUnknownMarkWarning: Unknown pytest.mark.slow - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.slow
+
+tag-tests/gpu4pyscf/properties/tests/test_raman_intensity.py:126
+  /home/lhshen/vibedataset/runs/gpu4pyscf-v1.9.2-build-20261122/tag-tests/gpu4pyscf/properties/tests/test_raman_intensity.py:126: PytestUnknownMarkWarning: Unknown pytest.mark.slow - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.slow
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+19 passed, 3 skipped, 8 warnings in 495.34s (0:08:15)

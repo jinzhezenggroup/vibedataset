@@ -23,7 +23,11 @@
       "human_read": "tag metadata, license and benchmark/test inventory read",
       "behavior_traced": false,
       "executed": false,
-      "execution_status": "not_run_in_tag_environment"
+      "execution_status": "not_run_in_tag_environment",
+      "selected_execution": {
+        "status": "not_run",
+        "reason": "No v1.9.0 wheel or source-built binary was available in the matched n2 environment."
+      }
     },
     {
       "tag": "v1.9.2",
@@ -46,7 +50,17 @@
       "human_read": "tag metadata, license and benchmark/test inventory read",
       "behavior_traced": false,
       "executed": false,
-      "execution_status": "not_run_in_tag_environment"
+      "execution_status": "selected_official_wheel_subset_passed",
+      "selected_execution": {
+        "status": "passed",
+        "distribution": "official PyPI gpu4pyscf-cuda12x 1.9.2 wheel",
+        "receipt": "environment/gpu4pyscf-20261122/v1.9.2-wheel-tests/v1.9.2-wheel-test-receipt.json",
+        "tests": {
+          "response_properties": "19 passed, 3 skipped",
+          "benchmark_properties": "8 passed, slow and high_memory excluded"
+        },
+        "scope": "Selected upstream files only. Full source suite and complete benchmark inventory were not executed."
+      }
     }
   ],
   "limitations": [
