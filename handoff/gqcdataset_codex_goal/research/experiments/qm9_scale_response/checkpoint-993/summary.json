@@ -1,0 +1,149 @@
+{
+  "measured_gpu_job_envelopes": [
+    {
+      "job_folder": "produce-2405",
+      "seconds": 429.0
+    },
+    {
+      "job_folder": "produce-2406",
+      "seconds": 269.0
+    },
+    {
+      "job_folder": "produce-2407",
+      "seconds": 360.0
+    },
+    {
+      "job_folder": "produce-2408",
+      "seconds": 350.0
+    },
+    {
+      "job_folder": "produce-2409",
+      "seconds": 378.0
+    },
+    {
+      "job_folder": "produce-2410",
+      "seconds": 385.0
+    },
+    {
+      "job_folder": "produce-2412",
+      "seconds": 396.0
+    },
+    {
+      "job_folder": "produce-2413",
+      "seconds": 411.0
+    },
+    {
+      "job_folder": "produce-2414",
+      "seconds": 368.0
+    },
+    {
+      "job_folder": "produce-2415",
+      "seconds": 411.0
+    },
+    {
+      "job_folder": "produce-2416",
+      "seconds": 364.0
+    },
+    {
+      "job_folder": "produce-2417",
+      "seconds": 379.0
+    },
+    {
+      "job_folder": "produce-2418",
+      "seconds": 360.0
+    },
+    {
+      "job_folder": "produce-2419",
+      "seconds": 369.0
+    },
+    {
+      "job_folder": "produce-2420",
+      "seconds": 355.0
+    },
+    {
+      "job_folder": "produce-2421",
+      "seconds": 311.0
+    },
+    {
+      "job_folder": "produce-2422",
+      "seconds": 415.0
+    },
+    {
+      "job_folder": "produce-2423",
+      "seconds": 438.0
+    },
+    {
+      "job_folder": "produce-2424",
+      "seconds": 440.0
+    },
+    {
+      "job_folder": "produce-2426",
+      "seconds": 390.0
+    },
+    {
+      "job_folder": "retry-2411",
+      "seconds": 133.0
+    }
+  ],
+  "gpu_hours_between_job_markers": 2.1419444444444444,
+  "raw_reference_array_bytes": 31739907,
+  "raw_candidate_array_bytes": 28018314,
+  "schema": "vibedataset.certified_qm9_response_release.v1",
+  "protocol_sha256": "cb4d9b708c343fdf86c10ecfc2ac50ae39210159c5d8aacb58b383fa4af3b3ff",
+  "counts": {
+    "requested": 1000,
+    "attempts": 1002,
+    "first_accepted": 993,
+    "final_accepted": 993,
+    "recomputed_requests": 2,
+    "recomputations": 2,
+    "first_reject-and-recompute": 7,
+    "final_failed": 2,
+    "final_reject-and-recompute": 5
+  },
+  "input_geometry_sha256": "b5ac670a374e763c539b10b0578d4cb5d07836f46ca27c587e23619ff82529e6",
+  "requests_sha256": "5bb095b37103c82c09b9c61c5fad1246e1e79c432a1d31a265a53edc00c7a37e",
+  "worst_accepted_errors": {
+    "ao_density": {
+      "request_id": "qm9-scale-000212",
+      "value": 5.9491323635696425e-06
+    },
+    "ao_tangent": {
+      "request_id": "qm9-scale-000483",
+      "value": 1.4904398759618687e-07
+    },
+    "candidate_density_readout": {
+      "request_id": "qm9-scale-000504",
+      "value": 1.4210854715202004e-13
+    },
+    "candidate_physical_residual": {
+      "request_id": "qm9-scale-000878",
+      "value": 9.879634610679834e-06
+    },
+    "polarizability": {
+      "request_id": "qm9-scale-000985",
+      "value": 1.611511756038908e-06
+    },
+    "reference_physical_residual": {
+      "request_id": "qm9-scale-000489",
+      "value": 9.402737831398778e-09
+    },
+    "scf_energy": {
+      "request_id": "qm9-scale-000938",
+      "value": 1.5847945178393275e-10
+    },
+    "tensor_reciprocity": {
+      "request_id": "qm9-scale-000843",
+      "value": 1.1964923167795405e-06
+    }
+  },
+  "median_total_request_work_s": 8.159087250992343,
+  "p95_total_request_work_s": 11.281623768694361,
+  "summed_request_work_s": 8312.048634155439,
+  "cost_semantics": "sum of primary, retries, separate independent CPU reference and scoring; excludes scheduler queue waits, captures per-process startup in run journals; embedded JIT/transfers and future amortization are not separately identifiable",
+  "artifacts": {
+    "cost-and-failures.jsonl.gz": "239c490db4b1b1dc3770d2d6a0a6238dbf0a66e832709519245c49462ad29bb4",
+    "labels.jsonl.gz": "64ebaeec0bb256644aa7b59fdf5ba68cf91d500278a128764560f1666e8dd273",
+    "runs.json.gz": "29c59bb1573be11ce0e4beaa2c30002a764801e10b81f426c07ff9cd83f65f44"
+  }
+}
