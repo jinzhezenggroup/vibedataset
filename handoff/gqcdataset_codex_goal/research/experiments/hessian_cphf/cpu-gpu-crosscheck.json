@@ -1,0 +1,91 @@
+{
+  "schema": "vibedataset.hessian_cphf.cpu_gpu_crosscheck.v1",
+  "protocol": {
+    "cpu": "PySCF RHF analytic relaxed Hessian/CPKS",
+    "gpu": "GPU4PySCF RHF analytic relaxed Hessian/CPKS",
+    "basis": "sto-3g",
+    "geometry_unit": "Bohr",
+    "precision": "FP64",
+    "scf_tol": 1e-10,
+    "pairings": [
+      [
+        "h2o",
+        "h2o-rhf"
+      ],
+      [
+        "nh3",
+        "nh3-rhf"
+      ]
+    ]
+  },
+  "inputs": {
+    "cpu": "handoff/gqcdataset_codex_goal/research/experiments/hessian_cphf/results.json",
+    "gpu": "handoff/gqcdataset_codex_goal/research/experiments/hessian_cphf/gpu-results.json",
+    "finite_difference": "handoff/gqcdataset_codex_goal/research/experiments/hessian_cphf/finite-difference.json"
+  },
+  "comparisons": [
+    {
+      "cpu_name": "h2o",
+      "gpu_name": "h2o-rhf",
+      "shape": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "elements": 81,
+      "cpu_hessian_sha256": "862f992f0fb5ecd85f0c400bf0863073cb9a4a91578d5a60b307780de1b31037",
+      "gpu_hessian_sha256": "c18065dc96435e5ca83e3cf9460e880d3e6edba62e78348f283c1e45c9673458",
+      "cpu_value_digest": "65688c3bc8a3b71484b8e92cb6c214a0c3c975b0ab174da5aee0526b06278334",
+      "gpu_value_digest": "d3ceb7c6226f7ac6e45d1a216e3afa5d49afc9635a8c2ec25be9edbf70024878",
+      "energy_abs_diff_hartree": 5.115907697472721e-13,
+      "max_abs_hessian_diff": 3.7248268913714355e-08,
+      "rms_hessian_diff": 1.1734847289318893e-08,
+      "max_abs_tolerance": 1e-07,
+      "status": "accepted"
+    },
+    {
+      "cpu_name": "nh3",
+      "gpu_name": "nh3-rhf",
+      "shape": [
+        4,
+        4,
+        3,
+        3
+      ],
+      "elements": 144,
+      "cpu_hessian_sha256": "e4e40c550571b637668a0bc60ba121cf3cf71813a6df0431f2948b96368cd152",
+      "gpu_hessian_sha256": "a29943240f4568198472841949362a277885a8ca49eec12f3aa41421492bf1f0",
+      "cpu_value_digest": "886ee348f4e560a553eeaa76f8132003bdaa3af2be8a02e62a3ba0e192263462",
+      "gpu_value_digest": "c07e75ff19cd20c261efafbb28a809a70b6ecaaa907ef9ecbfe80c92f0a89f35",
+      "energy_abs_diff_hartree": 1.1084466677857563e-12,
+      "max_abs_hessian_diff": 7.195704032625372e-09,
+      "rms_hessian_diff": 1.6318369493834215e-09,
+      "max_abs_tolerance": 1e-07,
+      "status": "accepted"
+    }
+  ],
+  "finite_difference": {
+    "analytic_name": "h2o",
+    "finite_difference_step_bohr": 0.0001,
+    "shape": [
+      3,
+      3,
+      3,
+      3
+    ],
+    "elements": 81,
+    "analytic_hessian_sha256": "862f992f0fb5ecd85f0c400bf0863073cb9a4a91578d5a60b307780de1b31037",
+    "finite_difference_hessian_sha256": "059b5c010bd31f404fd6def6eaafa17d8e373b74f267d17bff8bdde2e163e789",
+    "max_abs_hessian_diff": 9.555514779435725e-08,
+    "rms_hessian_diff": 2.4051820104785875e-08,
+    "max_abs_tolerance": 1e-07,
+    "status": "accepted"
+  },
+  "status": "accepted",
+  "limitations": [
+    "Only H2O/RHF and NH3/RHF were paired across CPU and GPU.",
+    "The GPU RKS(B3LYP) row has no matching CPU RKS control in this artifact.",
+    "This is an elementwise micro-control and does not replace a VeloxChem cross-check."
+  ]
+}

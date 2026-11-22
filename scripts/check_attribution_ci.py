@@ -55,6 +55,24 @@ def main():
     subprocess.check_call([sys.executable, str(SCRIPTS / "check_benchmark_contract.py"), "--contract", str(benchmark / "benchmark_contract.json"), "--manifest", str(EXP / "manifest.json"), "--out", str(args.out / "benchmark-contract.json")], cwd=ROOT)
     subprocess.check_call([sys.executable, str(SCRIPTS / "check_attribution_profile.py"), "--profile", str(benchmark / "attribution_profile.json"), "--out", str(args.out / "profiling.json")], cwd=ROOT)
     subprocess.check_call([sys.executable, str(SCRIPTS / "check_research_release.py"), "--release", str(ROOT / "handoff/gqcdataset_codex_goal/research/release"), "--root", str(ROOT), "--out", str(args.out / "release.json")], cwd=ROOT)
+    hessian_artifact = ROOT / "handoff/gqcdataset_codex_goal/research/experiments/hessian_cphf/cpu-gpu-crosscheck.json"
+    generated_hessian = args.out / "hessian-crosscheck.json"
+    subprocess.check_call(
+        [
+            sys.executable,
+            str(SCRIPTS / "compare_hessian_controls.py"),
+            "--cpu",
+            "handoff/gqcdataset_codex_goal/research/experiments/hessian_cphf/results.json",
+            "--gpu",
+            "handoff/gqcdataset_codex_goal/research/experiments/hessian_cphf/gpu-results.json",
+            "--finite-difference",
+            "handoff/gqcdataset_codex_goal/research/experiments/hessian_cphf/finite-difference.json",
+            "--out",
+            str(generated_hessian),
+        ],
+        cwd=ROOT,
+    )
+    require(generated_hessian.read_bytes() == hessian_artifact.read_bytes(), "Hessian crosscheck replay")
     subprocess.check_call([sys.executable, str(SCRIPTS / "check_prepared_property_batch.py"), "--out", str(args.out / "prepared-property-batch.json")], cwd=ROOT)
     replay = ROOT / "handoff/gqcdataset_codex_goal/research/experiments/prepared_property_batch/replay.json"
     replay_data = read(replay)

@@ -75,7 +75,7 @@
 | #37 profiling | 阶段 baseline 完成 | [profiling](performance/profiling.md) · [profile JSON](performance/attribution_profile.json) |
 | #38 PreparedPropertyBatch | planner/producer 控制完成 | [实验入口](experiments/prepared_property_batch/README.md) |
 | #39 response asset compiler | identity/证书 planner 完成 | [实验入口](experiments/response_asset_compiler/README.md) |
-| #40 Hessian/CPKS | CPU micro controls 完成 | [实验入口](experiments/hessian_cphf/README.md) |
+| #40 Hessian/CPKS | CPU/GPU/FD micro controls 完成 | [实验入口](experiments/hessian_cphf/README.md)；VeloxChem 和多样本共享运行时仍未完成 |
 | #41 scale/ablation | partial-falsified | [状态](performance/scale_ablation.md) · [计划 JSON](performance/scale_ablation_plan.json) |
 | #42 release/claim gate | partial release package | [release checklist](release/release_checklist.md) · [claims.csv](release/claims.csv) |
 

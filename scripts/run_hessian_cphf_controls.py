@@ -21,7 +21,7 @@ def run_case(gto, scf_module, name, atoms, charge=0, spin=0, method="RHF"):
         gradient = mf.nuc_grad_method().kernel()
         hessian = mf.Hessian().kernel()
         eigenvalues = np.linalg.eigvalsh(hessian.reshape(3 * len(atoms), 3 * len(atoms)))
-        row.update(status="accepted", gradient_linf=float(np.max(np.abs(gradient))), hessian_shape=list(hessian.shape), hessian_sha256=digest(hessian), negative_eigenvalues=int(np.sum(eigenvalues < -1e-8)), minimum_hessian_eigenvalue=float(eigenvalues[0]), seconds=time.perf_counter() - started)
+        row.update(status="accepted", gradient_linf=float(np.max(np.abs(gradient))), hessian_shape=list(hessian.shape), hessian_sha256=digest(hessian), hessian_values=np.asarray(hessian, dtype=np.float64).tolist(), negative_eigenvalues=int(np.sum(eigenvalues < -1e-8)), minimum_hessian_eigenvalue=float(eigenvalues[0]), seconds=time.perf_counter() - started)
     except Exception as exc:
         row.update(status="reject-and-recompute", reason=f"{type(exc).__name__}: {exc}", seconds=time.perf_counter() - started)
     return row
@@ -38,7 +38,7 @@ def main():
         ("lih-open-shell", [("Li", (0, 0, 0)), ("H", (3.015, 0, 0))], 1, 1, "UHF"),
     ]
     rows = [run_case(gto, scf, *case) for case in cases]
-    result = {"schema": "vibedataset.hessian_cphf_controls.v1", "protocol": {"basis": "sto-3g", "precision": "FP64", "scf_tol": 1e-10, "response_semantics": "relaxed_hessian"}, "rows": rows, "independent_gpu4pyscf_crosscheck": "not_run", "veloxchem_crosscheck": "not_available", "finite_difference_hessian": "not_run", "limitations": ["CPU PySCF Hessian/CPKS controls only", "IR/Raman readouts not computed", "GPU4PySCF DFT/UKS Hessian support remains a separate boundary"]}
+    result = {"schema": "vibedataset.hessian_cphf_controls.v1", "protocol": {"basis": "sto-3g", "precision": "FP64", "scf_tol": 1e-10, "response_semantics": "relaxed_hessian"}, "rows": rows, "independent_gpu4pyscf_crosscheck": "recorded separately", "veloxchem_crosscheck": "not_available", "finite_difference_hessian": "recorded separately", "limitations": ["CPU PySCF Hessian/CPKS controls only", "IR/Raman readouts not computed", "GPU4PySCF DFT/UKS Hessian support remains a separate boundary"]}
     args.out.parent.mkdir(parents=True, exist_ok=True)
     args.out.write_text(json.dumps(result, indent=2) + "\n")
     print(json.dumps({"status": "built", "rows": len(rows), "accepted": sum(row["status"] == "accepted" for row in rows)}, indent=2))
