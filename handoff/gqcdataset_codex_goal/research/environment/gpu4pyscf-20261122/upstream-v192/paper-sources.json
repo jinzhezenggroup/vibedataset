@@ -1,0 +1,96 @@
+{
+  "papers": [
+    {
+      "title": "PySCF foundational paper",
+      "preprint": "1701.08223",
+      "url": "https://arxiv.org/abs/1701.08223",
+      "version_string": "arXiv:1701.08223v2",
+      "pdf_sha256": "11ebbaf06245326d6c4228ea0485778ce465d71a9d5f39496c1208f887b1d74a",
+      "selected_release_commit": "8dce6787b421bebda3ff0de00afea65074ed317d",
+      "source_attribution": "Table 1 identifies the 1.3 release. The exact paper build is unspecified. Published v1.3 tag is a source candidate.",
+      "selected_tree": "fd2b7599e33cebd8cf06460fb4e472d896b15872",
+      "selected_tracked_entries": 882,
+      "execution": "not run on the historical build"
+    },
+    {
+      "title": "GPU4PySCF integral-direct HF/gradient paper",
+      "preprint": "2407.09700",
+      "url": "https://arxiv.org/abs/2407.09700",
+      "version_string": "arXiv:2407.09700v1",
+      "pdf_sha256": "4424b9091865613c953bf7b9073f1dfc3fbb2ed0f13e8cb5e45a5055185f4336",
+      "selected_release_commit": null,
+      "source_attribution": "First-version Rys ERI implementation on A100. An exact commit for these measurements is unspecified in the preprint."
+    },
+    {
+      "title": "GPU4PySCF applications and interfaces",
+      "preprint": "2404.09452",
+      "url": "https://arxiv.org/abs/2404.09452",
+      "version_string": "arXiv:2404.09452v2",
+      "pdf_sha256": "be61ed6744fa796b9dde08cf44e057fca77d9f77126a0e292e8b34ff44400b63",
+      "selected_release_commit": "bda6d41a00407c32202200957554e4cffa7d310a",
+      "source_attribution": "The paper identifies GPU4PySCF v1.0. The public tag shares that label. The paper does not bind the reported rows to an exact executable hash.",
+      "selected_tree": "c2ae4058dddd1064ac89e94aebc541fc332ed0f2",
+      "selected_tracked_entries": 361,
+      "execution": "not run on the historical build"
+    },
+    {
+      "title": "GenerativeQC energy/forces benchmarks",
+      "preprint": "2611.24744",
+      "url": "https://arxiv.org/abs/2611.24744",
+      "version_string": "arXiv:2611.24744v1",
+      "pdf_sha256": "9912e27b0710c5c9d38e4ced1f54e0f3037b45dc403962f615b74ef95ede6654",
+      "selected_release_commit": "2fdc1951670a8e173dce063e697727bbc9f97616",
+      "source_attribution": "The paper identifies GPU4PySCF 1.9.0 for its water clusters. The pinned GQC raw timing records independently identify this package version."
+    }
+  ],
+  "gqc_source_commit": "2791504cc238fe83d328fc1718080642b288222a",
+  "gqc_directory": "benchmarks/results/paper-hfdft-cold3-20261115",
+  "formal_records": {
+    "h100": {
+      "raw_records": 384,
+      "gpu4pyscf_timing_records": 192,
+      "timing_packages": [
+        {
+          "gpu4pyscf": "1.9.0",
+          "cupy": "13.4.1",
+          "pyscf": "2.14.0",
+          "rows": 192
+        }
+      ],
+      "reused_numerical_reference_package_counts": {
+        "1.8.1": 40
+      },
+      "upstream_blobs": {
+        "samples.json.xz": "721c2142daded39eafc5201ce3b4186925209b3dc6d2a0591e427d35195d8d05",
+        "provenance.json.xz": "4f13dcaf7ec64ae64ab1a16f9542e05588d1a2b21577a92d3fd5df53bcc8e76b"
+      }
+    },
+    "rtx5090": {
+      "raw_records": 384,
+      "gpu4pyscf_timing_records": 192,
+      "timing_packages": [
+        {
+          "gpu4pyscf": "1.9.0",
+          "cupy": "13.6.0",
+          "pyscf": "2.14.0",
+          "rows": 192
+        }
+      ],
+      "reused_numerical_reference_package_counts": {
+        "1.8.1": 40
+      },
+      "upstream_blobs": {
+        "samples.json.xz": "081ed34128c6822768e59cef278cc84736dd59507dba89983717608dab99e9f5",
+        "provenance.json.xz": "a38de5df668c82479a4ab1a73f2af784d5c8d1a89d065900675ecc04c34aeca1"
+      }
+    }
+  },
+  "veloxchem": {
+    "doi": "10.1021/acs.jpca.5c04510",
+    "validation_binary_commit": "8513267a275d8f3feca17e9d24741ceeaedaa6b6",
+    "paper_binary_sha256": null,
+    "scope": "independent CPU build for our matched Hessians; paper reports GPU CPKS",
+    "full_text_source": "https://www.ncbi.nlm.nih.gov/research/bionlp/RESTful/pmcoa.cgi/BioC_json/PMC12814550/unicode",
+    "text_sha256": "29ba24c15d58c845adc887c8d5f8a11f5f09ed0417184f151b38f372de2d0ea7"
+  }
+}

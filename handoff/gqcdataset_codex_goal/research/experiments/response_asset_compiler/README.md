@@ -26,3 +26,9 @@ OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 python scripts/score_ao_density_respons
     --manifest "$r/experiments/attribution_4arm/manifest.json" \
     --raw-root "$r/environment/gpu4pyscf-20261122/a-d-telemetry/raw" --out /tmp/independent-ao-score.json.gz
 ```
+
+## 跨基组、方法和几何的实测
+
+n2 作业 5644 比较了普通求解与资产规划，每路 15 个请求。三份同协议 AO 响应经目标残差复核后直接复用。甲烷、氨和水转换至 6-31G* 或 B3LYP 后，用同几何 AO 重叠投影作为官方 CPHF 的初值，实际执行了六次目标求解。位移几何、改变原点、陈旧文件、错场方向及冻结密度触发五次实际冷重算。开放壳层各保留一条缺少受限解的处置。新 CPU PySCF 在每个目标收敛独立 SCF，逐列构建全空间响应矩阵，并核对 AO 密度、逐分量读出与未预条件物理残差。可评分的 28/28 通过。
+
+固定 fresh cache 和进程边界的作业 5647 再以 cold/planned 与 planned/cold 各跑一轮。两轮中每种路径各有 14 个合格结果和一个保留的开放壳层缺口。规划的 CPHF solver operator rows 从 194 降至 174，质量检查另外付费。四个完整进程的全部墙时、压缩字节和独立评分一并保留。运行范围为三个中性小分子，规模证据按其独立合同验收。[原始记录与摘要](frontier/summary.json)

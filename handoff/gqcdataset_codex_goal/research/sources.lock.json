@@ -1142,10 +1142,18 @@
           "benchmark_file_count": 70,
           "acquired": true,
           "indexed": true,
-          "human_read": "tag metadata, license and benchmark/test inventory read",
-          "behavior_traced": false,
-          "executed": false,
-          "execution_status": "not_run_in_tag_environment"
+          "human_read": "tag metadata, CPHF RHS and observables, upstream tests and paper-version timing entries",
+          "behavior_traced": true,
+          "executed": true,
+          "execution_status": "matched_official_wheel_selected_tests",
+          "selected_execution": {
+            "status": "passed",
+            "job": 5639,
+            "passed": 19,
+            "skipped": 3,
+            "receipt": "environment/gpu4pyscf-20261122/v190-selected/receipt.json"
+          },
+          "full_suite_verified": false
         },
         {
           "tag": "v1.9.2",
@@ -1165,14 +1173,27 @@
           "benchmark_file_count": 70,
           "acquired": true,
           "indexed": true,
-          "human_read": "tag metadata, license and benchmark/test inventory read",
-          "behavior_traced": false,
-          "executed": false,
-          "execution_status": "not_run_in_tag_environment"
+          "human_read": "selected CPHF, J/K call, Hessian/IR/Raman, test and build paths inspected; full-tree reading unclaimed",
+          "behavior_traced": true,
+          "executed": true,
+          "execution_status": "selected_official_wheel_subset_passed",
+          "selected_execution": {
+            "status": "passed",
+            "distribution": "official PyPI gpu4pyscf-cuda12x 1.9.2 wheel",
+            "receipt": "environment/gpu4pyscf-20261122/v1.9.2-wheel-tests/v1.9.2-wheel-test-receipt.json",
+            "tests": {
+              "response_properties": "19 passed, 3 skipped",
+              "benchmark_properties": "8 passed, slow and high_memory excluded"
+            },
+            "scope": "Selected v1.9.2 wheel tests. Separate full-file campaign and independent timed properties benchmark have their own receipts."
+          },
+          "full_suite_verified": false,
+          "scope_of_execution": "selected upstream tests, matched four arms and independently evaluated Hessians",
+          "full_suite_campaign": "environment/gpu4pyscf-20261122/upstream-v192/campaign.json"
         }
       ],
       "checkout_path": "_references/gpu4pyscf",
-      "paper_version_status": "official_release_tags_v1.9.0_v1.9.2_acquired_paper_mapping_not_established",
+      "paper_version_status": "GQC energy/force timing files and paper report GPU4PySCF 1.9.0; 1.9.2 is our executable control. Earlier GPU4PySCF papers have separate scope.",
       "selection_reason": "量化后端与强基线",
       "acquisition_receipts": [
         "research/acquisition/gpu4pyscf-20261117T175107128315Z.json"
@@ -1230,7 +1251,9 @@
         "files_read": 0,
         "behavior_traced": 0,
         "executed": 0
-      }
+      },
+      "paper_version_mapping": "research/environment/gpu4pyscf-20261122/upstream-v192/paper-sources.json",
+      "release_variant_receipt": "research/environment/gpu4pyscf-20261122/release-tags.json"
     },
     {
       "id": "qcdb",
