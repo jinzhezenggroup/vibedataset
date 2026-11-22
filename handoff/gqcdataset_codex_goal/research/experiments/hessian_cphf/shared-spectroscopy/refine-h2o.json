@@ -1,0 +1,11 @@
+{
+  "case_id": "h2o",
+  "source_shared_sha256": "ee9d320b3386dfa904eb978378a5a5633d63c5ad940e6b2fab9e02d56fda61a1",
+  "parent_protocol_sha256": "674b477726881e6549ad4a5d9f31e348e307693631a1de69d585475b9913e0ca",
+  "default_verification_sha256": "0a42e021ffe2895e8571e550180495f125f3a86e31679fce12d60af18a4a9d16",
+  "steps_bohr_sqrt_amu": [
+    0.001,
+    0.0005
+  ],
+  "trigger": "failed original absolute Raman activity or depolarization threshold"
+}
