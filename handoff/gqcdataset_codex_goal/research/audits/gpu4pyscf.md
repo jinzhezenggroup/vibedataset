@@ -12,7 +12,7 @@
 
 ## 执行证据
 
-项目官方 baseline A 在 n2 GPU 实跑 17 个分子、三条 RHF/STO-3G 轨迹，`runs/run-A.json` 保存 Python、GPU、CuPy、输入 hash 和 blind flags，`raw/raw-A.jsonl` 保存 51 条请求级记录。固定 checkout 的 GPU4PySCF `test_polarizability.py` 也在同一 n2 GPU 环境执行，7 tests passed、1 skipped，退出码 0，原始日志保存在 `environment/gpu4pyscf-20261122/upstream-polarizability-pytest.log`。独立 scorer 在新进程中用官方 GPU4PySCF 重建 204 条 A–D 记录，`score.json` 保存目标、AO density 和残差门。
+项目官方 baseline A 在 n2 GPU 实跑 17 个分子、三条 RHF/STO-3G 轨迹，`runs/run-A.json` 保存 Python、GPU、CuPy、输入 hash 和 blind flags，`raw/raw-A.jsonl` 保存 51 条请求级记录。固定 checkout 的 GPU4PySCF `test_polarizability.py` 也在同一 n2 GPU 环境执行，7 tests passed、1 skipped，退出码 0，原始日志保存在 `environment/gpu4pyscf-20261122/upstream-polarizability-pytest.log`。IR/Raman upstream files 另行执行，8 passed、2 skipped、1 failed。失败是 `test_pcm_not_supported` 传入 `hessian_obj=None` 后先触发 AttributeError，已保留为 upstream failure receipt。独立 scorer 在新进程中用官方 GPU4PySCF 重建 204 条 A–D 记录，`score.json` 保存目标、AO density 和残差门。
 
 该执行集是项目按固定合同重放的官方后端 baseline。上游完整 benchmark suite、CUPTI/Nsight trace、能耗和论文对应的 v1.9.0/v1.9.2 release tag 在当前 checkout 中没有建立。它们在 [baseline.json](../environment/gpu4pyscf-20261122/baseline.json) 明确标为 unknown 或 unavailable。不能把文件索引或项目 baseline 写成完整上游论文复现。
 
