@@ -1,6 +1,6 @@
 {
   "schema": "vibedataset.research_release.v1",
-  "git_head": "322cec9a0985e75bbcba7e737ce00ce6fea7f8e7",
+  "git_head": "edbb42cee4cbd25036ab88425f196d4e6c2cd1fd",
   "artifacts": [
     {
       "path": "README.md",
@@ -20,7 +20,11 @@
     },
     {
       "path": "handoff/gqcdataset_codex_goal/research/performance/benchmark_contract.json",
-      "sha256": "91137007c2befc82546705baf28ea47d02301c824d55f5343b34f1e656272f23"
+      "sha256": "75d8ce6cdd4deedda4f4a506e1bcb0f32c4213680a20bd0ba28d829df3711dfe"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/research/performance/qm9-scale-manifest.json.gz",
+      "sha256": "b5ac670a374e763c539b10b0578d4cb5d07836f46ca27c587e23619ff82529e6"
     },
     {
       "path": "handoff/gqcdataset_codex_goal/research/performance/attribution_profile.json",
@@ -28,7 +32,7 @@
     },
     {
       "path": "handoff/gqcdataset_codex_goal/research/performance/scale_ablation_plan.json",
-      "sha256": "526ad5c1c1b8b608273f757a0de428a9a458ee737dae9fbc912be725c0a2cebd"
+      "sha256": "a08951076aa9c7240571f55209bcb148d7644ad34473c2a5c307a23061c2fb95"
     },
     {
       "path": "handoff/gqcdataset_codex_goal/research/audits/SOURCE_AUDIT_32.md",
@@ -40,11 +44,7 @@
     },
     {
       "path": "handoff/gqcdataset_codex_goal/research/experiments/prepared_property_batch/README.md",
-      "sha256": "90f9d415580900cdb86483f88efb65ab8307cc5ddf1b60fd28995ba6487d71d6"
-    },
-    {
-      "path": "handoff/gqcdataset_codex_goal/research/experiments/prepared_property_batch/replay.json",
-      "sha256": "679a55895dc047f75d584f2826c6307a5e8297f040380fd010dd349810f1cdfe"
+      "sha256": "a8c8da9ca8bec06512fb70a42bb5a7af7df2178e53314e54f4c558153d7d28dd"
     },
     {
       "path": "handoff/gqcdataset_codex_goal/research/experiments/response_asset_compiler/plan.json",
