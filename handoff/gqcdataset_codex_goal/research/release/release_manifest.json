@@ -1,6 +1,6 @@
 {
   "schema": "vibedataset.research_release.v1",
-  "git_head": "4bbc7e8abaf978cf3e5043ec61803aa1d30ce796",
+  "git_head": "113b8d2a77b3640d4f2aed582e38c0238224d2e2",
   "artifacts": [
     {
       "path": "README.md",
