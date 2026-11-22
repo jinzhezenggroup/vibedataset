@@ -154,6 +154,12 @@ def options():
         help="bounded controls: allocator-oom, scf-fail or unsupported",
     )
     p.add_argument("--out", type=Path, required=True)
+    p.add_argument(
+        "--response-action",
+        choices=("official", "dense-separated", "dense-fused", "mixed"),
+        default="official",
+    )
+    p.add_argument("--dense-eri-budget", type=int, default=64 * 1024 * 1024)
     args = p.parse_args()
     if min(args.workers, args.batch_size) < 1 or args.workspace_bytes < 0:
         p.error("invalid staging limits")
@@ -284,6 +290,7 @@ def main():
             ready.record(transfer)
         return dev, ready, host
 
+    dense_states = {}
     for name, mol in molecules.items():
         positions[name] = prefetch(mol)
     for group in groups:
@@ -346,17 +353,36 @@ def main():
                     [needed] if args.multi_rhs and needed else [[f] for f in needed]
                 )
                 for new in batches:
-                    solved = solve_fields(
-                        cp,
-                        cphf,
-                        mf,
-                        ["xyz".index(f) for f in new],
-                        protocol["response_tol"],
-                        protocol["response_max_cycle"],
-                        None,
-                        position=pos,
-                        keep_device=True,
-                    )
+                    if args.response_action == "official":
+                        solved = solve_fields(
+                            cp,
+                            cphf,
+                            mf,
+                            ["xyz".index(f) for f in new],
+                            protocol["response_tol"],
+                            protocol["response_max_cycle"],
+                            None,
+                            position=pos,
+                            keep_device=True,
+                        )
+                    else:
+                        from prepared_dense_response import DenseResponse
+
+                        state_key = req.identity.key()
+                        if state_key not in dense_states:
+                            dense_states[state_key] = DenseResponse(
+                                cp, mf, args.response_action, args.dense_eri_budget
+                            )
+                        solved = dense_states[state_key].solve(
+                            mf,
+                            pos,
+                            new,
+                            protocol["response_tol"],
+                            protocol["response_max_cycle"],
+                        )
+                        row.setdefault("dense_execution", []).append(
+                            solved["dense_execution"]
+                        )
                     cache.update(solved["vectors"])
                     calls += solved["operator_calls"]
                     work += solved["operator_rows"]
@@ -378,7 +404,12 @@ def main():
                 )
                 timeline.append((rid, first, last))
                 payload.append((row, dm, pos))
-            except (RuntimeError, MemoryError, NotImplementedError) as error:
+            except (
+                RuntimeError,
+                MemoryError,
+                NotImplementedError,
+                ValueError,
+            ) as error:
                 row.update(
                     status="reject-and-recompute",
                     reason=type(error).__name__ + ": " + str(error),
@@ -461,6 +492,8 @@ def main():
         scientific_stream=int(primary.ptr),
         h2d_stream=int(transfer.ptr),
         batch_size=args.batch_size,
+        response_action=args.response_action,
+        dense_eri_budget=args.dense_eri_budget,
         ragged=args.ragged,
         resident=args.resident,
         asset_reuse=args.asset_reuse,
