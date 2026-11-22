@@ -1,22 +1,108 @@
 {
-  "schema": "vibedataset.gpu_response_asset_negative_controls.v1",
-  "status": "passed",
+  "schema": "vibedataset.gpu_response_asset_negative_controls.v2",
   "controls": [
     {
       "name": "stale_asset_hash",
-      "status": "reject-and-recompute"
+      "status": "reject-and-recompute",
+      "reasons": [
+        "asset checksum"
+      ]
     },
     {
       "name": "wrong_geometry_identity",
-      "status": "reject-and-recompute"
+      "status": "reject-and-recompute",
+      "reasons": [
+        "scientific identity"
+      ]
     },
     {
       "name": "missing_response_density",
-      "status": "reject-and-recompute"
+      "status": "reject-and-recompute",
+      "reasons": [
+        "response_densities",
+        "incomplete fields"
+      ]
+    },
+    {
+      "name": "truncated_vector",
+      "status": "reject-and-recompute",
+      "reasons": [
+        "response_vectors",
+        "nonfinite or truncated vector/density"
+      ]
+    },
+    {
+      "name": "nonfinite_density",
+      "status": "reject-and-recompute",
+      "reasons": [
+        "Out of range float values are not JSON compliant"
+      ]
+    },
+    {
+      "name": "wrong_finite_density",
+      "status": "reject-and-recompute",
+      "reasons": [
+        "response_densities"
+      ]
+    },
+    {
+      "name": "stale_residual",
+      "status": "reject-and-recompute",
+      "reasons": [
+        "certificate/scorer mismatch"
+      ]
+    },
+    {
+      "name": "residual_threshold",
+      "status": "reject-and-recompute",
+      "reasons": [
+        "certificate/scorer mismatch"
+      ]
+    },
+    {
+      "name": "wrong_basis",
+      "status": "reject-and-recompute",
+      "reasons": [
+        "scientific identity"
+      ]
+    },
+    {
+      "name": "wrong_unit",
+      "status": "reject-and-recompute",
+      "reasons": [
+        "scientific identity"
+      ]
+    },
+    {
+      "name": "wrong_spin",
+      "status": "reject-and-recompute",
+      "reasons": [
+        "scientific identity"
+      ]
+    },
+    {
+      "name": "wrong_charge",
+      "status": "reject-and-recompute",
+      "reasons": [
+        "scientific identity"
+      ]
+    },
+    {
+      "name": "wrong_source_sha",
+      "status": "reject-and-recompute",
+      "reasons": [
+        "source binding"
+      ]
+    },
+    {
+      "name": "wrong_rhs",
+      "status": "reject-and-recompute",
+      "reasons": [
+        "fields_requested"
+      ]
     }
   ],
+  "status": "passed",
   "oracle_loaded": false,
-  "limitations": [
-    "These controls test verifier predicates and do not launch a GPU calculation."
-  ]
+  "scope": "Release-integrity checks against original raw production and independent scorer receipts"
 }

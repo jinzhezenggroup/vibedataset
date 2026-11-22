@@ -11,3 +11,18 @@
 这组 51 个 direct assets 只覆盖同一 RHF/STO-3G 协议。跨方法/基组 refine、开放壳层 reject、损坏/过期资产和完整 response certificate frontier 仍由计划文件保留为未完成边界。
 
 `gpu-assets-negative-controls.json` 还保留了三种 verifier 负对照。陈旧 asset hash、错误 geometry identity 和缺失 response density 均得到 `reject-and-recompute`，没有把损坏资产静默接受。
+
+## 官方 1.9.2 四臂的 AO 质量证书
+
+独立 CPU PySCF 从 17 份几何重建 RHF/sto-3g、三方向的稠密响应及最小奇异值。输入包括四臂新测的 AO 一阶密度与读出。在 CPU 的占据/虚轨道基底中，候选响应为 `Cᵥᵀ S D¹ S Cₒ / 2`。评分器从投影结果重新产生密度，调用 AO J/K 计算未预条件化的候选残差，并同时检查稠密参照、AO 切空间和目标读出。早先独立 MO 实现中有 30 行 operator-image 诊断值超限；这 30 行均纳入本次独立计算。
+
+204/204 行通过 1e-5 的绝对门槛，最大候选物理残差 4.45832e-6，稠密参照最大残差 L2 为 3.59e-15。此证书覆盖 AO 密度与标量。原生产轨道基底下的裸 MO 向量仍受其原始参考态约束。截断、NaN、数值错误但有限的密度、错读出、错单位、错场 RHS 六个试验均被拒绝。另对 51 个存档 C 资产运行真实发布校验器，14 个存储层负对照均被拒绝，其中包括重新计算自有哈希后的错基组、陈旧残差和被替换密度。CPU 未读取 GPU scorer 的预先判断。[逐行计算、计时与负对照](scorer-v192-ao.json.gz) · [发布校验结果](gpu-assets-negative-controls.json)
+
+从仓库根目录运行以下命令，使用与科学 CI 相同的 PySCF 2.14.0 环境。
+
+```bash
+r=handoff/gqcdataset_codex_goal/research
+OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 python scripts/score_ao_density_response.py \
+    --manifest "$r/experiments/attribution_4arm/manifest.json" \
+    --raw-root "$r/environment/gpu4pyscf-20261122/a-d-telemetry/raw" --out /tmp/independent-ao-score.json.gz
+```
