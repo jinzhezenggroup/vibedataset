@@ -149,6 +149,34 @@ def produce(mol, protocol, cfg):
     scf_time = converge(mf, cfg)
     start = time.perf_counter()
     result = solve_fields(cupy, cphf, mf, [0, 1, 2], cfg["response_tol"], cfg["response_cycles"], None)
+    residual_history = []
+    correction_rows = 0
+    if cfg == protocol["retry"]:
+        from gpu4pyscf.properties.polarizability import gen_vind
+        co = mf.mo_coeff[:, mf.mo_occ > 0]
+        cv = mf.mo_coeff[:, mf.mo_occ == 0]
+        gap = mf.mo_energy[mf.mo_occ == 0, None] - mf.mo_energy[None, mf.mo_occ > 0]
+        with mol.with_common_orig(tuple(protocol["origin_bohr"])):
+            position = cupy.asarray(mol.intor("int1e_r", comp=3))
+        rhs = cv.T @ position @ co
+        target_op = gen_vind(mf, mf.mo_coeff, mf.mo_occ)
+        x = cupy.asarray(np.stack([result["vectors"][f] for f in protocol["fields"]]))
+
+        def correction_operator(trial):
+            nonlocal correction_rows
+            correction_rows += trial.shape[0]
+            return target_op(trial)
+
+        for step in range(3):
+            defect = rhs - (gap * x + target_op(x))
+            strength = float(cupy.max(cupy.abs(defect)).item())
+            residual_history.append(strength)
+            if strength <= 1e-9 or step == 2:
+                break
+            correction, _ = cphf.solve(correction_operator, mf.mo_energy, mf.mo_occ, -defect/strength,
+                                       tol=cfg["response_tol"], max_cycle=cfg["response_cycles"], verbose=0)
+            x += strength * correction
+        result["vectors"] = {f: cupy.asnumpy(v) for f,v in zip(protocol["fields"],x)}
     solve_time = time.perf_counter() - start
     readout = time.perf_counter()
     dm = density_values(cupy, mf, result["vectors"])
@@ -161,7 +189,8 @@ def produce(mol, protocol, cfg):
     facts = dict(scf_energy=float(mf.e_tot), scf_seconds=scf_time, solve_and_check_seconds=solve_time,
                  readout_seconds=time.perf_counter()-readout, response_operator_calls=result["operator_calls"],
                  response_operator_rows=result["operator_rows"], quality_operator_rows=result["quality_operator_rows"],
-                 backend_preconditioned_residual=result["residual_linf"])
+                 backend_preconditioned_residual=result["residual_linf"], retry_fp64_residual_history=residual_history,
+                 correction_operator_rows=correction_rows)
     return arrays, facts
 
 
