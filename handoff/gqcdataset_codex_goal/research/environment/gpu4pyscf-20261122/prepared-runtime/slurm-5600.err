@@ -1,0 +1,6 @@
+/home/lhshen/vibedataset/runs/gpu4pyscf-v1.9.2-build-20261122/wheel-venv/lib/python3.11/site-packages/gpu4pyscf/lib/cutensor.py:154: UserWarning: using cupy as the tensor contraction engine.
+  warnings.warn(f'using {contract_engine} as the tensor contraction engine.')
+/home/lhshen/vibedataset/runs/gpu4pyscf-v1.9.2-build-20261122/wheel-venv/lib/python3.11/site-packages/gpu4pyscf/lib/cutensor.py:154: UserWarning: using cupy as the tensor contraction engine.
+  warnings.warn(f'using {contract_engine} as the tensor contraction engine.')
+/home/lhshen/vibedataset/runs/gpu4pyscf-v1.9.2-build-20261122/wheel-venv/lib/python3.11/site-packages/gpu4pyscf/lib/cutensor.py:154: UserWarning: using cupy as the tensor contraction engine.
+  warnings.warn(f'using {contract_engine} as the tensor contraction engine.')
