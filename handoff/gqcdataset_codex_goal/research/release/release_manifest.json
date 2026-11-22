@@ -1,6 +1,6 @@
 {
   "schema": "vibedataset.research_release.v1",
-  "git_head": "9631f99ebd841be8d6793c10549d3f8bacfd3737",
+  "git_head": "30f655c15512f10ee9956cea7184a76409d1c369",
   "artifacts": [
     {
       "path": "README.md",
@@ -52,15 +52,23 @@
     },
     {
       "path": "handoff/gqcdataset_codex_goal/research/experiments/hessian_cphf/results.json",
-      "sha256": "fa6d50ba2ce0a9b1007c259f2a54ccc2d072a99bfde419404c90809175c4664a"
+      "sha256": "e4c261fc8eb6ebe0cdd3a57b4cbdb64953f7677f73a4bb4bdbe16b4402fc4dfa"
     },
     {
       "path": "handoff/gqcdataset_codex_goal/research/experiments/hessian_cphf/gpu-results.json",
-      "sha256": "465c037da04dee8104ba487cd95f3fe67f8ba33e550c3096be26c120b7166a2e"
+      "sha256": "69b090118be215ca51906aa37a3150c03bda22419e8707981300c84182562c26"
     },
     {
       "path": "handoff/gqcdataset_codex_goal/research/experiments/hessian_cphf/gpu-spectroscopy.json",
       "sha256": "9d79f89dc75c73bed0dfcf56c80b814888201a647f4c5d9350722521bd5fc8a2"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/research/experiments/hessian_cphf/finite-difference.json",
+      "sha256": "f7001a482bba871b885fad34c1d6f3f24b8b41bfd314e6b4ca47037cb259ad67"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/research/experiments/hessian_cphf/cpu-gpu-crosscheck.json",
+      "sha256": "b24704758a2d4265aa7f729a7d743328d335d73c392526c89a715a986b4f336b"
     },
     {
       "path": "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/baseline.json",
