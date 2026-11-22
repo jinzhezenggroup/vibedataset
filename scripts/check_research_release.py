@@ -5,6 +5,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import re
 import subprocess
 from pathlib import Path
 
@@ -38,14 +39,21 @@ def main() -> None:
     parser.add_argument("--out", type=Path, required=True)
     parser.add_argument("--strict-head", action="store_true", help="require manifest git_head to equal the current checkout HEAD")
     parser.add_argument("--expected-head", help="require manifest git_head to equal this commit")
+    parser.add_argument("--allow-missing-commits", action="store_true", help="record pinned commit objects unavailable in a shallow checkout")
     args = parser.parse_args()
 
     manifest = json.loads((args.release / "release_manifest.json").read_text())
     current = git_head(args.root)
     errors: list[str] = []
+    provenance_unknowns: list[str] = []
     source = manifest.get("git_head")
-    if not isinstance(source, str) or not valid_commit(args.root, source):
-        errors.append("invalid git_head")
+    source_object_available = isinstance(source, str) and valid_commit(args.root, source)
+    source_sha_shape = isinstance(source, str) and bool(re.fullmatch(r"[0-9a-f]{40}", source))
+    if not source_object_available:
+        if args.allow_missing_commits and source_sha_shape and not args.strict_head:
+            provenance_unknowns.append("git_head_commit_object_unavailable")
+        else:
+            errors.append("invalid git_head")
     elif args.strict_head and source != current:
         errors.append(f"strict git_head mismatch: {source} != {current}")
     elif not args.strict_head and not ancestor(args.root, source, current):
@@ -54,8 +62,13 @@ def main() -> None:
         errors.append(f"expected git_head mismatch: {source} != {args.expected_head}")
     built_from = manifest.get("built_from_git_head")
     if built_from is not None:
-        if not isinstance(built_from, str) or not valid_commit(args.root, built_from):
-            errors.append("invalid built_from_git_head")
+        built_object_available = isinstance(built_from, str) and valid_commit(args.root, built_from)
+        built_sha_shape = isinstance(built_from, str) and bool(re.fullmatch(r"[0-9a-f]{40}", built_from))
+        if not built_object_available:
+            if args.allow_missing_commits and built_sha_shape and not args.strict_head:
+                provenance_unknowns.append("built_from_git_head_commit_object_unavailable")
+            else:
+                errors.append("invalid built_from_git_head")
         elif args.strict_head and built_from != current:
             errors.append(f"strict built_from_git_head mismatch: {built_from} != {current}")
         elif not args.strict_head and not ancestor(args.root, built_from, current):
@@ -76,6 +89,8 @@ def main() -> None:
         "manifest_git_head": source,
         "current_git_head": current,
         "strict_head": args.strict_head,
+        "allow_missing_commits": args.allow_missing_commits,
+        "provenance_unknowns": provenance_unknowns,
         "errors": errors,
     }
     args.out.parent.mkdir(parents=True, exist_ok=True)

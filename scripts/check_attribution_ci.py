@@ -55,7 +55,7 @@ def main():
     require(sum(row["status"] == "reject-and-recompute" for row in expansion_rows) == 8, "DFT/open-shell rejection controls")
     subprocess.check_call([sys.executable, str(SCRIPTS / "check_benchmark_contract.py"), "--contract", str(benchmark / "benchmark_contract.json"), "--manifest", str(EXP / "manifest.json"), "--out", str(args.out / "benchmark-contract.json")], cwd=ROOT)
     subprocess.check_call([sys.executable, str(SCRIPTS / "check_attribution_profile.py"), "--profile", str(benchmark / "attribution_profile.json"), "--out", str(args.out / "profiling.json")], cwd=ROOT)
-    subprocess.check_call([sys.executable, str(SCRIPTS / "check_research_release.py"), "--release", str(ROOT / "handoff/gqcdataset_codex_goal/research/release"), "--root", str(ROOT), "--out", str(args.out / "release.json")], cwd=ROOT)
+    subprocess.check_call([sys.executable, str(SCRIPTS / "check_research_release.py"), "--release", str(ROOT / "handoff/gqcdataset_codex_goal/research/release"), "--root", str(ROOT), "--out", str(args.out / "release.json"), "--allow-missing-commits"], cwd=ROOT)
     with tempfile.TemporaryDirectory(dir=args.out, prefix="strict-release-") as strict_temp:
         strict_release = Path(strict_temp)
         subprocess.check_call([sys.executable, str(SCRIPTS / "build_research_release.py"), "--root", str(ROOT), "--out", str(strict_release)], cwd=ROOT)
