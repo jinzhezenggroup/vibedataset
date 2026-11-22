@@ -86,6 +86,23 @@ class Observer:
                 sampled_board_memory_peak_bytes=max(used) if used else None))+"\n")
             self.out.flush()
 
+    def store_rows(self, out, records):
+        ledger = []
+        with (out / "raw.jsonl").open("xb") as handle:
+            for row in records:
+                tick = time.perf_counter_ns()
+                body = (json.dumps(row, sort_keys=True) + "\n").encode()
+                serialized = time.perf_counter_ns()
+                handle.write(body)
+                handle.flush()
+                end = time.perf_counter_ns()
+                ledger.append(dict(molecule=row["molecule"], trajectory=row["trajectory"], bytes=len(body),
+                                   serialize_ns=serialized-tick, write_flush_ns=end-serialized))
+            tick = time.perf_counter_ns()
+            os.fsync(handle.fileno())
+            durable_ns = time.perf_counter_ns() - tick
+        (out / "storage.json").write_text(json.dumps(dict(rows=ledger, queue_fsync_ns=durable_ns))+"\n")
+
     def requests(self, molecule, requests):
         for row in requests:
             with self.measure(f"request/{molecule}/{row['id']}"):
@@ -99,6 +116,7 @@ def main():
     p.add_argument("--arm", choices=list("ABCD"), required=True)
     p.add_argument("--patch", type=Path)
     p.add_argument("--source-commit", required=True)
+    p.add_argument("--telemetry", action="store_true", help="store the full timing schema and write/fsync costs")
     args = p.parse_args()
     args.out.mkdir(parents=True, exist_ok=False)
     import cupy
@@ -125,7 +143,11 @@ def main():
         sampler = threading.Thread(target=observer.sample, daemon=True)
         sampler.start()
         try:
-            run_arm(args)
+            if args.telemetry:
+                from run_gpu4pyscf_4arm_telemetry import run
+                run(args)
+            else:
+                run_arm(args)
         finally:
             observer.stop.set()
             sampler.join()

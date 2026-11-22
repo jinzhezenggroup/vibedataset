@@ -32,3 +32,5 @@ C 相对 A 的端到端几何均值 speedup 为约 1.09×。其 molecule-time pa
 原始 run、Slurm 日志、独立 scorer、结构检查和汇总见 [a-d-telemetry](../environment/gpu4pyscf-20261122/a-d-telemetry/)。compile/JIT 分段和 producer 内 independent scorer 仍为显式 `null`。kernel launch、occupancy、FLOPs、CUPTI/Nsight、能耗、第二 GPU、cold/warm 分离和完整 scale workload 仍未取得。
 
 同一张 RTX PRO 6000 上已补测冷、热缓存各四臂的 Nsight/CUPTI request trace。温缓存下 A/B/C/D 三次请求分别启动 4687、6457、3088、3800 个 kernel。板卡能耗、逐笔传输和分配高水位可由原始时间戳重算。硬件性能计数器返回 ERR_NVGPUCTRPERM。[单分子四臂实测](../environment/gpu4pyscf-20261122/nsight-control/README.md)
+
+17 个分子完整 A–D 的冷/热缓存共有 408 个请求，已用新官方 GPU 进程与独立 CPU AO 物理残差交叉评分。源码封存的相位、运行时间、显存峰值、数据移动、板卡能耗、独立 scorer 及持久化账本可从 CUPTI 原始活动复算。硬件级 achieved occupancy/FLOPs 的权限回执保留。[完整硬件基线](../environment/gpu4pyscf-20261122/full-queue-trace/README.md)

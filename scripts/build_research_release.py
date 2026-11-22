@@ -208,6 +208,18 @@ for attempt in ("pilot", "counterbalanced/rep-1", "counterbalanced/rep-2"):
         RELEASE_ARTIFACTS.extend(f"{folder}/{case}.json.gz" for case in frontier_cases)
 
 
+FULL_TRACE = f"{EVIDENCE_V192}/full-queue-trace"
+RELEASE_ARTIFACTS.extend(["scripts/full_gpu_trace_ledger.py", "scripts/trace_gpu_kernel_stacks.py"])
+RELEASE_ARTIFACTS.extend(f"{FULL_TRACE}/{name}" for name in ("README.md", "parts.json", "summary.json",
+    "request-ledger.json.gz", "official-score-cold.json.gz", "official-score-warm.json.gz",
+    "cpu-score-cold.json.gz", "cpu-score-warm.json.gz", "official-warm.folded.gz", "official-warm.svg",
+    "flamegraph-renderer.json", "score.slurm", "trace.slurm"))
+for arm, count in (("A",4), ("B",5), ("C",3), ("D",4)):
+    for state in ("cold","warm"):
+        folder=f"{FULL_TRACE}/{arm}-{state}"
+        RELEASE_ARTIFACTS.extend([f"{folder}/scientific.jsonl.gz",f"{folder}/storage.json.gz"])
+        RELEASE_ARTIFACTS.extend(f"{folder}/activities.{i:02d}.part" for i in range(count))
+
 SHARED_SPECTRA = "handoff/gqcdataset_codex_goal/research/experiments/hessian_cphf/shared-spectroscopy"
 RELEASE_ARTIFACTS.extend(["scripts/run_shared_spectroscopy.py", "scripts/score_shared_spectroscopy.py", "scripts/score_cartesian_cphf.py"])
 RELEASE_ARTIFACTS.extend(f"{SHARED_SPECTRA}/{p}" for p in ("cartesian.slurm",
@@ -281,10 +293,10 @@ CLAIMS = [
     {
         "claim_id": "37",
         "claim": "A-D request-level phase profiling baseline",
-        "status": "bounded-four-arm-CUPTI-with-separate-physical-score",
-        "evidence": "performance/profiling.md;environment/gpu4pyscf-20261122/a-d-telemetry/summary.json;environment/gpu4pyscf-20261122/nsight-control/receipt.json",
+        "status": "full-17-molecule-four-arm-cold-warm-CUPTI",
+        "evidence": "performance/profiling.md;environment/gpu4pyscf-20261122/full-queue-trace/summary.json",
         "condition": "official v1.9.2 wheel, one RTX PRO 6000, 4 arms x 51 requests, 14-field schema, 204/204 target-density-residual scorer acceptance",
-        "unknown": "full-queue hardware counters and separated JIT/IO costs",
+        "unknown": "achieved occupancy/FLOP permissions, isolated backend JIT cost and 1000-request device profile",
     },
     {
         "claim_id": "38",
@@ -332,7 +344,7 @@ CLAIMS = [
 UNKNOWNs = [
     "complete upstream GPU4PySCF v1.9.2 source test and benchmark suite",
     "historical wheel build flags and exact binary identities for early GPU4PySCF papers",
-    "queue-wide Nsight traces and permission for achieved occupancy/FLOP counters",
+    "driver permission for achieved occupancy/FLOP counters",
     "dataset-scale energy and device memory profile",
     "1000-row protocol-consistent request asset",
     "A100/H100 comparison",

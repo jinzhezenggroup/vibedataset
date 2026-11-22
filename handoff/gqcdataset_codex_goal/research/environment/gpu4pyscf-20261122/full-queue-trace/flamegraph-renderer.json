@@ -1,0 +1,19 @@
+{
+  "source": "https://github.com/brendangregg/FlameGraph",
+  "commit": "41fee1f99f9276008b7cd112fca19dc3ea84ac32",
+  "script_sha256": "088f82e6848a4f12a56e1e8e8170ee6761fccf12e5615cd64630f6b087c99ea7",
+  "options": [
+    "--title",
+    "Official GPU4PySCF | warm cache | 17 molecules",
+    "--countname",
+    "kernel ns",
+    "--width",
+    "1200",
+    "--colors",
+    "aqua",
+    "--hash"
+  ],
+  "folded_sha256": "b56d0f8e79bca4f2a50b693db54e18a51dfde746961064655c9e2d39905087d7",
+  "kernel_time_ns": 35114432225,
+  "description": "GPU kernel duration hierarchy, not CPU sampled call stacks or end-to-end wall time"
+}

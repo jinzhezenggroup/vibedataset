@@ -247,6 +247,7 @@ def run(args) -> None:
         from gpu4pyscf.lib.response_cache import ResponseOperatorCache
 
         cache_type = ResponseOperatorCache
+    observer = getattr(args, "observer", None)
     arm_is_gqc = args.arm in {"C", "D"}
     requests = sorted(manifest["request_trajectories"], key=lambda row: row["order"])
     records = []
@@ -268,14 +269,19 @@ def run(args) -> None:
 
         mf.callback = callback
         scf_started = time.perf_counter()
-        mf.kernel()
+        if observer is None:
+            mf.kernel()
+        else:
+            with observer.measure(f"scf/{item['name']}"):
+                mf.kernel()
         sync(cupy)
         scf_seconds = time.perf_counter() - scf_started
         if not mf.converged:
             raise RuntimeError(f"SCF did not converge for {item['name']}")
         cache = cache_type() if cache_type else None
         assets: dict[str, np.ndarray] = {}
-        for request in requests:
+        observed_requests = requests if observer is None else observer.requests(item["name"], requests)
+        for request in observed_requests:
             first_request_for_molecule = not any(row["molecule"] == item["name"] for row in records)
             request_started = process_started if process_rows == 0 else molecule_started if first_request_for_molecule else time.perf_counter()
             requested = list(request["fields"])
@@ -389,9 +395,12 @@ def run(args) -> None:
             _ = encoded
     out = args.out
     out.mkdir(parents=True, exist_ok=True)
-    with (out / "raw.jsonl").open("w") as handle:
-        for row in records:
-            handle.write(json.dumps(row, sort_keys=True) + "\n")
+    if observer is not None and hasattr(observer, "store_rows"):
+        observer.store_rows(out, records)
+    else:
+        with (out / "raw.jsonl").open("w") as handle:
+            for row in records:
+                handle.write(json.dumps(row, sort_keys=True) + "\n")
     run = {
         "schema": "vibedataset.attribution_4arm.telemetry_run.v1",
         "arm": args.arm,
