@@ -1,6 +1,6 @@
 {
   "schema": "vibedataset.research_release.v1",
-  "git_head": "7856a9c7a87579e3519c92d2821fb4edade4fb1b",
+  "git_head": "92773373d5bbcf01c61a704bbb1143ecb41c4aca",
   "artifacts": [
     {
       "path": "README.md",
@@ -68,7 +68,7 @@
     },
     {
       "path": "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/upstream-ir-raman-pytest.log",
-      "sha256": "48af0c2ec2ab63adf396bdd813786ec69a31626ffa10db8824214aa3fa8098a2"
+      "sha256": "16d73017016870ab5ab2a279adc8b586f60f3b1b56df70ce0c2abd709048e6ca"
     }
   ],
   "commands": [
