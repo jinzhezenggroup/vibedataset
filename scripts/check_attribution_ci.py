@@ -85,6 +85,17 @@ def main():
         for field in ("max_abs_hessian_diff", "rms_hessian_diff", "energy_abs_diff_hartree"):
             require(math.isclose(replayed[field], archived[field], rel_tol=1e-12, abs_tol=1e-15), f"Hessian crosscheck {field}")
     require(replayed_hessian["finite_difference"]["status"] == archived_hessian["finite_difference"]["status"] == "accepted", "finite-difference crosscheck status")
+    subprocess.check_call(
+        [
+            sys.executable,
+            str(SCRIPTS / "check_gpu4pyscf_phase_profile.py"),
+            "--directory",
+            str(ROOT / "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/phase-profile-control"),
+            "--out",
+            str(args.out / "gpu4pyscf-phase-profile.json"),
+        ],
+        cwd=ROOT,
+    )
     subprocess.check_call([sys.executable, str(SCRIPTS / "check_prepared_property_batch.py"), "--out", str(args.out / "prepared-property-batch.json")], cwd=ROOT)
     replay = ROOT / "handoff/gqcdataset_codex_goal/research/experiments/prepared_property_batch/replay.json"
     replay_data = read(replay)

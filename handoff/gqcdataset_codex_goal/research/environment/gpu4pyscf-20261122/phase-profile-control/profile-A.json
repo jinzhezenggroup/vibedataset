@@ -1,0 +1,176 @@
+{
+  "schema": "vibedataset.gpu4pyscf_phase_profile_control.v1",
+  "arm": "A",
+  "molecule": "qm9-000001",
+  "manifest_sha256": "e08193beba0fd3b15d3b6c2ecf531b3b38c6cb8fef3da0ee95d19cd78858a635",
+  "protocol": {
+    "method": "RHF",
+    "basis": "sto-3g",
+    "basis_representation": "real_spherical",
+    "unit": "Bohr",
+    "precision": "FP64",
+    "origin": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "conv_tol": 1e-10,
+    "max_cycle": 100,
+    "response_tol": 1e-08,
+    "response_max_cycle": 50,
+    "device": "cuda",
+    "seed": 20261122
+  },
+  "gpu4pyscf_source_commit": "5a717f899cb40d64a5799ef1df7e3626c505c3bd",
+  "python": "3.11.17 (main, Oct  1 2026, 20:17:42) [GCC 14.3.0]",
+  "platform": "Linux-6.8.0-149-generic-x86_64-with-glibc2.35",
+  "device": {
+    "free_bytes": 100015800320,
+    "total_bytes": 101973491712,
+    "pool_used_bytes": 27648,
+    "pool_total_bytes": 823296,
+    "pinned_used_bytes": 0
+  },
+  "initial_memory": {
+    "free_bytes": 101372657664,
+    "total_bytes": 101973491712,
+    "pool_used_bytes": 0,
+    "pool_total_bytes": 0,
+    "pinned_used_bytes": 0
+  },
+  "final_memory": {
+    "free_bytes": 100015800320,
+    "total_bytes": 101973491712,
+    "pool_used_bytes": 27648,
+    "pool_total_bytes": 823296,
+    "pinned_used_bytes": 0
+  },
+  "rows": [
+    {
+      "trajectory": "cycle-one",
+      "fields_requested": [
+        "x"
+      ],
+      "fields_computed": [
+        "x"
+      ],
+      "fields_reused": [],
+      "targets": {
+        "xx": 5.684564697544502
+      },
+      "phase_seconds": {
+        "prepare": 0.001159074017778039,
+        "scf_fock": 1.9828231199644506,
+        "cp_hf_gmres_and_residual": 1.3720413779374212,
+        "property_readout": 0.0024398639798164368
+      },
+      "gpu_event_seconds": {
+        "scf_fock": 1.982797607421875,
+        "cp_hf_gmres_and_residual": 1.3720621337890626,
+        "property_readout": 0.002432255983352661
+      },
+      "operator_calls": 5,
+      "operator_rows": 5,
+      "residual_linf": 1.0286116229607511e-09,
+      "host_to_device_bytes": 952,
+      "device_to_host_bytes": 160,
+      "memory_after": {
+        "free_bytes": 100017897472,
+        "total_bytes": 101973491712,
+        "pool_used_bytes": 27648,
+        "pool_total_bytes": 823296,
+        "pinned_used_bytes": 0
+      }
+    },
+    {
+      "trajectory": "cycle-three",
+      "fields_requested": [
+        "x",
+        "y",
+        "z"
+      ],
+      "fields_computed": [
+        "x",
+        "y",
+        "z"
+      ],
+      "fields_reused": [],
+      "targets": {
+        "xx": 5.68456469754449,
+        "yy": 5.684451747077533,
+        "zz": 5.684452376899962,
+        "xy": -0.00014500594417682366,
+        "xz": 3.2590772170715265e-05,
+        "yz": 5.579765456906194e-05
+      },
+      "phase_seconds": {
+        "prepare": 0.0,
+        "scf_fock": 0.0,
+        "cp_hf_gmres_and_residual": 1.3721454949118197,
+        "property_readout": 0.0023073829943314195
+      },
+      "gpu_event_seconds": {
+        "scf_fock": 0.0,
+        "cp_hf_gmres_and_residual": 1.3721636962890624,
+        "property_readout": 0.002299904108047485
+      },
+      "operator_calls": 5,
+      "operator_rows": 13,
+      "residual_linf": 1.117474501821647e-09,
+      "host_to_device_bytes": 1272,
+      "device_to_host_bytes": 480,
+      "memory_after": {
+        "free_bytes": 100015800320,
+        "total_bytes": 101973491712,
+        "pool_used_bytes": 27648,
+        "pool_total_bytes": 823296,
+        "pinned_used_bytes": 0
+      }
+    },
+    {
+      "trajectory": "cross-three",
+      "fields_requested": [
+        "x",
+        "z"
+      ],
+      "fields_computed": [
+        "x",
+        "z"
+      ],
+      "fields_reused": [],
+      "targets": {
+        "xz": 3.259077216671846e-05,
+        "zx": 3.2590772195750795e-05
+      },
+      "phase_seconds": {
+        "prepare": 0.0,
+        "scf_fock": 0.0,
+        "cp_hf_gmres_and_residual": 1.408968543051742,
+        "property_readout": 0.001723970053717494
+      },
+      "gpu_event_seconds": {
+        "scf_fock": 0.0,
+        "cp_hf_gmres_and_residual": 1.4089871826171876,
+        "property_readout": 0.001716256022453308
+      },
+      "operator_calls": 5,
+      "operator_rows": 9,
+      "residual_linf": 1.0448981922761558e-09,
+      "host_to_device_bytes": 1112,
+      "device_to_host_bytes": 320,
+      "memory_after": {
+        "free_bytes": 100015800320,
+        "total_bytes": 101973491712,
+        "pool_used_bytes": 27648,
+        "pool_total_bytes": 823296,
+        "pinned_used_bytes": 0
+      }
+    }
+  ],
+  "serialization_seconds": 6.144072161987424,
+  "unknowns": [
+    "kernel launch count, occupancy and FLOPs were not collected",
+    "compile/JIT cache hit state is not separated from the backend calls",
+    "this one-molecule control does not establish A-D queue-level statistics"
+  ]
+}

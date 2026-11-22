@@ -1,0 +1,53 @@
+{
+  "schema": "vibedataset.gpu4pyscf_phase_profile_receipt.v1",
+  "project_commit": "2df4879e352e9d2ea63fb32efd47735fc59a3bee",
+  "driver": "scripts/profile_gpu4pyscf_phase_control.py",
+  "driver_sha256": "57908219b8c5add1de13e0e23a964f3f86a01c6e814bacbe686bdaa8d6aaf23b",
+  "manifest_sha256": "e08193beba0fd3b15d3b6c2ecf531b3b38c6cb8fef3da0ee95d19cd78858a635",
+  "gpu4pyscf_source_commit": "5a717f899cb40d64a5799ef1df7e3626c505c3bd",
+  "runtime": {
+    "gpu4pyscf_package_version": "1.8.1",
+    "cupy_package_version": "14.2.0",
+    "python": "3.11.17",
+    "gpu": "NVIDIA RTX PRO 6000 Blackwell Workstation Edition",
+    "precision": "FP64",
+    "threads": 4
+  },
+  "slurm": {
+    "partition": "main",
+    "gres": "gpu:pro6000:1",
+    "cpus_per_task": 4,
+    "mem": "16G",
+    "time_limit": "00:10:00",
+    "jobs": {
+      "A": "5528",
+      "C": "5529"
+    }
+  },
+  "controls": {
+    "molecule": "qm9-000001",
+    "arms": [
+      "A",
+      "C"
+    ],
+    "request_rows_per_arm": 3,
+    "phase_wall_and_cuda_event_timing": true,
+    "memory_pool_and_memgetinfo": true,
+    "kernel_launch_occupancy_flops": "not_collected",
+    "compile_jit_cache_hit": "not_separated"
+  },
+  "artifacts": {
+    "profile-A.json": "d79e009ad94d627b0156a8c60693c2fa4bc2103855d22011326ff40d051352f5",
+    "profile-C.json": "432ebc0fea0378a036dfaf736c5c62f0d166eb63910acc35fe0b0dd318045a5f",
+    "slurm-5528.out": "d8a083abe32cb72279b3ff3e064773228d6ab8c9ad69356ca7be2d5ba4596b98",
+    "slurm-5528.err": "6f223205a2908b93369966cfa357520bffdeed529a640fa4002ba272c61857a4",
+    "slurm-5529.out": "1282ee3bb3840b7c6f69b9a425bd174f3dd50b45c844ef4c6156a6c862bc80c5",
+    "slurm-5529.err": "6f223205a2908b93369966cfa357520bffdeed529a640fa4002ba272c61857a4"
+  },
+  "status": "accepted-bounded-control",
+  "limitations": [
+    "This is a one-molecule A/C telemetry control, not the complete A-D queue-level profile.",
+    "B/D patched backend, cold/warm split, CUPTI/Nsight counters and energy telemetry are not included.",
+    "The response phase includes the independent residual evaluation in this driver and is not split further."
+  ]
+}
