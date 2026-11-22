@@ -68,7 +68,7 @@
 | #35 benchmark contract | 已冻结合同，规模目标阻塞 | 3 个微型控制、306 条中型受控请求、完整 timing schema 和 source_kind ledger 已有。自然请求流为 0，1000 行 CC0 QM9 geometry manifest 已取得，但 response labels 和独立质量参考仍未取得。 |
 | #36 GPU4PySCF/PySCF 审计 | 项目 baseline 与官方 release tags 已取得，上游执行部分阻塞 | 固定当前源码、v1.9.0/v1.9.2 tag 树、28 行覆盖和 n2 官方 baseline 已提交。匹配 1.9.x 二进制环境的 tag-specific suite、完整上游 suite、CUPTI/Nsight 和多设备公平基线仍未知。 |
 | #37 profiling | 阶段 baseline 与单分子 A/C telemetry 已完成 | A–D 成本与 paired CI、以及 `qm9-000001` 的 CUDA event、阶段墙时、H2D/D2H 和显存池快照已归档。B/D、完整队列 telemetry、kernel launches、occupancy、FLOPs、CUPTI/Nsight 和能耗仍未知。 |
-| #38 PreparedPropertyBatch | planner/producer 边界已实现 | 同协议 bucket、单条失败隔离和 workspace fallback 已有 CPU 控制。真正跨样本 resident GPU runtime 尚未宣称。 |
+| #38 PreparedPropertyBatch | planner/producer 边界与 bounded GPU control 已实现 | 51 条 replay 仍为 8 bucket 的静态 accounting；另有 n2 同一 CUDA context 的 3 分子/9 请求 `nao=19` control，1 次 bucket setup、9/9 accepted，target 与已封存 C receipt 最大差 5.22×10⁻¹²。async streams、ragged batch、跨分子 operator reuse 和独立新 scorer 仍未完成。 |
 | #39 response asset compiler | identity planner 和证书边界已实现 | 17 direct、2 refine、1 reject 的无 oracle 计划和独立 replay 已有。GPU 资产编译与独立质量 scorer 仍需扩展。 |
 | #40 Hessian/CPKS | CPU/GPU/FD micro controls 已完成 | H₂O/NH₃/LiH RHF、H₂O/RKS(B3LYP) GPU Hessian、带电 UHF CPU control、H₂O/RHF GPU IR/Raman、CPU/GPU 逐分量回执和 H₂O/RHF 中心有限差分回执均已归档。VeloxChem 和多样本共享仍未运行。 |
 | #41 scale/ablation | partial-falsified | 17 几何、51 请求完成。1000-row 资产、第二 GPU 和十项 profiling/消融仍阻塞，10× gate 不成立。 |

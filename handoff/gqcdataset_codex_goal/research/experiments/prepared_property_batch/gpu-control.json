@@ -1,0 +1,421 @@
+{
+  "schema": "vibedataset.prepared_gpu4pyscf_control.v1",
+  "status": "accepted",
+  "manifest_sha256": "e08193beba0fd3b15d3b6c2ecf531b3b38c6cb8fef3da0ee95d19cd78858a635",
+  "gpu4pyscf_source_commit": "5a717f899cb40d64a5799ef1df7e3626c505c3bd",
+  "python": "3.11.17 (main, Oct  1 2026, 20:17:42) [GCC 14.3.0]",
+  "platform": "Linux-6.8.0-149-generic-x86_64-with-glibc2.35",
+  "protocol": {
+    "method": "RHF",
+    "basis": "sto-3g",
+    "basis_representation": "real_spherical",
+    "unit": "Bohr",
+    "precision": "FP64",
+    "origin": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "conv_tol": 1e-10,
+    "max_cycle": 100,
+    "response_tol": 1e-08,
+    "response_max_cycle": 50,
+    "device": "cuda",
+    "seed": 20261122
+  },
+  "molecules": [
+    "qm9-000009",
+    "qm9-000011",
+    "qm9-000017"
+  ],
+  "nao_by_molecule": {
+    "qm9-000009": 19,
+    "qm9-000011": 19,
+    "qm9-000017": 19
+  },
+  "request_count": 9,
+  "bucket_count": 1,
+  "resident_bucket_setup_count": 1,
+  "serial_setup_count_reference": 3,
+  "setup_reduction_ratio_reference": 0.3333333333333333,
+  "setup_receipts": {
+    "RHF|sto-3g|0|0|real_spherical|19": {
+      "bucket": "RHF|sto-3g|0|0|real_spherical|19",
+      "request_ids": [
+        "qm9-000009:cycle-one",
+        "qm9-000009:cycle-three",
+        "qm9-000009:cross-three",
+        "qm9-000011:cycle-one",
+        "qm9-000011:cycle-three",
+        "qm9-000011:cross-three",
+        "qm9-000017:cycle-one",
+        "qm9-000017:cycle-three",
+        "qm9-000017:cross-three"
+      ],
+      "molecule_names": [
+        "qm9-000009",
+        "qm9-000011",
+        "qm9-000017"
+      ],
+      "workspace_shape": [
+        19,
+        19
+      ],
+      "workspace_bytes": 2888,
+      "workspace_resident": true,
+      "setup_seconds": 11.570441516931169,
+      "memory_after_setup": {
+        "free_bytes": 100017963008,
+        "total_bytes": 101973491712,
+        "pool_used_bytes": 118272,
+        "pool_total_bytes": 896512
+      }
+    }
+  },
+  "receipts": [
+    {
+      "request_id": "qm9-000009:cycle-one",
+      "bucket": "RHF|sto-3g|0|0|real_spherical|19",
+      "status": "accepted",
+      "result": {
+        "molecule": "qm9-000009",
+        "trajectory": "cycle-one",
+        "fields_requested": [
+          "x"
+        ],
+        "fields_computed": [
+          "x"
+        ],
+        "fields_reused": [],
+        "targets": {
+          "xx": 7.37343775702109
+        },
+        "response_seconds": 2.0286573430057615,
+        "operator_calls": 9,
+        "operator_rows": 9,
+        "residual_linf": 1.0183710235506238e-07,
+        "host_to_device_bytes": 3896,
+        "device_to_host_bytes": 704,
+        "request_seconds": 2.2559918710030615,
+        "memory_after_request": {
+          "free_bytes": 100015865856,
+          "total_bytes": 101973491712,
+          "pool_used_bytes": 118272,
+          "pool_total_bytes": 896512
+        }
+      }
+    },
+    {
+      "request_id": "qm9-000009:cycle-three",
+      "bucket": "RHF|sto-3g|0|0|real_spherical|19",
+      "status": "accepted",
+      "result": {
+        "molecule": "qm9-000009",
+        "trajectory": "cycle-three",
+        "fields_requested": [
+          "x",
+          "y",
+          "z"
+        ],
+        "fields_computed": [
+          "y",
+          "z"
+        ],
+        "fields_reused": [
+          "x"
+        ],
+        "targets": {
+          "xx": 7.37343775702109,
+          "yy": 26.740859557527024,
+          "zz": 7.370698319489016,
+          "xy": -0.26173858555485796,
+          "xz": -0.001516085739955375,
+          "yz": 0.10523793299808804
+        },
+        "response_seconds": 1.8046775669790804,
+        "operator_calls": 8,
+        "operator_rows": 15,
+        "residual_linf": 5.784328777139192e-07,
+        "host_to_device_bytes": 4600,
+        "device_to_host_bytes": 1408,
+        "request_seconds": 2.033006757032126,
+        "memory_after_request": {
+          "free_bytes": 100015865856,
+          "total_bytes": 101973491712,
+          "pool_used_bytes": 118272,
+          "pool_total_bytes": 896512
+        }
+      }
+    },
+    {
+      "request_id": "qm9-000009:cross-three",
+      "bucket": "RHF|sto-3g|0|0|real_spherical|19",
+      "status": "accepted",
+      "result": {
+        "molecule": "qm9-000009",
+        "trajectory": "cross-three",
+        "fields_requested": [
+          "x",
+          "z"
+        ],
+        "fields_computed": [],
+        "fields_reused": [
+          "x",
+          "z"
+        ],
+        "targets": {
+          "xz": -0.001516085739955375,
+          "zx": -0.0015160856628419483
+        },
+        "response_seconds": null,
+        "operator_calls": 0,
+        "operator_rows": 0,
+        "residual_linf": null,
+        "host_to_device_bytes": 0,
+        "device_to_host_bytes": 0,
+        "request_seconds": 0.002202276955358684,
+        "memory_after_request": {
+          "free_bytes": 100015865856,
+          "total_bytes": 101973491712,
+          "pool_used_bytes": 118272,
+          "pool_total_bytes": 896512
+        }
+      }
+    },
+    {
+      "request_id": "qm9-000011:cycle-one",
+      "bucket": "RHF|sto-3g|0|0|real_spherical|19",
+      "status": "accepted",
+      "result": {
+        "molecule": "qm9-000011",
+        "trajectory": "cycle-one",
+        "fields_requested": [
+          "x"
+        ],
+        "fields_computed": [
+          "x"
+        ],
+        "fields_reused": [],
+        "targets": {
+          "xx": 13.443577358718763
+        },
+        "response_seconds": 4.226500559947453,
+        "operator_calls": 10,
+        "operator_rows": 10,
+        "residual_linf": 6.038859503717207e-07,
+        "host_to_device_bytes": 3864,
+        "device_to_host_bytes": 672,
+        "request_seconds": 4.651523208012804,
+        "memory_after_request": {
+          "free_bytes": 100015865856,
+          "total_bytes": 101973491712,
+          "pool_used_bytes": 118272,
+          "pool_total_bytes": 896512
+        }
+      }
+    },
+    {
+      "request_id": "qm9-000011:cycle-three",
+      "bucket": "RHF|sto-3g|0|0|real_spherical|19",
+      "status": "accepted",
+      "result": {
+        "molecule": "qm9-000011",
+        "trajectory": "cycle-three",
+        "fields_requested": [
+          "x",
+          "y",
+          "z"
+        ],
+        "fields_computed": [
+          "y",
+          "z"
+        ],
+        "fields_reused": [
+          "x"
+        ],
+        "targets": {
+          "xx": 13.443577358718763,
+          "yy": 13.09335340295047,
+          "zz": 8.866519535156542,
+          "xy": -2.288449875901961,
+          "xz": -2.5860543404723693,
+          "yz": 1.1353211513283787
+        },
+        "response_seconds": 3.371548154973425,
+        "operator_calls": 8,
+        "operator_rows": 16,
+        "residual_linf": 2.927365981397756e-06,
+        "host_to_device_bytes": 4536,
+        "device_to_host_bytes": 1344,
+        "request_seconds": 3.7948330369545147,
+        "memory_after_request": {
+          "free_bytes": 100015865856,
+          "total_bytes": 101973491712,
+          "pool_used_bytes": 118272,
+          "pool_total_bytes": 896512
+        }
+      }
+    },
+    {
+      "request_id": "qm9-000011:cross-three",
+      "bucket": "RHF|sto-3g|0|0|real_spherical|19",
+      "status": "accepted",
+      "result": {
+        "molecule": "qm9-000011",
+        "trajectory": "cross-three",
+        "fields_requested": [
+          "x",
+          "z"
+        ],
+        "fields_computed": [],
+        "fields_reused": [
+          "x",
+          "z"
+        ],
+        "targets": {
+          "xz": -2.5860543404723693,
+          "zx": -2.586049703700724
+        },
+        "response_seconds": null,
+        "operator_calls": 0,
+        "operator_rows": 0,
+        "residual_linf": null,
+        "host_to_device_bytes": 0,
+        "device_to_host_bytes": 0,
+        "request_seconds": 0.002010734984651208,
+        "memory_after_request": {
+          "free_bytes": 100015865856,
+          "total_bytes": 101973491712,
+          "pool_used_bytes": 118272,
+          "pool_total_bytes": 896512
+        }
+      }
+    },
+    {
+      "request_id": "qm9-000017:cycle-one",
+      "bucket": "RHF|sto-3g|0|0|real_spherical|19",
+      "status": "accepted",
+      "result": {
+        "molecule": "qm9-000017",
+        "trajectory": "cycle-one",
+        "fields_requested": [
+          "x"
+        ],
+        "fields_computed": [
+          "x"
+        ],
+        "fields_reused": [],
+        "targets": {
+          "xx": 14.17722783705462
+        },
+        "response_seconds": 3.792474293964915,
+        "operator_calls": 9,
+        "operator_rows": 9,
+        "residual_linf": 2.4007888632660013e-07,
+        "host_to_device_bytes": 3864,
+        "device_to_host_bytes": 672,
+        "request_seconds": 4.215711847995408,
+        "memory_after_request": {
+          "free_bytes": 100015865856,
+          "total_bytes": 101973491712,
+          "pool_used_bytes": 118272,
+          "pool_total_bytes": 896512
+        }
+      }
+    },
+    {
+      "request_id": "qm9-000017:cycle-three",
+      "bucket": "RHF|sto-3g|0|0|real_spherical|19",
+      "status": "accepted",
+      "result": {
+        "molecule": "qm9-000017",
+        "trajectory": "cycle-three",
+        "fields_requested": [
+          "x",
+          "y",
+          "z"
+        ],
+        "fields_computed": [
+          "y",
+          "z"
+        ],
+        "fields_reused": [
+          "x"
+        ],
+        "targets": {
+          "xx": 14.17722783705462,
+          "yy": 10.55789091271232,
+          "zz": 10.840261624664606,
+          "xy": -3.580090417044005,
+          "xz": -0.051243007382194734,
+          "yz": 0.03282990272395188
+        },
+        "response_seconds": 3.369864735053852,
+        "operator_calls": 8,
+        "operator_rows": 15,
+        "residual_linf": 1.3349396217332554e-06,
+        "host_to_device_bytes": 4536,
+        "device_to_host_bytes": 1344,
+        "request_seconds": 3.79548903205432,
+        "memory_after_request": {
+          "free_bytes": 100015865856,
+          "total_bytes": 101973491712,
+          "pool_used_bytes": 118272,
+          "pool_total_bytes": 896512
+        }
+      }
+    },
+    {
+      "request_id": "qm9-000017:cross-three",
+      "bucket": "RHF|sto-3g|0|0|real_spherical|19",
+      "status": "accepted",
+      "result": {
+        "molecule": "qm9-000017",
+        "trajectory": "cross-three",
+        "fields_requested": [
+          "x",
+          "z"
+        ],
+        "fields_computed": [],
+        "fields_reused": [
+          "x",
+          "z"
+        ],
+        "targets": {
+          "xz": -0.051243007382194734,
+          "zx": -0.05124343760433765
+        },
+        "response_seconds": null,
+        "operator_calls": 0,
+        "operator_rows": 0,
+        "residual_linf": null,
+        "host_to_device_bytes": 0,
+        "device_to_host_bytes": 0,
+        "request_seconds": 0.0020076408982276917,
+        "memory_after_request": {
+          "free_bytes": 100015865856,
+          "total_bytes": 101973491712,
+          "pool_used_bytes": 118272,
+          "pool_total_bytes": 896512
+        }
+      }
+    }
+  ],
+  "failures": [],
+  "memory_at_end": {
+    "free_bytes": 100015865856,
+    "total_bytes": 101973491712,
+    "pool_used_bytes": 115200,
+    "pool_total_bytes": 896512
+  },
+  "elapsed_seconds": 32.32368272996973,
+  "scientific_backend": "official GPU4PySCF; no fused or altered kernels",
+  "workspace_semantics": "resident orchestration buffer, not a claim of shared GPU4PySCF operator assets",
+  "limitations": [
+    "Three same-AO-shape molecules are used as a bounded control, not the 1000-row target.",
+    "The control measures one process and one CUDA context. It does not compare separate-process wall time.",
+    "Async streams, ragged batching, fused J/K and cross-molecule operator reuse are not implemented.",
+    "Independent scorer coverage for this new control is not part of the receipt."
+  ],
+  "source_receipt": "environment/gpu4pyscf-20261122/result.json"
+}

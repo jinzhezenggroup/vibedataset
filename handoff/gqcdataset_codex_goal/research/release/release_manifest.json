@@ -1,6 +1,6 @@
 {
   "schema": "vibedataset.research_release.v1",
-  "git_head": "ec2fddbe4d36437816da2c1fb4cdae0d712a46b2",
+  "git_head": "6c2280b7d51e4ad65c3fcd50ecca13371b0fae07",
   "artifacts": [
     {
       "path": "README.md",
@@ -48,7 +48,15 @@
     },
     {
       "path": "handoff/gqcdataset_codex_goal/research/experiments/prepared_property_batch/README.md",
-      "sha256": "90f9d415580900cdb86483f88efb65ab8307cc5ddf1b60fd28995ba6487d71d6"
+      "sha256": "9b50d286820e456807913af5faf2fddd739b78a6dc9be8c42aa948931c09f0e5"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/research/experiments/prepared_property_batch/gpu-control.json",
+      "sha256": "446b89ab30e24c0a9ed9e3af7b98c0a23d0b477ff3b63b0955a253799556ad5f"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/research/experiments/prepared_property_batch/gpu-control-verification.json",
+      "sha256": "88fa13195906b319cf489588055b28d0ae44d228e3d496607ce87e6744816779"
     },
     {
       "path": "handoff/gqcdataset_codex_goal/research/experiments/response_asset_compiler/plan.json",

@@ -1,0 +1,11 @@
+{
+  "schema": "vibedataset.prepared_gpu4pyscf_control_verification.v1",
+  "status": "passed",
+  "request_count": 9,
+  "target_components_checked": 27,
+  "max_target_diff_vs_archived_C": 5.218936394157936e-12,
+  "max_runtime_residual_linf": 2.927365981397756e-06,
+  "independent_archived_C_rows": 51,
+  "errors": [],
+  "scope": "archived C raw receipt comparison plus independent scorer acceptance coverage; no new scorer process"
+}

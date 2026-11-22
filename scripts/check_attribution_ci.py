@@ -73,6 +73,21 @@ def main():
         ],
         cwd=ROOT,
     )
+    subprocess.check_call(
+        [
+            sys.executable,
+            str(SCRIPTS / "verify_prepared_gpu4pyscf_control.py"),
+            "--result",
+            str(ROOT / "handoff/gqcdataset_codex_goal/research/experiments/prepared_property_batch/gpu-control.json"),
+            "--raw-c",
+            str(EXP / "raw/raw-C.jsonl"),
+            "--score",
+            str(EXP / "score.json"),
+            "--out",
+            str(args.out / "prepared-gpu-control.json"),
+        ],
+        cwd=ROOT,
+    )
     archived_hessian = read(hessian_artifact)
     replayed_hessian = read(generated_hessian)
     require(replayed_hessian["schema"] == archived_hessian["schema"], "Hessian crosscheck schema")
