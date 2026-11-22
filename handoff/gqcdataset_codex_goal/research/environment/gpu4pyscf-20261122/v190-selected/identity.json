@@ -1,0 +1,11 @@
+{
+  "version": "1.9.0",
+  "wheel_sha256": "8b79e3a68be8b7fedf371f8d6d402ab3577012b4f611c4c4a58599b2409f5f26",
+  "cphf_sha256": "1010af1ff5cb62e424223e6c65bad9344e7a6e37bf6882ff574efddb9e2839de",
+  "python": "3.11.17",
+  "cupy": "14.2.0",
+  "pyscf": "2.14.0",
+  "engine": "cupy",
+  "gpu": "NVIDIA RTX PRO 6000 Blackwell Workstation Edition",
+  "cuda_runtime": 12090
+}

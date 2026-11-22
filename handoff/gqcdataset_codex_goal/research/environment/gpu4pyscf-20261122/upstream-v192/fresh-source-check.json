@@ -1,0 +1,35 @@
+{
+  "status": "passed",
+  "trees": {
+    "GPU4PySCF": {
+      "commit": "5a717f899cb40d64a5799ef1df7e3626c505c3bd",
+      "tree": "3294a795850626efec9f27e29a1ba97ff418d805",
+      "verified_tracked_files": 1031
+    },
+    "PySCF": {
+      "commit": "c63a953ba603a5ad8c1d65d88da72aaf05ede4d8",
+      "tree": "7b08a26aeaf78d02d24822cd32e070597b3f571c",
+      "verified_tracked_files": 2295
+    },
+    "GPU4PySCF-v1.9.0": {
+      "commit": "2fdc1951670a8e173dce063e697727bbc9f97616",
+      "tree": "b0c4994d3e62477d54443a54b934307b2700b075",
+      "verified_tracked_files": 993
+    },
+    "GPU4PySCF-v1.9.2": {
+      "commit": "8536a80c1e03260aab030e108ef1d181a3709057",
+      "tree": "69fdba009b630fefbaf15dfda71586f368a37a26",
+      "verified_tracked_files": 1002
+    }
+  },
+  "coverage_rows": 34,
+  "executed_rows": 17,
+  "unknowns": [
+    "driver package build flags",
+    "CUPTI/Nsight traces",
+    "power and energy",
+    "tag-specific execution in matching 1.9.x binary environment"
+  ],
+  "unknowns_scope": "historical baseline.json, separate from later release-tag executions",
+  "errors": []
+}

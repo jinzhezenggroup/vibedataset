@@ -1,0 +1,208 @@
+{
+  "schema": "vibedataset.single_gpu_pairs.v1",
+  "manifest_sha256": "e08193beba0fd3b15d3b6c2ecf531b3b38c6cb8fef3da0ee95d19cd78858a635",
+  "boards": {
+    "rtx5090": {
+      "identity": {
+        "wheel_sha256": "519d78d412392ffa7ba73683742e01716ac2be303462c6b420b8712e003880fd",
+        "source_sha256": "1010af1ff5cb62e424223e6c65bad9344e7a6e37bf6882ff574efddb9e2839de",
+        "pci": "0000:41:00.0",
+        "gpu": "NVIDIA GeForce RTX 5090",
+        "gpu4pyscf": "1.9.2",
+        "cupy": "14.2.0",
+        "cublas": "12.9.2.10",
+        "pyscf": "2.14.0",
+        "cuda_runtime": 12090,
+        "python": "3.11.17",
+        "engine": "cupy",
+        "device_state": "570.86.16, 32607 MiB, 575.00 W, 3090 MHz, 14001 MHz",
+        "slurm_job": "2401"
+      },
+      "rows_scored": 204,
+      "quality_eligible": true,
+      "arms": {
+        "A": {
+          "requested": 51,
+          "produced": 51,
+          "failures": 0,
+          "scorer_rejected": 0,
+          "request_wall_sum_s": 129.25909172696993,
+          "median_request_s": 2.140774497296661,
+          "p95_request_s": 5.301513583399355,
+          "producer_elapsed_s": 129.2807962722145,
+          "producer_rate_rows_per_s": 0.39449014448065484
+        },
+        "B": {
+          "requested": 51,
+          "produced": 51,
+          "failures": 0,
+          "scorer_rejected": 0,
+          "request_wall_sum_s": 186.16542180161923,
+          "median_request_s": 2.929744345601648,
+          "p95_request_s": 6.1752274197060615,
+          "producer_elapsed_s": 186.18681715521961,
+          "producer_rate_rows_per_s": 0.27391842655263016
+        },
+        "C": {
+          "requested": 51,
+          "produced": 51,
+          "failures": 0,
+          "scorer_rejected": 0,
+          "request_wall_sum_s": 102.16804427886382,
+          "median_request_s": 1.2730217329226434,
+          "p95_request_s": 5.3008315223269165,
+          "producer_elapsed_s": 102.18928699707612,
+          "producer_rate_rows_per_s": 0.49907384128689763
+        },
+        "D": {
+          "requested": 51,
+          "produced": 51,
+          "failures": 0,
+          "scorer_rejected": 0,
+          "request_wall_sum_s": 123.79355425247923,
+          "median_request_s": 2.0351631911471486,
+          "p95_request_s": 5.30900692846626,
+          "producer_elapsed_s": 123.81492381123826,
+          "producer_rate_rows_per_s": 0.4119051115175092
+        }
+      },
+      "within_device_molecule_time_ratios": {
+        "A/C": {
+          "geometric_mean": 1.3057663707810776,
+          "molecule_paired_bootstrap_95ci": [
+            1.2515910816065485,
+            1.362179962146102
+          ]
+        },
+        "B/A": {
+          "geometric_mean": 1.450662856297182,
+          "molecule_paired_bootstrap_95ci": [
+            1.3720303940571656,
+            1.5169613824951522
+          ]
+        },
+        "D/C": {
+          "geometric_mean": 1.2319524641171369,
+          "molecule_paired_bootstrap_95ci": [
+            1.1969024220477114,
+            1.259391851272636
+          ]
+        }
+      },
+      "fresh_scorer_seconds": 208.11670112097636,
+      "independent_cpu": {
+        "scored": 204,
+        "accepted": 204,
+        "rejected": 0,
+        "seconds": 2.1427495120005915,
+        "physical_controls_rejected": 6,
+        "maximum_accepted_candidate_residual": 4.458317505777465e-06
+      },
+      "max_target_error": 5.371304701642932e-07
+    },
+    "pro6000": {
+      "identity": {
+        "wheel_sha256": "519d78d412392ffa7ba73683742e01716ac2be303462c6b420b8712e003880fd",
+        "source_sha256": "1010af1ff5cb62e424223e6c65bad9344e7a6e37bf6882ff574efddb9e2839de",
+        "pci": "0000:C2:00.0",
+        "gpu": "NVIDIA RTX PRO 6000 Blackwell Workstation Edition",
+        "gpu4pyscf": "1.9.2",
+        "cupy": "14.2.0",
+        "cublas": "12.9.2.10",
+        "pyscf": "2.14.0",
+        "cuda_runtime": 12090,
+        "python": "3.11.17",
+        "engine": "cupy",
+        "device_state": "595.99.02, 97887 MiB, 600.00 W, 3090 MHz, 14001 MHz",
+        "slurm_job": "5634"
+      },
+      "rows_scored": 204,
+      "quality_eligible": true,
+      "arms": {
+        "A": {
+          "requested": 51,
+          "produced": 51,
+          "failures": 0,
+          "scorer_rejected": 0,
+          "request_wall_sum_s": 201.00849865330383,
+          "median_request_s": 3.8020117349224165,
+          "p95_request_s": 9.292986608517822,
+          "producer_elapsed_s": 201.02500237501226,
+          "producer_rate_rows_per_s": 0.25369978558617035
+        },
+        "B": {
+          "requested": 51,
+          "produced": 51,
+          "failures": 0,
+          "scorer_rejected": 0,
+          "request_wall_sum_s": 305.42683420632966,
+          "median_request_s": 4.993163733044639,
+          "p95_request_s": 10.917853164544795,
+          "producer_elapsed_s": 305.44315135793295,
+          "producer_rate_rows_per_s": 0.16697051406543326
+        },
+        "C": {
+          "requested": 51,
+          "produced": 51,
+          "failures": 0,
+          "scorer_rejected": 0,
+          "request_wall_sum_s": 155.09556391148362,
+          "median_request_s": 2.34386101400014,
+          "p95_request_s": 9.492284578969702,
+          "producer_elapsed_s": 155.11116691003554,
+          "producer_rate_rows_per_s": 0.3287964433249348
+        },
+        "D": {
+          "requested": 51,
+          "produced": 51,
+          "failures": 0,
+          "scorer_rejected": 0,
+          "request_wall_sum_s": 200.61573416623287,
+          "median_request_s": 4.003361865063198,
+          "p95_request_s": 9.658273496490438,
+          "producer_elapsed_s": 200.63113897491712,
+          "producer_rate_rows_per_s": 0.25419782921322104
+        }
+      },
+      "within_device_molecule_time_ratios": {
+        "A/C": {
+          "geometric_mean": 1.2880992742150985,
+          "molecule_paired_bootstrap_95ci": [
+            1.2497208043093058,
+            1.334138020047402
+          ]
+        },
+        "B/A": {
+          "geometric_mean": 1.5076603524069268,
+          "molecule_paired_bootstrap_95ci": [
+            1.4580409097597427,
+            1.5505037985436425
+          ]
+        },
+        "D/C": {
+          "geometric_mean": 1.2871012901596115,
+          "molecule_paired_bootstrap_95ci": [
+            1.2564653954661196,
+            1.3198896555888018
+          ]
+        }
+      },
+      "fresh_scorer_seconds": 352.3606416970724,
+      "independent_cpu": {
+        "scored": 204,
+        "accepted": 204,
+        "rejected": 0,
+        "seconds": 2.157860477000213,
+        "physical_controls_rejected": 6,
+        "maximum_accepted_candidate_residual": 4.4583175033210964e-06
+      },
+      "max_target_error": 5.371305359241907e-07
+    }
+  },
+  "scope": "one run per arm per device; molecules are resampled as complete three-request blocks",
+  "metric": "producer request wall, including allocated setup and SCF but excluding the fresh scorer and final publication",
+  "bootstrap_unit": "molecule",
+  "bootstrap_rounds": 4000,
+  "seed": 20261122,
+  "ten_x_producer_threshold_met": false
+}

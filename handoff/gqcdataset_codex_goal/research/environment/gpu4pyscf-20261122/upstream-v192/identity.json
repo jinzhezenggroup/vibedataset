@@ -1,0 +1,19 @@
+{
+  "packages": {
+    "gpu4pyscf-cuda12x": "1.9.2",
+    "pyscf": "2.14.0",
+    "cupy-cuda12x": "14.2.0",
+    "nvidia-cublas-cu12": "12.9.2.10",
+    "gpu4pyscf-libxc-cuda12x": "0.8.1",
+    "pytest": "9.2.0",
+    "pytest-benchmark": "5.3.1"
+  },
+  "python": "3.11.17 (main, Oct  1 2026, 20:17:42) [GCC 14.3.0]",
+  "num_devices": 1,
+  "device": "NVIDIA RTX PRO 6000 Blackwell Workstation Edition",
+  "cuda_runtime": 12090,
+  "driver": "595.99.02",
+  "cphf_sha256": "1010af1ff5cb62e424223e6c65bad9344e7a6e37bf6882ff574efddb9e2839de",
+  "wheel_build_flags": null,
+  "omp_threads": "2"
+}

@@ -1,0 +1,51 @@
+{
+  "schema": "vibedataset.attribution_4arm.telemetry_run.v1",
+  "arm": "A",
+  "backend": "gpu4pyscf-official",
+  "orchestration": "native-ordinary",
+  "manifest": "full.json",
+  "manifest_sha256": "e08193beba0fd3b15d3b6c2ecf531b3b38c6cb8fef3da0ee95d19cd78858a635",
+  "driver_sha256": "b658031181b5b3796037b6f7e9fd8e9d61d81d6d5168be1bf6d4b8a1225bfddb",
+  "source_commit": "5710cb751d0c6942141fa618c444e3ca5fe65e07",
+  "gpu4pyscf_source_commit": "8536a80c1e03260aab030e108ef1d181a3709057",
+  "patch_sha256": null,
+  "python": "3.11.17 (main, Oct 13 2026, 16:45:47) [GCC 15.3.0]",
+  "platform": "Linux-6.8.0-138-generic-x86_64-with-glibc2.35",
+  "device": {
+    "cuda_device": 0,
+    "cuda_name": "NVIDIA GeForce RTX 5090",
+    "cuda_total_bytes": 33680588800,
+    "cuda_free_bytes_at_start": 33102430208,
+    "cupy_version": "14.2.0"
+  },
+  "record_count": 51,
+  "failed_count": 0,
+  "failures": [],
+  "elapsed_seconds": 129.2807962722145,
+  "timing_fields": [
+    "prepare",
+    "environment_startup",
+    "data_read",
+    "compile_jit",
+    "warmup",
+    "h2d",
+    "scf_fock",
+    "cp_hf_gmres",
+    "property_readout",
+    "physical_residual",
+    "independent_scorer",
+    "serialization",
+    "retry",
+    "fallback"
+  ],
+  "timing_semantics": {
+    "compile_jit": "null because official API does not expose compilation timing",
+    "independent_scorer": "null because the scorer is a separate process",
+    "end_to_end_wall_seconds": "request process wall time from request entry through row construction",
+    "known_seconds": "sum of non-null timing fields",
+    "unattributed_seconds": "end_to_end_wall_seconds minus known_seconds, never reclassified as a speedup"
+  },
+  "blind": true,
+  "oracle_loaded": false,
+  "scorer_loaded": false
+}
