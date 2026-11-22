@@ -14,7 +14,9 @@ def main():
     errors=[]
     if c["manifest_sha256"]!=m["manifest_sha256"]:errors.append("manifest binding")
     if len(rows)!=c["middle_queue_count"] or len(rows)<100:errors.append("middle queue denominator")
-    if c["target_scale_status"]!="blocked-unavailable":errors.append("unmet scale must remain blocked")
+    if c["target_scale_status"]!="geometry-manifest-available-response-labels-blocked":errors.append("scale status")
+    scale=Path(__file__).resolve().parents[1]/c["scale_geometry_manifest"]
+    if not scale.exists() or json.loads(scale.read_text())["count"]!=1000:errors.append("scale geometry manifest")
     for row in rows:
       if geometry_hash(row)!=row["geometry_hash"]:errors.append("geometry hash")
       if row["source_kind"]!="controlled-request":errors.append("source kind")

@@ -4,8 +4,10 @@
   "micro_workload_count": 3,
   "middle_queue_count": 306,
   "target_scale": 1000,
-  "target_scale_status": "blocked-unavailable",
-  "blocked_reason": "No additional protocol-consistent, openly licensed 1000-row response request asset was acquired. The contract keeps the 102-row controlled queue and records the target as unmet.",
+  "scale_geometry_manifest": "handoff/gqcdataset_codex_goal/research/performance/qm9-scale-manifest.json",
+  "scale_geometry_count": 1000,
+  "target_scale_status": "geometry-manifest-available-response-labels-blocked",
+  "blocked_reason": "A licensed 1000-row QM9 geometry manifest is now archived. Protocol-consistent response labels, quality references and A\u2013D execution are still unavailable. The contract keeps the 306-row controlled queue and does not treat geometry-only rows as completed labels.",
   "timing_fields": [
     "prepare",
     "environment_startup",
