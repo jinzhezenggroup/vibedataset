@@ -2,7 +2,7 @@
   "schema": "vibedataset.research_release.v2",
   "git_head": "92d9bac6384208881827313709fc0a03f60b0bad",
   "git_head_kind": "audited_source_commit",
-  "built_from_git_head": "2cdd6a8e0cdcf396bab87f74393af06491ec59a6",
+  "built_from_git_head": "d958d995560a95c796f767e147a66ae239cf1a10",
   "artifacts": [
     {
       "path": "README.md",
@@ -138,7 +138,7 @@
     },
     {
       "path": "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/v1.9.2-wheel-tests/v1.9.2-wheel-test-receipt.json",
-      "sha256": "0a8c5fe0dafc5094a9c9e2106d15045f591aeee80c1ac4d4fa89e907ec1e6308"
+      "sha256": "28999fc6e08625f0eb5ce0b0a0b2fd1184c22eab8c29416ee7d5faa77e45c776"
     },
     {
       "path": "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/v1.9.2-wheel-tests/run-tests.slurm",
@@ -174,7 +174,7 @@
     },
     {
       "path": "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/v1.9.2-wheel-tests/slurm-5554.err",
-      "sha256": "bd505afc85072d928692cd9f79a90308b5e88410cf272d362610d8dc873a7b74"
+      "sha256": "4b88f5e4b71b4086ff1aae56c4851a6323d18b02b39aece371ec11c1d1d725c9"
     },
     {
       "path": "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/v1.9.2-wheel-tests/slurm-5555.out",
@@ -190,7 +190,7 @@
     },
     {
       "path": "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/v1.9.2-wheel-tests/slurm-5556.err",
-      "sha256": "42e1af7eb418ab91fca3dd212911542217b8e64fd03bfd8ffb02eb87f84dbda6"
+      "sha256": "804eac2e2a8718d9afbec78b831f4cc20900b3ead56b289f8588c29d9ba878e6"
     },
     {
       "path": "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/v1.9.2-wheel-tests/slurm-5557.out",
@@ -198,7 +198,7 @@
     },
     {
       "path": "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/v1.9.2-wheel-tests/slurm-5557.err",
-      "sha256": "42e1af7eb418ab91fca3dd212911542217b8e64fd03bfd8ffb02eb87f84dbda6"
+      "sha256": "804eac2e2a8718d9afbec78b831f4cc20900b3ead56b289f8588c29d9ba878e6"
     },
     {
       "path": "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/v1.9.2-wheel-tests/slurm-5558.out",
