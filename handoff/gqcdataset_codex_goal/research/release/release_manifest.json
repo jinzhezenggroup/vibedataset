@@ -1,6 +1,6 @@
 {
   "schema": "vibedataset.research_release.v1",
-  "git_head": "6c2280b7d51e4ad65c3fcd50ecca13371b0fae07",
+  "git_head": "e3ae670e31cf8d75ae465fc490a10da8cc7768ef",
   "artifacts": [
     {
       "path": "README.md",
@@ -89,6 +89,18 @@
     {
       "path": "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/baseline.json",
       "sha256": "24480bceff28eb025625de47eaf33af722aaac6a6612efcd587353a5d075721d"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/result.json",
+      "sha256": "364e680f19a61be2e8d60d0f892414fec07daab29e2b8e5e53cc71194ec69448"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/slurm-5530.out",
+      "sha256": "78e34b9acf5199f653d8d5b2c43e853aafb75743418f0e97b79827562383d01a"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/slurm-5530.err",
+      "sha256": "6f223205a2908b93369966cfa357520bffdeed529a640fa4002ba272c61857a4"
     },
     {
       "path": "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/phase-profile-control/README.md",

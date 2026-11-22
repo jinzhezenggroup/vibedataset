@@ -1,0 +1,4 @@
+/home/lhshen/miniconda3/envs/xtbflow-qc/lib/python3.11/site-packages/gpu4pyscf/lib/cutensor.py:154: UserWarning: using cupy as the tensor contraction engine.
+  warnings.warn(f'using {contract_engine} as the tensor contraction engine.')
+/home/lhshen/miniconda3/envs/xtbflow-qc/lib/python3.11/site-packages/gpu4pyscf/lib/cutensor.py:154: UserWarning: using cupy as the tensor contraction engine.
+  warnings.warn(f'using {contract_engine} as the tensor contraction engine.')
