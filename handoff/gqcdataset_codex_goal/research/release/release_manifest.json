@@ -1,6 +1,6 @@
 {
   "schema": "vibedataset.research_release.v1",
-  "git_head": "edbb42cee4cbd25036ab88425f196d4e6c2cd1fd",
+  "git_head": "9631f99ebd841be8d6793c10549d3f8bacfd3737",
   "artifacts": [
     {
       "path": "README.md",
@@ -44,7 +44,7 @@
     },
     {
       "path": "handoff/gqcdataset_codex_goal/research/experiments/prepared_property_batch/README.md",
-      "sha256": "a8c8da9ca8bec06512fb70a42bb5a7af7df2178e53314e54f4c558153d7d28dd"
+      "sha256": "90f9d415580900cdb86483f88efb65ab8307cc5ddf1b60fd28995ba6487d71d6"
     },
     {
       "path": "handoff/gqcdataset_codex_goal/research/experiments/response_asset_compiler/plan.json",
