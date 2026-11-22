@@ -1,6 +1,6 @@
 {
   "schema": "vibedataset.research_release.v1",
-  "git_head": "113b8d2a77b3640d4f2aed582e38c0238224d2e2",
+  "git_head": "53cbc32a935cc908e75f9f73fa66d74da2c980d2",
   "artifacts": [
     {
       "path": "README.md",
@@ -35,8 +35,12 @@
       "sha256": "1f7194bbacb40a6f4eec8ac81b8145599fd4cd260a4eb4bc3f347b99876ecf89"
     },
     {
+      "path": "handoff/gqcdataset_codex_goal/research/performance/scale_ablation.md",
+      "sha256": "acc5723852112933381feeff55524442f248c4843a84a94c3e3c5d904f13613f"
+    },
+    {
       "path": "handoff/gqcdataset_codex_goal/research/performance/scale_ablation_plan.json",
-      "sha256": "a08951076aa9c7240571f55209bcb148d7644ad34473c2a5c307a23061c2fb95"
+      "sha256": "4499b819d3a51ac26f92d7510af87e8ddf9f75f08c4c2fd3a34bdc9cd9b4d884"
     },
     {
       "path": "handoff/gqcdataset_codex_goal/research/audits/SOURCE_AUDIT_32.md",
