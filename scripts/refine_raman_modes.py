@@ -41,16 +41,18 @@ def main():
         raise ValueError("refinement protocol mismatch")
     if args.shared_result:
         run = json.loads(args.shared_result.read_bytes())
-        if (run["mode"] != "shared" or run["protocol_sha256"] != sha(args.protocol)
-                or sha(args.shared_result) != plan["source_shared_sha256"]):
+        mode = plan.get("source_mode", "shared")
+        source_digest = plan.get("source_run_sha256", plan.get("source_shared_sha256"))
+        if (run["mode"] != mode or mode not in {"serial", "shared"} or run["protocol_sha256"] != sha(args.protocol)
+                or sha(args.shared_result) != source_digest):
             raise ValueError("mismatched shared Hessian")
         candidates = [r["result"]["result"]["hessian"] for r in run["requests"]
                       if r["status"] == "accepted" and r["result"]["molecule"] == case["id"]
                       and r["result"]["property"] == "hessian"]
-        if not candidates or any(v != candidates[0] for v in candidates[1:]):
+        if not candidates or any(not np.allclose(v,candidates[0],rtol=0,atol=1e-12) for v in candidates[1:]):
             raise ValueError("missing or ambiguous shared Hessian")
         observed = candidates[0]
-        source_hashes = dict(source_shared_sha256=sha(args.shared_result))
+        source_hashes = {"source_"+mode+"_sha256": sha(args.shared_result)}
     else:
         receipt = json.loads((args.gpu_run / "run.json").read_text())
         events = args.gpu_run / "events.jsonl"
