@@ -66,6 +66,8 @@ def main():
             "handoff/gqcdataset_codex_goal/research/experiments/hessian_cphf/results.json",
             "--gpu",
             "handoff/gqcdataset_codex_goal/research/experiments/hessian_cphf/gpu-results.json",
+            "--cpu-rks",
+            "handoff/gqcdataset_codex_goal/research/experiments/hessian_cphf/cpu-rks.json",
             "--finite-difference",
             "handoff/gqcdataset_codex_goal/research/experiments/hessian_cphf/finite-difference.json",
             "--out",

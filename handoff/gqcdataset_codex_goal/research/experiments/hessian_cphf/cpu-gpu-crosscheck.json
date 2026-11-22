@@ -21,6 +21,7 @@
   "inputs": {
     "cpu": "handoff/gqcdataset_codex_goal/research/experiments/hessian_cphf/results.json",
     "gpu": "handoff/gqcdataset_codex_goal/research/experiments/hessian_cphf/gpu-results.json",
+    "cpu_rks": "handoff/gqcdataset_codex_goal/research/experiments/hessian_cphf/cpu-rks.json",
     "finite_difference": "handoff/gqcdataset_codex_goal/research/experiments/hessian_cphf/finite-difference.json"
   },
   "comparisons": [
@@ -65,6 +66,26 @@
       "status": "accepted"
     }
   ],
+  "rks_comparison": {
+    "cpu_name": "h2o-rks",
+    "gpu_name": "h2o-rks",
+    "shape": [
+      3,
+      3,
+      3,
+      3
+    ],
+    "elements": 81,
+    "cpu_hessian_sha256": "4197a8df3944bcf1da62c82b4e2b6f29d010cf68ccc75dc9eae4a0bb008ff1c0",
+    "gpu_hessian_sha256": "8f5647e44ac4e32dcdca98461307022e89046bcbe707493330e3a07e00c23680",
+    "cpu_value_digest": "7567ec30327c473f0d36893e8e4397ace7fb051d71d024b1db49c26e4840f265",
+    "gpu_value_digest": "87de8807ca4e1a4563fedbd9ecdf902c382d7556c9365556df2465d08d5b6006",
+    "energy_abs_diff_hartree": 5.542233338928781e-13,
+    "max_abs_hessian_diff": 1.7528470670491458e-06,
+    "rms_hessian_diff": 4.1881565265558724e-07,
+    "max_abs_tolerance": 1e-05,
+    "status": "accepted"
+  },
   "finite_difference": {
     "analytic_name": "h2o",
     "finite_difference_step_bohr": 0.0001,
@@ -84,8 +105,7 @@
   },
   "status": "accepted",
   "limitations": [
-    "Only H2O/RHF and NH3/RHF were paired across CPU and GPU.",
-    "The GPU RKS(B3LYP) row has no matching CPU RKS control in this artifact.",
+    "H2O/RHF and NH3/RHF use a 1e-7 elementwise tolerance. H2O/RKS(B3LYP) uses the separately recorded CPU RKS control and its 1e-5 tolerance when provided.",
     "This is an elementwise micro-control and does not replace a VeloxChem cross-check."
   ]
 }
