@@ -85,7 +85,7 @@ def device_info(cupy) -> dict:
     }
 
 
-def solve_fields(cupy, cphf, mf, field_indices, tol, max_cycle, backend_cache, *, position=None, keep_device=False):
+def solve_fields(cupy, cphf, mf, field_indices, tol, max_cycle, backend_cache, *, position=None, keep_device=False, on_operator=None):
     """Solve a batch of electric-field response columns and return diagnostics."""
     from gpu4pyscf.properties import polarizability
 
@@ -106,6 +106,8 @@ def solve_fields(cupy, cphf, mf, field_indices, tol, max_cycle, backend_cache, *
     def fvind_counted(mo1):
         counters["operator_calls"] += 1
         counters["operator_rows"] += int(mo1.shape[0])
+        if on_operator is not None:
+            on_operator()
         return fvind_original(mo1)
 
     started = time.perf_counter()

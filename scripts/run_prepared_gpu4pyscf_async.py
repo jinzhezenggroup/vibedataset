@@ -4,6 +4,7 @@
 from __future__ import annotations
 import argparse
 from collections import deque
+from concurrent.futures import ThreadPoolExecutor
 import hashlib
 import itertools
 import json
@@ -187,7 +188,20 @@ def options():
         choices=("direct", "adjoint"),
         help="publish scalar polarizabilities with certificates for the actually solved columns",
     )
+    p.add_argument(
+        "--overlap-submission",
+        action="store_true",
+        help="dispatch previous readouts from a separate host worker during the next official operator chain",
+    )
     args = p.parse_args()
+    if args.overlap_submission and (
+        args.mode != "async_streams"
+        or args.workers < 2
+        or args.response_action != "official"
+    ):
+        p.error(
+            "overlap submission needs async streams, two staging slots and the official operator"
+        )
     if min(args.workers, args.batch_size) < 1 or args.workspace_bytes < 0:
         p.error("invalid staging limits")
     return args
@@ -299,8 +313,29 @@ def main():
             slots.append(ReadoutSlot(cp, maxima, args.mode == "async_streams"))
             allocs += 1
 
+    host_worker = (
+        ThreadPoolExecutor(max_workers=1, thread_name_prefix="owned-readouts")
+        if args.overlap_submission
+        else None
+    )
+    pending = {}
+    submitted = {}
+
+    def submit_owned(slot, payload, ready):
+        with cp.cuda.Device(0):
+            slot.submit(payload, kernel, ready)
+
+    def submit_pending():
+        for slot in list(pending):
+            payload, ready = pending.pop(slot)
+            submitted[slot] = host_worker.submit(submit_owned, slot, payload, ready)
+
     def finish_first():
         slot = busy.popleft()
+        if slot in pending:
+            submit_pending()
+        if slot in submitted:
+            submitted.pop(slot).result()
         blocks.append(slot.finish(origin))
         if args.resident:
             slots.append(slot)
@@ -400,6 +435,7 @@ def main():
                             None,
                             position=pos,
                             keep_device=True,
+                            on_operator=submit_pending if host_worker else None,
                         )
                     else:
                         from prepared_dense_response import DenseResponse
@@ -481,12 +517,17 @@ def main():
         else:
             slot = ReadoutSlot(cp, capacity(group), args.mode == "async_streams")
             allocs += 1
-        slot.submit(payload, kernel, ready)
+        if host_worker:
+            pending[slot] = (payload, ready)
+        else:
+            slot.submit(payload, kernel, ready)
         busy.append(slot)
         if args.mode == "serial":
             finish_first()
     while busy:
         finish_first()
+    if host_worker:
+        host_worker.shutdown(wait=True)
     primary.synchronize()
     transfer.synchronize()
     results = []
@@ -536,6 +577,7 @@ def main():
         batch_size=args.batch_size,
         response_action=args.response_action,
         target_only=args.target_only,
+        overlap_submission=args.overlap_submission,
         dense_eri_budget=args.dense_eri_budget,
         ragged=args.ragged,
         resident=args.resident,
