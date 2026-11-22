@@ -111,6 +111,8 @@ def main():
             raw_path = RESEARCH / 'inventories' / f'{name}.json'
             archived = raw_path.with_suffix('.json.gz')
             item = dict(source)
+            if "release_variant_receipt" in source:
+                item["release_variants"] = json.loads((BASE / source["release_variant_receipt"]).read_bytes())["tags"]
             receipts = sorted((RESEARCH / 'acquisition').glob(f'{name}-[0-9]*.json'))
             item['acquisition_receipts'] = [str(p.relative_to(BASE)) for p in receipts]
             if not raw_path.exists() and not archived.exists():

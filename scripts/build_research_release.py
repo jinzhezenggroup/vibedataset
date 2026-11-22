@@ -165,6 +165,31 @@ for arm in "ABCD":
         RELEASE_ARTIFACTS.extend([f"{NSIGHT}/{arm}-{state}.json.gz", f"{NSIGHT}/scientific/{arm}-{state}.jsonl.gz"])
 
 
+EVIDENCE_V192 = "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122"
+RELEASE_ARTIFACTS.extend([
+    "handoff/gqcdataset_codex_goal/research/sources.lock.json",
+    "handoff/gqcdataset_codex_goal/research/audits/gpu4pyscf_source_coverage.csv",
+    "handoff/gqcdataset_codex_goal/research/audits/gpu4pyscf.md",
+    "scripts/check_gpu4pyscf_audit.py", "scripts/report_gpu4pyscf_upstream.py",
+    "scripts/compare_matched_single_gpus.py",
+])
+for folder, names in (
+    ("upstream-v192", ("campaign.json", "file-checkpoint.json.gz", "fresh-source-check.json",
+                       "identity.json", "paper-sources.json", "test-inputs.json.gz", "pytest.log.gz",
+                       "upstream.slurm", "upstream-suite.slurm.gz", "collect-benchmark.slurm.gz", "finalize.slurm")),
+    ("v190-selected", ("wheel.json", "selected.slurm", "identity.json", "receipt.json", "test-sha256.txt",
+                       "pytest.log.gz", "junit.xml.gz")),
+    ("single-gpu-pairs", ("paired.slurm", "summary.json", "README.md", "rtx5090/submitted.slurm")),
+):
+    RELEASE_ARTIFACTS.extend(f"{EVIDENCE_V192}/{folder}/{name}" for name in names)
+for gpu in ("rtx5090", "pro6000"):
+    folder = f"{EVIDENCE_V192}/single-gpu-pairs/{gpu}"
+    RELEASE_ARTIFACTS.extend(f"{folder}/{name}" for name in ("identity.json", "attempts.txt",
+                             "score.json.gz", "cpu-ao-score.json.gz"))
+    for arm in "ABCD":
+        RELEASE_ARTIFACTS.extend([f"{folder}/run-{arm}.json", f"{folder}/raw-{arm}.jsonl.gz"])
+
+
 CLAIMS = [
     {
         "claim_id": "34",
@@ -172,7 +197,7 @@ CLAIMS = [
         "status": "falsified-partial",
         "evidence": "performance/attribution_profile.json",
         "condition": "17 RHF/STO-3G geometries and 51 requests",
-        "unknown": "larger protocol-consistent workload and second GPU",
+        "unknown": "larger protocol-consistent workload, full publication cost and factorial ablations",
     },
     {
         "claim_id": "31",
@@ -209,10 +234,10 @@ CLAIMS = [
     {
         "claim_id": "36",
         "claim": "GPU4PySCF/PySCF source audit and selected upstream execution",
-        "status": "partial-official-v192-wheel-subset",
-        "evidence": "audits/gpu4pyscf.md;environment/gpu4pyscf-20261122/release-tags.json;environment/gpu4pyscf-20261122/v1.9.2-wheel-tests/v1.9.2-wheel-test-receipt.json",
-        "condition": "official v1.9.2 wheel selected tests passed: 19 response-property tests passed, 3 skipped, and 8 benchmark-property tests passed",
-        "unknown": "complete v1.9.2 suite, executable v1.9.0 runtime, full benchmark and paper-version mapping",
+        "status": "matched-official-v190-and-v192-selected-tests",
+        "evidence": "audits/gpu4pyscf.md;environment/gpu4pyscf-20261122/release-tags.json;environment/gpu4pyscf-20261122/v190-selected/receipt.json;environment/gpu4pyscf-20261122/upstream-v192/campaign.json",
+        "condition": "on each v1.9.0/v1.9.2 wheel: 19 selected response-property tests passed, 3 skipped; v1.9.2 full source collection identified 2649 cases",
+        "unknown": "complete v1.9.2 suite outcomes, standalone benchmark families and exact historical compiler flags",
     },
     {
         "claim_id": "37",
@@ -220,7 +245,7 @@ CLAIMS = [
         "status": "bounded-four-arm-CUPTI-with-separate-physical-score",
         "evidence": "performance/profiling.md;environment/gpu4pyscf-20261122/a-d-telemetry/summary.json;environment/gpu4pyscf-20261122/nsight-control/receipt.json",
         "condition": "official v1.9.2 wheel, one RTX PRO 6000, 4 arms x 51 requests, 14-field schema, 204/204 target-density-residual scorer acceptance",
-        "unknown": "full-queue hardware counters, separated JIT/IO costs and second-device comparison",
+        "unknown": "full-queue hardware counters and separated JIT/IO costs",
     },
     {
         "claim_id": "38",
@@ -250,8 +275,8 @@ CLAIMS = [
         "claim_id": "41",
         "claim": "scale, ablation and amortization",
         "status": "partial-falsified-with-bounded-controls",
-        "evidence": "performance/scale_ablation_plan.json",
-        "condition": "17 measured, 1000 target blocked; shape/residency bounded control only",
+        "evidence": "performance/scale_ablation_plan.json;environment/gpu4pyscf-20261122/single-gpu-pairs/summary.json",
+        "condition": "17 geometries and 51 requests per arm per device; 408 official and 408 independent CPU AO scores; full label publication and ablations outstanding",
         "unknown": "",
     },
     {
@@ -267,8 +292,7 @@ CLAIMS = [
 
 UNKNOWNs = [
     "complete upstream GPU4PySCF v1.9.2 source test and benchmark suite",
-    "executable GPU4PySCF v1.9.0 runtime and selected tests",
-    "paper-version mapping for v1.9.0/v1.9.2",
+    "historical wheel build flags and exact binary identities for early GPU4PySCF papers",
     "queue-wide Nsight traces and permission for achieved occupancy/FLOP counters",
     "dataset-scale energy and device memory profile",
     "1000-row protocol-consistent request asset",

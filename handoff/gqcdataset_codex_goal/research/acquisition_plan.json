@@ -195,8 +195,10 @@
       "role": "current",
       "commit": "5a717f899cb40d64a5799ef1df7e3626c505c3bd",
       "checkout_path": "_references/gpu4pyscf",
-      "paper_version_status": "not_established",
-      "selection_reason": "量化后端与强基线"
+      "paper_version_status": "GQC energy/force timing files and paper report GPU4PySCF 1.9.0; 1.9.2 is our executable control. Earlier GPU4PySCF papers have separate scope.",
+      "selection_reason": "量化后端与强基线",
+      "release_variant_receipt": "research/environment/gpu4pyscf-20261122/release-tags.json",
+      "paper_version_mapping": "research/environment/gpu4pyscf-20261122/upstream-v192/paper-sources.json"
     },
     {
       "id": "qcdb",

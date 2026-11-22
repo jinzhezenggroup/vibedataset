@@ -17,5 +17,13 @@ def main():
  if scale_manifest.exists():
   with gzip.open(scale_manifest,'rt') as handle: scale_count=json.load(handle)['count']
  result={'schema':'vibedataset.scale_ablation_plan.v1','contract_sha256':c['manifest_sha256'],'completed_scale':{'molecules':17,'request_rows':len(rows),'geometry_manifest_rows':scale_count,'target_scale':1000,'status':'partial-falsified-response-labels-blocked'},'bounded_controls':{'prepared_gpu4pyscf_same_shape':{'molecules':3,'request_rows':9,'nao':19,'bucket_count':1,'resident_bucket_setup_count':1,'serial_setup_count_reference':3,'target_max_abs_diff_vs_archived_C':5.218936394157936e-12,'status':'accepted-bounded-control','evidence':'experiments/prepared_property_batch/gpu-control-verification.json'}},'strata':strata,'devices':{'n2':'NVIDIA RTX PRO 6000 Blackwell, measured','n5':'NVIDIA RTX 5090, energy assets measured in prior handoff','A100_H100':'not_available'},'ablations':ablations,'claim_gate':{'ten_x':'not_supported','reason':'C vs A endpoint geometric mean speedup about 1.09x and CI crosses 1','next_required':'generate protocol-consistent response labels and independent quality references for the 1000-row geometry manifest before broad claim'}}
+ pairs_path = Path(__file__).resolve().parents[1] / 'handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/single-gpu-pairs/summary.json'
+ if pairs_path.is_file():
+  pairs = json.loads(pairs_path.read_bytes())
+  if pairs['manifest_sha256'] != c['manifest_sha256']:
+   raise ValueError("second-device input contract mismatch")
+  result['devices'].update(n2="NVIDIA RTX PRO 6000 Blackwell, matched single-GPU four arms", n5="NVIDIA RTX 5090, matched single-GPU four arms")
+  result['measured_single_gpu_pairs'] = {name: dict(rows=board['rows_scored'], cpu_accepted=board['independent_cpu']['accepted'],
+       producer_A_over_C=board['within_device_molecule_time_ratios'].get('A/C')) for name,board in pairs['boards'].items()}
  a.out.parent.mkdir(parents=True,exist_ok=True);a.out.write_text(json.dumps(result,indent=2)+'\n');print(json.dumps({'status':'partial-falsified','molecules':17,'request_rows':len(rows),'ablations':len(ablations)},indent=2))
 if __name__=='__main__':main()
