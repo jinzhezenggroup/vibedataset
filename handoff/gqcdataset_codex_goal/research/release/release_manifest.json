@@ -1,8 +1,9 @@
 {
-  "schema": "vibedataset.research_release.v2",
-  "git_head": "92d9bac6384208881827313709fc0a03f60b0bad",
-  "git_head_kind": "audited_source_commit",
-  "built_from_git_head": "ab56034f4586f1c62dca38446908e9baedda7c87",
+  "schema": "vibedataset.research_release.v3",
+  "git_head": "afecd51425d67fda798b1caee057811b9bf90df2",
+  "git_head_kind": "payload_checkout",
+  "built_from_git_head": "afecd51425d67fda798b1caee057811b9bf90df2",
+  "audited_baseline_git_head": "92d9bac6384208881827313709fc0a03f60b0bad",
   "artifacts": [
     {
       "path": "README.md",
@@ -482,5 +483,9 @@
     "VeloxChem cross-check",
     "same-context GPU4PySCF stream safety",
     "ragged/fused PreparedPropertyBatch kernels"
-  ]
+  ],
+  "metadata_sha256": {
+    "claims.csv": "4d9b4c0c4d7fe3bc9e6a93a25d08a04af8cf1e1e4b72b5910d2628cfc75e66a1",
+    "release_checklist.md": "6fe967b0b3bc395622aa067b6b813d5c66d8156d82144d0c3232704b92d42cbc"
+  }
 }

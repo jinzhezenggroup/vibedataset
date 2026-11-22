@@ -1,0 +1,156 @@
+{
+  "schema": "vibedataset.hessian_cross_engine_score.v1",
+  "protocol_sha256": "b7069a6f7931121820a4a0e066d4b9f557cb3b875c5de9b91902a1ad94a91dce",
+  "nominal_cartesian_rhs": 27,
+  "hessian_components": 261,
+  "default": {
+    "h2o": {
+      "energy_hartree": {
+        "components": 1,
+        "max_abs": 5.115907697472721e-13,
+        "worst_flat_index": 0,
+        "rejected_indices": [],
+        "atol": 1e-08,
+        "accepted": true
+      },
+      "hessian_Eh_bohr2": {
+        "components": 81,
+        "max_abs": 3.724208158528697e-08,
+        "worst_flat_index": 34,
+        "rejected_indices": [],
+        "atol": 1e-07,
+        "accepted": true
+      },
+      "ir_frequency_cm1": {
+        "components": 3,
+        "max_abs": 0.00030641576927337155,
+        "worst_flat_index": 0,
+        "rejected_indices": [],
+        "atol": 0.1,
+        "accepted": true
+      },
+      "raman_frequency_cm1": {
+        "components": 3,
+        "max_abs": 0.00030641577200185566,
+        "worst_flat_index": 0,
+        "rejected_indices": [],
+        "atol": 0.1,
+        "accepted": true
+      },
+      "ir_km_mol": {
+        "components": 3,
+        "max_abs": 1.3201846918775573e-05,
+        "worst_flat_index": 1,
+        "rejected_indices": [],
+        "atol": 0.02,
+        "accepted": true
+      },
+      "raman_A4_amu": {
+        "components": 3,
+        "max_abs": 0.03435793034662282,
+        "worst_flat_index": 1,
+        "rejected_indices": [],
+        "atol": 0.05,
+        "accepted": true
+      },
+      "raman_depolarization": {
+        "components": 3,
+        "max_abs": 0.016299393061956602,
+        "worst_flat_index": 0,
+        "rejected_indices": [
+          0,
+          1,
+          2
+        ],
+        "atol": 0.005,
+        "accepted": false
+      }
+    },
+    "nh3": {
+      "energy_hartree": {
+        "components": 1,
+        "max_abs": 9.805489753489383e-13,
+        "worst_flat_index": 0,
+        "rejected_indices": [],
+        "atol": 1e-08,
+        "accepted": true
+      },
+      "hessian_Eh_bohr2": {
+        "components": 144,
+        "max_abs": 3.6626608412859696e-09,
+        "worst_flat_index": 13,
+        "rejected_indices": [],
+        "atol": 1e-07,
+        "accepted": true
+      }
+    },
+    "lih": {
+      "energy_hartree": {
+        "components": 1,
+        "max_abs": 2.2382096176443156e-13,
+        "worst_flat_index": 0,
+        "rejected_indices": [],
+        "atol": 1e-08,
+        "accepted": true
+      },
+      "hessian_Eh_bohr2": {
+        "components": 36,
+        "max_abs": 7.174466382098288e-09,
+        "worst_flat_index": 0,
+        "rejected_indices": [],
+        "atol": 1e-07,
+        "accepted": true
+      }
+    }
+  },
+  "raman_refinement": {
+    "accepted": true,
+    "scf_calculations": 12,
+    "electric_rhs": 36,
+    "elapsed_seconds": 17.05894835095387,
+    "properties": {
+      "raman_depolarization": {
+        "fine_vs_veloxchem": {
+          "components": 3,
+          "max_abs": 3.2955157669434243e-07,
+          "worst_flat_index": 0,
+          "rejected_indices": [],
+          "atol": 0.005,
+          "accepted": true
+        },
+        "fine_vs_coarse": {
+          "components": 3,
+          "max_abs": 1.6045510919937556e-08,
+          "worst_flat_index": 2,
+          "rejected_indices": [],
+          "atol": 0.005,
+          "accepted": true
+        }
+      },
+      "raman_A4_amu": {
+        "fine_vs_veloxchem": {
+          "components": 3,
+          "max_abs": 0.0009795337704492368,
+          "worst_flat_index": 1,
+          "rejected_indices": [],
+          "atol": 0.05,
+          "accepted": true
+        },
+        "fine_vs_coarse": {
+          "components": 3,
+          "max_abs": 1.2902653345747694e-06,
+          "worst_flat_index": 2,
+          "rejected_indices": [],
+          "atol": 0.05,
+          "accepted": true
+        }
+      }
+    }
+  },
+  "all_requested_properties_accepted": true,
+  "imaginary_modes": {
+    "h2o": [
+      0
+    ]
+  }
+}

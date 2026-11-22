@@ -55,11 +55,19 @@ def main():
     require(sum(row["status"] == "reject-and-recompute" for row in expansion_rows) == 8, "DFT/open-shell rejection controls")
     subprocess.check_call([sys.executable, str(SCRIPTS / "check_benchmark_contract.py"), "--contract", str(benchmark / "benchmark_contract.json"), "--manifest", str(EXP / "manifest.json"), "--out", str(args.out / "benchmark-contract.json")], cwd=ROOT)
     subprocess.check_call([sys.executable, str(SCRIPTS / "check_attribution_profile.py"), "--profile", str(benchmark / "attribution_profile.json"), "--out", str(args.out / "profiling.json")], cwd=ROOT)
-    subprocess.check_call([sys.executable, str(SCRIPTS / "check_research_release.py"), "--release", str(ROOT / "handoff/gqcdataset_codex_goal/research/release"), "--root", str(ROOT), "--out", str(args.out / "release.json"), "--allow-missing-commits"], cwd=ROOT)
-    with tempfile.TemporaryDirectory(dir=args.out, prefix="strict-release-") as strict_temp:
-        strict_release = Path(strict_temp)
-        subprocess.check_call([sys.executable, str(SCRIPTS / "build_research_release.py"), "--root", str(ROOT), "--out", str(strict_release)], cwd=ROOT)
-        subprocess.check_call([sys.executable, str(SCRIPTS / "check_research_release.py"), "--release", str(strict_release), "--root", str(ROOT), "--out", str(args.out / "strict-release.json"), "--strict-head"], cwd=ROOT)
+    release_check = [sys.executable, str(SCRIPTS / "check_research_release.py"), "--root", str(ROOT)]
+    subprocess.check_call([*release_check, "--release", str(ROOT / "handoff/gqcdataset_codex_goal/research/release"),
+                           "--archive-at", "afecd51425d67fda798b1caee057811b9bf90df2",
+                           "--out", str(args.out / "archived-release.json")], cwd=ROOT)
+    publish = args.out / "research-release"
+    subprocess.check_call([sys.executable, str(SCRIPTS / "build_research_release.py"), "--root", str(ROOT),
+                           "--out", str(publish), "--bundle"], cwd=ROOT)
+    subprocess.check_call([*release_check, "--release", str(publish), "--out", str(args.out / "release.json")], cwd=ROOT)
+    cross_engine = ROOT / "handoff/gqcdataset_codex_goal/research/experiments/hessian_cphf/cross-engine"
+    verified = args.out / "cross-engine-hessians.json"
+    subprocess.check_call([sys.executable, str(SCRIPTS / "verify_cross_engine_hessians.py"),
+                           "--root", str(cross_engine), "--out", str(verified)])
+    require(read(verified) == read(cross_engine / "verification.json"), "cross-engine Hessian replay")
     hessian_artifact = ROOT / "handoff/gqcdataset_codex_goal/research/experiments/hessian_cphf/cpu-gpu-crosscheck.json"
     generated_hessian = args.out / "hessian-crosscheck.json"
     subprocess.check_call(

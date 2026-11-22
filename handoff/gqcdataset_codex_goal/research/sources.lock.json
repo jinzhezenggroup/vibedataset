@@ -3753,5 +3753,13 @@
     "files_read": 27,
     "behavior_traced": 94,
     "executed": 51
+  },
+  "additional_runtime_source_locks": {
+    "veloxchem_hessian": {
+      "path": "experiments/hessian_cphf/cross-engine/veloxchem/source-lock.json",
+      "commit": "8513267a275d8f3feca17e9d24741ceeaedaa6b6",
+      "tree": "e37d1aed32fe388e4cdcd482df135241488a2964",
+      "scope": "release recipe, CPU binary, 6868 indexed paths, selected analytical RHF implementation, separate from the historical ledger cohort"
+    }
   }
 }

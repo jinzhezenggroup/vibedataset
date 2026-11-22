@@ -1,0 +1,10 @@
+{
+  "method": "central difference of static RHF polarizability along each mass-normalized mode of the accepted GPU Hessian",
+  "case_id": "h2o",
+  "trigger": "any default mode depolarization error exceeds the original protocol tolerance",
+  "steps_bohr_sqrt_amu": [0.001, 0.0005],
+  "publish_index": 1,
+  "required_gates": ["coarse/fine agreement", "fine/independent analytic reference agreement"],
+  "tolerances": "unchanged absolute activity and depolarization tolerances in protocol.json",
+  "parent_protocol_sha256": "b7069a6f7931121820a4a0e066d4b9f557cb3b875c5de9b91902a1ad94a91dce"
+}

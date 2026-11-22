@@ -1,0 +1,85 @@
+{
+  "module_sha256": {
+    "src/pymodule/scfhessiandriver.py": "a563bbcc597a99841bf2b99708f82fdc6b89555d42d6fce216240486963f6f01",
+    "src/pymodule/hessianorbitalresponse.py": "167f1a7e870485258b6ec328c87b57b2c8639fce2b95c1e131875f7fd29cf6f1",
+    "src/pymodule/vibrationalanalysis.py": "ff3818c53084287135ae1b5406a8aa35d3fe8df628a3d6162032d3a292033fcd",
+    "src/pymodule/molecularbasis.py": "2ca0e0df18bbcce3917f576739a9737221e8b75aa866315a4049b8d10d8c93a2",
+    "src/pymodule/molecule.py": "4f86e90ccb75d234022acd2757391c157f756fd1562391f377ac86ab6f9e40ea",
+    "src/pymodule/scfdriver.py": "e94cb18dca30480bf14ca664e71b34543a3b5739e23ce39c772cc5f6e402d2a1"
+  },
+  "selected_source": {
+    "repository": "https://github.com/VeloxChem/VeloxChem",
+    "commit": "8513267a275d8f3feca17e9d24741ceeaedaa6b6",
+    "tree": "e37d1aed32fe388e4cdcd482df135241488a2964",
+    "files_verified": 6868,
+    "submodules": [],
+    "lfs_pointers": 0,
+    "license_file_sha256": "671f05b678b20d124243dea42cf16d1ca5a8e6b4f406b0ff61d934f7079133ff",
+    "license": "BSD-3-Clause",
+    "indexed_coverage": "source-coverage.csv.gz",
+    "coverage_sha256": "4755983d2982c658db585c7d73561ca6b5837afd1b689ef8972097544c262fa0",
+    "behavior_under_test": {
+      "src/pymodule/scfhessiandriver.py": "compute -> compute_analytical_restricted -> HessianOrbitalResponse.compute -> assemble (i,x,j,y)",
+      "src/pymodule/hessianorbitalresponse.py": "construct_rhs: atom partition, AO density, occupied-virtual RHS",
+      "src/pymodule/vibrationalanalysis.py": "compute_hessian, frequency_analysis, compute_polarizability_gradient, calculate_ir_intensity, calculate_raman_activity",
+      "src/pymodule/molecularbasis.py": "read, _read_basis_file: explicit basis file search and label",
+      "src/pymodule/molecule.py": "Molecule, get_coordinates_in_bohr",
+      "src/pymodule/scfdriver.py": "compute, is_converged, scf_energy, conv_thresh and RI settings"
+    },
+    "upstream_test_read": "tests/test_hessian_scf.py::TestScfHessianDriver::test_analytical_scf_hessian (read, not executed in this control)"
+  },
+  "distribution": {
+    "url": "https://conda.anaconda.org/conda-forge/label/veloxchem_rc/linux-64/veloxchem-1.0-py311h01bddfc_10.conda",
+    "sha256": "d4947ef77b6692598dc49d12e54939a6dcaaf8ef5d9d52f7a4a93d119d1f8db3",
+    "code_version": "1.0rc4",
+    "conda_build": "py311h01bddfc_10",
+    "recipe_sha256": "9a4df26b85a30158b1d3fecae6e79209180cdddd6576278746c7f61ef996aed6",
+    "source_archive_sha256": "8c59d7acdb429d873ccaeab07d138a1d28be32c9f94e948cfbe19f4e9474db54",
+    "native_binary_sha256": "e17b01f0d7b0246ffd31c66439c0e1fe6230eea9b5dca76d4967dd5b79937fea"
+  },
+  "console_files": {
+    "veloxchem": {
+      "raw_sha256": "f561047961770bf8e504359d8d4dd1d0359352c73df7e08848df6bdca4eb6158",
+      "published_sha256": "f561047961770bf8e504359d8d4dd1d0359352c73df7e08848df6bdca4eb6158",
+      "encoding": "gzip; home-directory prefix abbreviated only"
+    },
+    "gpu4pyscf": {
+      "raw_sha256": "7e19f80e013010a50a985ac414900f58a8dc942a849185242a7dd8efc0033f0a",
+      "published_sha256": "baab3b9b2db5d52a6cde4f439a70d86857864e17542a1a64e4577c35398aaeb5",
+      "encoding": "gzip; home-directory prefix abbreviated only"
+    },
+    "raman-refinement": {
+      "raw_sha256": "2b434a73fb73fa581620f95403bc879baa88138deec58ce9f98af6643f635c1d",
+      "published_sha256": "987dbbe7c7fd343b0ff040a9a684e491b72ecde3cb4ac6d423c932ba320080aa",
+      "encoding": "gzip; home-directory prefix abbreviated only"
+    }
+  },
+  "preliminary_attempts": [
+    {
+      "run": "velox-v1",
+      "inputs": {
+        "protocol_sha256": "9baa3e1243a494578587e8d32b497e6f28b2bbae0429094e0e760d87c24c8f48",
+        "driver_sha256": "fff70c3bdab01128d4ba832ab5d7cd90f6dfad2a05cdb5bf003fb751ae5926d1"
+      },
+      "events_sha256": "dea3195bd41b1acf7f4fa3aeae0d9c35f9403e4247ad6c993f39d0cbc6339e02",
+      "expected": 3,
+      "failed": 3,
+      "scientific_wall_seconds": 0.21948860200006948,
+      "disposition": "SCF and Hessian executed; AO count accessor failed during export",
+      "console_sha256": "30ab7d095fc46a6f0b3c9aae60128b2c6ed77c12213415531b40911f8f586d5d"
+    },
+    {
+      "run": "velox-v2",
+      "inputs": {
+        "protocol_sha256": "9baa3e1243a494578587e8d32b497e6f28b2bbae0429094e0e760d87c24c8f48",
+        "driver_sha256": "ca401367cfc487c34d03f64ebbbb5d97c97aa70de3d155c1039f9063d6f6f2d5"
+      },
+      "events_sha256": "926b2c86594047af11a7233ca26ac57fdc9b97d0de9c548c2b3d4b413061bbeb",
+      "expected": 3,
+      "failed": 0,
+      "scientific_wall_seconds": 0.2298749650000218,
+      "disposition": "Hessians produced before registering the spectroscopy protocol",
+      "console_sha256": "a150f6afd2b6bdec20fe2f9d76c227179aed9190bfa417c2c266aff9a7dd377d"
+    }
+  ]
+}

@@ -26,3 +26,7 @@
 | dm-PhiSNet 第一作者历史树、PhiSNet 后续适配、DelFTa v1 | 完整取得三棵树；历史训练与密度/物性分析有源可查。另核查六个原始发布位置 | 五个原始实现位置仍待补齐，作者历史代码与确切论文 commit 分列。没有运行这些模型的训练。[逐原始来源及证据](audits/intake-originals.md) |
 
 GQC 固定版本的 block GMRES 在同一调用内合并初始残差子空间，同时逐列计算真实残差；分开调用会重复建立子空间。n5 独立对四种两列组合逐次追踪了基扩展和真残差检查。水分子中均为 10 次扩展及 10 次复核。[固定源码与运行跟踪](audits/partial-response-blocks.md) · [n5 对照](experiments/partial_response_blocks/n5/README.md)
+
+## 独立 Hessian 与光谱参考（#40）
+
+VeloxChem 的解析 RHF Hessian 通过核坐标 CPHF 解组装二阶导数。水、氨、氢化锂的 261 个笛卡尔分量已与官方 GPU4PySCF 1.9.2 对照。水的 Raman 去偏振比触发了实际重算，同一几何三个模式的极化率方向导数在两个步长下独立通过。此处执行的是 VeloxChem CPU 发行包。论文所用 GPU CPKS 另有性能实验边界。[固定源码、数值与回执](experiments/hessian_cphf/cross-engine/README.md) · [VeloxChem 的二阶导数论文](https://doi.org/10.1021/acs.jpca.5c04510)

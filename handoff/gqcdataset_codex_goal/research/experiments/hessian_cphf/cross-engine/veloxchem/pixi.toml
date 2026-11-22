@@ -1,0 +1,8 @@
+[workspace]
+name = "veloxchem-hessian"
+channels = ["https://conda.anaconda.org/conda-forge/label/veloxchem_rc", "conda-forge"]
+platforms = ["linux-64"]
+
+[dependencies]
+veloxchem = { version = "==1.0", build = "py311h01bddfc_10" }
+python = "3.11.*"

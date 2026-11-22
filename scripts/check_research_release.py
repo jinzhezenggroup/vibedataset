@@ -1,103 +1,87 @@
 #!/usr/bin/env python3
-"""Verify release artifacts and their source provenance."""
-from __future__ import annotations
-
+"""Verify a release against the checkout or an explicitly pinned historical commit."""
 import argparse
+import csv
 import hashlib
 import json
 import re
 import subprocess
-from pathlib import Path
+from pathlib import Path, PurePosixPath
 
 
-def git_head(root: Path) -> str:
-    return subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=root, text=True).strip()
+def git(root, *args):
+    return subprocess.check_output(["git", *args], cwd=root)
 
 
-def valid_commit(root: Path, commit: str) -> bool:
-    return subprocess.run(
-        ["git", "cat-file", "-e", f"{commit}^{{commit}}"],
-        cwd=root,
-        stdout=subprocess.DEVNULL,
-        stderr=subprocess.DEVNULL,
-    ).returncode == 0
+def sha(data):
+    return hashlib.sha256(data).hexdigest()
 
 
-def ancestor(root: Path, source: str, target: str) -> bool:
-    return subprocess.run(
-        ["git", "merge-base", "--is-ancestor", source, target],
-        cwd=root,
-        stdout=subprocess.DEVNULL,
-        stderr=subprocess.DEVNULL,
-    ).returncode == 0
+def verify(args):
+    manifest = json.loads((args.release / "release_manifest.json").read_text())
+    current = git(args.root, "rev-parse", "HEAD").decode().strip()
+    expected = args.archive_at or current
+    if not re.fullmatch("[0-9a-f]{40}", expected):
+        raise ValueError("expected a full commit SHA")
+    errors = []
+    if manifest.get("schema") != "vibedataset.research_release.v3":
+        errors.append("release schema")
+    if manifest.get("git_head") != expected or manifest.get("built_from_git_head") != expected:
+        errors.append(f"release commit differs from {expected}")
+    if args.expected_head and args.expected_head != expected:
+        errors.append("expected commit mismatch")
+    if args.archive_at and subprocess.run(["git","merge-base","--is-ancestor",expected,current],
+                                         cwd=args.root).returncode:
+        errors.append("archive commit unavailable or outside checkout history")
+    paths = set()
+    for item in manifest["artifacts"]:
+        path = item["path"]
+        parts = PurePosixPath(path)
+        if not path or path != str(parts) or parts.is_absolute() or ".." in parts.parts or path in paths:
+            errors.append(f"invalid or duplicate artifact: {path}")
+            continue
+        paths.add(path)
+        committed = git(args.root, "cat-file", "blob", f"{expected}:{path}")
+        if sha(committed) != item["sha256"]:
+            errors.append(f"Git blob hash: {path}")
+        if not args.archive_at and sha((args.root / path).read_bytes()) != item["sha256"]:
+            errors.append(f"checkout hash: {path}")
+    if not paths:
+        errors.append("empty artifact list")
+    metadata = manifest.get("metadata_sha256", {})
+    for name in ("claims.csv", "release_checklist.md"):
+        if metadata.get(name) != sha((args.release / name).read_bytes()):
+            errors.append(f"release metadata: {name}")
+    with (args.release / "claims.csv").open(newline="") as handle:
+        claims = list(csv.DictReader(handle))
+    claim_ids = [row["claim_id"] for row in claims]
+    if len(set(claim_ids)) != len(claim_ids) or len(claim_ids) < 10:
+        errors.append("claim identities")
+    return {"status": "failed" if errors else "passed", "artifacts": len(paths),
+            "claims": len(claims), "unknowns": len(manifest["unknowns"]),
+            "manifest_git_head": manifest.get("git_head"), "current_git_head": current,
+            "strict_head": args.archive_at is None, "archive_at": args.archive_at, "errors": errors}
 
 
-def main() -> None:
-    parser = argparse.ArgumentParser()
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--release", type=Path, required=True)
     parser.add_argument("--root", type=Path, required=True)
     parser.add_argument("--out", type=Path, required=True)
-    parser.add_argument("--strict-head", action="store_true", help="require manifest git_head to equal the current checkout HEAD")
-    parser.add_argument("--expected-head", help="require manifest git_head to equal this commit")
-    parser.add_argument("--allow-missing-commits", action="store_true", help="record pinned commit objects unavailable in a shallow checkout")
+    mode = parser.add_mutually_exclusive_group()
+    mode.add_argument("--strict-head", action="store_true", help="verify checkout HEAD (default)")
+    mode.add_argument("--archive-at", help="verify the historical snapshot at this exact reachable commit")
+    parser.add_argument("--expected-head")
     args = parser.parse_args()
-
-    manifest = json.loads((args.release / "release_manifest.json").read_text())
-    current = git_head(args.root)
-    errors: list[str] = []
-    provenance_unknowns: list[str] = []
-    source = manifest.get("git_head")
-    source_object_available = isinstance(source, str) and valid_commit(args.root, source)
-    source_sha_shape = isinstance(source, str) and bool(re.fullmatch(r"[0-9a-f]{40}", source))
-    if not source_object_available:
-        if args.allow_missing_commits and source_sha_shape and not args.strict_head:
-            provenance_unknowns.append("git_head_commit_object_unavailable")
-        else:
-            errors.append("invalid git_head")
-    elif args.strict_head and source != current:
-        errors.append(f"strict git_head mismatch: {source} != {current}")
-    elif not args.strict_head and not ancestor(args.root, source, current):
-        errors.append(f"git_head is not an ancestor of current HEAD: {source} !<= {current}")
-    if args.expected_head and source != args.expected_head:
-        errors.append(f"expected git_head mismatch: {source} != {args.expected_head}")
-    built_from = manifest.get("built_from_git_head")
-    if built_from is not None:
-        built_object_available = isinstance(built_from, str) and valid_commit(args.root, built_from)
-        built_sha_shape = isinstance(built_from, str) and bool(re.fullmatch(r"[0-9a-f]{40}", built_from))
-        if not built_object_available:
-            if args.allow_missing_commits and built_sha_shape and not args.strict_head:
-                provenance_unknowns.append("built_from_git_head_commit_object_unavailable")
-            else:
-                errors.append("invalid built_from_git_head")
-        elif args.strict_head and built_from != current:
-            errors.append(f"strict built_from_git_head mismatch: {built_from} != {current}")
-        elif not args.strict_head and not ancestor(args.root, built_from, current):
-            errors.append(f"built_from_git_head is not an ancestor of current HEAD: {built_from} !<= {current}")
-    for artifact in manifest.get("artifacts", []):
-        path = args.root / artifact["path"]
-        observed = hashlib.sha256(path.read_bytes()).hexdigest() if path.exists() else None
-        if observed != artifact.get("sha256"):
-            errors.append(artifact["path"])
-    claims = (args.release / "claims.csv").read_text().splitlines()
-    if len(claims) < 10:
-        errors.append("claims")
-    out = {
-        "status": "passed" if not errors else "failed",
-        "artifacts": len(manifest.get("artifacts", [])),
-        "claims": len(claims) - 1,
-        "unknowns": len(manifest.get("unknowns", [])),
-        "manifest_git_head": source,
-        "current_git_head": current,
-        "strict_head": args.strict_head,
-        "allow_missing_commits": args.allow_missing_commits,
-        "provenance_unknowns": provenance_unknowns,
-        "errors": errors,
-    }
+    try:
+        result = verify(args)
+    except (OSError, ValueError, KeyError, subprocess.CalledProcessError) as exc:
+        result = {"status": "failed", "errors": [str(exc)]}
     args.out.parent.mkdir(parents=True, exist_ok=True)
-    args.out.write_text(json.dumps(out, indent=2) + "\n")
-    print(json.dumps(out, indent=2))
-    if errors:
-        raise SystemExit("; ".join(errors))
+    args.out.write_text(json.dumps(result, indent=2) + "\n")
+    print(json.dumps(result, indent=2))
+    if result["errors"]:
+        raise SystemExit(1)
 
 
 if __name__ == "__main__":
