@@ -17,3 +17,13 @@ PySCF,pyscf/grad/test/test_rhf.py,c63a953ba603a5ad8c1d65d88da72aaf05ede4d8,true,
 PySCF,pyscf/hessian/test/test_rhf.py,c63a953ba603a5ad8c1d65d88da72aaf05ede4d8,true,true,true,false,false,source inventory,upstream test source acquired
 PySCF,pyscf/grad/test/test_uhf.py,c63a953ba603a5ad8c1d65d88da72aaf05ede4d8,true,true,true,false,false,source inventory,upstream UHF test source acquired
 PySCF,pyscf/hessian/test/test_uhf.py,c63a953ba603a5ad8c1d65d88da72aaf05ede4d8,true,true,true,false,false,source inventory,upstream UHF test source acquired
+GPU4PySCF-v1.9.0,gpu4pyscf/scf/cphf.py,2fdc1951670a8e173dce063e697727bbc9f97616,true,true,true,false,false,release-tags.json,release-tag CPHF entry and 2-D RHS
+GPU4PySCF-v1.9.0,gpu4pyscf/properties/polarizability.py,2fdc1951670a8e173dce063e697727bbc9f97616,true,true,true,false,false,release-tags.json,release-tag polarizability map
+GPU4PySCF-v1.9.0,gpu4pyscf/properties/tests/test_polarizability.py,2fdc1951670a8e173dce063e697727bbc9f97616,true,true,true,false,false,release-tags.json,release-tag upstream polarizability test source
+GPU4PySCF-v1.9.0,gpu4pyscf/scf/tests/test_cphf.py,2fdc1951670a8e173dce063e697727bbc9f97616,true,true,true,false,false,release-tags.json,release-tag upstream CPHF test source
+GPU4PySCF-v1.9.0,gpu4pyscf/tests/test_benchmark_properties.py,2fdc1951670a8e173dce063e697727bbc9f97616,true,true,true,false,false,release-tags.json,release-tag benchmark-property test source
+GPU4PySCF-v1.9.2,gpu4pyscf/scf/cphf.py,8536a80c1e03260aab030e108ef1d181a3709057,true,true,true,false,false,release-tags.json,release-tag CPHF entry and 2-D RHS
+GPU4PySCF-v1.9.2,gpu4pyscf/properties/polarizability.py,8536a80c1e03260aab030e108ef1d181a3709057,true,true,true,false,false,release-tags.json,release-tag polarizability map
+GPU4PySCF-v1.9.2,gpu4pyscf/properties/tests/test_polarizability.py,8536a80c1e03260aab030e108ef1d181a3709057,true,true,true,false,false,release-tags.json,release-tag upstream polarizability test source
+GPU4PySCF-v1.9.2,gpu4pyscf/scf/tests/test_cphf.py,8536a80c1e03260aab030e108ef1d181a3709057,true,true,true,false,false,release-tags.json,release-tag upstream CPHF test source
+GPU4PySCF-v1.9.2,gpu4pyscf/tests/test_benchmark_properties.py,8536a80c1e03260aab030e108ef1d181a3709057,true,true,true,false,false,release-tags.json,release-tag benchmark-property test source

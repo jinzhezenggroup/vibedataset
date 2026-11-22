@@ -1,6 +1,6 @@
 {
   "schema": "vibedataset.research_release.v1",
-  "git_head": "850ab67809dac177a5d42f26c7c6e6073145619e",
+  "git_head": "866ce89c7d0ae662588c6b10ff648bc2b74d91a8",
   "artifacts": [
     {
       "path": "README.md",
@@ -71,8 +71,12 @@
       "sha256": "b24704758a2d4265aa7f729a7d743328d335d73c392526c89a715a986b4f336b"
     },
     {
+      "path": "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/release-tags.json",
+      "sha256": "f5fe46e0d4383b1e5e5ac30cb10890d08a3ae7449220da9552cb6fda317b8b29"
+    },
+    {
       "path": "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/baseline.json",
-      "sha256": "9b5e08bebc912312c1c086149f26392da9a5dba3c4e3f4bc2844ed896a550192"
+      "sha256": "24480bceff28eb025625de47eaf33af722aaac6a6612efcd587353a5d075721d"
     },
     {
       "path": "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/upstream-polarizability-pytest.log",
@@ -99,6 +103,8 @@
   ],
   "unknowns": [
     "full upstream GPU4PySCF benchmark suite",
+    "tag-specific execution in a matching GPU4PySCF 1.9.x binary environment",
+    "paper-version mapping for v1.9.0/v1.9.2",
     "CUPTI/Nsight traces",
     "energy and peak-memory telemetry",
     "1000-row protocol-consistent request asset",
