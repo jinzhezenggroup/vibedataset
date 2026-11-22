@@ -55,12 +55,13 @@ def build(cp, scf, gto, case, protocol, forced_failure=False, bonding=False):
 class ResponseState:
     """All mutable caches belong to this one SCF solution and its private driver."""
 
-    def __init__(self, cp, mf, reuse):
+    def __init__(self, cp, mf, reuse, proof_root=None):
         self.cp, self.mf, self.reuse = cp, mf, reuse
         self.driver = mf.Hessian()
+        self.proof_root = proof_root
+        self.proof = None
         self.cache = {}
         self.operators = {}
-        self.fxc = {}
         self.records = []
         self.request = ""
         self.bind()
@@ -136,7 +137,7 @@ class ResponseState:
                 drv.level_shift,
                 self.mf.conv_tol_cpscf,
             )
-            return self.record(
+            candidate = self.record(
                 "geometric-CPHF",
                 key,
                 lambda: original_solve(
@@ -145,6 +146,23 @@ class ResponseState:
                 3 * len(atoms(atmlst)),
                 allow=op is not None and op[0] is fx,
             )
+
+            if self.proof_root is not None and self.proof is None:
+                self.proof_root.mkdir(parents=True, exist_ok=True)
+                path = self.proof_root / (self.request + ".npz")
+                np.savez_compressed(
+                    path,
+                    coeff=self.cp.asnumpy(coeff),
+                    energy=self.cp.asnumpy(energy),
+                    occ=self.cp.asnumpy(occ),
+                    h1mo=self.cp.asnumpy(h1mo),
+                    mo1=self.cp.asnumpy(candidate[0]),
+                    mo_e1=self.cp.asnumpy(candidate[1]),
+                )
+                self.proof = dict(
+                    path=path.name, sha256=hashlib.sha256(path.read_bytes()).hexdigest()
+                )
+            return candidate
 
         def kernel(*args, **kwargs):
             if args or kwargs:
@@ -201,6 +219,11 @@ def main():
     p.add_argument("--protocol", type=Path, required=True)
     p.add_argument("--mode", choices=("serial", "shared", "failures"), required=True)
     p.add_argument("--out", type=Path, required=True)
+    p.add_argument(
+        "--seal-response",
+        action="store_true",
+        help="save observed H1, gauge and Cartesian MO responses for independent CPU verification",
+    )
     a = p.parse_args()
     begun = time.perf_counter()
     import cupy as cp
@@ -325,7 +348,12 @@ def main():
                         raise AssertionError(
                             f"stress fixture did not reach the stated gap: {gap}"
                         )
-                    state = ResponseState(cp, mf, a.mode != "serial")
+                    state = ResponseState(
+                        cp,
+                        mf,
+                        a.mode != "serial",
+                        a.out / "cartesian" if a.seal_response else None,
+                    )
                     if a.mode != "serial":
                         states[state_id] = state
                 state.request = rid
@@ -339,6 +367,7 @@ def main():
                     property=q["property"],
                     scientific_identity=state_id,
                     energy_hartree=float(state.mf.e_tot),
+                    cartesian_response=state.proof,
                     result=result,
                 )
             finally:
