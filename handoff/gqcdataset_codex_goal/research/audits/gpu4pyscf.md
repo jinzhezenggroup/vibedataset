@@ -14,7 +14,7 @@
 
 项目官方 baseline A 在 n2 GPU 实跑 17 个分子、三条 RHF/STO-3G 轨迹，`runs/run-A.json` 保存 Python、GPU、CuPy、输入 hash 和 blind flags，`raw/raw-A.jsonl` 保存 51 条请求级记录。固定 checkout 的 GPU4PySCF `test_polarizability.py` 也在同一 n2 GPU 环境执行，7 tests passed、1 skipped，退出码 0。`scf/tests/test_cphf.py` 另有 3 tests passed。原始日志保存在 `environment/gpu4pyscf-20261122/`。IR/Raman upstream files 另行执行，8 passed、2 skipped、1 failed。失败是 `test_pcm_not_supported` 传入 `hessian_obj=None` 后先触发 AttributeError。官方 `tests/test_benchmark_properties.py` 需要 pytest-benchmark，补装后仍因插件与当前 pytest node API 不兼容而 8 项 error。全部输出和 exit receipts 均保留。独立 scorer 在新进程中用官方 GPU4PySCF 重建 204 条 A–D 记录，`score.json` 保存目标、AO density 和残差门。
 
-该执行集是项目按固定合同重放的官方后端 baseline。v1.9.0/v1.9.2 的源码 tag 已取得并完成 license、测试和 benchmark inventory，但 n2 当前可执行二进制是 GPU4PySCF 1.8.1，tag-specific execution 尚未声称完成。上游完整 benchmark suite、CUPTI/Nsight trace、能耗和论文版本映射仍是未知项，在 [baseline.json](../environment/gpu4pyscf-20261122/baseline.json) 中明确记录。不能把文件索引或项目 baseline 写成完整上游论文复现。
+该执行集是项目按固定合同重放的官方后端 baseline。v1.9.0/v1.9.2 的源码 tag 已取得并完成 license、测试和 benchmark inventory，但 n2 当前可执行二进制是 GPU4PySCF 1.8.1。对 v1.9.2 的隔离 CMake 构建已提交 15 次有限尝试，均停在工具链配置阶段，最终失败为 CMake 无法解析 nvcc implicit link line，原始 job 5550 日志和 build receipt 见 [v1.9.2-build-attempt.json](../environment/gpu4pyscf-20261122/v1.9.2-build-attempt.json)。因此 tag-specific execution 尚未声称完成。上游完整 benchmark suite、CUPTI/Nsight trace、能耗和论文版本映射仍是未知项，在 [baseline.json](../environment/gpu4pyscf-20261122/baseline.json) 中明确记录。不能把文件索引或项目 baseline 写成完整上游论文复现。
 
 ## 与四臂的映射
 
