@@ -5,7 +5,6 @@ import argparse
 from collections import Counter
 import hashlib
 import json
-import math
 from pathlib import Path
 
 from verify_cross_engine_hessians import check, metric, observations
@@ -29,6 +28,7 @@ def main():
     )
     p.add_argument("--protocol", type=Path, required=True)
     p.add_argument("--refinement", type=Path)
+    p.add_argument("--serial-refinement", type=Path)
     p.add_argument("--out", type=Path, required=True)
     a = p.parse_args()
     spec = load(a.protocol)
@@ -37,9 +37,7 @@ def main():
     queue = spec["shared_queue"]
     thresholds = spec["spectroscopy"]["atol"]
     names = {q["id"] for q in queue}
-    defaults = {}
     unqualified = set()
-    scores = {}
     history = {}
     source_paths = {}
     cases = {c["id"]: c for c in spec["cases"]}
@@ -168,42 +166,79 @@ def main():
         failures["healthy-after-failures"] = dict(
             accepted=False, reason=healthy.get("reason")
         )
-    refined = {}
-    if a.refinement:
-        for name in sorted(unqualified):
-            run = load(a.refinement / name / "run.json")
+    refined = {"shared": {}, "serial": {}}
+    correction_cost = {"shared": {}, "serial": {}}
+    for mode, root in (("shared", a.refinement), ("serial", a.serial_refinement)):
+        if root is None:
+            continue
+        for req in queue:
+            name, rid = req["molecule"], req["id"]
+            if (
+                name not in unqualified
+                or req["property"] != "raman"
+                or per_mode[mode][rid]["status"] != "default-rejected"
+            ):
+                continue
+            key = name if mode == "shared" else rid
+            if key in refined[mode]:
+                continue
+            directory = root / key
+            run = load(directory / "run.json")
             check(
                 run["protocol_sha256"] == seal
-                and run["source_shared_sha256"] == source_paths["shared"],
+                and run["source_" + mode + "_sha256"] == source_paths[mode],
                 "refinement identity",
             )
-            check(
-                digest(a.refinement / name / "displacements.jsonl")
-                == run["displacements_sha256"],
-                "displacement journal",
-            )
+            log = directory / "displacements.jsonl"
+            check(digest(log) == run["displacements_sha256"], "displacement journal")
             expected_steps = spec["refinement_steps_bohr_sqrt_amu"]
             check(
                 [v["step"] for v in run["steps"]] == expected_steps,
                 "refinement step set",
             )
-            refined[name] = []
+            n = len(refs[name]["spectroscopy"]["raman_frequency_cm1"])
+            displacement_rows = [
+                json.loads(line) for line in log.read_bytes().splitlines()
+            ]
+            pairs = [
+                (r["step"], r["mode"], r["sign"], r["status"])
+                for r in displacement_rows
+            ]
+            expected_pairs = [
+                (step, i, sign, status)
+                for step in expected_steps
+                for i in range(n)
+                for sign in (-1, 1)
+                for status in ("started", "produced")
+            ]
+            check(
+                pairs == expected_pairs,
+                "incomplete or duplicated directional Raman calculation",
+            )
+            corrected = []
             for item in run["steps"]:
                 metrics = {
-                    key: metric(
-                        refs[name]["spectroscopy"][key],
-                        [v[key] for v in item["modes"]],
-                        thresholds[key],
+                    quantity: metric(
+                        refs[name]["spectroscopy"][quantity],
+                        [v[quantity] for v in item["modes"]],
+                        thresholds[quantity],
                     )
-                    for key in ("raman_A4_amu", "raman_depolarization")
+                    for quantity in ("raman_A4_amu", "raman_depolarization")
                 }
-                refined[name].append(
+                corrected.append(
                     dict(
                         step=item["step"],
                         passed=all(v["accepted"] for v in metrics.values()),
                         metrics=metrics,
                     )
                 )
+            refined[mode][key] = corrected
+            correction_cost[mode][key] = dict(
+                displaced_scf_calls=len(pairs) // 2,
+                electric_rhs=3 * len(pairs) // 2,
+                seconds=run["elapsed_seconds"],
+                job=run["slurm_job"],
+            )
     final = {}
     for mode, items in per_mode.items():
         dispositions = {}
@@ -214,8 +249,11 @@ def main():
                 r["status"] == "default-rejected"
                 and req["property"] == "raman"
                 and set(r["failed"]) <= {"raman_A4_amu", "raman_depolarization"}
-                and name in refined
-                and all(x["passed"] for x in refined[name])
+                and (name if mode == "shared" else req["id"]) in refined[mode]
+                and all(
+                    x["passed"]
+                    for x in refined[mode][name if mode == "shared" else req["id"]]
+                )
             )
             dispositions[req["id"]] = "accepted" if ok else r["status"]
         final[mode] = dict(
@@ -244,6 +282,7 @@ def main():
         history=history,
         refinement_required=sorted(unqualified),
         refinement=refined,
+        correction_cost=correction_cost,
         final=final,
         controls=failures,
         gap_control=failure["controls"],
