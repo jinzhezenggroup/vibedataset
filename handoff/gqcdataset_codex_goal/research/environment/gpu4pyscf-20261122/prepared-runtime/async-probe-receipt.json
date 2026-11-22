@@ -1,0 +1,69 @@
+{
+  "async_attempt": {
+    "error_class": "cudaErrorIllegalAddress",
+    "error_markers": [
+      "RYS_build_jk",
+      "cudaErrorIllegalAddress",
+      "CUDA_ERROR_ILLEGAL_ADDRESS"
+    ],
+    "first_error": "CUDA Error in RYS_build_jk, li,lj,lk,ll = 1,0,1,0, device_id = 0, error message = an illegal memory access was encountered",
+    "job": "5588",
+    "mode": "async_streams",
+    "output_receipt": "none: process failed before writing async_streams.json",
+    "status": "failed",
+    "workers": 2
+  },
+  "interpretation": {
+    "claim": "This is a negative runtime result and does not establish async speedup.",
+    "fallback": "Do not use concurrent scientific streams for this backend until a stream-safety qualification exists. The serial path remains the safe fallback.",
+    "runtime_change": "non-blocking CuPy streams with one ordered request chain per molecule and two worker threads",
+    "scientific_producer": "official GPU4PySCF 1.9.2 wheel"
+  },
+  "limitations": [
+    "The Slurm accounting service was disabled. The process log contains the CUDA illegal-address failure and no successful async receipt.",
+    "The failure occurred in the GPU4PySCF Rys J/K path while two molecule chains were active."
+  ],
+  "protocol": {
+    "bucket_count": 1,
+    "molecules": [
+      "qm9-000009",
+      "qm9-000011",
+      "qm9-000017"
+    ],
+    "request_count": 9,
+    "workers": 2
+  },
+  "raw_logs": {
+    "serial.json": {
+      "bytes": 12730,
+      "sha256": "8c517dd13c4ef986b4fcca755e917ea2d43bd1acb6f231925c0a28d99cb8e724"
+    },
+    "slurm-5584.err": {
+      "bytes": 269,
+      "sha256": "2b434a73fb73fa581620f95403bc879baa88138deec58ce9f98af6643f635c1d"
+    },
+    "slurm-5584.out": {
+      "bytes": 164,
+      "sha256": "2ef3e40c76d4721f12950e679a764be2071c0d280fd86d7000028dc2f75d0bd9"
+    },
+    "slurm-5588.err": {
+      "bytes": 25699,
+      "sha256": "88e6b19653475c4cc647f6187a60d92bf1510162033588f2446ee6b8d6178235"
+    },
+    "slurm-5588.out": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "runtime": "official GPU4PySCF 1.9.2 wheel on n2 RTX PRO 6000",
+  "schema": "vibedataset.prepared_gpu4pyscf_async_probe.v1",
+  "serial_control": {
+    "elapsed_seconds": 34.33253801194951,
+    "failed_count": 0,
+    "job": "5584",
+    "receipt": "serial.json",
+    "request_count": 9,
+    "status": "accepted"
+  },
+  "status": "unsafe-concurrent-cuda-fallback-required"
+}

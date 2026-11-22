@@ -1,0 +1,8 @@
+{
+  "status": "accepted",
+  "runtime_mode": "serial",
+  "request_count": 9,
+  "bucket_count": 1,
+  "async_group_count": 3,
+  "elapsed_seconds": 34.33253801194951
+}

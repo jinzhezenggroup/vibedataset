@@ -8,6 +8,8 @@ its nodes, and a failed node is isolated from the rest of a bucket.
 from __future__ import annotations
 from dataclasses import dataclass,asdict
 from collections import defaultdict
+from concurrent.futures import ThreadPoolExecutor, as_completed
+import time
 from typing import Iterable
 
 @dataclass(frozen=True)
@@ -76,6 +78,85 @@ class PreparedPropertyBatch:
                     self.isolate_failure(request_id,f'request_failed:{type(exc).__name__}')
                     receipts.append({'request_id':request_id,'bucket':bucket,'status':'reject-and-recompute','reason':str(exc)})
         return {'setup_count':setup_count,'request_count':len(receipts),'receipts':receipts,'failures':list(self.failures)}
+
+    def execute_async(self, producer, group_key, max_workers: int = 2):
+        """Execute independent request chains on one prepared bucket.
+
+        Requests sharing ``group_key`` are kept in manifest order, preserving
+        same-molecule asset dependencies. Different groups are submitted to a
+        bounded worker pool so a producer can bind each chain to a distinct
+        CUDA stream. Failure handling remains request-local and receipts are
+        returned in the original request order.
+        """
+        if not self.nodes:
+            self.compile()
+        if max_workers < 1:
+            raise ValueError("max_workers must be positive")
+        receipts = []
+        setup_count = 0
+        scheduler_started = time.perf_counter()
+        group_count = 0
+        for bucket, request_ids in self.buckets.items():
+            setup_count += 1
+            try:
+                state = producer.prepare_bucket(bucket, request_ids)
+            except Exception as exc:
+                for request_id in request_ids:
+                    self.isolate_failure(request_id, f"bucket_setup_failed:{type(exc).__name__}")
+                    receipts.append({"request_id": request_id, "bucket": bucket, "status": "reject-and-recompute", "reason": str(exc)})
+                continue
+            groups = defaultdict(list)
+            for index, request_id in enumerate(request_ids):
+                groups[group_key(request_id)].append((index, request_id))
+            group_count += len(groups)
+
+            def run_chain(items):
+                chain_receipts = []
+                for index, request_id in items:
+                    started = time.perf_counter()
+                    try:
+                        result = producer.run_request(request_id, state)
+                        chain_receipts.append({
+                            "index": index,
+                            "request_id": request_id,
+                            "bucket": bucket,
+                            "status": "accepted",
+                            "result": result,
+                            "scheduler_seconds": time.perf_counter() - started,
+                        })
+                    except Exception as exc:
+                        chain_receipts.append({
+                            "index": index,
+                            "request_id": request_id,
+                            "bucket": bucket,
+                            "status": "reject-and-recompute",
+                            "reason": str(exc),
+                            "scheduler_seconds": time.perf_counter() - started,
+                        })
+                return chain_receipts
+
+            workers = min(max_workers, len(groups))
+            with ThreadPoolExecutor(max_workers=workers, thread_name_prefix="prepared-property") as executor:
+                futures = [executor.submit(run_chain, items) for items in groups.values()]
+                for future in as_completed(futures):
+                    receipts.extend(future.result())
+        receipts.sort(key=lambda receipt: receipt.get("index", 0))
+        normalized = []
+        for receipt in receipts:
+            normalized_receipt = {key: value for key, value in receipt.items() if key != "index"}
+            normalized.append(normalized_receipt)
+            if receipt["status"] != "accepted":
+                self.isolate_failure(receipt["request_id"], f"request_failed:{receipt.get('reason', 'unknown')}")
+        return {
+            "setup_count": setup_count,
+            "request_count": len(normalized),
+            "receipts": normalized,
+            "failures": list(self.failures),
+            "execution_mode": "async-chains",
+            "max_workers": max_workers,
+            "group_count": group_count,
+            "scheduler_seconds": time.perf_counter() - scheduler_started,
+        }
     def isolate_failure(self,request_id,reason):
         for node in self.nodes:
             if node.request_id==request_id:node.disposition='reject-and-recompute';node.reason=reason

@@ -1,0 +1,17 @@
+{
+  "schema": "vibedataset.prepared_gpu4pyscf_runtime_check.v1",
+  "status": "passed",
+  "serial_elapsed_seconds": 34.33253801194951,
+  "process_isolated_elapsed_seconds": 34.79380883008707,
+  "process_over_serial_ratio": 1.013435383599576,
+  "request_count": 9,
+  "max_target_difference": 5.780265155408415e-12,
+  "max_residual_difference": 6.4191273824176776e-15,
+  "process_count": 3,
+  "cuda_context_count": 3,
+  "errors": [],
+  "limitations": [
+    "This compares process-isolated receipts to a serial receipt. It does not establish a same-context stream speedup.",
+    "Process startup and duplicated CUDA contexts are included in the process elapsed time."
+  ]
+}

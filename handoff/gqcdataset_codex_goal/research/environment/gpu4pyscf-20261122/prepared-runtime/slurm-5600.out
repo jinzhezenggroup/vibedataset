@@ -1,0 +1,8 @@
+{
+  "status": "accepted",
+  "request_count": 9,
+  "receipt_count": 9,
+  "bucket_count": 1,
+  "worker_count": 3,
+  "elapsed_seconds": 34.79380883008707
+}

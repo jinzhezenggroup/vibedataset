@@ -1,0 +1,34 @@
+{
+  "schema": "vibedataset.gpu4pyscf_process_concurrency_probe.v1",
+  "status": "accepted",
+  "manifest_sha256": "e08193beba0fd3b15d3b6c2ecf531b3b38c6cb8fef3da0ee95d19cd78858a635",
+  "molecules": [
+    "qm9-000009",
+    "qm9-000011"
+  ],
+  "process_count": 2,
+  "device_count": 1,
+  "python": "3.11.17 (main, Oct  1 2026, 20:17:42) [GCC 14.3.0]",
+  "platform": "Linux-6.8.0-149-generic-x86_64-with-glibc2.35",
+  "elapsed_seconds": 7.882296581054106,
+  "results": [
+    {
+      "molecule": "qm9-000009",
+      "converged": true,
+      "energy": -114.44537969803926,
+      "seconds": 4.546721278922632,
+      "pid": 2224574
+    },
+    {
+      "molecule": "qm9-000011",
+      "converged": true,
+      "energy": -150.94457786523608,
+      "seconds": 6.744346750085242,
+      "pid": 2224575
+    }
+  ],
+  "limitations": [
+    "This probes independent SCF processes only. It does not prove a safe multi-process response runtime.",
+    "Each process owns a separate CUDA context on the same physical GPU."
+  ]
+}

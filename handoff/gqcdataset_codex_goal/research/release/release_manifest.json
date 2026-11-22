@@ -2,7 +2,7 @@
   "schema": "vibedataset.research_release.v2",
   "git_head": "92d9bac6384208881827313709fc0a03f60b0bad",
   "git_head_kind": "audited_source_commit",
-  "built_from_git_head": "4c21c5898a34b93edf1e10ca0cffbffb42685972",
+  "built_from_git_head": "fd48d5180e056e59ba2b38cb69ea5759a29db9a3",
   "artifacts": [
     {
       "path": "README.md",
@@ -19,6 +19,26 @@
     {
       "path": "scripts/summarize_gpu4pyscf_4arm_telemetry.py",
       "sha256": "13d85eb1f010047ff06101ecd09350d7d16edda9761310cf45fbf75512009392"
+    },
+    {
+      "path": "scripts/prepared_property_batch.py",
+      "sha256": "4ba33ba8ee18833fe974fb986a1e9f900edf245b33334ab84ebdda006fad2f0e"
+    },
+    {
+      "path": "scripts/run_prepared_gpu4pyscf_async.py",
+      "sha256": "f3180f046bcba57b3223b1a1f6caccf948fea2220afbb6f6eb014d98621008d1"
+    },
+    {
+      "path": "scripts/run_prepared_gpu4pyscf_processes.py",
+      "sha256": "79ab23fd969ce809f2d54db1d834e12ac411e0f85d1dae88d470132b7bca5826"
+    },
+    {
+      "path": "scripts/check_prepared_gpu4pyscf_runtime.py",
+      "sha256": "cdb11f3bf6b5fa002cd992485cc84c92a7164b04fece35b06902aab332bfe29f"
+    },
+    {
+      "path": "scripts/probe_gpu4pyscf_process_concurrency.py",
+      "sha256": "644c7b95ece4a0c12abbae0a0d5d027f9abda8aa924a582e5e686e5722563d03"
     },
     {
       "path": "handoff/gqcdataset_codex_goal/research/experiments/attribution_4arm/manifest.json",
@@ -66,7 +86,7 @@
     },
     {
       "path": "handoff/gqcdataset_codex_goal/research/experiments/prepared_property_batch/README.md",
-      "sha256": "9b50d286820e456807913af5faf2fddd739b78a6dc9be8c42aa948931c09f0e5"
+      "sha256": "119e35d38e78b350c4fc5b47d9150e2c57bd7b8bb80a55ac16b07e644f8f488e"
     },
     {
       "path": "handoff/gqcdataset_codex_goal/research/experiments/prepared_property_batch/gpu-control.json",
@@ -75,6 +95,74 @@
     {
       "path": "handoff/gqcdataset_codex_goal/research/experiments/prepared_property_batch/gpu-control-verification.json",
       "sha256": "88fa13195906b319cf489588055b28d0ae44d228e3d496607ce87e6744816779"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/prepared-runtime/run-prepared-runtime.slurm",
+      "sha256": "bb2eb7fcad6f73fedcbbf590b89a20737ef969de427e6446ac6da00e9f5dbd27"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/prepared-runtime/run-process-probe.slurm",
+      "sha256": "7906e49bdc4fafc0b5b1d714a5337be5cc2f8040f47afd125e9598532672bb36"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/prepared-runtime/run-process-runtime.slurm",
+      "sha256": "8b5b5d71e0e5c0be43678323b137974f1252c8b9c9677a87ae65db1eb1c6e5dd"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/prepared-runtime/serial.json",
+      "sha256": "8c517dd13c4ef986b4fcca755e917ea2d43bd1acb6f231925c0a28d99cb8e724"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/prepared-runtime/process-runtime.json",
+      "sha256": "4111847aa41b0b11be7782a2564bccc846fc66ff901aae32ac0cb0cb8d1aaa51"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/prepared-runtime/process-probe.json",
+      "sha256": "f0752df8b31832004a8e19ac66766237759c61ffef57378753f05f44093e2672"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/prepared-runtime/check.json",
+      "sha256": "e02cb28e2ddb2e716ad0e034c51b8b7cc3b6c65d5a42664f16285f085b2b0e7e"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/prepared-runtime/async-probe-receipt.json",
+      "sha256": "5138109d3664d6e10bc9ed3c971ed2f7afde7790d9a6e703735b33bea6c5a42b"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/prepared-runtime/runtime-summary.json",
+      "sha256": "fbd44e99f3e57f1a3a5a0468e27a94df7c3728aad3b8cc00e606014bceaa9653"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/prepared-runtime/slurm-5584.out",
+      "sha256": "2ef3e40c76d4721f12950e679a764be2071c0d280fd86d7000028dc2f75d0bd9"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/prepared-runtime/slurm-5584.err",
+      "sha256": "2b434a73fb73fa581620f95403bc879baa88138deec58ce9f98af6643f635c1d"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/prepared-runtime/slurm-5588.out",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/prepared-runtime/slurm-5588.err",
+      "sha256": "88e6b19653475c4cc647f6187a60d92bf1510162033588f2446ee6b8d6178235"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/prepared-runtime/slurm-5594.out",
+      "sha256": "3eae9a629d84594e905831cef639f8620014163db2daeadcdb0985c3788c7c8e"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/prepared-runtime/slurm-5594.err",
+      "sha256": "52701d0c69b7f86ccdce0e0cad83d400fc199b1bab8ab9baae574d6982d5998f"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/prepared-runtime/slurm-5600.out",
+      "sha256": "72c8d8ba501d4d6072d30713c690e91875fbfc31ace978e5265a14f8c1eb6e91"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/prepared-runtime/slurm-5600.err",
+      "sha256": "deab3e81b743f31291885fda00296cbab78909a5314c6061feee9c62e84a567a"
     },
     {
       "path": "handoff/gqcdataset_codex_goal/research/experiments/response_asset_compiler/plan.json",
@@ -391,6 +479,8 @@
     "energy and peak-memory telemetry",
     "1000-row protocol-consistent request asset",
     "A100/H100 comparison",
-    "VeloxChem cross-check"
+    "VeloxChem cross-check",
+    "same-context GPU4PySCF stream safety",
+    "ragged/fused PreparedPropertyBatch kernels"
   ]
 }
