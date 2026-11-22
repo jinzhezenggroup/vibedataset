@@ -1,0 +1,120 @@
+{
+  "schema": "vibedataset.attribution_4arm.v1",
+  "source": {
+    "qm9_cohorts": [
+      "handoff/gqcdataset_codex_goal/research/experiments/qm9_response_assets/cohort.json",
+      "handoff/gqcdataset_codex_goal/research/experiments/qm9_extension/cohort.json"
+    ],
+    "asset_directories": [
+      "handoff/gqcdataset_codex_goal/research/experiments/qm9_response_assets",
+      "handoff/gqcdataset_codex_goal/research/experiments/qm9_extension/assets"
+    ],
+    "generator": "scripts/build_4arm_manifest.py"
+  },
+  "protocol": {
+    "method": "RHF",
+    "basis": "sto-3g",
+    "basis_representation": "real_spherical",
+    "unit": "Bohr",
+    "precision": "FP64",
+    "origin": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "conv_tol": 1e-10,
+    "max_cycle": 100,
+    "response_tol": 1e-08,
+    "response_max_cycle": 50,
+    "device": "cuda",
+    "seed": 20261122
+  },
+  "request_trajectories": [
+    {
+      "id": "cycle-one",
+      "order": 1,
+      "fields": [
+        "x"
+      ],
+      "targets": [
+        "xx"
+      ]
+    },
+    {
+      "id": "cycle-three",
+      "order": 2,
+      "fields": [
+        "x",
+        "y",
+        "z"
+      ],
+      "targets": [
+        "xx",
+        "yy",
+        "zz",
+        "xy",
+        "xz",
+        "yz"
+      ]
+    },
+    {
+      "id": "cross-three",
+      "order": 3,
+      "fields": [
+        "x",
+        "z"
+      ],
+      "targets": [
+        "xz",
+        "zx"
+      ]
+    }
+  ],
+  "molecules": [
+    {
+      "name": "qm9-000001",
+      "qm9_id": 1,
+      "member_sha256": "de172c51ea7b5a391b03b8e5bb9d518e6258e374778f0b14f8dbb2a794fbdab3",
+      "atomic_numbers": [
+        6,
+        1,
+        1,
+        1,
+        1
+      ],
+      "coordinates_bohr": [
+        [
+          -0.023995999144278364,
+          2.0518724832219424,
+          0.015119690786281064
+        ],
+        [
+          0.00406369729401325,
+          -0.011397538434635202,
+          0.003734326345285927
+        ],
+        [
+          1.9118942056736716,
+          2.7660888104047827,
+          0.0005226506249731474
+        ],
+        [
+          -1.0219923644805884,
+          2.735428858188938,
+          -1.6566165306024334
+        ],
+        [
+          -0.9898643095498246,
+          2.7172988833859253,
+          1.7128426461398503
+        ]
+      ],
+      "charge": 0,
+      "multiplicity": 1,
+      "basis_representation": "real_spherical"
+    }
+  ],
+  "parent_manifest_sha256": "e08193beba0fd3b15d3b6c2ecf531b3b38c6cb8fef3da0ee95d19cd78858a635",
+  "scope": "first molecule of the fixed 17-molecule cohort, all three original requests",
+  "manifest_sha256": "c40faf331e2058945aa5c793750fdc4938194bd43caa4473fa0cd9f68e86bc46"
+}

@@ -206,7 +206,12 @@ def run_arm(args) -> None:
         mf.max_cycle = protocol["max_cycle"]
         mf.callback = callback
         scf_started = time.perf_counter()
-        mf.kernel()
+        observer = getattr(args, "observer", None)
+        if observer is None:
+            mf.kernel()
+        else:
+            with observer.measure(f"scf/{item['name']}"):
+                mf.kernel()
         scf_seconds = time.perf_counter() - scf_started
         if not mf.converged:
             raise RuntimeError(f"SCF did not converge for {item['name']}")
@@ -214,6 +219,8 @@ def run_arm(args) -> None:
         cache = cache_type() if cache_type else None
         assets: dict[str, np.ndarray] = {}
         requests = sorted(manifest["request_trajectories"], key=lambda row: row["order"])
+        if observer is not None:
+            requests = observer.requests(item["name"], requests)
         for request in requests:
             requested = list(request["fields"])
             if arm_is_gqc:

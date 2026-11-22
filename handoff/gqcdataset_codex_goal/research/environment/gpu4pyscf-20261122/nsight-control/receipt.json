@@ -1,0 +1,30 @@
+{
+  "native_trace_directory": "n2:~/vibedataset/runs/nsight-control-v192/trace-5627",
+  "slurm_job": "5627",
+  "initial_A_probe": "5625",
+  "score_job": "5631",
+  "nsight_systems": "NVIDIA Nsight Systems version 2025.2.1.0",
+  "counter_attempt": {
+    "job": "5628",
+    "tool": "NVIDIA (R) Nsight Compute Command Line Profiler\nCopyright (c) 2018-2025 NVIDIA Corporation\nVersion 2025.2.1.0 (build 35987062) (public-release)",
+    "driver_policy": "RmProfilingAdminOnly: 1",
+    "program_exit": 1,
+    "error": "ERR_NVGPUCTRPERM",
+    "original_log_sha256": "23304593ffbfe9947cae083a55bb3ab752bc2e9c7cc5e7dda420bbb61af601f3",
+    "published_log_sha256": "e06ef186701b961451db7aae51446a17424258059fff9959853e920df754ceca"
+  },
+  "scores": {
+    "cold": {
+      "rows": 12,
+      "accepted": 12,
+      "seconds": 12.201623752014711,
+      "original_scorer_sha256": "1e5ea5f54a2965b868f4906802a969a1d4807e2e2f091e7d6b1a1ac55149c5b7"
+    },
+    "warm": {
+      "rows": 12,
+      "accepted": 12,
+      "seconds": 12.416831668000668,
+      "original_scorer_sha256": "9c6c7eacb6a7493e75e29fb6e248758a6ee12f61c830dee63db26a2ae87dc606"
+    }
+  }
+}

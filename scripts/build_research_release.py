@@ -19,6 +19,11 @@ RELEASE_ARTIFACTS = [
     "README.md",
     "scripts/run_gpu4pyscf_4arm_telemetry.py",
     "scripts/check_gpu4pyscf_4arm_telemetry.py",
+    "scripts/score_ao_density_response.py",
+    "scripts/cphf_reference.py",
+    "scripts/verify_gpu_response_assets.py",
+    "scripts/verify_gpu_response_asset_negative_controls.py",
+    "handoff/gqcdataset_codex_goal/research/experiments/response_asset_compiler/scorer-v192-ao.json.gz",
     "scripts/summarize_gpu4pyscf_4arm_telemetry.py",
     "scripts/prepared_property_batch.py",
     "scripts/run_prepared_gpu4pyscf_async.py",
@@ -149,6 +154,17 @@ RELEASE_ARTIFACTS.extend(f"{HESSIAN_CROSS_ENGINE}/{name}" for name in (
 ))
 
 
+NSIGHT = "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/nsight-control"
+RELEASE_ARTIFACTS.extend(["scripts/trace_gpu4pyscf_requests.py", "scripts/summarize_request_traces.py",
+                         "scripts/run_gpu4pyscf_4arm.py", "scripts/score_gpu4pyscf_4arm.py"])
+RELEASE_ARTIFACTS.extend(f"{NSIGHT}/{name}" for name in (
+    "README.md", "manifest.json", "receipt.json", "summary.json", "trace.slurm", "score.slurm", "counters.slurm",
+    "ncu.log", "scientific/score-cold.json.gz", "scientific/score-warm.json.gz"))
+for arm in "ABCD":
+    for state in ("cold", "warm"):
+        RELEASE_ARTIFACTS.extend([f"{NSIGHT}/{arm}-{state}.json.gz", f"{NSIGHT}/scientific/{arm}-{state}.jsonl.gz"])
+
+
 CLAIMS = [
     {
         "claim_id": "34",
@@ -201,10 +217,10 @@ CLAIMS = [
     {
         "claim_id": "37",
         "claim": "A-D request-level phase profiling baseline",
-        "status": "partial-small-queue-with-independent-score",
-        "evidence": "performance/profiling.md;environment/gpu4pyscf-20261122/a-d-telemetry/summary.json;environment/gpu4pyscf-20261122/a-d-telemetry/check.json",
+        "status": "bounded-four-arm-CUPTI-with-separate-physical-score",
+        "evidence": "performance/profiling.md;environment/gpu4pyscf-20261122/a-d-telemetry/summary.json;environment/gpu4pyscf-20261122/nsight-control/receipt.json",
         "condition": "official v1.9.2 wheel, one RTX PRO 6000, 4 arms x 51 requests, 14-field schema, 204/204 target-density-residual scorer acceptance",
-        "unknown": "compile/JIT, producer scorer cost, kernel metrics, CUPTI/Nsight, energy, second GPU and larger queue",
+        "unknown": "full-queue hardware counters, separated JIT/IO costs and second-device comparison",
     },
     {
         "claim_id": "38",
@@ -219,7 +235,7 @@ CLAIMS = [
         "claim": "response asset compiler and certificate dispositions",
         "status": "bounded-GPU-assets",
         "evidence": "experiments/response_asset_compiler/gpu-assets-verification.json;experiments/response_asset_compiler/gpu-assets-negative-controls.json",
-        "condition": "51 same-protocol direct assets and three reject controls; cross-protocol refine/reject frontier remains",
+        "condition": "51 sealed same-protocol archived assets, 14 integrity controls, independent candidate AO residuals for 204 matched v1.9.2 rows with 6 physical controls; cross-protocol GPU frontier remains",
         "unknown": "",
     },
     {
@@ -253,8 +269,8 @@ UNKNOWNs = [
     "complete upstream GPU4PySCF v1.9.2 source test and benchmark suite",
     "executable GPU4PySCF v1.9.0 runtime and selected tests",
     "paper-version mapping for v1.9.0/v1.9.2",
-    "CUPTI/Nsight traces",
-    "energy and peak-memory telemetry",
+    "queue-wide Nsight traces and permission for achieved occupancy/FLOP counters",
+    "dataset-scale energy and device memory profile",
     "1000-row protocol-consistent request asset",
     "A100/H100 comparison",
     "VeloxChem GPU CPKS, larger spectroscopy batches and failure controls",
