@@ -10,10 +10,22 @@
   "cuda_driver_version": 13020,
   "gpu": "NVIDIA RTX PRO 6000 Blackwell Workstation Edition",
   "precision": "FP64",
-  "threads": {"OMP_NUM_THREADS": "4", "OPENBLAS_NUM_THREADS": "4", "MKL_NUM_THREADS": "4"},
-  "official_release_tags": {"v1.9.0": "unavailable-in-pinned-checkout", "v1.9.2": "unavailable-in-pinned-checkout"},
+  "threads": {
+    "OMP_NUM_THREADS": "4",
+    "OPENBLAS_NUM_THREADS": "4",
+    "MKL_NUM_THREADS": "4"
+  },
+  "official_release_tags": {
+    "v1.9.0": "2fdc1951670a8e173dce063e697727bbc9f97616",
+    "v1.9.2": "8536a80c1e03260aab030e108ef1d181a3709057"
+  },
   "paper_version_lock": "not established",
   "official_upstream_benchmark_suite": "partial: polarizability 7 passed/1 skipped; CPHF 3 passed; IR/Raman 8 passed/2 skipped/1 failed; benchmark-properties 8 plugin/API errors",
   "project_official_baseline": "attribution_4arm/runs/run-A.json and raw/raw-A.jsonl",
-  "unknowns": ["driver package build flags", "CUPTI/Nsight traces", "power and energy", "full upstream benchmark suite"]
+  "unknowns": [
+    "driver package build flags",
+    "CUPTI/Nsight traces",
+    "power and energy",
+    "tag-specific execution in matching 1.9.x binary environment"
+  ]
 }

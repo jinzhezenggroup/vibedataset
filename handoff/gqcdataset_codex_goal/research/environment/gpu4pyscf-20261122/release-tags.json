@@ -1,0 +1,56 @@
+{
+  "schema": "vibedataset.gpu4pyscf_release_tags.v1",
+  "repository": "https://github.com/pyscf/gpu4pyscf",
+  "tags": [
+    {
+      "tag": "v1.9.0",
+      "commit": "2fdc1951670a8e173dce063e697727bbc9f97616",
+      "tree": "b0c4994d3e62477d54443a54b934307b2700b075",
+      "checkout_path": "_references/gpu4pyscf-v1.9.0",
+      "archive_tar_sha256": "ffe375fca85889ded2b5eff30326c831ae31b503e66ea1f1484f4f2d993f331b",
+      "file_count": 993,
+      "license_path": "LICENSE",
+      "license_sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "changelog_header": [
+        "v1.9.0 (2026-10-07)",
+        "-------------------",
+        "* New Features (PBC systems)"
+      ],
+      "test_file_count": 249,
+      "benchmark_file_count": 70,
+      "acquired": true,
+      "indexed": true,
+      "human_read": "tag metadata, license and benchmark/test inventory read",
+      "behavior_traced": false,
+      "executed": false,
+      "execution_status": "not_run_in_tag_environment"
+    },
+    {
+      "tag": "v1.9.2",
+      "commit": "8536a80c1e03260aab030e108ef1d181a3709057",
+      "tree": "69fdba009b630fefbaf15dfda71586f368a37a26",
+      "checkout_path": "_references/gpu4pyscf-v1.9.2",
+      "archive_tar_sha256": "e10c13bd0b92f03a99b6695dafde2df606de668578f1e79e34c5f375e63221c2",
+      "file_count": 1002,
+      "license_path": "LICENSE",
+      "license_sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "changelog_header": [
+        "v1.9.2 (2026-11-10)",
+        "-------------------",
+        "* Fixes"
+      ],
+      "test_file_count": 255,
+      "benchmark_file_count": 70,
+      "acquired": true,
+      "indexed": true,
+      "human_read": "tag metadata, license and benchmark/test inventory read",
+      "behavior_traced": false,
+      "executed": false,
+      "execution_status": "not_run_in_tag_environment"
+    }
+  ],
+  "limitations": [
+    "The tag source trees are archived for source comparison. The existing n2 binary environment is GPU4PySCF 1.8.1, so tag-specific execution is not claimed.",
+    "Official release tag metadata is separate from the paper-version mapping, which remains unestablished."
+  ]
+}

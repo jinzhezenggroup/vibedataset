@@ -18,9 +18,17 @@ def main():
    else:
     actual=subprocess.check_output(['git','-C',str(path),'rev-parse','HEAD'],text=True).strip()
     if actual!=sha:errs.append(f'head {ident}')
+ checkout_map = {
+  'GPU4PySCF': Path('_references/gpu4pyscf'),
+  'GPU4PySCF-v1.9.0': Path('_references/gpu4pyscf-v1.9.0'),
+  'GPU4PySCF-v1.9.2': Path('_references/gpu4pyscf-v1.9.2'),
+  'PySCF': Path('_references/pyscf_2_14'),
+ }
  for row in rows:
-  if not (Path('_references')/row['source'].lower().replace('pyscf','pyscf')).exists() and row['source'] not in ('GPU4PySCF','PySCF'): pass
-  checkout=Path('_references/gpu4pyscf' if row['source']=='GPU4PySCF' else '_references/pyscf_2_14')
+  checkout=checkout_map.get(row['source'])
+  if checkout is None:
+   errs.append(f'unknown coverage source {row["source"]}')
+   continue
   if not (checkout/row['path']).exists(): errs.append(f'path {row["source"]}:{row["path"]}')
  if len(rows)<15:errs.append('coverage rows')
  baseline=json.loads(a.baseline.read_text())
