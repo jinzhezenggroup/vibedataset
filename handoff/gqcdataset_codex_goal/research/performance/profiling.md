@@ -20,3 +20,13 @@ C 相对 A 的端到端几何均值 speedup 为约 1.09×。其 molecule-time pa
 在同一封存 manifest 的 `qm9-000001` 上，额外用独立 Slurm 进程取得官方 GPU4PySCF A 与 GQC planner-assets C 的 CUDA event 和显存池回执，见 `environment/gpu4pyscf-20261122/phase-profile-control/`。A 的三条请求 CPHF 加独立 residual 段分别为 1.372041、1.372145 和 1.408969 秒。C 的前两条新响应为 1.359896 和 1.369461 秒，第三条请求复用已有资产而没有新的响应调用。每条请求还保留 SCF/Fock、property readout、H2D/D2H 字节、operator rows、residual 和 `memGetInfo` 快照。
 
 这组 telemetry 只补齐了一个小分子的 A/C 阶段观测。B/D patched arm、完整四臂队列统计、冷/热分段、kernel launches、occupancy、FLOPs、CUPTI/Nsight 和能耗仍为 unknown。响应段包含该驱动中的独立 residual 计算，不能按单独质量阶段解读。
+
+## 官方 GPU4PySCF 1.9.2 wheel 的 A–D 小队列
+
+为解除版本不匹配的运行时缺口，在同一 n2 RTX PRO 6000 上使用官方 `gpu4pyscf-cuda12x==1.9.2` wheel 重跑 A–D。A/C 使用官方 wheel，B/D 使用同一 wheel 加 Issue #31 的显式 response-cache patch。四个 arm 各有 17 个分子、3 个请求、51 条请求级记录，均为 0 失败。每条记录保留 `prepare`、`environment_startup`、`data_read`、`compile_jit`、`warmup`、`h2d`、`scf_fock`、`cp_hf_gmres`、`property_readout`、`physical_residual`、`independent_scorer`、`serialization`、`retry` 和 `fallback` 字段，并额外给出端到端墙时、已计时和未归属秒数。
+
+独立 scorer 在官方 1.9.2 wheel 的新进程中重算 204 条记录，目标、AO density 和 oracle residual 门下为 204/204 accepted。旧 scorer 同时输出 operator-image 诊断，最大值为 `1.0302424205197571`，30 条记录超过 `1e-5`。该诊断没有被计入接受决定，原因和原始值在 summary 中保留。这个问题不能被写成额外的物理质量证明。
+
+按 17 个分子聚合请求端到端墙时，A 相对 C 的几何均值比为 `1.3301310312140333`。以 A−C 的分子配对中位数差做 bootstrap，95% 区间为 `[1.8504091509385034, 4.379100188030861]` 秒。B/A 的几何均值比为 `1.4722300523745848`，D/C 为 `1.241860186825735`。这些结果是 1.9.2 单 GPU 小队列 telemetry，不与原 1.8.1 A–D 结论混合，也不支持 10× 主张。
+
+原始 run、Slurm 日志、独立 scorer、结构检查和汇总见 [a-d-telemetry](../environment/gpu4pyscf-20261122/a-d-telemetry/)。compile/JIT 分段和 producer 内 independent scorer 仍为显式 `null`。kernel launch、occupancy、FLOPs、CUPTI/Nsight、能耗、第二 GPU、cold/warm 分离和完整 scale workload 仍未取得。

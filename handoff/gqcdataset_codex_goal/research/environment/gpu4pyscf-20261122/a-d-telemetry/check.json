@@ -1,0 +1,84 @@
+{
+  "schema": "vibedataset.gpu4pyscf_4arm_telemetry_check.v1",
+  "status": "passed",
+  "manifest_sha256": "e08193beba0fd3b15d3b6c2ecf531b3b38c6cb8fef3da0ee95d19cd78858a635",
+  "timing_fields": [
+    "compile_jit",
+    "cp_hf_gmres",
+    "data_read",
+    "environment_startup",
+    "fallback",
+    "h2d",
+    "independent_scorer",
+    "physical_residual",
+    "prepare",
+    "property_readout",
+    "retry",
+    "scf_fock",
+    "serialization",
+    "warmup"
+  ],
+  "arms": {
+    "A": {
+      "rows": 51,
+      "failed": 0,
+      "elapsed_seconds": 197.6309831130784,
+      "request_wall_seconds": 197.6154811886372,
+      "device": {
+        "cuda_device": 0,
+        "cuda_name": "NVIDIA RTX PRO 6000 Blackwell Workstation Edition",
+        "cuda_total_bytes": 101973491712,
+        "cuda_free_bytes_at_start": 101372723200,
+        "cupy_version": "14.2.0"
+      },
+      "patch_sha256": null
+    },
+    "B": {
+      "rows": 51,
+      "failed": 0,
+      "elapsed_seconds": 296.96977438102476,
+      "request_wall_seconds": 296.95423073053826,
+      "device": {
+        "cuda_device": 0,
+        "cuda_name": "NVIDIA RTX PRO 6000 Blackwell Workstation Edition",
+        "cuda_total_bytes": 101973491712,
+        "cuda_free_bytes_at_start": 101372723200,
+        "cupy_version": "14.2.0"
+      },
+      "patch_sha256": "dad0f28af59dc9dca2fc3c0c78f73920ae4f5593bc2d50408fc02153293679d5"
+    },
+    "C": {
+      "rows": 51,
+      "failed": 0,
+      "elapsed_seconds": 148.61713618703652,
+      "request_wall_seconds": 148.60184598900378,
+      "device": {
+        "cuda_device": 0,
+        "cuda_name": "NVIDIA RTX PRO 6000 Blackwell Workstation Edition",
+        "cuda_total_bytes": 101973491712,
+        "cuda_free_bytes_at_start": 101372723200,
+        "cupy_version": "14.2.0"
+      },
+      "patch_sha256": null
+    },
+    "D": {
+      "rows": 51,
+      "failed": 0,
+      "elapsed_seconds": 186.27711477898993,
+      "request_wall_seconds": 186.2619204542134,
+      "device": {
+        "cuda_device": 0,
+        "cuda_name": "NVIDIA RTX PRO 6000 Blackwell Workstation Edition",
+        "cuda_total_bytes": 101973491712,
+        "cuda_free_bytes_at_start": 101372723200,
+        "cupy_version": "14.2.0"
+      },
+      "patch_sha256": "dad0f28af59dc9dca2fc3c0c78f73920ae4f5593bc2d50408fc02153293679d5"
+    }
+  },
+  "errors": [],
+  "limitations": [
+    "compile_jit and independent_scorer remain explicit null phases in producer rows",
+    "This checker validates receipt structure and bounded field reuse, not physical target correctness"
+  ]
+}

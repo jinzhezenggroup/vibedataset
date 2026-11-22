@@ -1,0 +1,51 @@
+{
+  "schema": "vibedataset.attribution_4arm.telemetry_run.v1",
+  "arm": "A",
+  "backend": "gpu4pyscf-official",
+  "orchestration": "native-ordinary",
+  "manifest": "/home/lhshen/vibedataset/runs/gpu4pyscf-v1.9.2-build-20261122/attribution-manifest.json",
+  "manifest_sha256": "e08193beba0fd3b15d3b6c2ecf531b3b38c6cb8fef3da0ee95d19cd78858a635",
+  "driver_sha256": "b658031181b5b3796037b6f7e9fd8e9d61d81d6d5168be1bf6d4b8a1225bfddb",
+  "source_commit": "231ad366852259b447abb0cfe1157074b2174707",
+  "gpu4pyscf_source_commit": "8536a80c1e03260aab030e108ef1d181a3709057",
+  "patch_sha256": null,
+  "python": "3.11.17 (main, Oct  1 2026, 20:17:42) [GCC 14.3.0]",
+  "platform": "Linux-6.8.0-149-generic-x86_64-with-glibc2.35",
+  "device": {
+    "cuda_device": 0,
+    "cuda_name": "NVIDIA RTX PRO 6000 Blackwell Workstation Edition",
+    "cuda_total_bytes": 101973491712,
+    "cuda_free_bytes_at_start": 101372723200,
+    "cupy_version": "14.2.0"
+  },
+  "record_count": 51,
+  "failed_count": 0,
+  "failures": [],
+  "elapsed_seconds": 197.6309831130784,
+  "timing_fields": [
+    "prepare",
+    "environment_startup",
+    "data_read",
+    "compile_jit",
+    "warmup",
+    "h2d",
+    "scf_fock",
+    "cp_hf_gmres",
+    "property_readout",
+    "physical_residual",
+    "independent_scorer",
+    "serialization",
+    "retry",
+    "fallback"
+  ],
+  "timing_semantics": {
+    "compile_jit": "null because official API does not expose compilation timing",
+    "independent_scorer": "null because the scorer is a separate process",
+    "end_to_end_wall_seconds": "request process wall time from request entry through row construction",
+    "known_seconds": "sum of non-null timing fields",
+    "unattributed_seconds": "end_to_end_wall_seconds minus known_seconds, never reclassified as a speedup"
+  },
+  "blind": true,
+  "oracle_loaded": false,
+  "scorer_loaded": false
+}
