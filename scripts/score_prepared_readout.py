@@ -38,6 +38,7 @@ def main():
     p.add_argument("--root", type=Path, required=True)
     p.add_argument("--out", type=Path, required=True)
     p.add_argument("--pilot", action="store_true")
+    p.add_argument("--extended", choices=("dense", "adjoint"))
     a = p.parse_args()
     started = time.perf_counter()
     manifest = load_manifest(a.manifest)
@@ -53,6 +54,10 @@ def main():
         elif event == "finished" and code == ["0"]:
             wall[mode] = (int(value) - begin[mode]) / 1e9
     modes = ("serial", "async-ragged") if a.pilot else FULL
+    if a.extended == "dense":
+        modes = ("official", "dense-separated", "dense-fused", "mixed", "dense-budget")
+    elif a.extended == "adjoint":
+        modes = ("direct", "adjoint", "direct-no-asset", "adjoint-no-asset")
     if set(wall) != set(modes):
         raise ValueError("external process timing denominator")
     results = {}
@@ -85,7 +90,37 @@ def main():
                     or q["geometry_sha256"] != by_name[name]["member_sha256"]
                 ):
                     raise ValueError("wrong physical identity")
-                quality = score(q, t, manifest, models[name])
+                if a.extended == "adjoint":
+                    directions = q["readout_directions"]
+                    if len(directions) != len(t["targets"]) or any(
+                        b not in (a, a[::-1]) for a, b in zip(t["targets"], directions)
+                    ):
+                        raise ValueError("invalid scalar readout map")
+                    projected = dict(
+                        q,
+                        targets={
+                            b: q["targets"][a] for a, b in zip(t["targets"], directions)
+                        },
+                    )
+                    selected = dict(
+                        fields=q["fields_requested"],
+                        targets=list(dict.fromkeys(directions)),
+                    )
+                    quality = score(projected, selected, manifest, models[name])
+                    error = max(
+                        abs(
+                            q["targets"][target]
+                            - models[name]["targets"][
+                                "xyz".index(target[0]), "xyz".index(target[1])
+                            ]
+                        )
+                        for target in t["targets"]
+                    )
+                    quality["original_mask_max_error"] = float(error)
+                    if error > 1e-5:
+                        quality["status"] = "reject-and-recompute"
+                else:
+                    quality = score(q, t, manifest, models[name])
                 if quality["status"] != "accepted" or (
                     mode == "isolation" and rid in FAULTS
                 ):

@@ -5,6 +5,7 @@ from __future__ import annotations
 import argparse
 from collections import deque
 import hashlib
+import itertools
 import json
 import math
 from pathlib import Path
@@ -34,6 +35,25 @@ extern "C" __global__ void ragged_readout(const double *dm, const double *rt,
     if (threadIdx.x == 0) out[row] = tmp[0];
 }
 """
+
+
+def target_directions(targets, cached, strategy):
+    direct = tuple(dict.fromkeys(pair[0] for pair in targets))
+    if strategy == "direct":
+        return list(direct), list(targets)
+    # For a static real RHF polarizability alpha[a,b] = alpha[b,a].
+    # Each published scalar may therefore use either end of its pair.
+    choices = [
+        axes
+        for size in range(1, 4)
+        for axes in itertools.combinations("xyz", size)
+        if all(left in axes or right in axes for left, right in targets)
+    ]
+    axes = min(
+        choices,
+        key=lambda fields: (sum(f not in cached for f in fields), len(fields), fields),
+    )
+    return list(axes), [pair if pair[0] in axes else pair[::-1] for pair in targets]
 
 
 def pinned(cp, count, dtype=np.float64):
@@ -76,7 +96,9 @@ class ReadoutSlot:
                 fields, targets = row["fields_requested"], row["target_mask"]
                 self.dm[d : d + dm.size] = dm.ravel()
                 self.rt[r : r + position.size] = position.transpose(0, 2, 1).ravel()
-                for i, (left, right) in enumerate(targets):
+                for i, (left, right) in enumerate(
+                    row.get("readout_directions", targets)
+                ):
                     a, b = (
                         d + fields.index(left) * width,
                         r + "xyz".index(right) * width,
@@ -160,6 +182,11 @@ def options():
         default="official",
     )
     p.add_argument("--dense-eri-budget", type=int, default=64 * 1024 * 1024)
+    p.add_argument(
+        "--target-only",
+        choices=("direct", "adjoint"),
+        help="publish scalar polarizabilities with certificates for the actually solved columns",
+    )
     args = p.parse_args()
     if min(args.workers, args.batch_size) < 1 or args.workspace_bytes < 0:
         p.error("invalid staging limits")
@@ -344,6 +371,15 @@ def main():
                     if args.asset_reuse
                     else {}
                 )
+                if args.target_only:
+                    fields, directions = target_directions(
+                        targets, cache, args.target_only
+                    )
+                    row.update(
+                        fields_requested=fields,
+                        readout_directions=directions,
+                        density_scope="only the columns used to certify the scalar readouts",
+                    )
                 needed = [f for f in fields if f not in cache]
                 calls = work = 0
                 residual = None
@@ -426,9 +462,15 @@ def main():
                 readout = np.einsum("fuv,kvu->fk", dm, rt)
                 row["targets"] = {
                     t: float(
-                        readout[row["fields_requested"].index(t[0]), "xyz".index(t[1])]
+                        readout[
+                            row["fields_requested"].index(direction[0]),
+                            "xyz".index(direction[1]),
+                        ]
                     )
-                    for t in row["target_mask"]
+                    for t, direction in zip(
+                        row["target_mask"],
+                        row.get("readout_directions", row["target_mask"]),
+                    )
                 }
                 row["fallback"] = "host_readout_workspace_budget"
             continue
@@ -493,6 +535,7 @@ def main():
         h2d_stream=int(transfer.ptr),
         batch_size=args.batch_size,
         response_action=args.response_action,
+        target_only=args.target_only,
         dense_eri_budget=args.dense_eri_budget,
         ragged=args.ragged,
         resident=args.resident,
