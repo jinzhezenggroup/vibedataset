@@ -1,0 +1,51 @@
+sF.......s.                                                              [100%]
+=================================== FAILURES ===================================
+______________________ KnownValues.test_pcm_not_supported ______________________
+
+self = <test_ir_intensity.KnownValues testMethod=test_pcm_not_supported>
+
+    def test_pcm_not_supported(self):
+        mf = rks.RKS(mol, xc='b3lyp').PCM()
+        with self.assertRaisesRegex(
+                NotImplementedError, 'PCM solvent response is not supported'):
+>           ir.eval_ir_freq_intensity(mf, None)
+
+vibedataset/runs/gpu-property-tests-20261122/test_ir_intensity.py:114:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def eval_ir_freq_intensity(mf, hessian_obj):
+        '''Main driver of infrared spectra intensity
+
+        Args:
+            mf: mean field object
+            hessian_obj: hessian object
+
+        Returns:
+            frequency mode: in cm^-1
+            infrared spectra intensity: in km/mol
+        '''
+        log = logger.new_logger(hessian_obj, mf.mol.verbose)
+        assert isinstance(mf, RHF)
+>       hessian = hessian_obj.kernel()
+                  ^^^^^^^^^^^^^^^^^^
+E       AttributeError: 'NoneType' object has no attribute 'kernel'
+
+miniconda3/envs/xtbflow-qc/lib/python3.11/site-packages/gpu4pyscf/properties/ir.py:41: AttributeError
+=============================== warnings summary ===============================
+miniconda3/envs/xtbflow-qc/lib/python3.11/site-packages/gpu4pyscf/lib/cutensor.py:154
+  /home/lhshen/miniconda3/envs/xtbflow-qc/lib/python3.11/site-packages/gpu4pyscf/lib/cutensor.py:154: UserWarning: using cupy as the tensor contraction engine.
+    warnings.warn(f'using {contract_engine} as the tensor contraction engine.')
+
+vibedataset/runs/gpu-property-tests-20261122/test_raman_intensity.py:95
+  /home/lhshen/vibedataset/runs/gpu-property-tests-20261122/test_raman_intensity.py:95: PytestUnknownMarkWarning: Unknown pytest.mark.slow - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.slow
+
+vibedataset/runs/gpu-property-tests-20261122/test_raman_intensity.py:126
+  /home/lhshen/vibedataset/runs/gpu-property-tests-20261122/test_raman_intensity.py:126: PytestUnknownMarkWarning: Unknown pytest.mark.slow - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.slow
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED vibedataset/runs/gpu-property-tests-20261122/test_ir_intensity.py::KnownValues::test_pcm_not_supported
+1 failed, 8 passed, 2 skipped, 3 warnings in 324.18s (0:05:24)
+srun: error: node2: task 0: Exited with exit code 1

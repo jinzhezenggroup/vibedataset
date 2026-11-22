@@ -1,6 +1,6 @@
 {
   "schema": "vibedataset.research_release.v1",
-  "git_head": "608f3facca644ef8519da67ec03d87078ee8eed0",
+  "git_head": "92773373d5bbcf01c61a704bbb1143ecb41c4aca",
   "artifacts": [
     {
       "path": "README.md",
@@ -60,11 +60,15 @@
     },
     {
       "path": "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/baseline.json",
-      "sha256": "2b3ded93970330760fe2192db86d111b25b2a1ddc8937101bfb87f158fdc9d51"
+      "sha256": "7529e2a035845a3914787a5a3cffe212f20263a94420f54b2bc4d74ac30add9e"
     },
     {
       "path": "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/upstream-polarizability-pytest.log",
       "sha256": "6e1f2e4012605d3bcdd51bcafe044ac26d93b9c5300fc1349067f5475c385968"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/upstream-ir-raman-pytest.log",
+      "sha256": "16d73017016870ab5ab2a279adc8b586f60f3b1b56df70ce0c2abd709048e6ca"
     }
   ],
   "commands": [
