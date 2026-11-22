@@ -1,0 +1,120 @@
+{
+  "schema": "vibedataset.bounded_frontier_summary.v1",
+  "pilot": {
+    "cold": {
+      "requested": 15,
+      "quality": {
+        "accepted": 14,
+        "evidence-unavailable": 1
+      },
+      "solver_rows": 194,
+      "actions": {
+        "cold-solve": 14,
+        "reject-and-recompute": 1
+      },
+      "max_absolute_cpu_readout_error": 4.62313902716005e-08,
+      "physical_residual_max": 2.336408982152316e-07,
+      "max_condition": 62.57587379790704,
+      "elapsed_in_process_s": 53.262838979950175,
+      "bytes_serialized": 56163
+    },
+    "planned": {
+      "requested": 15,
+      "quality": {
+        "accepted": 14,
+        "evidence-unavailable": 1
+      },
+      "solver_rows": 174,
+      "actions": {
+        "direct_reuse": 3,
+        "refine_required": 6,
+        "reject-and-recompute": 6
+      },
+      "max_absolute_cpu_readout_error": 1.8282008076297984e-06,
+      "physical_residual_max": 7.181740304109882e-07,
+      "max_condition": 62.57587379790704,
+      "elapsed_in_process_s": 55.102949557011016,
+      "bytes_serialized": 57022
+    }
+  },
+  "pairs": [
+    {
+      "cold": {
+        "requested": 15,
+        "quality": {
+          "accepted": 14,
+          "evidence-unavailable": 1
+        },
+        "solver_rows": 194,
+        "actions": {
+          "cold-solve": 14,
+          "reject-and-recompute": 1
+        },
+        "max_absolute_cpu_readout_error": 4.623119309599133e-08,
+        "physical_residual_max": 2.3364089113755981e-07,
+        "max_condition": 62.57587379790704,
+        "elapsed_in_process_s": 196.2834255420603,
+        "bytes_serialized": 56176,
+        "external_wall_seconds": 197.032201366
+      },
+      "planned": {
+        "requested": 15,
+        "quality": {
+          "accepted": 14,
+          "evidence-unavailable": 1
+        },
+        "solver_rows": 174,
+        "actions": {
+          "direct_reuse": 3,
+          "refine_required": 6,
+          "reject-and-recompute": 6
+        },
+        "max_absolute_cpu_readout_error": 1.8282008058534416e-06,
+        "physical_residual_max": 7.181742756922141e-07,
+        "max_condition": 62.57587379790704,
+        "elapsed_in_process_s": 185.2000981089659,
+        "bytes_serialized": 56985,
+        "external_wall_seconds": 185.914718681
+      }
+    },
+    {
+      "cold": {
+        "requested": 15,
+        "quality": {
+          "accepted": 14,
+          "evidence-unavailable": 1
+        },
+        "solver_rows": 194,
+        "actions": {
+          "cold-solve": 14,
+          "reject-and-recompute": 1
+        },
+        "max_absolute_cpu_readout_error": 4.6221191318807087e-08,
+        "physical_residual_max": 2.336408846566329e-07,
+        "max_condition": 62.57587379790704,
+        "elapsed_in_process_s": 187.9828729290748,
+        "bytes_serialized": 56124,
+        "external_wall_seconds": 188.63990941
+      },
+      "planned": {
+        "requested": 15,
+        "quality": {
+          "accepted": 14,
+          "evidence-unavailable": 1
+        },
+        "solver_rows": 174,
+        "actions": {
+          "direct_reuse": 3,
+          "refine_required": 6,
+          "reject-and-recompute": 6
+        },
+        "max_absolute_cpu_readout_error": 1.8282008076297984e-06,
+        "physical_residual_max": 7.181739693834163e-07,
+        "max_condition": 62.57587379790704,
+        "elapsed_in_process_s": 186.69455784501042,
+        "bytes_serialized": 57014,
+        "external_wall_seconds": 187.386006473
+      }
+    }
+  ]
+}
