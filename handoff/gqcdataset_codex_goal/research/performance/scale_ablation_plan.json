@@ -8,6 +8,19 @@
     "target_scale": 1000,
     "status": "partial-falsified-response-labels-blocked"
   },
+  "bounded_controls": {
+    "prepared_gpu4pyscf_same_shape": {
+      "molecules": 3,
+      "request_rows": 9,
+      "nao": 19,
+      "bucket_count": 1,
+      "resident_bucket_setup_count": 1,
+      "serial_setup_count_reference": 3,
+      "target_max_abs_diff_vs_archived_C": 5.218936394157936e-12,
+      "status": "accepted-bounded-control",
+      "evidence": "experiments/prepared_property_batch/gpu-control-verification.json"
+    }
+  },
   "strata": [
     {
       "n_heavy": 1,
@@ -39,13 +52,13 @@
   "ablations": [
     {
       "name": "shape_bucket",
-      "status": "not_run",
-      "reason": "requires #37 phase profile"
+      "status": "bounded-control",
+      "reason": "n2 job 5530 grouped three nao=19 molecules into one PreparedPropertyBatch bucket; no queue-level claim"
     },
     {
       "name": "gpu_residency",
-      "status": "not_run",
-      "reason": "requires new GPU runtime implementation"
+      "status": "bounded-control",
+      "reason": "n2 job 5530 kept one CUDA context and orchestration workspace resident; backend operator assets were not shared"
     },
     {
       "name": "async_streams",
@@ -69,12 +82,12 @@
     },
     {
       "name": "asset_planner",
-      "status": "not_run",
+      "status": "measured",
       "reason": "measured in #31/#33"
     },
     {
       "name": "compile_cache",
-      "status": "not_run",
+      "status": "measured",
       "reason": "patch cache negative result measured in #31"
     },
     {
