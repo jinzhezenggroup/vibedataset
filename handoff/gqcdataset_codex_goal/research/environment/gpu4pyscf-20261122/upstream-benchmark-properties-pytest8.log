@@ -1,0 +1,539 @@
+EEEEEEEE                                                                 [100%]
+==================================== ERRORS ====================================
+_____________________ ERROR at setup of test_df_rb3lyp_nmr _____________________
+
+request = <SubRequest 'benchmark' for <Function test_df_rb3lyp_nmr>>
+
+    @pytest.fixture
+    def benchmark(request):
+        bs: BenchmarkSession = request.config._benchmarksession
+
+        if bs.skip:
+            pytest.skip('Benchmarks are skipped (--benchmark-skip was used).')
+        else:
+            node = request.node
+            marker = node.get_closest_marker('benchmark')
+            options: dict[str, object] = dict(marker.kwargs) if marker else {}
+            if 'timer' in options:
+                options['timer'] = NameWrapper(options['timer'])
+>           fixture = BenchmarkFixture(
+                node,
+                add_stats=bs.benchmarks.append,
+                logger=bs.logger,
+                warner=request.node.warn,
+                disabled=bs.disabled,
+                **dict(bs.options, **options),
+            )
+
+vibedataset/runs/pytest-benchmark-env/pytest_benchmark/plugin.py:472:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <pytest_benchmark.fixture.BenchmarkFixture object at 0x7bb1a2b5eed0>
+node = <Function test_df_rb3lyp_nmr>, disable_gc = False
+timer = NameWrapper(<built-in function perf_counter>), min_rounds = 3
+min_time = Decimal('0.000005'), max_time = Decimal('1.0'), warmup = True
+warmup_iterations = 2, calibration_precision = 10
+add_stats = <built-in method append of list object at 0x7bb24645af80>
+logger = <pytest_benchmark.logger.Logger object at 0x7bb24548ed90>
+warner = <bound method Node.warn of <Function test_df_rb3lyp_nmr>>
+disabled = False, cprofile = False, cprofile_loops = 1, cprofile_dump = False
+group = None
+
+    def __init__(
+        self,
+        node,
+        disable_gc,
+        timer,
+        min_rounds,
+        min_time,
+        max_time,
+        warmup,
+        warmup_iterations,
+        calibration_precision,
+        add_stats,
+        logger,
+        warner,
+        disabled,
+        cprofile,
+        cprofile_loops,
+        cprofile_dump,
+        group=None,
+    ):
+        self.name = node.name
+>       self.fullname = node._nodeid
+                        ^^^^^^^^^^^^
+E       AttributeError: 'Function' object has no attribute '_nodeid'
+
+vibedataset/runs/pytest-benchmark-env/pytest_benchmark/fixture.py:54: AttributeError
+_______________ ERROR at setup of test_df_rb3lyp_polarizability ________________
+
+request = <SubRequest 'benchmark' for <Function test_df_rb3lyp_polarizability>>
+
+    @pytest.fixture
+    def benchmark(request):
+        bs: BenchmarkSession = request.config._benchmarksession
+
+        if bs.skip:
+            pytest.skip('Benchmarks are skipped (--benchmark-skip was used).')
+        else:
+            node = request.node
+            marker = node.get_closest_marker('benchmark')
+            options: dict[str, object] = dict(marker.kwargs) if marker else {}
+            if 'timer' in options:
+                options['timer'] = NameWrapper(options['timer'])
+>           fixture = BenchmarkFixture(
+                node,
+                add_stats=bs.benchmarks.append,
+                logger=bs.logger,
+                warner=request.node.warn,
+                disabled=bs.disabled,
+                **dict(bs.options, **options),
+            )
+
+vibedataset/runs/pytest-benchmark-env/pytest_benchmark/plugin.py:472:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <pytest_benchmark.fixture.BenchmarkFixture object at 0x7bb09ebd40d0>
+node = <Function test_df_rb3lyp_polarizability>, disable_gc = False
+timer = NameWrapper(<built-in function perf_counter>), min_rounds = 3
+min_time = Decimal('0.000005'), max_time = Decimal('1.0'), warmup = True
+warmup_iterations = 2, calibration_precision = 10
+add_stats = <built-in method append of list object at 0x7bb24645af80>
+logger = <pytest_benchmark.logger.Logger object at 0x7bb24548ed90>
+warner = <bound method Node.warn of <Function test_df_rb3lyp_polarizability>>
+disabled = False, cprofile = False, cprofile_loops = 1, cprofile_dump = False
+group = None
+
+    def __init__(
+        self,
+        node,
+        disable_gc,
+        timer,
+        min_rounds,
+        min_time,
+        max_time,
+        warmup,
+        warmup_iterations,
+        calibration_precision,
+        add_stats,
+        logger,
+        warner,
+        disabled,
+        cprofile,
+        cprofile_loops,
+        cprofile_dump,
+        group=None,
+    ):
+        self.name = node.name
+>       self.fullname = node._nodeid
+                        ^^^^^^^^^^^^
+E       AttributeError: 'Function' object has no attribute '_nodeid'
+
+vibedataset/runs/pytest-benchmark-env/pytest_benchmark/fixture.py:54: AttributeError
+___________________ ERROR at setup of test_direct_rb3lyp_nmr ___________________
+
+request = <SubRequest 'benchmark' for <Function test_direct_rb3lyp_nmr>>
+
+    @pytest.fixture
+    def benchmark(request):
+        bs: BenchmarkSession = request.config._benchmarksession
+
+        if bs.skip:
+            pytest.skip('Benchmarks are skipped (--benchmark-skip was used).')
+        else:
+            node = request.node
+            marker = node.get_closest_marker('benchmark')
+            options: dict[str, object] = dict(marker.kwargs) if marker else {}
+            if 'timer' in options:
+                options['timer'] = NameWrapper(options['timer'])
+>           fixture = BenchmarkFixture(
+                node,
+                add_stats=bs.benchmarks.append,
+                logger=bs.logger,
+                warner=request.node.warn,
+                disabled=bs.disabled,
+                **dict(bs.options, **options),
+            )
+
+vibedataset/runs/pytest-benchmark-env/pytest_benchmark/plugin.py:472:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <pytest_benchmark.fixture.BenchmarkFixture object at 0x7bb09eb40490>
+node = <Function test_direct_rb3lyp_nmr>, disable_gc = False
+timer = NameWrapper(<built-in function perf_counter>), min_rounds = 3
+min_time = Decimal('0.000005'), max_time = Decimal('1.0'), warmup = True
+warmup_iterations = 2, calibration_precision = 10
+add_stats = <built-in method append of list object at 0x7bb24645af80>
+logger = <pytest_benchmark.logger.Logger object at 0x7bb24548ed90>
+warner = <bound method Node.warn of <Function test_direct_rb3lyp_nmr>>
+disabled = False, cprofile = False, cprofile_loops = 1, cprofile_dump = False
+group = None
+
+    def __init__(
+        self,
+        node,
+        disable_gc,
+        timer,
+        min_rounds,
+        min_time,
+        max_time,
+        warmup,
+        warmup_iterations,
+        calibration_precision,
+        add_stats,
+        logger,
+        warner,
+        disabled,
+        cprofile,
+        cprofile_loops,
+        cprofile_dump,
+        group=None,
+    ):
+        self.name = node.name
+>       self.fullname = node._nodeid
+                        ^^^^^^^^^^^^
+E       AttributeError: 'Function' object has no attribute '_nodeid'
+
+vibedataset/runs/pytest-benchmark-env/pytest_benchmark/fixture.py:54: AttributeError
+_____________ ERROR at setup of test_direct_rb3lyp_polarizability ______________
+
+request = <SubRequest 'benchmark' for <Function test_direct_rb3lyp_polarizability>>
+
+    @pytest.fixture
+    def benchmark(request):
+        bs: BenchmarkSession = request.config._benchmarksession
+
+        if bs.skip:
+            pytest.skip('Benchmarks are skipped (--benchmark-skip was used).')
+        else:
+            node = request.node
+            marker = node.get_closest_marker('benchmark')
+            options: dict[str, object] = dict(marker.kwargs) if marker else {}
+            if 'timer' in options:
+                options['timer'] = NameWrapper(options['timer'])
+>           fixture = BenchmarkFixture(
+                node,
+                add_stats=bs.benchmarks.append,
+                logger=bs.logger,
+                warner=request.node.warn,
+                disabled=bs.disabled,
+                **dict(bs.options, **options),
+            )
+
+vibedataset/runs/pytest-benchmark-env/pytest_benchmark/plugin.py:472:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <pytest_benchmark.fixture.BenchmarkFixture object at 0x7bb09ebac110>
+node = <Function test_direct_rb3lyp_polarizability>, disable_gc = False
+timer = NameWrapper(<built-in function perf_counter>), min_rounds = 3
+min_time = Decimal('0.000005'), max_time = Decimal('1.0'), warmup = True
+warmup_iterations = 2, calibration_precision = 10
+add_stats = <built-in method append of list object at 0x7bb24645af80>
+logger = <pytest_benchmark.logger.Logger object at 0x7bb24548ed90>
+warner = <bound method Node.warn of <Function test_direct_rb3lyp_polarizability>>
+disabled = False, cprofile = False, cprofile_loops = 1, cprofile_dump = False
+group = None
+
+    def __init__(
+        self,
+        node,
+        disable_gc,
+        timer,
+        min_rounds,
+        min_time,
+        max_time,
+        warmup,
+        warmup_iterations,
+        calibration_precision,
+        add_stats,
+        logger,
+        warner,
+        disabled,
+        cprofile,
+        cprofile_loops,
+        cprofile_dump,
+        group=None,
+    ):
+        self.name = node.name
+>       self.fullname = node._nodeid
+                        ^^^^^^^^^^^^
+E       AttributeError: 'Function' object has no attribute '_nodeid'
+
+vibedataset/runs/pytest-benchmark-env/pytest_benchmark/fixture.py:54: AttributeError
+__________________ ERROR at setup of test_df_small_rb3lyp_nmr __________________
+
+request = <SubRequest 'benchmark' for <Function test_df_small_rb3lyp_nmr>>
+
+    @pytest.fixture
+    def benchmark(request):
+        bs: BenchmarkSession = request.config._benchmarksession
+
+        if bs.skip:
+            pytest.skip('Benchmarks are skipped (--benchmark-skip was used).')
+        else:
+            node = request.node
+            marker = node.get_closest_marker('benchmark')
+            options: dict[str, object] = dict(marker.kwargs) if marker else {}
+            if 'timer' in options:
+                options['timer'] = NameWrapper(options['timer'])
+>           fixture = BenchmarkFixture(
+                node,
+                add_stats=bs.benchmarks.append,
+                logger=bs.logger,
+                warner=request.node.warn,
+                disabled=bs.disabled,
+                **dict(bs.options, **options),
+            )
+
+vibedataset/runs/pytest-benchmark-env/pytest_benchmark/plugin.py:472:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <pytest_benchmark.fixture.BenchmarkFixture object at 0x7bb09ebd4490>
+node = <Function test_df_small_rb3lyp_nmr>, disable_gc = False
+timer = NameWrapper(<built-in function perf_counter>), min_rounds = 3
+min_time = Decimal('0.000005'), max_time = Decimal('1.0'), warmup = True
+warmup_iterations = 2, calibration_precision = 10
+add_stats = <built-in method append of list object at 0x7bb24645af80>
+logger = <pytest_benchmark.logger.Logger object at 0x7bb24548ed90>
+warner = <bound method Node.warn of <Function test_df_small_rb3lyp_nmr>>
+disabled = False, cprofile = False, cprofile_loops = 1, cprofile_dump = False
+group = None
+
+    def __init__(
+        self,
+        node,
+        disable_gc,
+        timer,
+        min_rounds,
+        min_time,
+        max_time,
+        warmup,
+        warmup_iterations,
+        calibration_precision,
+        add_stats,
+        logger,
+        warner,
+        disabled,
+        cprofile,
+        cprofile_loops,
+        cprofile_dump,
+        group=None,
+    ):
+        self.name = node.name
+>       self.fullname = node._nodeid
+                        ^^^^^^^^^^^^
+E       AttributeError: 'Function' object has no attribute '_nodeid'
+
+vibedataset/runs/pytest-benchmark-env/pytest_benchmark/fixture.py:54: AttributeError
+____________ ERROR at setup of test_df_small_rb3lyp_polarizability _____________
+
+request = <SubRequest 'benchmark' for <Function test_df_small_rb3lyp_polarizability>>
+
+    @pytest.fixture
+    def benchmark(request):
+        bs: BenchmarkSession = request.config._benchmarksession
+
+        if bs.skip:
+            pytest.skip('Benchmarks are skipped (--benchmark-skip was used).')
+        else:
+            node = request.node
+            marker = node.get_closest_marker('benchmark')
+            options: dict[str, object] = dict(marker.kwargs) if marker else {}
+            if 'timer' in options:
+                options['timer'] = NameWrapper(options['timer'])
+>           fixture = BenchmarkFixture(
+                node,
+                add_stats=bs.benchmarks.append,
+                logger=bs.logger,
+                warner=request.node.warn,
+                disabled=bs.disabled,
+                **dict(bs.options, **options),
+            )
+
+vibedataset/runs/pytest-benchmark-env/pytest_benchmark/plugin.py:472:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <pytest_benchmark.fixture.BenchmarkFixture object at 0x7bb09ef93a90>
+node = <Function test_df_small_rb3lyp_polarizability>, disable_gc = False
+timer = NameWrapper(<built-in function perf_counter>), min_rounds = 3
+min_time = Decimal('0.000005'), max_time = Decimal('1.0'), warmup = True
+warmup_iterations = 2, calibration_precision = 10
+add_stats = <built-in method append of list object at 0x7bb24645af80>
+logger = <pytest_benchmark.logger.Logger object at 0x7bb24548ed90>
+warner = <bound method Node.warn of <Function test_df_small_rb3lyp_polarizability>>
+disabled = False, cprofile = False, cprofile_loops = 1, cprofile_dump = False
+group = None
+
+    def __init__(
+        self,
+        node,
+        disable_gc,
+        timer,
+        min_rounds,
+        min_time,
+        max_time,
+        warmup,
+        warmup_iterations,
+        calibration_precision,
+        add_stats,
+        logger,
+        warner,
+        disabled,
+        cprofile,
+        cprofile_loops,
+        cprofile_dump,
+        group=None,
+    ):
+        self.name = node.name
+>       self.fullname = node._nodeid
+                        ^^^^^^^^^^^^
+E       AttributeError: 'Function' object has no attribute '_nodeid'
+
+vibedataset/runs/pytest-benchmark-env/pytest_benchmark/fixture.py:54: AttributeError
+_______________ ERROR at setup of test_df_rwb97mv_polarizability _______________
+
+request = <SubRequest 'benchmark' for <Function test_df_rwb97mv_polarizability>>
+
+    @pytest.fixture
+    def benchmark(request):
+        bs: BenchmarkSession = request.config._benchmarksession
+
+        if bs.skip:
+            pytest.skip('Benchmarks are skipped (--benchmark-skip was used).')
+        else:
+            node = request.node
+            marker = node.get_closest_marker('benchmark')
+            options: dict[str, object] = dict(marker.kwargs) if marker else {}
+            if 'timer' in options:
+                options['timer'] = NameWrapper(options['timer'])
+>           fixture = BenchmarkFixture(
+                node,
+                add_stats=bs.benchmarks.append,
+                logger=bs.logger,
+                warner=request.node.warn,
+                disabled=bs.disabled,
+                **dict(bs.options, **options),
+            )
+
+vibedataset/runs/pytest-benchmark-env/pytest_benchmark/plugin.py:472:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <pytest_benchmark.fixture.BenchmarkFixture object at 0x7bb09ebe0690>
+node = <Function test_df_rwb97mv_polarizability>, disable_gc = False
+timer = NameWrapper(<built-in function perf_counter>), min_rounds = 3
+min_time = Decimal('0.000005'), max_time = Decimal('1.0'), warmup = True
+warmup_iterations = 2, calibration_precision = 10
+add_stats = <built-in method append of list object at 0x7bb24645af80>
+logger = <pytest_benchmark.logger.Logger object at 0x7bb24548ed90>
+warner = <bound method Node.warn of <Function test_df_rwb97mv_polarizability>>
+disabled = False, cprofile = False, cprofile_loops = 1, cprofile_dump = False
+group = None
+
+    def __init__(
+        self,
+        node,
+        disable_gc,
+        timer,
+        min_rounds,
+        min_time,
+        max_time,
+        warmup,
+        warmup_iterations,
+        calibration_precision,
+        add_stats,
+        logger,
+        warner,
+        disabled,
+        cprofile,
+        cprofile_loops,
+        cprofile_dump,
+        group=None,
+    ):
+        self.name = node.name
+>       self.fullname = node._nodeid
+                        ^^^^^^^^^^^^
+E       AttributeError: 'Function' object has no attribute '_nodeid'
+
+vibedataset/runs/pytest-benchmark-env/pytest_benchmark/fixture.py:54: AttributeError
+_____________ ERROR at setup of test_direct_rwb97mv_polarizability _____________
+
+request = <SubRequest 'benchmark' for <Function test_direct_rwb97mv_polarizability>>
+
+    @pytest.fixture
+    def benchmark(request):
+        bs: BenchmarkSession = request.config._benchmarksession
+
+        if bs.skip:
+            pytest.skip('Benchmarks are skipped (--benchmark-skip was used).')
+        else:
+            node = request.node
+            marker = node.get_closest_marker('benchmark')
+            options: dict[str, object] = dict(marker.kwargs) if marker else {}
+            if 'timer' in options:
+                options['timer'] = NameWrapper(options['timer'])
+>           fixture = BenchmarkFixture(
+                node,
+                add_stats=bs.benchmarks.append,
+                logger=bs.logger,
+                warner=request.node.warn,
+                disabled=bs.disabled,
+                **dict(bs.options, **options),
+            )
+
+vibedataset/runs/pytest-benchmark-env/pytest_benchmark/plugin.py:472:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <pytest_benchmark.fixture.BenchmarkFixture object at 0x7bb09e700910>
+node = <Function test_direct_rwb97mv_polarizability>, disable_gc = False
+timer = NameWrapper(<built-in function perf_counter>), min_rounds = 3
+min_time = Decimal('0.000005'), max_time = Decimal('1.0'), warmup = True
+warmup_iterations = 2, calibration_precision = 10
+add_stats = <built-in method append of list object at 0x7bb24645af80>
+logger = <pytest_benchmark.logger.Logger object at 0x7bb24548ed90>
+warner = <bound method Node.warn of <Function test_direct_rwb97mv_polarizability>>
+disabled = False, cprofile = False, cprofile_loops = 1, cprofile_dump = False
+group = None
+
+    def __init__(
+        self,
+        node,
+        disable_gc,
+        timer,
+        min_rounds,
+        min_time,
+        max_time,
+        warmup,
+        warmup_iterations,
+        calibration_precision,
+        add_stats,
+        logger,
+        warner,
+        disabled,
+        cprofile,
+        cprofile_loops,
+        cprofile_dump,
+        group=None,
+    ):
+        self.name = node.name
+>       self.fullname = node._nodeid
+                        ^^^^^^^^^^^^
+E       AttributeError: 'Function' object has no attribute '_nodeid'
+
+vibedataset/runs/pytest-benchmark-env/pytest_benchmark/fixture.py:54: AttributeError
+=============================== warnings summary ===============================
+miniconda3/envs/xtbflow-qc/lib/python3.11/site-packages/gpu4pyscf/lib/cutensor.py:154
+  /home/lhshen/miniconda3/envs/xtbflow-qc/lib/python3.11/site-packages/gpu4pyscf/lib/cutensor.py:154: UserWarning: using cupy as the tensor contraction engine.
+    warnings.warn(f'using {contract_engine} as the tensor contraction engine.')
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+ERROR vibedataset/runs/gpu-bench-properties-20261122/test_benchmark_properties.py::test_df_rb3lyp_nmr
+ERROR vibedataset/runs/gpu-bench-properties-20261122/test_benchmark_properties.py::test_df_rb3lyp_polarizability
+ERROR vibedataset/runs/gpu-bench-properties-20261122/test_benchmark_properties.py::test_direct_rb3lyp_nmr
+ERROR vibedataset/runs/gpu-bench-properties-20261122/test_benchmark_properties.py::test_direct_rb3lyp_polarizability
+ERROR vibedataset/runs/gpu-bench-properties-20261122/test_benchmark_properties.py::test_df_small_rb3lyp_nmr
+ERROR vibedataset/runs/gpu-bench-properties-20261122/test_benchmark_properties.py::test_df_small_rb3lyp_polarizability
+ERROR vibedataset/runs/gpu-bench-properties-20261122/test_benchmark_properties.py::test_df_rwb97mv_polarizability
+ERROR vibedataset/runs/gpu-bench-properties-20261122/test_benchmark_properties.py::test_direct_rwb97mv_polarizability
+1 warning, 8 errors in 1.12s
+srun: error: node2: task 0: Exited with exit code 1

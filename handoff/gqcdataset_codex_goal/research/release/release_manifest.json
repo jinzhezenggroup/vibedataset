@@ -1,6 +1,6 @@
 {
   "schema": "vibedataset.research_release.v1",
-  "git_head": "92773373d5bbcf01c61a704bbb1143ecb41c4aca",
+  "git_head": "c82f4ef85eb88e14a304969cd7078d206eb34466",
   "artifacts": [
     {
       "path": "README.md",
@@ -60,7 +60,7 @@
     },
     {
       "path": "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/baseline.json",
-      "sha256": "7529e2a035845a3914787a5a3cffe212f20263a94420f54b2bc4d74ac30add9e"
+      "sha256": "9b5e08bebc912312c1c086149f26392da9a5dba3c4e3f4bc2844ed896a550192"
     },
     {
       "path": "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/upstream-polarizability-pytest.log",
@@ -69,6 +69,14 @@
     {
       "path": "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/upstream-ir-raman-pytest.log",
       "sha256": "16d73017016870ab5ab2a279adc8b586f60f3b1b56df70ce0c2abd709048e6ca"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/upstream-cphf-pytest.log",
+      "sha256": "6c03a4a4e84f86ae706b6c440e24c56ed62f5c906369430216af7f117bbb6fff"
+    },
+    {
+      "path": "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/upstream-benchmark-properties-pytest8.log",
+      "sha256": "6d2ba45f4c6e03eba0d08ed8ca82a8dd81f6edb6c03b6434ee235137997f03af"
     }
   ],
   "commands": [
