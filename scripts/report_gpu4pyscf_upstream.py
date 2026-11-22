@@ -110,6 +110,8 @@ def summarize(root, inputs):
                 and not (counts.get("failure") or counts.get("error"))
             ):
                 state = "completed"
+            elif last["exit"] == 5 and last["junit"] is not None and set(counts) == {"skipped"}:
+                state = "skipped-at-collection"
             elif last["exit"] == 5 and last["junit"] is not None and not counts:
                 state = "no-test-items"
             elif last["exit"] in (124, 137):

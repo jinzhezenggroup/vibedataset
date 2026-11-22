@@ -1,0 +1,46 @@
+{
+  "1.9.0": {
+    "run_id": 39898347658,
+    "url": "https://github.com/pyscf/gpu4pyscf/actions/runs/39898347658",
+    "source_commit": "2fdc1951670a8e173dce063e697727bbc9f97616",
+    "workflow": ".github/workflows/pypi_wheel.yml",
+    "docker_image": "pyscf/gpu4pyscf-pypa-manylinux2014:cuda128",
+    "container_digest": "sha256:79c24e4a4bc6e577447f7ae0990e52d1fedc5d3344bab753738f2b6821a006f6",
+    "CMAKE_CONFIGURE_ARGS": "-DCUDA_ARCHITECTURES=70-real;80;90-real -DBUILD_LIBXC=OFF -DENABLE_MULTIGRID_V2=OFF",
+    "GPU4PYSCF_BUILD_CUDA_WHEEL": 1,
+    "wheel_before_auditwheel": {
+      "name": "gpu4pyscf_cuda12x-1.9.0-py3-none-linux_x86_64.whl",
+      "bytes": 98216135,
+      "sha256": "2bbb1d08ce1c984e37e04ed657554a273cfe2c4267bad2eda9b7b1c7c34f2143"
+    },
+    "repaired_filename": "gpu4pyscf_cuda12x-1.9.0-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+    "PyPI_distribution_sha256": "8b79e3a68be8b7fedf371f8d6d402ab3577012b4f611c4c4a58599b2409f5f26",
+    "pypi_release": "https://pypi.org/project/gpu4pyscf-cuda12x/1.9.0/",
+    "ci_log_member": "0_release-pypi-linux-cuda12.txt",
+    "ci_log_member_sha256": "56acf52cf8cf511926253efb43bcc116da6d78f199a87d6139a94b6e514d6767",
+    "downloaded_log_archive_sha256": "59c3754b7c8d2bbda9578f5954fe5e3bce0c684df40b1140b83fc38e5e214a85",
+    "limits": "Observed release job settings and wheel repair/publication. Individual nvcc translation-unit command lines are not printed by the pip wheel invocation."
+  },
+  "1.9.2": {
+    "run_id": 43357269456,
+    "url": "https://github.com/pyscf/gpu4pyscf/actions/runs/43357269456",
+    "source_commit": "8536a80c1e03260aab030e108ef1d181a3709057",
+    "workflow": ".github/workflows/pypi_wheel.yml",
+    "docker_image": "pyscf/gpu4pyscf-pypa-manylinux2014:cuda128",
+    "container_digest": "sha256:79c24e4a4bc6e577447f7ae0990e52d1fedc5d3344bab753738f2b6821a006f6",
+    "CMAKE_CONFIGURE_ARGS": "-DCUDA_ARCHITECTURES=70-real;80;90-real -DBUILD_LIBXC=OFF -DENABLE_MULTIGRID_V2=OFF",
+    "GPU4PYSCF_BUILD_CUDA_WHEEL": 1,
+    "wheel_before_auditwheel": {
+      "name": "gpu4pyscf_cuda12x-1.9.2-py3-none-linux_x86_64.whl",
+      "bytes": 98090107,
+      "sha256": "e364f9b0c52e9404eb605f4073c9b4270820ebd2b1ed822b3132ba1f7a41ca51"
+    },
+    "repaired_filename": "gpu4pyscf_cuda12x-1.9.2-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+    "PyPI_distribution_sha256": "519d78d412392ffa7ba73683742e01716ac2be303462c6b420b8712e003880fd",
+    "pypi_release": "https://pypi.org/project/gpu4pyscf-cuda12x/1.9.2/",
+    "ci_log_member": "2_release-pypi-linux-cuda12.txt",
+    "ci_log_member_sha256": "97299e6417dccf11f5e29f90b9983ca8be07db4f88900210115e42742fa57028",
+    "downloaded_log_archive_sha256": "c77c113499d8a7773039584f8fa1b10673066510120528e353fcbd648e02a873",
+    "limits": "Observed release job settings and wheel repair/publication. Individual nvcc translation-unit command lines are not printed by the pip wheel invocation."
+  }
+}
