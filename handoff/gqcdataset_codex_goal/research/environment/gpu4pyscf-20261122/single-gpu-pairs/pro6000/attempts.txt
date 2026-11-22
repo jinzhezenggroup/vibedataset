@@ -1,0 +1,11 @@
+A pilot started
+A full started (51 requested)
+A full finished
+B full started (51 requested)
+B full finished
+C full started (51 requested)
+C full finished
+D full started (51 requested)
+D full finished
+official scorer started
+official scorer finished

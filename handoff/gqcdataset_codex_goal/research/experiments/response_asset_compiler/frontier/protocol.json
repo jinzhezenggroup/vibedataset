@@ -1,0 +1,107 @@
+{
+  "schema": "vibedataset.response_frontier.v1",
+  "manifest_sha256": "e08193beba0fd3b15d3b6c2ecf531b3b38c6cb8fef3da0ee95d19cd78858a635",
+  "source_trajectory": "cycle-three",
+  "fields": [
+    "x",
+    "y",
+    "z"
+  ],
+  "output": "static clamped-nuclei polarizability and spin-summed field AO response densities, atomic units",
+  "limits": {
+    "gpu_residual_linf": 1e-05,
+    "cpu_residual_linf": 1e-05,
+    "ao_linf": 1e-05,
+    "readout_linf": 1e-05,
+    "cpu_oracle_linf": 1e-09
+  },
+  "source": "independently certified raw C-arm AO densities on official 1.9.2",
+  "target_rules": {
+    "split_valence": "6-31g*",
+    "hybrid_functional": "B3LYP/STO-3G with identical CPU-generated PySCF level-3 quadrature; small_rho_cutoff=0",
+    "displaced": "last atom x +0.02 Bohr",
+    "different_origin": "x +0.1 Bohr",
+    "open_shell": "charge +1, multiplicity 2; outside restricted target solver"
+  },
+  "modes": [
+    "cold",
+    "planned"
+  ],
+  "cases": [
+    {
+      "id": "qm9-000001-exact",
+      "molecule": "qm9-000001",
+      "change": "exact"
+    },
+    {
+      "id": "qm9-000001-split-valence",
+      "molecule": "qm9-000001",
+      "change": "split-valence"
+    },
+    {
+      "id": "qm9-000001-hybrid-functional",
+      "molecule": "qm9-000001",
+      "change": "hybrid-functional"
+    },
+    {
+      "id": "qm9-000002-exact",
+      "molecule": "qm9-000002",
+      "change": "exact"
+    },
+    {
+      "id": "qm9-000002-split-valence",
+      "molecule": "qm9-000002",
+      "change": "split-valence"
+    },
+    {
+      "id": "qm9-000002-hybrid-functional",
+      "molecule": "qm9-000002",
+      "change": "hybrid-functional"
+    },
+    {
+      "id": "qm9-000003-exact",
+      "molecule": "qm9-000003",
+      "change": "exact"
+    },
+    {
+      "id": "qm9-000003-split-valence",
+      "molecule": "qm9-000003",
+      "change": "split-valence"
+    },
+    {
+      "id": "qm9-000003-hybrid-functional",
+      "molecule": "qm9-000003",
+      "change": "hybrid-functional"
+    },
+    {
+      "id": "water-displaced",
+      "molecule": "qm9-000003",
+      "change": "displaced"
+    },
+    {
+      "id": "water-stale-bytes",
+      "molecule": "qm9-000003",
+      "change": "stale-bytes"
+    },
+    {
+      "id": "water-field-swapped",
+      "molecule": "qm9-000003",
+      "change": "field-swapped"
+    },
+    {
+      "id": "water-frozen-density",
+      "molecule": "qm9-000003",
+      "change": "frozen-density"
+    },
+    {
+      "id": "water-different-origin",
+      "molecule": "qm9-000003",
+      "change": "different-origin"
+    },
+    {
+      "id": "water-open-shell",
+      "molecule": "qm9-000003",
+      "change": "open-shell"
+    }
+  ]
+}

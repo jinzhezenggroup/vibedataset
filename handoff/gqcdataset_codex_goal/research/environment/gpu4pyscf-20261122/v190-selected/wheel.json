@@ -1,0 +1,10 @@
+{
+  "url": "https://files.pythonhosted.org/packages/db/f2/f726a60d285ef32a2d54f499ec9fe99d099d262834df38c2573c26563247/gpu4pyscf_cuda12x-1.9.0-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+  "filename": "gpu4pyscf_cuda12x-1.9.0-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+  "size": 99278566,
+  "digests": {
+    "blake2b_256": "dbf2f726a60d285ef32a2d54f499ec9fe99d099d262834df38c2573c26563247",
+    "md5": "8c804bcc5d56b4f065c2ce927afaf5c6",
+    "sha256": "8b79e3a68be8b7fedf371f8d6d402ab3577012b4f611c4c4a58599b2409f5f26"
+  }
+}

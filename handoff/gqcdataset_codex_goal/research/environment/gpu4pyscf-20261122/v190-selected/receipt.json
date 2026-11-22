@@ -1,0 +1,39 @@
+{
+  "schema": "vibedataset.selected_gpu4pyscf_tests.v1",
+  "job": 5639,
+  "started_utc": "2026-11-22T15:59:04Z",
+  "exit_code": 0,
+  "collected": 22,
+  "passed": 19,
+  "skipped": [
+    "test_cpu_rks",
+    "test_cpu",
+    "test_raman_wb97mv"
+  ],
+  "failed": 0,
+  "purpose": "selected upstream RHF/RKS CPHF, polarizability, IR and Raman on our isolated GPU4PySCF v1.9.0 wheel",
+  "source_commit": "2fdc1951670a8e173dce063e697727bbc9f97616",
+  "source_tree": "b0c4994d3e62477d54443a54b934307b2700b075",
+  "wheel_identity": {
+    "version": "1.9.0",
+    "wheel_sha256": "8b79e3a68be8b7fedf371f8d6d402ab3577012b4f611c4c4a58599b2409f5f26",
+    "cphf_sha256": "1010af1ff5cb62e424223e6c65bad9344e7a6e37bf6882ff574efddb9e2839de",
+    "python": "3.11.17",
+    "cupy": "14.2.0",
+    "pyscf": "2.14.0",
+    "engine": "cupy",
+    "gpu": "NVIDIA RTX PRO 6000 Blackwell Workstation Edition",
+    "cuda_runtime": 12090
+  },
+  "output": {
+    "pytest.log": {
+      "raw_sha256": "1cfe7e007383f03f0fb582c3ae29a0a20bfee0bb3741e3f71278845d1da5a6a6",
+      "published_sha256": "5374f19c866226c230201736bad9bb7ded08934bc859fc3c93e6953c5a8a0c05"
+    },
+    "junit.xml": {
+      "raw_sha256": "af91c402f77787d3c35344ec5d4a51761bd7e0e18e3ecf8b050d13c1965f471a",
+      "published_sha256": "460e7918bc018f0b93710bf6e8cdfe43af4ed2cdf27a07ebe2c7b997a3392e8c"
+    }
+  },
+  "timing_scope": "The upstream tests use the present n2 runtime. Historical GQC paper timing was on other devices and different CuPy versions."
+}

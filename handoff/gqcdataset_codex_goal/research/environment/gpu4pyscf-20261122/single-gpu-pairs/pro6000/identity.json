@@ -1,0 +1,15 @@
+{
+  "wheel_sha256": "519d78d412392ffa7ba73683742e01716ac2be303462c6b420b8712e003880fd",
+  "source_sha256": "1010af1ff5cb62e424223e6c65bad9344e7a6e37bf6882ff574efddb9e2839de",
+  "pci": "0000:C2:00.0",
+  "gpu": "NVIDIA RTX PRO 6000 Blackwell Workstation Edition",
+  "gpu4pyscf": "1.9.2",
+  "cupy": "14.2.0",
+  "cublas": "12.9.2.10",
+  "pyscf": "2.14.0",
+  "cuda_runtime": 12090,
+  "python": "3.11.17",
+  "engine": "cupy",
+  "device_state": "595.99.02, 97887 MiB, 600.00 W, 3090 MHz, 14001 MHz",
+  "slurm_job": "5634"
+}

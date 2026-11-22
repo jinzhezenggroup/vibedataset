@@ -20,14 +20,18 @@
       "benchmark_file_count": 70,
       "acquired": true,
       "indexed": true,
-      "human_read": "tag metadata, license and benchmark/test inventory read",
-      "behavior_traced": false,
-      "executed": false,
-      "execution_status": "not_run_in_tag_environment",
+      "human_read": "tag metadata, CPHF RHS and observables, upstream tests and paper-version timing entries",
+      "behavior_traced": true,
+      "executed": true,
+      "execution_status": "matched_official_wheel_selected_tests",
       "selected_execution": {
-        "status": "not_run",
-        "reason": "No v1.9.0 wheel or source-built binary was available in the matched n2 environment."
-      }
+        "status": "passed",
+        "job": 5639,
+        "passed": 19,
+        "skipped": 3,
+        "receipt": "environment/gpu4pyscf-20261122/v190-selected/receipt.json"
+      },
+      "full_suite_verified": false
     },
     {
       "tag": "v1.9.2",
@@ -47,9 +51,9 @@
       "benchmark_file_count": 70,
       "acquired": true,
       "indexed": true,
-      "human_read": "tag metadata, license and benchmark/test inventory read",
-      "behavior_traced": false,
-      "executed": false,
+      "human_read": "selected CPHF, J/K call, Hessian/IR/Raman, test and build paths inspected; full-tree reading unclaimed",
+      "behavior_traced": true,
+      "executed": true,
       "execution_status": "selected_official_wheel_subset_passed",
       "selected_execution": {
         "status": "passed",
@@ -59,12 +63,15 @@
           "response_properties": "19 passed, 3 skipped",
           "benchmark_properties": "8 passed, slow and high_memory excluded"
         },
-        "scope": "Selected upstream files only. Full source suite and complete benchmark inventory were not executed."
-      }
+        "scope": "Selected v1.9.2 wheel tests. Separate full-file campaign and independent timed properties benchmark have their own receipts."
+      },
+      "full_suite_verified": false,
+      "scope_of_execution": "selected upstream tests, matched four arms and independently evaluated Hessians",
+      "full_suite_campaign": "environment/gpu4pyscf-20261122/upstream-v192/campaign.json"
     }
   ],
   "limitations": [
-    "The tag source trees are archived for source comparison. The existing n2 binary environment is GPU4PySCF 1.8.1, so tag-specific execution is not claimed.",
-    "Official release tag metadata is separate from the paper-version mapping, which remains unestablished."
+    "The original 1.8.1 four-arm baseline has its own immutable run receipts.",
+    "The GQC water-cluster timing archive names GPU4PySCF 1.9.0. The independent project workload uses 1.9.2. See upstream-v192/paper-sources.json."
   ]
 }

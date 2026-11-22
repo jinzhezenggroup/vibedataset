@@ -1,0 +1,51 @@
+{
+  "schema": "vibedataset.official_gpu4pyscf_suite.v1",
+  "checkpoint_utc": "2026-11-22T16:07:30.844740+00:00",
+  "host_run": "n2:~/vibedataset/runs/upstream-v192-afecd514",
+  "source_commit": "8536a80c1e03260aab030e108ef1d181a3709057",
+  "source_tree": "69fdba009b630fefbaf15dfda71586f368a37a26",
+  "source_tar_sha256": "c50f0fd23c855f770e607e2f734f6029b469c20253df5634e608e1c7fbb1144b",
+  "wheel_sha256": "519d78d412392ffa7ba73683742e01716ac2be303462c6b420b8712e003880fd",
+  "matching_source_test_files": 243,
+  "collected_cases": 2649,
+  "collection_job": 5616,
+  "collection_exit": 0,
+  "collection_log_sha256": {
+    "original_sha256": "dca3ae58c04955afa0e81c8b6b5038948f9c1499cfadd662becdc5cd7fad7290",
+    "published_sha256": "fb2cc4c3b01efb278901847b9a30f4d6a6aa100f65d2d914bb8a12a848b6a40b",
+    "bytes": 214043
+  },
+  "full_file_array_job": 5618,
+  "timed_properties_job": 5617,
+  "storage_retry_job": 5626,
+  "afterany_finalization_job": 5637,
+  "preliminary_file_states": {
+    "completed": 159,
+    "dispatched-no-terminal-receipt": 2,
+    "no-test-items": 1,
+    "not-yet-dispatched": 81
+  },
+  "preliminary_case_counts": {
+    "passed": 1448,
+    "skipped": 173
+  },
+  "stdout_and_scripts": {
+    "upstream.slurm": {
+      "original_sha256": "f88dd226febcafd234b2916c4eaa13491bb7cf42b7a7069dd8e22e7203893a15",
+      "published_sha256": "f88dd226febcafd234b2916c4eaa13491bb7cf42b7a7069dd8e22e7203893a15",
+      "bytes": 2224
+    },
+    "upstream-suite.slurm": {
+      "original_sha256": "7d15481639583c461f81aba2858a4676db08857e7315b8d929a11bec3288b352",
+      "published_sha256": "7d15481639583c461f81aba2858a4676db08857e7315b8d929a11bec3288b352",
+      "bytes": 3065
+    },
+    "pytest.log": {
+      "original_sha256": "dca3ae58c04955afa0e81c8b6b5038948f9c1499cfadd662becdc5cd7fad7290",
+      "published_sha256": "fb2cc4c3b01efb278901847b9a30f4d6a6aa100f65d2d914bb8a12a848b6a40b",
+      "bytes": 214043
+    }
+  },
+  "final_bundle": "final-5637/upstream-output.tar.gz",
+  "scope": "Collection and interim file outcomes. Scheduler terminal output is required before asserting full suite execution or success."
+}
