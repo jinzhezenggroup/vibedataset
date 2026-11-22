@@ -1,0 +1,30 @@
+{"case": "qm9-000001-exact", "event": "started", "unix_time": 1795364947.3466463}
+{"case": "qm9-000001-exact", "event": "finished", "status": "computed", "payload_bytes": 2912, "wall_seconds": 123.25223228998948}
+{"case": "qm9-000001-split-valence", "event": "started", "unix_time": 1795365070.5988977}
+{"case": "qm9-000001-split-valence", "event": "finished", "status": "computed", "payload_bytes": 11149, "wall_seconds": 9.410411997931078}
+{"case": "qm9-000001-hybrid-functional", "event": "started", "unix_time": 1795365080.009334}
+{"case": "qm9-000001-hybrid-functional", "event": "finished", "status": "computed", "payload_bytes": 3018, "wall_seconds": 17.601919441949576}
+{"case": "qm9-000002-exact", "event": "started", "unix_time": 1795365097.6112716}
+{"case": "qm9-000002-exact", "event": "finished", "status": "computed", "payload_bytes": 2539, "wall_seconds": 3.2492626711027697}
+{"case": "qm9-000002-split-valence", "event": "started", "unix_time": 1795365100.8605523}
+{"case": "qm9-000002-split-valence", "event": "finished", "status": "computed", "payload_bytes": 9393, "wall_seconds": 9.518883094075136}
+{"case": "qm9-000002-hybrid-functional", "event": "started", "unix_time": 1795365110.3794553}
+{"case": "qm9-000002-hybrid-functional", "event": "finished", "status": "computed", "payload_bytes": 2623, "wall_seconds": 3.670428558019921}
+{"case": "qm9-000003-exact", "event": "started", "unix_time": 1795365114.049901}
+{"case": "qm9-000003-exact", "event": "finished", "status": "computed", "payload_bytes": 2233, "wall_seconds": 1.5324940889840946}
+{"case": "qm9-000003-split-valence", "event": "started", "unix_time": 1795365115.5824118}
+{"case": "qm9-000003-split-valence", "event": "finished", "status": "computed", "payload_bytes": 7986, "wall_seconds": 9.56019260303583}
+{"case": "qm9-000003-hybrid-functional", "event": "started", "unix_time": 1795365125.1426232}
+{"case": "qm9-000003-hybrid-functional", "event": "finished", "status": "computed", "payload_bytes": 2334, "wall_seconds": 1.750963426893577}
+{"case": "water-displaced", "event": "started", "unix_time": 1795365126.8936038}
+{"case": "water-displaced", "event": "finished", "status": "computed", "payload_bytes": 2296, "wall_seconds": 1.6183946969686076}
+{"case": "water-stale-bytes", "event": "started", "unix_time": 1795365128.5120156}
+{"case": "water-stale-bytes", "event": "finished", "status": "computed", "payload_bytes": 2228, "wall_seconds": 1.7500173449516296}
+{"case": "water-field-swapped", "event": "started", "unix_time": 1795365130.2620509}
+{"case": "water-field-swapped", "event": "finished", "status": "computed", "payload_bytes": 2227, "wall_seconds": 1.5104665079852566}
+{"case": "water-frozen-density", "event": "started", "unix_time": 1795365131.772535}
+{"case": "water-frozen-density", "event": "finished", "status": "computed", "payload_bytes": 2226, "wall_seconds": 1.5127534710336477}
+{"case": "water-different-origin", "event": "started", "unix_time": 1795365133.2853067}
+{"case": "water-different-origin", "event": "finished", "status": "computed", "payload_bytes": 2271, "wall_seconds": 1.5199240240035579}
+{"case": "water-open-shell", "event": "started", "unix_time": 1795365134.805249}
+{"case": "water-open-shell", "event": "finished", "status": "evidence-unavailable", "payload_bytes": 689, "wall_seconds": 0.0020990059711039066}

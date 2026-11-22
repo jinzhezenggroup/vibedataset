@@ -190,6 +190,24 @@ for gpu in ("rtx5090", "pro6000"):
         RELEASE_ARTIFACTS.extend([f"{folder}/run-{arm}.json", f"{folder}/raw-{arm}.jsonl.gz"])
 
 
+FRONTIER = "handoff/gqcdataset_codex_goal/research/experiments/response_asset_compiler/frontier"
+RELEASE_ARTIFACTS.extend(["handoff/gqcdataset_codex_goal/research/decisions/0007-bounded-gpu-response-refinement.md", "scripts/compile_response_assets.py", "scripts/run_response_frontier.py",
+                          "scripts/score_response_frontier.py", "scripts/summarize_response_frontier.py"])
+RELEASE_ARTIFACTS.extend(f"{FRONTIER}/{name}" for name in ("protocol.json", "summary.json", "frontier.slurm",
+    "pilot/input-sha256", "pilot/project-commit", "pilot/finished", "counterbalanced/input-sha256",
+    "counterbalanced/project-commit", "counterbalanced/finished", "counterbalanced/process-wall-ns.txt"))
+frontier_cases = [f"qm9-{index:06d}-{kind}" for index in range(1, 4)
+                  for kind in ("exact", "split-valence", "hybrid-functional")]
+frontier_cases.extend(f"water-{kind}" for kind in ("displaced", "stale-bytes", "field-swapped",
+                                                  "frozen-density", "different-origin", "open-shell"))
+for attempt in ("pilot", "counterbalanced/rep-1", "counterbalanced/rep-2"):
+    RELEASE_ARTIFACTS.append(f"{FRONTIER}/{attempt}/independent.json")
+    for mode in ("cold", "planned"):
+        folder = f"{FRONTIER}/{attempt}/{mode}"
+        RELEASE_ARTIFACTS.extend([f"{folder}/run.json", f"{folder}/attempts.jsonl"])
+        RELEASE_ARTIFACTS.extend(f"{folder}/{case}.json.gz" for case in frontier_cases)
+
+
 CLAIMS = [
     {
         "claim_id": "34",
@@ -258,9 +276,9 @@ CLAIMS = [
     {
         "claim_id": "39",
         "claim": "response asset compiler and certificate dispositions",
-        "status": "bounded-GPU-assets",
-        "evidence": "experiments/response_asset_compiler/gpu-assets-verification.json;experiments/response_asset_compiler/gpu-assets-negative-controls.json",
-        "condition": "51 sealed same-protocol archived assets, 14 integrity controls, independent candidate AO residuals for 204 matched v1.9.2 rows with 6 physical controls; cross-protocol GPU frontier remains",
+        "status": "bounded-GPU-assets-with-executed-refinement",
+        "evidence": "experiments/response_asset_compiler/gpu-assets-verification.json;experiments/response_asset_compiler/gpu-assets-negative-controls.json;experiments/response_asset_compiler/frontier/summary.json",
+        "condition": "51 sealed same-protocol archived assets, 14 integrity controls, independent candidate AO residuals for 204 matched v1.9.2 rows with 6 physical controls; bounded cross-basis and RHF-to-B3LYP refinements, actual cold fallbacks and independently certified AO responses",
         "unknown": "",
     },
     {
