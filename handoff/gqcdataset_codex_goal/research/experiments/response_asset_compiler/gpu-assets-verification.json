@@ -1,0 +1,9 @@
+{
+  "schema": "vibedataset.gpu_response_asset_compiler_verification.v1",
+  "status": "passed",
+  "asset_count": 51,
+  "direct_reuse": 51,
+  "independent_scorer_accepted": 51,
+  "errors": [],
+  "oracle_loaded": false
+}
