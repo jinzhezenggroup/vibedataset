@@ -75,7 +75,7 @@
 | #37 profiling | 阶段 baseline 与单分子 A/C telemetry 完成 | [profiling](performance/profiling.md) · [profile JSON](performance/attribution_profile.json) · [phase telemetry](environment/gpu4pyscf-20261122/phase-profile-control/README.md) |
 | #38 PreparedPropertyBatch | planner/producer 与 bounded GPU control 完成 | [实验入口](experiments/prepared_property_batch/README.md)；async streams、ragged batch、跨分子 operator reuse 和独立新 scorer 仍未完成 |
 | #39 response asset compiler | identity planner 与 GPU C receipt compiler 完成 | [实验入口](experiments/response_asset_compiler/README.md)；跨协议 refine/reject、过期/损坏资产和完整证书 frontier 仍需扩展 |
-| #40 Hessian/CPKS | CPU/GPU/FD micro controls 完成 | [实验入口](experiments/hessian_cphf/README.md)；VeloxChem 和多样本共享运行时仍未完成 |
+| #40 Hessian/CPKS | CPU/GPU/DFT/FD micro controls 完成 | [实验入口](experiments/hessian_cphf/README.md)；VeloxChem 和多样本共享运行时仍未完成 |
 | #41 scale/ablation | partial-falsified，补充 bounded shape/residency control | [状态](performance/scale_ablation.md) · [计划 JSON](performance/scale_ablation_plan.json)；1000-row response labels、第二 GPU 和完整消融仍阻塞 |
 | #42 release/claim gate | partial release package | [release checklist](release/release_checklist.md) · [claims.csv](release/claims.csv) |
 

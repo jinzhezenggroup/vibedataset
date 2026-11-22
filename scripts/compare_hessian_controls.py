@@ -114,9 +114,11 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--cpu", type=Path, required=True)
     parser.add_argument("--gpu", type=Path, required=True)
+    parser.add_argument("--cpu-rks", type=Path)
     parser.add_argument("--finite-difference", type=Path)
     parser.add_argument("--out", type=Path, required=True)
     parser.add_argument("--max-abs-tolerance", type=float, default=1e-7)
+    parser.add_argument("--rks-max-abs-tolerance", type=float, default=1e-5)
     args = parser.parse_args()
 
     cpu_rows = load_rows(args.cpu, "name")
@@ -132,6 +134,12 @@ def main() -> None:
         finite_difference = compare_finite_difference(
             cpu_rows["h2o"], finite_difference_document, args.max_abs_tolerance
         )
+    rks_comparison = None
+    if args.cpu_rks is not None:
+        rks_rows = load_rows(args.cpu_rks, "name")
+        if "h2o-rks" not in rks_rows or "h2o-rks" not in gpu_rows:
+            raise ValueError("missing H2O/RKS pair")
+        rks_comparison = compare(rks_rows["h2o-rks"], gpu_rows["h2o-rks"], args.rks_max_abs_tolerance)
     result = {
         "schema": "vibedataset.hessian_cphf.cpu_gpu_crosscheck.v1",
         "protocol": {
@@ -146,17 +154,19 @@ def main() -> None:
         "inputs": {
             "cpu": str(args.cpu),
             "gpu": str(args.gpu),
+            "cpu_rks": str(args.cpu_rks) if args.cpu_rks else None,
             "finite_difference": str(args.finite_difference) if args.finite_difference else None,
         },
         "comparisons": comparisons,
+        "rks_comparison": rks_comparison,
         "finite_difference": finite_difference,
         "status": "accepted"
         if all(item["status"] == "accepted" for item in comparisons)
+        and (rks_comparison is None or rks_comparison["status"] == "accepted")
         and (finite_difference is None or finite_difference["status"] == "accepted")
         else "reject-and-recompute",
         "limitations": [
-            "Only H2O/RHF and NH3/RHF were paired across CPU and GPU.",
-            "The GPU RKS(B3LYP) row has no matching CPU RKS control in this artifact.",
+            "H2O/RHF and NH3/RHF use a 1e-7 elementwise tolerance. H2O/RKS(B3LYP) uses the separately recorded CPU RKS control and its 1e-5 tolerance when provided.",
             "This is an elementwise micro-control and does not replace a VeloxChem cross-check.",
         ],
     }

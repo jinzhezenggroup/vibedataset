@@ -1,6 +1,6 @@
 {
   "schema": "vibedataset.research_release.v1",
-  "git_head": "53cbc32a935cc908e75f9f73fa66d74da2c980d2",
+  "git_head": "aa753b8aa91bf1b988e3521285528036a9c199d4",
   "artifacts": [
     {
       "path": "README.md",
@@ -79,6 +79,10 @@
       "sha256": "e4c261fc8eb6ebe0cdd3a57b4cbdb64953f7677f73a4bb4bdbe16b4402fc4dfa"
     },
     {
+      "path": "handoff/gqcdataset_codex_goal/research/experiments/hessian_cphf/cpu-rks.json",
+      "sha256": "e23fb2e0f1ae9b4c7b48e9a72af03990e190afc163ac83c74ab828c18020bea6"
+    },
+    {
       "path": "handoff/gqcdataset_codex_goal/research/experiments/hessian_cphf/gpu-results.json",
       "sha256": "69b090118be215ca51906aa37a3150c03bda22419e8707981300c84182562c26"
     },
@@ -92,7 +96,7 @@
     },
     {
       "path": "handoff/gqcdataset_codex_goal/research/experiments/hessian_cphf/cpu-gpu-crosscheck.json",
-      "sha256": "b24704758a2d4265aa7f729a7d743328d335d73c392526c89a715a986b4f336b"
+      "sha256": "0b1a44a70d711b56b6bcaa3153d8fff0e8427cb153141466d64cb57c97ab1616"
     },
     {
       "path": "handoff/gqcdataset_codex_goal/research/environment/gpu4pyscf-20261122/release-tags.json",
