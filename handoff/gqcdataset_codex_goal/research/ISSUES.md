@@ -75,7 +75,7 @@
 | #37 profiling | 官方 v1.9.2 wheel 上 A–D 小队列 telemetry 完成，硬件级 profiling 仍未完成 | [profiling](performance/profiling.md) · [1.9.2 A–D summary](environment/gpu4pyscf-20261122/a-d-telemetry/summary.json) · [receipt checker](environment/gpu4pyscf-20261122/a-d-telemetry/check.json) · [phase telemetry](environment/gpu4pyscf-20261122/phase-profile-control/README.md) |
 | #38 PreparedPropertyBatch | planner 与 process-isolated runtime 已实测，同一 context async streams 被拒绝 | [实验入口](experiments/prepared_property_batch/README.md) · [runtime summary](environment/gpu4pyscf-20261122/prepared-runtime/runtime-summary.json)；ragged kernel、融合 J/K、跨分子 operator reuse、same-context stream safety、独立 scorer 和端到端 speedup 仍未完成 |
 | #39 response asset compiler | identity planner 与 GPU C receipt compiler 完成 | [实验入口](experiments/response_asset_compiler/README.md)；跨协议 refine/reject、过期/损坏资产和完整证书 frontier 仍需扩展 |
-| #40 Hessian/CPKS | CPU/GPU/DFT/FD micro controls 完成 | [实验入口](experiments/hessian_cphf/README.md)；VeloxChem 和多样本共享运行时仍未完成 |
+| #40 Hessian/CPKS | RHF 的独立 VeloxChem 交叉验收完成，数据集级共享待验证 | [3 个 Hessian、水的 IR/Raman 和去偏振比精修](experiments/hessian_cphf/cross-engine/README.md) |
 | #41 scale/ablation | partial-falsified，补充 bounded shape/residency control | [状态](performance/scale_ablation.md) · [计划 JSON](performance/scale_ablation_plan.json)；1000-row response labels、第二 GPU 和完整消融仍阻塞 |
 | #42 release/claim gate | partial release package | [release checklist](release/release_checklist.md) · [claims.csv](release/claims.csv) |
 

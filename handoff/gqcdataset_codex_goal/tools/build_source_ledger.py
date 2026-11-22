@@ -92,6 +92,10 @@ def main():
     for record in review['file_reading']:
         read_records[(record['repository_id'], record['path'])].append(record)
     template = json.loads((BASE / 'templates/sources.lock.json').read_text())
+    if old_lock.is_file():
+        extra = json.loads(old_lock.read_bytes()).get("additional_runtime_source_locks")
+        if extra:
+            template["additional_runtime_source_locks"] = extra
     template.update(notice='Git snapshot counts include initialized submodules. Formal release archives '
                     'have separate file/member hashes. Reading, execution, paper-version attribution, '
                     'and external runtime closure are independent.',

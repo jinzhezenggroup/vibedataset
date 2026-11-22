@@ -63,6 +63,11 @@ def main():
     subprocess.check_call([sys.executable, str(SCRIPTS / "build_research_release.py"), "--root", str(ROOT),
                            "--out", str(publish), "--bundle"], cwd=ROOT)
     subprocess.check_call([*release_check, "--release", str(publish), "--out", str(args.out / "release.json")], cwd=ROOT)
+    cross_engine = ROOT / "handoff/gqcdataset_codex_goal/research/experiments/hessian_cphf/cross-engine"
+    verified = args.out / "cross-engine-hessians.json"
+    subprocess.check_call([sys.executable, str(SCRIPTS / "verify_cross_engine_hessians.py"),
+                           "--root", str(cross_engine), "--out", str(verified)])
+    require(read(verified) == read(cross_engine / "verification.json"), "cross-engine Hessian replay")
     hessian_artifact = ROOT / "handoff/gqcdataset_codex_goal/research/experiments/hessian_cphf/cpu-gpu-crosscheck.json"
     generated_hessian = args.out / "hessian-crosscheck.json"
     subprocess.check_call(

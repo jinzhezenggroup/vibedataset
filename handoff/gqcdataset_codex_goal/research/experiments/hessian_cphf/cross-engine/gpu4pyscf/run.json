@@ -1,0 +1,22 @@
+{
+  "schema": "vibedataset.cross_engine_hessians.v1",
+  "backend": "gpu4pyscf",
+  "inputs": {
+    "protocol_sha256": "b7069a6f7931121820a4a0e066d4b9f557cb3b875c5de9b91902a1ad94a91dce",
+    "driver_sha256": "92a8a58d55daca8d036aeec89a5a5eb1862fb9c8867a79a3c497781c48738baa"
+  },
+  "environment": {
+    "code_version": "1.9.2",
+    "cupy": "14.2.0",
+    "pyscf": "2.14.0",
+    "cphf_sha256": "1010af1ff5cb62e424223e6c65bad9344e7a6e37bf6882ff574efddb9e2839de",
+    "device": "NVIDIA RTX PRO 6000 Blackwell Workstation Edition",
+    "python": "3.11.17",
+    "numpy": "2.4.6",
+    "omp": "2",
+    "slurm_job": "5621"
+  },
+  "expected": 3,
+  "failed": 0,
+  "events_sha256": "a6e207231b8899b1433eeecc54dca6aba106aff8a77ad7133245b226c312d4ac"
+}

@@ -134,6 +134,21 @@ RELEASE_ARTIFACTS = [
 ]
 
 
+HESSIAN_CROSS_ENGINE = "handoff/gqcdataset_codex_goal/research/experiments/hessian_cphf/cross-engine"
+RELEASE_ARTIFACTS.extend([
+    "scripts/run_cross_engine_hessians.py",
+    "scripts/refine_raman_modes.py",
+    "scripts/verify_cross_engine_hessians.py",
+])
+RELEASE_ARTIFACTS.extend(f"{HESSIAN_CROSS_ENGINE}/{name}" for name in (
+    "protocol.json", "raman-refinement.json", "gpu.slurm", "refine.slurm", "README.md", "verification.json",
+    "veloxchem/events.jsonl", "veloxchem/run.json", "veloxchem/console.log.gz", "veloxchem/MATCHED-STO-3G",
+    "veloxchem/pixi.toml", "veloxchem/pixi.lock", "veloxchem/source-lock.json", "veloxchem/source-coverage.csv.gz",
+    "gpu4pyscf/events.jsonl", "gpu4pyscf/run.json", "gpu4pyscf/console.log.gz",
+    "raman-refinement/displacements.jsonl", "raman-refinement/run.json", "raman-refinement/console.log.gz",
+))
+
+
 CLAIMS = [
     {
         "claim_id": "34",
@@ -210,9 +225,9 @@ CLAIMS = [
     {
         "claim_id": "40",
         "claim": "Hessian/CPKS main load",
-        "status": "CPU-GPU-DFT-micro-control",
-        "evidence": "experiments/hessian_cphf/cpu-gpu-crosscheck.json",
-        "condition": "RHF/DFT/FD micro controls; VeloxChem/multi-sample shared runtime unavailable",
+        "status": "matched-RHF-Hessians-and-water-spectra-with-refinement",
+        "evidence": "experiments/hessian_cphf/cross-engine/verification.json;experiments/hessian_cphf/cpu-gpu-crosscheck.json",
+        "condition": "3 direct RHF/STO-3G Hessians, water IR/Raman, 12 extra displaced SCFs for the rejected default Raman ratios",
         "unknown": "",
     },
     {
@@ -242,7 +257,7 @@ UNKNOWNs = [
     "energy and peak-memory telemetry",
     "1000-row protocol-consistent request asset",
     "A100/H100 comparison",
-    "VeloxChem cross-check",
+    "VeloxChem GPU CPKS, larger spectroscopy batches and failure controls",
     "same-context GPU4PySCF stream safety",
     "ragged/fused PreparedPropertyBatch kernels",
 ]
