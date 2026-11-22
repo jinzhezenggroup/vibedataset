@@ -24,6 +24,6 @@ A–D 四臂读取同一逐字节 manifest 和 request order。生产进程不�
 
 ## 规模阻塞与停止条件
 
-公开可取得的 1000 行 QM9 几何 manifest 已归档，源档案 SHA 和 CC0 许可记录在 `performance/qm9-scale-manifest.json`。协议一致响应标签、独立质量参考和 A–D 执行尚未完成。合同冻结后，不允许通过删除 `not_run`、质量不足或失败记录把目标规模写成已达成。10× 仍是预注册假设，当前结果只支持局部机制和负结果边界。
+公开可取得的 1000 行 QM9 几何 manifest 已归档，源档案 SHA 和 CC0 许可记录在 `performance/qm9-scale-manifest.json.gz`。协议一致响应标签、独立质量参考和 A–D 执行尚未完成。合同冻结后，不允许通过删除 `not_run`、质量不足或失败记录把目标规模写成已达成。10× 仍是预注册假设，当前结果只支持局部机制和负结果边界。
 
 机器可读合同是 `benchmark_contract.json`，队列是 `middle-queue.jsonl`，来源账本是 `source-kind-ledger.json`。复核入口是 `scripts/check_benchmark_contract.py`。
