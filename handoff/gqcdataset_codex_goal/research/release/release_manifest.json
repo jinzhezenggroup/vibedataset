@@ -2,7 +2,7 @@
   "schema": "vibedataset.research_release.v2",
   "git_head": "92d9bac6384208881827313709fc0a03f60b0bad",
   "git_head_kind": "audited_source_commit",
-  "built_from_git_head": "94261c1c65417450a3a83e1de903ea5dccdbc958",
+  "built_from_git_head": "e0865a07616da021f25de48de15a111f151c1bd6",
   "artifacts": [
     {
       "path": "README.md",
