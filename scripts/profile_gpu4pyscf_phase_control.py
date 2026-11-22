@@ -58,7 +58,7 @@ def memory_snapshot(cupy) -> dict:
         "total_bytes": int(total),
         "pool_used_bytes": int(pool.used_bytes()),
         "pool_total_bytes": int(pool.total_bytes()),
-        "pinned_used_bytes": int(pinned.n_free_blocks()),
+        "pinned_free_blocks": int(pinned.n_free_blocks()),
     }
 
 
