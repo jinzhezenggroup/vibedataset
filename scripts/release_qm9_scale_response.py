@@ -8,6 +8,9 @@ import hashlib
 import io
 import json
 import math
+import os
+import tempfile
+from datetime import datetime
 from pathlib import Path
 import tarfile
 
@@ -99,7 +102,7 @@ def package(tar, dest, data):
     tar.addfile(entry, io.BytesIO(data))
 
 
-def write_outputs(a):
+def write_outputs(a, out, tar_path):
     protocol = load(a.protocol)
     seal = digest(a.protocol.read_bytes())
     geometry_bytes = a.geometries.read_bytes()
@@ -132,8 +135,6 @@ def write_outputs(a):
         generations.append((cand, scored))
         runs.update(run)
         runs.update(scorer)
-    out = a.out
-    out.mkdir(parents=True, exist_ok=False)
     ledger = []
     labels = []
     stats = Counter()
@@ -307,7 +308,27 @@ def write_outputs(a):
             gzip.compress(b"".join(encode(r) + b"\n" for r in data), mtime=0)
         )
     (out / "runs.json.gz").write_bytes(gzip.compress(encode(runs), mtime=0))
+    gpu_envelopes = []
+    for folder in [*a.primary, *[Path(v[0]) for v in a.retry]]:
+        start, end = folder / "started", folder / "finished"
+        if start.is_file() and end.is_file():
+            duration = (
+                datetime.fromisoformat(end.read_text().strip().replace("Z", "+00:00"))
+                - datetime.fromisoformat(
+                    start.read_text().strip().replace("Z", "+00:00")
+                )
+            ).total_seconds()
+            if duration < 0:
+                raise ValueError("invalid GPU job envelope")
+            gpu_envelopes.append(dict(job_folder=folder.name, seconds=duration))
     summary = dict(
+        measured_gpu_job_envelopes=gpu_envelopes,
+        gpu_hours_between_job_markers=math.fsum(r["seconds"] for r in gpu_envelopes)
+        / 3600,
+        raw_reference_array_bytes=sum(r["cpu_reference_bytes"] for r in ledger),
+        raw_candidate_array_bytes=sum(
+            v["producer_asset_bytes"] for r in ledger for v in r["attempts"]
+        ),
         schema="vibedataset.certified_qm9_response_release.v1",
         protocol_sha256=seal,
         counts=dict(stats),
@@ -321,9 +342,9 @@ def write_outputs(a):
         artifacts={p.name: digest(p.read_bytes()) for p in sorted(out.glob("*.gz"))},
     )
     (out / "summary.json").write_text(json.dumps(summary, indent=2) + "\n")
-    if a.raw_tar:
+    if tar_path is not None:
         with (
-            a.raw_tar.open("xb") as fd,
+            tar_path.open("xb") as fd,
             gzip.GzipFile(
                 fileobj=fd, mode="wb", filename="", mtime=0, compresslevel=2
             ) as gz,
@@ -337,14 +358,27 @@ def write_outputs(a):
                 package(tar, "release/" + f.name, f.read_bytes())
             for p in (a.requests, a.protocol, a.geometries):
                 package(tar, "inputs/" + p.name, p.read_bytes())
+            for folder, phase in [
+                (a.references, "reference"),
+                (a.scores, "score"),
+                *[(v, "produce") for v in a.primary],
+                *[(Path(v[0]), "produce") for v in a.retry],
+                *[(Path(v[1]), "score") for v in a.retry],
+            ]:
+                for logfile in sorted(folder.glob(phase + "-*.jsonl")):
+                    raw = logfile.read_bytes()
+                    key = digest(raw)
+                    if key not in runs:
+                        raise ValueError("changed journal during packaging")
+                    package(tar, "run-journals/" + key + ".jsonl", raw)
             for key in sorted(runs):
                 package(tar, "run-identities/" + key + ".json", encode(runs[key]))
         (out / "raw-bundle.json").write_text(
             json.dumps(
                 dict(
                     filename=a.raw_tar.name,
-                    bytes=a.raw_tar.stat().st_size,
-                    sha256=digest(a.raw_tar.read_bytes()),
+                    bytes=tar_path.stat().st_size,
+                    sha256=digest(tar_path.read_bytes()),
                 ),
                 indent=2,
             )
@@ -372,7 +406,39 @@ def main():
         default=[],
     )
     p.add_argument("--raw-tar", type=Path)
-    write_outputs(p.parse_args())
+    args = p.parse_args()
+    if args.out.exists() or (args.raw_tar and args.raw_tar.exists()):
+        p.error("existing output; choose a fresh release directory and bundle path")
+    if args.raw_tar and args.out.resolve() in args.raw_tar.resolve().parents:
+        p.error(
+            "the standalone array bundle must be outside the compact release directory"
+        )
+    args.out.parent.mkdir(parents=True, exist_ok=True)
+    if args.raw_tar:
+        args.raw_tar.parent.mkdir(parents=True, exist_ok=True)
+    # Each target is published only after every input, label and raw artifact passes verification.
+    with tempfile.TemporaryDirectory(
+        dir=args.out.parent, prefix=".qm9-labels-"
+    ) as stage:
+        output = Path(stage) / "release"
+        output.mkdir()
+        with tempfile.TemporaryDirectory(
+            dir=(args.raw_tar.parent if args.raw_tar else stage), prefix=".qm9-bundle-"
+        ) as raw_stage:
+            bundle = Path(raw_stage) / "raw.tar.gz" if args.raw_tar else None
+            write_outputs(args, output, bundle)
+            if bundle:
+                os.link(bundle, args.raw_tar)
+            try:
+                output.rename(args.out)
+            except OSError:
+                if (
+                    bundle
+                    and args.raw_tar.is_file()
+                    and os.path.samefile(bundle, args.raw_tar)
+                ):
+                    args.raw_tar.unlink()
+                raise
 
 
 if __name__ == "__main__":
