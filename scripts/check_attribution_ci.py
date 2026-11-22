@@ -79,6 +79,11 @@ def main():
                            "--root", str(pairs), "--manifest", str(EXP / "manifest.json"),
                            "--out", str(paired_summary)])
     require(read(paired_summary) == read(pairs / "summary.json"), "two single-GPU baselines and CPU certificates")
+    frontier = EXP.parent / "response_asset_compiler/frontier"
+    frontier_summary = args.out / "response-frontier.json"
+    subprocess.check_call([sys.executable, str(SCRIPTS / "summarize_response_frontier.py"),
+                           "--root", str(frontier), "--out", str(frontier_summary)])
+    require(read(frontier_summary) == read(frontier / "summary.json"), "bounded response frontier")
     hessian_artifact = ROOT / "handoff/gqcdataset_codex_goal/research/experiments/hessian_cphf/cpu-gpu-crosscheck.json"
     generated_hessian = args.out / "hessian-crosscheck.json"
     subprocess.check_call(
