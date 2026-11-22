@@ -1,0 +1,21 @@
+{
+  "schema": "vibedataset.cross_engine_hessians.v1",
+  "backend": "veloxchem",
+  "inputs": {
+    "protocol_sha256": "674b477726881e6549ad4a5d9f31e348e307693631a1de69d585475b9913e0ca",
+    "driver_sha256": "92a8a58d55daca8d036aeec89a5a5eb1862fb9c8867a79a3c497781c48738baa"
+  },
+  "environment": {
+    "code_version": "1.0rc4",
+    "native_sha256": "e17b01f0d7b0246ffd31c66439c0e1fe6230eea9b5dca76d4967dd5b79937fea",
+    "device": "CPU",
+    "mpi_processes": 1,
+    "python": "3.11.18",
+    "numpy": "2.4.6",
+    "omp": "2",
+    "slurm_job": null
+  },
+  "expected": 3,
+  "failed": 0,
+  "events_sha256": "dc9c31b60d6a84c20dfa4cf00f1477f122570734efac8ab77a88f63e94100380"
+}

@@ -1,0 +1,1502 @@
+{
+  "schema": "vibedataset.shared_spectroscopy.v1",
+  "mode": "shared",
+  "job": "5657",
+  "protocol_sha256": "674b477726881e6549ad4a5d9f31e348e307693631a1de69d585475b9913e0ca",
+  "driver_sha256": "4f31551894d7e2adcabc70416f9969d3f3898388f9da740fc6937724e8a8c6ab",
+  "hessian_source_sha256": "7ff4a2b585b1d9d64f0ab221e66246521a0b4863122229ecdf9c3ec66e79ed0c",
+  "gpu4pyscf": "1.9.2",
+  "gpu": "NVIDIA RTX PRO 6000 Blackwell Workstation Edition",
+  "schedule": [
+    {
+      "id": "01-h2o-hessian",
+      "molecule": "h2o",
+      "property": "hessian"
+    },
+    {
+      "id": "02-nh3-hessian",
+      "molecule": "nh3",
+      "property": "hessian"
+    },
+    {
+      "id": "03-lih-hessian",
+      "molecule": "lih",
+      "property": "hessian"
+    },
+    {
+      "id": "04-h2o-ir",
+      "molecule": "h2o",
+      "property": "ir"
+    },
+    {
+      "id": "05-nh3-ir",
+      "molecule": "nh3",
+      "property": "ir"
+    },
+    {
+      "id": "06-lih-ir",
+      "molecule": "lih",
+      "property": "ir"
+    },
+    {
+      "id": "07-h2o-raman",
+      "molecule": "h2o",
+      "property": "raman"
+    },
+    {
+      "id": "08-nh3-raman",
+      "molecule": "nh3",
+      "property": "raman"
+    },
+    {
+      "id": "09-lih-raman",
+      "molecule": "lih",
+      "property": "raman"
+    },
+    {
+      "id": "10-nh3-ir",
+      "molecule": "nh3",
+      "property": "ir"
+    },
+    {
+      "id": "11-lih-hessian",
+      "molecule": "lih",
+      "property": "hessian"
+    },
+    {
+      "id": "12-lih-raman",
+      "molecule": "lih",
+      "property": "raman"
+    }
+  ],
+  "graph": {
+    "schema": "vibedataset.prepared_property_batch.v1",
+    "resident": true,
+    "max_workspace_bytes": 0,
+    "estimated_workspace_bytes": 1192,
+    "buckets": {
+      "RHF|STO-3G|0|0|real spherical|7": [
+        "01-h2o-hessian",
+        "04-h2o-ir",
+        "07-h2o-raman"
+      ],
+      "RHF|STO-3G|0|0|real spherical|8": [
+        "02-nh3-hessian",
+        "05-nh3-ir",
+        "08-nh3-raman",
+        "10-nh3-ir"
+      ],
+      "RHF|STO-3G|0|0|real spherical|6": [
+        "03-lih-hessian",
+        "06-lih-ir",
+        "09-lih-raman",
+        "11-lih-hessian",
+        "12-lih-raman"
+      ]
+    },
+    "workspace_plan": {
+      "RHF|STO-3G|0|0|real spherical|7": {
+        "request_ids": [
+          "01-h2o-hessian",
+          "04-h2o-ir",
+          "07-h2o-raman"
+        ],
+        "workspace_bytes": 392,
+        "resident": true
+      },
+      "RHF|STO-3G|0|0|real spherical|8": {
+        "request_ids": [
+          "02-nh3-hessian",
+          "05-nh3-ir",
+          "08-nh3-raman",
+          "10-nh3-ir"
+        ],
+        "workspace_bytes": 512,
+        "resident": true
+      },
+      "RHF|STO-3G|0|0|real spherical|6": {
+        "request_ids": [
+          "03-lih-hessian",
+          "06-lih-ir",
+          "09-lih-raman",
+          "11-lih-hessian",
+          "12-lih-raman"
+        ],
+        "workspace_bytes": 288,
+        "resident": true
+      }
+    },
+    "nodes": [
+      {
+        "node_id": "01-h2o-hessian:reference",
+        "request_id": "01-h2o-hessian",
+        "kind": "reference",
+        "depends_on": [],
+        "bucket": "RHF|STO-3G|0|0|real spherical|7",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "01-h2o-hessian:cpks",
+        "request_id": "01-h2o-hessian",
+        "kind": "cpks",
+        "depends_on": [
+          "01-h2o-hessian:reference"
+        ],
+        "bucket": "RHF|STO-3G|0|0|real spherical|7",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "01-h2o-hessian:hessian",
+        "request_id": "01-h2o-hessian",
+        "kind": "hessian",
+        "depends_on": [
+          "01-h2o-hessian:reference",
+          "01-h2o-hessian:cpks"
+        ],
+        "bucket": "RHF|STO-3G|0|0|real spherical|7",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "02-nh3-hessian:reference",
+        "request_id": "02-nh3-hessian",
+        "kind": "reference",
+        "depends_on": [],
+        "bucket": "RHF|STO-3G|0|0|real spherical|8",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "02-nh3-hessian:cpks",
+        "request_id": "02-nh3-hessian",
+        "kind": "cpks",
+        "depends_on": [
+          "02-nh3-hessian:reference"
+        ],
+        "bucket": "RHF|STO-3G|0|0|real spherical|8",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "02-nh3-hessian:hessian",
+        "request_id": "02-nh3-hessian",
+        "kind": "hessian",
+        "depends_on": [
+          "02-nh3-hessian:reference",
+          "02-nh3-hessian:cpks"
+        ],
+        "bucket": "RHF|STO-3G|0|0|real spherical|8",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "03-lih-hessian:reference",
+        "request_id": "03-lih-hessian",
+        "kind": "reference",
+        "depends_on": [],
+        "bucket": "RHF|STO-3G|0|0|real spherical|6",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "03-lih-hessian:cpks",
+        "request_id": "03-lih-hessian",
+        "kind": "cpks",
+        "depends_on": [
+          "03-lih-hessian:reference"
+        ],
+        "bucket": "RHF|STO-3G|0|0|real spherical|6",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "03-lih-hessian:hessian",
+        "request_id": "03-lih-hessian",
+        "kind": "hessian",
+        "depends_on": [
+          "03-lih-hessian:reference",
+          "03-lih-hessian:cpks"
+        ],
+        "bucket": "RHF|STO-3G|0|0|real spherical|6",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "04-h2o-ir:reference",
+        "request_id": "04-h2o-ir",
+        "kind": "reference",
+        "depends_on": [],
+        "bucket": "RHF|STO-3G|0|0|real spherical|7",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "04-h2o-ir:cpks",
+        "request_id": "04-h2o-ir",
+        "kind": "cpks",
+        "depends_on": [
+          "04-h2o-ir:reference"
+        ],
+        "bucket": "RHF|STO-3G|0|0|real spherical|7",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "04-h2o-ir:ir",
+        "request_id": "04-h2o-ir",
+        "kind": "ir",
+        "depends_on": [
+          "04-h2o-ir:reference",
+          "04-h2o-ir:cpks"
+        ],
+        "bucket": "RHF|STO-3G|0|0|real spherical|7",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "05-nh3-ir:reference",
+        "request_id": "05-nh3-ir",
+        "kind": "reference",
+        "depends_on": [],
+        "bucket": "RHF|STO-3G|0|0|real spherical|8",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "05-nh3-ir:cpks",
+        "request_id": "05-nh3-ir",
+        "kind": "cpks",
+        "depends_on": [
+          "05-nh3-ir:reference"
+        ],
+        "bucket": "RHF|STO-3G|0|0|real spherical|8",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "05-nh3-ir:ir",
+        "request_id": "05-nh3-ir",
+        "kind": "ir",
+        "depends_on": [
+          "05-nh3-ir:reference",
+          "05-nh3-ir:cpks"
+        ],
+        "bucket": "RHF|STO-3G|0|0|real spherical|8",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "06-lih-ir:reference",
+        "request_id": "06-lih-ir",
+        "kind": "reference",
+        "depends_on": [],
+        "bucket": "RHF|STO-3G|0|0|real spherical|6",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "06-lih-ir:cpks",
+        "request_id": "06-lih-ir",
+        "kind": "cpks",
+        "depends_on": [
+          "06-lih-ir:reference"
+        ],
+        "bucket": "RHF|STO-3G|0|0|real spherical|6",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "06-lih-ir:ir",
+        "request_id": "06-lih-ir",
+        "kind": "ir",
+        "depends_on": [
+          "06-lih-ir:reference",
+          "06-lih-ir:cpks"
+        ],
+        "bucket": "RHF|STO-3G|0|0|real spherical|6",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "07-h2o-raman:reference",
+        "request_id": "07-h2o-raman",
+        "kind": "reference",
+        "depends_on": [],
+        "bucket": "RHF|STO-3G|0|0|real spherical|7",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "07-h2o-raman:cpks",
+        "request_id": "07-h2o-raman",
+        "kind": "cpks",
+        "depends_on": [
+          "07-h2o-raman:reference"
+        ],
+        "bucket": "RHF|STO-3G|0|0|real spherical|7",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "07-h2o-raman:raman",
+        "request_id": "07-h2o-raman",
+        "kind": "raman",
+        "depends_on": [
+          "07-h2o-raman:reference",
+          "07-h2o-raman:cpks"
+        ],
+        "bucket": "RHF|STO-3G|0|0|real spherical|7",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "08-nh3-raman:reference",
+        "request_id": "08-nh3-raman",
+        "kind": "reference",
+        "depends_on": [],
+        "bucket": "RHF|STO-3G|0|0|real spherical|8",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "08-nh3-raman:cpks",
+        "request_id": "08-nh3-raman",
+        "kind": "cpks",
+        "depends_on": [
+          "08-nh3-raman:reference"
+        ],
+        "bucket": "RHF|STO-3G|0|0|real spherical|8",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "08-nh3-raman:raman",
+        "request_id": "08-nh3-raman",
+        "kind": "raman",
+        "depends_on": [
+          "08-nh3-raman:reference",
+          "08-nh3-raman:cpks"
+        ],
+        "bucket": "RHF|STO-3G|0|0|real spherical|8",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "09-lih-raman:reference",
+        "request_id": "09-lih-raman",
+        "kind": "reference",
+        "depends_on": [],
+        "bucket": "RHF|STO-3G|0|0|real spherical|6",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "09-lih-raman:cpks",
+        "request_id": "09-lih-raman",
+        "kind": "cpks",
+        "depends_on": [
+          "09-lih-raman:reference"
+        ],
+        "bucket": "RHF|STO-3G|0|0|real spherical|6",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "09-lih-raman:raman",
+        "request_id": "09-lih-raman",
+        "kind": "raman",
+        "depends_on": [
+          "09-lih-raman:reference",
+          "09-lih-raman:cpks"
+        ],
+        "bucket": "RHF|STO-3G|0|0|real spherical|6",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "10-nh3-ir:reference",
+        "request_id": "10-nh3-ir",
+        "kind": "reference",
+        "depends_on": [],
+        "bucket": "RHF|STO-3G|0|0|real spherical|8",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "10-nh3-ir:cpks",
+        "request_id": "10-nh3-ir",
+        "kind": "cpks",
+        "depends_on": [
+          "10-nh3-ir:reference"
+        ],
+        "bucket": "RHF|STO-3G|0|0|real spherical|8",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "10-nh3-ir:ir",
+        "request_id": "10-nh3-ir",
+        "kind": "ir",
+        "depends_on": [
+          "10-nh3-ir:reference",
+          "10-nh3-ir:cpks"
+        ],
+        "bucket": "RHF|STO-3G|0|0|real spherical|8",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "11-lih-hessian:reference",
+        "request_id": "11-lih-hessian",
+        "kind": "reference",
+        "depends_on": [],
+        "bucket": "RHF|STO-3G|0|0|real spherical|6",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "11-lih-hessian:cpks",
+        "request_id": "11-lih-hessian",
+        "kind": "cpks",
+        "depends_on": [
+          "11-lih-hessian:reference"
+        ],
+        "bucket": "RHF|STO-3G|0|0|real spherical|6",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "11-lih-hessian:hessian",
+        "request_id": "11-lih-hessian",
+        "kind": "hessian",
+        "depends_on": [
+          "11-lih-hessian:reference",
+          "11-lih-hessian:cpks"
+        ],
+        "bucket": "RHF|STO-3G|0|0|real spherical|6",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "12-lih-raman:reference",
+        "request_id": "12-lih-raman",
+        "kind": "reference",
+        "depends_on": [],
+        "bucket": "RHF|STO-3G|0|0|real spherical|6",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "12-lih-raman:cpks",
+        "request_id": "12-lih-raman",
+        "kind": "cpks",
+        "depends_on": [
+          "12-lih-raman:reference"
+        ],
+        "bucket": "RHF|STO-3G|0|0|real spherical|6",
+        "disposition": "ready",
+        "reason": ""
+      },
+      {
+        "node_id": "12-lih-raman:raman",
+        "request_id": "12-lih-raman",
+        "kind": "raman",
+        "depends_on": [
+          "12-lih-raman:reference",
+          "12-lih-raman:cpks"
+        ],
+        "bucket": "RHF|STO-3G|0|0|real spherical|6",
+        "disposition": "ready",
+        "reason": ""
+      }
+    ],
+    "failures": []
+  },
+  "requests": [
+    {
+      "request_id": "01-h2o-hessian",
+      "bucket": "RHF|STO-3G|0|0|real spherical|7",
+      "status": "accepted",
+      "result": {
+        "request_id": "01-h2o-hessian",
+        "molecule": "h2o",
+        "property": "hessian",
+        "scientific_identity": "03d674ef3f0595618ac45a27dae11f64a90d30a197f390859f675e8e1a7f5e54",
+        "energy_hartree": -74.63485187691971,
+        "result": {
+          "hessian": [
+            [
+              3.4646240834522946,
+              -0.08228896037364228,
+              -2.374783759104447e-16,
+              0.30563298081276447,
+              0.183706771173704,
+              1.4148683011102358e-16,
+              -3.770257064263416,
+              -0.10141781080005302,
+              9.599154579942388e-17
+            ],
+            [
+              -0.08228896037364228,
+              2.072736991661304,
+              -2.3074310511631346e-16,
+              -0.10399857028003665,
+              -2.6498157554518684,
+              1.091923882973063e-16,
+              0.1862875306536886,
+              0.5770787637906536,
+              1.215507168190082e-16
+            ],
+            [
+              -2.374783759104447e-16,
+              -2.3074310511631346e-16,
+              -1.0888839288056236,
+              6.833660255364127e-17,
+              1.3219722559337744e-16,
+              0.3998066758469325,
+              1.6914177335680318e-16,
+              9.854587952293458e-17,
+              0.6890772529614364
+            ],
+            [
+              0.30563298081276447,
+              -0.10399857028003665,
+              6.833660255364127e-17,
+              -0.23982190952147553,
+              -0.1473105719942293,
+              -1.1318216770762962e-16,
+              -0.06581107129128769,
+              0.2513091422742652,
+              4.4845565153986846e-17
+            ],
+            [
+              0.183706771173704,
+              -2.6498157554518684,
+              1.3219722559337744e-16,
+              -0.14731057199422937,
+              2.735084165218976,
+              -1.1654412517951996e-16,
+              -0.03639619917947429,
+              -0.08526840976710487,
+              -1.565310041385807e-17
+            ],
+            [
+              1.4148683011102358e-16,
+              1.091923882973063e-16,
+              0.3998066758469325,
+              -1.1318216770762962e-16,
+              -1.1654412517951996e-16,
+              -0.4731804157340127,
+              -2.8304662403394834e-17,
+              7.351736882214485e-18,
+              0.07337373988707235
+            ],
+            [
+              -3.770257064263416,
+              0.1862875306536886,
+              1.6914177335680318e-16,
+              -0.06581107129128769,
+              -0.036396199179474314,
+              -2.8304662403394834e-17,
+              3.8360681355546933,
+              -0.14989133147421424,
+              -1.4083711095341e-16
+            ],
+            [
+              -0.10141781080005302,
+              0.5770787637906536,
+              9.854587952293458e-17,
+              0.2513091422742652,
+              -0.08526840976710487,
+              7.351736882214485e-18,
+              -0.14989133147421427,
+              -0.4918103540235519,
+              -1.0589761640514963e-16
+            ],
+            [
+              9.599154579942388e-17,
+              1.215507168190082e-16,
+              0.6890772529614364,
+              4.4845565153986846e-17,
+              -1.565310041385807e-17,
+              0.07337373988707235,
+              -1.4083711095341e-16,
+              -1.0589761640514963e-16,
+              -0.7624509928485113
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "request_id": "04-h2o-ir",
+      "bucket": "RHF|STO-3G|0|0|real spherical|7",
+      "status": "accepted",
+      "result": {
+        "request_id": "04-h2o-ir",
+        "molecule": "h2o",
+        "property": "ir",
+        "scientific_identity": "03d674ef3f0595618ac45a27dae11f64a90d30a197f390859f675e8e1a7f5e54",
+        "energy_hartree": -74.63485187691971,
+        "result": {
+          "ir_frequency_cm1": [
+            -1980.5709293345376,
+            8725.43318221494,
+            10338.103398246567
+          ],
+          "ir_km_mol": [
+            66.36120514185185,
+            17.685901446373585,
+            13.136868511788446
+          ]
+        }
+      }
+    },
+    {
+      "request_id": "07-h2o-raman",
+      "bucket": "RHF|STO-3G|0|0|real spherical|7",
+      "status": "accepted",
+      "result": {
+        "request_id": "07-h2o-raman",
+        "molecule": "h2o",
+        "property": "raman",
+        "scientific_identity": "03d674ef3f0595618ac45a27dae11f64a90d30a197f390859f675e8e1a7f5e54",
+        "energy_hartree": -74.63485187691971,
+        "result": {
+          "raman_frequency_cm1": [
+            -1980.570929334541,
+            8725.433182214932,
+            10338.10339824656
+          ],
+          "raman_A4_amu": [
+            4.312169218869904,
+            9.636943343719178,
+            7.131860712248355
+          ],
+          "raman_depolarization": [
+            0.6219198835233286,
+            0.2959475777113285,
+            0.32155548156959096
+          ]
+        }
+      }
+    },
+    {
+      "request_id": "02-nh3-hessian",
+      "bucket": "RHF|STO-3G|0|0|real spherical|8",
+      "status": "accepted",
+      "result": {
+        "request_id": "02-nh3-hessian",
+        "molecule": "nh3",
+        "property": "hessian",
+        "scientific_identity": "3b428c591cbbc90c655f376a61c9a68c888713aa20c63906c458ec1fda9d7f16",
+        "energy_hartree": -55.42753756705925,
+        "result": {
+          "hessian": [
+            [
+              1.398255659474255,
+              -1.0239352554959548e-15,
+              3.636996866214304e-17,
+              -0.07884730931731943,
+              1.4260496480898735e-16,
+              -2.970464351764718e-17,
+              -0.6597041750782957,
+              0.33486141181903517,
+              -5.2668034774705045e-17,
+              -0.6597041750782962,
+              -0.33486141181903406,
+              4.600270963018858e-17
+            ],
+            [
+              -1.0239352554959548e-15,
+              1.4003605571475133,
+              6.954205578264835e-17,
+              3.0005280068940024e-16,
+              -0.8554320166905831,
+              3.515719060723823e-17,
+              0.3349547015500165,
+              -0.2724642702272232,
+              -6.751387221773609e-17,
+              -0.33495470155001605,
+              -0.27246427022722397,
+              -3.718537417215832e-17
+            ],
+            [
+              3.636996866214304e-17,
+              6.954205578264835e-17,
+              -0.1999163132172348,
+              -5.959733106765057e-17,
+              8.138661817829191e-17,
+              0.06692571635998878,
+              -7.851185470710973e-17,
+              -1.1653091090246585e-16,
+              0.06649529842757795,
+              1.0173921711259965e-16,
+              -3.439776305847605e-17,
+              0.06649529842757707
+            ],
+            [
+              -0.07884730931731943,
+              3.0005280068940024e-16,
+              -5.959733106765057e-17,
+              0.051686239851055804,
+              -1.4665372361870544e-16,
+              5.4201451882105894e-17,
+              0.013580534733129514,
+              0.04506742344996387,
+              -5.1281309893999555e-17,
+              0.013580534733129528,
+              -0.04506742344996391,
+              5.667718907954518e-17
+            ],
+            [
+              1.4260496480898735e-16,
+              -0.8554320166905831,
+              8.138661817829191e-17,
+              -1.4665372361870544e-16,
+              0.8598537043121852,
+              -7.417151714929579e-17,
+              -0.01766269544446214,
+              -0.002210843810799841,
+              8.286943252506063e-18,
+              0.01766269544446207,
+              -0.002210843810799709,
+              -1.5502044281499596e-17
+            ],
+            [
+              -2.970464351764718e-17,
+              3.515719060723823e-17,
+              0.06692571635998878,
+              5.4201451882105894e-17,
+              -7.417151714929579e-17,
+              -0.04898268170670761,
+              2.2557324690742457e-17,
+              -3.203907317209002e-17,
+              -0.008971517326641275,
+              -4.70541330552e-17,
+              7.105339971414809e-17,
+              -0.008971517326641094
+            ],
+            [
+              -0.6597041750782957,
+              0.3349547015500165,
+              -7.851185470710973e-17,
+              0.013580534733129514,
+              -0.01766269544446214,
+              2.2557324690742457e-17,
+              0.6561807147426676,
+              -0.34861042068727577,
+              5.043032927044205e-17,
+              -0.010057074397499338,
+              0.03131841458172214,
+              5.5242007459275374e-18
+            ],
+            [
+              0.33486141181903517,
+              -0.2724642702272232,
+              -1.1653091090246585e-16,
+              0.04506742344996387,
+              -0.002210843810799841,
+              -3.203907317209002e-17,
+              -0.34861042068727577,
+              0.25320018744771267,
+              1.1227735393220572e-16,
+              -0.03131841458172219,
+              0.021474926590315496,
+              3.629263014235096e-17
+            ],
+            [
+              -5.2668034774705045e-17,
+              -6.751387221773609e-17,
+              0.06649529842757795,
+              -5.1281309893999555e-17,
+              8.286943252506063e-18,
+              -0.008971517326641275,
+              5.043032927044205e-17,
+              1.1227735393220572e-16,
+              -0.048494552491341825,
+              5.351901539826197e-17,
+              -5.3050424966976795e-17,
+              -0.009029228609596839
+            ],
+            [
+              -0.6597041750782962,
+              -0.33495470155001605,
+              1.0173921711259965e-16,
+              0.013580534733129528,
+              0.01766269544446207,
+              -4.70541330552e-17,
+              -0.010057074397499338,
+              -0.03131841458172219,
+              5.351901539826197e-17,
+              0.6561807147426696,
+              0.348610420687274,
+              -1.0820409945566019e-16
+            ],
+            [
+              -0.33486141181903406,
+              -0.27246427022722397,
+              -3.439776305847605e-17,
+              -0.04506742344996391,
+              -0.002210843810799709,
+              7.105339971414809e-17,
+              0.03131841458172214,
+              0.021474926590315496,
+              -5.3050424966976795e-17,
+              0.348610420687274,
+              0.2532001874477132,
+              1.6394788311307173e-17
+            ],
+            [
+              4.600270963018858e-17,
+              -3.718537417215832e-17,
+              0.06649529842757707,
+              5.667718907954518e-17,
+              -1.5502044281499596e-17,
+              -0.008971517326641094,
+              5.5242007459275374e-18,
+              3.629263014235096e-17,
+              -0.009029228609596839,
+              -1.0820409945566019e-16,
+              1.6394788311307173e-17,
+              -0.04849455249133916
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "request_id": "05-nh3-ir",
+      "bucket": "RHF|STO-3G|0|0|real spherical|8",
+      "status": "accepted",
+      "result": {
+        "request_id": "05-nh3-ir",
+        "molecule": "nh3",
+        "property": "ir",
+        "scientific_identity": "3b428c591cbbc90c655f376a61c9a68c888713aa20c63906c458ec1fda9d7f16",
+        "energy_hartree": -55.42753756705925,
+        "result": {
+          "ir_frequency_cm1": [
+            -1457.420958621475,
+            1675.1879016885612,
+            1676.2994214783366,
+            4663.943293825362,
+            5023.85356205736,
+            5028.555478729506
+          ],
+          "ir_km_mol": [
+            614.135489839303,
+            18.65880226582654,
+            18.736158387693447,
+            0.0011785120252419301,
+            12.88903106908224,
+            12.852949428277343
+          ]
+        }
+      }
+    },
+    {
+      "request_id": "08-nh3-raman",
+      "bucket": "RHF|STO-3G|0|0|real spherical|8",
+      "status": "accepted",
+      "result": {
+        "request_id": "08-nh3-raman",
+        "molecule": "nh3",
+        "property": "raman",
+        "scientific_identity": "3b428c591cbbc90c655f376a61c9a68c888713aa20c63906c458ec1fda9d7f16",
+        "energy_hartree": -55.42753756705925,
+        "result": {
+          "raman_frequency_cm1": [
+            -1457.420958621475,
+            1675.1879016885619,
+            1676.2994214783403,
+            4663.94329382536,
+            5023.853562057358,
+            5028.555478729505
+          ],
+          "raman_A4_amu": [
+            1.334249457343628e-05,
+            5.996498731300984,
+            6.010999393573889,
+            33.29601391711299,
+            11.156276025545036,
+            11.152894345139755
+          ],
+          "raman_depolarization": [
+            0.0811944841982266,
+            0.7499973647412403,
+            0.7499978813128131,
+            0.10213659529491459,
+            0.7499996989323997,
+            0.7497695218719599
+          ]
+        }
+      }
+    },
+    {
+      "request_id": "10-nh3-ir",
+      "bucket": "RHF|STO-3G|0|0|real spherical|8",
+      "status": "accepted",
+      "result": {
+        "request_id": "10-nh3-ir",
+        "molecule": "nh3",
+        "property": "ir",
+        "scientific_identity": "3b428c591cbbc90c655f376a61c9a68c888713aa20c63906c458ec1fda9d7f16",
+        "energy_hartree": -55.42753756705925,
+        "result": {
+          "ir_frequency_cm1": [
+            -1457.420958621475,
+            1675.1879016885612,
+            1676.2994214783366,
+            4663.943293825362,
+            5023.85356205736,
+            5028.555478729506
+          ],
+          "ir_km_mol": [
+            614.135489839303,
+            18.65880226582654,
+            18.736158387693447,
+            0.0011785120252419301,
+            12.88903106908224,
+            12.852949428277343
+          ]
+        }
+      }
+    },
+    {
+      "request_id": "03-lih-hessian",
+      "bucket": "RHF|STO-3G|0|0|real spherical|6",
+      "status": "accepted",
+      "result": {
+        "request_id": "03-lih-hessian",
+        "molecule": "lih",
+        "property": "hessian",
+        "scientific_identity": "566fa9833533d35c6d6d7b3e4b4603f5756cd5fe96a063018f4f9aab42a977bf",
+        "energy_hartree": -7.862009272120449,
+        "result": {
+          "hessian": [
+            [
+              0.0909472870197107,
+              1.2875047972962001e-18,
+              -7.071437167836853e-18,
+              -0.09094728701968535,
+              -1.2875047972961065e-18,
+              7.071437167836989e-18
+            ],
+            [
+              1.2875047972962001e-18,
+              0.005469294099261474,
+              -3.5279732529979946e-18,
+              -1.2875047972961362e-18,
+              -0.00546929409925187,
+              2.8127241205118822e-18
+            ],
+            [
+              -7.071437167836853e-18,
+              -3.5279732529979946e-18,
+              0.005469294099259073,
+              7.071437167836916e-18,
+              3.3271479464688687e-18,
+              -0.005469294099251759
+            ],
+            [
+              -0.09094728701968535,
+              -1.2875047972961362e-18,
+              7.071437167836916e-18,
+              0.0909472870196848,
+              1.2875047972961266e-18,
+              -7.071437167836903e-18
+            ],
+            [
+              -1.2875047972961065e-18,
+              -0.00546929409925187,
+              3.3271479464688687e-18,
+              1.2875047972961266e-18,
+              0.005469294099251884,
+              -2.503491831624014e-18
+            ],
+            [
+              7.071437167836989e-18,
+              2.8127241205118822e-18,
+              -0.005469294099251759,
+              -7.071437167836903e-18,
+              -2.503491831624014e-18,
+              0.0054692940992518285
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "request_id": "06-lih-ir",
+      "bucket": "RHF|STO-3G|0|0|real spherical|6",
+      "status": "accepted",
+      "result": {
+        "request_id": "06-lih-ir",
+        "molecule": "lih",
+        "property": "ir",
+        "scientific_identity": "566fa9833533d35c6d6d7b3e4b4603f5756cd5fe96a063018f4f9aab42a977bf",
+        "energy_hartree": -7.862009272120449,
+        "result": {
+          "ir_frequency_cm1": [
+            1652.4110063608102
+          ],
+          "ir_km_mol": [
+            2.955184839387471
+          ]
+        }
+      }
+    },
+    {
+      "request_id": "09-lih-raman",
+      "bucket": "RHF|STO-3G|0|0|real spherical|6",
+      "status": "accepted",
+      "result": {
+        "request_id": "09-lih-raman",
+        "molecule": "lih",
+        "property": "raman",
+        "scientific_identity": "566fa9833533d35c6d6d7b3e4b4603f5756cd5fe96a063018f4f9aab42a977bf",
+        "energy_hartree": -7.862009272120449,
+        "result": {
+          "raman_frequency_cm1": [
+            1652.411006360809
+          ],
+          "raman_A4_amu": [
+            94.43265018303907
+          ],
+          "raman_depolarization": [
+            0.11673563506640858
+          ]
+        }
+      }
+    },
+    {
+      "request_id": "11-lih-hessian",
+      "bucket": "RHF|STO-3G|0|0|real spherical|6",
+      "status": "accepted",
+      "result": {
+        "request_id": "11-lih-hessian",
+        "molecule": "lih",
+        "property": "hessian",
+        "scientific_identity": "566fa9833533d35c6d6d7b3e4b4603f5756cd5fe96a063018f4f9aab42a977bf",
+        "energy_hartree": -7.862009272120449,
+        "result": {
+          "hessian": [
+            [
+              0.0909472870197107,
+              1.2875047972962001e-18,
+              -7.071437167836853e-18,
+              -0.09094728701968535,
+              -1.2875047972961065e-18,
+              7.071437167836989e-18
+            ],
+            [
+              1.2875047972962001e-18,
+              0.005469294099261474,
+              -3.5279732529979946e-18,
+              -1.2875047972961362e-18,
+              -0.00546929409925187,
+              2.8127241205118822e-18
+            ],
+            [
+              -7.071437167836853e-18,
+              -3.5279732529979946e-18,
+              0.005469294099259073,
+              7.071437167836916e-18,
+              3.3271479464688687e-18,
+              -0.005469294099251759
+            ],
+            [
+              -0.09094728701968535,
+              -1.2875047972961362e-18,
+              7.071437167836916e-18,
+              0.0909472870196848,
+              1.2875047972961266e-18,
+              -7.071437167836903e-18
+            ],
+            [
+              -1.2875047972961065e-18,
+              -0.00546929409925187,
+              3.3271479464688687e-18,
+              1.2875047972961266e-18,
+              0.005469294099251884,
+              -2.503491831624014e-18
+            ],
+            [
+              7.071437167836989e-18,
+              2.8127241205118822e-18,
+              -0.005469294099251759,
+              -7.071437167836903e-18,
+              -2.503491831624014e-18,
+              0.0054692940992518285
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "request_id": "12-lih-raman",
+      "bucket": "RHF|STO-3G|0|0|real spherical|6",
+      "status": "accepted",
+      "result": {
+        "request_id": "12-lih-raman",
+        "molecule": "lih",
+        "property": "raman",
+        "scientific_identity": "566fa9833533d35c6d6d7b3e4b4603f5756cd5fe96a063018f4f9aab42a977bf",
+        "energy_hartree": -7.862009272120449,
+        "result": {
+          "raman_frequency_cm1": [
+            1652.411006360809
+          ],
+          "raman_A4_amu": [
+            94.43265018303907
+          ],
+          "raman_depolarization": [
+            0.11673563506640858
+          ]
+        }
+      }
+    }
+  ],
+  "events": [
+    {
+      "request_id": "01-h2o-hessian",
+      "wall_seconds": 2.667468394036405
+    },
+    {
+      "request_id": "04-h2o-ir",
+      "wall_seconds": 0.014656560961157084
+    },
+    {
+      "request_id": "07-h2o-raman",
+      "wall_seconds": 14.097721234080382
+    },
+    {
+      "request_id": "02-nh3-hessian",
+      "wall_seconds": 3.9244911409914494
+    },
+    {
+      "request_id": "05-nh3-ir",
+      "wall_seconds": 0.007279981975443661
+    },
+    {
+      "request_id": "08-nh3-raman",
+      "wall_seconds": 27.621415068977512
+    },
+    {
+      "request_id": "10-nh3-ir",
+      "wall_seconds": 0.0009433960076421499
+    },
+    {
+      "request_id": "03-lih-hessian",
+      "wall_seconds": 2.148029709002003
+    },
+    {
+      "request_id": "06-lih-ir",
+      "wall_seconds": 0.013388421037234366
+    },
+    {
+      "request_id": "09-lih-raman",
+      "wall_seconds": 15.363170105963945
+    },
+    {
+      "request_id": "11-lih-hessian",
+      "wall_seconds": 0.0009794209618121386
+    },
+    {
+      "request_id": "12-lih-raman",
+      "wall_seconds": 0.0008800899377092719
+    }
+  ],
+  "history": [
+    {
+      "request_id": "01-h2o-hessian",
+      "kind": "SCF",
+      "status": "started"
+    },
+    {
+      "request_id": "01-h2o-hessian",
+      "kind": "SCF",
+      "status": "finished",
+      "seconds": 1.5612312339944765
+    },
+    {
+      "request_id": "01-h2o-hessian",
+      "kind": "geometric-H1",
+      "reused": false,
+      "newly_solved_cartesian_rhs": 0,
+      "seconds": 0.31112032500095665
+    },
+    {
+      "request_id": "01-h2o-hessian",
+      "kind": "gen-vind",
+      "reused": false,
+      "newly_solved_cartesian_rhs": 0,
+      "seconds": 0.00017577700782567263
+    },
+    {
+      "request_id": "01-h2o-hessian",
+      "kind": "geometric-CPHF",
+      "reused": false,
+      "newly_solved_cartesian_rhs": 9,
+      "seconds": 0.47651097702328116
+    },
+    {
+      "request_id": "01-h2o-hessian",
+      "kind": "hessian",
+      "reused": false,
+      "newly_solved_cartesian_rhs": 0,
+      "seconds": 1.1022692220285535
+    },
+    {
+      "request_id": "04-h2o-ir",
+      "kind": "hessian",
+      "reused": true,
+      "newly_solved_cartesian_rhs": 0,
+      "seconds": 1.0309740900993347e-06
+    },
+    {
+      "request_id": "04-h2o-ir",
+      "kind": "geometric-H1",
+      "reused": true,
+      "newly_solved_cartesian_rhs": 0,
+      "seconds": 4.20701690018177e-06
+    },
+    {
+      "request_id": "04-h2o-ir",
+      "kind": "gen-vind",
+      "reused": true,
+      "newly_solved_cartesian_rhs": 0,
+      "seconds": 2.7939677238464355e-06
+    },
+    {
+      "request_id": "04-h2o-ir",
+      "kind": "geometric-CPHF",
+      "reused": true,
+      "newly_solved_cartesian_rhs": 0,
+      "seconds": 3.6749988794326782e-06
+    },
+    {
+      "request_id": "04-h2o-ir",
+      "kind": "readout-ir",
+      "reused": false,
+      "newly_solved_cartesian_rhs": 0,
+      "seconds": 0.013759774970822036
+    },
+    {
+      "request_id": "07-h2o-raman",
+      "kind": "hessian",
+      "reused": true,
+      "newly_solved_cartesian_rhs": 0,
+      "seconds": 6.610061973333359e-07
+    },
+    {
+      "request_id": "07-h2o-raman",
+      "kind": "readout-raman",
+      "reused": false,
+      "newly_solved_cartesian_rhs": 0,
+      "seconds": 14.096852550981566
+    },
+    {
+      "request_id": "02-nh3-hessian",
+      "kind": "SCF",
+      "status": "started"
+    },
+    {
+      "request_id": "02-nh3-hessian",
+      "kind": "SCF",
+      "status": "finished",
+      "seconds": 1.646545757073909
+    },
+    {
+      "request_id": "02-nh3-hessian",
+      "kind": "geometric-H1",
+      "reused": false,
+      "newly_solved_cartesian_rhs": 0,
+      "seconds": 0.6491286410018802
+    },
+    {
+      "request_id": "02-nh3-hessian",
+      "kind": "gen-vind",
+      "reused": false,
+      "newly_solved_cartesian_rhs": 0,
+      "seconds": 0.00018148589879274368
+    },
+    {
+      "request_id": "02-nh3-hessian",
+      "kind": "geometric-CPHF",
+      "reused": false,
+      "newly_solved_cartesian_rhs": 12,
+      "seconds": 1.1623700479976833
+    },
+    {
+      "request_id": "02-nh3-hessian",
+      "kind": "hessian",
+      "reused": false,
+      "newly_solved_cartesian_rhs": 0,
+      "seconds": 2.276991631020792
+    },
+    {
+      "request_id": "05-nh3-ir",
+      "kind": "hessian",
+      "reused": true,
+      "newly_solved_cartesian_rhs": 0,
+      "seconds": 7.910421118140221e-07
+    },
+    {
+      "request_id": "05-nh3-ir",
+      "kind": "geometric-H1",
+      "reused": true,
+      "newly_solved_cartesian_rhs": 0,
+      "seconds": 2.7240021154284477e-06
+    },
+    {
+      "request_id": "05-nh3-ir",
+      "kind": "gen-vind",
+      "reused": true,
+      "newly_solved_cartesian_rhs": 0,
+      "seconds": 1.4120014384388924e-06
+    },
+    {
+      "request_id": "05-nh3-ir",
+      "kind": "geometric-CPHF",
+      "reused": true,
+      "newly_solved_cartesian_rhs": 0,
+      "seconds": 2.6439083740115166e-06
+    },
+    {
+      "request_id": "05-nh3-ir",
+      "kind": "readout-ir",
+      "reused": false,
+      "newly_solved_cartesian_rhs": 0,
+      "seconds": 0.006393221905454993
+    },
+    {
+      "request_id": "08-nh3-raman",
+      "kind": "hessian",
+      "reused": true,
+      "newly_solved_cartesian_rhs": 0,
+      "seconds": 7.209600880742073e-07
+    },
+    {
+      "request_id": "08-nh3-raman",
+      "kind": "readout-raman",
+      "reused": false,
+      "newly_solved_cartesian_rhs": 0,
+      "seconds": 27.620547518017702
+    },
+    {
+      "request_id": "10-nh3-ir",
+      "kind": "readout-ir",
+      "reused": true,
+      "newly_solved_cartesian_rhs": 0,
+      "seconds": 1.2220116332173347e-06
+    },
+    {
+      "request_id": "03-lih-hessian",
+      "kind": "SCF",
+      "status": "started"
+    },
+    {
+      "request_id": "03-lih-hessian",
+      "kind": "SCF",
+      "status": "finished",
+      "seconds": 0.9359002410201356
+    },
+    {
+      "request_id": "03-lih-hessian",
+      "kind": "geometric-H1",
+      "reused": false,
+      "newly_solved_cartesian_rhs": 0,
+      "seconds": 0.297851090086624
+    },
+    {
+      "request_id": "03-lih-hessian",
+      "kind": "gen-vind",
+      "reused": false,
+      "newly_solved_cartesian_rhs": 0,
+      "seconds": 0.00020238803699612617
+    },
+    {
+      "request_id": "03-lih-hessian",
+      "kind": "geometric-CPHF",
+      "reused": false,
+      "newly_solved_cartesian_rhs": 6,
+      "seconds": 0.6835561270127073
+    },
+    {
+      "request_id": "03-lih-hessian",
+      "kind": "hessian",
+      "reused": false,
+      "newly_solved_cartesian_rhs": 0,
+      "seconds": 1.210872393916361
+    },
+    {
+      "request_id": "06-lih-ir",
+      "kind": "hessian",
+      "reused": true,
+      "newly_solved_cartesian_rhs": 0,
+      "seconds": 1.7419224604964256e-06
+    },
+    {
+      "request_id": "06-lih-ir",
+      "kind": "geometric-H1",
+      "reused": true,
+      "newly_solved_cartesian_rhs": 0,
+      "seconds": 3.374996595084667e-06
+    },
+    {
+      "request_id": "06-lih-ir",
+      "kind": "gen-vind",
+      "reused": true,
+      "newly_solved_cartesian_rhs": 0,
+      "seconds": 2.2939639165997505e-06
+    },
+    {
+      "request_id": "06-lih-ir",
+      "kind": "geometric-CPHF",
+      "reused": true,
+      "newly_solved_cartesian_rhs": 0,
+      "seconds": 2.9850052669644356e-06
+    },
+    {
+      "request_id": "06-lih-ir",
+      "kind": "readout-ir",
+      "reused": false,
+      "newly_solved_cartesian_rhs": 0,
+      "seconds": 0.012446746928617358
+    },
+    {
+      "request_id": "09-lih-raman",
+      "kind": "hessian",
+      "reused": true,
+      "newly_solved_cartesian_rhs": 0,
+      "seconds": 8.819624781608582e-07
+    },
+    {
+      "request_id": "09-lih-raman",
+      "kind": "readout-raman",
+      "reused": false,
+      "newly_solved_cartesian_rhs": 0,
+      "seconds": 15.362255273968913
+    },
+    {
+      "request_id": "11-lih-hessian",
+      "kind": "hessian",
+      "reused": true,
+      "newly_solved_cartesian_rhs": 0,
+      "seconds": 9.919749572873116e-07
+    },
+    {
+      "request_id": "12-lih-raman",
+      "kind": "readout-raman",
+      "reused": true,
+      "newly_solved_cartesian_rhs": 0,
+      "seconds": 1.0110670700669289e-06
+    }
+  ],
+  "controls": {},
+  "elapsed_seconds": 66.61312390095554
+}

@@ -1,0 +1,78 @@
+{
+  "schema": "vibedataset.directional_raman_refinement.v1",
+  "protocol_sha256": "674b477726881e6549ad4a5d9f31e348e307693631a1de69d585475b9913e0ca",
+  "plan_sha256": "98c3b7bb16cc663f065a2cda7d9f38a93609658954b7d942d606ebfad7fcceb8",
+  "source_serial_sha256": "364543be5c47a53c6a56cafb4115c33e268052b7b23576158c58f7abf2358d8e",
+  "driver_sha256": "a705c8250ad37b814285e6577135f762f6764c455567c96454cc6879d0b9a4cc",
+  "displacements_sha256": "4fe9be28957eff6c254540a011432cacbd66a4feb99f6cc4adf58d309ab8cdf7",
+  "steps": [
+    {
+      "step": 0.001,
+      "modes": [
+        {
+          "raman_A4_amu": 3.2196797776862674e-07,
+          "raman_depolarization": 0.749999999984729
+        },
+        {
+          "raman_A4_amu": 5.9915144733953225,
+          "raman_depolarization": 0.7499999999999999
+        },
+        {
+          "raman_A4_amu": 5.9920470115565365,
+          "raman_depolarization": 0.7499999187806831
+        },
+        {
+          "raman_A4_amu": 33.30440392755751,
+          "raman_depolarization": 0.10217586580445132
+        },
+        {
+          "raman_A4_amu": 11.16035021217111,
+          "raman_depolarization": 0.75
+        },
+        {
+          "raman_A4_amu": 11.168746981085164,
+          "raman_depolarization": 0.7497515371059312
+        }
+      ]
+    },
+    {
+      "step": 0.0005,
+      "modes": [
+        {
+          "raman_A4_amu": 3.2213662524937305e-07,
+          "raman_depolarization": 0.7499999998131982
+        },
+        {
+          "raman_A4_amu": 5.99151427615835,
+          "raman_depolarization": 0.75
+        },
+        {
+          "raman_A4_amu": 5.9920468044652475,
+          "raman_depolarization": 0.749999918883488
+        },
+        {
+          "raman_A4_amu": 33.30439719546438,
+          "raman_depolarization": 0.10217586380512354
+        },
+        {
+          "raman_A4_amu": 11.160350152612196,
+          "raman_depolarization": 0.75
+        },
+        {
+          "raman_A4_amu": 11.168746915082082,
+          "raman_depolarization": 0.7497515376167325
+        }
+      ]
+    }
+  ],
+  "signed_frequencies_cm1": [
+    -1457.4209586208651,
+    1675.1879016894793,
+    1676.299421479128,
+    4663.943293825479,
+    5023.853562057611,
+    5028.555478729776
+  ],
+  "elapsed_seconds": 69.97764091799036,
+  "slurm_job": "5665"
+}

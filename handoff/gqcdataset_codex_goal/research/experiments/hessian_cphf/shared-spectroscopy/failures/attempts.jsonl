@@ -1,0 +1,10 @@
+{"event":"started","request_id":"single-request-scf-failure","unix_time":1795367736.0406382}
+{"event":"request_exited","request_id":"single-request-scf-failure","wall_seconds":0.899692198028788}
+{"event":"started","request_id":"allocator-oom","unix_time":1795367736.9428432}
+{"event":"request_exited","request_id":"allocator-oom","wall_seconds":0.001060465001501143}
+{"event":"started","request_id":"unsupported-property","unix_time":1795367736.9447892}
+{"event":"request_exited","request_id":"unsupported-property","wall_seconds":0.0008645560592412949}
+{"event":"started","request_id":"healthy-after-failures","unix_time":1795367736.9464672}
+{"event":"request_exited","request_id":"healthy-after-failures","wall_seconds":2.0969505889806896}
+{"event":"started","request_id":"restricted-H2-stretched-gap","unix_time":1795367739.0443351}
+{"event":"request_exited","request_id":"restricted-H2-stretched-gap","wall_seconds":0.05803847196511924}

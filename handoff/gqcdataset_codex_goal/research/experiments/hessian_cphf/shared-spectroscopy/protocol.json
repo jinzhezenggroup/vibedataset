@@ -1,0 +1,381 @@
+{
+  "schema": "vibedataset.rhf_hessian_protocol.v1",
+  "method": "RHF",
+  "basis": "STO-3G",
+  "basis_source": {
+    "commit": "c63a953ba603a5ad8c1d65d88da72aaf05ede4d8",
+    "path": "pyscf/gto/basis/sto-3g.dat",
+    "sha256": "0514de5da5df92e477ce69ef906c81589a310260557bcda84531b144eed00cc3"
+  },
+  "shells": {
+    "H": [
+      {
+        "angular_momentum": 0,
+        "primitives": [
+          [
+            3.42525091,
+            0.15432897
+          ],
+          [
+            0.62391373,
+            0.53532814
+          ],
+          [
+            0.1688554,
+            0.44463454
+          ]
+        ]
+      }
+    ],
+    "Li": [
+      {
+        "angular_momentum": 0,
+        "primitives": [
+          [
+            16.119575,
+            0.15432897
+          ],
+          [
+            2.9362007,
+            0.53532814
+          ],
+          [
+            0.7946505,
+            0.44463454
+          ]
+        ]
+      },
+      {
+        "angular_momentum": 0,
+        "primitives": [
+          [
+            0.6362897,
+            -0.09996723
+          ],
+          [
+            0.1478601,
+            0.39951283
+          ],
+          [
+            0.0480887,
+            0.70011547
+          ]
+        ]
+      },
+      {
+        "angular_momentum": 1,
+        "primitives": [
+          [
+            0.6362897,
+            0.15591627
+          ],
+          [
+            0.1478601,
+            0.60768372
+          ],
+          [
+            0.0480887,
+            0.39195739
+          ]
+        ]
+      }
+    ],
+    "N": [
+      {
+        "angular_momentum": 0,
+        "primitives": [
+          [
+            99.106169,
+            0.15432897
+          ],
+          [
+            18.052312,
+            0.53532814
+          ],
+          [
+            4.8856602,
+            0.44463454
+          ]
+        ]
+      },
+      {
+        "angular_momentum": 0,
+        "primitives": [
+          [
+            3.7804559,
+            -0.09996723
+          ],
+          [
+            0.8784966,
+            0.39951283
+          ],
+          [
+            0.2857144,
+            0.70011547
+          ]
+        ]
+      },
+      {
+        "angular_momentum": 1,
+        "primitives": [
+          [
+            3.7804559,
+            0.15591627
+          ],
+          [
+            0.8784966,
+            0.60768372
+          ],
+          [
+            0.2857144,
+            0.39195739
+          ]
+        ]
+      }
+    ],
+    "O": [
+      {
+        "angular_momentum": 0,
+        "primitives": [
+          [
+            130.70932,
+            0.15432897
+          ],
+          [
+            23.808861,
+            0.53532814
+          ],
+          [
+            6.4436083,
+            0.44463454
+          ]
+        ]
+      },
+      {
+        "angular_momentum": 0,
+        "primitives": [
+          [
+            5.0331513,
+            -0.09996723
+          ],
+          [
+            1.1695961,
+            0.39951283
+          ],
+          [
+            0.380389,
+            0.70011547
+          ]
+        ]
+      },
+      {
+        "angular_momentum": 1,
+        "primitives": [
+          [
+            5.0331513,
+            0.15591627
+          ],
+          [
+            1.1695961,
+            0.60768372
+          ],
+          [
+            0.380389,
+            0.39195739
+          ]
+        ]
+      }
+    ]
+  },
+  "geometry_unit": "Bohr",
+  "unit": "Eh/Bohr^2",
+  "order": "3*atom+xyz",
+  "precision": "FP64",
+  "charge": 0,
+  "spin": 0,
+  "ao_representation": "real spherical",
+  "coulomb_exchange": "direct four-center",
+  "scf_threshold": 1e-10,
+  "response_threshold": 1e-10,
+  "energy_atol_hartree": 1e-08,
+  "hessian_atol": 1e-07,
+  "cases": [
+    {
+      "id": "h2o",
+      "symbols": [
+        "O",
+        "H",
+        "H"
+      ],
+      "xyz": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1.4,
+          0
+        ],
+        [
+          1.3,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "nh3",
+      "symbols": [
+        "N",
+        "H",
+        "H",
+        "H"
+      ],
+      "xyz": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1.8,
+          0
+        ],
+        [
+          1.56,
+          -0.9,
+          0
+        ],
+        [
+          -1.56,
+          -0.9,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "lih",
+      "symbols": [
+        "Li",
+        "H"
+      ],
+      "xyz": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          3.015,
+          0,
+          0
+        ]
+      ]
+    }
+  ],
+  "spectroscopy": {
+    "case_ids": [
+      "h2o",
+      "nh3",
+      "lih"
+    ],
+    "masses_amu": {
+      "H": 1.008,
+      "O": 15.999,
+      "N": 14.007,
+      "Li": 6.94
+    },
+    "external_frequency_au": 0.0,
+    "mode_order": "ascending signed wavenumber after removing translations and rotations",
+    "atol": {
+      "ir_frequency_cm1": 0.1,
+      "raman_frequency_cm1": 0.1,
+      "ir_km_mol": 0.02,
+      "raman_A4_amu": 0.05,
+      "raman_depolarization": 0.005
+    }
+  },
+  "parent_protocol_sha256": "b7069a6f7931121820a4a0e066d4b9f557cb3b875c5de9b91902a1ad94a91dce",
+  "shared_queue": [
+    {
+      "id": "01-h2o-hessian",
+      "molecule": "h2o",
+      "property": "hessian"
+    },
+    {
+      "id": "02-nh3-hessian",
+      "molecule": "nh3",
+      "property": "hessian"
+    },
+    {
+      "id": "03-lih-hessian",
+      "molecule": "lih",
+      "property": "hessian"
+    },
+    {
+      "id": "04-h2o-ir",
+      "molecule": "h2o",
+      "property": "ir"
+    },
+    {
+      "id": "05-nh3-ir",
+      "molecule": "nh3",
+      "property": "ir"
+    },
+    {
+      "id": "06-lih-ir",
+      "molecule": "lih",
+      "property": "ir"
+    },
+    {
+      "id": "07-h2o-raman",
+      "molecule": "h2o",
+      "property": "raman"
+    },
+    {
+      "id": "08-nh3-raman",
+      "molecule": "nh3",
+      "property": "raman"
+    },
+    {
+      "id": "09-lih-raman",
+      "molecule": "lih",
+      "property": "raman"
+    },
+    {
+      "id": "10-nh3-ir",
+      "molecule": "nh3",
+      "property": "ir"
+    },
+    {
+      "id": "11-lih-hessian",
+      "molecule": "lih",
+      "property": "hessian"
+    },
+    {
+      "id": "12-lih-raman",
+      "molecule": "lih",
+      "property": "raman"
+    }
+  ],
+  "failure_controls": [
+    "single-request-scf-failure",
+    "allocator-oom",
+    "unsupported-property",
+    "restricted-H2-stretched-gap",
+    "healthy-after-failures"
+  ],
+  "gap_control": {
+    "geometry": "H2 at 2000 Bohr",
+    "restricted_state": "normalized symmetric bonding AO combination for initial 2-electron density",
+    "orbital_gap_reject_below_hartree": 0.001
+  },
+  "quality_policy": "Compare all components and signed modes at the parent tolerances. Preserve default Raman rejections; if a Raman readout fails, recompute its invariant with both fixed directional steps.",
+  "refinement_steps_bohr_sqrt_amu": [
+    0.001,
+    0.0005
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "case_id": "lih",
+  "request_id": "09-lih-raman",
+  "source_mode": "serial",
+  "source_run_sha256": "364543be5c47a53c6a56cafb4115c33e268052b7b23576158c58f7abf2358d8e",
+  "parent_protocol_sha256": "674b477726881e6549ad4a5d9f31e348e307693631a1de69d585475b9913e0ca",
+  "steps_bohr_sqrt_amu": [
+    0.001,
+    0.0005
+  ],
+  "default_verification_sha256": "0a42e021ffe2895e8571e550180495f125f3a86e31679fce12d60af18a4a9d16"
+}

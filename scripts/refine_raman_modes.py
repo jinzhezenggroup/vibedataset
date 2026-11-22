@@ -29,21 +29,42 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--protocol", type=Path, required=True)
     parser.add_argument("--plan", type=Path, required=True)
-    parser.add_argument("--gpu-run", type=Path, required=True)
+    source = parser.add_mutually_exclusive_group(required=True)
+    source.add_argument("--gpu-run", type=Path)
+    source.add_argument("--shared-result", type=Path)
     parser.add_argument("--out", type=Path, required=True)
     args = parser.parse_args()
     plan = json.loads(args.plan.read_text())
     protocol = json.loads(args.protocol.read_text())
-    receipt = json.loads((args.gpu_run / "run.json").read_text())
-    events = args.gpu_run / "events.jsonl"
-    if not (sha(args.protocol) == plan["parent_protocol_sha256"] == receipt["inputs"]["protocol_sha256"]
-            and receipt["backend"] == "gpu4pyscf" and sha(events) == receipt["events_sha256"]):
-        raise ValueError("mismatched Hessian source")
     case = next(item for item in protocol["cases"] if item["id"] == plan["case_id"])
-    rows = [r for r in map(json.loads, events.read_text().splitlines())
-            if r["id"] == case["id"] and r["status"] == "produced"]
-    if len(rows) != 1:
-        raise ValueError("expected one produced Hessian")
+    if sha(args.protocol) != plan["parent_protocol_sha256"]:
+        raise ValueError("refinement protocol mismatch")
+    if args.shared_result:
+        run = json.loads(args.shared_result.read_bytes())
+        mode = plan.get("source_mode", "shared")
+        source_digest = plan.get("source_run_sha256", plan.get("source_shared_sha256"))
+        if (run["mode"] != mode or mode not in {"serial", "shared"} or run["protocol_sha256"] != sha(args.protocol)
+                or sha(args.shared_result) != source_digest):
+            raise ValueError("mismatched shared Hessian")
+        candidates = [r["result"]["result"]["hessian"] for r in run["requests"]
+                      if r["status"] == "accepted" and r["result"]["molecule"] == case["id"]
+                      and r["result"]["property"] == "hessian"]
+        if not candidates or any(not np.allclose(v,candidates[0],rtol=0,atol=1e-12) for v in candidates[1:]):
+            raise ValueError("missing or ambiguous shared Hessian")
+        observed = candidates[0]
+        source_hashes = {"source_"+mode+"_sha256": sha(args.shared_result)}
+    else:
+        receipt = json.loads((args.gpu_run / "run.json").read_text())
+        events = args.gpu_run / "events.jsonl"
+        if not (sha(args.protocol) == receipt["inputs"]["protocol_sha256"]
+                and receipt["backend"] == "gpu4pyscf" and sha(events) == receipt["events_sha256"]):
+            raise ValueError("mismatched Hessian source")
+        rows = [r for r in map(json.loads, events.read_text().splitlines())
+                if r["id"] == case["id"] and r["status"] == "produced"]
+        if len(rows) != 1:
+            raise ValueError("expected one produced Hessian")
+        observed = rows[0]["hessian"]
+        source_hashes = dict(input_gpu_events_sha256=sha(events))
     from gpu4pyscf import scf
     from gpu4pyscf.properties import polarizability
     from pyscf import gto
@@ -56,7 +77,7 @@ def main():
     origin = np.asarray(case["xyz"])
     mol = gto.M(atom=list(zip(case["symbols"], origin)), basis=shells, unit="Bohr",
                 charge=protocol["charge"], spin=protocol["spin"], cart=False, verbose=0)
-    hessian = np.asarray(rows[0]["hessian"]).reshape(mol.natm, 3, mol.natm, 3).transpose(0, 2, 1, 3)
+    hessian = np.asarray(observed).reshape(mol.natm, 3, mol.natm, 3).transpose(0, 2, 1, 3)
     normal = harmonic_analysis(mol, hessian, imaginary_freq=False)
     steps = []
     start = perf_counter()
@@ -87,7 +108,7 @@ def main():
                 result.append(invariants((polar[1] - polar[0]) / (2*step), nist.BOHR))
             steps.append(dict(step=step, modes=result))
     report = dict(schema="vibedataset.directional_raman_refinement.v1", protocol_sha256=sha(args.protocol),
-                  plan_sha256=sha(args.plan), input_gpu_events_sha256=sha(events), driver_sha256=sha(Path(__file__)),
+                  plan_sha256=sha(args.plan), **source_hashes, driver_sha256=sha(Path(__file__)),
                   displacements_sha256=sha(args.out / "displacements.jsonl"), steps=steps,
                   signed_frequencies_cm1=normal["freq_wavenumber"].tolist(), elapsed_seconds=perf_counter()-start,
                   slurm_job=os.environ.get("SLURM_JOB_ID"))

@@ -1,0 +1,33 @@
+{
+  "schema": "vibedataset.directional_raman_refinement.v1",
+  "protocol_sha256": "674b477726881e6549ad4a5d9f31e348e307693631a1de69d585475b9913e0ca",
+  "plan_sha256": "2a9980099828024308ee603bf4db8cbf0cabffd44d04365d29b11d4bb37d86fe",
+  "source_serial_sha256": "364543be5c47a53c6a56cafb4115c33e268052b7b23576158c58f7abf2358d8e",
+  "driver_sha256": "a705c8250ad37b814285e6577135f762f6764c455567c96454cc6879d0b9a4cc",
+  "displacements_sha256": "6fd1b3cb21d86309cd7e7614065b5ec90c84ed9a041e9a377f761b7d2bf6b63c",
+  "steps": [
+    {
+      "step": 0.001,
+      "modes": [
+        {
+          "raman_A4_amu": 95.08066984888289,
+          "raman_depolarization": 0.11321188182356691
+        }
+      ]
+    },
+    {
+      "step": 0.0005,
+      "modes": [
+        {
+          "raman_A4_amu": 95.08065998517847,
+          "raman_depolarization": 0.1132118710353592
+        }
+      ]
+    }
+  ],
+  "signed_frequencies_cm1": [
+    1652.4110063605988
+  ],
+  "elapsed_seconds": 6.125016500009224,
+  "slurm_job": "5665"
+}

@@ -1,0 +1,2493 @@
+{
+  "schema": "vibedataset.shared_spectroscopy_score.v1",
+  "inputs": {
+    "serial": "364543be5c47a53c6a56cafb4115c33e268052b7b23576158c58f7abf2358d8e",
+    "shared": "ee9d320b3386dfa904eb978378a5a5633d63c5ad940e6b2fab9e02d56fda61a1"
+  },
+  "protocol_sha256": "674b477726881e6549ad4a5d9f31e348e307693631a1de69d585475b9913e0ca",
+  "defaults": {
+    "serial": {
+      "01-h2o-hessian": {
+        "status": "accepted",
+        "failed": [],
+        "components": {
+          "scf_energy": {
+            "components": 1,
+            "max_abs": 4.973799150320701e-13,
+            "worst_flat_index": 0,
+            "rejected_indices": [],
+            "atol": 1e-08,
+            "accepted": true
+          },
+          "hessian": {
+            "components": 81,
+            "max_abs": 3.724208896827008e-08,
+            "worst_flat_index": 34,
+            "rejected_indices": [],
+            "atol": 1e-07,
+            "accepted": true
+          }
+        }
+      },
+      "02-nh3-hessian": {
+        "status": "accepted",
+        "failed": [],
+        "components": {
+          "scf_energy": {
+            "components": 1,
+            "max_abs": 9.094947017729282e-13,
+            "worst_flat_index": 0,
+            "rejected_indices": [],
+            "atol": 1e-08,
+            "accepted": true
+          },
+          "hessian": {
+            "components": 144,
+            "max_abs": 3.6565215300043974e-09,
+            "worst_flat_index": 13,
+            "rejected_indices": [],
+            "atol": 1e-07,
+            "accepted": true
+          }
+        }
+      },
+      "03-lih-hessian": {
+        "status": "accepted",
+        "failed": [],
+        "components": {
+          "scf_energy": {
+            "components": 1,
+            "max_abs": 2.2737367544323206e-13,
+            "worst_flat_index": 0,
+            "rejected_indices": [],
+            "atol": 1e-08,
+            "accepted": true
+          },
+          "hessian": {
+            "components": 36,
+            "max_abs": 7.174621841077311e-09,
+            "worst_flat_index": 3,
+            "rejected_indices": [],
+            "atol": 1e-07,
+            "accepted": true
+          }
+        }
+      },
+      "04-h2o-ir": {
+        "status": "accepted",
+        "failed": [],
+        "components": {
+          "scf_energy": {
+            "components": 1,
+            "max_abs": 4.973799150320701e-13,
+            "worst_flat_index": 0,
+            "rejected_indices": [],
+            "atol": 1e-08,
+            "accepted": true
+          },
+          "ir_frequency_cm1": {
+            "components": 3,
+            "max_abs": 0.0003064159245695919,
+            "worst_flat_index": 0,
+            "rejected_indices": [],
+            "atol": 0.1,
+            "accepted": true
+          },
+          "ir_km_mol": {
+            "components": 3,
+            "max_abs": 1.3201787027128375e-05,
+            "worst_flat_index": 1,
+            "rejected_indices": [],
+            "atol": 0.02,
+            "accepted": true
+          }
+        }
+      },
+      "05-nh3-ir": {
+        "status": "accepted",
+        "failed": [],
+        "components": {
+          "scf_energy": {
+            "components": 1,
+            "max_abs": 9.237055564881302e-13,
+            "worst_flat_index": 0,
+            "rejected_indices": [],
+            "atol": 1e-08,
+            "accepted": true
+          },
+          "ir_frequency_cm1": {
+            "components": 6,
+            "max_abs": 1.1147146778966999e-05,
+            "worst_flat_index": 1,
+            "rejected_indices": [],
+            "atol": 0.1,
+            "accepted": true
+          },
+          "ir_km_mol": {
+            "components": 6,
+            "max_abs": 2.190710688410036e-06,
+            "worst_flat_index": 0,
+            "rejected_indices": [],
+            "atol": 0.02,
+            "accepted": true
+          }
+        }
+      },
+      "06-lih-ir": {
+        "status": "accepted",
+        "failed": [],
+        "components": {
+          "scf_energy": {
+            "components": 1,
+            "max_abs": 2.2382096176443156e-13,
+            "worst_flat_index": 0,
+            "rejected_indices": [],
+            "atol": 1e-08,
+            "accepted": true
+          },
+          "ir_frequency_cm1": {
+            "components": 1,
+            "max_abs": 6.378416833285883e-05,
+            "worst_flat_index": 0,
+            "rejected_indices": [],
+            "atol": 0.1,
+            "accepted": true
+          },
+          "ir_km_mol": {
+            "components": 1,
+            "max_abs": 2.854160449361487e-05,
+            "worst_flat_index": 0,
+            "rejected_indices": [],
+            "atol": 0.02,
+            "accepted": true
+          }
+        }
+      },
+      "07-h2o-raman": {
+        "status": "default-rejected",
+        "failed": [
+          "raman_depolarization"
+        ],
+        "components": {
+          "scf_energy": {
+            "components": 1,
+            "max_abs": 5.542233338928781e-13,
+            "worst_flat_index": 0,
+            "rejected_indices": [],
+            "atol": 1e-08,
+            "accepted": true
+          },
+          "raman_frequency_cm1": {
+            "components": 3,
+            "max_abs": 0.0003064158918277826,
+            "worst_flat_index": 0,
+            "rejected_indices": [],
+            "atol": 0.1,
+            "accepted": true
+          },
+          "raman_A4_amu": {
+            "components": 3,
+            "max_abs": 0.03435790045108078,
+            "worst_flat_index": 1,
+            "rejected_indices": [],
+            "atol": 0.05,
+            "accepted": true
+          },
+          "raman_depolarization": {
+            "components": 3,
+            "max_abs": 0.016299390569480154,
+            "worst_flat_index": 0,
+            "rejected_indices": [
+              0,
+              1,
+              2
+            ],
+            "atol": 0.005,
+            "accepted": false
+          }
+        }
+      },
+      "08-nh3-raman": {
+        "status": "default-rejected",
+        "failed": [
+          "raman_depolarization"
+        ],
+        "components": {
+          "scf_energy": {
+            "components": 1,
+            "max_abs": 8.810729923425242e-13,
+            "worst_flat_index": 0,
+            "rejected_indices": [],
+            "atol": 1e-08,
+            "accepted": true
+          },
+          "raman_frequency_cm1": {
+            "components": 6,
+            "max_abs": 1.1144899872306269e-05,
+            "worst_flat_index": 1,
+            "rejected_indices": [],
+            "atol": 0.1,
+            "accepted": true
+          },
+          "raman_A4_amu": {
+            "components": 6,
+            "max_abs": 0.018384670452780583,
+            "worst_flat_index": 2,
+            "rejected_indices": [],
+            "atol": 0.05,
+            "accepted": true
+          },
+          "raman_depolarization": {
+            "components": 6,
+            "max_abs": 0.6688055171463487,
+            "worst_flat_index": 0,
+            "rejected_indices": [
+              0
+            ],
+            "atol": 0.005,
+            "accepted": false
+          }
+        }
+      },
+      "09-lih-raman": {
+        "status": "default-rejected",
+        "failed": [
+          "raman_A4_amu"
+        ],
+        "components": {
+          "scf_energy": {
+            "components": 1,
+            "max_abs": 2.2382096176443156e-13,
+            "worst_flat_index": 0,
+            "rejected_indices": [],
+            "atol": 1e-08,
+            "accepted": true
+          },
+          "raman_frequency_cm1": {
+            "components": 1,
+            "max_abs": 6.378420175678912e-05,
+            "worst_flat_index": 0,
+            "rejected_indices": [],
+            "atol": 0.1,
+            "accepted": true
+          },
+          "raman_A4_amu": {
+            "components": 1,
+            "max_abs": 0.6566637956064909,
+            "worst_flat_index": 0,
+            "rejected_indices": [
+              0
+            ],
+            "atol": 0.05,
+            "accepted": false
+          },
+          "raman_depolarization": {
+            "components": 1,
+            "max_abs": 0.0035226597585537173,
+            "worst_flat_index": 0,
+            "rejected_indices": [],
+            "atol": 0.005,
+            "accepted": true
+          }
+        }
+      },
+      "10-nh3-ir": {
+        "status": "accepted",
+        "failed": [],
+        "components": {
+          "scf_energy": {
+            "components": 1,
+            "max_abs": 8.810729923425242e-13,
+            "worst_flat_index": 0,
+            "rejected_indices": [],
+            "atol": 1e-08,
+            "accepted": true
+          },
+          "ir_frequency_cm1": {
+            "components": 6,
+            "max_abs": 1.1145919643240632e-05,
+            "worst_flat_index": 1,
+            "rejected_indices": [],
+            "atol": 0.1,
+            "accepted": true
+          },
+          "ir_km_mol": {
+            "components": 6,
+            "max_abs": 2.1905275389144663e-06,
+            "worst_flat_index": 0,
+            "rejected_indices": [],
+            "atol": 0.02,
+            "accepted": true
+          }
+        }
+      },
+      "11-lih-hessian": {
+        "status": "accepted",
+        "failed": [],
+        "components": {
+          "scf_energy": {
+            "components": 1,
+            "max_abs": 2.2737367544323206e-13,
+            "worst_flat_index": 0,
+            "rejected_indices": [],
+            "atol": 1e-08,
+            "accepted": true
+          },
+          "hessian": {
+            "components": 36,
+            "max_abs": 7.174644378604711e-09,
+            "worst_flat_index": 3,
+            "rejected_indices": [],
+            "atol": 1e-07,
+            "accepted": true
+          }
+        }
+      },
+      "12-lih-raman": {
+        "status": "default-rejected",
+        "failed": [
+          "raman_A4_amu"
+        ],
+        "components": {
+          "scf_energy": {
+            "components": 1,
+            "max_abs": 2.2737367544323206e-13,
+            "worst_flat_index": 0,
+            "rejected_indices": [],
+            "atol": 1e-08,
+            "accepted": true
+          },
+          "raman_frequency_cm1": {
+            "components": 1,
+            "max_abs": 6.378416219376959e-05,
+            "worst_flat_index": 0,
+            "rejected_indices": [],
+            "atol": 0.1,
+            "accepted": true
+          },
+          "raman_A4_amu": {
+            "components": 1,
+            "max_abs": 0.6566637593775795,
+            "worst_flat_index": 0,
+            "rejected_indices": [
+              0
+            ],
+            "atol": 0.05,
+            "accepted": false
+          },
+          "raman_depolarization": {
+            "components": 1,
+            "max_abs": 0.003522659704144296,
+            "worst_flat_index": 0,
+            "rejected_indices": [],
+            "atol": 0.005,
+            "accepted": true
+          }
+        }
+      }
+    },
+    "shared": {
+      "01-h2o-hessian": {
+        "status": "accepted",
+        "failed": [],
+        "components": {
+          "scf_energy": {
+            "components": 1,
+            "max_abs": 4.973799150320701e-13,
+            "worst_flat_index": 0,
+            "rejected_indices": [],
+            "atol": 1e-08,
+            "accepted": true
+          },
+          "hessian": {
+            "components": 81,
+            "max_abs": 3.724208902378123e-08,
+            "worst_flat_index": 34,
+            "rejected_indices": [],
+            "atol": 1e-07,
+            "accepted": true
+          }
+        }
+      },
+      "02-nh3-hessian": {
+        "status": "accepted",
+        "failed": [],
+        "components": {
+          "scf_energy": {
+            "components": 1,
+            "max_abs": 9.237055564881302e-13,
+            "worst_flat_index": 0,
+            "rejected_indices": [],
+            "atol": 1e-08,
+            "accepted": true
+          },
+          "hessian": {
+            "components": 144,
+            "max_abs": 3.6574161477176403e-09,
+            "worst_flat_index": 13,
+            "rejected_indices": [],
+            "atol": 1e-07,
+            "accepted": true
+          }
+        }
+      },
+      "03-lih-hessian": {
+        "status": "accepted",
+        "failed": [],
+        "components": {
+          "scf_energy": {
+            "components": 1,
+            "max_abs": 2.2737367544323206e-13,
+            "worst_flat_index": 0,
+            "rejected_indices": [],
+            "atol": 1e-08,
+            "accepted": true
+          },
+          "hessian": {
+            "components": 36,
+            "max_abs": 7.174645377805433e-09,
+            "worst_flat_index": 3,
+            "rejected_indices": [],
+            "atol": 1e-07,
+            "accepted": true
+          }
+        }
+      },
+      "04-h2o-ir": {
+        "status": "accepted",
+        "failed": [],
+        "components": {
+          "scf_energy": {
+            "components": 1,
+            "max_abs": 4.973799150320701e-13,
+            "worst_flat_index": 0,
+            "rejected_indices": [],
+            "atol": 1e-08,
+            "accepted": true
+          },
+          "ir_frequency_cm1": {
+            "components": 3,
+            "max_abs": 0.0003064159059249505,
+            "worst_flat_index": 0,
+            "rejected_indices": [],
+            "atol": 0.1,
+            "accepted": true
+          },
+          "ir_km_mol": {
+            "components": 3,
+            "max_abs": 1.3201850666888504e-05,
+            "worst_flat_index": 1,
+            "rejected_indices": [],
+            "atol": 0.02,
+            "accepted": true
+          }
+        }
+      },
+      "05-nh3-ir": {
+        "status": "accepted",
+        "failed": [],
+        "components": {
+          "scf_energy": {
+            "components": 1,
+            "max_abs": 9.237055564881302e-13,
+            "worst_flat_index": 0,
+            "rejected_indices": [],
+            "atol": 1e-08,
+            "accepted": true
+          },
+          "ir_frequency_cm1": {
+            "components": 6,
+            "max_abs": 1.1146043561893748e-05,
+            "worst_flat_index": 1,
+            "rejected_indices": [],
+            "atol": 0.1,
+            "accepted": true
+          },
+          "ir_km_mol": {
+            "components": 6,
+            "max_abs": 2.1905445919401245e-06,
+            "worst_flat_index": 0,
+            "rejected_indices": [],
+            "atol": 0.02,
+            "accepted": true
+          }
+        }
+      },
+      "06-lih-ir": {
+        "status": "accepted",
+        "failed": [],
+        "components": {
+          "scf_energy": {
+            "components": 1,
+            "max_abs": 2.2737367544323206e-13,
+            "worst_flat_index": 0,
+            "rejected_indices": [],
+            "atol": 1e-08,
+            "accepted": true
+          },
+          "ir_frequency_cm1": {
+            "components": 1,
+            "max_abs": 6.378438047249801e-05,
+            "worst_flat_index": 0,
+            "rejected_indices": [],
+            "atol": 0.1,
+            "accepted": true
+          },
+          "ir_km_mol": {
+            "components": 1,
+            "max_abs": 2.8541676649229686e-05,
+            "worst_flat_index": 0,
+            "rejected_indices": [],
+            "atol": 0.02,
+            "accepted": true
+          }
+        }
+      },
+      "07-h2o-raman": {
+        "status": "default-rejected",
+        "failed": [
+          "raman_depolarization"
+        ],
+        "components": {
+          "scf_energy": {
+            "components": 1,
+            "max_abs": 4.973799150320701e-13,
+            "worst_flat_index": 0,
+            "rejected_indices": [],
+            "atol": 1e-08,
+            "accepted": true
+          },
+          "raman_frequency_cm1": {
+            "components": 3,
+            "max_abs": 0.0003064159093355556,
+            "worst_flat_index": 0,
+            "rejected_indices": [],
+            "atol": 0.1,
+            "accepted": true
+          },
+          "raman_A4_amu": {
+            "components": 3,
+            "max_abs": 0.03435792829414552,
+            "worst_flat_index": 1,
+            "rejected_indices": [],
+            "atol": 0.05,
+            "accepted": true
+          },
+          "raman_depolarization": {
+            "components": 3,
+            "max_abs": 0.01629939346565812,
+            "worst_flat_index": 0,
+            "rejected_indices": [
+              0,
+              1,
+              2
+            ],
+            "atol": 0.005,
+            "accepted": false
+          }
+        }
+      },
+      "08-nh3-raman": {
+        "status": "default-rejected",
+        "failed": [
+          "raman_depolarization"
+        ],
+        "components": {
+          "scf_energy": {
+            "components": 1,
+            "max_abs": 9.237055564881302e-13,
+            "worst_flat_index": 0,
+            "rejected_indices": [],
+            "atol": 1e-08,
+            "accepted": true
+          },
+          "raman_frequency_cm1": {
+            "components": 6,
+            "max_abs": 1.1146042879772722e-05,
+            "worst_flat_index": 1,
+            "rejected_indices": [],
+            "atol": 0.1,
+            "accepted": true
+          },
+          "raman_A4_amu": {
+            "components": 6,
+            "max_abs": 0.018384670494170585,
+            "worst_flat_index": 2,
+            "rejected_indices": [],
+            "atol": 0.05,
+            "accepted": true
+          },
+          "raman_depolarization": {
+            "components": 6,
+            "max_abs": 0.6688055158017734,
+            "worst_flat_index": 0,
+            "rejected_indices": [
+              0
+            ],
+            "atol": 0.005,
+            "accepted": false
+          }
+        }
+      },
+      "09-lih-raman": {
+        "status": "default-rejected",
+        "failed": [
+          "raman_A4_amu"
+        ],
+        "components": {
+          "scf_energy": {
+            "components": 1,
+            "max_abs": 2.2737367544323206e-13,
+            "worst_flat_index": 0,
+            "rejected_indices": [],
+            "atol": 1e-08,
+            "accepted": true
+          },
+          "raman_frequency_cm1": {
+            "components": 1,
+            "max_abs": 6.378437933562964e-05,
+            "worst_flat_index": 0,
+            "rejected_indices": [],
+            "atol": 0.1,
+            "accepted": true
+          },
+          "raman_A4_amu": {
+            "components": 1,
+            "max_abs": 0.6566639250554687,
+            "worst_flat_index": 0,
+            "rejected_indices": [
+              0
+            ],
+            "atol": 0.05,
+            "accepted": false
+          },
+          "raman_depolarization": {
+            "components": 1,
+            "max_abs": 0.0035226599359555744,
+            "worst_flat_index": 0,
+            "rejected_indices": [],
+            "atol": 0.005,
+            "accepted": true
+          }
+        }
+      },
+      "10-nh3-ir": {
+        "status": "accepted",
+        "failed": [],
+        "components": {
+          "scf_energy": {
+            "components": 1,
+            "max_abs": 9.237055564881302e-13,
+            "worst_flat_index": 0,
+            "rejected_indices": [],
+            "atol": 1e-08,
+            "accepted": true
+          },
+          "ir_frequency_cm1": {
+            "components": 6,
+            "max_abs": 1.1146043561893748e-05,
+            "worst_flat_index": 1,
+            "rejected_indices": [],
+            "atol": 0.1,
+            "accepted": true
+          },
+          "ir_km_mol": {
+            "components": 6,
+            "max_abs": 2.1905445919401245e-06,
+            "worst_flat_index": 0,
+            "rejected_indices": [],
+            "atol": 0.02,
+            "accepted": true
+          }
+        }
+      },
+      "11-lih-hessian": {
+        "status": "accepted",
+        "failed": [],
+        "components": {
+          "scf_energy": {
+            "components": 1,
+            "max_abs": 2.2737367544323206e-13,
+            "worst_flat_index": 0,
+            "rejected_indices": [],
+            "atol": 1e-08,
+            "accepted": true
+          },
+          "hessian": {
+            "components": 36,
+            "max_abs": 7.174645377805433e-09,
+            "worst_flat_index": 3,
+            "rejected_indices": [],
+            "atol": 1e-07,
+            "accepted": true
+          }
+        }
+      },
+      "12-lih-raman": {
+        "status": "default-rejected",
+        "failed": [
+          "raman_A4_amu"
+        ],
+        "components": {
+          "scf_energy": {
+            "components": 1,
+            "max_abs": 2.2737367544323206e-13,
+            "worst_flat_index": 0,
+            "rejected_indices": [],
+            "atol": 1e-08,
+            "accepted": true
+          },
+          "raman_frequency_cm1": {
+            "components": 1,
+            "max_abs": 6.378437933562964e-05,
+            "worst_flat_index": 0,
+            "rejected_indices": [],
+            "atol": 0.1,
+            "accepted": true
+          },
+          "raman_A4_amu": {
+            "components": 1,
+            "max_abs": 0.6566639250554687,
+            "worst_flat_index": 0,
+            "rejected_indices": [
+              0
+            ],
+            "atol": 0.05,
+            "accepted": false
+          },
+          "raman_depolarization": {
+            "components": 1,
+            "max_abs": 0.0035226599359555744,
+            "worst_flat_index": 0,
+            "rejected_indices": [],
+            "atol": 0.005,
+            "accepted": true
+          }
+        }
+      }
+    }
+  },
+  "history": {
+    "serial": {
+      "scf_started": 12,
+      "scf_finished": 12,
+      "geometric_cphf_solves": 16,
+      "geometric_rhs": 144,
+      "geometric_cphf_hits": 0,
+      "hessian_reuses": 0,
+      "total_s": 110.78824168804567
+    },
+    "shared": {
+      "scf_started": 3,
+      "scf_finished": 3,
+      "geometric_cphf_solves": 3,
+      "geometric_rhs": 27,
+      "geometric_cphf_hits": 3,
+      "hessian_reuses": 7,
+      "total_s": 66.61312390095554
+    }
+  },
+  "refinement_required": [
+    "h2o",
+    "lih",
+    "nh3"
+  ],
+  "refinement": {
+    "shared": {
+      "h2o": [
+        {
+          "step": 0.001,
+          "passed": true,
+          "metrics": {
+            "raman_A4_amu": {
+              "components": 3,
+              "max_abs": 0.0009783857145748698,
+              "worst_flat_index": 1,
+              "rejected_indices": [],
+              "atol": 0.05,
+              "accepted": true
+            },
+            "raman_depolarization": {
+              "components": 3,
+              "max_abs": 3.1911938458417666e-07,
+              "worst_flat_index": 0,
+              "rejected_indices": [],
+              "atol": 0.005,
+              "accepted": true
+            }
+          }
+        },
+        {
+          "step": 0.0005,
+          "passed": true,
+          "metrics": {
+            "raman_A4_amu": {
+              "components": 3,
+              "max_abs": 0.0009795328443846785,
+              "worst_flat_index": 1,
+              "rejected_indices": [],
+              "atol": 0.05,
+              "accepted": true
+            },
+            "raman_depolarization": {
+              "components": 3,
+              "max_abs": 3.295102469769162e-07,
+              "worst_flat_index": 0,
+              "rejected_indices": [],
+              "atol": 0.005,
+              "accepted": true
+            }
+          }
+        }
+      ],
+      "nh3": [
+        {
+          "step": 0.001,
+          "passed": true,
+          "metrics": {
+            "raman_A4_amu": {
+              "components": 6,
+              "max_abs": 0.0034025117899005863,
+              "worst_flat_index": 3,
+              "rejected_indices": [],
+              "atol": 0.05,
+              "accepted": true
+            },
+            "raman_depolarization": {
+              "components": 6,
+              "max_abs": 1.1607439442951062e-07,
+              "worst_flat_index": 5,
+              "rejected_indices": [],
+              "atol": 0.005,
+              "accepted": true
+            }
+          }
+        },
+        {
+          "step": 0.0005,
+          "passed": true,
+          "metrics": {
+            "raman_A4_amu": {
+              "components": 6,
+              "max_abs": 0.0034091833230860402,
+              "worst_flat_index": 3,
+              "rejected_indices": [],
+              "atol": 0.05,
+              "accepted": true
+            },
+            "raman_depolarization": {
+              "components": 6,
+              "max_abs": 1.1560554125100708e-07,
+              "worst_flat_index": 5,
+              "rejected_indices": [],
+              "atol": 0.005,
+              "accepted": true
+            }
+          }
+        }
+      ],
+      "lih": [
+        {
+          "step": 0.001,
+          "passed": true,
+          "metrics": {
+            "raman_A4_amu": {
+              "components": 1,
+              "max_abs": 0.00864407563339853,
+              "worst_flat_index": 0,
+              "rejected_indices": [],
+              "atol": 0.05,
+              "accepted": true
+            },
+            "raman_depolarization": {
+              "components": 1,
+              "max_abs": 1.0934918510396852e-06,
+              "worst_flat_index": 0,
+              "rejected_indices": [],
+              "atol": 0.005,
+              "accepted": true
+            }
+          }
+        },
+        {
+          "step": 0.0005,
+          "passed": true,
+          "metrics": {
+            "raman_A4_amu": {
+              "components": 1,
+              "max_abs": 0.008655667092767771,
+              "worst_flat_index": 0,
+              "rejected_indices": [],
+              "atol": 0.05,
+              "accepted": true
+            },
+            "raman_depolarization": {
+              "components": 1,
+              "max_abs": 1.1025680993481668e-06,
+              "worst_flat_index": 0,
+              "rejected_indices": [],
+              "atol": 0.005,
+              "accepted": true
+            }
+          }
+        }
+      ]
+    },
+    "serial": {
+      "07-h2o-raman": [
+        {
+          "step": 0.001,
+          "passed": true,
+          "metrics": {
+            "raman_A4_amu": {
+              "components": 3,
+              "max_abs": 0.0009783857698799636,
+              "worst_flat_index": 1,
+              "rejected_indices": [],
+              "atol": 0.05,
+              "accepted": true
+            },
+            "raman_depolarization": {
+              "components": 3,
+              "max_abs": 3.191323256768186e-07,
+              "worst_flat_index": 0,
+              "rejected_indices": [],
+              "atol": 0.005,
+              "accepted": true
+            }
+          }
+        },
+        {
+          "step": 0.0005,
+          "passed": true,
+          "metrics": {
+            "raman_A4_amu": {
+              "components": 3,
+              "max_abs": 0.0009795249474429113,
+              "worst_flat_index": 1,
+              "rejected_indices": [],
+              "atol": 0.05,
+              "accepted": true
+            },
+            "raman_depolarization": {
+              "components": 3,
+              "max_abs": 3.294376599294324e-07,
+              "worst_flat_index": 0,
+              "rejected_indices": [],
+              "atol": 0.005,
+              "accepted": true
+            }
+          }
+        }
+      ],
+      "08-nh3-raman": [
+        {
+          "step": 0.001,
+          "passed": true,
+          "metrics": {
+            "raman_A4_amu": {
+              "components": 6,
+              "max_abs": 0.0034024528105476293,
+              "worst_flat_index": 3,
+              "rejected_indices": [],
+              "atol": 0.05,
+              "accepted": true
+            },
+            "raman_depolarization": {
+              "components": 6,
+              "max_abs": 1.1610119987626177e-07,
+              "worst_flat_index": 5,
+              "rejected_indices": [],
+              "atol": 0.005,
+              "accepted": true
+            }
+          }
+        },
+        {
+          "step": 0.0005,
+          "passed": true,
+          "metrics": {
+            "raman_A4_amu": {
+              "components": 6,
+              "max_abs": 0.003409184903674145,
+              "worst_flat_index": 3,
+              "rejected_indices": [],
+              "atol": 0.05,
+              "accepted": true
+            },
+            "raman_depolarization": {
+              "components": 6,
+              "max_abs": 1.1559039858610731e-07,
+              "worst_flat_index": 5,
+              "rejected_indices": [],
+              "atol": 0.005,
+              "accepted": true
+            }
+          }
+        }
+      ],
+      "09-lih-raman": [
+        {
+          "step": 0.001,
+          "passed": true,
+          "metrics": {
+            "raman_A4_amu": {
+              "components": 1,
+              "max_abs": 0.008644259211649796,
+              "worst_flat_index": 0,
+              "rejected_indices": [],
+              "atol": 0.05,
+              "accepted": true
+            },
+            "raman_depolarization": {
+              "components": 1,
+              "max_abs": 1.093306886093548e-06,
+              "worst_flat_index": 0,
+              "rejected_indices": [],
+              "atol": 0.005,
+              "accepted": true
+            }
+          }
+        },
+        {
+          "step": 0.0005,
+          "passed": true,
+          "metrics": {
+            "raman_A4_amu": {
+              "components": 1,
+              "max_abs": 0.00865412291607015,
+              "worst_flat_index": 0,
+              "rejected_indices": [],
+              "atol": 0.05,
+              "accepted": true
+            },
+            "raman_depolarization": {
+              "components": 1,
+              "max_abs": 1.1040950938095984e-06,
+              "worst_flat_index": 0,
+              "rejected_indices": [],
+              "atol": 0.005,
+              "accepted": true
+            }
+          }
+        }
+      ],
+      "12-lih-raman": [
+        {
+          "step": 0.001,
+          "passed": true,
+          "metrics": {
+            "raman_A4_amu": {
+              "components": 1,
+              "max_abs": 0.008643716327455309,
+              "worst_flat_index": 0,
+              "rejected_indices": [],
+              "atol": 0.05,
+              "accepted": true
+            },
+            "raman_depolarization": {
+              "components": 1,
+              "max_abs": 1.0938505719676472e-06,
+              "worst_flat_index": 0,
+              "rejected_indices": [],
+              "atol": 0.005,
+              "accepted": true
+            }
+          }
+        },
+        {
+          "step": 0.0005,
+          "passed": true,
+          "metrics": {
+            "raman_A4_amu": {
+              "components": 1,
+              "max_abs": 0.008654964408449928,
+              "worst_flat_index": 0,
+              "rejected_indices": [],
+              "atol": 0.05,
+              "accepted": true
+            },
+            "raman_depolarization": {
+              "components": 1,
+              "max_abs": 1.1032703305796643e-06,
+              "worst_flat_index": 0,
+              "rejected_indices": [],
+              "atol": 0.005,
+              "accepted": true
+            }
+          }
+        }
+      ]
+    }
+  },
+  "correction_cost": {
+    "shared": {
+      "h2o": {
+        "displaced_scf_calls": 12,
+        "electric_rhs": 36,
+        "seconds": 18.732579460018314,
+        "job": "5662"
+      },
+      "nh3": {
+        "displaced_scf_calls": 24,
+        "electric_rhs": 72,
+        "seconds": 75.6536576639628,
+        "job": "5662"
+      },
+      "lih": {
+        "displaced_scf_calls": 4,
+        "electric_rhs": 12,
+        "seconds": 6.603211366920732,
+        "job": "5662"
+      }
+    },
+    "serial": {
+      "07-h2o-raman": {
+        "displaced_scf_calls": 12,
+        "electric_rhs": 36,
+        "seconds": 18.42541775794234,
+        "job": "5665"
+      },
+      "08-nh3-raman": {
+        "displaced_scf_calls": 24,
+        "electric_rhs": 72,
+        "seconds": 69.97764091799036,
+        "job": "5665"
+      },
+      "09-lih-raman": {
+        "displaced_scf_calls": 4,
+        "electric_rhs": 12,
+        "seconds": 6.125016500009224,
+        "job": "5665"
+      },
+      "12-lih-raman": {
+        "displaced_scf_calls": 4,
+        "electric_rhs": 12,
+        "seconds": 6.207351180026308,
+        "job": "5665"
+      }
+    }
+  },
+  "final": {
+    "serial": {
+      "publications": {
+        "01-h2o-hessian": {
+          "molecule": "h2o",
+          "property": "hessian",
+          "identity": "03d674ef3f0595618ac45a27dae11f64a90d30a197f390859f675e8e1a7f5e54",
+          "values": {
+            "hessian": [
+              [
+                3.4646240834522946,
+                -0.08228896037364221,
+                -2.3747837591044484e-16,
+                0.30563298081276447,
+                0.18370677117370404,
+                1.4148683011102474e-16,
+                -3.770257064263416,
+                -0.10141781080005302,
+                9.599154579942405e-17
+              ],
+              [
+                -0.08228896037364221,
+                2.0727369916612473,
+                -2.3074310511630966e-16,
+                -0.10399857028003685,
+                -2.6498157554518684,
+                1.0919238829730461e-16,
+                0.18628753065368842,
+                0.577078763790654,
+                1.215507168190085e-16
+              ],
+              [
+                -2.3747837591044484e-16,
+                -2.3074310511630966e-16,
+                -1.0888839288074994,
+                6.833660255364037e-17,
+                1.3219722559337754e-16,
+                0.3998066758469325,
+                1.691417733568036e-16,
+                9.85458795229342e-17,
+                0.6890772529614364
+              ],
+              [
+                0.30563298081276447,
+                -0.10399857028003685,
+                6.833660255364037e-17,
+                -0.23982190952147553,
+                -0.1473105719942293,
+                -1.1318216770762893e-16,
+                -0.06581107129128759,
+                0.25130914227426526,
+                4.484556515398659e-17
+              ],
+              [
+                0.18370677117370404,
+                -2.6498157554518684,
+                1.3219722559337754e-16,
+                -0.14731057199422934,
+                2.735084165218976,
+                -1.1654412517952124e-16,
+                -0.03639619917947423,
+                -0.08526840976710487,
+                -1.5653100413857596e-17
+              ],
+              [
+                1.4148683011102474e-16,
+                1.0919238829730461e-16,
+                0.3998066758469325,
+                -1.1318216770762893e-16,
+                -1.1654412517952124e-16,
+                -0.4731804157340127,
+                -2.8304662403395216e-17,
+                7.3517368822145e-18,
+                0.07337373988707235
+              ],
+              [
+                -3.770257064263416,
+                0.18628753065368842,
+                1.691417733568036e-16,
+                -0.06581107129128759,
+                -0.03639619917947426,
+                -2.8304662403395216e-17,
+                3.8360681355546933,
+                -0.14989133147421418,
+                -1.408371109534105e-16
+              ],
+              [
+                -0.10141781080005302,
+                0.577078763790654,
+                9.85458795229342e-17,
+                0.25130914227426526,
+                -0.08526840976710487,
+                7.3517368822145e-18,
+                -0.14989133147421418,
+                -0.4918103540235519,
+                -1.058976164051496e-16
+              ],
+              [
+                9.599154579942405e-17,
+                1.215507168190085e-16,
+                0.6890772529614364,
+                4.484556515398659e-17,
+                -1.5653100413857596e-17,
+                0.07337373988707235,
+                -1.408371109534105e-16,
+                -1.058976164051496e-16,
+                -0.7624509928485113
+              ]
+            ]
+          },
+          "default_failed_gates": [],
+          "source": "original GPU readout",
+          "minimum_spectrum_disposition": "reject-imaginary-frequency"
+        },
+        "02-nh3-hessian": {
+          "molecule": "nh3",
+          "property": "hessian",
+          "identity": "3b428c591cbbc90c655f376a61c9a68c888713aa20c63906c458ec1fda9d7f16",
+          "values": {
+            "hessian": [
+              [
+                1.3982556594755315,
+                -1.214856894757768e-15,
+                3.635771512804829e-17,
+                -0.07884730931739314,
+                6.151959042477297e-16,
+                -4.507776844885681e-17,
+                -0.659704175078357,
+                0.33486141181903273,
+                -1.3532230477216336e-17,
+                -0.6597041750783577,
+                -0.33486141181903184,
+                2.225228379803288e-17
+              ],
+              [
+                -1.214856894757768e-15,
+                1.400360557148408,
+                -5.573957799198301e-19,
+                1.4797089734238838e-16,
+                -0.8554320166906537,
+                1.9673713027876306e-17,
+                0.3349547015500143,
+                -0.2724642702272918,
+                -3.800329196733257e-17,
+                -0.3349547015500127,
+                -0.2724642702272909,
+                1.8886974719374134e-17
+              ],
+              [
+                3.635771512804829e-17,
+                -5.573957799198301e-19,
+                -0.19991631321526304,
+                -9.051876196193267e-17,
+                2.6667131420921216e-17,
+                0.06692571635995037,
+                3.4581518770271152e-18,
+                -8.087491596984216e-17,
+                0.06649529842753998,
+                5.070289495687199e-17,
+                5.476518032883877e-17,
+                0.06649529842753932
+              ],
+              [
+                -0.07884730931739314,
+                1.4797089734238838e-16,
+                -9.051876196193267e-17,
+                0.05168623985112486,
+                -1.533128760493828e-17,
+                8.133177958064438e-17,
+                0.013580534733137497,
+                0.04506742345000656,
+                1.0111464848245839e-17,
+                0.013580534733137426,
+                -0.04506742345000647,
+                -9.244824669545383e-19
+              ],
+              [
+                6.151959042477297e-16,
+                -0.8554320166906537,
+                2.6667131420921216e-17,
+                -1.533128760493828e-17,
+                0.8598537043122692,
+                -9.353883679555141e-18,
+                -0.017662695444483192,
+                -0.002210843810804365,
+                8.335424022924814e-18,
+                0.01766269544448243,
+                -0.002210843810804844,
+                -2.564867176429148e-17
+              ],
+              [
+                -4.507776844885681e-17,
+                1.9673713027876306e-17,
+                0.06692571635995037,
+                8.133177958064438e-17,
+                -9.353883679555141e-18,
+                -0.0489826817066632,
+                -1.062834356598232e-17,
+                -7.743272975248053e-17,
+                -0.008971517326645188,
+                -2.5625667565805785e-17,
+                6.7112900404159e-17,
+                -0.008971517326645306
+              ],
+              [
+                -0.659704175078357,
+                0.3349547015500143,
+                3.4581518770271152e-18,
+                0.013580534733137497,
+                -0.017662695444483192,
+                -1.062834356598232e-17,
+                0.6561807147427312,
+                -0.34861042068728465,
+                -3.575057944731579e-17,
+                -0.010057074397508727,
+                0.03131841458175352,
+                4.292077113627372e-17
+              ],
+              [
+                0.33486141181903273,
+                -0.2724642702272918,
+                -8.087491596984216e-17,
+                0.04506742345000656,
+                -0.002210843810804365,
+                -7.743272975248053e-17,
+                -0.34861042068728465,
+                0.2532001874477663,
+                8.962439303706238e-17,
+                -0.03131841458175386,
+                0.021474926590329776,
+                6.868325268526028e-17
+              ],
+              [
+                -1.3532230477216336e-17,
+                -3.800329196733257e-17,
+                0.06649529842753998,
+                1.0111464848245839e-17,
+                8.335424022924814e-18,
+                -0.008971517326645188,
+                -3.575057944731579e-17,
+                8.962439303706238e-17,
+                -0.04849455249129653,
+                3.917134507628516e-17,
+                -5.995652509265539e-17,
+                -0.009029228609602181
+              ],
+              [
+                -0.6597041750783577,
+                -0.3349547015500127,
+                5.070289495687199e-17,
+                0.013580534733137426,
+                0.01766269544448243,
+                -2.5625667565805785e-17,
+                -0.010057074397508727,
+                -0.03131841458175386,
+                3.917134507628516e-17,
+                0.6561807147427305,
+                0.3486104206872842,
+                -6.424857246735079e-17
+              ],
+              [
+                -0.33486141181903184,
+                -0.2724642702272909,
+                5.476518032883877e-17,
+                -0.04506742345000647,
+                -0.002210843810804844,
+                6.7112900404159e-17,
+                0.03131841458175352,
+                0.021474926590329776,
+                -5.995652509265539e-17,
+                0.3486104206872842,
+                0.2532001874477652,
+                -6.19215556403426e-17
+              ],
+              [
+                2.225228379803288e-17,
+                1.8886974719374134e-17,
+                0.06649529842753932,
+                -9.244824669545383e-19,
+                -2.564867176429148e-17,
+                -0.008971517326645306,
+                4.292077113627372e-17,
+                6.868325268526028e-17,
+                -0.009029228609602181,
+                -6.424857246735079e-17,
+                -6.19215556403426e-17,
+                -0.04849455249129764
+              ]
+            ]
+          },
+          "default_failed_gates": [],
+          "source": "original GPU readout",
+          "minimum_spectrum_disposition": "reject-imaginary-frequency"
+        },
+        "03-lih-hessian": {
+          "molecule": "lih",
+          "property": "hessian",
+          "identity": "566fa9833533d35c6d6d7b3e4b4603f5756cd5fe96a063018f4f9aab42a977bf",
+          "values": {
+            "hessian": [
+              [
+                0.09094728701972721,
+                -1.432209738482441e-17,
+                1.2911350506309536e-18,
+                -0.09094728701966182,
+                1.4322097384824597e-17,
+                -1.291135050630919e-18
+              ],
+              [
+                -1.432209738482441e-17,
+                0.005469294099313696,
+                5.052189830138868e-19,
+                1.4322097384824526e-17,
+                -0.005469294099272451,
+                9.59092028101709e-19
+              ],
+              [
+                1.2911350506309536e-18,
+                5.052189830138868e-19,
+                0.005469294099313016,
+                -1.2911350506309008e-18,
+                5.296637185851565e-19,
+                -0.005469294099273367
+              ],
+              [
+                -0.09094728701966182,
+                1.4322097384824526e-17,
+                -1.2911350506309008e-18,
+                0.09094728701966096,
+                -1.4322097384824658e-17,
+                1.2911350506309193e-18
+              ],
+              [
+                1.4322097384824597e-17,
+                -0.005469294099272451,
+                5.296637185851565e-19,
+                -1.4322097384824658e-17,
+                0.00546929409927234,
+                -1.777187234762807e-18
+              ],
+              [
+                -1.291135050630919e-18,
+                9.59092028101709e-19,
+                -0.005469294099273367,
+                1.2911350506309193e-18,
+                -1.777187234762807e-18,
+                0.0054692940992732975
+              ]
+            ]
+          },
+          "default_failed_gates": [],
+          "source": "original GPU readout",
+          "minimum_spectrum_disposition": "passes-frequency-gate"
+        },
+        "04-h2o-ir": {
+          "molecule": "h2o",
+          "property": "ir",
+          "identity": "03d674ef3f0595618ac45a27dae11f64a90d30a197f390859f675e8e1a7f5e54",
+          "values": {
+            "ir_frequency_cm1": [
+              -1980.5709293345562,
+              8725.433182215123,
+              10338.103398246554
+            ],
+            "ir_km_mol": [
+              66.36120514182653,
+              17.685901446437224,
+              13.136868511771565
+            ]
+          },
+          "default_failed_gates": [],
+          "source": "original GPU readout",
+          "minimum_spectrum_disposition": "reject-imaginary-frequency"
+        },
+        "05-nh3-ir": {
+          "molecule": "nh3",
+          "property": "ir",
+          "identity": "3b428c591cbbc90c655f376a61c9a68c888713aa20c63906c458ec1fda9d7f16",
+          "values": {
+            "ir_frequency_cm1": [
+              -1457.4209586217996,
+              1675.187901687458,
+              1676.2994214771918,
+              4663.943293825224,
+              5023.853562057052,
+              5028.555478729159
+            ],
+            "ir_km_mol": [
+              614.1354898391369,
+              18.658802265867656,
+              18.736158387733653,
+              0.0011785120252485615,
+              12.889031069146492,
+              12.852949428339953
+            ]
+          },
+          "default_failed_gates": [],
+          "source": "original GPU readout",
+          "minimum_spectrum_disposition": "reject-imaginary-frequency"
+        },
+        "06-lih-ir": {
+          "molecule": "lih",
+          "property": "ir",
+          "identity": "566fa9833533d35c6d6d7b3e4b4603f5756cd5fe96a063018f4f9aab42a977bf",
+          "values": {
+            "ir_frequency_cm1": [
+              1652.411006360598
+            ],
+            "ir_km_mol": [
+              2.9551848394596267
+            ]
+          },
+          "default_failed_gates": [],
+          "source": "original GPU readout",
+          "minimum_spectrum_disposition": "passes-frequency-gate"
+        },
+        "07-h2o-raman": {
+          "molecule": "h2o",
+          "property": "raman",
+          "identity": "03d674ef3f0595618ac45a27dae11f64a90d30a197f390859f675e8e1a7f5e54",
+          "values": {
+            "raman_frequency_cm1": [
+              -1980.5709293345235,
+              8725.433182215063,
+              10338.103398246534
+            ],
+            "raman_A4_amu": [
+              4.3330512461212205,
+              9.60160589047759,
+              7.10012145254983
+            ],
+            "raman_depolarization": [
+              0.6382189475513268,
+              0.3016955794929694,
+              0.3293104960588179
+            ]
+          },
+          "default_failed_gates": [
+            "raman_depolarization"
+          ],
+          "source": "two-step directional refinement",
+          "minimum_spectrum_disposition": "reject-imaginary-frequency"
+        },
+        "08-nh3-raman": {
+          "molecule": "nh3",
+          "property": "raman",
+          "identity": "3b428c591cbbc90c655f376a61c9a68c888713aa20c63906c458ec1fda9d7f16",
+          "values": {
+            "raman_frequency_cm1": [
+              -1457.4209586208217,
+              1675.1879016897049,
+              1676.2994214793296,
+              4663.943293825498,
+              5023.853562057688,
+              5028.555478729799
+            ],
+            "raman_A4_amu": [
+              3.2213662524937305e-07,
+              5.99151427615835,
+              5.9920468044652475,
+              33.30439719546438,
+              11.160350152612196,
+              11.168746915082082
+            ],
+            "raman_depolarization": [
+              0.7499999998131982,
+              0.75,
+              0.749999918883488,
+              0.10217586380512354,
+              0.75,
+              0.7497515376167325
+            ]
+          },
+          "default_failed_gates": [
+            "raman_depolarization"
+          ],
+          "source": "two-step directional refinement",
+          "minimum_spectrum_disposition": "reject-imaginary-frequency"
+        },
+        "09-lih-raman": {
+          "molecule": "lih",
+          "property": "raman",
+          "identity": "566fa9833533d35c6d6d7b3e4b4603f5756cd5fe96a063018f4f9aab42a977bf",
+          "values": {
+            "raman_frequency_cm1": [
+              1652.4110063606315
+            ],
+            "raman_A4_amu": [
+              95.08065998517847
+            ],
+            "raman_depolarization": [
+              0.1132118710353592
+            ]
+          },
+          "default_failed_gates": [
+            "raman_A4_amu"
+          ],
+          "source": "two-step directional refinement",
+          "minimum_spectrum_disposition": "passes-frequency-gate"
+        },
+        "10-nh3-ir": {
+          "molecule": "nh3",
+          "property": "ir",
+          "identity": "3b428c591cbbc90c655f376a61c9a68c888713aa20c63906c458ec1fda9d7f16",
+          "values": {
+            "ir_frequency_cm1": [
+              -1457.4209586212319,
+              1675.187901688685,
+              1676.2994214784976,
+              4663.943293825403,
+              5023.853562057394,
+              5028.555478729575
+            ],
+            "ir_km_mol": [
+              614.13548983932,
+              18.65880226582103,
+              18.736158387688405,
+              0.0011785120252668655,
+              12.88903106907552,
+              12.85294942826884
+            ]
+          },
+          "default_failed_gates": [],
+          "source": "original GPU readout",
+          "minimum_spectrum_disposition": "reject-imaginary-frequency"
+        },
+        "11-lih-hessian": {
+          "molecule": "lih",
+          "property": "hessian",
+          "identity": "566fa9833533d35c6d6d7b3e4b4603f5756cd5fe96a063018f4f9aab42a977bf",
+          "values": {
+            "hessian": [
+              [
+                0.09094728701970772,
+                -1.5955622155883192e-17,
+                -5.767915355983673e-18,
+                -0.09094728701968435,
+                1.5955622155883106e-17,
+                5.767915355983903e-18
+              ],
+              [
+                -1.5955622155883192e-17,
+                0.005469294099251704,
+                2.9062045881951396e-18,
+                1.595562215588337e-17,
+                -0.005469294099255381,
+                2.0204516584549374e-18
+              ],
+              [
+                -5.767915355983673e-18,
+                2.9062045881951396e-18,
+                0.005469294099249122,
+                5.767915355983942e-18,
+                -3.514505834099531e-18,
+                -0.005469294099255562
+              ],
+              [
+                -0.09094728701968435,
+                1.595562215588337e-17,
+                5.767915355983942e-18,
+                0.09094728701968349,
+                -1.5955622155883186e-17,
+                -5.767915355983925e-18
+              ],
+              [
+                1.5955622155883106e-17,
+                -0.005469294099255381,
+                -3.514505834099531e-18,
+                -1.5955622155883186e-17,
+                0.005469294099255742,
+                -1.4120445334321872e-18
+              ],
+              [
+                5.767915355983903e-18,
+                2.0204516584549374e-18,
+                -0.005469294099255562,
+                -5.767915355983925e-18,
+                -1.4120445334321872e-18,
+                0.00546929409925602
+              ]
+            ]
+          },
+          "default_failed_gates": [],
+          "source": "original GPU readout",
+          "minimum_spectrum_disposition": "passes-frequency-gate"
+        },
+        "12-lih-raman": {
+          "molecule": "lih",
+          "property": "raman",
+          "identity": "566fa9833533d35c6d6d7b3e4b4603f5756cd5fe96a063018f4f9aab42a977bf",
+          "values": {
+            "raman_frequency_cm1": [
+              1652.411006360592
+            ],
+            "raman_A4_amu": [
+              95.08065914368609
+            ],
+            "raman_depolarization": [
+              0.11321187186012242
+            ]
+          },
+          "default_failed_gates": [
+            "raman_A4_amu"
+          ],
+          "source": "two-step directional refinement",
+          "minimum_spectrum_disposition": "passes-frequency-gate"
+        }
+      },
+      "dispositions": {
+        "01-h2o-hessian": "accepted",
+        "02-nh3-hessian": "accepted",
+        "03-lih-hessian": "accepted",
+        "04-h2o-ir": "accepted",
+        "05-nh3-ir": "accepted",
+        "06-lih-ir": "accepted",
+        "07-h2o-raman": "accepted",
+        "08-nh3-raman": "accepted",
+        "09-lih-raman": "accepted",
+        "10-nh3-ir": "accepted",
+        "11-lih-hessian": "accepted",
+        "12-lih-raman": "accepted"
+      },
+      "counts": {
+        "accepted": 12
+      }
+    },
+    "shared": {
+      "publications": {
+        "01-h2o-hessian": {
+          "molecule": "h2o",
+          "property": "hessian",
+          "identity": "03d674ef3f0595618ac45a27dae11f64a90d30a197f390859f675e8e1a7f5e54",
+          "values": {
+            "hessian": [
+              [
+                3.4646240834522946,
+                -0.08228896037364228,
+                -2.374783759104447e-16,
+                0.30563298081276447,
+                0.183706771173704,
+                1.4148683011102358e-16,
+                -3.770257064263416,
+                -0.10141781080005302,
+                9.599154579942388e-17
+              ],
+              [
+                -0.08228896037364228,
+                2.072736991661304,
+                -2.3074310511631346e-16,
+                -0.10399857028003665,
+                -2.6498157554518684,
+                1.091923882973063e-16,
+                0.1862875306536886,
+                0.5770787637906536,
+                1.215507168190082e-16
+              ],
+              [
+                -2.374783759104447e-16,
+                -2.3074310511631346e-16,
+                -1.0888839288056236,
+                6.833660255364127e-17,
+                1.3219722559337744e-16,
+                0.3998066758469325,
+                1.6914177335680318e-16,
+                9.854587952293458e-17,
+                0.6890772529614364
+              ],
+              [
+                0.30563298081276447,
+                -0.10399857028003665,
+                6.833660255364127e-17,
+                -0.23982190952147553,
+                -0.1473105719942293,
+                -1.1318216770762962e-16,
+                -0.06581107129128769,
+                0.2513091422742652,
+                4.4845565153986846e-17
+              ],
+              [
+                0.183706771173704,
+                -2.6498157554518684,
+                1.3219722559337744e-16,
+                -0.14731057199422937,
+                2.735084165218976,
+                -1.1654412517951996e-16,
+                -0.03639619917947429,
+                -0.08526840976710487,
+                -1.565310041385807e-17
+              ],
+              [
+                1.4148683011102358e-16,
+                1.091923882973063e-16,
+                0.3998066758469325,
+                -1.1318216770762962e-16,
+                -1.1654412517951996e-16,
+                -0.4731804157340127,
+                -2.8304662403394834e-17,
+                7.351736882214485e-18,
+                0.07337373988707235
+              ],
+              [
+                -3.770257064263416,
+                0.1862875306536886,
+                1.6914177335680318e-16,
+                -0.06581107129128769,
+                -0.036396199179474314,
+                -2.8304662403394834e-17,
+                3.8360681355546933,
+                -0.14989133147421424,
+                -1.4083711095341e-16
+              ],
+              [
+                -0.10141781080005302,
+                0.5770787637906536,
+                9.854587952293458e-17,
+                0.2513091422742652,
+                -0.08526840976710487,
+                7.351736882214485e-18,
+                -0.14989133147421427,
+                -0.4918103540235519,
+                -1.0589761640514963e-16
+              ],
+              [
+                9.599154579942388e-17,
+                1.215507168190082e-16,
+                0.6890772529614364,
+                4.4845565153986846e-17,
+                -1.565310041385807e-17,
+                0.07337373988707235,
+                -1.4083711095341e-16,
+                -1.0589761640514963e-16,
+                -0.7624509928485113
+              ]
+            ]
+          },
+          "default_failed_gates": [],
+          "source": "original GPU readout",
+          "minimum_spectrum_disposition": "reject-imaginary-frequency"
+        },
+        "02-nh3-hessian": {
+          "molecule": "nh3",
+          "property": "hessian",
+          "identity": "3b428c591cbbc90c655f376a61c9a68c888713aa20c63906c458ec1fda9d7f16",
+          "values": {
+            "hessian": [
+              [
+                1.398255659474255,
+                -1.0239352554959548e-15,
+                3.636996866214304e-17,
+                -0.07884730931731943,
+                1.4260496480898735e-16,
+                -2.970464351764718e-17,
+                -0.6597041750782957,
+                0.33486141181903517,
+                -5.2668034774705045e-17,
+                -0.6597041750782962,
+                -0.33486141181903406,
+                4.600270963018858e-17
+              ],
+              [
+                -1.0239352554959548e-15,
+                1.4003605571475133,
+                6.954205578264835e-17,
+                3.0005280068940024e-16,
+                -0.8554320166905831,
+                3.515719060723823e-17,
+                0.3349547015500165,
+                -0.2724642702272232,
+                -6.751387221773609e-17,
+                -0.33495470155001605,
+                -0.27246427022722397,
+                -3.718537417215832e-17
+              ],
+              [
+                3.636996866214304e-17,
+                6.954205578264835e-17,
+                -0.1999163132172348,
+                -5.959733106765057e-17,
+                8.138661817829191e-17,
+                0.06692571635998878,
+                -7.851185470710973e-17,
+                -1.1653091090246585e-16,
+                0.06649529842757795,
+                1.0173921711259965e-16,
+                -3.439776305847605e-17,
+                0.06649529842757707
+              ],
+              [
+                -0.07884730931731943,
+                3.0005280068940024e-16,
+                -5.959733106765057e-17,
+                0.051686239851055804,
+                -1.4665372361870544e-16,
+                5.4201451882105894e-17,
+                0.013580534733129514,
+                0.04506742344996387,
+                -5.1281309893999555e-17,
+                0.013580534733129528,
+                -0.04506742344996391,
+                5.667718907954518e-17
+              ],
+              [
+                1.4260496480898735e-16,
+                -0.8554320166905831,
+                8.138661817829191e-17,
+                -1.4665372361870544e-16,
+                0.8598537043121852,
+                -7.417151714929579e-17,
+                -0.01766269544446214,
+                -0.002210843810799841,
+                8.286943252506063e-18,
+                0.01766269544446207,
+                -0.002210843810799709,
+                -1.5502044281499596e-17
+              ],
+              [
+                -2.970464351764718e-17,
+                3.515719060723823e-17,
+                0.06692571635998878,
+                5.4201451882105894e-17,
+                -7.417151714929579e-17,
+                -0.04898268170670761,
+                2.2557324690742457e-17,
+                -3.203907317209002e-17,
+                -0.008971517326641275,
+                -4.70541330552e-17,
+                7.105339971414809e-17,
+                -0.008971517326641094
+              ],
+              [
+                -0.6597041750782957,
+                0.3349547015500165,
+                -7.851185470710973e-17,
+                0.013580534733129514,
+                -0.01766269544446214,
+                2.2557324690742457e-17,
+                0.6561807147426676,
+                -0.34861042068727577,
+                5.043032927044205e-17,
+                -0.010057074397499338,
+                0.03131841458172214,
+                5.5242007459275374e-18
+              ],
+              [
+                0.33486141181903517,
+                -0.2724642702272232,
+                -1.1653091090246585e-16,
+                0.04506742344996387,
+                -0.002210843810799841,
+                -3.203907317209002e-17,
+                -0.34861042068727577,
+                0.25320018744771267,
+                1.1227735393220572e-16,
+                -0.03131841458172219,
+                0.021474926590315496,
+                3.629263014235096e-17
+              ],
+              [
+                -5.2668034774705045e-17,
+                -6.751387221773609e-17,
+                0.06649529842757795,
+                -5.1281309893999555e-17,
+                8.286943252506063e-18,
+                -0.008971517326641275,
+                5.043032927044205e-17,
+                1.1227735393220572e-16,
+                -0.048494552491341825,
+                5.351901539826197e-17,
+                -5.3050424966976795e-17,
+                -0.009029228609596839
+              ],
+              [
+                -0.6597041750782962,
+                -0.33495470155001605,
+                1.0173921711259965e-16,
+                0.013580534733129528,
+                0.01766269544446207,
+                -4.70541330552e-17,
+                -0.010057074397499338,
+                -0.03131841458172219,
+                5.351901539826197e-17,
+                0.6561807147426696,
+                0.348610420687274,
+                -1.0820409945566019e-16
+              ],
+              [
+                -0.33486141181903406,
+                -0.27246427022722397,
+                -3.439776305847605e-17,
+                -0.04506742344996391,
+                -0.002210843810799709,
+                7.105339971414809e-17,
+                0.03131841458172214,
+                0.021474926590315496,
+                -5.3050424966976795e-17,
+                0.348610420687274,
+                0.2532001874477132,
+                1.6394788311307173e-17
+              ],
+              [
+                4.600270963018858e-17,
+                -3.718537417215832e-17,
+                0.06649529842757707,
+                5.667718907954518e-17,
+                -1.5502044281499596e-17,
+                -0.008971517326641094,
+                5.5242007459275374e-18,
+                3.629263014235096e-17,
+                -0.009029228609596839,
+                -1.0820409945566019e-16,
+                1.6394788311307173e-17,
+                -0.04849455249133916
+              ]
+            ]
+          },
+          "default_failed_gates": [],
+          "source": "original GPU readout",
+          "minimum_spectrum_disposition": "reject-imaginary-frequency"
+        },
+        "03-lih-hessian": {
+          "molecule": "lih",
+          "property": "hessian",
+          "identity": "566fa9833533d35c6d6d7b3e4b4603f5756cd5fe96a063018f4f9aab42a977bf",
+          "values": {
+            "hessian": [
+              [
+                0.0909472870197107,
+                1.2875047972962001e-18,
+                -7.071437167836853e-18,
+                -0.09094728701968535,
+                -1.2875047972961065e-18,
+                7.071437167836989e-18
+              ],
+              [
+                1.2875047972962001e-18,
+                0.005469294099261474,
+                -3.5279732529979946e-18,
+                -1.2875047972961362e-18,
+                -0.00546929409925187,
+                2.8127241205118822e-18
+              ],
+              [
+                -7.071437167836853e-18,
+                -3.5279732529979946e-18,
+                0.005469294099259073,
+                7.071437167836916e-18,
+                3.3271479464688687e-18,
+                -0.005469294099251759
+              ],
+              [
+                -0.09094728701968535,
+                -1.2875047972961362e-18,
+                7.071437167836916e-18,
+                0.0909472870196848,
+                1.2875047972961266e-18,
+                -7.071437167836903e-18
+              ],
+              [
+                -1.2875047972961065e-18,
+                -0.00546929409925187,
+                3.3271479464688687e-18,
+                1.2875047972961266e-18,
+                0.005469294099251884,
+                -2.503491831624014e-18
+              ],
+              [
+                7.071437167836989e-18,
+                2.8127241205118822e-18,
+                -0.005469294099251759,
+                -7.071437167836903e-18,
+                -2.503491831624014e-18,
+                0.0054692940992518285
+              ]
+            ]
+          },
+          "default_failed_gates": [],
+          "source": "original GPU readout",
+          "minimum_spectrum_disposition": "passes-frequency-gate"
+        },
+        "04-h2o-ir": {
+          "molecule": "h2o",
+          "property": "ir",
+          "identity": "03d674ef3f0595618ac45a27dae11f64a90d30a197f390859f675e8e1a7f5e54",
+          "values": {
+            "ir_frequency_cm1": [
+              -1980.5709293345376,
+              8725.43318221494,
+              10338.103398246567
+            ],
+            "ir_km_mol": [
+              66.36120514185185,
+              17.685901446373585,
+              13.136868511788446
+            ]
+          },
+          "default_failed_gates": [],
+          "source": "original GPU readout",
+          "minimum_spectrum_disposition": "reject-imaginary-frequency"
+        },
+        "05-nh3-ir": {
+          "molecule": "nh3",
+          "property": "ir",
+          "identity": "3b428c591cbbc90c655f376a61c9a68c888713aa20c63906c458ec1fda9d7f16",
+          "values": {
+            "ir_frequency_cm1": [
+              -1457.420958621475,
+              1675.1879016885612,
+              1676.2994214783366,
+              4663.943293825362,
+              5023.85356205736,
+              5028.555478729506
+            ],
+            "ir_km_mol": [
+              614.135489839303,
+              18.65880226582654,
+              18.736158387693447,
+              0.0011785120252419301,
+              12.88903106908224,
+              12.852949428277343
+            ]
+          },
+          "default_failed_gates": [],
+          "source": "original GPU readout",
+          "minimum_spectrum_disposition": "reject-imaginary-frequency"
+        },
+        "06-lih-ir": {
+          "molecule": "lih",
+          "property": "ir",
+          "identity": "566fa9833533d35c6d6d7b3e4b4603f5756cd5fe96a063018f4f9aab42a977bf",
+          "values": {
+            "ir_frequency_cm1": [
+              1652.4110063608102
+            ],
+            "ir_km_mol": [
+              2.955184839387471
+            ]
+          },
+          "default_failed_gates": [],
+          "source": "original GPU readout",
+          "minimum_spectrum_disposition": "passes-frequency-gate"
+        },
+        "07-h2o-raman": {
+          "molecule": "h2o",
+          "property": "raman",
+          "identity": "03d674ef3f0595618ac45a27dae11f64a90d30a197f390859f675e8e1a7f5e54",
+          "values": {
+            "raman_frequency_cm1": [
+              -1980.570929334541,
+              8725.433182214932,
+              10338.10339824656
+            ],
+            "raman_A4_amu": [
+              4.333051246764355,
+              9.601605882580648,
+              7.100121452218273
+            ],
+            "raman_depolarization": [
+              0.6382189474787398,
+              0.3016955794044579,
+              0.32931049601664586
+            ]
+          },
+          "default_failed_gates": [
+            "raman_depolarization"
+          ],
+          "source": "two-step directional refinement",
+          "minimum_spectrum_disposition": "reject-imaginary-frequency"
+        },
+        "08-nh3-raman": {
+          "molecule": "nh3",
+          "property": "raman",
+          "identity": "3b428c591cbbc90c655f376a61c9a68c888713aa20c63906c458ec1fda9d7f16",
+          "values": {
+            "raman_frequency_cm1": [
+              -1457.420958621475,
+              1675.1879016885619,
+              1676.2994214783403,
+              4663.94329382536,
+              5023.853562057358,
+              5028.555478729505
+            ],
+            "raman_A4_amu": [
+              3.2213661976648384e-07,
+              5.991514276066285,
+              5.992046804598118,
+              33.30439719704497,
+              11.160350152687394,
+              11.168746915150662
+            ],
+            "raman_depolarization": [
+              0.7499999997422192,
+              0.75,
+              0.7499999188802615,
+              0.10217586380533872,
+              0.75,
+              0.7497515376015899
+            ]
+          },
+          "default_failed_gates": [
+            "raman_depolarization"
+          ],
+          "source": "two-step directional refinement",
+          "minimum_spectrum_disposition": "reject-imaginary-frequency"
+        },
+        "09-lih-raman": {
+          "molecule": "lih",
+          "property": "raman",
+          "identity": "566fa9833533d35c6d6d7b3e4b4603f5756cd5fe96a063018f4f9aab42a977bf",
+          "values": {
+            "raman_frequency_cm1": [
+              1652.411006360809
+            ],
+            "raman_A4_amu": [
+              95.08065844100177
+            ],
+            "raman_depolarization": [
+              0.11321187256235365
+            ]
+          },
+          "default_failed_gates": [
+            "raman_A4_amu"
+          ],
+          "source": "two-step directional refinement",
+          "minimum_spectrum_disposition": "passes-frequency-gate"
+        },
+        "10-nh3-ir": {
+          "molecule": "nh3",
+          "property": "ir",
+          "identity": "3b428c591cbbc90c655f376a61c9a68c888713aa20c63906c458ec1fda9d7f16",
+          "values": {
+            "ir_frequency_cm1": [
+              -1457.420958621475,
+              1675.1879016885612,
+              1676.2994214783366,
+              4663.943293825362,
+              5023.85356205736,
+              5028.555478729506
+            ],
+            "ir_km_mol": [
+              614.135489839303,
+              18.65880226582654,
+              18.736158387693447,
+              0.0011785120252419301,
+              12.88903106908224,
+              12.852949428277343
+            ]
+          },
+          "default_failed_gates": [],
+          "source": "original GPU readout",
+          "minimum_spectrum_disposition": "reject-imaginary-frequency"
+        },
+        "11-lih-hessian": {
+          "molecule": "lih",
+          "property": "hessian",
+          "identity": "566fa9833533d35c6d6d7b3e4b4603f5756cd5fe96a063018f4f9aab42a977bf",
+          "values": {
+            "hessian": [
+              [
+                0.0909472870197107,
+                1.2875047972962001e-18,
+                -7.071437167836853e-18,
+                -0.09094728701968535,
+                -1.2875047972961065e-18,
+                7.071437167836989e-18
+              ],
+              [
+                1.2875047972962001e-18,
+                0.005469294099261474,
+                -3.5279732529979946e-18,
+                -1.2875047972961362e-18,
+                -0.00546929409925187,
+                2.8127241205118822e-18
+              ],
+              [
+                -7.071437167836853e-18,
+                -3.5279732529979946e-18,
+                0.005469294099259073,
+                7.071437167836916e-18,
+                3.3271479464688687e-18,
+                -0.005469294099251759
+              ],
+              [
+                -0.09094728701968535,
+                -1.2875047972961362e-18,
+                7.071437167836916e-18,
+                0.0909472870196848,
+                1.2875047972961266e-18,
+                -7.071437167836903e-18
+              ],
+              [
+                -1.2875047972961065e-18,
+                -0.00546929409925187,
+                3.3271479464688687e-18,
+                1.2875047972961266e-18,
+                0.005469294099251884,
+                -2.503491831624014e-18
+              ],
+              [
+                7.071437167836989e-18,
+                2.8127241205118822e-18,
+                -0.005469294099251759,
+                -7.071437167836903e-18,
+                -2.503491831624014e-18,
+                0.0054692940992518285
+              ]
+            ]
+          },
+          "default_failed_gates": [],
+          "source": "original GPU readout",
+          "minimum_spectrum_disposition": "passes-frequency-gate"
+        },
+        "12-lih-raman": {
+          "molecule": "lih",
+          "property": "raman",
+          "identity": "566fa9833533d35c6d6d7b3e4b4603f5756cd5fe96a063018f4f9aab42a977bf",
+          "values": {
+            "raman_frequency_cm1": [
+              1652.411006360809
+            ],
+            "raman_A4_amu": [
+              95.08065844100177
+            ],
+            "raman_depolarization": [
+              0.11321187256235365
+            ]
+          },
+          "default_failed_gates": [
+            "raman_A4_amu"
+          ],
+          "source": "two-step directional refinement",
+          "minimum_spectrum_disposition": "passes-frequency-gate"
+        }
+      },
+      "dispositions": {
+        "01-h2o-hessian": "accepted",
+        "02-nh3-hessian": "accepted",
+        "03-lih-hessian": "accepted",
+        "04-h2o-ir": "accepted",
+        "05-nh3-ir": "accepted",
+        "06-lih-ir": "accepted",
+        "07-h2o-raman": "accepted",
+        "08-nh3-raman": "accepted",
+        "09-lih-raman": "accepted",
+        "10-nh3-ir": "accepted",
+        "11-lih-hessian": "accepted",
+        "12-lih-raman": "accepted"
+      },
+      "counts": {
+        "accepted": 12
+      }
+    }
+  },
+  "controls": {
+    "single-request-scf-failure": {
+      "disposition": "reject-and-recompute",
+      "reason": "scf_nonconvergence",
+      "matched": true
+    },
+    "allocator-oom": {
+      "disposition": "reject-and-recompute",
+      "reason": "Out of memory allocating 4,096 bytes (allocated so far: 0 bytes, limit set to: 1,024 bytes).",
+      "matched": true
+    },
+    "unsupported-property": {
+      "disposition": "reject-and-recompute",
+      "reason": "unsupported_property",
+      "matched": true
+    },
+    "restricted-H2-stretched-gap": {
+      "disposition": "reject-and-recompute",
+      "reason": "restricted_state_near_degenerate",
+      "matched": true
+    },
+    "healthy-after-failures": {
+      "components": 81,
+      "max_abs": 3.724205421828941e-08,
+      "worst_flat_index": 34,
+      "rejected_indices": [],
+      "atol": 1e-07,
+      "accepted": true
+    }
+  },
+  "gap_control": {
+    "restricted-H2-stretched-gap": {
+      "gap_hartree": 0.0005000000000000143,
+      "threshold": 0.001
+    }
+  },
+  "imaginary_modes_cm1": {
+    "h2o": [
+      -1980.5706229186317
+    ],
+    "nh3": [
+      -1457.4209567725613
+    ],
+    "lih": []
+  },
+  "neighbors_within_5_cm1": {
+    "h2o": [],
+    "nh3": [
+      [
+        1675.1879128346047,
+        1676.2994266453331
+      ],
+      [
+        5023.853565701144,
+        5028.555487756447
+      ]
+    ],
+    "lih": []
+  },
+  "veloxchem_reference_sha256": "dc9c31b60d6a84c20dfa4cf00f1477f122570734efac8ab77a88f63e94100380",
+  "measured_independent_VeloxChem_seconds": {
+    "h2o": 0.13965242100039177,
+    "nh3": 0.1902216230000704,
+    "lih": 0.11510253399956127
+  },
+  "raw_result_bytes": {
+    "serial": 49374,
+    "shared": 41755,
+    "failures": 14414
+  }
+}

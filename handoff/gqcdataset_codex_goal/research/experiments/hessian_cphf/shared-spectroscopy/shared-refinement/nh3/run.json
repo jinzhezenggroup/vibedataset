@@ -1,0 +1,78 @@
+{
+  "schema": "vibedataset.directional_raman_refinement.v1",
+  "protocol_sha256": "674b477726881e6549ad4a5d9f31e348e307693631a1de69d585475b9913e0ca",
+  "plan_sha256": "18a229c1c2a25e7924be02fb5c54deed7bff0f6c634910eab2e355049c6a527d",
+  "source_shared_sha256": "ee9d320b3386dfa904eb978378a5a5633d63c5ad940e6b2fab9e02d56fda61a1",
+  "driver_sha256": "92e63037ef93db3c0ddea5f2b464758f222f3a346ed16c796135a1a3a1689de4",
+  "displacements_sha256": "1d2a8320f7ec99edd27e99850de9b7d9e765dc72d491a93defbf5f84c1056af4",
+  "steps": [
+    {
+      "step": 0.001,
+      "modes": [
+        {
+          "raman_A4_amu": 3.2196797978953354e-07,
+          "raman_depolarization": 0.7499999999979193
+        },
+        {
+          "raman_A4_amu": 5.991514473428801,
+          "raman_depolarization": 0.75
+        },
+        {
+          "raman_A4_amu": 5.9920470115501026,
+          "raman_depolarization": 0.7499999187811456
+        },
+        {
+          "raman_A4_amu": 33.304403868578156,
+          "raman_depolarization": 0.10217586579115731
+        },
+        {
+          "raman_A4_amu": 11.160350212301045,
+          "raman_depolarization": 0.75
+        },
+        {
+          "raman_A4_amu": 11.168746980790191,
+          "raman_depolarization": 0.7497515371327367
+        }
+      ]
+    },
+    {
+      "step": 0.0005,
+      "modes": [
+        {
+          "raman_A4_amu": 3.2213661976648384e-07,
+          "raman_depolarization": 0.7499999997422192
+        },
+        {
+          "raman_A4_amu": 5.991514276066285,
+          "raman_depolarization": 0.75
+        },
+        {
+          "raman_A4_amu": 5.992046804598118,
+          "raman_depolarization": 0.7499999188802615
+        },
+        {
+          "raman_A4_amu": 33.30439719704497,
+          "raman_depolarization": 0.10217586380533872
+        },
+        {
+          "raman_A4_amu": 11.160350152687394,
+          "raman_depolarization": 0.75
+        },
+        {
+          "raman_A4_amu": 11.168746915150662,
+          "raman_depolarization": 0.7497515376015899
+        }
+      ]
+    }
+  ],
+  "signed_frequencies_cm1": [
+    -1457.420958621475,
+    1675.1879016885619,
+    1676.2994214783403,
+    4663.94329382536,
+    5023.853562057358,
+    5028.555478729505
+  ],
+  "elapsed_seconds": 75.6536576639628,
+  "slurm_job": "5662"
+}

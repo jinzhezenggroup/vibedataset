@@ -1,0 +1,46 @@
+{
+  "veloxchem/console.log.gz": {
+    "original_sha256": "fbede672214537049b3c72a3d85e200acdce0d1eb0483feb03ef85a0875cdef2",
+    "published_sha256": "fbede672214537049b3c72a3d85e200acdce0d1eb0483feb03ef85a0875cdef2"
+  },
+  "serial/console.log.gz": {
+    "original_sha256": "2b434a73fb73fa581620f95403bc879baa88138deec58ce9f98af6643f635c1d",
+    "published_sha256": "987dbbe7c7fd343b0ff040a9a684e491b72ecde3cb4ac6d423c932ba320080aa"
+  },
+  "shared/console.log.gz": {
+    "original_sha256": "2b434a73fb73fa581620f95403bc879baa88138deec58ce9f98af6643f635c1d",
+    "published_sha256": "987dbbe7c7fd343b0ff040a9a684e491b72ecde3cb4ac6d423c932ba320080aa"
+  },
+  "failures/console.log.gz": {
+    "original_sha256": "2b434a73fb73fa581620f95403bc879baa88138deec58ce9f98af6643f635c1d",
+    "published_sha256": "987dbbe7c7fd343b0ff040a9a684e491b72ecde3cb4ac6d423c932ba320080aa"
+  },
+  "shared-refinement/lih/console.log.gz": {
+    "original_sha256": "2b434a73fb73fa581620f95403bc879baa88138deec58ce9f98af6643f635c1d",
+    "published_sha256": "987dbbe7c7fd343b0ff040a9a684e491b72ecde3cb4ac6d423c932ba320080aa"
+  },
+  "shared-refinement/nh3/console.log.gz": {
+    "original_sha256": "2b434a73fb73fa581620f95403bc879baa88138deec58ce9f98af6643f635c1d",
+    "published_sha256": "987dbbe7c7fd343b0ff040a9a684e491b72ecde3cb4ac6d423c932ba320080aa"
+  },
+  "shared-refinement/h2o/console.log.gz": {
+    "original_sha256": "2b434a73fb73fa581620f95403bc879baa88138deec58ce9f98af6643f635c1d",
+    "published_sha256": "987dbbe7c7fd343b0ff040a9a684e491b72ecde3cb4ac6d423c932ba320080aa"
+  },
+  "serial-refinement/09-lih-raman/console.log.gz": {
+    "original_sha256": "2b434a73fb73fa581620f95403bc879baa88138deec58ce9f98af6643f635c1d",
+    "published_sha256": "987dbbe7c7fd343b0ff040a9a684e491b72ecde3cb4ac6d423c932ba320080aa"
+  },
+  "serial-refinement/12-lih-raman/console.log.gz": {
+    "original_sha256": "2b434a73fb73fa581620f95403bc879baa88138deec58ce9f98af6643f635c1d",
+    "published_sha256": "987dbbe7c7fd343b0ff040a9a684e491b72ecde3cb4ac6d423c932ba320080aa"
+  },
+  "serial-refinement/07-h2o-raman/console.log.gz": {
+    "original_sha256": "2b434a73fb73fa581620f95403bc879baa88138deec58ce9f98af6643f635c1d",
+    "published_sha256": "987dbbe7c7fd343b0ff040a9a684e491b72ecde3cb4ac6d423c932ba320080aa"
+  },
+  "serial-refinement/08-nh3-raman/console.log.gz": {
+    "original_sha256": "2b434a73fb73fa581620f95403bc879baa88138deec58ce9f98af6643f635c1d",
+    "published_sha256": "987dbbe7c7fd343b0ff040a9a684e491b72ecde3cb4ac6d423c932ba320080aa"
+  }
+}

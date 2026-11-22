@@ -216,6 +216,14 @@ def check_molecular_report(expected_index, generated_index, code):
 def science(run):
     prepare_science(run)
     raw_root = HANDOFF / "research/environment/gpu4pyscf-20261122/a-d-telemetry/raw"
+    cartesian = EXP / "hessian_cphf/shared-spectroscopy"
+    verified_cartesian = run.out / "physical-cartesian-cphf.json"
+    run.command("physical-cartesian-cphf", [sys.executable, SCRIPTS / "score_cartesian_cphf.py",
+                "--root", cartesian / "cartesian-certificate", "--protocol", cartesian / "protocol.json",
+                "--out", verified_cartesian])
+    cartesian_result=json.loads(verified_cartesian.read_text())
+    if not cartesian_result["all_accepted"] or len(cartesian_result["request_links"])!=12:
+        raise ValueError("unqualified Cartesian CPHF response")
     new_ao_score = run.out / "independent-ao-score.json.gz"
     run.command("cpu-ao-response", [sys.executable, SCRIPTS / "score_ao_density_response.py",
                 "--manifest", EXP / "attribution_4arm/manifest.json", "--raw-root", raw_root, "--out", new_ao_score])

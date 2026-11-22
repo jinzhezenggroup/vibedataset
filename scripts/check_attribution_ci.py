@@ -94,6 +94,13 @@ def main():
     import gzip
     require(gzip.decompress(replay_rows.read_bytes()) == gzip.decompress((full_trace / "request-ledger.json.gz").read_bytes()),
             "per-request GPU activity and durable bytes")
+
+    spectroscopy = EXP.parent / "hessian_cphf/shared-spectroscopy"
+    shared_score = args.out / "shared-spectroscopy.json"
+    subprocess.check_call([sys.executable, str(SCRIPTS / "score_shared_spectroscopy.py"), "--root", str(spectroscopy),
+                           "--protocol", str(spectroscopy / "protocol.json"), "--refinement", str(spectroscopy / "shared-refinement"),
+                           "--serial-refinement", str(spectroscopy / "serial-refinement"), "--out", str(shared_score)])
+    require(read(shared_score) == read(spectroscopy / "verification.json"), "shared multi-sample spectroscopy certificates")
     hessian_artifact = ROOT / "handoff/gqcdataset_codex_goal/research/experiments/hessian_cphf/cpu-gpu-crosscheck.json"
     generated_hessian = args.out / "hessian-crosscheck.json"
     subprocess.check_call(
