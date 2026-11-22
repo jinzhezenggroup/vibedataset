@@ -24,6 +24,7 @@ from run_gpu4pyscf_4arm import (  # noqa: E402
     build_molecule,
     density_values,
     load_manifest,
+    measured_prepared_backend,
     solve_fields,
     target_values,
 )
@@ -162,7 +163,7 @@ def main() -> None:
         "schema": "vibedataset.prepared_gpu4pyscf_control.v1",
         "status": "accepted" if not runtime["failures"] else "partial",
         "manifest_sha256": manifest["manifest_sha256"],
-        "gpu4pyscf_source_commit": "5a717f899cb40d64a5799ef1df7e3626c505c3bd",
+        **measured_prepared_backend(),
         "python": sys.version,
         "platform": platform.platform(),
         "protocol": protocol,

@@ -28,7 +28,7 @@ def worker(payload: dict) -> dict:
     from gpu4pyscf import scf
     from gpu4pyscf.properties import polarizability
     from gpu4pyscf.scf import cphf
-    from run_gpu4pyscf_4arm import build_molecule, density_values, solve_fields, target_values
+    from run_gpu4pyscf_4arm import build_molecule, density_values, solve_fields, target_values, measured_prepared_backend
 
     cupy.cuda.Device(0).use()
     protocol = payload["protocol"]
@@ -86,6 +86,7 @@ def worker(payload: dict) -> dict:
         })
     free, total = cupy.cuda.runtime.memGetInfo()
     return {
+        "backend_identity": measured_prepared_backend(),
         "molecule": item["name"],
         "pid": __import__("os").getpid(),
         "setup_seconds": setup_seconds,
@@ -135,13 +136,15 @@ def main() -> None:
     receipts = [receipt for result in worker_results for receipt in result["receipts"]]
     order = {f"{name}:{trajectory['id']}": index for index, (name, trajectory) in enumerate((name, trajectory) for name in args.molecules for trajectory in trajectories)}
     receipts.sort(key=lambda receipt: order[receipt["request_id"]])
+    if not worker_results or any(w["backend_identity"] != worker_results[0]["backend_identity"] for w in worker_results):
+        raise ValueError("prepared workers report different backend identities")
     result = {
         "schema": "vibedataset.prepared_gpu4pyscf_process_runtime.v1",
         "status": "accepted" if len(receipts) == len(requests) else "partial",
         "runtime_mode": "process_isolated",
         "execution_mode": "spawned-worker-chains",
         "manifest_sha256": manifest["manifest_sha256"],
-        "gpu4pyscf_source_commit": "5a717f899cb40d64a5799ef1df7e3626c505c3bd",
+        **worker_results[0]["backend_identity"],
         "python": sys.version,
         "platform": platform.platform(),
         "molecules": args.molecules,

@@ -25,6 +25,22 @@ def sha256_file(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
+def measured_prepared_backend():
+    import gpu4pyscf
+    from gpu4pyscf.scf import cphf
+
+    path = Path(cphf.__file__)
+    native = path.parents[1] / "lib/libgvhf_rys.so"
+    solver_hash = sha256_file(path)
+    native_hash = sha256_file(native) if native.is_file() else None
+    matched = (gpu4pyscf.__version__ == "1.9.2"
+               and solver_hash == "1010af1ff5cb62e424223e6c65bad9344e7a6e37bf6882ff574efddb9e2839de"
+               and native_hash == "8312920d884ae714a9b5b2d982c13a90f0cbc3725e18546361fbb781a1734912")
+    return {"gpu4pyscf_version": gpu4pyscf.__version__, "cphf_sha256": solver_hash,
+            "libgvhf_rys_sha256": native_hash,
+            "gpu4pyscf_source_commit": "8536a80c1e03260aab030e108ef1d181a3709057" if matched else None}
+
+
 def load_manifest(path: Path) -> dict:
     manifest = json.loads(path.read_text())
     encoded = dict(manifest)

@@ -107,6 +107,7 @@ class PreparedPropertyBatch:
         self.nodes = []
         self.buckets = defaultdict(list)
         self.failures = []
+        self._runtime_failures = set()
         self.workspace_plan = {}
         self._request = {r.request_id: r for r in self.requests}
         if len(self._request) != len(self.requests) or max_workspace_bytes < 0:
@@ -177,6 +178,13 @@ class PreparedPropertyBatch:
         receipts = {}
         started = time.perf_counter()
         setup_count, group_count = 0, 0
+        if self._runtime_failures:
+            self.failures = [r for r in self.failures if r["request_id"] not in self._runtime_failures]
+            for node in self.nodes:
+                if node.request_id in self._runtime_failures:
+                    node.disposition = "fallback" if self._over_budget else "ready"
+                    node.reason = "workspace_budget_exceeded" if self._over_budget else ""
+            self._runtime_failures.clear()
         previously_failed = {r["request_id"]: r["reason"] for r in self.failures}
 
         def failed(request_id, bucket, reason, detail=None):
@@ -254,6 +262,8 @@ class PreparedPropertyBatch:
         for row in ordered:
             if row["status"] != "accepted":
                 self.isolate_failure(row["request_id"], row["reason"])
+                if row["request_id"] not in previously_failed:
+                    self._runtime_failures.add(row["request_id"])
         result = dict(
             setup_count=setup_count,
             request_count=len(ordered),
