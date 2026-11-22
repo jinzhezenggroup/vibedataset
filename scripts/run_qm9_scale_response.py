@@ -111,14 +111,30 @@ def reference(mol, protocol, cfg):
 
     x, _ = cpu_cphf.solve(response, mf.mo_energy, mf.mo_occ, -rhs,
                           tol=cfg["response_tol"], max_cycle=cfg["response_cycles"], verbose=0)
-    dm = induced_density(x, co, cv)
-    polar = np.einsum("duv,kvu->dk", dm, pos)
     solve_time = time.perf_counter() - start
-    check = time.perf_counter()
-    residual = float(np.max(np.abs(x * gap + induced_potential(mf, dm, co, cv) - rhs)))
+    check_time = 0.0
+    history = []
+    for step in range(3):
+        check = time.perf_counter()
+        dm = induced_density(x, co, cv)
+        defect = rhs - (x * gap + induced_potential(mf, dm, co, cv))
+        scale = float(np.max(np.abs(defect)))
+        history.append(scale)
+        check_time += time.perf_counter() - check
+        if scale <= protocol["maximum_absolute_error"]["reference_physical_residual"] or step == 2:
+            break
+        # The upstream Krylov implementation drops near-linearly dependent vectors.
+        # Normalize the defect before solving the linear correction in the same CPU model.
+        refine = time.perf_counter()
+        correction, _ = cpu_cphf.solve(response, mf.mo_energy, mf.mo_occ, -defect / scale,
+                                       tol=cfg["response_tol"], max_cycle=cfg["response_cycles"], verbose=0)
+        x += scale * correction
+        solve_time += time.perf_counter() - refine
+    polar = np.einsum("duv,kvu->dk", dm, pos)
+    residual = history[-1]
     arrays = dict(density=dm, polarizability=polar, coeff=mf.mo_coeff, occ=mf.mo_occ, orbital_energy=mf.mo_energy)
     facts = dict(scf_energy=float(mf.e_tot), scf_seconds=scf_time, solve_seconds=solve_time,
-                 quality_seconds=time.perf_counter() - check, orbital_gap_hartree=float(gap.min()),
+                 quality_seconds=check_time, residual_history=history, orbital_gap_hartree=float(gap.min()),
                  response_operator_calls=calls, reference_physical_residual=residual)
     return arrays, facts
 
