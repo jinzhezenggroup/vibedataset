@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import math
 import subprocess
 import sys
 import tempfile
@@ -72,7 +73,18 @@ def main():
         ],
         cwd=ROOT,
     )
-    require(generated_hessian.read_bytes() == hessian_artifact.read_bytes(), "Hessian crosscheck replay")
+    archived_hessian = read(hessian_artifact)
+    replayed_hessian = read(generated_hessian)
+    require(replayed_hessian["schema"] == archived_hessian["schema"], "Hessian crosscheck schema")
+    require(replayed_hessian["status"] == archived_hessian["status"] == "accepted", "Hessian crosscheck status")
+    require(len(replayed_hessian["comparisons"]) == len(archived_hessian["comparisons"]), "Hessian crosscheck rows")
+    for replayed, archived in zip(replayed_hessian["comparisons"], archived_hessian["comparisons"]):
+        require(replayed["cpu_name"] == archived["cpu_name"], "Hessian crosscheck CPU identity")
+        require(replayed["gpu_name"] == archived["gpu_name"], "Hessian crosscheck GPU identity")
+        require(replayed["status"] == archived["status"] == "accepted", "Hessian crosscheck row status")
+        for field in ("max_abs_hessian_diff", "rms_hessian_diff", "energy_abs_diff_hartree"):
+            require(math.isclose(replayed[field], archived[field], rel_tol=1e-12, abs_tol=1e-15), f"Hessian crosscheck {field}")
+    require(replayed_hessian["finite_difference"]["status"] == archived_hessian["finite_difference"]["status"] == "accepted", "finite-difference crosscheck status")
     subprocess.check_call([sys.executable, str(SCRIPTS / "check_prepared_property_batch.py"), "--out", str(args.out / "prepared-property-batch.json")], cwd=ROOT)
     replay = ROOT / "handoff/gqcdataset_codex_goal/research/experiments/prepared_property_batch/replay.json"
     replay_data = read(replay)
